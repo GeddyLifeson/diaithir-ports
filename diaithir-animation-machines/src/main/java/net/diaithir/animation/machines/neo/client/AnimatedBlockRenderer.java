@@ -1,11 +1,11 @@
-package net.diaithir.animation.neo.client;
+package net.diaithir.animation.machines.neo.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import net.diaithir.animation.Controller;
-import net.diaithir.animation.Pose;
-import net.diaithir.animation.Spec;
-import net.diaithir.animation.neo.DiaithirAnimation;
+import net.diaithir.animation.machines.Controller;
+import net.diaithir.animation.machines.Pose;
+import net.diaithir.animation.machines.Spec;
+import net.diaithir.animation.machines.neo.DiaithirAnimation;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.block.MovingBlockRenderState;
@@ -73,8 +73,8 @@ public final class AnimatedBlockRenderer implements BlockEntityRenderer<BlockEnt
             live.put(key, e);
         }
         Boolean f = flag(bs);
-        net.diaithir.animation.State s = DiaithirAnimation.override(level.dimension().identifier().toString() + "|" + key);
-        e.c.setState(s != null ? s : f == null ? net.diaithir.animation.State.IDLE : f ? net.diaithir.animation.State.WORKING : net.diaithir.animation.State.DONE);
+        net.diaithir.animation.machines.State s = DiaithirAnimation.override(level.dimension().identifier().toString() + "|" + key);
+        e.c.setState(s != null ? s : f == null ? net.diaithir.animation.machines.State.IDLE : f ? net.diaithir.animation.machines.State.WORKING : net.diaithir.animation.machines.State.DONE);
         long now = System.nanoTime();
         float dt = e.last == 0 ? 0f : Math.min(0.1f, (now - e.last) / 1.0e9f);
         e.last = now;

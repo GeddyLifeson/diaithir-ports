@@ -1,8 +1,8 @@
-package net.diaithir.animation.neo.mixin;
+package net.diaithir.animation.machines.neo.mixin;
 
-import net.diaithir.animation.neo.DiaithirAnimation;
-import net.diaithir.animation.neo.client.AnimatedBlockRenderer;
-import net.diaithir.animation.neo.client.AnimatedBlocks;
+import net.diaithir.animation.machines.neo.DiaithirAnimation;
+import net.diaithir.animation.machines.neo.client.AnimatedBlockRenderer;
+import net.diaithir.animation.machines.neo.client.AnimatedBlocks;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -26,11 +26,11 @@ import java.util.Set;
 /** After renderers are built, gives every renderer-less, model-rendered block entity type with an animation rule our renderer. */
 @Mixin(BlockEntityRenderDispatcher.class)
 public abstract class BlockEntityDispatcherMixin {
-    private static final Logger LOG = LoggerFactory.getLogger("diaithiranimation");
+    private static final Logger LOG = LoggerFactory.getLogger("diaithirmachineanim");
     @Shadow private Map<BlockEntityType<?>, BlockEntityRenderer<?, ?>> renderers;
 
     @Inject(method = "onResourceManagerReload", at = @At("TAIL"))
-    private void diaithiranimation$install(ResourceManager rm, CallbackInfo ci) {
+    private void diaithirmachineanim$install(ResourceManager rm, CallbackInfo ci) {
         AnimatedBlocks.clear();
         Map<BlockEntityType<?>, BlockEntityRenderer<?, ?>> all = new HashMap<>(this.renderers);
         AnimatedBlockRenderer shared = new AnimatedBlockRenderer();

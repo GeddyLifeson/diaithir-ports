@@ -1,4 +1,4 @@
-package net.diaithir.animation.neo.client;
+package net.diaithir.animation.machines.neo.client;
 
 import net.minecraft.world.level.block.Block;
 

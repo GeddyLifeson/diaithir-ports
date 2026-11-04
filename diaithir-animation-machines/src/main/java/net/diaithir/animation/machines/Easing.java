@@ -1,4 +1,4 @@
-package net.diaithir.animation;
+package net.diaithir.animation.machines;
 
 /** Easing curves on t in [0,1]. */
 public enum Easing {
