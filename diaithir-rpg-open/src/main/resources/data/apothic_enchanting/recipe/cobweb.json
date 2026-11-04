@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "H": "minecraft:honeycomb",
+        "S": "#c:strings"
+    },
+    "pattern": [
+        "SSS",
+        "SHS",
+        "SSS"
+    ],
+    "result": {
+        "id": "minecraft:cobweb"
+    }
+}

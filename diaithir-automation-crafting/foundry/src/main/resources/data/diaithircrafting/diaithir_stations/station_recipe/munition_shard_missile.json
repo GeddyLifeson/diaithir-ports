@@ -1,0 +1,35 @@
+{
+  "station": "station.fabricator",
+  "stage": "assembly",
+  "time_s": 20,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_shard_missile_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_shard_missile_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_shard_missile_filler",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_shard_missile_fuze",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_shard_missile_motor",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_shard_missile_guidance",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_shard_missile",
+    "count": 1
+  }
+}

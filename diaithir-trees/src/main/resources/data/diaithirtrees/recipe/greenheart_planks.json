@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:greenheart_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:greenheart_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,1019 @@
+{
+    "comment_id": "/Adventure Module",
+
+    "key.categories.apotheosis": "Apotheosis",
+
+    "text.apotheosis.world_tier.haven": "Refúgio",
+    "text.apotheosis.world_tier.haven.desc": "O começo da sua jornada",
+
+    "text.apotheosis.world_tier.frontier": "Fronteira",
+    "text.apotheosis.world_tier.frontier.desc": "Aventure-se no mundo perigoso",
+
+    "text.apotheosis.world_tier.ascent": "Ascensão",
+    "text.apotheosis.world_tier.ascent.desc": "Comece sua ascensão ao poder",
+
+    "text.apotheosis.world_tier.summit": "Cume",
+    "text.apotheosis.world_tier.summit.desc": "Você chegou no topo, mas não no fim",
+
+    "text.apotheosis.world_tier.pinnacle": "Pináculo",
+    "text.apotheosis.world_tier.pinnacle.desc": "Perca-se nos picos tempestuosos da montanha",
+   
+    "text.apotheosis.world_tier.difficulty": "Dificuldade:",
+    
+    "title.apotheosis.select_world_tier": "Selecionar Nível de Mundo",
+    "title.apotheosis.world_tier_details": "Detalhes do Nível de Mundo",
+
+    "button.apotheosis.haven": "Refúgio",
+    "button.apotheosis.frontier": "Fronteira",
+    "button.apotheosis.ascent": "Ascensão",
+    "button.apotheosis.summit": "Cume",
+    "button.apotheosis.pinnacle": "Pináculo",
+    "button.apotheosis.tier_locked": "%s (Bloqueado)",
+    "button.apotheosis.tier_advancement": "Conclua o progresso %s para desbloquear.",
+    "button.apotheosis.tier_advancement_criteria": "",
+    "button.apotheosis.activate_tier": "Ativar Nível de Mundo: %s",
+    "button.apotheosis.already_activated": "Este Nível de Mundo está ativo no momento",
+    "button.apotheosis.activate": "Ativar",
+    "button.apotheosis.activated": "Ativado",
+    "button.apotheosis.disabled": "Desativado",
+    "button.apotheosis.tier_changes_disabled": "As alterações manuais de Nível de Mundo estão desativadas na configuração.",
+    "button.apotheosis.show_detailed_info": "Informações detalhadas",
+    "button.apotheosis.show_detailed_info.desc": "Ver bônus de criaturas, bônus de jogadores e raridades",
+    "button.apotheosis.return": "X",
+    "button.apotheosis.return.desc": "Voltar à tela de seleção de Nível de Mundo",
+    "button.apotheosis.inactive": "Inativo",
+    "button.apotheosis.locked": "Esse Nível de Mundo está bloqueado",
+    "button.apotheosis.skip_tutorial": "Pular tutorial",
+    "button.apotheosis.prev_tutorial": "Anterior",
+    "button.apotheosis.next_tutorial": "Próximo",
+    "button.apotheosis.done": "Concluir",
+    "button.apotheosis.open_world_tier_tutorial": "Abrir o tutorial de Nível de Mundo",
+
+    "tutorial.apotheosis.world_tier.introduction.title": "Introdução",
+    "tutorial.apotheosis.world_tier.introduction.desc": "Bem-vindo ao tutorial dos Níveis de Mundo Apóticos! Neste tutorial, você aprenderá sobre o novo sistema de Níveis de Mundo e como progredir nele. Clique em \"Próximo\" para continuar ou em \"Pular tutorial\" para ignorá-lo.",
+
+    "tutorial.apotheosis.world_tier.world_tiers.title": "Níveis de Mundo",
+    "tutorial.apotheosis.world_tier.world_tiers.desc": "Os Níveis de Mundo são o sistema de progressão do Apotheosis. Desbloquear e ativar novos Níveis de Mundo aumentará a dificuldade do jogo, mas também elevará a qualidade dos saques encontrados no mundo.\n\nPasse o cursor sobre o ícone de um Nível de Mundo para ver os requisitos de desbloqueio e clique nele para selecionar um nível já desbloqueado.",
+
+    "tutorial.apotheosis.world_tier.tier_name.title": "Nome do Nível de Mundo",
+    "tutorial.apotheosis.world_tier.tier_name.desc": "Este é o nome do Nível de Mundo selecionado, acompanhado de uma breve descrição.",
+
+    "tutorial.apotheosis.world_tier.tier_difficulty.title": "Dificuldade do Nível de Mundo",
+    "tutorial.apotheosis.world_tier.tier_difficulty.desc": "Esta é a dificuldade do Nível de Mundo selecionado. Dificuldades maiores significam criaturas mais fortes, mas também recompensas melhores.\n\nA partir do Nível de Mundo Fronteira, Invasores Apóticos começarão a surgir no seu mundo.",
+
+    "tutorial.apotheosis.world_tier.detailed_info.title": "Informações detalhadas",
+    "tutorial.apotheosis.world_tier.detailed_info.desc": "Este botão mostra informações detalhadas sobre o Nível de Mundo, incluindo bônus e penalidades para jogadores e criaturas, além das chances de obtenção de cada raridade e pureza de gema.\n\nCaso não saiba o que são raridades ou purezas, consulte a Crônica das Sombras, o guia disponível dentro do jogo.",
+
+    "tutorial.apotheosis.world_tier.activate.title": "Ativação dos Níveis de Mundo",
+    "tutorial.apotheosis.world_tier.activate.desc": "Este botão permite ativar o Nível de Mundo selecionado, caso ele ainda não esteja ativo.\n\nClicar em \"Concluir\" ativará automaticamente o Nível de Mundo Refúgio. Para os demais Níveis de Mundo, volte a esta tela e ative-os manualmente.",
+    "tutorial.apotheosis.world_tier.activate_disabled.desc": "Normalmente, este botão permite ativar o Nível de Mundo selecionado.\n\nNeste modpack, porém, os Níveis de Mundo são ativados automaticamente e não podem ser alterados manualmente. Você ainda pode consultar os detalhes de cada Nível de Mundo, mas não pode ativá-los nem desativá-los.",
+
+    "text.apotheosis.tier_info": "Informações do Nível de Mundo",
+    "text.apotheosis.monster_augments": "Modificadores de criaturas",
+    "text.apotheosis.player_augments": "Modificadores do jogador",
+    "tier_augment.apotheosis.damage_reduction": "+%s%% de resistência a dano %s",
+    "text.apotheosis.drop_chances": "Chances de obtenção",
+    "text.apotheosis.rarities": "Raridades",
+    "text.apotheosis.purities": "Purezas",
+    "text.apotheosis.unidentified": "%s Não Identificado",
+    "text.apotheosis.world_tier_tutorial": "Este item tem um poder desconhecido",
+    "text.apotheosis.world_tier_tutorial.2": "Pressione %s e ative o Nível de Mundo Refúgio para desbloqueá-lo",
+
+    "key.apotheosis.toggle_radial_mining": "Alterar modo de mineração radial",
+    "key.apotheosis.toggle_attribute_bonuses": "Alternar bônus de atributos das botas",
+    "key.apotheosis.open_world_tier_select": "Abrir seleção de Nível de Mundo",
+    "key.apotheosis.compare_equipment": "Comparar equipamento sob o cursor",
+    "key.apotheosis.link_item_to_chat": "Compartilhar item sob o cursor no chat",
+
+    "chat.apotheosis.link_item_with_count": "%s %s",
+
+    "info.apotheosis.affix_item": "Item Apótico com Afixo",
+
+    "death.attack.apotheosis:execute": "%2$s executou %1$s",
+    "death.attack.apotheosis:execute.item": "%2$s executou %1$s usando %3$s",
+    "death.attack.apotheosis:execute.player": "%2$s executou %1$s",
+
+    "misc.apotheosis.affix_name.two": "%2$s %1$s",
+    "misc.apotheosis.affix_name.three": "%2$s %1$s %3$s",
+    "misc.apotheosis.affix_name.four": "%3$s %2$s %4$s de %1$s",
+	"misc.apotheosis.affix_bounds": "[%s\u00A0-\u00A0%s]",
+
+    "misc.apotheosis.attribute_toggle.updated": "Os bônus de %s agora estão %s",
+    "misc.apotheosis.attribute_toggle.none": "Suas botas não têm um afixo de alternância de atributos.",
+    "misc.apotheosis.attribute_toggle.state": "[%s]",
+    "misc.apotheosis.attribute_toggle.on": "Ativados",
+    "misc.apotheosis.attribute_toggle.off": "Desativados",
+    "misc.apotheosis.radial_state_updated": "Modo de mineração radial atualizado para \"%s\"",
+    "misc.apotheosis.radial_state.require_not_sneaking": "Desativado enquanto se agacha",
+    "misc.apotheosis.radial_state.require_sneaking": "Ativado enquanto se agacha",
+    "misc.apotheosis.radial_state.enabled": "Ativado",
+    "misc.apotheosis.radial_state.disabled": "Desativado",
+    "misc.apotheosis.right_click_to_socket": "Clique com o botão direito para encaixar %s em %s",
+
+    "affix.apotheosis:armor/attribute/blessed": "Abençoado",
+    "affix.apotheosis:armor/attribute/blessed.suffix": "da Saúde",
+
+    "affix.apotheosis:armor/attribute/windswept": "Levado pelo Vento",
+    "affix.apotheosis:armor/attribute/windswept.suffix": "da Corrente",
+
+    "affix.apotheosis:armor/attribute/ironforged": "Ferroforjado",
+    "affix.apotheosis:armor/attribute/ironforged.suffix": "do Ferro",
+
+    "affix.apotheosis:melee/attribute/violent": "Violento",
+    "affix.apotheosis:melee/attribute/violent.suffix": "do Extermínio",
+
+    "affix.apotheosis:ranged/attribute/windswept": "Levado pelo Vento",
+    "affix.apotheosis:ranged/attribute/windswept.suffix": "da Corrente",
+
+    "affix.apotheosis:melee/attribute/graceful": "Gracioso",
+    "affix.apotheosis:melee/attribute/graceful.suffix": "do Duelista",
+
+    "affix.apotheosis:melee/attribute/forceful": "Poderoso",
+    "affix.apotheosis:melee/attribute/forceful.suffix": "do Touro",
+
+    "affix.apotheosis:armor/attribute/aquatic": "Aquático",
+    "affix.apotheosis:armor/attribute/aquatic.suffix": "do Oceano",
+
+    "affix.apotheosis:armor/attribute/gravitational": "Gravitacional",
+    "affix.apotheosis:armor/attribute/gravitational.suffix": "da Gravidade",
+
+    "affix.apotheosis:breaker/attribute/lengthy": "Comprida",
+    "affix.apotheosis:breaker/attribute/lengthy.suffix": "do Alcance",
+
+    "affix.apotheosis:breaker/attribute/experienced": "Experiente",
+    "affix.apotheosis:breaker/attribute/experienced.suffix": "do Erudito",
+
+    "affix.apotheosis:ranged/attribute/agile": "Ágil",
+    "affix.apotheosis:ranged/attribute/agile.suffix": "da Destreza",
+
+    "affix.apotheosis:armor/attribute/steel_touched": "Tocado pelo Aço",
+    "affix.apotheosis:armor/attribute/steel_touched.suffix": "do Defensor",
+
+    "affix.apotheosis:armor/attribute/stalwart": "Robusto",
+    "affix.apotheosis:armor/attribute/stalwart.suffix": "da Teimosia",
+
+    "affix.apotheosis:armor/attribute/elastic": "Elástico",
+    "affix.apotheosis:armor/attribute/elastic.suffix": "da Escalada",
+
+    "affix.apotheosis:armor/attribute/fortunate": "Afortunado",
+    "affix.apotheosis:armor/attribute/fortunate.suffix": "do Trevo de Quatro Folhas",
+
+    "affix.apotheosis:armor/attribute/winged": "Alado",
+    "affix.apotheosis:armor/attribute/winged.suffix": "dos Céus",
+
+    "affix.apotheosis:melee/attribute/intricate": "Intricado",
+    "affix.apotheosis:melee/attribute/intricate.suffix": "do Pensamento Crítico",
+
+    "affix.apotheosis:melee/attribute/lacerating": "Lacerante",
+    "affix.apotheosis:melee/attribute/lacerating.suffix": "de Precisão Cirúrgica",
+
+    "affix.apotheosis:melee/attribute/glacial": "Glacial",
+    "affix.apotheosis:melee/attribute/glacial.suffix": "das Terras Geladas",
+
+    "affix.apotheosis:melee/attribute/infernal": "Infernal",
+    "affix.apotheosis:melee/attribute/infernal.suffix": "do Sol",
+
+    "affix.apotheosis:melee/attribute/vampiric": "Vampírico",
+    "affix.apotheosis:melee/attribute/vampiric.suffix": "do Sangramento",
+
+    "affix.apotheosis:melee/attribute/piercing": "Penetrante",
+    "affix.apotheosis:melee/attribute/piercing.suffix": "do Destruidor",
+
+    "affix.apotheosis:weapon/attribute/shredding": "Dilacerante",
+    "affix.apotheosis:weapon/attribute/shredding.suffix": "do Turbilhão",
+
+    "affix.apotheosis:weapon/attribute/runebreaking": "Quebra-Runas",
+    "affix.apotheosis:weapon/attribute/runebreaking.suffix": "do Quebra-Runas",
+
+    "affix.apotheosis:weapon/attribute/nullifying": "Anulante",
+    "affix.apotheosis:weapon/attribute/nullifying.suffix": "da Anulação",
+
+    "affix.apotheosis:melee/attribute/giant_slaying": "Matador de Gigantes",
+    "affix.apotheosis:melee/attribute/giant_slaying.suffix": "de Ataques Colossais",
+
+    "affix.apotheosis:melee/attribute/berserking": "Enfurecido",
+    "affix.apotheosis:melee/attribute/berserking.suffix": "do Berserker",
+
+    "affix.apotheosis:breaker/attribute/destructive": "Destrutiva",
+    "affix.apotheosis:breaker/attribute/destructive.suffix": "das Pedreiras",
+
+    "affix.apotheosis:ranged/attribute/elven": "Élfico",
+    "affix.apotheosis:ranged/attribute/elven.suffix": "do Arqueiro Primordial",
+
+    "affix.apotheosis:ranged/attribute/streamlined": "Aerodinâmico",
+    "affix.apotheosis:ranged/attribute/streamlined.suffix": "do Atirador de Elite",
+
+    "affix.apotheosis:melee/mob_effect/elusive": "Elusivo",
+    "affix.apotheosis:melee/mob_effect/elusive.suffix": "de Evasão",
+
+    "affix.apotheosis:breaker/mob_effect/swift": "Veloz",
+    "affix.apotheosis:breaker/mob_effect/swift.suffix": "do Esmagamento",
+
+    "affix.apotheosis:breaker/mob_effect/spelunkers": "Espeleológica",
+    "affix.apotheosis:breaker/mob_effect/spelunkers.suffix": "de Exploração de Cavernas",
+
+    "affix.apotheosis:ranged/mob_effect/ensnaring": "Enredante",
+    "affix.apotheosis:ranged/mob_effect/ensnaring.suffix": "do Predador",
+
+    "affix.apotheosis:shield/mob_effect/venomous": "Peçonhento",
+    "affix.apotheosis:shield/mob_effect/venomous.suffix": "da Cobra",
+
+    "affix.apotheosis:ranged/mob_effect/fleeting": "Fugaz",
+    "affix.apotheosis:ranged/mob_effect/fleeting.suffix": "do Patrulheiro",
+
+    "affix.apotheosis:melee/mob_effect/weakening": "Debilitante",
+    "affix.apotheosis:melee/mob_effect/weakening.suffix": "de Fraqueza",
+
+    "affix.apotheosis:armor/mob_effect/bolstering": "Fortalecedor",
+    "affix.apotheosis:armor/mob_effect/bolstering.suffix": "da Fortitude",
+
+    "affix.apotheosis:armor/mob_effect/revitalizing": "Revitalizante",
+    "affix.apotheosis:armor/mob_effect/revitalizing.suffix": "da Nascente",
+
+    "affix.apotheosis:armor/mob_effect/nimble": "Ligeiro",
+    "affix.apotheosis:armor/mob_effect/nimble.suffix": "da Raposa",
+
+    "affix.apotheosis:armor/mob_effect/blinding": "Ofuscante",
+    "affix.apotheosis:armor/mob_effect/blinding.suffix": "da Escuridão",
+
+    "affix.apotheosis:ranged/mob_effect/shulkers": "Tocado pelo Shulker",
+    "affix.apotheosis:ranged/mob_effect/shulkers.suffix": "da Levitação",
+
+    "affix.apotheosis:shield/mob_effect/withering": "Decompositor",
+    "affix.apotheosis:shield/mob_effect/withering.suffix": "do Esqueleto das Trevas",
+
+    "affix.apotheosis:shield/attribute/ironforged": "Ferroforjado",
+    "affix.apotheosis:shield/attribute/ironforged.suffix": "do Ferro",
+
+    "affix.apotheosis:shield/attribute/steel_touched": "Tocado pelo Aço",
+    "affix.apotheosis:shield/attribute/steel_touched.suffix": "do Defensor",
+
+    "affix.apotheosis:ranged/mob_effect/ivy_laced": "Entrelaçado de Hera",
+    "affix.apotheosis:ranged/mob_effect/ivy_laced.suffix": "das Toxinas Naturais",
+
+    "affix.apotheosis:ranged/mob_effect/satanic": "Satânico",
+    "affix.apotheosis:ranged/mob_effect/satanic.suffix": "dos Infernos Flamejantes",
+
+    "affix.apotheosis:ranged/spectral": "Espectral",
+    "affix.apotheosis:ranged/spectral.suffix": "dos Abandonados",
+    "affix.apotheosis:ranged/spectral.desc": "Você tem %s%% chance de atirar uma segunda flecha.",
+
+    "affix.apotheosis:ranged/magical": "Mágico",
+    "affix.apotheosis:ranged/magical.suffix": "do Arcano",
+    "affix.apotheosis:ranged/magical.desc": "Suas flechas causam dano mágico.",
+
+    "affix.apotheosis:melee/festive": "Festivo",
+    "affix.apotheosis:melee/festive.suffix": "da Festa",
+    "affix.apotheosis:melee/festive.desc": "Inimigos derrotados têm %s%% de chance de se tornarem uma Pinhata de Saque",
+
+    "affix.apotheosis:melee/thunderstruck": "Atordoado pelo Trovão",
+    "affix.apotheosis:melee/thunderstruck.suffix": "da Tempestade",
+    "affix.apotheosis:melee/thunderstruck.desc": "Seus ataques causam %s de dano aos inimigos próximos.",
+
+    "affix.apotheosis:shield/retreating": "Recuante",
+    "affix.apotheosis:shield/retreating.suffix": "do Bobo",
+    "affix.apotheosis:shield/retreating.desc": "Você saltará para trás ao bloquear em combate corpo a corpo.",
+
+    "affix.apotheosis:generic/telepathic": "Telepático",
+    "affix.apotheosis:generic/telepathic.suffix": "do Espaço e do Tempo",
+    "affix.apotheosis:generic/telepathic.desc.weapon": "Os itens derrubados pelas criaturas serão teletransportados até você.",
+    "affix.apotheosis:generic/telepathic.desc.tool": "Os itens derrubados pelos blocos serão teletransportados até você.",
+
+    "affix.apotheosis:melee/executing": "Executor",
+    "affix.apotheosis:melee/executing.suffix": "do Carrasco",
+    "affix.apotheosis:melee/executing.desc": "Inimigos com menos de %s%% da vida máxima serão executados.",
+
+    "affix.apotheosis:melee/cleaving": "Cortante",
+    "affix.apotheosis:melee/cleaving.suffix": "do Açougueiro",
+    "affix.apotheosis:melee/cleaving.desc": "Os ataques têm %s%% de chance de também atingir até %s inimigos próximos.",
+
+    "affix.apotheosis:boots/ability/unhurried": "Serenas",
+    "affix.apotheosis:boots/ability/unhurried.suffix": "da Jornada Tranquila",
+    "affix.apotheosis:boots/ability/unhurried.desc": "Pressione %s para ativar ou desativar todos os bônus de velocidade de movimento.",
+    "affix.apotheosis:boots/ability/surefooted": "Firmes",
+    "affix.apotheosis:boots/ability/surefooted.suffix": "do Passo Calculado",
+    "affix.apotheosis:boots/ability/surefooted.desc": "Pressione %s para ativar ou desativar todos os bônus de altura do passo.",
+    "affix.apotheosis:boots/ability/steadfast": "Inabaláveis",
+    "affix.apotheosis:boots/ability/steadfast.suffix": "da Rigidez",
+    "affix.apotheosis:boots/ability/steadfast.desc": "Pressione %s para ativar ou desativar todos os bônus de velocidade de movimento e altura do passo.",
+    "affix.apotheosis:breaker/ability/enlightened": "Iluminada",
+    "affix.apotheosis:breaker/ability/enlightened.suffix": "do Arauto da Luz",
+    "affix.apotheosis:breaker/ability/enlightened.desc": "Esta ferramenta pode colocar uma fonte de luz ao custo de %s de durabilidade.",
+
+    "affix.apotheosis:shield/psychic": "Psíquico",
+    "affix.apotheosis:shield/psychic.suffix": "do Vingativo",
+    "affix.apotheosis:shield/psychic.desc": "Bloquear um projétil causa %s%% do dano ao atirador.",
+
+    "affix.apotheosis:shield/catalyzing": "Catalisador",
+    "affix.apotheosis:shield/catalyzing.suffix": "do Convertido",
+    "affix.apotheosis:shield/catalyzing.desc": "Bloquear uma explosão lhe dará grande força.",
+
+    "affix.apotheosis:melee/attribute/annihilating": "Aniquilador",
+    "affix.apotheosis:melee/attribute/annihilating.suffix": "do Titã",
+
+    "affix.apotheosis:melee/attribute/decimating": "Dizimador",
+    "affix.apotheosis:melee/attribute/decimating.suffix": "do Deus-Rei",
+
+    "affix.apotheosis:melee/attribute/murderous": "Assassino",
+    "affix.apotheosis:melee/attribute/murderous.suffix": "do Minotauro",
+
+    "affix.apotheosis:ranged/mob_effect/acidic": "Ácido",
+    "affix.apotheosis:ranged/mob_effect/acidic.suffix": "da Corrosão",
+
+    "affix.apotheosis:melee/mob_effect/bloodletting": "Sangrento",
+    "affix.apotheosis:melee/mob_effect/bloodletting.suffix": "do Matador",
+
+    "affix.apotheosis:melee/mob_effect/caustic": "Cáustico",
+    "affix.apotheosis:melee/mob_effect/caustic.suffix": "do Reino Cáustico",
+
+    "affix.apotheosis:melee/mob_effect/sophisticated": "Sofisticado",
+    "affix.apotheosis:melee/mob_effect/sophisticated.suffix": "da Biblioteca Ancestral",
+
+    "affix.apotheosis:shield/mob_effect/devilish": "Diabólico",
+    "affix.apotheosis:shield/mob_effect/devilish.suffix": "do Veterano",
+
+    "affix.apotheosis:breaker/effect/radial": "Radial",
+    "affix.apotheosis:breaker/effect/radial.suffix": "do Quebra-terra",
+    "affix.apotheosis:breaker/effect/radial.desc": "Esta ferramenta quebra em uma área de %sx%s.",
+
+    "affix.apotheosis:breaker/ability/supermassive": "Supermassiva",
+    "affix.apotheosis:breaker/ability/supermassive.suffix": "do Destruidor de Mundos",
+    "affix.apotheosis:breaker/ability/supermassive.desc": "Esta ferramenta quebra em uma área de %sx%s.",
+
+    "affix.apotheosis:melee_weapon/mob_effect/detonating": "Detonante",
+    "affix.apotheosis:melee_weapon/mob_effect/detonating.suffix": "da Chama Elemental",
+
+    "affix.apotheosis:armor/attribute/oxygenated": "Oxigenado",
+    "affix.apotheosis:armor/attribute/oxygenated.suffix": "do Mergulhador",
+
+    "affix.apotheosis:armor/attribute/timekeeping": "Domínio Temporal",
+    "affix.apotheosis:armor/attribute/timekeeping.suffix": "de Cronos",
+
+    "affix.apotheosis:melee/mob_effect/omniscient": "Onisciente",
+    "affix.apotheosis:melee/mob_effect/omniscient.suffix": "do Grande Sábio",
+
+    "affix.apotheosis:breaker/attribute/submerged": "Submersa",
+    "affix.apotheosis:breaker/attribute/submerged.suffix": "do Minerador Marinho",
+
+    "affix.apotheosis:shield/mob_effect/galvanizing": "Galvanizante",
+    "affix.apotheosis:shield/mob_effect/galvanizing.suffix": "do Indestrutível",
+
+    "affix.apotheosis:armor/dmg_reduction/grounded": "Aterrado",
+    "affix.apotheosis:armor/dmg_reduction/grounded.suffix": "do Para-Raios",
+
+    "affix.apotheosis:ranged/mob_effect/deathbound": "Preso à Morte",
+    "affix.apotheosis:ranged/mob_effect/deathbound.suffix": "do Senhor do Wither",
+
+    "affix.apotheosis:shield/mob_effect/reinforcing": "Reforçador",
+    "affix.apotheosis:shield/mob_effect/reinforcing.suffix": "de Aço",
+
+    "affix.apotheosis:melee/attribute/lengthy": "Comprido",
+    "affix.apotheosis:melee/attribute/lengthy.suffix": "de Comprimento Extremo",
+
+    "affix.apotheosis:ranged/mob_effect/blighted": "Arruinado",
+    "affix.apotheosis:ranged/mob_effect/blighted.suffix": "das Terras Arruinadas",
+
+    "affix.apotheosis:armor/attribute/unbound": "Desvinculado",
+    "affix.apotheosis:armor/attribute/unbound.suffix": "de Ícaro",
+
+    "affix.apotheosis:armor/attribute/fireproof": "À Prova de Fogo",
+    "affix.apotheosis:armor/attribute/fireproof.suffix": "de Defesa Flamejante",
+
+    "affix.apotheosis:armor/attribute/adamantine": "Adamantino",
+    "affix.apotheosis:armor/attribute/adamantine.suffix": "de Adamantina",
+
+    "affix.apotheosis:breaker/enchantment/prosperous": "Próspera",
+    "affix.apotheosis:breaker/enchantment/prosperous.suffix": "da Grande Fortuna",
+
+    "affix.apotheosis:ranged/enchantment/prosperous": "Próspero",
+    "affix.apotheosis:ranged/enchantment/prosperous.suffix": "do Caçador de Tesouros",
+
+    "affix.apotheosis:armor/dmg_reduction/deflective": "Defletivo",
+    "affix.apotheosis:armor/dmg_reduction/deflective.suffix": "de Deflexão",
+
+    "misc.apotheosis.iron": "ferro",
+    "misc.apotheosis.diamond": "diamante",
+    "misc.apotheosis.netherite": "netherita",
+
+    "affix.apotheosis:breaker/effect/omnetic": "Omnética",
+    "affix.apotheosis:breaker/effect/omnetic.suffix": "da Singularidade",
+    "affix.apotheosis:breaker/effect/omnetic.desc": "Esta ferramenta tem %s de eficácia contra todos os blocos.",
+
+    "misc.apotheosis.physical": "físico",
+    "misc.apotheosis.magic": "mágico",
+    "misc.apotheosis.fire": "de fogo",
+    "misc.apotheosis.fall": "de queda",
+    "misc.apotheosis.explosion": "de explosão",
+    "misc.apotheosis.projectile": "de projétil",
+    "misc.apotheosis.lightning": "de raio",
+    "affix.apotheosis:damage_reduction.desc": "O dano %s recebido é reduzido em %s%%",
+
+    "affix.apotheosis:armor/dmg_reduction/blockading": "Bloqueador",
+    "affix.apotheosis:armor/dmg_reduction/blockading.suffix": "do Bloqueio",
+
+    "affix.apotheosis:armor/dmg_reduction/runed": "Rúnico",
+    "affix.apotheosis:armor/dmg_reduction/runed.suffix": "do Guardião de Feitiços",
+
+    "affix.apotheosis:armor/dmg_reduction/blast_forged": "Forjado pela Explosão",
+    "affix.apotheosis:armor/dmg_reduction/blast_forged.suffix": "do Deus da Forja",
+
+    "affix.apotheosis:armor/dmg_reduction/dwarven": "Enânico",
+    "affix.apotheosis:armor/dmg_reduction/dwarven.suffix": "do Vulcão",
+
+    "affix.apotheosis:armor/dmg_reduction/feathery": "Emplumado",
+    "affix.apotheosis:armor/dmg_reduction/feathery.suffix": "da Águia",
+
+    "affix.apotheosis:shield/attribute/stalwart": "Robusto",
+    "affix.apotheosis:shield/attribute/stalwart.suffix": "da Teimosia",
+
+    "affix.apotheosis:armor/attribute/spiritual": "Espiritual",
+    "affix.apotheosis:armor/attribute/spiritual.suffix": "do Feiticeiro",
+
+    "affix.apotheosis:generic/attribute/lucky": "Sortudo",
+    "affix.apotheosis:generic/attribute/lucky.suffix": "do Afortunado",
+
+    "affix.apotheosis:melee/attribute/nullifying": "Anulador",
+    "affix.apotheosis:melee/attribute/nullifying.suffix": "do Quebra-Magos",
+
+    "affix.apotheosis:melee/attribute/spellbreaking": "Quebra-Feitiços",
+    "affix.apotheosis:melee/attribute/spellbreaking.suffix": "do Golem de Petricita",
+
+    "affix.apotheosis:ranged/mob_effect/grievous": "Doloroso",
+    "affix.apotheosis:ranged/mob_effect/grievous.suffix": "do Ferimento",
+
+    "affix.apotheosis:armor/mob_effect/bursting": "Estrondoso",
+    "affix.apotheosis:armor/mob_effect/bursting.suffix": "da Vitalidade",
+
+    "affix.apotheosis:durable": "Durável",
+    "affix.apotheosis:durable.suffix": "da Durabilidade",
+
+    "affix.apotheosis:breaker/ability/stoneforming": "Moldadora de Pedra",
+    "affix.apotheosis:breaker/ability/stoneforming.suffix": "do Mestre da Pedra",
+    "affix.apotheosis:breaker/ability/stoneforming.desc": "As pedras naturais podem ser convertidas entre si",
+
+    "affix.apotheosis:breaker/ability/sandforming": "Moldadora de Areia",
+    "affix.apotheosis:breaker/ability/sandforming.suffix": "das Areias",
+    "affix.apotheosis:breaker/ability/sandforming.desc": "Areia e blocos semelhantes podem ser convertidos entre si",
+
+    "affix.apotheosis.stoneforming.desc": "Quebrar [%s] transforma em %s; pressione Shift e clique com o botão direito para selecionar um alvo.",
+    "affix.apotheosis.stoneforming.target_updated": "Alvo atualizado para: %s",
+
+    "affix.apotheosis:shears/effect/leafforming": "Moldadora de Folhas",
+    "affix.apotheosis:shears/effect/leafforming.suffix": "do Arborista",
+    "affix.apotheosis:shears/effect/leafforming.desc": "Folhas podem ser convertidas entre si",
+
+    "affix.apotheosis:shears/effect/gardening": "Jardineira",
+    "affix.apotheosis:shears/effect/gardening.suffix": "do Jardineiro",
+    "affix.apotheosis:shears/effect/gardening.desc": "Flores podem ser convertidas entre si",
+
+    "affix.apotheosis.target.attack_self": "Ao acertar, ganha %s",
+    "affix.apotheosis.target.attack_target": "Ao acertar, inflige %s",
+    "affix.apotheosis.target.hurt_self": "Ao ser atacado, ganha %s",
+    "affix.apotheosis.target.hurt_attacker": "Ao ser atacado, inflige %s",
+    "affix.apotheosis.target.break_self": "Ao quebrar bloco, ganha %s",
+    "affix.apotheosis.target.arrow_self": "Ao acertar flecha, ganha %s",
+    "affix.apotheosis.target.arrow_target": "Ao acertar flecha, inflige %s",
+    "affix.apotheosis.target.block_self": "Ao bloquear, ganha %s",
+    "affix.apotheosis.target.block_attacker": "Ao bloquear, inflige %s",
+    "affix.apotheosis.target.projectile_self": "Ao acertar projétil, ganha %s",
+    "affix.apotheosis.target.projectile_target": "Ao acertar projétil, inflige %s",
+    "affix.apotheosis.cooldown": "[⌛ %s]",
+    "affix.apotheosis.stacking": "[Acumulável]",
+
+    "affix.apotheosis:durable.desc": "Este item ignora %s%% do dano de durabilidade.",
+    "affix.apotheosis:socket.desc": "Com encaixe (%s)",
+
+    "socket.apotheosis.empty": "Encaixe Vazio",
+    "text.apotheosis.when_socketed": "Quando encaixado:",
+    "text.apotheosis.when_socketed_in": "Quando encaixado em:",
+    "text.apotheosis.when_socketed_typed": "Quando encaixado em %s:",
+    "info.apotheosis.socketing": "Gemas podem ser encaixadas em uma Bancada de Ferraria: coloque o item à esquerda e a gema à direita.\n\nEscolha com cuidado, pois remover uma gema encaixada é caro.",
+
+    "purity.apotheosis.cracked": "Rachada",
+    "purity.apotheosis.chipped": "Lascada",
+    "purity.apotheosis.flawed": "Imperfeita",
+    "purity.apotheosis.normal": "Normal",
+    "purity.apotheosis.flawless": "Impecável",
+    "purity.apotheosis.perfect": "Perfeita",
+
+    "gem_class.melee_weapon": "Armas Corpo a Corpo",
+    "gem_class.ranged_weapon": "Armas de Longo Alcance",
+    "gem_class.light_weapon": "Armas Leves",
+    "gem_class.core_armor": "Armadura Superior",
+    "gem_class.lower_armor": "Armadura Inferior",
+    "gem_class.armor": "Armadura",
+    "gem_class.breaker": "Ferramentas de Mineração",
+    "gem_class.pickaxe": "Picaretas",
+    "gem_class.light_ranged": "Armas Leves ou de Longo Alcance",
+    "gem_class.weapon_or_tool": "Armas ou Ferramentas",
+    "gem_class.weapons": "Armas",
+    "gem_class.tools": "Ferramentas",
+
+    "gem_class.helmet": "Capacetes",
+    "gem_class.chestplate": "Peitorais",
+    "gem_class.leggings": "Calças",
+    "gem_class.boots": "Botas",
+    "gem_class.shield": "Escudos",
+    "gem_class.bow": "Arcos",
+    "gem_class.trident": "Tridentes",
+    "gem_class.anything": "Qualquer Equipamento",
+
+    "bonus.apotheosis:durability.desc": "Ignora %s%% do dano de durabilidade",
+    "bonus.apotheosis:enchantment.desc": "+%s %s para %s",
+    "bonus.apotheosis:enchantment.desc.mustExist": "+%s %s aos %s existentes",
+    "bonus.apotheosis:enchantment.desc.global": "+%s %s para todos os encantamentos existentes",
+    "bonus.apotheosis:multi_attr.desc.and": "%s e %s",
+    "bonus.apotheosis:multi_attr.desc.and_but": "%s e %s, mas %s",
+    "bonus.apotheosis:multi_attr.desc.but_and": "%s, mas %s e %s",
+    "bonus.apotheosis:bloody_arrow.desc": "Ao atirar, você perde %s%% da vida máxima e causa %s%% de dano. %s",
+    "bonus.apotheosis:anti_gravity_arrow.desc": "As flechas disparadas não são afetadas pela gravidade.",
+    "bonus.apotheosis:leech_block.desc": "Cura você em %s%% do dano ao bloquear um ataque. %s",
+    "bonus.apotheosis:all_stats.desc": "+%s%% em todos os atributos",
+    "gem.apotheosis:overworld/royalty.bonus.pickaxe": "Quebrar Minério de Cobre tem %s%% de chance de derrubar Ouro Bruto no lugar.",
+    "bonus.apotheosis:mageslayer.desc": "Ignora %s%% do dano mágico e cura a mesma quantidade de vida.",
+    "bonus.apotheosis:twilight_ore_magnet.desc": "Pode ser usado como Ímã de Minérios, ao custo de %s pontos adicionais de durabilidade.",
+    "bonus.apotheosis:twilight_treasure_goblin.desc": "Atacar uma entidade tem %s%% de chance de invocar um Goblin do Tesouro. %s",
+    "bonus.apotheosis:twilight_fortification.desc": "Sofrer dano tem %s%% de chance de fortalecer você com Escudos do Crepúsculo. %s",
+    "bonus.apotheosis:frozen_drops.desc": "Matar um inimigo com %s aumenta os itens derrubados em %s%% .",
+
+    "misc.apotheosis.level": "nível",
+    "misc.apotheosis.level.many": "níveis",
+    "name.apotheosis.treasure_goblin": "Goblin do Tesouro",
+
+    "item.apotheosis.gem.apotheosis:core/guardian": "Gema do Guardião",
+    "item.apotheosis.gem.apotheosis:core/ballast": "Gema do Lastro",
+    "item.apotheosis.gem.apotheosis:core/solar": "Gema Solar",
+    "item.apotheosis.gem.apotheosis:core/lunar": "Gema Lunar",
+    "item.apotheosis.gem.apotheosis:core/samurai": "Gema do Samurai",
+    "item.apotheosis.gem.apotheosis:core/warlord": "Gema do Senhor da Guerra",
+    "item.apotheosis.gem.apotheosis:core/splendor": "Gema do Esplendor",
+    "item.apotheosis.gem.apotheosis:core/tyrannical": "Gema Tirânica",
+    "item.apotheosis.gem.apotheosis:core/breach": "Gema do Rompimento",
+    "item.apotheosis.gem.apotheosis:core/lightning": "Gema do Relâmpago",
+    "item.apotheosis.gem.apotheosis:core/slipstream": "Gema do Deslize",
+    "item.apotheosis.gem.apotheosis:core/brawlers": "Gema do Lutador",
+    "item.apotheosis.gem.apotheosis:core/combatant": "Gema do Combatente",
+    "item.apotheosis.gem.apotheosis:overworld/earth": "Gema da Terra",
+    "item.apotheosis.gem.apotheosis:overworld/royalty": "Gema da Família Real",
+    "item.apotheosis.gem.apotheosis:overworld/verdant_ruin": "Gema da Ruína Verdejante",
+    "item.apotheosis.gem.apotheosis:the_nether/inferno": "Gema do Inferno Incandescente",
+    "item.apotheosis.gem.apotheosis:the_nether/blood_lord": "Gema do Senhor do Sangue Voraz",
+    "item.apotheosis.gem.apotheosis:the_nether/molten_breach": "Gema da Fenda Derretida",
+    "item.apotheosis.gem.apotheosis:the_end/endersurge": "Gema do Surto do End",
+    "item.apotheosis.gem.apotheosis:the_end/mageslayer": "Gema do Matador de Magos",
+    "item.apotheosis.gem.apotheosis:twilight/forest": "Gema da Floresta do Crepúsculo",
+    "item.apotheosis.gem.apotheosis:twilight/queen": "Gema da Rainha Congelada",
+
+    "item.apotheosis.boss_summoner": "Invocador de Invasor Apótico",
+    "item.apotheosis.gem.cracked": "%s Rachada",
+    "item.apotheosis.gem.chipped": "%s Lascada",
+    "item.apotheosis.gem.flawed": "%s Imperfeita",
+    "item.apotheosis.gem.normal": "%s",
+    "item.apotheosis.gem.flawless": "%s Impecável",
+    "item.apotheosis.gem.perfect": "%s Perfeita",
+    "item.apotheosis.vial_of_extraction": "Frasco de Extração Arcana",
+    "item.apotheosis.vial_of_expulsion": "Frasco de Expulsão Ardente",
+    "item.apotheosis.vial_of_unnaming": "Frasco de Desnomeação",
+    "item.apotheosis.gem_dust": "Pó de Gema",
+    "item.apotheosis.gem_dust.desc": "Uma gema apótica triturada",
+    "item.apotheosis.mysterious_scrap_metal": "Sucata de Metal Misteriosa",
+    "item.apotheosis.timeworn_fabric": "Tecido Antigo",
+    "item.apotheosis.luminous_crystal_shard": "Fragmento de Cristal Luminoso",
+    "item.apotheosis.arcane_sands": "Areias Arcanas",
+    "item.apotheosis.godforged_pearl": "Pérola Forjada pelo Divino",
+    "item.apotheosis.god_fused_pearl": "Pérola Fundida ao Divino",
+    "item.apotheosis.ancient_material": "Manifestação do Infinito",
+    "item.apotheosis.gem_fused_slate": "Ardósia Fundida com Gema",
+
+    "item.apotheosis.sigil_of_socketing": "Sigilo de Encaixe",
+    "item.apotheosis.sigil_of_socketing.desc": "Adiciona um encaixe a um item",
+
+    "item.apotheosis.sigil_of_withdrawal": "Sigilo de Retirada",
+    "item.apotheosis.sigil_of_withdrawal.desc": "Remove todas as gemas encaixadas de um item",
+
+    "item.apotheosis.sigil_of_rebirth": "Sigilo do Renascimento",
+    "item.apotheosis.sigil_of_rebirth.desc": "Usado para abastecer a Bancada de Reforja",
+
+    "item.apotheosis.sigil_of_enhancement": "Sigilo de Aprimoramento",
+    "item.apotheosis.sigil_of_enhancement.desc": "Usado para abastecer a Bancada de Aprimoramento",
+
+    "item.apotheosis.sigil_of_unnaming": "Sigilo de Desnomeação",
+    "item.apotheosis.sigil_of_unnaming.desc": "Remove o nome afixado de um item",
+
+    "item.apotheosis.sigil_of_malice": "Sigilo da Malícia",
+    "item.apotheosis.sigil_of_malice.desc": "Sobrecarrega um afixo e reseta outro",
+
+    "item.apotheosis.sigil_of_supremacy": "Sigilo da Supremacia",
+    "item.apotheosis.sigil_of_supremacy.desc": "Sobrecarrega todos os afixos de um item com afixo",
+
+    "item.apotheosis.spawner_chain": "Corrente de Gerador",
+    "item.apotheosis.spawner_chain.desc": "Obtida ao detonar explosivamente um Gerador de Criaturas",
+    "item.apotheosis.spawner_rune": "Runa de Gerador",
+    "item.apotheosis.infused_spawner_rune": "Runa Infundida de Gerador",
+
+    "item.apotheosis.frontier_spawner_upgrade_rune": "Runa de Aprimoramento de Gerador do Desbravador",
+    "item.apotheosis.frontier_spawner_upgrade_rune.desc": "Aprimora levemente um Gerador de Criaturas",
+    "item.apotheosis.ascent_spawner_upgrade_rune": "Runa de Aprimoramento de Gerador do Andarilho",
+    "item.apotheosis.ascent_spawner_upgrade_rune.desc": "Aprimora um Gerador de Criaturas",
+    "item.apotheosis.summit_spawner_upgrade_rune": "Runa de Aprimoramento de Gerador do Montanhista",
+    "item.apotheosis.summit_spawner_upgrade_rune.desc": "Aprimora consideravelmente um Gerador de Criaturas",
+    "item.apotheosis.pinnacle_spawner_upgrade_rune": "Runa Trovejante de Aprimoramento de Gerador",
+    "item.apotheosis.pinnacle_spawner_upgrade_rune.desc": "Leva um Gerador de Criaturas ao seu potencial máximo",
+
+    "item.apotheosis.spawn_range_spawner_rune": "Runa do Alcance de Geração",
+    "item.apotheosis.spawn_range_spawner_rune.desc": "Aumenta a área na qual o gerador pode gerar criaturas",
+    "item.apotheosis.redstone_control_spawner_rune": "Runa do Controle",
+    "item.apotheosis.redstone_control_spawner_rune.desc": "Faz com que o gerador funcione apenas enquanto estiver energizado por redstone",
+    "item.apotheosis.ignore_light_spawner_rune": "Runa do Crepúsculo Perpétuo",
+    "item.apotheosis.ignore_light_spawner_rune.desc": "Força o gerador a ignorar os requisitos de nível de luz",
+    "item.apotheosis.initial_health_spawner_rune": "Runa da Debilitação",
+    "item.apotheosis.initial_health_spawner_rune.desc": "Reduz a vida inicial das criaturas geradas pelo gerador",
+    "item.apotheosis.silent_spawner_rune": "Runa do Silêncio",
+    "item.apotheosis.silent_spawner_rune.desc": "As criaturas geradas não emitirão sons",
+    "item.apotheosis.youthful_spawner_rune": "Runa da Juventude",
+    "item.apotheosis.youthful_spawner_rune.desc": "As criaturas geradas serão filhotes",
+    "item.apotheosis.burning_spawner_rune": "Runa da Imolação",
+    "item.apotheosis.burning_spawner_rune.desc": "As criaturas geradas surgem envoltas em chamas",
+
+    "item.apotheosis.no_ai_spawner_rune": "Runa do Torpor",
+    "item.apotheosis.no_ai_spawner_rune.desc": "Remove a IA das criaturas geradas",
+    "item.apotheosis.ignore_conditions_spawner_rune": "Runa do Desafio",
+    "item.apotheosis.ignore_conditions_spawner_rune.desc": "Força o gerador a ignorar todas as regras de geração",
+    "item.apotheosis.ignore_players_spawner_rune": "Runa da Solidão",
+    "item.apotheosis.ignore_players_spawner_rune.desc": "Permite que o gerador funcione sem um jogador por perto",
+    "item.apotheosis.echoing_spawner_rune": "Runa dos Ecos",
+    "item.apotheosis.echoing_spawner_rune.desc": "As criaturas geradas derrubam cópias adicionais de seus espólios",
+
+    "item.apotheosis.iron_upgrade_smithing_template": "Molde de Ferraria",
+    "upgrade.apotheosis.iron": "Melhoria de Ferro",
+    "item.apotheosis.iron_upgrade_smithing_template.applies_to": "Equipamento de Pedra e Malha",
+    "item.apotheosis.iron_upgrade_smithing_template.ingredients": "4 Lingotes de Ferro",
+    "item.apotheosis.iron_upgrade_smithing_template.base_slot_description": "Adicione armadura de malha ou equipamento de pedra",
+    "item.apotheosis.iron_upgrade_smithing_template.additions_slot_description": "Adicione quatro lingotes de ferro",
+
+    "item.apotheosis.gold_upgrade_smithing_template": "Molde de Ferraria",
+    "upgrade.apotheosis.gold": "Melhoria de Ouro",
+    "item.apotheosis.gold_upgrade_smithing_template.applies_to": "Equipamento de Ferro",
+    "item.apotheosis.gold_upgrade_smithing_template.ingredients": "4 Lingotes de Ouro",
+    "item.apotheosis.gold_upgrade_smithing_template.base_slot_description": "Adicione armadura de ferro, arma ou ferramentas",
+    "item.apotheosis.gold_upgrade_smithing_template.additions_slot_description": "Adicione quatro lingotes de ouro",
+
+    "item.apotheosis.diamond_upgrade_smithing_template": "Molde de Ferraria",
+    "upgrade.apotheosis.diamond": "Melhoria de Diamante",
+    "item.apotheosis.diamond_upgrade_smithing_template.applies_to": "Equipamento Dourado",
+    "item.apotheosis.diamond_upgrade_smithing_template.ingredients": "4 Diamantes",
+    "item.apotheosis.diamond_upgrade_smithing_template.base_slot_description": "Adicione uma armadura, arma ou ferramenta de ouro",
+    "item.apotheosis.diamond_upgrade_smithing_template.additions_slot_description": "Adicione quatro diamantes",
+
+    "block.apotheosis.boss_spawner": "Invasor Enjaulado",
+    "block.apotheosis.gem_cutting_table": "Bancada de Lapidação de Gemas",
+    "block.apotheosis.gem_cutting_table.desc": "Usa Pó de Gema e Materiais de Raridade para aprimorar gemas",
+    "block.apotheosis.salvaging_table": "Bancada de Reciclagem",
+    "block.apotheosis.salvaging_table.desc": "Desmonta itens com afixo em Materiais de Raridade",
+    "block.apotheosis.simple_reforging_table": "Bancada de Reforja Simples",
+    "block.apotheosis.reforging_table": "Bancada de Reforja",
+    "block.apotheosis.reforging_table.desc": "Usa Sigilos do Renascimento e Materiais de Raridade para reforjar itens",
+    "block.apotheosis.reforging_table.desc2": "Raridade máxima: %s",
+    "block.apotheosis.augmenting_table": "Bancada de Aprimoramento",
+    "block.apotheosis.augmenting_table.desc": "Usa Sigilos de Aprimoramento para melhorar afixos individualmente",
+    "block.apotheosis.gem_case": "Estojo de Gemas",
+    "tooltip.apotheosis.gem_case.capacity": "Capacidade: %s gemas",
+    "tooltip.apotheosis.gem_case.unique_gems": "Contém %s gemas diferentes",
+    "tooltip.apotheosis.gem_case.none_owned": "Nenhuma disponível",
+    "block.apotheosis.ender_gem_case": "Estojo de Gemas da Casa Fabergé",
+
+    "button.apotheosis.salvage": "Reciclar itens",
+    "button.apotheosis.no_salvage": "Nenhum item selecionado",
+    "button.apotheosis.no_salvage_all": "Nenhum item válido no inventário",
+    "button.apotheosis.upgrade": "Aprimorar gema",
+    "button.apotheosis.upgrade.no": "Itens necessários ausentes",
+    "button.apotheosis.augmenting.upgrade": "Aprimorar afixo selecionado",
+    "button.apotheosis.augmenting.reroll": "Sortear novamente o afixo selecionado",
+    "button.apotheosis.augmenting.no_selection": "Nenhum afixo selecionado",
+    "button.apotheosis.augmenting.max_level": "Já está no nível máximo",
+    "button.apotheosis.augmenting.no_alternatives": "Nenhum afixo alternativo",
+    "button.apotheosis.augmenting.upgrade.cost": "Custo: %sx %s",
+    "button.apotheosis.augmenting.upgrade.exp_cost": "Custo de experiência: %s níveis",
+    "button.apotheosis.gem_case.upgrade": "Aprimorar 2 gemas %s para %s",
+    "button.apotheosis.gem_case.upgrade_no_gems": "Gemas insuficientes",
+    "button.apotheosis.gem_case.upgrade_no_materials": "Materiais insuficientes",
+    "button.apotheosis.gem_case.upgrade_cost": "Custo: %s %s e %s %s",
+    "button.apotheosis.gem_case.upgrade_all": "Aprimorará o maior número possível de gemas!",
+
+    "menu.apotheosis.gem_cutting": "Lapidação de Gemas",
+    "container.apotheosis.salvage": "Reciclar",
+    "container.apotheosis.reforge": "Reforjar",
+    "text.apotheosis.cost": "%sx %s",
+    "text.apotheosis.reforge_cost": "Custo da reforja",
+    "text.apotheosis.salvage_results": "Resultados da reciclagem",
+    "text.apotheosis.unique": "Único",
+    "text.apotheosis.results": "Resultados",
+    "text.apotheosis.facets": "Facetas: %s",
+    "text.apotheosis.socketable_into": "Encaixa em:",
+    "text.apotheosis.dot_prefix": "• %s",
+    "text.apotheosis.star_prefix": "🌟 %s",
+    "text.apotheosis.socket_limit": "Máximo de encaixes aplicados: %s",
+    "text.apotheosis.gems_returned": "Gemas serão retornadas ao seu inventário",
+    "text.apotheosis.no_upgrade": "Aprimoramento máximo alcançado",
+    "text.apotheosis.cut_cost": "Custo da lapidação de gemas",
+    "text.apotheosis.one_rarity_mat": "Materiais de Raridade (1)",
+    "text.apotheosis.potential_rerolls": "Sorteios possíveis",
+    "text.apotheosis.upgraded_form": "Forma aprimorada",
+    "text.apotheosis.alternative_page": "Página %s/%s (role para mudar)",
+    "text.apotheosis.any_x_item": "Qualquer item %s com afixo",
+    "text.apotheosis.any_affix_item": "Qualquer item com afixo",
+    "text.apotheosis.malice_marker": "A Malícia será aplicada ao fabricar",
+    "text.apotheosis.touched_by_malice": "Tocado por Malícia (x%s)",
+    "text.apotheosis.malice_notice": "Malícia: %s consumiu a força de %s",
+
+    "title.apotheosis.salvaging": "Reciclagem",
+    "title.apotheosis.stoneforming": "Moldagem",
+    "info.apotheosis.stoneforming": "Uma ferramenta com o afixo %s pode converter estes blocos entre si.",
+    "info.apotheosis.stoneforming.target": "Pressione Shift e clique com o botão direito em um bloco para selecionar um alvo.",
+
+    "text.apotheosis.anything": "Qualquer coisa",
+    "loot_category.apotheosis.none": "Nada",
+    "loot_category.apotheosis.none.plural": "Nada",
+    "loot_category.apotheosis.bow": "Arco",
+    "loot_category.apotheosis.bow.plural": "Arcos",
+    "loot_category.apotheosis.crossbow": "Besta",
+    "loot_category.apotheosis.crossbow.plural": "Bestas",
+    "loot_category.apotheosis.breaker": "Ferramenta de Mineração",
+    "loot_category.apotheosis.breaker.plural": "Ferramentas de Mineração",
+    "loot_category.apotheosis.pickaxe": "Picareta",
+    "loot_category.apotheosis.pickaxe.plural": "Picaretas",
+    "loot_category.apotheosis.shovel": "Pá",
+    "loot_category.apotheosis.shovel.plural": "Pás",
+    "loot_category.apotheosis.armor": "Armadura",
+    "loot_category.apotheosis.armor.plural": "Armaduras",
+    "loot_category.apotheosis.shield": "Escudo",
+    "loot_category.apotheosis.shield.plural": "Escudos",
+    "loot_category.apotheosis.trident": "Tridente",
+    "loot_category.apotheosis.trident.plural": "Tridentes",
+    "loot_category.apotheosis.melee_weapon": "Arma Corpo-a-corpo",
+    "loot_category.apotheosis.melee_weapon.plural": "Armas Corpo-a-corpo",
+    "loot_category.apotheosis.helmet": "Capacete",
+    "loot_category.apotheosis.helmet.plural": "Capacetes",
+    "loot_category.apotheosis.chestplate": "Peitoral",
+    "loot_category.apotheosis.chestplate.plural": "Peitorais",
+    "loot_category.apotheosis.leggings": "Calça",
+    "loot_category.apotheosis.leggings.plural": "Calças",
+    "loot_category.apotheosis.boots": "Bota",
+    "loot_category.apotheosis.boots.plural": "Botas",
+    "loot_category.apotheosis.shears": "Tesoura",
+    "loot_category.apotheosis.shears.plural": "Tesouras",
+
+    "info.apotheosis.boss_spawn": "%s despertou por perto!",
+    "info.apotheosis.boss": "Invasor Apótico %s",
+    "info.apotheosis.boss_item": "Derrubará: %s",
+    "info.apotheosis.boss_modifiers": "Modificadores do chefe:",
+    "info.apotheosis.rarity_material": "Material de Raridade (%s)",
+    "info.apotheosis.gem_crushing": "Seu primeiro Pó de Gema é obtido ao jogar qualquer Gema Apótica no chão e deixar uma Bigorna cair sobre ela.\n\nDepois disso, use a Bancada de Reciclagem.",
+    "info.apotheosis.gem_extraction": "Usado em uma Bancada de Ferraria para desencaixar Gemas Apóticas.\n\nO item será destruído no processo.",
+    "info.apotheosis.gem_expulsion": "Usado em uma Bancada de Ferraria para desencaixar Gemas Apóticas.\n\nAs gemas serão destruídas no processo.",
+    "info.apotheosis.unnaming": "Usado em uma Bancada de Ferraria para remover do nome do item os componentes de afixo.",
+    "info.apotheosis.salvaging": "Materiais de Raridade são obtidos ao desmontar itens com afixo em uma Bancada de Reciclagem.",
+    "info.apotheosis.criteria_done": "☑ %s",
+    "info.apotheosis.criteria_unfinished": "☐ %s",
+    "info.apotheosis.criteria_unknown": "❓ %s",
+
+    "rarity.apotheosis:common": "Comum",
+    "rarity.apotheosis:uncommon": "Incomum",
+    "rarity.apotheosis:rare": "Raro",
+    "rarity.apotheosis:epic": "Épico",
+    "rarity.apotheosis:mythic": "Mítico",
+    "rarity.apotheosis:ancient": "Ancestral",
+
+    "death.attack.apotheosis:psychic": "Um ataque refletido matou %s.",
+    "death.attack.apotheosis:psychic.player": "%s teve seu ataque refletido por %s.",
+
+    "disconnect.apotheosis.tier_changes_disabled": "As alterações manuais de Nível de Mundo estão desativadas na configuração.",
+
+    "elite.apotheosis.craig": "Craig o Eterno",
+
+    "comment_id": "/Adventure + Gateways Compat",
+
+    "misc.apotheosis.random": "Aleatório",
+    "wave_entity.apotheosis.invader": "Invasor Apótico %s",
+    "wave_entity.apotheosis.elite": "Elite Apótica - %s",
+    "wave_entity.apotheosis.true_random_invader": "Invasor Apótico Totalmente Aleatório",
+    "reward.apotheosis.affix_item": "Item com Afixo (%s)",
+    "reward.apotheosis.random_affix_item": "Item com Afixo (Aleatório)",
+    "reward.apotheosis.gem": "Gema Apótica (%s)",
+    "reward.apotheosis.random_gem": "Gema Apótica (Aleatória)",
+    "reward.apotheosis.true_random_gem": "Gema Apótica Totalmente Aleatória",
+    "reward.apotheosis.netherite_smithing_template": "Molde de Ferraria de Netherita",
+    "error.apotheosis.gate_tier_incorrect": "Este Portal só pode ser aberto no Nível de Mundo: %s",
+    "modifier.apotheosis.affix": "Concede um item com afixo",
+    "tooltip.apotheosis.requires_world_tier": "Requer Nível de Mundo: %s",
+
+    "wave_entity.apotheosis.affixed_armored_zombie": "Zumbi Armadurado com Afixo",
+    "wave_entity.apotheosis.affixed_armored_husk": "Zumbi-Múmia Armadurado com Afixo",
+    "wave_entity.apotheosis.affixed_armored_skeleton": "Esqueleto Armadurado com Afixo",
+    "wave_entity.apotheosis.affixed_armored_stray": "Errante Armadurado com Afixo",
+    "wave_entity.apotheosis.affixed_polar_bear": "Urso-Polar com Afixo",
+    "wave_entity.apotheosis.affixed_wolf": "Lobo com Afixo",
+    "wave_entity.apotheosis.affixed_armored_bogged": "Pantanoso Armadurado com Afixo",
+    "wave_entity.apotheosis.vampiric_phantom": "Espectro Vampírico",
+    "wave_entity.apotheosis.nether_herald": "Arauto do Nether",
+    "wave_entity.apotheosis.affixed_armored_zombified_piglin": "Piglin-Zumbi Armadurado com Afixo",
+    "wave_entity.apotheosis.affixed_armored_wither_skeleton": "Esqueleto Wither Armadurado com Afixo",
+    "wave_entity.apotheosis.ghast_rider": "Cavaleiro Ghast",
+    "wave_entity.apotheosis.affixed_armored_piglin_brute": "Piglin Bárbaro Armadurado com Afixo",
+    "wave_entity.apotheosis.bastion_guard": "Guarda de Elite do Bastião",
+    "wave_entity.apotheosis.killer_bunny": "Coelho Assassino",
+
+    "reward.apotheosis.desert_pyramid_loot": "Tesouro da Pirâmide do Deserto",
+    "reward.apotheosis.woodland_mansion_loot": "Tesouro da Mansão da Floresta",
+
+    "apotheosis.tiered/frontier": "Portal da Primeira Fronteira",
+    "apotheosis.tiered/ascent": "Portal da Ascensão Iluminada",
+    "apotheosis.tiered/summit": "Portal do Cume Trovejante",
+    "apotheosis.tiered/pinnacle": "Portal do Pináculo Apótico",
+    "apotheosis.endless_invader": "Portal Infinito dos Invasores Apóticos",
+
+    "comment_id": "/Advancements",
+
+    "advancements.apotheosis.progression.root.title": "Níveis de Mundo apóticos",
+    "advancements.apotheosis.progression.root.desc": "Marcos para desbloquear os Níveis de Mundo do Apotheosis\nPressione CTRL+T para abrir a tela de seleção",
+
+    "advancements.apotheosis.progression.haven.title": "Nível de Mundo: Refúgio",
+    "advancements.apotheosis.progression.haven.desc": "O Refúgio é desbloqueado quando você encontra seu primeiro item com afixo e é ativado por padrão",
+    "advancements.apotheosis.progression.haven.criteria.affixed": "Pegue um item com afixo",
+
+    "advancements.apotheosis.progression.frontier.title": "Nível de Mundo: Fronteira",
+    "advancements.apotheosis.progression.frontier.desc": "Equipe um conjunto completo de itens com afixo para avançar até a Fronteira\nApós desbloqueá-la, use CTRL+T para ativá-la",
+    "advancements.apotheosis.progression.frontier.criteria.common_helm": "Equipe um capacete comum",
+    "advancements.apotheosis.progression.frontier.criteria.common_chest": "Equipe um peitoral comum",
+    "advancements.apotheosis.progression.frontier.criteria.common_legs": "Equipe calças comuns",
+    "advancements.apotheosis.progression.frontier.criteria.common_feet": "Equipe botas comuns",
+    "advancements.apotheosis.progression.frontier.criteria.common_hand": "Equipe uma arma comum",
+
+    "advancements.apotheosis.progression.ascent.title": "Nível de Mundo: Ascensão",
+    "advancements.apotheosis.progression.ascent.desc": "Equipe um conjunto completo de equipamentos incomuns e mate um Invasor Apótico para iniciar sua Ascensão",
+    "advancements.apotheosis.progression.ascent.criteria.uncommon_helm": "Equipe um capacete incomum",
+    "advancements.apotheosis.progression.ascent.criteria.uncommon_chest": "Equipe um peitoral incomum",
+    "advancements.apotheosis.progression.ascent.criteria.uncommon_legs": "Equipe calças incomuns",
+    "advancements.apotheosis.progression.ascent.criteria.uncommon_feet": "Equipe botas incomuns",
+    "advancements.apotheosis.progression.ascent.criteria.uncommon_hand": "Equipe uma arma incomum",
+    "advancements.apotheosis.progression.ascent.criteria.kill_apothic_invader": "Mate um Invasor Apótico",
+
+    "advancements.apotheosis.progression.summit.title": "Nível de Mundo: Cume",
+    "advancements.apotheosis.progression.summit.desc": "Para alcançar o Cume, mate o Wither e equipe um conjunto completo de equipamentos raros",
+    "advancements.apotheosis.progression.summit.criteria.rare_helm": "Equipe um capacete raro",
+    "advancements.apotheosis.progression.summit.criteria.rare_chest": "Equipe um peitoral raro",
+    "advancements.apotheosis.progression.summit.criteria.rare_legs": "Equipe calças raras",
+    "advancements.apotheosis.progression.summit.criteria.rare_feet": "Equipe botas raras",
+    "advancements.apotheosis.progression.summit.criteria.rare_hand": "Equipe uma arma rara",
+    "advancements.apotheosis.progression.summit.criteria.kill_wither": "Mate o Wither",
+
+    "advancements.apotheosis.progression.pinnacle.title": "Nível de Mundo: Pináculo",
+    "advancements.apotheosis.progression.pinnacle.desc": "Para entrar no Pináculo, liberte o End e adquira um conjunto completo de equipamentos épicos",
+    "advancements.apotheosis.progression.pinnacle.criteria.epic_helm": "Equipe um capacete épico",
+    "advancements.apotheosis.progression.pinnacle.criteria.epic_chest": "Equipe um peitoral épico",
+    "advancements.apotheosis.progression.pinnacle.criteria.epic_legs": "Equipe calças épicas",
+    "advancements.apotheosis.progression.pinnacle.criteria.epic_feet": "Equipe botas épicas",
+    "advancements.apotheosis.progression.pinnacle.criteria.epic_hand": "Equipe uma arma épica",
+    "advancements.apotheosis.progression.pinnacle.criteria.kill_ender_dragon": "Mate o Dragão Ender",
+
+    "advancements.apotheosis.affix": "Afixos apóticos",
+    "advancements.apotheosis.affix.desc": "Encontre um item com um afixo apótico",
+
+    "advancements.apotheosis.rare": "Equipamento digno",
+    "advancements.apotheosis.rare.desc": "Encontre um item raro com afixo",
+
+    "advancements.apotheosis.epic": "Épico!",
+    "advancements.apotheosis.epic.desc": "Encontre um item épico com afixo",
+
+    "advancements.apotheosis.mythic": "Forjado pelos titãs",
+    "advancements.apotheosis.mythic.desc": "Encontre um item mítico com afixo",
+
+    "advancements.apotheosis.ancient": "Tesouros perdidos dos deuses",
+    "advancements.apotheosis.ancient.desc": "Encontre um item ancestral",
+
+    "advancements.apotheosis.boss": "Ele não era tão forte",
+    "advancements.apotheosis.boss.desc": "Mate um Invasor Apótico e recupere o item com afixo dele",
+    "advancements.apotheosis.chests": "Eu encontrei isso embaixo da terra",
+    "advancements.apotheosis.chests.desc": "Encontre um item com afixo em um Baú",
+    "advancements.apotheosis.merchant": "Fechei negócio",
+    "advancements.apotheosis.merchant.desc": "Compre um item com afixo de um Vendedor Ambulante",
+    "advancements.apotheosis.random": "Como você conseguiu isso?",
+    "advancements.apotheosis.random.desc": "Obtenha um item com afixo de uma criatura aleatória",
+
+    "advancements.apotheosis.gem": "Não é um diamante",
+    "advancements.apotheosis.gem.desc": "Encontre uma Gema Apótica que pode ser encaixada em itens com afixo",
+
+    "advancements.apotheosis.rare_gem": "Longe da perfeição",
+    "advancements.apotheosis.rare_gem.desc": "Adquira uma Gema Imperfeita",
+
+    "advancements.apotheosis.mythic_gem": "Cristais impecáveis",
+    "advancements.apotheosis.mythic_gem.desc": "Adquira uma Gema Impecável",
+
+    "advancements.apotheosis.ancient_gem": "Joias do infinito",
+    "advancements.apotheosis.ancient_gem.desc": "Use a Bancada de Lapidação de Gemas para criar uma Gema Perfeita",
+
+    "advancements.apotheosis.socket": "O joalheiro",
+    "advancements.apotheosis.socket.desc": "Use uma Bancada de Ferraria para encaixar uma gema em um item",
+
+    "advancements.apotheosis.gem_cut": "O lapidário",
+    "advancements.apotheosis.gem_cut.desc": "Use a Bancada de Lapidação de Gemas para aprimorar uma Gema Apótica",
+
+    "advancements.apotheosis.challenge_gates.frontier.title": "Deixe a Fronteira",
+    "advancements.apotheosis.challenge_gates.frontier.desc": "Complete o Portal da Primeira Fronteira",
+
+    "advancements.apotheosis.challenge_gates.ascent.title": "Conclua sua Ascensão",
+    "advancements.apotheosis.challenge_gates.ascent.desc": "Complete o Portal da Ascensão Iluminada",
+
+    "advancements.apotheosis.challenge_gates.summit.title": "Alcance o Cume",
+    "advancements.apotheosis.challenge_gates.summit.desc": "Complete o Portal do Cume Trovejante",
+
+    "advancements.apotheosis.challenge_gates.pinnacle.title": "No Pináculo",
+    "advancements.apotheosis.challenge_gates.pinnacle.desc": "Complete o Portal do Pináculo Apótico",
+
+    "advancements.apotheosis.challenge_gates.sigil_of_supremacy.title": "Supremacia!",
+    "advancements.apotheosis.challenge_gates.sigil_of_supremacy.desc": "Adquira um Sigilo da Supremacia na onda 100 do Portal Infinito dos Invasores Apóticos",
+
+    "comment_id": "/Potion Module",
+
+    "item.apotheosis.lucky_foot": "Pé de Coelho da Sorte",
+
+    "item.apotheosis.potion_charm_broke": "Amuleto de Poção Inválido",
+    "item.apotheosis.potion_charm": "Amuleto de %s",
+    "item.apotheosis.potion_charm.desc": "Aplica %s quando ativo e no inventário.",
+    "item.apotheosis.potion_charm.desc2": "%s - Clique com o botão direito para alternar.",
+    "item.apotheosis.potion_charm.desc3": "Fonte: %s",
+    "item.apotheosis.potion_charm.enabled": "Ativado",
+    "item.apotheosis.potion_charm.disabled": "Desativado",
+    "item.apotheosis.potion_charm.curios_only": "Funciona apenas em um espaço de Curios",
+    "misc.apotheosis.blacklisted_potion": "Não pode ser convertido em um Amuleto de Poção.",
+
+    "comment_id": "/Garden Module",
+    "item.apotheosis.ender_lead": "Laço do Ender",
+    "info.apotheosis.noentity": "Entidade guardada: nenhuma",
+    "info.apotheosis.containedentity": "Entidade guardada: %s",
+    "info.apotheosis.ender_lead": "O Laço do Ender pode ser usado para transportar animais. Dê um soco em um animal para capturá-lo e clique com o botão direito para soltá-lo. O laço não funciona com outros tipos de entidade.",
+
+    "comment_id": "/Wanderer Trades",
+    "name.apotheosis.captive_dreams": "Sonhos Aprisionados",
+    "name.apotheosis.stonebreaker": "Quebra-pedra",
+    "name.apotheosis.treecapitator": "Corta-árvores",
+    "name.apotheosis.bonesplitter": "Quebra-ossos",
+    "name.apotheosis.arachnids_fear": "Medo da Aranha",
+    "name.apotheosis.timeworn_visage": "Face Envelhecida",
+    "name.apotheosis.greatplate_of_eternity": "Grande Peitoral da Eternidade",
+    "name.apotheosis.thunder_forged_legguards": "Perneiras Forjadas pelo Trovão",
+    "name.apotheosis.rune_forged_greaves": "Grevas Forjadas em Runas",
+    "name.apotheosis.eternal_vigilance": "Vigilância Eterna",
+
+    "comment_id": "/Misc",
+    "info.apoth.modifier_disabled": "Este modificador está desativado",
+    "itemGroup.apotheosis.adventure": "Apotheosis: Módulo de Aventura",
+    "itemGroup.apotheosis.ench": "Apotheosis: Módulo de Encantamento",
+    "config.jade.plugin_apotheosis.spawner": "Módulo de Gerador Apótico",
+    "config.jade.plugin_apotheosis.ench": "Módulo de Encan. Apótico",
+    "config.jade.plugin_apotheosis.adventure": "Módulo de Aventura Apótico",
+    "message.apotheosis.item_linking_disabled": "O compartilhamento de itens foi desativado pelo servidor.",
+    "text.apotheosis.equipped": "Equipado",
+
+    "item.apotheosis.music_disc_flash": "Disco Musical",
+    "jukebox_song.apotheosis.flash": "Renren - Flash",
+    "subtitle.apotheosis.music_disc.flash": "Renren - Flash",
+
+    "item.apotheosis.music_disc_glimmer": "Disco Musical",
+    "jukebox_song.apotheosis.glimmer": "Caner Crebes - Glimmer",
+    "subtitle.apotheosis.music_disc.glimmer": "Caner Crebes - Glimmer",
+
+    "item.apotheosis.music_disc_shimmer": "Disco Musical",
+    "jukebox_song.apotheosis.shimmer": "Chamberlain Kaifry - Shimmer",
+    "subtitle.apotheosis.music_disc.shimmer": "Chamberlain Kaifry - Shimmer",
+
+    "painting.apotheosis.gems.title": "Gems",
+    "painting.apotheosis.gems.author": "Faellynna",
+
+    "painting.apotheosis.craig.title": "Craig the Eternal",
+    "painting.apotheosis.craig.author": "Astrel",
+
+    "painting.apotheosis.tower.title": "The Tower",
+    "painting.apotheosis.tower.author": "Faellynna",
+
+    "painting.apotheosis.enchanting_table.title": "Apothic Enchanting",
+    "painting.apotheosis.enchanting_table.author": "Faellynna",
+
+    "painting.apotheosis.window.title": "A View Beyond",
+    "painting.apotheosis.window.author": "Faellynna",
+
+    "stat.apotheosis.world_tiers_activated": "Nível de Mundo alterado",
+    "apotheosis.subtitle.reforge_item_placed": "Item colocado na Bancada de Reforja",
+    "apotheosis.subtitle.reforge_item_reforged": "Item reforjado",
+    "apotheosis.subtitle.malice": "Sigilo da Malícia aplica malícia",
+
+    "apotheosis.subtitle.invader_uncommon": "Invasor Apótico Incomum surge",
+    "apotheosis.subtitle.invader_rare": "Invasor Apótico Raro surge",
+    "apotheosis.subtitle.invader_epic": "Invasor Apótico Épico surge",
+    "apotheosis.subtitle.invader_mythic": "Invasor Apótico Mítico surge",
+    
+    "comment_id": "Guidebook",
+    "book.apotheosis.name": "Crônica das Sombras",
+    "book.apotheosis.subtitle": "Guia Apótico",
+    "book.apotheosis.landing": "Bem-vindo ao mundo do Apotheosis.$(br2)O Apotheosis é organizado em $(#8080FF)módulos$(), assim como o conteúdo deste livro.$(br2)Os módulos desativados ficam ocultos."
+}

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirtrees:block/slimy_delight_log_top",
+  "side": "diaithirtrees:block/slimy_delight_log"
+ }
+}

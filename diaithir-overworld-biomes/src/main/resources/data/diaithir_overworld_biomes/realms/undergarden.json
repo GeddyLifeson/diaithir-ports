@@ -1442,7 +1442,7 @@
    "role": "monster",
    "hp": 40,
    "atk": 5,
-   "scale": 1.0
+   "scale": 1.04
   },
   {
    "id": "denizen",
@@ -1450,7 +1450,7 @@
    "role": "monster",
    "hp": 24,
    "atk": 5,
-   "scale": 1.0
+   "scale": 0.94
   },
   {
    "id": "dweller",
@@ -1458,7 +1458,7 @@
    "role": "monster",
    "hp": 40,
    "atk": 5,
-   "scale": 1.0
+   "scale": 1.33
   },
   {
    "id": "forgotten",
@@ -1466,7 +1466,7 @@
    "role": "monster",
    "hp": 100,
    "atk": 9,
-   "scale": 1.0
+   "scale": 1.06
   },
   {
    "id": "forgotten_guardian",
@@ -1474,7 +1474,7 @@
    "role": "boss",
    "hp": 700,
    "atk": 18,
-   "scale": 1.6
+   "scale": 1.61
   },
   {
    "id": "gloomper",
@@ -1482,7 +1482,7 @@
    "role": "passive",
    "hp": 8,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.88
   },
   {
    "id": "greater_dweller",
@@ -1490,7 +1490,7 @@
    "role": "boss",
    "hp": 400,
    "atk": 10,
-   "scale": 1.6
+   "scale": 1.9
   },
   {
    "id": "gwib",
@@ -1498,7 +1498,7 @@
    "role": "passive",
    "hp": 15,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.91
   },
   {
    "id": "gwibling",
@@ -1506,7 +1506,7 @@
    "role": "passive",
    "hp": 15,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.86
   },
   {
    "id": "minion",
@@ -1514,7 +1514,7 @@
    "role": "monster",
    "hp": 24,
    "atk": 5,
-   "scale": 1.0
+   "scale": 1.08
   },
   {
    "id": "mog",
@@ -1522,7 +1522,7 @@
    "role": "passive",
    "hp": 20,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.97
   },
   {
    "id": "muncher",
@@ -1530,7 +1530,7 @@
    "role": "monster",
    "hp": 60,
    "atk": 7,
-   "scale": 1.0
+   "scale": 1.3
   },
   {
    "id": "nargoyle",
@@ -1538,7 +1538,7 @@
    "role": "monster",
    "hp": 100,
    "atk": 9,
-   "scale": 1.0
+   "scale": 0.95
   },
   {
    "id": "rotbeast",
@@ -1546,7 +1546,7 @@
    "role": "monster",
    "hp": 60,
    "atk": 7,
-   "scale": 1.0
+   "scale": 0.94
   },
   {
    "id": "rotbelcher",
@@ -1554,7 +1554,7 @@
    "role": "monster",
    "hp": 60,
    "atk": 7,
-   "scale": 1.0
+   "scale": 1.31
   },
   {
    "id": "rotling",
@@ -1562,7 +1562,7 @@
    "role": "monster",
    "hp": 8,
    "atk": 1.5,
-   "scale": 1.0
+   "scale": 0.82
   },
   {
    "id": "rotwalker",
@@ -1570,7 +1570,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.08
   },
   {
    "id": "scintling",
@@ -1578,7 +1578,7 @@
    "role": "monster",
    "hp": 8,
    "atk": 1.5,
-   "scale": 1.0
+   "scale": 1.14
   },
   {
    "id": "smog_mog",
@@ -1586,7 +1586,7 @@
    "role": "passive",
    "hp": 20,
    "atk": 2,
-   "scale": 1.0
+   "scale": 1.14
   },
   {
    "id": "sploogie",
@@ -1602,7 +1602,7 @@
    "role": "passive",
    "hp": 50,
    "atk": 2,
-   "scale": 1.0
+   "scale": 1.12
   },
   {
    "id": "undergar",
@@ -1610,7 +1610,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.38
   }
  ]
 }
