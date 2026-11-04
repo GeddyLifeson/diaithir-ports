@@ -1,0 +1,35 @@
+{
+ "general": {
+  "name": "Debug H",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:1"
+   ]
+  ]
+ },
+ "textureName": "instruments.png",
+ "components": [
+  {
+   "xCenter": 0,
+   "yCenter": 0,
+   "scale": 1.0,
+   "textObject": {
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": 3.0,
+    "defaultText": "H 200,100",
+    "maxLength": 12,
+    "color": "#FFFF00",
+    "renderPosition": 1
+   }
+  }
+ ]
+}
