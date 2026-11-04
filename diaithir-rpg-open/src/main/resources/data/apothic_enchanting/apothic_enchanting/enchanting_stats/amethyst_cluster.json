@@ -1,0 +1,8 @@
+{
+    "blocks": "minecraft:amethyst_cluster",
+    "stats": {
+        "eterna": 1.0,
+        "maxEterna": 40.0,
+        "quanta": -1.0
+    }
+}

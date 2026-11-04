@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:oak_planks",
+  "C": "minecraft:chest"
+ },
+ "pattern": [
+  "PPP",
+  "PCP",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:oak_wardrobe",
+  "count": 1
+ }
+}

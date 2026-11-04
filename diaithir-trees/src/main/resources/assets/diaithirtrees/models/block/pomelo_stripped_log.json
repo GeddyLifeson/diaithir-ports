@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirtrees:block/pomelo_stripped_log_top",
+  "side": "diaithirtrees:block/pomelo_stripped_log"
+ }
+}

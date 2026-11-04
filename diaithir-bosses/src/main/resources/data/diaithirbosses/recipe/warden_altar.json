@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "C": "minecraft:cobblestone",
+  "F": "minecraft:flint"
+ },
+ "pattern": [
+  "CCC",
+  "CFC",
+  "CCC"
+ ],
+ "result": {
+  "id": "diaithirbosses:warden_altar",
+  "count": 1
+ }
+}
