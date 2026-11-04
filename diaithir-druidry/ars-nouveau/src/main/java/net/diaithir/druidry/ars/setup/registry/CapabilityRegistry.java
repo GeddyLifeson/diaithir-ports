@@ -10,6 +10,7 @@ import net.diaithir.druidry.ars.api.spell.IResolveListener;
 import net.diaithir.druidry.ars.common.capability.ANPlayerDataCap;
 import net.diaithir.druidry.ars.common.capability.IPlayerCap;
 import net.diaithir.druidry.ars.common.capability.ManaCap;
+import net.diaithir.druidry.ars.common.capability.SourceEnergyHandler;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
@@ -71,6 +72,12 @@ public class CapabilityRegistry {
         for (var container : sourceContainers) {
             event.registerBlockEntity(SOURCE_CAPABILITY, container.get(), (sourceJar, side) -> sourceJar.getSourceStorage());
         }
+
+        // Stored Source as FE at 1 Source = 1000 J, extract-only. The creative jar is left out: it would be free infinite FE.
+        event.registerBlockEntity(Capabilities.Energy.BLOCK, BlockRegistry.SOURCE_JAR_TILE.get(),
+                (jar, side) -> new SourceEnergyHandler(jar::getSourceStorage));
+        event.registerBlockEntity(Capabilities.Energy.BLOCK, BlockRegistry.ARCANE_RELAY_TILE.get(),
+                (relay, side) -> new SourceEnergyHandler(relay::getSourceStorage));
 
     }
 
