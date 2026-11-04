@@ -67820,7 +67820,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-client-suite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "5e6641a63c0530b1491df11a614895a54be50bbda0e32c962bb76d72bb1d6061"
+hash = "3f9f851ed499ec5765edacb88519870e09a5783237d6748e0c229da7698dafe4"
 metafile = true
 
 [[files]]
@@ -67846,11 +67846,6 @@ file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
 
 [[files]]
-file = "mods/diaithir-hud-overlays-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "2942950e442f19b69da5becd5a36a658713faa5bb685d0a6169254b80da7c21d"
-metafile = true
-
-[[files]]
 file = "mods/diaithir-inventory-ui-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "233e5a0dfa528f2ffcd3246859e236dcd0896f476aec2d454b0116fc92d64137"
 metafile = true
@@ -67862,7 +67857,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-platform-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "cf696312d7fdcac60c80ba8c643f274ba2d046659f1ece3800ff78256cb753e9"
+hash = "67c30479de92d9ba7e67a9df6526ad6abc7a95e1f9cd36c5b40392166a6b8186"
 
 [[files]]
 file = "mods/diaithir-power-suite-neoforge-26.1.2-1.0.0.jar"
@@ -67874,7 +67869,7 @@ hash = "4fc988eb8d7cb821375d657fa862ee2676541a5bd50a480b22ce1339962ce734"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "85bdbdbce4dc2b558b1461561f37b6e7524092466f81d8c49290ad2576deb6a2"
+hash = "3d654ce948a8e0ac419f92fa0fec5d252869febb974fca7aeccbbc8a097a2c81"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
