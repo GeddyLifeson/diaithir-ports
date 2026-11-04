@@ -67659,7 +67659,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-tech-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "fc6f1ae44064b3ef85fabcb9255e85494fe92496cad84e937dc30997e125e297"
+hash = "3dcd126e1cca11550a6a64daf73b8de90b599fb2a58ab1512fde4d92d0ce455b"
 
 [[files]]
 file = "mods/diaithir-world-suite-neoforge-26.1.2-1.0.0.jar"
@@ -67884,11 +67884,6 @@ metafile = true
 [[files]]
 file = "mods/the_bumblezone-7.18.4_26.1.2-neoforge.pw.toml"
 hash = "96adf55a3652b757dc1bff3cefba73415f35100d709d5364678ab99421af55f0"
-metafile = true
-
-[[files]]
-file = "mods/titanium-26.1.2-4.0.12.pw.toml"
-hash = "bf69be1e57fb8ad8d512a1415d47d0d03a8699e12fe735dabf8adec0b9acc518"
 metafile = true
 
 [[files]]
