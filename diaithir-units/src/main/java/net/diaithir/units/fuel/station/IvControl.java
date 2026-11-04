@@ -63,6 +63,26 @@ final class IvControl {
         return n;
     }
 
+    /** Describes every in-flight IV bullet within reach: position, motion vector and last hit. Keyed by identity so callers can track birth and death. */
+    static java.util.Map<Object, String> bullets(Level level, Vec3 at, double reach) {
+        java.util.Map<Object, String> out = new java.util.IdentityHashMap<>();
+        for (Object b : IvTargets.vehicles(level, new AABB(at, at).inflate(reach))) {
+            if (!b.getClass().getSimpleName().equals("EntityBullet")) continue;
+            try {
+                Object pos = b.getClass().getField("position").get(b);
+                Object mot = b.getClass().getField("motion").get(b);
+                out.put(b, String.format("pos=(%.1f,%.1f,%.1f) motion=(%.2f,%.2f,%.2f) lastHit=%s", d(pos, "x"), d(pos, "y"), d(pos, "z"), d(mot, "x"), d(mot, "y"), d(mot, "z"), b.getClass().getField("lastHit").get(b)));
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                out.put(b, "bullet=?" + ex.getClass().getSimpleName());
+            }
+        }
+        return out;
+    }
+
+    private static double d(Object o, String f) throws ReflectiveOperationException {
+        return (double) o.getClass().getField(f).get(o);
+    }
+
     private static Object nearest(Level level, Vec3 at, double reach) {
         Object best = null;
         double bestD = Double.MAX_VALUE;

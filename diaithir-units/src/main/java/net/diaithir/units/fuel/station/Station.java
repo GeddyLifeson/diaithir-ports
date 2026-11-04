@@ -69,6 +69,17 @@ public final class Station {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.ServerTickEvent.Post.class, e -> {
+            if (fireSource != null && (fireLeft > 0 || !shots.isEmpty() || shotWatch > 0)) {
+                var bp = fireSource.getEntity() != null ? fireSource.getEntity().position() : fireSource.getPosition();
+                var now = IvControl.bullets(fireSource.getLevel(), bp, 150.0);
+                for (var en : now.entrySet()) if (shots.put(en.getKey(), en.getValue()) == null) fireSource.sendSuccess(() -> Component.literal("shot fired " + en.getValue()), false);
+                for (var it = shots.entrySet().iterator(); it.hasNext(); ) {
+                    var en = it.next();
+                    if (!now.containsKey(en.getKey())) { String last = en.getValue(); fireSource.sendSuccess(() -> Component.literal("shot ended " + last), false); it.remove(); }
+                    else en.setValue(now.get(en.getKey()));
+                }
+                if (shotWatch > 0) shotWatch--;
+            }
             if (fireLeft > 0 && fireSource != null) {
                 var pos = fireSource.getEntity() != null ? fireSource.getEntity().position() : fireSource.getPosition();
                 IvControl.trigger(fireSource.getLevel(), pos, 8.0, fireLeft-- == fireTotal);
@@ -124,14 +135,15 @@ public final class Station {
     private static net.minecraft.commands.CommandSourceStack watchSource;
     private static int watchLeft;
     private static net.minecraft.commands.CommandSourceStack fireSource;
-    private static int fireLeft, fireTotal;
+    private static int fireLeft, fireTotal, shotWatch;
+    private static final java.util.Map<Object, String> shots = new java.util.IdentityHashMap<>();
 
     /** Holds the trigger of the nearest vehicle's guns for the given ticks (same as holding IV's fire key from the controller seat). */
     private static int fire(net.minecraft.commands.CommandSourceStack src, int ticks) {
         var pos = src.getEntity() != null ? src.getEntity().position() : src.getPosition();
         int n = IvControl.trigger(src.getLevel(), pos, 8.0, true);
         if (n <= 0) { src.sendFailure(Component.literal(n < 0 ? "No vehicle within 8 blocks" : "That vehicle has no gun")); return 0; }
-        fireSource = src; fireTotal = ticks; fireLeft = ticks - 1;
+        fireSource = src; fireTotal = ticks; fireLeft = ticks - 1; shotWatch = ticks + 100;
         src.sendSuccess(() -> Component.literal("Trigger held on " + n + " gun(s) for " + ticks + " ticks"), false);
         return 1;
     }
