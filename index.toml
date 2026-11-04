@@ -1,9 +1,8 @@
 hash-format = "sha256"
 
 [[files]]
-file = "options.txt"
-hash = "f9f47182cb70a7c6a43ab7db46a92878c7ab45682cb2f4a8e8b8ba08c409ad56"
-preserve = true
+file = "keybinds.txt"
+hash = "7c94295f04a1c53ff70d245e6d61ae68ffe9d85882bb9f9bd98a0801171c7732"
 
 [[files]]
 file = "config/DistantHorizons.toml"

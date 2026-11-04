@@ -24,14 +24,15 @@ def ctxset(c):
 
 def load_overrides(root):
     o = {}
-    p = os.path.join(root or '', 'options.txt')
-    if os.path.exists(p):
+    for fn in ('options.txt', 'keybinds.txt'):
+        p = os.path.join(root or '', fn)
+        if not os.path.exists(p): continue
         for l in open(p):
-            if l.startswith('key_'):
-                n, v = l.strip()[4:].split(':', 1)
-                v, _, mod = v.partition(':')
-                k = v.replace('key.keyboard.', '').upper().replace('LEFT.', 'L').replace('RIGHT.', 'R').replace('.', '_')
-                o[n] = (k, mod.upper() or 'NONE')
+            if not l.startswith('key_'): continue
+            n, v = l.strip()[4:].split(':', 1)
+            v, _, mod = v.partition(':')
+            k = v.replace('key.keyboard.', '').replace('key.mouse.', 'MOUSE_').upper().replace('LEFT.', 'L').replace('RIGHT.', 'R').replace('.', '_')
+            o[n] = (LK.get(k, k), mod.upper() or 'NONE')
     return o
 
 def main():
