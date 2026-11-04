@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:karugurn_drugak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:karugurn_gothuktun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:karugurn_gouktuthurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:karugurn_karouktoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:karugurn_karurnoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:karugurn_thogak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:karugurn_thothar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:karugurn_vorougok",
+   "required": false
+  }
+ ]
+}

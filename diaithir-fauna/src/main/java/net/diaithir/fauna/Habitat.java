@@ -58,6 +58,29 @@ public final class Habitat {
         return m;
     }
 
+    /**
+     * Habitat bits for the planets' own biomes (diaithir_planets:<planet>_<name>), which carry no vanilla tags: water and cave kinds from the
+     * biome name suffix, land from its temperature and the height above sea level. Vanilla biomes (the Overworld planet) use {@link #mask}.
+     */
+    public static int planetMask(ServerLevelAccessor level, BlockPos pos) {
+        Holder<Biome> b = level.getBiome(pos);
+        var key = b.unwrapKey().map(k -> k.identifier()).orElse(null);
+        if (key == null || key.getNamespace().equals("minecraft")) return mask(level, pos);
+        String p = key.getPath();
+        if (p.endsWith("_deep_sea")) return bits("ocean_deep", "ocean_cold", "ocean_warm");
+        if (p.endsWith("_sea") || p.endsWith("_ocean")) return bits("ocean_warm", "ocean_cold", "reef", "coast");
+        if (p.endsWith("_river")) return bits("river", "lake", "wetland");
+        if (p.endsWith("_shore")) return bits("coast", "island", "plains");
+        if (p.endsWith("_grottoes") || p.endsWith("_hollows") || p.endsWith("_cave")) return bit("cave");
+        float t = b.value().getBaseTemperature();
+        int m = t < 0.1f ? bits("icy", "tundra", "taiga", "mountain")
+                : t < 0.45f ? bits("taiga", "forest", "plains", "grassland", "lake", "wetland")
+                : t < 0.85f ? bits("forest", "plains", "grassland", "swamp", "wetland", "lake", "jungle")
+                : bits("desert", "badlands", "savanna", "jungle", "grassland", "plains");
+        if (level instanceof ServerLevel sl && pos.getY() > sl.getSeaLevel() + 35) m |= bit("mountain");
+        return m;
+    }
+
     /** Species of a plan that can live here now. */
     public static List<Species> candidates(String plan, ServerLevelAccessor level, BlockPos pos) {
         int mask = mask(level, pos);

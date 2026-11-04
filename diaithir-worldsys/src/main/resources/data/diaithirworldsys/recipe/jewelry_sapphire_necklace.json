@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SIS",
+  "S S",
+  " G "
+ ],
+ "key": {
+  "S": "#c:strings",
+  "I": "#c:ingots/gold",
+  "G": "#c:gems/sapphire"
+ },
+ "result": {
+  "id": "diaithirworldsys:jewelry_sapphire_necklace",
+  "count": 1
+ }
+}

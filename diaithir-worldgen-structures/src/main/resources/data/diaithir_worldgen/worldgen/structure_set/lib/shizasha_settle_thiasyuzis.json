@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_0_thiasyuzis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_1_thiasyuzis",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_2_thiasyuzis",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shizasha/settlement_3_thiasyuzis",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 195871777
+ }
+}

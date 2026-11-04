@@ -1,0 +1,90 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/forge_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/fortress_0_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/fortress_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/fortress_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/garden_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/hall_0_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/hall_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/landmark_0_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/landmark_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/ruin_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/temple_0_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/temple_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/temple_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/tower_0_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/tower_1_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/tower_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 173789892
+ }
+}

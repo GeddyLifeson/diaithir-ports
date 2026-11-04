@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "the_backwoods:block/tall_sedgebrush"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/forge_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/forge_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/fortress_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/hall_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/hall_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/hall_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/landmark_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/temple_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/coreoserus/tower_1_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 89184524
+ }
+}

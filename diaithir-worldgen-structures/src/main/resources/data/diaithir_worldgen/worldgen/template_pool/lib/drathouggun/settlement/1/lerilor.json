@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/drathouggun/settlement/1/lerilor",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drathouggun/ma_drathouggun_e7_places_000123",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

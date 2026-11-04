@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:linaustia_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:linaustia_grottoes",
+   "required": false
+  }
+ ]
+}

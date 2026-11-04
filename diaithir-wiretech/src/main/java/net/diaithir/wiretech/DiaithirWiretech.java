@@ -28,11 +28,26 @@ public final class DiaithirWiretech {
             e.registerBlockEntity(Capabilities.Energy.BLOCK, Machines.TRANSFORMER_BE.get(), (be, side) -> be.energyFor(side));
             e.registerBlockEntity(Capabilities.Energy.BLOCK, Machines.DYNAMO_BE.get(), (be, side) -> be.energyFor(side));
         });
+        bus.addListener(net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent.class, e -> {
+            var r = e.registrar("1").optional();
+            r.playToServer(net.diaithir.wiretech.circuit.CircuitPayloads.Set.TYPE, net.diaithir.wiretech.circuit.CircuitPayloads.Set.CODEC, (pl, ctx) -> {
+                if (ctx.player() instanceof net.minecraft.server.level.ServerPlayer sp && sp.containerMenu instanceof net.diaithir.wiretech.circuit.CircuitMenu m && m.pos.equals(pl.pos())
+                        && sp.level().getBlockEntity(pl.pos()) instanceof net.diaithir.wiretech.circuit.CircuitNodeBE be) {
+                    net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(sp, be.applyFrom(pl.program()));
+                }
+            });
+            r.playToClient(net.diaithir.wiretech.circuit.CircuitPayloads.View.TYPE, net.diaithir.wiretech.circuit.CircuitPayloads.View.CODEC,
+                    (pl, ctx) -> net.diaithir.wiretech.circuit.CircuitClient.onView(pl));
+        });
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
                 Machines.GENERATOR_ITEMS.forEach(i -> e.accept(i.get()));
                 Machines.CONNECTOR_ITEMS.values().forEach(i -> e.accept(i.get()));
                 Machines.ALL_BLOCK_ITEMS.forEach(i -> e.accept(i.get()));
+            }
+            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
+                Machines.CIRCUIT_ITEMS.forEach(i -> e.accept(i.get()));
+                Machines.CIRCUIT_COILS.values().forEach(i -> e.accept(i.get()));
             }
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) Machines.BUILDING_ITEMS.forEach(i -> e.accept(i.get()));
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) Machines.COILS.values().forEach(i -> e.accept(i.get()));
@@ -50,6 +65,12 @@ public final class DiaithirWiretech {
                 if (e.getEntity() instanceof net.minecraft.server.level.ServerPlayer sp) Demo.show(sp);
             });
         }
-        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> Commands.register(e.getDispatcher()));
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> {
+            Commands.register(e.getDispatcher());
+            net.diaithir.wiretech.circuit.CircuitCommands.register(e.getDispatcher());
+        });
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.LevelTickEvent.Post.class, e -> {
+            if (e.getLevel() instanceof net.minecraft.server.level.ServerLevel sl) net.diaithir.wiretech.circuit.CircuitGrid.tick(sl);
+        });
     }
 }

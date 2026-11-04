@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#undergarden:is_undergarden",
+ "spawners": {
+  "type": "undergarden:mog",
+  "weight": 6,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

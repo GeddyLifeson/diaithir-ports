@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:rc/maze/sand/hub",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:rc/maze/sand/hub",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

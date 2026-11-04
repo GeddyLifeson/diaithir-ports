@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ashiazis_analanoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_ashyusora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_nestia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_osevsith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_thivsis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_ukavamlaala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_veseizith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ashiazis_zephethora",
+   "required": false
+  }
+ ]
+}

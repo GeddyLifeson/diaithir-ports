@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:nueriel_amiriastium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_corinus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_lyeriel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_mastianor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_nasor_leonanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_nernirum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_orerniastes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_ryeneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nueriel_venireth",
+   "required": false
+  }
+ ]
+}

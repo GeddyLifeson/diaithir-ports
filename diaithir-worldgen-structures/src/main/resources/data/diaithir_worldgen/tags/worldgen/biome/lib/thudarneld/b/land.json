@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:thudarneld_broldar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thudarneld_crordenock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thudarneld_joreruldeld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thudarneld_jorudanar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thudarneld_morodon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thudarneld_peloldar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thudarneld_tarnenode",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thudarneld_thedar",
+   "required": false
+  }
+ ]
+}

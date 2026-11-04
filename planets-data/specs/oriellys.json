@@ -1,0 +1,161 @@
+{
+ "sky": {
+  "sky": "#6a4c93",
+  "fog": "#8f7bb8",
+  "cloud": "#c8b8e8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#5b3f8c"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "AR.oriellys.E3.places.000040",
+   "archetype": "birch_forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#9fbf6a",
+   "foliage": "#b8d98a",
+   "water": "#4a3a7a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriellys.E7.places.000045",
+   "archetype": "flower_forest",
+   "temp": 0.3,
+   "humid": 0.5,
+   "grass": "#8fb85c",
+   "foliage": "#c97ad6",
+   "water": "#5a3f9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriellys.E1.places.000096",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": 0.0,
+   "grass": "#7f9a6a",
+   "foliage": "#6d8a5c",
+   "water": "#3f4f8a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriellys.E4.places.000021",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.7,
+   "grass": "#7a6fb0",
+   "foliage": "#8f5fd0",
+   "water": "#4b3b8f",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.oriellys.E2.places.000052",
+   "archetype": "plains",
+   "temp": 0.4,
+   "humid": -0.1,
+   "grass": "#b0a86a",
+   "foliage": "#a6a05e",
+   "water": "#5f5aa0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriellys.E3.places.000056",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#b57a4a",
+   "foliage": "#c4884f",
+   "water": "#7a5a9a",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.oriellys.E5.places.000065",
+   "archetype": "stony_peaks",
+   "temp": -0.5,
+   "humid": -0.3,
+   "grass": "#8a8a9a",
+   "foliage": "#7a7f92",
+   "water": "#4f5a9a",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Violet-lit terraces and ash-glass shrines under drifting lanterns, with sunken violet seas where the Library's shelved futures bleed into the water.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#8a7fb0",
+  "fog_density": "thin",
+  "night": "normal",
+  "stars": 0.6,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.oriellys.E1.places.000096",
+  "why": "Singing roots, sounding stone, arcane lights; no weather described.",
+  "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 4
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "azure_bluet",
+   "oxeye_daisy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 0.8,
+   "redstone": 1.0,
+   "lapis": 1.2,
+   "diamond": 1.5
+  },
+  "why_entry": "AR.oriellys.E3.places.000040",
+  "grounded": false
+ }
+}

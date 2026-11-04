@@ -1,0 +1,1997 @@
+{
+ "age": "VIII",
+ "vendors": [
+  {
+   "id": "fusion_wright",
+   "name": "Saerlegaid",
+   "role": "Fusion Wright",
+   "spawn": [
+    "every settlement",
+    "reactor hall"
+   ],
+   "needs": "fusion_power",
+   "items": {
+    "diaithir_drinks:cell_grown_mead": {
+     "price": 22,
+     "stock": 4
+    },
+    "actuallyadditions:laser_relay": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:laser_wrench": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:elite_solar_cell": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:energy_capacity_upgrade_module_6": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:energy_production_upgrade_module_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:solar_panel_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:cyan_laser_lens": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:laser_lens_inverted": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:laser_lens_inverted14": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:laser_lens_inverted8": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:ore_laser_base": {
+     "price": 159,
+     "stock": 4
+    },
+    "integratedtunnels:part_exporter_world_energy": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:advanced_induction_cell": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:elite_thermodynamic_conductor": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:ultimate_energy_cube": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismgenerators:solar_panel": {
+     "price": 159,
+     "stock": 4
+    },
+    "modularrouters:module/energy_output_module": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:framed_energy_pipe_connection": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:thermopneumatic_processing_plant": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_cable_hardened": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_cell_hardened": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_discharger_hardened": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_hopper_hardened": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:solar_panel_hardened": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolspower:cell1": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolspower:powercell_card_linked": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:pathogen_storage_cell": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:octadic_capacitor": {
+     "price": 200,
+     "stock": 4
+    },
+    "powah:capacitor_basic_large": {
+     "price": 200,
+     "stock": 4
+    },
+    "laserbridges:laser_fence_source_block": {
+     "price": 224,
+     "stock": 4
+    },
+    "actuallyadditions:leaf_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "energizedpower:advanced_battery_box": {
+     "price": 317,
+     "stock": 4
+    },
+    "energizedpower:battery_7": {
+     "price": 317,
+     "stock": 4
+    },
+    "energizedpower:heat_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:mycelial_reactor": {
+     "price": 317,
+     "stock": 4
+    },
+    "integrateddynamics:energy_battery_creative": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismgenerators:gas_burning_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismgenerators:turbine_rotor": {
+     "price": 317,
+     "stock": 4
+    },
+    "modern_industrialization:large_diesel_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "modern_industrialization:silicon_battery": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:lava_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:reactor_heat_vent": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:battery_niotic": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:ender_cell_niotic": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:reactor_nitro": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:thermo_generator_nitro": {
+     "price": 317,
+     "stock": 4
+    },
+    "rftoolspower:blazing_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:reactor_quad_rod": {
+     "price": 399,
+     "stock": 4
+    },
+    "ae2:cell_component_256k": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:energy_cell": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:item_cell_housing": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:portable_fluid_cell_1k": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:portable_item_cell_4k": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:view_cell": {
+     "price": 631,
+     "stock": 4
+    },
+    "extendedae:infinity_cell_name": {
+     "price": 631,
+     "stock": 4
+    },
+    "laserio:card_energy_stock": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:cell_component_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:chemical_storage_cell_1m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:experience_storage_cell_64m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:item_storage_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:mana_storage_cell_256m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:mega_mana_cell_housing": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_chemical_cell_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_fluid_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_item_cell_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_source_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:soul_storage_cell_1m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:source_storage_cell_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedtypes:1048576k_energy_storage_part": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedtypes:65536k_energy_storage_part": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedtypes:energy/1048576k_energy_storage_disk": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedtypes:energy/64k_energy_storage_part": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedtypes:energy/infinite_energy_storage_disk": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:generatorfluidt1": {
+     "price": 1259,
+     "stock": 4
+    },
+    "refinedtypes:1024k_energy_storage_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "refinedtypes:8388608k_energy_storage_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanism:creative_energy_cube": {
+     "price": 1585,
+     "stock": 4
+    },
+    "modern_industrialization:fusion_reactor": {
+     "price": 3163,
+     "stock": 4
+    },
+    "refinedtypes:creative_energy_storage_block": {
+     "price": 12590,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "orbital_broker",
+   "name": "Kiendaichereilchuoirt",
+   "role": "Orbital Broker",
+   "spawn": [
+    "every settlement",
+    "launch field"
+   ],
+   "needs": "orbital_works",
+   "items": {
+    "enderio_endergy:stellar_alloy_block": {
+     "price": 18,
+     "stock": 4
+    },
+    "diaithir_drinks:starlight_liqueur": {
+     "price": 42,
+     "stock": 4
+    },
+    "stellaris:moon_polished_stone_brick_slab": {
+     "price": 113,
+     "stock": 4
+    },
+    "stellaris:moon_stone_brick_slab": {
+     "price": 113,
+     "stock": 4
+    },
+    "stellaris:moon_stone_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "enderio:rocket_fuel_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:moon_light_upgrade_module_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "equivox:aeternalis_fuel": {
+     "price": 159,
+     "stock": 4
+    },
+    "equivox:klein_star_omega": {
+     "price": 159,
+     "stock": 4
+    },
+    "equivox:klein_star_zwei": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:biofuel_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:mycelial_rocket": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:jetpack": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:oxygen_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:exo_jetpack": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:still_biofuel_bucket": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:at4_rocket": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:javelin_rocket": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:smaw_rocket": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:star15": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:star15_icon": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:star15mod3receiver_icon": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_cell_starter": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:furnator_starter": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:solar_panel_starter": {
+     "price": 159,
+     "stock": 4
+    },
+    "quarryplus:fuel_module_normal": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsbuilder:space_chamber_controller": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:cracked_moon_stone_bricks": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:moon_cracked_stone_bricks": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:moon_pillar": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:moon_sand": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:moon_stone_pillar": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:oxygen_distributor": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:polished_moon_stone": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:rocket_launch_pad": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:small_rocket_model": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:space_suit_damage_protection_module_tier_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:space_suit_jet_module_tier_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:space_suit_jet_module_tier_3": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:space_suit_oil_finder_module_tier_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:space_suit_oxygen_module_tier_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "stellaris:star_light_panel": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio_endergy:stellar_capacitor": {
+     "price": 200,
+     "stock": 4
+    },
+    "modern_industrialization:he_uranium_fuel_rod_quad": {
+     "price": 200,
+     "stock": 4
+    },
+    "modern_industrialization:le_uranium_fuel_rod_quad": {
+     "price": 200,
+     "stock": 4
+    },
+    "modern_industrialization:uranium_fuel_rod_quad": {
+     "price": 200,
+     "stock": 4
+    },
+    "modern_industrialization:he_uranium_fuel_rod": {
+     "price": 252,
+     "stock": 4
+    },
+    "modern_industrialization:uranium_fuel_rod": {
+     "price": 252,
+     "stock": 4
+    },
+    "actuallyadditions:ender_star": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:advanced_black_hole_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:black_hole_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:petrified_fuel_generator": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:supreme_black_hole_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanism:basic_chemical_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanism:dynamic_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanism:elite_fluid_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanism:ultimate_fluid_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:portable_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:still_biofuel_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "pneumaticcraft:huge_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "pneumaticcraft:medium_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:ender_gate_starter": {
+     "price": 317,
+     "stock": 4
+    },
+    "quarryplus:solid_fuel_quarry": {
+     "price": 317,
+     "stock": 4
+    },
+    "sfm:water_tank": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:fluid_tank_t1": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:rocket_engine": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:space_suit_diesel_tank_module_tier_1": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:space_suit_hydrogen_tank_module_tier_1": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:moon_berries": {
+     "price": 399,
+     "stock": 4
+    },
+    "ae2:spatial_cell_component_128": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:spatial_io_port": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:spatial_storage_cell_16": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:fuel_canister": {
+     "price": 631,
+     "stock": 4
+    },
+    "oritech:jetpack_exo_elytra": {
+     "price": 631,
+     "stock": 4
+    },
+    "dimstorage:dimensional_tank": {
+     "price": 1259,
+     "stock": 4
+    },
+    "energizedpower:moon_light_upgrade_module_4": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismgenerators:fusion_fuel_bucket": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mysticalagradditions:nether_star_crux": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mekanism:creative_fluid_tank": {
+     "price": 3163,
+     "stock": 4
+    },
+    "oritech:creative_tank_body": {
+     "price": 3163,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "aegis_warden",
+   "name": "Niechdìunsgèiti",
+   "role": "Aegis Warden",
+   "spawn": [
+    "every settlement",
+    "garrison"
+   ],
+   "needs": "aegis_fields",
+   "items": {
+    "enderio:conductive_alloy_block": {
+     "price": 18,
+     "stock": 4
+    },
+    "mysticalagradditions:insanium_block": {
+     "price": 18,
+     "stock": 4
+    },
+    "securitycraft:reinforced_deepslate_tile_slab": {
+     "price": 57,
+     "stock": 4
+    },
+    "securitycraft:cobblestone_mine": {
+     "price": 80,
+     "stock": 4
+    },
+    "securitycraft:reinforced_gravel": {
+     "price": 80,
+     "stock": 4
+    },
+    "pneumaticcraft:reinforced_brick_slab": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_andesite_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_black_carpet": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_cherry_fence_gate": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_dark_oak_fence": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_granite_slab": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_light_gray_carpet": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_mossy_stone_brick_wall": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_oak_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_polished_blackstone_brick_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_prismarine_brick_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_red_sandstone_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_spruce_fence": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:reinforced_tuff_stairs": {
+     "price": 113,
+     "stock": 4
+    },
+    "securitycraft:deepslate_redstone_mine": {
+     "price": 126,
+     "stock": 4
+    },
+    "securitycraft:reinforced_dark_oak_pressure_plate": {
+     "price": 142,
+     "stock": 4
+    },
+    "securitycraft:reinforced_weathered_cut_copper_slab": {
+     "price": 142,
+     "stock": 4
+    },
+    "aether_ii:gravitite_trowel_reinforced_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "aether_ii:skyroot_trowel_reinforced_1": {
+     "price": 159,
+     "stock": 4
+    },
+    "energizedpower:elite_minecart_uncharger": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:alloy_reinforced": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismadditions:orange_reinforced_plastic": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:reinforced_chest_kit": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:glockstock_icon": {
+     "price": 159,
+     "stock": 4
+    },
+    "railcraft:reinforced_locking_track": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:camera_monitor_idle": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_acacia_planks": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_black_stained_glass": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_brown_glazed_terracotta": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_chiseled_red_sandstone": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_crimson_planks": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_dark_prismarine": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_gray_stained_glass": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_jungle_wood": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_light_gray_terracotta": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_mangrove_planks": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_ochre_froglight": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_pink_glazed_terracotta": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_polished_tuff": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_red_stained_glass": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_soul_lantern": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_stripped_cherry_wood": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_stripped_spruce_log": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_white_glazed_terracotta": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:remote_access_sentry_idle": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:universal_block_reinforcer_lvl2": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:reinforced_copper_bars": {
+     "price": 200,
+     "stock": 4
+    },
+    "securitycraft:reinforced_exposed_cut_copper": {
+     "price": 200,
+     "stock": 4
+    },
+    "securitycraft:reinforced_raw_iron_block": {
+     "price": 200,
+     "stock": 4
+    },
+    "securitycraft:reinforced_quartz_slab": {
+     "price": 224,
+     "stock": 4
+    },
+    "aether_ii:gravitite_pickaxe_reinforced_1": {
+     "price": 252,
+     "stock": 4
+    },
+    "aether_ii:skyroot_hammer_reinforced_1": {
+     "price": 252,
+     "stock": 4
+    },
+    "aether_ii:zanite_shortsword_reinforced_2": {
+     "price": 252,
+     "stock": 4
+    },
+    "securitycraft:gold_mine": {
+     "price": 252,
+     "stock": 4
+    },
+    "actuallyadditions:lens_of_the_miner": {
+     "price": 317,
+     "stock": 4
+    },
+    "industrialforegoing:sewage_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanism:digital_miner": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:still_mineral_slurry_bucket": {
+     "price": 317,
+     "stock": 4
+    },
+    "securitycraft:block_pocket_manager": {
+     "price": 317,
+     "stock": 4
+    },
+    "securitycraft:reinforced_nether_wart_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:fuel_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "securitycraft:reinforced_copper_block": {
+     "price": 399,
+     "stock": 4
+    },
+    "actuallyadditions:black_quartz_brick_block": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:coalblock_t2": {
+     "price": 631,
+     "stock": 4
+    },
+    "oritech:still_mineral_slurry_block": {
+     "price": 631,
+     "stock": 4
+    },
+    "modern_industrialization:raw_uranium_block": {
+     "price": 900,
+     "stock": 4
+    },
+    "extradisks:16384k_item_storage_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:portal_fluid_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "refinedstorage:1k_storage_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "refinedtypes:256b_source_storage_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "refinedtypes:65536b_source_storage_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "energizedpower:silicon_block": {
+     "price": 1431,
+     "stock": 4
+    },
+    "modern_industrialization:silicon_block": {
+     "price": 1800,
+     "stock": 4
+    },
+    "advanced_ae:quantum_alloy_block": {
+     "price": 5679,
+     "stock": 4
+    },
+    "refinedtypes:creative_source_storage_block": {
+     "price": 12590,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "plasma_armourer",
+   "name": "Gobaairmplasma",
+   "role": "Plasma Armourer",
+   "spawn": [
+    "every settlement",
+    "armoury"
+   ],
+   "needs": "plasma_arms",
+   "items": {
+    "diaithir_drinks:cold_plasma_vodka": {
+     "price": 38,
+     "stock": 4
+    },
+    "actuallyadditions:laser_relay_item": {
+     "price": 159,
+     "stock": 4
+    },
+    "aether_ii:gravitite_axe_reinforced_2": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:black_laser_lens": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:laser_lens_inverted1": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:laser_lens_inverted3": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:lime_laser_lens": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:yellow_laser_lens": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:laser_tractor_beam": {
+     "price": 159,
+     "stock": 4
+    },
+    "mts:pwic_parts.m1_105_gun": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:ammolasercharge_base": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:m134minigun_base": {
+     "price": 159,
+     "stock": 4
+    },
+    "quarryplus:laser_plus": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanismtools:steel_paxel": {
+     "price": 200,
+     "stock": 4
+    },
+    "aether_ii:gravitite_shortsword_reinforced_1": {
+     "price": 252,
+     "stock": 4
+    },
+    "aether_ii:skyroot_pickaxe_reinforced_2": {
+     "price": 252,
+     "stock": 4
+    },
+    "deepnullreforged:deep_null_pickaxe_base_2": {
+     "price": 252,
+     "stock": 4
+    },
+    "equivox:dm_boots": {
+     "price": 252,
+     "stock": 4
+    },
+    "equivox:rm_sword": {
+     "price": 252,
+     "stock": 4
+    },
+    "mekanism:jetpack_armored": {
+     "price": 252,
+     "stock": 4
+    },
+    "oritech:exo_boots": {
+     "price": 252,
+     "stock": 4
+    },
+    "pneumaticcraft:jet_boots_upgrade_4": {
+     "price": 252,
+     "stock": 4
+    },
+    "enderio:dark_steel_sword": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismtools:bronze_boots": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismtools:osmium_pickaxe": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismtools:steel_pickaxe": {
+     "price": 317,
+     "stock": 4
+    },
+    "stellaris:titanium_axe": {
+     "price": 317,
+     "stock": 4
+    },
+    "mekanismtools:lapis_lazuli_helmet": {
+     "price": 399,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_helmet_resin_trim": {
+     "price": 502,
+     "stock": 4
+    },
+    "equivox:gem_leggings": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:bow_eclipsealloy_pulling_1": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:eclipsealloy_axe_active": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:portalgun_v2_100": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanismtools:bronze_boots_iron_trim": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanismtools:osmium_boots_iron_trim": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_helmet_copper_trim": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanismtools:steel_helmet_copper_trim": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:tertium_paxel": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanismtools:bronze_chestplate_iron_trim": {
+     "price": 795,
+     "stock": 4
+    },
+    "mekanismtools:lapis_lazuli_helmet_lapis_trim": {
+     "price": 795,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_boots_gold_trim": {
+     "price": 795,
+     "stock": 4
+    },
+    "mekanismtools:steel_chestplate_copper_trim": {
+     "price": 795,
+     "stock": 4
+    },
+    "ae2:fluix_pickaxe": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:celestigem_boots": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:eclipsealloy_boots": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:ferricore_helmet": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:bronze_boots_redstone_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:lapis_lazuli_chestplate_redstone_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:osmium_boots_redstone_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_chestplate_gold_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_boots_amethyst_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_helmet_quartz_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:steel_helmet_redstone_trim": {
+     "price": 1000,
+     "stock": 4
+    },
+    "mekanismtools:bronze_boots_emerald_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:bronze_helmet_quartz_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:osmium_chestplate_gold_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_chestplate_diamond_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_chestplate_diamond_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:steel_boots_diamond_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "mekanismtools:steel_helmet_diamond_trim": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:blazegold_pickaxe_active": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismtools:bronze_leggings_copper_trim": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismtools:lapis_lazuli_helmet_diamond_trim": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismtools:osmium_leggings_copper_trim": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_chestplate_copper_trim": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanismtools:steel_chestplate_emerald_trim": {
+     "price": 1585,
+     "stock": 4
+    },
+    "ae2:nether_quartz_axe": {
+     "price": 1996,
+     "stock": 4
+    },
+    "mekanismtools:lapis_lazuli_chestplate_quartz_trim": {
+     "price": 1996,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_leggings_lapis_trim": {
+     "price": 1996,
+     "stock": 4
+    },
+    "justdirethings:eclipsealloy_leggings": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mekanismtools:bronze_leggings_lapis_trim": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mekanismtools:osmium_leggings_lapis_trim": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_leggings_diamond_trim": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mekanismtools:steel_leggings_lapis_trim": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mekanismtools:bronze_leggings_diamond_trim": {
+     "price": 3163,
+     "stock": 4
+    },
+    "mekanismtools:osmium_leggings_diamond_trim": {
+     "price": 3163,
+     "stock": 4
+    },
+    "mekanismtools:steel_leggings_emerald_trim": {
+     "price": 3163,
+     "stock": 4
+    },
+    "mekanismtools:lapis_lazuli_leggings_diamond_trim": {
+     "price": 3982,
+     "stock": 4
+    },
+    "mekanismtools:refined_glowstone_leggings_netherite_trim": {
+     "price": 5012,
+     "stock": 4
+    },
+    "mekanismtools:refined_obsidian_leggings_netherite_trim": {
+     "price": 10000,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "nano_artisan",
+   "name": "Keàrdbìudach",
+   "role": "Nano Artisan",
+   "spawn": [
+    "every settlement",
+    "clean room"
+   ],
+   "needs": "nanofabrication",
+   "items": {
+    "enderio_endergy:crystalline_alloy_block": {
+     "price": 18,
+     "stock": 4
+    },
+    "diaithir_drinks:antimatter_anise": {
+     "price": 45,
+     "stock": 4
+    },
+    "modularrouters:augment_core": {
+     "price": 100,
+     "stock": 4
+    },
+    "integrateddynamics:crystalized_menril_chunk": {
+     "price": 126,
+     "stock": 4
+    },
+    "integrateddynamics:crystalized_menril_block_slab": {
+     "price": 142,
+     "stock": 4
+    },
+    "apotheosis:gems/core/solar": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:plant_matter_green": {
+     "price": 159,
+     "stock": 4
+    },
+    "equivox:dark_matter": {
+     "price": 159,
+     "stock": 4
+    },
+    "industrialforegoing:hydroponic_simulation_processor": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:arcane_catalyst": {
+     "price": 159,
+     "stock": 4
+    },
+    "pointblank:processor": {
+     "price": 159,
+     "stock": 4
+    },
+    "powah:energy_cell_blazing": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolspower:cell2": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolspower:dimensionalcell_creative": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolspower:powercell_card": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsutility:matter_receiver": {
+     "price": 159,
+     "stock": 4
+    },
+    "actuallyadditions:drill_core": {
+     "price": 200,
+     "stock": 4
+    },
+    "energizedpower:crystal_growth_chamber": {
+     "price": 200,
+     "stock": 4
+    },
+    "oritech:overcharged_crystal": {
+     "price": 200,
+     "stock": 4
+    },
+    "mekanism:crystal_uranium": {
+     "price": 252,
+     "stock": 4
+    },
+    "extendedae:infinity_cobblestone_cell": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:machine_core_3": {
+     "price": 317,
+     "stock": 4
+    },
+    "oritech:still_strange_matter_block": {
+     "price": 317,
+     "stock": 4
+    },
+    "powah:ender_cell_nitro": {
+     "price": 317,
+     "stock": 4
+    },
+    "refinedstorage:raw_improved_processor": {
+     "price": 317,
+     "stock": 4
+    },
+    "ae2:formation_core": {
+     "price": 399,
+     "stock": 4
+    },
+    "justdirethings:bow_ferricore": {
+     "price": 399,
+     "stock": 4
+    },
+    "securitycraft:reinforced_crystal_quartz_bricks": {
+     "price": 399,
+     "stock": 4
+    },
+    "advanced_ae:quantum_alloy_stairs": {
+     "price": 447,
+     "stock": 4
+    },
+    "advanced_ae:quantum_crafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "advanced_ae:quantum_processor": {
+     "price": 631,
+     "stock": 4
+    },
+    "advanced_ae:quantum_structure": {
+     "price": 631,
+     "stock": 4
+    },
+    "advanced_ae:wireless_quantum_crafter_terminal": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:cell_component_4k": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:fluid_cell_housing": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:fluid_storage_cell_64k": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:item_storage_cell_4k": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:matter_cannon": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:portable_fluid_cell_64k": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:printed_calculation_processor": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:quantum_link": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:spatial_storage_cell_128": {
+     "price": 631,
+     "stock": 4
+    },
+    "extendedae:concurrent_processor_print": {
+     "price": 631,
+     "stock": 4
+    },
+    "ironjetpacks:cell": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:ferricore_axe_active": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:accumulation_processor": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:cell_component_1m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:chemical_storage_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:experience_storage_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:fluid_storage_cell_1m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:item_storage_cell_1m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:mana_storage_cell_1m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:mega_energy_cell": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:mega_soul_cell_housing": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_chemical_cell_256m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_experience_cell_256m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_fluid_cell_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_item_cell_256m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_mana_cell_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_source_cell_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:soul_storage_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:source_storage_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:basic_processor": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:time_crystal": {
+     "price": 795,
+     "stock": 4
+    },
+    "mysticalagradditions:nitro_crystal_crux": {
+     "price": 795,
+     "stock": 4
+    },
+    "advanced_ae:quantum_helmet": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:ferricore_pickaxe": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:ferricore_sword": {
+     "price": 1000,
+     "stock": 4
+    },
+    "ae2:engineering_processor_press": {
+     "price": 1259,
+     "stock": 4
+    },
+    "equivox:red_matter_block": {
+     "price": 1431,
+     "stock": 4
+    },
+    "forbidden_arcanus:black_quantum_catcher": {
+     "price": 1585,
+     "stock": 4
+    },
+    "forbidden_arcanus:gray_quantum_catcher": {
+     "price": 1585,
+     "stock": 4
+    },
+    "forbidden_arcanus:magenta_quantum_catcher": {
+     "price": 1585,
+     "stock": 4
+    },
+    "forbidden_arcanus:quantum_catcher": {
+     "price": 1585,
+     "stock": 4
+    },
+    "justdirethings:time_crystal_budding_block": {
+     "price": 1585,
+     "stock": 4
+    },
+    "modern_industrialization:quantum_upgrade": {
+     "price": 1585,
+     "stock": 4
+    },
+    "modern_industrialization:quantum_circuit_board": {
+     "price": 1996,
+     "stock": 4
+    },
+    "modern_industrialization:quantum_helmet": {
+     "price": 2512,
+     "stock": 4
+    },
+    "modern_industrialization:quantum_tank": {
+     "price": 3163,
+     "stock": 4
+    },
+    "justdirethings:time_crystal_block": {
+     "price": 7155,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "mind_wright",
+   "name": "Saerindtindi",
+   "role": "Mind Wright",
+   "spawn": [
+    "every settlement",
+    "data hall"
+   ],
+   "needs": "synthetic_minds",
+   "items": {
+    "diaithir_drinks:data_cellar_cold_brew_porter": {
+     "price": 30,
+     "stock": 4
+    },
+    "securitycraft:scanner_trapdoor": {
+     "price": 113,
+     "stock": 4
+    },
+    "computercraft:computer_normal": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:monitor_advanced": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:pocket_computer_advanced_blinking": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:pocket_computer_colour": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:pocket_computer_colour_on": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:pocket_computer_normal_blinking": {
+     "price": 159,
+     "stock": 4
+    },
+    "computercraft:turtle_advanced": {
+     "price": 159,
+     "stock": 4
+    },
+    "enderio:z_logic_controller": {
+     "price": 159,
+     "stock": 4
+    },
+    "integrateddynamics:part_network_reader": {
+     "price": 159,
+     "stock": 4
+    },
+    "integratedterminals:part_terminal_storage": {
+     "price": 159,
+     "stock": 4
+    },
+    "mekanism:network_reader": {
+     "price": 159,
+     "stock": 4
+    },
+    "modern_industrialization:overdrive_module": {
+     "price": 159,
+     "stock": 4
+    },
+    "oritech:super_ai_chip": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:network_data_storage": {
+     "price": 159,
+     "stock": 4
+    },
+    "pneumaticcraft:network_registry": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsbase:network_monitor": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolspower:power_monitor": {
+     "price": 159,
+     "stock": 4
+    },
+    "rftoolsutility:logic": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:camera_monitor": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:camera_monitor_not_linked": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:inventory_scanner_field": {
+     "price": 159,
+     "stock": 4
+    },
+    "sfm:network_tool": {
+     "price": 159,
+     "stock": 4
+    },
+    "securitycraft:retinal_scanner": {
+     "price": 200,
+     "stock": 4
+    },
+    "securitycraft:block_pocket_wall": {
+     "price": 224,
+     "stock": 4
+    },
+    "justdirethings:upgrade_orescanner": {
+     "price": 317,
+     "stock": 4
+    },
+    "rftoolspower:ender_monitor": {
+     "price": 317,
+     "stock": 4
+    },
+    "advanced_ae:quantum_crafter_terminal_part": {
+     "price": 631,
+     "stock": 4
+    },
+    "advanced_ae:throughput_monitor_configurator": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:drive": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:logic_processor_press": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:network_tool": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:printed_logic_processor": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:storage_monitor": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:wireless_terminal": {
+     "price": 631,
+     "stock": 4
+    },
+    "drones:pocket_drone": {
+     "price": 631,
+     "stock": 4
+    },
+    "extendedae:pattern_terminal_upgrade": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:sensort2": {
+     "price": 631,
+     "stock": 4
+    },
+    "laserio:card_chemical_sensor": {
+     "price": 631,
+     "stock": 4
+    },
+    "laserio:card_fluid_sensor": {
+     "price": 631,
+     "stock": 4
+    },
+    "laserio:logic_chip": {
+     "price": 631,
+     "stock": 4
+    },
+    "logisticsnetworks:computer": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:black_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:blue_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:brown_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:cyan_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:disk_drive": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:gray_network_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:green_network_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:lime_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:magenta_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:network_card": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:network_card/inactive": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:network_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:orange_network_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:purple_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:red_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:storage_monitor": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:white_network_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:yellow_network_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:crafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "ae2:wireless_crafting_terminal": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:black_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:brown_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:gray_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:light_gray_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:magenta_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:pink_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:red_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:wireless_autocrafting_monitor/active": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:yellow_autocrafting_monitor": {
+     "price": 795,
+     "stock": 4
+    },
+    "ae2:chipped_budding_quartz": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:pocket_generator_active": {
+     "price": 1259,
+     "stock": 4
+    },
+    "computercraft:computer_command": {
+     "price": 1585,
+     "stock": 4
+    },
+    "hostilenetworks:data_center": {
+     "price": 1585,
+     "stock": 4
+    },
+    "hostilenetworks:data_model_anchor": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanism:qio_drive_hyper_dense": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mekanism:qio_drive_time_dilating": {
+     "price": 1996,
+     "stock": 4
+    },
+    "refinedstorage:creative_wireless_autocrafting_monitor": {
+     "price": 7944,
+     "stock": 4
+    }
+   }
+  }
+ ]
+}

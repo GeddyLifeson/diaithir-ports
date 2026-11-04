@@ -1,0 +1,26 @@
+{
+ "general": {
+  "type": "interactable_crate",
+  "name": "Cargo Hold 108 slots",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:72"
+   ]
+  ]
+ },
+ "interactable": {
+  "interactionType": "crate",
+  "inventoryUnits": 12,
+  "inventoryStackSize": 64,
+  "canBeOpenedInHand": false
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Cargo Hold 108 slots",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

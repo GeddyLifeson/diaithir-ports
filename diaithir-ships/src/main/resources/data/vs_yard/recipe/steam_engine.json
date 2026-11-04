@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "IFI",
+    "BPB"
+  ],
+  "key": {
+    "I": "minecraft:iron_block",
+    "F": "minecraft:furnace",
+    "B": "minecraft:blast_furnace",
+    "P": "minecraft:piston"
+  },
+  "result": {
+    "id": "vs_yard:steam_engine",
+    "count": 1
+  }
+}

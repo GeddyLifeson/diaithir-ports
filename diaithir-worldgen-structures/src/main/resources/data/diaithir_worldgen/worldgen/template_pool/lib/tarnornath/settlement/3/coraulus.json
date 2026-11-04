@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/tarnornath/settlement/3/coraulus",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/tarnornath/gr_tarnornath_e7_assay_008065",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

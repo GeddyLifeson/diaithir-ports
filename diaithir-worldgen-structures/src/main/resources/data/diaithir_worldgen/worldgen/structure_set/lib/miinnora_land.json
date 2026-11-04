@@ -1,0 +1,38 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/fortress_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/garden_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/hall_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/temple_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/tower_1_land",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 157719632
+ }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "#minecraft:creeper_drop_music_discs",
+    "requirements": {
+        "eterna": 40.0
+    },
+    "result": {
+        "id": "apothic_enchanting:music_disc_eterna"
+    }
+}

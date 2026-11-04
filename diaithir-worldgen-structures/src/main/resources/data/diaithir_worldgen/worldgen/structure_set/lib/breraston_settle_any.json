@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_any",
+   "weight": 25
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_any",
+   "weight": 62
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_any",
+   "weight": 101
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_3_any",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 59532692
+ }
+}

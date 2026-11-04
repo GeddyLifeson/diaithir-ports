@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:apple"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft2:apple_pie_item",
+  "count": 1
+ }
+}

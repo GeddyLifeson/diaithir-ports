@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:gouthun_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_grottoes",
+   "required": false
+  }
+ ]
+}

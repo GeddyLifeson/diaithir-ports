@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_0_pelornelden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_pelornelden",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_pelornelden",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 19462852
+ }
+}

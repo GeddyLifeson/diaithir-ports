@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:silemuarora_anamaeno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silemuarora_graktak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silemuarora_halestornar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silemuarora_ilolatamuta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silemuarora_ilovameno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silemuarora_kruktaiggar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silemuarora_lyarlae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silemuarora_veorum",
+   "required": false
+  }
+ ]
+}

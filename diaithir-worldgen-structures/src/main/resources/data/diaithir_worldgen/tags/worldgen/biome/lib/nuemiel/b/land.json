@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:nuemiel_drurnak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_elaenemiel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_kalutamira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_khaikun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_lyanys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_merataeno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_oriama",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_ukataluta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:nuemiel_vesiathis",
+   "required": false
+  }
+ ]
+}

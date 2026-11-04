@@ -1,0 +1,20 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:rods/wooden",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/quartz",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/bronze",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:staff_sioc_novice",
+ "time_s": 20
+}

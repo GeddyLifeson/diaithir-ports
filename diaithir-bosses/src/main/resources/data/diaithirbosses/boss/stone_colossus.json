@@ -4,8 +4,8 @@
  "name_en": "Stone Colossus",
  "age": 2,
  "own": {
-  "kind": "golem",
-  "scale": 2.3,
+  "kind": "look_tall",
+  "scale": 2.61,
   "hp": 300,
   "damage": 7,
   "armor": 6,
@@ -234,5 +234,6 @@
  "mythic": false,
  "entity": "diaithirbosses:stone_colossus",
  "creature_id": null,
- "equipment": {}
+ "equipment": {},
+ "look": true
 }

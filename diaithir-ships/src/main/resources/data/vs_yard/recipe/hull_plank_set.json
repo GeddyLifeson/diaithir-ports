@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PIP",
+    "PPP"
+  ],
+  "key": {
+    "P": "minecraft:oak_planks",
+    "I": "minecraft:iron_nugget"
+  },
+  "result": {
+    "id": "vs_yard:hull_plank_set",
+    "count": 1
+  }
+}

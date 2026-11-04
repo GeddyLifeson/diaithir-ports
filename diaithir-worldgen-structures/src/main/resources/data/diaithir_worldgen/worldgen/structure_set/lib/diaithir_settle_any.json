@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/diaithir/settlement_0_any",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/diaithir/settlement_1_any",
+   "weight": 74
+  },
+  {
+   "structure": "diaithir_worldgen:lib/diaithir/settlement_2_any",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/diaithir/settlement_3_any",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 43676344
+ }
+}

@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/cross",
+"textures": {
+"cross": "diaithir_planets:block/crestornen_amorum_plant"
+}
+}

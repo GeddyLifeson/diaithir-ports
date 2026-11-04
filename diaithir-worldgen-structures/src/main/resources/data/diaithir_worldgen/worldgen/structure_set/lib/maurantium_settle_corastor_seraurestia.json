@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/settlement_0_corastor_seraurestia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/settlement_1_corastor_seraurestia",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/settlement_2_corastor_seraurestia",
+   "weight": 14
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 3392969
+ }
+}

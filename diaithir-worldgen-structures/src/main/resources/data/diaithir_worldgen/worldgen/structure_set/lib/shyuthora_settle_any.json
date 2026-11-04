@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_any",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_any",
+   "weight": 40
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_any",
+   "weight": 260
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_any",
+   "weight": 117
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 100933929
+ }
+}

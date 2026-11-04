@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silara/harbor_0_coast",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silara/harbor_1_coast",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 10652347
+ }
+}

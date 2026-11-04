@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_0_nuiniolora",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_1_nuiniolora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/eluannys/settlement_2_nuiniolora",
+   "weight": 106
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 183263466
+ }
+}

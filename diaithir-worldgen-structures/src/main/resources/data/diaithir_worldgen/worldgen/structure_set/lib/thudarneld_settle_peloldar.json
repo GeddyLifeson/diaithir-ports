@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_0_peloldar",
+   "weight": 38
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_1_peloldar",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_2_peloldar",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thudarneld/settlement_3_peloldar",
+   "weight": 32
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 63298524
+ }
+}

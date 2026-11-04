@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "undergarden:tremblecrust"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "undergarden:tremblecrust_slab",
+  "count": 6
+ }
+}

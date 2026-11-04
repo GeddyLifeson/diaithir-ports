@@ -1,0 +1,17 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/dorchamhiotal",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/diamond",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:fráma_teallaigh_3",
+ "time_s": 20,
+ "operator": true
+}

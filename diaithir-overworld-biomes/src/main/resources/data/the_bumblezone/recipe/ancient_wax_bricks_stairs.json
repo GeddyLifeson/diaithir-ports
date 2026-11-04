@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "the_bumblezone:ancient_wax_bricks"
+ },
+ "pattern": [
+  "#  ",
+  "## ",
+  "###"
+ ],
+ "result": {
+  "id": "the_bumblezone:ancient_wax_bricks_stairs",
+  "count": 4
+ }
+}

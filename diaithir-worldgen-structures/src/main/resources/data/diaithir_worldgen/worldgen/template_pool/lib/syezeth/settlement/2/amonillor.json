@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/syezeth/settlement/2/amonillor",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/syezeth/st_syezeth_e5_assay_000526",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

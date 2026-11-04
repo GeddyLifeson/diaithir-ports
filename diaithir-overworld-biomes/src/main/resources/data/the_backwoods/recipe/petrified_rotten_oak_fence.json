@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "the_backwoods:petrified_rotten_oak_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "#S#",
+  "#S#"
+ ],
+ "result": {
+  "id": "the_backwoods:petrified_rotten_oak_fence",
+  "count": 3
+ }
+}

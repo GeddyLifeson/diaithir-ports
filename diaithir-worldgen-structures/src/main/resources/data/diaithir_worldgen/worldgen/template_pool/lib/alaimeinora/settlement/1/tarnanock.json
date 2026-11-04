@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/alaimeinora/settlement/1/tarnanock",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/alaimeinora/ar_alaimeinora_e4_places_000436",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

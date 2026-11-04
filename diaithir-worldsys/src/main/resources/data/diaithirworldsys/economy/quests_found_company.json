@@ -1,0 +1,27 @@
+{
+ "id": "found_company",
+ "title": "Found a company",
+ "kind": "misc",
+ "giver": "the caravan quest \"Safe passage\"",
+ "offered": "when delivering a caravan load for a worker",
+ "complete": "/company found <name> inside a valid office",
+ "note": "Optional. Complete it however you like, or it stays in the log. The Quests tab reads this file.",
+ "objectives": {
+  "all": [
+   "an enclosed room with a door",
+   "a lectern as the charter desk",
+   "a depot yard of barrels or hay bales close by",
+   "starting capital in the home culture's units"
+  ],
+  "from_age_III": [
+   "a chest or barrel as the strongbox",
+   "a bookshelf for the ledgers",
+   "the writing tech"
+  ],
+  "from_age_V": [
+   "a larger office, two bookshelves, four barrels in the yard",
+   "the railway tech"
+  ]
+ },
+ "requires": "caravan_delivered"
+}

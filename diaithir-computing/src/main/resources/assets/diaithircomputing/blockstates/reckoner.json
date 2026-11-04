@@ -1,0 +1,10 @@
+{
+ "variants": {
+  "powered=false": {
+   "model": "diaithircomputing:block/reckoner"
+  },
+  "powered=true": {
+   "model": "diaithircomputing:block/reckoner_on"
+  }
+ }
+}

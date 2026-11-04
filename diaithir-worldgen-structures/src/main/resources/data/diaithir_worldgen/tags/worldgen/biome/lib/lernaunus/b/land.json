@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:lernaunus_amiallor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lernaunus_nasum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lernaunus_orostellor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lernaunus_saror",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lernaunus_serelia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lernaunus_tausentus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lernaunus_teornanum",
+   "required": false
+  }
+ ]
+}

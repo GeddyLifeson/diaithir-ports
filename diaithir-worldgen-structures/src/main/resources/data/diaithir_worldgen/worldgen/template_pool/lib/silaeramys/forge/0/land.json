@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/silaeramys/forge/0/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silaeramys/ar_silaeramys_e2_assay_001828",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

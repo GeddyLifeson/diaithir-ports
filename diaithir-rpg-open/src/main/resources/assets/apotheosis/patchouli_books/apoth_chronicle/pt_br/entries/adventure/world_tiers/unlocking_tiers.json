@@ -1,0 +1,42 @@
+{
+    "name": "Desbloqueio dos Níveis de Mundo",
+    "icon": "apotheosis:textures/gui/book/frontier_icon.png",
+    "category": "apotheosis:adventure/world_tiers",
+    "sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Cada $(6)Nível de Mundo$() precisa ser desbloqueado antes de poder ser ativado, com exceção do Refúgio, que vem habilitado por padrão.$(p)Os níveis são desbloqueados ao concluir progressos específicos.$(p)Depois de desbloquear um nível, ative-o na $(l:apotheosis:adventure/world_tiers/select_screen)tela de seleção$()."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Prefácio",
+            "text": "Esta seção apresenta os requisitos padrão para desbloquear os Níveis de Mundo.$(p)Observação: modpacks podem alterar esses requisitos. Consulte a aba de progressos “Níveis de Mundo Apóticos” para obter as informações completas."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Refúgio",
+            "text": "O $(9)Refúgio$() é desbloqueado por padrão, embora só se torne visível após você obter seu primeiro item com afixo."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Fronteira",
+            "text": "A $(9)Fronteira$() é desbloqueada ao equipar um item com afixo em cada espaço de armadura e segurar uma arma com afixo em uma das mãos."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Ascensão",
+            "text": "Para desbloquear a $(9)Ascensão$(), equipe um conjunto completo de itens com afixo $(#33FF33)Incomuns$(), incluindo uma arma.$(p)Você também precisará derrotar um Invasor Apótico."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Cume",
+            "text": "Chegar ao $(9)Cume$() é um pouco mais difícil.$(p)Você precisará obter um conjunto completo de itens com afixo $(#5555FF)Raros$() e derrotar o Wither."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Pináculo",
+            "text": "O nível final, o $(9)Pináculo$(), exige um conjunto completo de itens com afixo $(#BB00BB)Épicos$() e a derrota do Dragão End."
+        }
+    ]
+}

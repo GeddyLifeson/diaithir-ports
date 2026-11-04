@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/nuileiniel/settlement/1/ryallaemeth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/nuileiniel/ar_nuileiniel_e3_assay_005171",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/nuileiniel/ar_nuileiniel_e6_places_002636",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

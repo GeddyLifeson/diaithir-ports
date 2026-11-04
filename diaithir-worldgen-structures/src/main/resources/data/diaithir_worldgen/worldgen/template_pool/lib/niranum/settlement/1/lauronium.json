@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/niranum/settlement/1/lauronium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/niranum/gr_niranum_e7_places_000098",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

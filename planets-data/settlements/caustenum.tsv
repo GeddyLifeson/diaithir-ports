@@ -1,0 +1,456 @@
+entry_id	name	tier	era	biome_entry
+MY.caustenum.E1.assay.005465	Lialium	1	E1	MY.caustenum.E1.assay.011676
+MY.caustenum.E1.assay.006067	Liarontia	1	E1	MY.caustenum.E1.assay.011676
+MY.caustenum.E1.assay.007713	Oreolia Serestum	1	E1	MY.caustenum.E5.assay.017053
+MY.caustenum.E1.assay.017228	Varnelor	1	E1	MY.caustenum.E3.assay.013165
+MY.caustenum.E2.assay.000092	Serenauntor	2	E2	MY.caustenum.E5.assay.017053
+MY.caustenum.E2.assay.000888	Reontalor	2	E2	MY.caustenum.E2.assay.001733
+MY.caustenum.E2.assay.002543	Oreollosus	2	E2	MY.caustenum.E3.assay.011879
+MY.caustenum.E2.assay.002578	Telaurnes	2	E2	MY.caustenum.E1.assay.013697
+MY.caustenum.E2.assay.002917	Teliantenes	2	E2	MY.caustenum.E1.assay.013697
+MY.caustenum.E2.assay.003020	Mesianes	2	E2	MY.caustenum.E1.assay.011676
+MY.caustenum.E2.assay.005217	Amiasauria	2	E2	MY.caustenum.E3.assay.013165
+MY.caustenum.E2.assay.005429	Sornianor	2	E2	MY.caustenum.E3.assay.011879
+MY.caustenum.E2.assay.007626	Nornus Seontarus	2	E2	MY.caustenum.E3.assay.013165
+MY.caustenum.E2.assay.007812	Amillia Veollontes	2	E2	MY.caustenum.E5.assay.017053
+MY.caustenum.E2.assay.008526	Nauneror	2	E2	MY.caustenum.E3.assay.011879
+MY.caustenum.E2.assay.009202	Amilles	2	E2	MY.caustenum.E3.assay.017389
+MY.caustenum.E2.assay.010209	Amianores	2	E2	MY.caustenum.E1.assay.011676
+MY.caustenum.E2.assay.010665	Teliantesus	2	E2	MY.caustenum.E3.assay.017389
+MY.caustenum.E2.assay.010878	Tiarnum	2	E2	MY.caustenum.E3.assay.013165
+MY.caustenum.E2.assay.012861	Callistium	2	E2	MY.caustenum.E2.assay.001733
+MY.caustenum.E2.assay.012986	Ciarnum Nauntiaria	2	E2	MY.caustenum.E3.assay.011879
+MY.caustenum.E2.assay.013114	Rerus Serillus	2	E2	MY.caustenum.E3.assay.013165
+MY.caustenum.E2.assay.013654	Orillaurnum	2	E2	MY.caustenum.E5.assay.017053
+MY.caustenum.E2.assay.013744	Ameontilium	2	E2	MY.caustenum.E3.assay.011879
+MY.caustenum.E2.assay.013880	Tentanum	2	E2	MY.caustenum.E3.assay.017389
+MY.caustenum.E2.assay.014099	Oreollanum	2	E2	MY.caustenum.E5.assay.017053
+MY.caustenum.E2.assay.016165	Corirnanum	2	E2	MY.caustenum.E5.assay.017053
+MY.caustenum.E2.assay.016594	Linialium	2	E2	MY.caustenum.E1.assay.013697
+MY.caustenum.E2.assay.016965	Toreonanum	2	E2	MY.caustenum.E3.assay.017389
+MY.caustenum.E2.assay.017418	Riareosum	2	E2	MY.caustenum.E1.assay.011676
+MY.caustenum.E2.assay.018219	Amires Risia	2	E2	MY.caustenum.E1.assay.011676
+MY.caustenum.E2.assay.019028	Telarnia Taulia	2	E2	MY.caustenum.E3.assay.013165
+MY.caustenum.E2.assay.019167	Rares	2	E2	MY.caustenum.E5.assay.017053
+MY.caustenum.E2.assay.020033	Ciarneosus	2	E2	MY.caustenum.E2.assay.001733
+MY.caustenum.E2.assay.020277	Amialia Cantestus	2	E2	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.000390	Nontor	3	E3	MY.caustenum.E3.assay.017389
+MY.caustenum.E3.assay.002414	Amaules Orisia	3	E3	MY.caustenum.E5.assay.017053
+MY.caustenum.E3.assay.002985	Sasiarum	3	E3	MY.caustenum.E3.assay.011879
+MY.caustenum.E3.assay.003101	Lostum	3	E3	MY.caustenum.E3.assay.013165
+MY.caustenum.E3.assay.003778	Vaulus	3	E3	MY.caustenum.E3.assay.011879
+MY.caustenum.E3.assay.005548	Tellisum	3	E3	MY.caustenum.E2.assay.001733
+MY.caustenum.E3.assay.006061	Amastaullia	3	E3	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.006062	Nallesum	3	E3	MY.caustenum.E5.assay.017053
+MY.caustenum.E3.assay.008116	Sosium	3	E3	MY.caustenum.E3.assay.017389
+MY.caustenum.E3.assay.008275	Telonus Valilenium	3	E3	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.008474	Seronalanum	3	E3	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.009091	Tolleres	3	E3	MY.caustenum.E1.assay.011676
+MY.caustenum.E3.assay.009192	Mauselium	3	E3	MY.caustenum.E3.assay.011879
+MY.caustenum.E3.assay.009660	Mauntes Amorum	3	E3	MY.caustenum.E1.assay.011676
+MY.caustenum.E3.assay.009789	Nalus Amernosus	3	E3	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.011107	Malles	3	E3	MY.caustenum.E5.assay.017053
+MY.caustenum.E3.assay.011571	Serillium Valestum	3	E3	MY.caustenum.E2.assay.001733
+MY.caustenum.E3.assay.011820	Velanum Oriresium	3	E3	MY.caustenum.E1.assay.011676
+MY.caustenum.E3.assay.011958	Nenialium	3	E3	MY.caustenum.E3.assay.013165
+MY.caustenum.E3.assay.012415	Tiallium	3	E3	MY.caustenum.E2.assay.001733
+MY.caustenum.E3.assay.013086	Voses Malises	3	E3	MY.caustenum.E2.assay.001733
+MY.caustenum.E3.assay.013934	Tarnanum Riasia	3	E3	MY.caustenum.E3.assay.013165
+MY.caustenum.E3.assay.014070	Collium Oreniarnum	3	E3	MY.caustenum.E5.assay.017053
+MY.caustenum.E3.assay.014354	Tilium	3	E3	MY.caustenum.E3.assay.013165
+MY.caustenum.E3.assay.017089	Lastium Teliarum	3	E3	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.017198	Seraulia Valelaunus	3	E3	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.017295	Ranes Valiantum	3	E3	MY.caustenum.E3.assay.013165
+MY.caustenum.E3.assay.017373	Caullantium	3	E3	MY.caustenum.E3.assay.013165
+MY.caustenum.E3.assay.017389	Raulestes	3	E3	MY.caustenum.E1.assay.011676
+MY.caustenum.E3.assay.018098	Rontum Meollentum	3	E3	MY.caustenum.E1.assay.013697
+MY.caustenum.E3.assay.019586	Neoranum Sausia	3	E3	MY.caustenum.E3.assay.011879
+MY.caustenum.E3.assay.019711	Relliantor	3	E3	MY.caustenum.E3.assay.013165
+MY.caustenum.E4.assay.000670	Sallium	4	E4	MY.caustenum.E3.assay.017389
+MY.caustenum.E4.assay.001025	Serisellium	4	E4	MY.caustenum.E3.assay.017389
+MY.caustenum.E4.assay.001042	Orelanum Nillum	4	E4	MY.caustenum.E3.assay.017389
+MY.caustenum.E4.assay.002184	Relanum	4	E4	MY.caustenum.E3.assay.017389
+MY.caustenum.E4.assay.002190	Viarausor	4	E4	MY.caustenum.E1.assay.011676
+MY.caustenum.E4.assay.002982	Rones	4	E4	MY.caustenum.E3.assay.013165
+MY.caustenum.E4.assay.003028	Amistiallia	4	E4	MY.caustenum.E1.assay.013697
+MY.caustenum.E4.assay.003995	Sirnausium	4	E4	MY.caustenum.E2.assay.001733
+MY.caustenum.E4.assay.005408	Teliasirum	4	E4	MY.caustenum.E1.assay.013697
+MY.caustenum.E4.assay.005892	Raurum Vosillia	4	E4	MY.caustenum.E5.assay.017053
+MY.caustenum.E4.assay.006388	Amoraullium	4	E4	MY.caustenum.E3.assay.011879
+MY.caustenum.E4.assay.007120	Raures Mianium	4	E4	MY.caustenum.E5.assay.017053
+MY.caustenum.E4.assay.007228	Oraullus Telistus	4	E4	MY.caustenum.E1.assay.011676
+MY.caustenum.E4.assay.008133	Telirus Nirnus	4	E4	MY.caustenum.E5.assay.017053
+MY.caustenum.E4.assay.009471	Teosium Valaurnor	4	E4	MY.caustenum.E3.assay.011879
+MY.caustenum.E4.assay.011294	Ceonilum	4	E4	MY.caustenum.E1.assay.013697
+MY.caustenum.E4.assay.012258	Vaurnum Visor	4	E4	MY.caustenum.E3.assay.011879
+MY.caustenum.E4.assay.012690	Rallesus	4	E4	MY.caustenum.E1.assay.011676
+MY.caustenum.E4.assay.013299	Vantum Valolaunium	4	E4	MY.caustenum.E3.assay.017389
+MY.caustenum.E4.assay.013790	Amillauria	4	E4	MY.caustenum.E3.assay.011879
+MY.caustenum.E4.assay.016446	Cestosia	4	E4	MY.caustenum.E3.assay.017389
+MY.caustenum.E4.assay.016579	Viallus Vauntum	4	E4	MY.caustenum.E3.assay.011879
+MY.caustenum.E4.assay.018286	Rostanum Mirnosus	4	E4	MY.caustenum.E2.assay.001733
+MY.caustenum.E4.assay.019604	Malia Amaureontus	4	E4	MY.caustenum.E3.assay.017389
+MY.caustenum.E4.assay.020162	Rollarnia	4	E4	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.000009	Nantum	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.000038	Celeornor	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.000191	Telernus	5	E5	MY.caustenum.E1.assay.011676
+MY.caustenum.E5.assay.000627	Reolor	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.000823	Lalium	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.000886	Sisum	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.000988	Naulia	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.000995	Corarium Telalum	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.001020	Telastum	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.001561	Neristium	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.001642	Mellanum	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.001841	Oraustelor	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.002085	Valauntum Miasanum	5	E5	MY.caustenum.E1.assay.011676
+MY.caustenum.E5.assay.002487	Sarontanum	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.002633	Ventium	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.002636	Ventistum	5	E5	MY.caustenum.E1.assay.011676
+MY.caustenum.E5.assay.002653	Maurinum	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.002731	Valialentor	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.003150	Nauntium	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.003606	Ralles	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.003650	Ronia	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.005373	Mallia Vauntia	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.005748	Ninelium	5	E5	MY.caustenum.E1.assay.011676
+MY.caustenum.E5.assay.006086	Meostor Taustium	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.006195	Tinium	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.006258	Oreosarnus	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.006708	Valastus	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.006943	Seriantor Nillus	5	E5	MY.caustenum.E1.assay.011676
+MY.caustenum.E5.assay.007426	Rosus Selor	5	E5	MY.caustenum.E1.assay.011676
+MY.caustenum.E5.assay.007766	Leornia	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.008044	Valiarneres	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.008087	Valosus Valilanum	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.008137	Taullanum Milor	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.008208	Minialanum	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.008325	Teloniles	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.008435	Ceosus Menanum	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.008459	Vornanum Corontes	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.008495	Lostanor	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.008622	Amoseontum	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.008816	Serirum	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.009936	Amelia	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.010659	Serausor	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.010979	Sanum Corasor	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.011026	Cirnium Orarintia	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.011065	Valirontium	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.011121	Amanteosum	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.011132	Oronintium	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.011176	Siarnares	5	E5	MY.caustenum.E2.assay.001733
+MY.caustenum.E5.assay.011315	Sisternum	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.011380	Miales Oraulanum	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.011947	Tiarnor Valelium	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.012206	Raunestum	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.012417	Moranum Corintus	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.012518	Niasauntum	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.012731	Telasus Niarnastes	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.012894	Nianium	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.013013	Rernus Teliarantes	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.013088	Serelus	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.013112	Ameornes Sereostum	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.013197	Cialoses	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.013206	Coraria	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.013845	Oriasanum Coraulor	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.013868	Teliarium	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.014155	Saurnia Rialiranum	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.014165	Lornes Nallia	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.014277	Telauntum	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.014413	Oreolor Serelianium	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.014676	Visteontor	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.014786	Serellia Tornialles	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.014844	Serilles Laulenus	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.015113	Oraliantor	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.015751	Nolia Valastia	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.016016	Cistia Teliantium	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.016114	Corernanum Valesaurnes	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.016131	Serolus	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.016134	Varnus Maullium	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E5.assay.016508	Raniasum	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.016940	Nillianium	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.017234	Leonanum Ventum	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.017282	Rosanum Coranus	5	E5	MY.caustenum.E3.assay.013165
+MY.caustenum.E5.assay.018960	Liania Naulum	5	E5	MY.caustenum.E3.assay.011879
+MY.caustenum.E5.assay.019447	Amasternor	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.019587	Volus Orestium	5	E5	MY.caustenum.E3.assay.017389
+MY.caustenum.E5.assay.019765	Nosilium	5	E5	MY.caustenum.E1.assay.013697
+MY.caustenum.E5.assay.020083	Orilor Liarnia	5	E5	MY.caustenum.E1.assay.011676
+MY.caustenum.E5.assay.020317	Larnanum	5	E5	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.000199	Lisus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.000272	Mantor	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.000356	Cenauntor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.000421	Laustia	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.000471	Amanum	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.000639	Ameostirnum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.000775	Sialanium	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.000833	Virnausium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.001076	Sereoria	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.001165	Ciantium	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.001519	Tiastor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.001532	Sonanum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.001659	Cialor	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.001665	Corolum Miarium	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.001786	Ciarus	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.001804	Rausor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.001952	Reolia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.001955	Corosaunium	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.002012	Castanum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.002129	Valeontanum Corauntanum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.002257	Siastum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.002268	Serallium	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.002280	Nantum Tollum	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.002305	Viallor	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.002332	Mauntes Tauleror	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.002599	Orauseolor	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.002711	Santor Naullanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.002730	Rilleontus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.002758	Miarneranum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.002770	Sereonus	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.002781	Coneolia	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.002871	Reonesus	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.002907	Meorus	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.003084	Villor	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.003087	Seraunus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.003092	Meontanum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.003149	Valirosanum	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.003254	Telernoses	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.003272	Corinium	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.003367	Valaustor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.003403	Tiantum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.003451	Mastia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.003455	Sollus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.003470	Leorniasus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.003515	Veontanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.003625	Lialaunor	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.003813	Maullus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.003858	Valeosum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.003862	Nereollum	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.003931	Vintialium	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.003991	Orauleostor	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.004014	Monialanum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.004044	Amallia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.004051	Tirollanum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.004105	Orosteolium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.004183	Liarintus	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.004222	Corelaustum	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.004375	Volantes	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.004420	Lernanum Sollor	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.004457	Naustia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.004458	Nisenum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.004513	Mellus	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.004516	Cerum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.004609	Amianellium	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.004650	Corinium Teloleontia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.004658	Telonteoses	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.004709	Ronium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.004764	Collinia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.004810	Serisia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.004857	Oraurnum Seriastor	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.004904	Lirentor	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.004905	Orenia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.004974	Lineosor	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.004980	Rasaulia	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.005060	Ronum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.005062	Oriarnilus	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.005138	Reolostor	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.005156	Carnestes	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.005186	Liasum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.005211	Mastum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.005262	Caurus	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.005281	Teliantia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.005297	Tolleontia	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.005369	Valentia Coreria	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.005374	Reorum Seraunes	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.005421	Virnium	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.005546	Siriania	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.005709	Amernisus	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.005779	Orausilium	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.005875	Orialia	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.006340	Carnum	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.006513	Vistollium	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.006521	Serus Lanaurus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.006565	Tilerus	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.006575	Seneosia	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.006666	Rornausia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.006704	Telereoles	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.006766	Oreostum	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.006919	Serornilium	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.007034	Neornia Laustanum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.007050	Telasternus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.007059	Narnium	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.007222	Restor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.007246	Neosor Valiniastia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.007279	Rollia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.007338	Serausanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.007418	Rostus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.007471	Reoria Raliarnus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.007486	Corontanum Amastolia	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.007518	Ciases Sellus	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.007582	Amosarnium	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.007600	Sauria Neorium	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.007804	Senia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.007808	Morum Telinus	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.007904	Vesirnanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.008062	Coraustinia	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.008128	Vauriastum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.008160	Valasium	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.008182	Siallum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.008261	Senires	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.008283	Corones Rinanum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.008410	Mialia	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.008475	Amestum Sasollanum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.008488	Sontes	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.008649	Valestia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.008728	Ralium	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.008746	Lentauror	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.008777	Rintellium	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.008875	Telilum Nelanum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.008907	Coraunales	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.008917	Contor	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.008977	Taurnanum Oristor	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.009088	Lintastes	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.009275	Valestinum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.009338	Launteosia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.009412	Corases	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.009458	Telium Valornium	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.009493	Valiantum Rianteorium	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.009897	Nolles Saulor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.010017	Reriallus	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.010034	Amiastia Saunus	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.010188	Corirnes Veosium	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.010255	Saurus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.010279	Miarnus Serenum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.010465	Tausium Lanor	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.010626	Telereostes	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.011058	Neontium Amarnisanum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.011104	Merolium	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.011339	Visum Lausium	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.011382	Amaseolanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.011419	Amiastentus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.011437	Varor	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.011482	Neraulia	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.011555	Sereolornus	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.011615	Nesiantes	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.011627	Vastia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.011638	Taliarium	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.011679	Valilases	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.011733	Telorirnum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.011923	Sesania	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.011930	Oristum Lialirnia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.012025	Seriles	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.012041	Valelor Taullor	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.012137	Serasia	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.012184	Corianium Sesteonum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.012298	Miantia Ceolium	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.012390	Lontor	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.012558	Leontes Miasteontia	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.012609	Tolia Seornes	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.012622	Seror Varisium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.012631	Vausteores	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.012681	Morasia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.012805	Serontium Ameranum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.012843	Amillium Mernes	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.012908	Vauror Sillia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.013061	Coristanum Coreolanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.013104	Teliriasium	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.013150	Vellum Nentastium	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.013241	Orianor Amianium	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.013332	Taustium Rauniantum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.013536	Nauror Miantum	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.013585	Mestus Vausarnum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.013735	Amauses	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.013766	Seraullia Raustor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.013815	Maullia Oronium	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.013899	Amoraunia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.013919	Corollanum Ameliastia	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.014011	Caurnium Serellasium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.014021	Sanium Orirestum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.014038	Mallorus	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.014091	Ceonaullus	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.014139	Valeneolia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.014153	Amentaustes Nisauntium	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.014205	Vaustontia	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.014266	Moniarus	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.014462	Serolles	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.014525	Oraulia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.014702	Conallor	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.014801	Canteonium	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.014851	Nanor Malaustanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.014924	Telania	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.015229	Viarnia Orasium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.015377	Caleoses Selontum	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.015434	Meorales	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.015508	Vialus Rornus	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.015510	Riastia Rellanum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.015689	Ameornanum	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.015752	Amornor	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.015762	Coronor Cernosanum	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.015800	Nauseollia	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.015817	Nauntes Ameolirum	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.015828	Millanum Voristes	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.015841	Orilanum Rinor	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.015892	Rilauntanum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.015910	Corontia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.015984	Ameontus Teliantus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.016017	Vintium Conerum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.016021	Vauria	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.016139	Orestasium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.016159	Mintor Orallia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.016273	Tontia Teliaror	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.016277	Caurnus Neostanum	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.016369	Caunternum	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.016435	Telaurnoses	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.016449	Amoriasia	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.016536	Teostanum Tialia	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.016664	Reraulanum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.016897	Amilia Moriarnanum	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.016950	Teorniallia	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.016998	Teliasor Relarium	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.017096	Coraustosia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.017170	Oraurnia Liastaures	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.017343	Salanum Valeonilor	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.017435	Vornor	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.017686	Reonus	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.017758	Teleoses Casanum	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.017763	Orallum Miallia	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.017864	Viaseontia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.017881	Vaseonor Telus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.017939	Serirnanum Corernia	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.018009	Orisollia	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.018090	Silor Taunanum	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.018147	Rirolium	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.018179	Tareontus	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.018583	Nantor Villium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.018713	Valauseles	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.018780	Seoralles	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.018808	Ciantium Valorelia	6	E6	MY.caustenum.E3.assay.017389
+MY.caustenum.E6.assay.018967	Viaria Lalium	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.019124	Maurosum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.019282	Reoriastium	6	E6	MY.caustenum.E3.assay.011879
+MY.caustenum.E6.assay.019291	Ameonum Coronalanum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.019317	Valolum Rilleones	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.019346	Lises Nonallium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.019402	Mausteosor	6	E6	MY.caustenum.E1.assay.011676
+MY.caustenum.E6.assay.019443	Oriares Valenosum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.019487	Seriarum Neostosanum	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.019672	Orenes Teliastor	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.019861	Seriallus Serialium	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.019976	Lernintus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.020018	Toranum Sintanum	6	E6	MY.caustenum.E5.assay.017053
+MY.caustenum.E6.assay.020116	Nerialus	6	E6	MY.caustenum.E3.assay.013165
+MY.caustenum.E6.assay.020215	Melornus	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E6.assay.020273	Amollarium	6	E6	MY.caustenum.E1.assay.013697
+MY.caustenum.E6.assay.020430	Saullontes	6	E6	MY.caustenum.E2.assay.001733
+MY.caustenum.E7.assay.001305	Mastium	7	E7	MY.caustenum.E1.assay.013697
+MY.caustenum.E7.assay.001467	Amesontanum	7	E7	MY.caustenum.E1.assay.011676
+MY.caustenum.E7.assay.001716	Sornerum	7	E7	MY.caustenum.E1.assay.013697
+MY.caustenum.E7.assay.002738	Salles	7	E7	MY.caustenum.E3.assay.011879
+MY.caustenum.E7.assay.003175	Masanum	7	E7	MY.caustenum.E1.assay.013697
+MY.caustenum.E7.assay.005191	Amaror	7	E7	MY.caustenum.E2.assay.001733
+MY.caustenum.E7.assay.009555	Coriaraunia	7	E7	MY.caustenum.E3.assay.011879
+MY.caustenum.E7.assay.012933	Neollostium	7	E7	MY.caustenum.E3.assay.017389
+MY.caustenum.E7.assay.014031	Vantes	7	E7	MY.caustenum.E2.assay.001733
+MY.caustenum.E7.assay.018224	Corontus Cintes	7	E7	MY.caustenum.E3.assay.013165
+MY.caustenum.E7.assay.020260	Telonus Corareones	7	E7	MY.caustenum.E3.assay.017389
+MY.caustenum.E7.assay.020434	Cestintium	7	E7	MY.caustenum.E3.assay.011879

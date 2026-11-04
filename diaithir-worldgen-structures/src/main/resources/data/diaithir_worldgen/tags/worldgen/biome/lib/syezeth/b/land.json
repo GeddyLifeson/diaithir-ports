@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:syezeth_amonillor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_crorneden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_feneldar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_seizisheth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_shiastora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_siliomys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_thiavsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_thyuzora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_tillium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:syezeth_torukturn",
+   "required": false
+  }
+ ]
+}

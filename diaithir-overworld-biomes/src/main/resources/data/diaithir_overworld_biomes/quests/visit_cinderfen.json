@@ -1,0 +1,1 @@
+{"id":"diaithir_overworld_biomes:quests/visit_cinderfen","age":"Rodos","task":{"type":"visit_biome","biome":"diaithir_overworld_biomes:cinderfen"},"codex_link":"diaithir_overworld_biomes:cinderfen","reward":{"energy_J":10000},"global_event":"biomes_ready"}

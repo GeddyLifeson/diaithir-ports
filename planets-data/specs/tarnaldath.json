@@ -1,0 +1,189 @@
+{
+ "sky": {
+  "sky": "#2a1a3a",
+  "fog": "#4a2a3a",
+  "cloud": "#66ff9966",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#5a2a6a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.tarnaldath.E3.assay.004361",
+   "archetype": "dark_forest",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#4a6a3a",
+   "foliage": "#3a5a2a",
+   "water": "#3a4a6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.tarnaldath.E2.assay.004566",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#c8a85a",
+   "foliage": "#b89a4a",
+   "water": "#5a6a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.tarnaldath.E3.assay.003840",
+   "archetype": "savanna",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#b8a060",
+   "foliage": "#a89050",
+   "water": "#5a6a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.tarnaldath.E3.assay.003735",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#a06040",
+   "foliage": "#8a5030",
+   "water": "#6a4a4a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.tarnaldath.E3.assay.003534",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5a6a4a",
+   "foliage": "#4a5a3a",
+   "water": "#3a4a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.tarnaldath.E2.assay.004520",
+   "archetype": "mangrove_swamp",
+   "temp": 0.4,
+   "humid": 0.8,
+   "grass": "#4a7a4a",
+   "foliage": "#3a6a3a",
+   "water": "#3a4a5a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.tarnaldath.E6.assay.004213",
+   "archetype": "ice_spikes",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#a0c8e0",
+   "foliage": "#90b8d0",
+   "water": "#8ab0d8",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.tarnaldath.E3.assay.004097",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": -0.2,
+   "grass": "#c0d8f0",
+   "foliage": "#b0c8e0",
+   "water": "#90b8e0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.tarnaldath.E6.places.002170",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.4,
+   "grass": "#6a6a7a",
+   "foliage": "#5a5a6a",
+   "water": "#4a5a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.tarnaldath.E6.places.002329",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.4,
+   "grass": "#8a6a9a",
+   "foliage": "#e0a0c0",
+   "water": "#7a6a9a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dim, ash-tinted realm of stellar dust where scorched deserts and badlands give way to frozen peaks, dark woods and violet seas beneath a lantern-lit sky.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#2a3a52",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.tarnaldath.E6.events.001812",
+  "why": "Singing rings and lightning-like convergence over dying stars suggest stormy, luminous skies",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.tarnaldath.E6.places.002345",
+  "grounded": false
+ }
+}

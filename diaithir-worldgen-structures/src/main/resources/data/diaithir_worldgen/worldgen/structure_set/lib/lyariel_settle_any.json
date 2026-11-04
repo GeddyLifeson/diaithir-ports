@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyariel/settlement_0_any",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyariel/settlement_1_any",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyariel/settlement_2_any",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 261763883
+ }
+}

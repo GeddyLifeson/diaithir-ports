@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ryirleth_brerden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_droukun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_isizeisheth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_sesora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_surasamira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_tarnane",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_thivsis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_veneluana",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ryirleth_vorairkak",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryeralwen/hall/2/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryeralwen/ar_ryeralwen_e6_assay_000211",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

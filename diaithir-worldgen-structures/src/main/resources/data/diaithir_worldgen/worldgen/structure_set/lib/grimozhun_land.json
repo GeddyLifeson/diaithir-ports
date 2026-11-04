@@ -1,0 +1,106 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/forge_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/forge_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/fortress_1_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/fortress_2_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/fortress_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/hall_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/hall_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/hall_2_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/landmark_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/ruin_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/temple_0_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/temple_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/temple_2_land",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/tomb_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/tomb_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/tower_0_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/tower_1_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/grimozhun/tower_2_land",
+   "weight": 13
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 195008778
+ }
+}

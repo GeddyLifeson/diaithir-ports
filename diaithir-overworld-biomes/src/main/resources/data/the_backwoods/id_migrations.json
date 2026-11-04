@@ -1,0 +1,7 @@
+[
+ {
+  "registry": "minecraft:block",
+  "old": "the_backwoods:potted_ash_rose",
+  "new": "minecraft:flower_pot"
+ }
+]

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/orierlae/forge/2/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/orierlae/ar_orierlae_e6_assay_003016",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

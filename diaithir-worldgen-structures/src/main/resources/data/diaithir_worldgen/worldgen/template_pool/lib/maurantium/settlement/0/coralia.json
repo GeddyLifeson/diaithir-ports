@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/maurantium/settlement/0/coralia",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/maurantium/my_maurantium_e2_assay_008480",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

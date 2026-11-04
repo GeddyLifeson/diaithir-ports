@@ -1,0 +1,28 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:not",
+      "term": {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "block": {
+            "blocks": ["minecraft:water"]
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:not",
+      "term": {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "offset_y": 1,
+          "block": {
+            "blocks": ["minecraft:water"]
+          }
+        }
+      }
+    }
+  ]
+}

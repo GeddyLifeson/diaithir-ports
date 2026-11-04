@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/corialor/bridge/1/river",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/corialor/my_corialor_e5_places_000199",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

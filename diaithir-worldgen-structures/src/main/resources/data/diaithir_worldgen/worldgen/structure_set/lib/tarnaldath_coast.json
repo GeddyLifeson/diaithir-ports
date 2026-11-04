@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/harbor_0_coast",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/harbor_2_coast",
+   "weight": 9
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 101039825
+ }
+}

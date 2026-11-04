@@ -35,13 +35,20 @@ public final class DiaithirCombat {
     public DiaithirCombat(IEventBus bus, ModContainer container) {
         container.registerConfig(ModConfig.Type.COMMON, CombatConfig.SPEC);
         Cat.load();
+        Consolidated.load();
+        ConsolidatedItems.register(bus);
+        ConsolidatedBehaviour.register();
+        LibraryGear.register(bus);
         bus.addListener(Net::register);
+        net.diaithir.combat.survey.SwordBlocking.register(bus);
+        NeoForge.EVENT_BUS.register(new net.diaithir.combat.survey.Buildup());
+        NeoForge.EVENT_BUS.register(new net.diaithir.combat.survey.Lance());
         NeoForge.EVENT_BUS.register(this);
         if (FMLEnvironment.getDist().isClient()) CombatClient.init(bus);
     }
 
     @SubscribeEvent
-    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); }
+    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); net.diaithir.combat.survey.SurveyTest.register(e.getDispatcher()); LibraryGear.commands(e.getDispatcher()); }
 
     @SubscribeEvent
     public void serverTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) { SelfTest.tick(); }
@@ -51,7 +58,7 @@ public final class DiaithirCombat {
 
     @SubscribeEvent
     public void tick(PlayerTickEvent.Post e) {
-        if (e.getEntity() instanceof ServerPlayer sp) Engine.tick(sp);
+        if (e.getEntity() instanceof ServerPlayer sp) { Engine.tick(sp); LibraryGear.tick(sp); }
     }
 
     @SubscribeEvent
@@ -63,6 +70,7 @@ public final class DiaithirCombat {
         if (!(e.getEntity() instanceof ServerPlayer sp) || !CombatConfig.ENABLED.getAsBoolean()) return;
         if (Cat.melee(sp.getMainHandItem()) == null) return;
         e.setCanceled(true);
+        if (!LibraryGear.usable(sp, sp.getMainHandItem())) return;
         Engine.swing(sp);
     }
 

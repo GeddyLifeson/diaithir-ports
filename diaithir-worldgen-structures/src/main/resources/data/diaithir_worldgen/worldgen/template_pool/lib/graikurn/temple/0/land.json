@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/graikurn/temple/0/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/graikurn/gr_graikurn_e1_places_000204",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

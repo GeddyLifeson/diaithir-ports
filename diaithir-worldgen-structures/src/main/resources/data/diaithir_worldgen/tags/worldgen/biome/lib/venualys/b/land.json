@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:venualys_alaarlys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venualys_alairla",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venualys_miamuanwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venualys_nuilaeneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venualys_oriilae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venualys_ryaraeleth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venualys_veneinys",
+   "required": false
+  }
+ ]
+}

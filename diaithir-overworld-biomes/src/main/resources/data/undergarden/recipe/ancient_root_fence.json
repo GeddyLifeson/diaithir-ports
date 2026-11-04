@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "undergarden:ancient_root_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "#S#",
+  "#S#"
+ ],
+ "result": {
+  "id": "undergarden:ancient_root_fence",
+  "count": 3
+ }
+}

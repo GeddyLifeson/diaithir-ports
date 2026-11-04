@@ -1,0 +1,27 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "diaithircombat:gear_material/a7"
+   }
+  }
+ ],
+ "_age": "VII",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7",
+  "#diaithircombat:gear_material/a7"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_feet",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 7
+  }
+ }
+}

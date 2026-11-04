@@ -77,7 +77,8 @@ public final class Elites {
         Data.Elites t = Data.elites();
         Data.EliteBase base = t.bases.get(BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()).toString());
         if (base == null || isElite(mob) || mob.entityTags().contains(BossController.TAG)) return false;
-        double chance = t.chance_by_age[Math.clamp(age - 1, 0, t.chance_by_age.length - 1)] * base.weight / 10.0;
+        double chance = t.chance_by_age[Math.clamp(age - 1, 0, t.chance_by_age.length - 1)] * base.weight / 10.0
+            * Difficulty.current(mob.level().getServer()).elite_chance;
         if (r.nextDouble() >= chance) return false;
         make(mob, age, r, null);
         return true;

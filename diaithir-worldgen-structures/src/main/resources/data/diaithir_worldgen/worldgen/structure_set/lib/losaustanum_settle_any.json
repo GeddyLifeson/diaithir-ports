@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_any",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_1_any",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_any",
+   "weight": 53
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_3_any",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 182951003
+ }
+}

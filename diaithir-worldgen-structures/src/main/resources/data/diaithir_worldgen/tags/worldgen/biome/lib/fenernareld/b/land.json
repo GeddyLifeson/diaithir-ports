@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:fenernareld_brolderock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:fenernareld_crurnon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:fenernareld_dranar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:fenernareld_drernoldath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:fenernareld_keladenon",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:fenernareld_kelordar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:fenernareld_morarnesten",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:fenernareld_theren",
+   "required": false
+  }
+ ]
+}

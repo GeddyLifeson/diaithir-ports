@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_0_meravaala",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/sestia/settlement_2_meravaala",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 184829925
+ }
+}

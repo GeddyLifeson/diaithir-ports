@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirbosses:item/foundry_sovereign_trophy"
+ }
+}
