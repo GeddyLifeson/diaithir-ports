@@ -18,3 +18,14 @@ Step 1: Sedna (156 classes), Ceres (22) and the Minux `Buildroot` loader are ven
 6. Age gate, Codex entry, quest, 130-language names via the names pipeline, Bible check.
 
 Compile builds that cannot run in the cloud go to a PC Remote Control thread, hidden windows only.
+
+## Step 2 state (OC2R code on 26.1.2)
+`src/main/java/li/cil/oc2` holds the OC2R 1.21.1 sources (726 files, about 66k lines), compiled only with `-Poc2` so the default module build stays green. `-Poc2 -Poc2Stage=server` leaves out client, datagen, jcodec, integrations and mixins (server side first).
+Scripted so far: `ResourceLocation` to `Identifier`, `MethodsReturnNonnullByDefault` removed, NBT getters moved to the `getXOr` / `getCompoundOrEmpty` / `getListOrEmpty` forms.
+Error count (javac first phase, so it will grow when symbols resolve): 3626 raw, 2070 after the server cut, 1256 after the scripted fixes.
+Left, in rough order: `BlockEntity.saveAdditional/loadAdditional` to `ValueOutput/ValueInput` (13 block entities), `ChunkPos` record, `IBlockEntityExtension.handleUpdateTag`, `spawnAtLocation`, recipe builders (`shaped`), data component and `DyedItemColor`, rendering/GUI (GlStateManager, VertexBuffer, Markdown Manual replaced by our Codex), JEI/ProjectRed integrations dropped, jcodec only needed by the camera.
+
+Update: the sharded API fix loop (one call per failing file, recompile, repeat; Claude Sonnet via the compute API, tools in the project folder) took the server stage to **0 compile errors in 2 rounds** (1256 to 58 to 0). 68 `TODO(oc2-restore)` markers in 32 files mark things cut because their package is not in the stage yet (jcodec video, integrations, client model data, mixins); they come back when the next stages compile.
+Compile the stage: `./gradlew compileJava -Poc2 -Poc2Stage=server`. Next stages: client + data, then jcodec, mixins, then resources and mod registration.
+
+Update 2: the **whole tree (client, data, jcodec, integrations, mixins) now compiles with 0 errors** under `-Poc2` (full stage took 1492 errors to 0 in 8 loop rounds plus 6 hand fixes). 118 `TODO(oc2-restore)` markers in 64 files list what was cut or simplified (JEI, ProjectRed and Markdown Manual removed; video/H264 path and some renderers reduced). Not done: mod entry registration in neoforge.mods.toml, resources (non-binary ones are in upstream/ and need copying with the 26.1 data formats), textures, any boot or selftest. The default build still compiles without the flag.

@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirworldevents"
+version = "${version}"
+displayName = "Diaithir World Events"
+authors = "Diaithir; original Global Events by MD22 (MIT)"
+description = "Random world events: meteor strikes with ore craters, blood moons with monster waves, wandering caravans with rare trades and golden hours with doubled ore drops. Port of Global Events (MD22, MIT) from Fabric to NeoForge. Events are always on and reach players as quests: other mods register events and listen to WorldEventStartedEvent."
+
+[[dependencies.diaithirworldevents]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

@@ -1,7 +1,9 @@
 {
   "tier1": {
-    "age": 5,
+    "age": 6,
     "items": [
+      "diaithirlogistics:foundry_depot",
+      "diaithirlogistics:foundry_plan_wand",
       "diaithirlogistics:pipe",
       "diaithirlogistics:sink_pipe",
       "diaithirlogistics:extractor_pipe",
