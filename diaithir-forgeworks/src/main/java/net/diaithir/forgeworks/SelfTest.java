@@ -149,6 +149,19 @@ final class SelfTest {
             int ta = ticksUntil(level, ca, 3000, () -> has(ca, Kind.OUT, Machines.MATERIALS.get(0).get(), 1));
             if (ta < 0 || t4 < 0 || !(ta * 3 < t4 * 2)) fails.add("speed augment did not speed up: " + ta + " vs " + t4);
 
+            // shared upgrade system: three speed modules on an age 6 crusher
+            BlockPos pm = base.offset(24, 0, 0);
+            placed.add(pm);
+            MachineBlockEntity cm = place(level, pm, Kind.CRUSHER, 2, fails);
+            if (cm != null) {
+                double s0 = cm.speed();
+                net.diaithir.upgrades.ModuleSpec spd = net.diaithir.upgrades.ModuleRegistry.get("circuit_speed_1").orElseThrow();
+                for (int i = 0; i < 3; i++) {
+                    if (!net.diaithir.upgrades.Upgrades.insert(cm, spd, net.diaithir.upgrades.Quality.NORMAL)) fails.add("upgrade module " + i + " refused by the crusher");
+                }
+                if (Math.abs(cm.speed() / s0 - 1.6) > 1e-9) fails.add("three speed modules gave speed x" + cm.speed() / s0 + ", expected 1.6");
+            }
+
             // menu
             AbstractContainerMenu menu = c4.createMenu(7, player.getInventory(), player);
             if (menu == null || menu.slots.size() != 5 + 36 - 1) fails.add("menu slot count " + (menu == null ? -1 : menu.slots.size()));

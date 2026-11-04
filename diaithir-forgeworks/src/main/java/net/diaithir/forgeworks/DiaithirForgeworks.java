@@ -31,6 +31,18 @@ public final class DiaithirForgeworks {
                 Machines.MATERIALS.forEach(i -> e.accept(i.get()));
             }
         });
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> {
+            if (System.getenv("DIAITHIR_FORGEWORKS_SELFTEST") == null) return;
+            // The selftest clears blocks near spawn, so it only runs in a gradle dev "run" folder, never on a real server.
+            var dir = e.getServer().getServerDirectory().toAbsolutePath().normalize().getFileName();
+            if (dir == null || !"run".equals(dir.toString())) {
+                org.slf4j.LoggerFactory.getLogger(ID).warn("SELFTEST skipped: server folder is not a dev 'run' folder");
+                return;
+            }
+            var fails = SelfTest.run(e.getServer());
+            org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ID);
+            if (fails.isEmpty()) log.info("SELFTEST PASS"); else fails.forEach(x -> log.error("SELFTEST FAIL: {}", x));
+        });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> Commands.register(e.getDispatcher()));
     }
 }
