@@ -13,12 +13,16 @@ import java.util.List;
 public record BayData(List<Entry> loads) {
     public static final BayData EMPTY = new BayData(List.of());
 
-    public record Entry(String type, int x, int y, int z, boolean turned, ItemContainerContents items) {
+    public record Entry(String type, int x, int y, int z, boolean turned, ItemContainerContents items, List<Entry> inside) {
+        public Entry(String type, int x, int y, int z, boolean turned, ItemContainerContents items) { this(type, x, y, z, turned, items, List.of()); }
+
         static final Codec<Entry> CODEC = RecordCodecBuilder.create(i -> i.group(
                 Codec.STRING.fieldOf("type").forGetter(Entry::type),
                 Codec.INT.fieldOf("x").forGetter(Entry::x), Codec.INT.fieldOf("y").forGetter(Entry::y), Codec.INT.fieldOf("z").forGetter(Entry::z),
                 Codec.BOOL.optionalFieldOf("turned", false).forGetter(Entry::turned),
-                ItemContainerContents.CODEC.optionalFieldOf("items", ItemContainerContents.EMPTY).forGetter(Entry::items)).apply(i, Entry::new));
+                ItemContainerContents.CODEC.optionalFieldOf("items", ItemContainerContents.EMPTY).forGetter(Entry::items),
+                // a container's own loads; recursive, so a container on a vehicle keeps what is inside it
+                Codec.lazyInitialized(() -> Entry.CODEC).listOf().optionalFieldOf("inside", List.of()).forGetter(Entry::inside)).apply(i, Entry::new));
     }
 
     public static final Codec<BayData> CODEC = Entry.CODEC.listOf().xmap(BayData::new, BayData::loads);
@@ -26,16 +30,7 @@ public record BayData(List<Entry> loads) {
     /** Rebuilds the bay of a container of the given type; a load that no longer fits or is unknown is skipped. */
     public CargoBay toBay(LoadType container) {
         CargoBay bay = new CargoBay(container.inner()[0], container.inner()[1], container.inner()[2], container.payloadKg());
-        for (Entry e : loads) {
-            LoadType t = LoadType.byId(e.type);
-            if (t == null) continue;
-            CargoBay.Placed p = bay.restore(t, e.turned, e.x, e.y, e.z, 0);
-            if (p == null) continue;
-            NonNullList<ItemStack> items = NonNullList.withSize(t.itemSlots(), ItemStack.EMPTY);
-            e.items.copyInto(items);
-            p.data = items;
-            p.payloadKg = Loads.kg(items);
-        }
+        fill(bay, loads);
         return bay;
     }
 
@@ -46,12 +41,15 @@ public record BayData(List<Entry> loads) {
         return bay;
     }
 
-    private void fill(CargoBay bay) {
-        for (Entry e : loads) {
+    private void fill(CargoBay bay) { fill(bay, loads); }
+
+    private static void fill(CargoBay bay, List<Entry> entries) {
+        for (Entry e : entries) {
             LoadType t = LoadType.byId(e.type);
             if (t == null) continue;
             CargoBay.Placed p = bay.restore(t, e.turned, e.x, e.y, e.z, 0);
             if (p == null) continue;
+            if (p.inside != null) { fill(p.inside, e.inside); continue; }
             NonNullList<ItemStack> items = NonNullList.withSize(t.itemSlots(), ItemStack.EMPTY);
             e.items.copyInto(items);
             p.data = items;
@@ -59,16 +57,17 @@ public record BayData(List<Entry> loads) {
         }
     }
 
-    public static BayData of(CargoBay bay) {
+    public static BayData of(CargoBay bay) { return new BayData(entries(bay)); }
+
+    private static List<Entry> entries(CargoBay bay) {
         List<Entry> out = new ArrayList<>();
         for (CargoBay.Placed p : bay.loads()) {
-            if (p.data instanceof List<?> l) {
-                @SuppressWarnings("unchecked") List<ItemStack> items = (List<ItemStack>) l;
-                out.add(new Entry(p.type.id(), p.x, p.y, p.z, p.turned, ItemContainerContents.fromItems(items)));
-            } else {
-                out.add(new Entry(p.type.id(), p.x, p.y, p.z, p.turned, ItemContainerContents.EMPTY));
-            }
+            ItemContainerContents items = p.data instanceof List<?> l ? ItemContainerContents.fromItems(castItems(l)) : ItemContainerContents.EMPTY;
+            out.add(new Entry(p.type.id(), p.x, p.y, p.z, p.turned, items, p.inside != null ? entries(p.inside) : List.of()));
         }
-        return new BayData(out);
+        return out;
     }
+
+    @SuppressWarnings("unchecked")
+    private static List<ItemStack> castItems(List<?> l) { return (List<ItemStack>) l; }
 }
