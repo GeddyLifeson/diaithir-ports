@@ -39,6 +39,26 @@ public record BayData(List<Entry> loads) {
         return bay;
     }
 
+    /** Rebuilds a vehicle's bay of the given size: a deck, bed or trunk rather than a container. */
+    public CargoBay toBay(int w, int h, int l, double maxPayloadKg) {
+        CargoBay bay = new CargoBay(w, h, l, maxPayloadKg);
+        fill(bay);
+        return bay;
+    }
+
+    private void fill(CargoBay bay) {
+        for (Entry e : loads) {
+            LoadType t = LoadType.byId(e.type);
+            if (t == null) continue;
+            CargoBay.Placed p = bay.restore(t, e.turned, e.x, e.y, e.z, 0);
+            if (p == null) continue;
+            NonNullList<ItemStack> items = NonNullList.withSize(t.itemSlots(), ItemStack.EMPTY);
+            e.items.copyInto(items);
+            p.data = items;
+            p.payloadKg = Loads.kg(items);
+        }
+    }
+
     public static BayData of(CargoBay bay) {
         List<Entry> out = new ArrayList<>();
         for (CargoBay.Placed p : bay.loads()) {

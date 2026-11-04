@@ -1,0 +1,245 @@
+{
+ "diaithirtrucks:trailer_dry_van": {
+  "w": 2,
+  "h": 3,
+  "l": 14,
+  "payload_kg": 20000,
+  "ox": -1.0,
+  "oy": 1.15,
+  "oz": -7.0
+ },
+ "diaithirtrucks:trailer_flatbed": {
+  "w": 4,
+  "h": 4,
+  "l": 13,
+  "payload_kg": 24000,
+  "ox": -2.0,
+  "oy": 1.15,
+  "oz": -6.5
+ },
+ "diaithirtrucks:trailer_container_chassis": {
+  "w": 4,
+  "h": 4,
+  "l": 10,
+  "payload_kg": 26000,
+  "ox": -2.0,
+  "oy": 1.15,
+  "oz": -5.0
+ },
+ "diaithirtrucks:trailer_reefer": {
+  "w": 2,
+  "h": 3,
+  "l": 14,
+  "payload_kg": 19000,
+  "ox": -1.0,
+  "oy": 1.15,
+  "oz": -7.0
+ },
+ "diaithirtrucks:trailer_lowboy": {
+  "w": 4,
+  "h": 4,
+  "l": 13,
+  "payload_kg": 40000,
+  "ox": -2.0,
+  "oy": 0.6,
+  "oz": -6.5
+ },
+ "diaithirtrucks:trailer_car_carrier": {
+  "w": 4,
+  "h": 4,
+  "l": 14,
+  "payload_kg": 17000,
+  "ox": -2.0,
+  "oy": 1.15,
+  "oz": -7.0
+ },
+ "diaithirtrucks:trailer_log_trailer": {
+  "w": 2,
+  "h": 2,
+  "l": 10,
+  "payload_kg": 24000,
+  "ox": -1.0,
+  "oy": 1.15,
+  "oz": -5.0
+ },
+ "diaithirtrucks:trailer_curtainsider": {
+  "w": 2,
+  "h": 3,
+  "l": 12,
+  "payload_kg": 24000,
+  "ox": -1.0,
+  "oy": 1.15,
+  "oz": -6.0
+ },
+ "diaithirtrucks:trailer_dump_trailer": {
+  "w": 2,
+  "h": 2,
+  "l": 7,
+  "payload_kg": 24000,
+  "ox": -1.0,
+  "oy": 1.15,
+  "oz": -3.5
+ },
+ "diaithirtrucks:trailer_livestock": {
+  "w": 2,
+  "h": 3,
+  "l": 14,
+  "payload_kg": 18000,
+  "ox": -1.0,
+  "oy": 1.15,
+  "oz": -7.0
+ },
+ "diaithirtrucks:trailer_step_deck": {
+  "w": 4,
+  "h": 4,
+  "l": 13,
+  "payload_kg": 22000,
+  "ox": -2.0,
+  "oy": 1.15,
+  "oz": -6.5
+ },
+ "diaithirtrucks:trailer_modular_heavy": {
+  "w": 4,
+  "h": 4,
+  "l": 14,
+  "payload_kg": 100000,
+  "ox": -2.0,
+  "oy": 1.15,
+  "oz": -7.0
+ },
+ "diaithirtrucks:trailer_tank_transporter": {
+  "w": 4,
+  "h": 4,
+  "l": 14,
+  "payload_kg": 55000,
+  "ox": -2.0,
+  "oy": 0.6,
+  "oz": -7.0
+ },
+ "diaithirtrucks:trailer_handcart": {
+  "w": 1,
+  "h": 2,
+  "l": 1,
+  "payload_kg": 300,
+  "ox": -0.5,
+  "oy": 0.85,
+  "oz": -0.5
+ },
+ "diaithirtrucks:trailer_cart": {
+  "w": 1,
+  "h": 2,
+  "l": 1,
+  "payload_kg": 600,
+  "ox": -0.5,
+  "oy": 0.85,
+  "oz": -0.5
+ },
+ "diaithirtrucks:trailer_oxcart": {
+  "w": 1,
+  "h": 2,
+  "l": 1,
+  "payload_kg": 1000,
+  "ox": -0.5,
+  "oy": 0.85,
+  "oz": -0.5
+ },
+ "diaithirtrucks:trailer_wagon": {
+  "w": 1,
+  "h": 2,
+  "l": 3,
+  "payload_kg": 2000,
+  "ox": -0.5,
+  "oy": 0.85,
+  "oz": -1.5
+ },
+ "diaithirtrucks:trailer_conestoga": {
+  "w": 1,
+  "h": 2,
+  "l": 4,
+  "payload_kg": 5000,
+  "ox": -0.5,
+  "oy": 0.85,
+  "oz": -2.0
+ },
+ "diaithirtrucks:trailer_dray": {
+  "w": 1,
+  "h": 2,
+  "l": 3,
+  "payload_kg": 3000,
+  "ox": -0.5,
+  "oy": 0.85,
+  "oz": -1.5
+ },
+ "diaithirtrucks:cv_cat_797_haul": {
+  "w": 3,
+  "h": 2,
+  "l": 4,
+  "payload_kg": 90000,
+  "ox": -1.5,
+  "oy": 1.9,
+  "oz": -2.5
+ },
+ "diaithirtrucks:cv_dump_cart": {
+  "w": 1,
+  "h": 1,
+  "l": 1,
+  "payload_kg": 600,
+  "ox": -0.5,
+  "oy": 0.9,
+  "oz": -0.5
+ },
+ "diaithirtanks:tank_mk1": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 1.1,
+  "oz": -2.8
+ },
+ "diaithirtanks:tank_mk1a": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 1.1,
+  "oz": -2.8
+ },
+ "diaithirtanks:tank_mk1b": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 1.1,
+  "oz": -2.8
+ },
+ "diaithirtanks:tank_mk2": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 1.1,
+  "oz": -2.8
+ },
+ "diaithirtanks:tank_mk2a": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 1.1,
+  "oz": -2.8
+ },
+ "diaithirtanks:tank_mk2b": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 1.1,
+  "oz": -2.8
+ }
+}
