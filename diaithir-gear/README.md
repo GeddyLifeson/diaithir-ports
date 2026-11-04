@@ -30,6 +30,8 @@ Tools: `tools/gen_parity.py`, `tools/gen_sets.py <silentgems jar> <pack_dump.jso
 ## Alignment with the Foundry stations (ports #163)
 Foundry's `diaithir_stations` make parts and run processes (ingots, casts, gun internals, machines); the benches here assemble finished gear from those parts, so the two chain: a Foundry station makes the `c:ingots/*` and part items, a bench here turns them into a sword, gun or pan. Ages match: Smithy and Workshop Bench I (stone, bone and clay work from the start, like the hearth bench), Gunsmith Bench VI (the assembler's Age). No code dependency, so either PR can merge first; materials read the same `c:ingots/<metal>` tags, and a Foundry recipe can output any material item listed in `workshop/materials_base.json`.
 
+## Tool Belt (survey part 2, PORT)
+Package `net.diaithir.gear.toolbelt` is a 26.1 port of Tool Belt (BSD-3, licence in META-INF/licenses). Namespace `toolbelt`; configs `diaithirgear-toolbelt-*.toml`. Belt craftable with leather and iron. The inventory-screen entity preview and effect list were dropped in the belt slot screen.
 ## Folded survey items (survey part 2)
 | Item | Source | Licence | Notes |
 |---|---|---|---|
