@@ -4,6 +4,7 @@
   "item.vs_yard.hull_plank_set": "Hull Plank Set",
   "item.vs_yard.deck_plating": "Deck Plating",
   "item.vs_yard.steam_engine": "Steam Engine",
+  "item.vs_yard.arcane_motor": "Arcane Motor",
   "item.vs_yard.rudder": "Rudder",
   "item.vs_yard.helm_kit": "Helm Kit",
   "item.vs_yard.anchor_kit": "Anchor Kit",
@@ -16,5 +17,6 @@
   "block.vs_yard.treadwheel_crane": "Treadwheel Crane",
   "block.vs_yard.steam_crane": "Steam Crane",
   "block.vs_yard.gantry_crane": "Gantry Crane",
-  "itemGroup.vs_yard.ship_yard": "Ship Yard"
+  "itemGroup.vs_yard.ship_yard": "Ship Yard",
+  "item.vs_yard.ballast_plate": "Ballast Plate"
 }

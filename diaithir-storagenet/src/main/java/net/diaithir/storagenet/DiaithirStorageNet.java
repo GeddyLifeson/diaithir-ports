@@ -15,6 +15,11 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.diaithir.storagenet.quickstack.QuickStackClient;
+import net.diaithir.storagenet.quickstack.QuickStackPayload;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -71,12 +76,16 @@ public final class DiaithirStorageNet {
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
+        bus.addListener(net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent.class, e ->
+                e.registerBlockEntity(net.neoforged.neoforge.capabilities.Capabilities.Item.BLOCK, CONTROLLER_BE.get(), (be, side) -> be.view()));
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
                 for (DeferredItem<BlockItem> i : List.of(CONTROLLER_ITEM, CABLE_ITEM, IMPORT_CABLE_ITEM, EXPORT_CABLE_ITEM, FILTER_CABLE_ITEM, TERMINAL_ITEM,
                         CRAFTING_TERMINAL_ITEM, WIRELESS_ITEM)) e.accept(i.get());
             }
         });
+        bus.addListener(RegisterPayloadHandlersEvent.class, QuickStackPayload::register);
+        if (FMLEnvironment.getDist() == Dist.CLIENT) QuickStackClient.init();
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> StorageCommands.register(e.getDispatcher()));
     }
 }

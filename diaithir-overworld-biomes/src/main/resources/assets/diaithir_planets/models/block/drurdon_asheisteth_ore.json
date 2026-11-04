@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/cube_all",
+"textures": {
+"all": "diaithir_planets:block/drurdon_asheisteth_ore"
+}
+}

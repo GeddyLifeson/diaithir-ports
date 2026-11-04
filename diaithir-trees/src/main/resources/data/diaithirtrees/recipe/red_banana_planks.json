@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:red_banana_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:red_banana_planks",
+  "count": 4
+ }
+}

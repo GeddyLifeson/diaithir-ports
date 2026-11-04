@@ -1,0 +1,20 @@
+{
+"type": "minecraft:block",
+"random_sequence": "diaithir_planets:blocks/miarlinnys_vellanum_ore",
+"pools": [
+{
+"rolls": 1.0,
+"conditions": [
+{
+"condition": "minecraft:survives_explosion"
+}
+],
+"entries": [
+{
+"type": "minecraft:item",
+"name": "diaithir_planets:miarlinnys_vellanum_ore"
+}
+]
+}
+]
+}

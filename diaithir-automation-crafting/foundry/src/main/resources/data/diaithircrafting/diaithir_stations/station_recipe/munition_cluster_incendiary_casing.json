@@ -1,0 +1,15 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 14,
+  "ingredients": [
+    {
+      "tag": "c:plates/steel",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_cluster_incendiary_casing",
+    "count": 1
+  }
+}

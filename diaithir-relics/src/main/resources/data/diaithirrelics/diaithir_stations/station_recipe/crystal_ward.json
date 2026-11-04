@@ -1,0 +1,16 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:gems/amethyst",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/glowstone",
+   "count": 2
+  }
+ ],
+ "result": "diaithirrelics:crystal_ward",
+ "time_s": 20
+}

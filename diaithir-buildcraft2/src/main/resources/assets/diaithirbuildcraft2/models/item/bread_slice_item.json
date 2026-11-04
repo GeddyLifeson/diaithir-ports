@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirbuildcraft2:item/bread_slice_item"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "station": "station.steam_forge",
+ "stage": "part",
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 5
+  }
+ ],
+ "result": "diaithircombat:cathbharr_laoch",
+ "time_s": 10
+}

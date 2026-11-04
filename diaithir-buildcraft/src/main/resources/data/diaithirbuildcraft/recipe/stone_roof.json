@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:stone"
+ },
+ "pattern": [
+  "P  ",
+  "PP ",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:stone_roof",
+  "count": 4
+ }
+}

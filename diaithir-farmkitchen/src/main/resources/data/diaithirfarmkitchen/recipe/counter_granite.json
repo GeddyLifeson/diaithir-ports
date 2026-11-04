@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:granite"
+ },
+ "pattern": [
+  "BB",
+  "BB"
+ ],
+ "result": {
+  "id": "diaithirfarmkitchen:counter_granite",
+  "count": 4
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 8
+  }
+ ],
+ "result": "diaithir_classes:ligichi_plate_chest_steel",
+ "time_s": 20
+}

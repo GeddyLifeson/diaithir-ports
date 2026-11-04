@@ -23,9 +23,9 @@ AGE = {"SILENTWOOD": "I", "AURORIAN_STONE": "I", "CERULEAN": "II", "MOONSTONE": 
        "AURORIAN_STEEL": "III", "AURORIANITE": "IV", "UMBRA": "IV", "CRYSTALLINE": "IV"}
 # Items whose behaviour lives in Java we have not ported yet; they are listed, not registered.
 DEFERRED_ITEMS = {"mirror_of_guidance", "cerulean_arrow", "crystal_arrow", "silentwood_bow", "crystalline_sword"}
-DEFERRED_BLOCK_CLASS = {"SaplingBlock"}
+DEFERRED_BLOCK_CLASS = set()
 BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "ScrapperBlock": "scrapper", "MoonlightForgeBlock": "moonlight_forge", "CrystalBlock": "full", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
-              "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
+              "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "SaplingBlock": "sapling", "TallGrassBlock": "plant"}
 
 
 def num(s, default=0.0):

@@ -47,6 +47,13 @@ public final class Engine {
         return v;
     }
 
+    /** Multiplier a parts station stored on the gun (custom data diaithirgear.<key&gt;); 1 when the gun was not assembled there. */
+    static float crafted(ItemStack s, String key) {
+        var cd = s.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+        if (cd == null) return 1f;
+        return cd.copyTag().getCompound("diaithirgear").flatMap(c -> c.getFloat(key)).orElse(1f);
+    }
+
     public static float zoom(ItemStack s) {
         float z = 1f;
         for (String a : atts(s)) { var d = Defs.ATTS.get(a); if (d != null && d.kind().equals("sight")) z = Math.max(z, d.value()); }
@@ -71,6 +78,9 @@ public final class Engine {
         return n;
     }
 
+    /** Rounds the player can reload from: loose ammo plus matching containers. */
+    public static int available(ServerPlayer p, Defs.Gun g) { return ammoCount(p, g) + Containers.rounds(p, g); }
+
     private static int takeAmmo(ServerPlayer p, Defs.Gun g, int want) {
         if (p.isCreative()) return want;
         Item a = ammoItem(g); int got = 0;
@@ -93,7 +103,8 @@ public final class Engine {
         if (!g.auto() && !fresh) return;
         if (now - s.lastShot < g.cooldown()) return;
         if (mag(stack) <= 0) {
-            if (fresh) { if (ammoCount(sp, g) > 0 || sp.isCreative()) reload(sp); else say(sp, Component.translatable("diaithirfirearms.empty")); }
+            if (fresh) { if (available(sp, g) > 0 || sp.isCreative()) reload(sp); else say(sp, Component.translatable("diaithirfirearms.empty")); }
+            if (fresh && s.reloadEnd < 0) AnimHook.gun(sp, "dry");
             if (fresh) sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("dry_fire"), SoundSource.PLAYERS, 0.6f, 1f);
             return;
         }
@@ -105,8 +116,9 @@ public final class Engine {
     public static int fire(ServerPlayer sp, ItemStack stack, Defs.Gun g) {
         ServerLevel lv = sp.level();
         setMag(stack, mag(stack) - 1);
+        AnimHook.gun(sp, "fire");
         boolean under = ageOf(sp) < g.ageNo();
-        float spread = g.spread() * (under ? 2f : 1f) * (sp.isShiftKeyDown() ? 0.6f : 1f) * modifier(stack, "grip");
+        float spread = g.spread() * (under ? 2f : 1f) * (sp.isShiftKeyDown() ? 0.6f : 1f) * modifier(stack, "grip") * crafted(stack, "spread_mul");
         float quiet = modifier(stack, "muzzle_quiet");
         Vec3 eye = sp.getEyePosition();
         int hits = 0;
@@ -114,7 +126,7 @@ public final class Engine {
             float yaw = sp.getYRot() + (float) (sp.getRandom().nextGaussian() * spread * 0.5);
             float pitch = sp.getXRot() + (float) (sp.getRandom().nextGaussian() * spread * 0.5);
             Vec3 dir = Vec3.directionFromRotation(pitch, yaw);
-            hits += shoot(sp, lv, g, eye, dir, quiet, i == 0) ? 1 : 0;
+            hits += shoot(sp, lv, stack, g, eye, dir, quiet, i == 0) ? 1 : 0;
         }
         Vec3 muzzle = eye.add(Vec3.directionFromRotation(sp.getXRot(), sp.getYRot()).scale(0.8));
         lv.sendParticles(ParticleTypes.SMOKE, muzzle.x, muzzle.y - 0.15, muzzle.z, 2, 0.02, 0.02, 0.02, 0.0);
@@ -128,7 +140,7 @@ public final class Engine {
         return hits;
     }
 
-    private static boolean shoot(ServerPlayer sp, ServerLevel lv, Defs.Gun g, Vec3 eye, Vec3 dir, float quiet, boolean tracer) {
+    private static boolean shoot(ServerPlayer sp, ServerLevel lv, ItemStack stack, Defs.Gun g, Vec3 eye, Vec3 dir, float quiet, boolean tracer) {
         Vec3 end = eye.add(dir.scale(g.range()));
         BlockHitResult bh = lv.clip(new ClipContext(eye, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, sp));
         if (bh.getType() != HitResult.Type.MISS) end = bh.getLocation();
@@ -142,7 +154,7 @@ public final class Engine {
             Entity t = eh.getEntity();
             double dist = eye.distanceTo(impact);
             float fall = dist <= g.range() * 0.5 ? 1f : (float) (1.0 - 0.5 * (dist - g.range() * 0.5) / (g.range() * 0.5));
-            float dmg = g.damage() * Math.max(0.4f, fall) * (quiet < 1f ? 0.9f : 1f);
+            float dmg = g.damage() * crafted(stack, "damage_mul") * Math.max(0.4f, fall) * (quiet < 1f ? 0.9f : 1f);
             if (t instanceof LivingEntity le) {
                 if (impact.y > le.getEyeY() - 0.25) dmg *= 1.5f;
                 le.invulnerableTime = 0;
@@ -165,11 +177,12 @@ public final class Engine {
         if (!(s.getItem() instanceof GunItem gi)) return;
         S x = st(sp);
         if (x.reloadEnd >= 0 || mag(s) >= gi.gun.mag()) return;
-        if (ammoCount(sp, gi.gun) == 0 && !sp.isCreative()) { say(sp, Component.translatable("diaithirfirearms.empty")); return; }
+        if (available(sp, gi.gun) == 0 && !sp.isCreative()) { say(sp, Component.translatable("diaithirfirearms.empty")); return; }
         boolean under = ageOf(sp) < gi.gun.ageNo();
         x.reloadEnd = sp.level().getGameTime() + (long) (gi.gun.reload() * (under ? 1.5 : 1.0));
         x.reloadSlot = sp.getInventory().getSelectedSlot();
         say(sp, Component.translatable("diaithirfirearms.reload"));
+        AnimHook.gun(sp, "reload");
         sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("reload_start"), SoundSource.PLAYERS, 0.8f, 1f);
     }
 
@@ -183,7 +196,9 @@ public final class Engine {
         if (!(s.getItem() instanceof GunItem gi) || sp.getInventory().getSelectedSlot() != x.reloadSlot) { x.reloadEnd = -1; return; }
         if (sp.level().getGameTime() < x.reloadEnd) return;
         x.reloadEnd = -1;
-        int got = takeAmmo(sp, gi.gun, gi.gun.mag() - mag(s));
+        int need = gi.gun.mag() - mag(s);
+        int got = sp.isCreative() ? need : Containers.take(sp, gi.gun, need);
+        got += takeAmmo(sp, gi.gun, need - got);
         setMag(s, mag(s) + got);
         sp.level().playSound(null, sp.getX(), sp.getY(), sp.getZ(), DiaithirFirearms.sound("reload_end"), SoundSource.PLAYERS, 0.8f, 1f);
         say(sp, Component.translatable("diaithirfirearms.mag").append(": " + mag(s) + "/" + gi.gun.mag()));

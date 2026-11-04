@@ -1,0 +1,16 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 16,
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_guided_rocket_motor",
+    "count": 1
+  },
+  "operator": true
+}

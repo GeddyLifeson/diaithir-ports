@@ -11,10 +11,10 @@ D = RES / "data/diaithirfurnishings"
 NS = "diaithirfurnishings"
 EXISTING = {"rope", "sack"}  # already registered as blocks
 
-TOOLS = {"stone_tool", "woodwork", "metalwork", "farm", "mining", "masonry", "general", "fishing", "leather",
+TOOLS = {"farm_machine", "stone_tool", "woodwork", "metalwork", "farm", "mining", "masonry", "general", "fishing", "leather",
          "sharpening", "hunting", "measuring_tool"}
 SOURCE_MATERIAL = {  # category -> ingredient per Age band, 'M' = by-Age metal
-    "stone_tool": "minecraft:flint", "fire": "minecraft:flint", "woodwork": "M", "metalwork": "M", "farm": "M",
+    "farm_machine": "M", "stone_tool": "minecraft:flint", "fire": "minecraft:flint", "woodwork": "M", "metalwork": "M", "farm": "M",
     "mining": "M", "masonry": "M", "general": "M", "sharpening": "M", "utensil": "M", "cookware": "C",
     "measuring": "M", "tableware": "minecraft:clay_ball", "pottery": "minecraft:clay_ball",
     "lighting": "minecraft:clay_ball", "storage": "#minecraft:planks", "furniture": "#minecraft:planks",
@@ -25,6 +25,7 @@ SOURCE_MATERIAL = {  # category -> ingredient per Age band, 'M' = by-Age metal
 }
 METAL = {"I": "minecraft:flint", "II": "#c:ingots/copper", "III": "#diaithirfurnishings:metal/bronze"}
 PAL = {  # category -> (main, accent)
+    "farm_machine": ((176, 60, 48), (90, 90, 96)),
     "stone_tool": ((140, 138, 130), (92, 90, 86)), "woodwork": ((150, 150, 158), (130, 92, 52)),
     "metalwork": ((120, 124, 134), (70, 60, 56)), "farm": ((160, 160, 166), (140, 100, 56)),
     "mining": ((130, 134, 142), (110, 78, 44)), "masonry": ((176, 170, 160), (120, 100, 70)),
@@ -47,7 +48,7 @@ GLYPH = {  # category -> glyph kinds the id hash chooses among
     "stick": ["spoon", "blade", "fork", "hammer"],
     "fabric": ["bundle", "ring", "blade"],
 }
-KIND = {"stone_tool": "tool", "woodwork": "tool", "metalwork": "tool", "farm": "tool", "mining": "tool",
+KIND = {"farm_machine": "tool", "stone_tool": "tool", "woodwork": "tool", "metalwork": "tool", "farm": "tool", "mining": "tool",
         "masonry": "tool", "general": "tool", "sharpening": "tool", "fishing": "stick", "hunting": "stick",
         "leather": "stick", "textile": "fabric", "measuring": "box", "dairy": "vessel", "apiary": "vessel",
         "food_prep": "vessel", "cookware": "vessel", "utensil": "stick", "tableware": "vessel", "storage": "box",
@@ -55,7 +56,10 @@ KIND = {"stone_tool": "tool", "woodwork": "tool", "metalwork": "tool", "farm": "
         "pottery": "vessel", "glass": "vessel"}
 
 
-def age(era):
+def age(era, year=""):
+    if year:  # numeric year column (farm machines): same bands as the firearms roster
+        y = int(year)
+        return "IV" if y < 1500 else "V" if y < 1850 else "VI" if y < 1945 else "VII"
     e = era.lower()
     if "mya" in e or "paleolithic" in e or re.search(r"c\. (\d{5,}) bc", e): return "I"
     if "neolithic" in e or re.search(r"c\. (\d{4}) bc", e) and int(re.search(r"(\d{4}) bc", e).group(1)) >= 3500: return "II"
@@ -103,7 +107,17 @@ def paint(iid, cat):
     return im
 
 
+TANK_S = 600  # a powered machine's tank holds ten minutes at rated power
+MECH = {}
+
+
+def load_mech():
+    for r in csv.DictReader(open(M / "roster/farm_mechanics.csv")):
+        MECH[r["id"]] = {"kind": r["kind"], "width": int(r["width_m"]), "power_w": int(r["power_w"]), "mode": r["mode"]}
+
+
 def main():
+    load_mech()
     rows = [r for r in csv.DictReader(open(M / "roster/roster.csv")) if r["id"] not in EXISTING]
     lang_p = A / "lang/en_us.json"; lang = json.load(open(lang_p))
     gates = {}; entries = []; tags = {}
@@ -111,21 +125,28 @@ def main():
     (D / "recipe/everyday").mkdir(parents=True, exist_ok=True)
     for f in (D / "recipe/everyday").glob("*.json"): f.unlink()
     for r in rows:
-        iid, cat = r["id"], r["category"]; ag = age(r["earliest"])
+        iid, cat = r["id"], r["category"]; ag = age(r["earliest"], r.get("year", ""))
         tool = cat in TOOLS and cat != "measuring"
-        entries.append({"id": iid, "category": cat, "age": ag, "durability": 200 if tool else 0, "stack": 1 if tool else 16})
+        mc = MECH.get(iid)
+        dur = 200 if tool else 0
+        if mc and mc["mode"] == "powered": dur = mc["power_w"] * TANK_S // 1000  # one durability point = 1 kJ in the tank
+        elif mc and mc["mode"] in ("draft", "stationary"): dur = 400
+        entries.append({"id": iid, "category": cat, "age": ag, "durability": dur, "stack": 1 if tool else 16})
         lang[f"item.{NS}.{iid}"] = r["name"]
         json.dump({"model": {"type": "minecraft:model", "model": f"{NS}:item/{iid}"}}, open(A / f"items/{iid}.json", "w"), indent=1)
         json.dump({"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{iid}"}}, open(A / f"models/item/{iid}.json", "w"), indent=1)
         paint(iid, cat).save(A / f"textures/item/{iid}.png")
+        base = SOURCE_MATERIAL.get(cat, "#minecraft:planks")
+        if base == "M": base = METAL.get(ag, "#c:ingots/iron")
+        elif base == "C": base = "minecraft:clay_ball" if ag in ("I", "II") else METAL.get(ag, "#c:ingots/iron")
         if cat == "furniture":  # everything else is made at the Smithy and Workshop Bench (diaithir-gear tools/gen_workshop.py)
-            base = SOURCE_MATERIAL[cat]
             json.dump({"type": "minecraft:stonecutting", "ingredient": base, "result": {"id": f"{NS}:{iid}", "count": 1}},
                       open(D / f"recipe/everyday/{iid}.json", "w"), indent=1)
         gates[f"{NS}:{iid}"] = "RODOS" if ag == "RODOS" else ag
         tags.setdefault(cat, []).append(f"{NS}:{iid}")
     json.dump(lang, open(lang_p, "w"), indent=1, ensure_ascii=False)
     json.dump({"items": entries}, open(D / "everyday.json", "w"), indent=1)
+    json.dump({"tank_seconds": TANK_S, "machines": MECH}, open(D / "farm.json", "w"), indent=1)
     (D / "tags/item/everyday").mkdir(parents=True, exist_ok=True)
     for cat, ids in tags.items():
         json.dump({"replace": False, "values": ids}, open(D / f"tags/item/everyday/{cat}.json", "w"), indent=1)

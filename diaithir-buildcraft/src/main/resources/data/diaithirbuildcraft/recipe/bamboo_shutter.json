@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:bamboo_planks"
+ },
+ "pattern": [
+  "PPP",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:bamboo_shutter",
+  "count": 3
+ }
+}

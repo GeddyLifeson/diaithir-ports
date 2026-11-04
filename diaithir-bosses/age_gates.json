@@ -83,7 +83,8 @@
   "diaithirbosses:boss_hollow_core": "Rodos",
   "diaithirbosses:ageshard": "Rodos",
   "diaithirbosses:boss_catalyst_t2": "Rodos",
-  "diaithirbosses:boss_sovereign_core": "Rodos"
+  "diaithirbosses:boss_sovereign_core": "Rodos",
+  "diaithirbosses:warden_altar": "I"
  },
  "entities": {
   "diaithirbosses:tribal_chief": "I",
