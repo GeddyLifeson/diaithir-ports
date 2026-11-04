@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "E": "minecraft:ender_chest",
+        "I": "#apothic_enchanting:infused_shelves",
+        "N": "minecraft:enchanting_table"
+    },
+    "pattern": [
+        "EIE",
+        "INI",
+        "EIE"
+    ],
+    "result": {
+        "id": "apothic_enchanting:library"
+    }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "aerialhell:lunatic_crystal"
+ },
+ "pattern": [
+  "###",
+  "# #"
+ ],
+ "result": {
+  "id": "aerialhell:lunatic_helmet"
+ }
+}

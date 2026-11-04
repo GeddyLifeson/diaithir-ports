@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/skinning_knife"
+  "layer0": "diaithirfurnishings:item/skinning_knife_head",
+  "layer1": "diaithirfurnishings:item/skinning_knife_handle",
+  "layer2": "diaithirfurnishings:item/skinning_knife_binding"
  }
 }

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/inner_stairs",
+ "textures": {
+  "bottom": "aerialhell:block/sky_cactus_fiber_stairs",
+  "side": "aerialhell:block/sky_cactus_fiber_stairs",
+  "top": "aerialhell:block/sky_cactus_fiber_stairs"
+ }
+}

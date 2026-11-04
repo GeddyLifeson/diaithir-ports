@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:persimmon_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:persimmon_planks",
+  "count": 4
+ }
+}

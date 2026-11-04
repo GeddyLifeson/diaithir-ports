@@ -1,0 +1,691 @@
+{
+ "slug": "diaithir_caravans",
+ "items": [
+  {
+   "id": "caravan_taistealaiche_spawn_egg",
+   "kind": "event",
+   "name_en": "Spawn Egg: Taistealaiche (Caravan Lead)",
+   "attrs": {
+    "entity": "diaithir_caravans:taistealaiche",
+    "creative_only": true,
+    "mass_kg": 0.05
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "caravan_coimhdeoir_spawn_egg",
+   "kind": "event",
+   "name_en": "Spawn Egg: Coimhdeoir (Caravan Guard)",
+   "attrs": {
+    "entity": "diaithir_caravans:coimhdeoir",
+    "creative_only": true,
+    "mass_kg": 0.05
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "caravan_each_eallaigh_spawn_egg",
+   "kind": "event",
+   "name_en": "Spawn Egg: Each Eallaigh (Pack Beast)",
+   "attrs": {
+    "entity": "diaithir_caravans:each_eallaigh",
+    "creative_only": true,
+    "mass_kg": 0.05
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "carr_siubhail",
+   "kind": "block",
+   "name_en": "Carr Siubhail (Caravan Cargo Crate)",
+   "attrs": {
+    "placeable_by_player": false,
+    "carried_by": "pack_beast",
+    "capacity_stacks": 27,
+    "mass_kg_empty": 18.0,
+    "carry_limit_kg_per_beast": 120.0
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "carr_siubhail_beag",
+   "kind": "block",
+   "name_en": "Carr Siubhail Beag (Small Cargo Pannier)",
+   "attrs": {
+    "placeable_by_player": false,
+    "capacity_stacks": 9,
+    "mass_kg_empty": 6.0
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "cluain_tlachta_clar",
+   "kind": "relic",
+   "name_en": "Clar Tlachta (Trade Ledger Tablet)",
+   "attrs": {
+    "effect": "shows_next_restock_time",
+    "restock_interval_s": 172800,
+    "mass_kg": 0.6,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "c:leather",
+    "c:dusts/ink",
+    "diaithirrelics:blank_tablet"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "seol_taistil",
+   "kind": "relic",
+   "name_en": "Seol Taistil (Wayfarer's Banner)",
+   "attrs": {
+    "effect": "caravan_neutral_within_m",
+    "radius_m": 32.0,
+    "durability_s": 2400,
+    "mass_kg": 1.2,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:rods/wooden",
+    "c:string",
+    "c:dyes/red",
+    "c:ingots/bronze"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "comhartha_ceannaiche",
+   "kind": "relic",
+   "name_en": "Comhartha Ceannaiche (Merchant's Seal)",
+   "attrs": {
+    "effect": "trade_discount_fraction",
+    "discount": 0.1,
+    "mass_kg": 0.2,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:gems/emerald",
+    "c:leather"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "bolg_foirne",
+   "kind": "relic",
+   "name_en": "Bolg Foirne (Caravan Master's Satchel)",
+   "attrs": {
+    "effect": "extra_offer_slots",
+    "slots": 2,
+    "inventory_stacks": 9,
+    "mass_kg": 0.8,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:leather",
+    "c:ingots/steel",
+    "c:string",
+    "c:gems/lapis"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "cluiche_ceannaiche_scrolla",
+   "kind": "spell",
+   "name_en": "Scroll of Glaoch Taistil (Call the Caravan)",
+   "attrs": {
+    "effect": "forces_caravan_spawn_check",
+    "cooldown_s": 86400,
+    "range_m": 512.0,
+    "mass_kg": 0.05
+   },
+   "recipe": [
+    "c:paper",
+    "c:dusts/ink",
+    "c:gems/emerald",
+    "c:ingots/gold"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_cosaint_bothar",
+   "kind": "rune",
+   "name_en": "Rune Cosaint Bothar (Road-Ward)",
+   "attrs": {
+    "effect": "guards_aggro_range_bonus_m",
+    "bonus_m": 8.0,
+    "mass_kg": 0.1,
+    "socket": "banner"
+   },
+   "recipe": [
+    "c:gems/lapis",
+    "c:ingots/bronze",
+    "c:dusts/glowstone"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_ualach_trom",
+   "kind": "rune",
+   "name_en": "Rune Ualach Trom (Heavy Burden)",
+   "attrs": {
+    "effect": "pack_beast_carry_bonus_kg",
+    "bonus_kg": 40.0,
+    "mass_kg": 0.1,
+    "socket": "satchel"
+   },
+   "recipe": [
+    "c:gems/lapis",
+    "c:ingots/steel",
+    "c:dusts/redstone"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "mapa_slighe_ceannaiche",
+   "kind": "relic",
+   "name_en": "Mapa Slighe (Trade Route Map)",
+   "attrs": {
+    "effect": "marks_active_caravan_path",
+    "map_range_m": 2048.0,
+    "mass_kg": 0.1,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:paper",
+    "c:dusts/ink",
+    "c:gems/emerald"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "enchant_foghlaim_margaidh",
+   "kind": "enchant",
+   "name_en": "Foghlaim Margaidh (Market Lore)",
+   "attrs": {
+    "max_level": 3,
+    "effect": "bonus_xp_per_trade_per_level",
+    "xp_per_level": 1,
+    "slots": [
+     "head",
+     "chest"
+    ]
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "enchant_buille_coimhdeoir",
+   "kind": "enchant",
+   "name_en": "Buille Coimhdeora (Escort's Strike)",
+   "attrs": {
+    "max_level": 3,
+    "effect": "bonus_damage_vs_caravan_attackers_per_level",
+    "damage_per_level": 1.0,
+    "slots": [
+     "mainhand"
+    ]
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "claidheamh_coimhdeora",
+   "kind": "weapon",
+   "name_en": "Claidheamh Coimhdeora (Escort Blade)",
+   "attrs": {
+    "use": "guard_equipment_tag_example",
+    "damage_scale": "age_pack_value",
+    "mass_kg": 1.1
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "c:rods/wooden",
+    "c:leather"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "cota_coimhdeora",
+   "kind": "armor",
+   "name_en": "Cota Coimhdeora (Escort Coat)",
+   "attrs": {
+    "use": "guard_equipment_tag_example",
+    "armor_scale": "age_pack_value",
+    "mass_kg": 6.5,
+    "slot": "chest"
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "c:leather",
+    "c:string"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "cota_coimhdeora_stail",
+   "kind": "armor",
+   "name_en": "Cota Coimhdeora Stail (Steel Escort Coat)",
+   "attrs": {
+    "use": "guard_equipment_tag_example",
+    "armor_scale": "age_pack_value",
+    "mass_kg": 8.0,
+    "slot": "chest"
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:leather",
+    "c:string"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "cota_coimhdeora_ardmhaor",
+   "kind": "armor",
+   "name_en": "Cota Ardmhaor (Composite Warden Coat)",
+   "attrs": {
+    "use": "guard_equipment_tag_example",
+    "armor_scale": "age_pack_value",
+    "mass_kg": 9.5,
+    "slot": "chest"
+   },
+   "recipe": [
+    "c:ingots/composite",
+    "c:leather",
+    "c:string"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "lasair_siubhail",
+   "kind": "relic",
+   "name_en": "Lasair Siubhail (Wayfarer's Lantern)",
+   "attrs": {
+    "light_level": 14,
+    "burn_time_s": 3600,
+    "fuel_J": 900000,
+    "power_W": 250.0,
+    "mass_kg": 0.9,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "c:glass",
+    "c:dusts/glowstone"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "cuirt_spise",
+   "kind": "relic",
+   "name_en": "Cuirt Spise (Spice Pouch)",
+   "attrs": {
+    "effect": "food_trade_stock_bonus",
+    "stock_bonus": 4,
+    "mass_kg": 0.3,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:leather",
+    "c:crops/wheat",
+    "c:seeds"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "cloch_marguidh",
+   "kind": "relic",
+   "name_en": "Cloch Margaidh (Market Stone)",
+   "attrs": {
+    "effect": "unlocks_curio_stock",
+    "reputation_gain": 5,
+    "mass_kg": 1.5,
+    "max_stack": 1
+   },
+   "recipe": [
+    "c:stones",
+    "c:gems/amethyst",
+    "c:ingots/steel"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "skill_ceannaiche_siubhail",
+   "kind": "skill",
+   "name_en": "Ceannaiche Siubhail (Itinerant Trading)",
+   "attrs": {
+    "effect": "discount_fraction_per_rank",
+    "discount_per_rank": 0.03,
+    "max_rank": 5
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skill_coimhdeoir",
+   "kind": "skill",
+   "name_en": "Coimhdeoir (Escort)",
+   "attrs": {
+    "effect": "guard_damage_bonus_fraction_per_rank",
+    "bonus_per_rank": 0.05,
+    "max_rank": 3
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skill_eolaire_slighe",
+   "kind": "skill",
+   "name_en": "Eolaire Slighe (Pathfinder)",
+   "attrs": {
+    "effect": "reveals_caravan_icons_on_map_radius_m",
+    "radius_m": 512.0,
+    "max_rank": 3
+   },
+   "recipe": null,
+   "age": "III"
+  }
+ ],
+ "events": [
+  {
+   "id": "caravan_spawn_roll",
+   "trigger": "daily_timer_tick_in_loaded_overworld_chunks_near_player",
+   "effect": "roll_chance_spawn_one_caravan_if_active_cap_not_reached; size_1_lead_plus_2_to_5_beasts_plus_0_to_3_guards; spawn_age_read_from_scoreboard_age"
+  },
+  {
+   "id": "caravan_path_walk",
+   "trigger": "caravan_active_server_tick",
+   "effect": "advance_group_along_route_between_two_villages; beasts_follow_via_leash; stop_when_destination_reached"
+  },
+  {
+   "id": "caravan_guard_retaliation",
+   "trigger": "member_hurt_by_entity",
+   "effect": "all_guards_in_group_target_attacker; aggro_range_from_config_plus_rune_bonus"
+  },
+  {
+   "id": "caravan_lead_slain",
+   "trigger": "lead_trader_dies",
+   "effect": "drop_diaithir_caravans:chests/caravan_cargo_age_N; unleash_beasts; guards_remain_hostile_to_killer"
+  },
+  {
+   "id": "caravan_despawn",
+   "trigger": "lifetime_elapsed_or_destination_reached",
+   "effect": "remove_group_with_particle_puff; clear_player_area_cap_flag"
+  },
+  {
+   "id": "caravan_restock",
+   "trigger": "every_in_game_day_while_trader_alive",
+   "effect": "refill_trade_uses_toward_max; rotate_one_specialist_offer"
+  }
+ ],
+ "skills": [
+  "skill_ceannaiche_siubhail",
+  "skill_coimhdeoir",
+  "skill_eolaire_slighe"
+ ],
+ "id_migration": {
+  "betteracaravans:caravan_trader": "diaithir_caravans:taistealaiche",
+  "betteracaravans:caravan_guard": "diaithir_caravans:coimhdeoir",
+  "betteracaravans:caravan_llama": "diaithir_caravans:each_eallaigh",
+  "betteracaravans:caravan_cargo": "diaithir_caravans:carr_siubhail",
+  "betteracaravans:caravan_trader_spawn_egg": "diaithir_caravans:caravan_taistealaiche_spawn_egg",
+  "betteracaravans:caravan_guard_spawn_egg": "diaithir_caravans:caravan_coimhdeoir_spawn_egg"
+ },
+ "c_tags": {
+  "c:ingots/bronze": [
+   "diaithirarms:bronze_ingot"
+  ],
+  "c:ingots/steel": [
+   "diaithirarms:steel_ingot"
+  ],
+  "c:ingots/composite": [
+   "diaithirarms:composite_ingot"
+  ],
+  "c:gems/emerald": [
+   "minecraft:emerald"
+  ],
+  "c:gems/lapis": [
+   "minecraft:lapis_lazuli"
+  ],
+  "c:gems/amethyst": [
+   "minecraft:amethyst_shard"
+  ],
+  "c:dusts/glowstone": [
+   "minecraft:glowstone_dust"
+  ],
+  "c:dusts/redstone": [
+   "minecraft:redstone"
+  ],
+  "c:leather": [
+   "minecraft:leather"
+  ],
+  "c:string": [
+   "minecraft:string"
+  ],
+  "c:paper": [
+   "minecraft:paper"
+  ],
+  "c:glass": [
+   "minecraft:glass"
+  ],
+  "diaithir_caravans:guard_weapons": [
+   "diaithir_caravans:claidheamh_coimhdeora"
+  ],
+  "diaithir_caravans:guard_weapons_age_iii": [
+   "diaithirarms:bronze_sword",
+   "diaithirarms:bronze_spear"
+  ],
+  "diaithir_caravans:guard_weapons_age_v": [
+   "diaithirarms:steel_sword",
+   "diaithirarms:steel_spear"
+  ],
+  "diaithir_caravans:guard_weapons_age_vii": [
+   "diaithirarms:composite_sword",
+   "diaithirarms:composite_spear"
+  ],
+  "diaithir_caravans:guard_armor": [
+   "diaithir_caravans:cota_coimhdeora",
+   "diaithir_caravans:cota_coimhdeora_stail",
+   "diaithir_caravans:cota_coimhdeora_ardmhaor"
+  ],
+  "diaithir_caravans:caravan_members": [
+   "diaithir_caravans:taistealaiche",
+   "diaithir_caravans:coimhdeoir",
+   "diaithir_caravans:each_eallaigh"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "clar_tlachta_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:leather",
+    "c:dusts/ink"
+   ]
+  },
+  {
+   "id": "seol_taistil_craft",
+   "inputs_as_c_tags": [
+    "c:rods/wooden",
+    "c:string",
+    "c:dyes/red",
+    "c:ingots/bronze"
+   ]
+  },
+  {
+   "id": "comhartha_ceannaiche_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:gems/emerald",
+    "c:leather"
+   ]
+  },
+  {
+   "id": "bolg_foirne_craft",
+   "inputs_as_c_tags": [
+    "c:leather",
+    "c:ingots/steel",
+    "c:string",
+    "c:gems/lapis"
+   ]
+  },
+  {
+   "id": "claidheamh_coimhdeora_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:rods/wooden",
+    "c:leather"
+   ]
+  },
+  {
+   "id": "cota_coimhdeora_stail_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:leather",
+    "c:string"
+   ]
+  },
+  {
+   "id": "cota_coimhdeora_ardmhaor_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/composite",
+    "c:leather",
+    "c:string"
+   ]
+  },
+  {
+   "id": "lasair_siubhail_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:glass",
+    "c:dusts/glowstone"
+   ]
+  },
+  {
+   "id": "glaoch_taistil_scroll_craft",
+   "inputs_as_c_tags": [
+    "c:paper",
+    "c:dusts/ink",
+    "c:gems/emerald",
+    "c:ingots/gold"
+   ]
+  },
+  {
+   "id": "cloch_marguidh_craft",
+   "inputs_as_c_tags": [
+    "c:stones",
+    "c:gems/amethyst",
+    "c:ingots/steel"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "diaithir_caravans:carr_siubhail",
+   "kind": "item",
+   "units_SI": "27 slots, 120 kg max load, 18 kg empty"
+  },
+  {
+   "block": "diaithir_caravans:carr_siubhail_beag",
+   "kind": "item",
+   "units_SI": "9 slots, 40 kg max load, 6 kg empty"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "seol_taistil_socket",
+   "target": "diaithir_caravans:seol_taistil",
+   "slots": 1,
+   "kinds": [
+    "rune_cosaint_bothar"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "bolg_foirne_socket",
+   "target": "diaithir_caravans:bolg_foirne",
+   "slots": 1,
+   "kinds": [
+    "rune_ualach_trom"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "comhartha_ceannaiche_socket",
+   "target": "diaithir_caravans:comhartha_ceannaiche",
+   "slots": 2,
+   "kinds": [
+    "rune_ualach_trom",
+    "rune_cosaint_bothar"
+   ],
+   "max_quality": 5
+  }
+ ],
+ "global_events": [
+  {
+   "id": "gev_caravan_spawn",
+   "subscribes_to": "diaithir_global_events:world_day_tick",
+   "effect": "caravan_spawn_roll uses weather and season modifiers; blizzard or storm halves chance; festival event doubles chance with a price bonus"
+  },
+  {
+   "id": "gev_raid_caravan_flee",
+   "subscribes_to": "diaithir_global_events:raid_started",
+   "effect": "active caravans within 128 m despawn early with a warning message; guards help defend if within 48 m"
+  },
+  {
+   "id": "gev_age_advance_trade_tier",
+   "subscribes_to": "diaithir_global_events:player_age_changed",
+   "effect": "refresh trade tiers and guard gear tag for caravans in that player's area using scoreboard age"
+  },
+  {
+   "id": "gev_boss_defeated_curios",
+   "subscribes_to": "diaithir_global_events:boss_defeated",
+   "effect": "next caravan within 3 days carries a curio-stock specialist with relic chest table age_N"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "codex_caravans_overview",
+   "connects_to": [
+    "diaithir_relics:codex_chests",
+    "diaithir_global_events:codex_events"
+   ]
+  },
+  {
+   "entry": "codex_caravan_guards",
+   "connects_to": [
+    "diaithir_arms:codex_weapons",
+    "diaithir_combat:codex_aggro"
+   ]
+  },
+  {
+   "entry": "codex_trade_ledger",
+   "connects_to": [
+    "diaithir_classes:codex_runes",
+    "diaithir_relics:codex_trinkets"
+   ]
+  },
+  {
+   "entry": "codex_pack_beasts",
+   "connects_to": [
+    "diaithir_caravans:codex_caravans_overview"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "quest_caravans_first_trade",
+  "intro": "A line of lanterns winds along the old road. Find a Taistealaiche, trade with them, and learn what the road carries.",
+  "links_to": [
+   "quest_age_iii_village",
+   "quest_age_v_relics"
+  ]
+ },
+ "java_notes": "Needed beyond data: a CaravanController that rolls spawns, builds the group, leashes beasts and walks a village-to-village route; guard retaliation goals; a despawn timer; trade selection reading scoreboard 'age'; TOML config for interval, cap, size and lifetime; entity alias registration for id_migration; and a global-events listener bridge."
+}

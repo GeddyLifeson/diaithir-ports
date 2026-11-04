@@ -1,0 +1,13 @@
+{
+    "name": "Redução de proteção",
+    "icon": "apothic_attributes:textures/mob_effect/sundering.png",
+    "category": "apotheosis:adventure/attributes",
+    "flag": "apotheosis:adventure",
+    "sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "A $(9)redução de proteção$() faz com que você ignore uma porcentagem dos pontos de proteção do alvo ao atacar.$(p)A $(9)perfuração de proteção$() é aplicada antes da $(9)redução de proteção$()."
+        }
+    ]
+}

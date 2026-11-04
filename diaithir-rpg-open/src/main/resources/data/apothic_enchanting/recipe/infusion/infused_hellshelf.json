@@ -1,0 +1,11 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "apothic_enchanting:hellshelf",
+    "requirements": {
+        "eterna": 45.0,
+        "quanta": 30.0
+    },
+    "result": {
+        "id": "apothic_enchanting:infused_hellshelf"
+    }
+}

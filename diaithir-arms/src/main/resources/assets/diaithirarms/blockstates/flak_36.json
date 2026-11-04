@@ -1,0 +1,36 @@
+{
+ "variants": {
+  "facing=north,loaded=false": {
+   "model": "diaithirarms:block/flak_36",
+   "y": 0
+  },
+  "facing=north,loaded=true": {
+   "model": "diaithirarms:block/flak_36_loaded",
+   "y": 0
+  },
+  "facing=east,loaded=false": {
+   "model": "diaithirarms:block/flak_36",
+   "y": 90
+  },
+  "facing=east,loaded=true": {
+   "model": "diaithirarms:block/flak_36_loaded",
+   "y": 90
+  },
+  "facing=south,loaded=false": {
+   "model": "diaithirarms:block/flak_36",
+   "y": 180
+  },
+  "facing=south,loaded=true": {
+   "model": "diaithirarms:block/flak_36_loaded",
+   "y": 180
+  },
+  "facing=west,loaded=false": {
+   "model": "diaithirarms:block/flak_36",
+   "y": 270
+  },
+  "facing=west,loaded=true": {
+   "model": "diaithirarms:block/flak_36_loaded",
+   "y": 270
+  }
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/leaves",
+ "textures": {
+  "all": "diaithirtrees:block/douglas_fir_leaves"
+ }
+}

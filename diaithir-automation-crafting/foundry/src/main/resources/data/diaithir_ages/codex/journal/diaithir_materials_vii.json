@@ -1,0 +1,49 @@
+{
+  "age": "VII",
+  "names": {
+    "mat_timber_engineered": "Make Engineered Timber",
+    "mat_glass_laminated": "Make Laminated Glass",
+    "mat_roofing_insulated_panel": "Make Insulated Roof Panel",
+    "mat_insulation_foam": "Make Foam Insulation Board",
+    "mat_steel_light_gauge": "Make Light-Gauge Steel Framing",
+    "mat_concrete_precast": "Make Precast Concrete Slab"
+  },
+  "side": [
+    {
+      "id": "mat_timber_engineered",
+      "title_key": "mat_timber_engineered",
+      "goal": "obtain:1 timber_engineered",
+      "text": "Make Engineered Timber at the assembler."
+    },
+    {
+      "id": "mat_glass_laminated",
+      "title_key": "mat_glass_laminated",
+      "goal": "obtain:1 glass_laminated",
+      "text": "Make Laminated Glass at the assembler."
+    },
+    {
+      "id": "mat_roofing_insulated_panel",
+      "title_key": "mat_roofing_insulated_panel",
+      "goal": "obtain:1 roofing_insulated_panel",
+      "text": "Make Insulated Roof Panel at the assembler."
+    },
+    {
+      "id": "mat_insulation_foam",
+      "title_key": "mat_insulation_foam",
+      "goal": "obtain:1 insulation_foam",
+      "text": "Make Foam Insulation Board at the assembler."
+    },
+    {
+      "id": "mat_steel_light_gauge",
+      "title_key": "mat_steel_light_gauge",
+      "goal": "obtain:1 steel_light_gauge",
+      "text": "Make Light-Gauge Steel Framing at the assembler."
+    },
+    {
+      "id": "mat_concrete_precast",
+      "title_key": "mat_concrete_precast",
+      "goal": "obtain:1 concrete_precast",
+      "text": "Make Precast Concrete Slab at the assembler."
+    }
+  ]
+}

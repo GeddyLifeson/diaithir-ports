@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/basic_bookshelf" },
+            { "model": "apothic_enchanting:block/basic_bookshelf_2" },
+            { "model": "apothic_enchanting:block/basic_bookshelf_3" }
+        ]
+    }
+}

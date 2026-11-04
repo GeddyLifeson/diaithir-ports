@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "H": "minecraft:heart_of_the_sea",
+        "I": "#c:ingots/iron",
+        "N": "minecraft:nautilus_shell"
+    },
+    "pattern": [
+        "NNN",
+        " H ",
+        " I "
+    ],
+    "result": {
+        "id": "apothic_enchanting:inert_trident"
+    }
+}

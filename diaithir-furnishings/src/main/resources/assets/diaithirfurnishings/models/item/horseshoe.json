@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/horseshoe"
+  "layer0": "diaithirfurnishings:item/horseshoe_head",
+  "layer1": "diaithirfurnishings:item/horseshoe_handle",
+  "layer2": "diaithirfurnishings:item/horseshoe_binding"
  }
 }

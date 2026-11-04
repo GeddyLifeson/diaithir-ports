@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "diaithircrafting:item/munition_fire_arrow_rocket_motor"
+  }
+}

@@ -1,5 +1,6 @@
 {
  "values": [
-  "diaithircarts:cart_loader"
+  "diaithircarts:cart_loader",
+  "diaithircarts:reaper"
  ]
 }

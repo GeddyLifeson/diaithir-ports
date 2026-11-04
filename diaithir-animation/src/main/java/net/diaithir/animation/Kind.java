@@ -28,7 +28,7 @@ public record Kind(boolean gun, String cls) {
             for (var e : j.getAsJsonObject("classes").entrySet()) {
                 if (e.getKey().startsWith("gun.")) GUNS.add(e.getKey().substring(4));
                 else if (e.getKey().equals("own_gun_reloads")) e.getValue().getAsJsonArray().forEach(x -> OWN_GUNS.add(x.getAsString()));
-                else MELEE.add(e.getKey());
+                else if (!e.getKey().equals("seat")) MELEE.add(e.getKey());
             }
         } catch (Exception e) {
             throw new IllegalStateException("clips.json missing", e);

@@ -1,0 +1,20 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithircarts:block/reaper",
+   "y": 0
+  },
+  "facing=east": {
+   "model": "diaithircarts:block/reaper",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithircarts:block/reaper",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithircarts:block/reaper",
+   "y": 270
+  }
+ }
+}
