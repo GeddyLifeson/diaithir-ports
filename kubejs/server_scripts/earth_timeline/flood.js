@@ -1,7 +1,7 @@
 // The sea follows the calendar. The year from the engine goes to Tellus (/diaithir_era), which floods any chunk generated
 // from then on. Chunks made earlier are caught up here as they load, and for the chunks round each player when the sea
 // rises: new water is placed only into air, down from the new surface (flood_core.js), so player blocks are never replaced.
-// Claimed chunks (FTB Chunks) are left as they are. Queue-driven and throttled (queue_core.js): a few chunks and a few ms a
+// Claimed chunks (Diaithir Claims) are left as they are. Queue-driven and throttled (queue_core.js): a few chunks and a few ms a
 // tick, only chunks that are already loaded and near a player; nothing here ever loads a chunk.
 // KubeJS 8: everything is wrapped, files share only `global`, and the server comes from ServerEvents.loaded (no Utils.server).
 // /et_year <lc> (op) does what the engine's year event does, for testing.
@@ -34,11 +34,11 @@
   }
   global.etNS.etIsOverworld = isOverworld
 
+  const CLAIMS = (() => { try { return Java.loadClass('net.diaithir.claims.DiaithirClaims') } catch (e) { return null } })()
   function claimed(server, cx, cz) {
     try {
-      let chunks = Java.loadClass('dev.ftb.mods.ftbchunks.api.FTBChunksAPI').api().manager
-      let ChunkDimPos = Java.loadClass('dev.ftb.mods.ftblibrary.math.ChunkDimPos')
-      return !!chunks.getChunk(new ChunkDimPos(server.overworld().dimension, cx, cz))
+      let chunk = server.overworld().getChunkSource().getChunkNow(cx, cz)
+      return !!chunk && CLAIMS.at(chunk).isPresent()
     } catch (e) { return false }
   }
   global.etNS.etClaimed = claimed
