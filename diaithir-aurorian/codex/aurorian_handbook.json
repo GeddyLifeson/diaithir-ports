@@ -124,6 +124,12 @@
      "text": ""
     },
     {
+     "id": "theaurorian:aurorian_stone_sickle",
+     "name": "Aurorian Stone Sickle",
+     "age": "I",
+     "text": ""
+    },
+    {
      "id": "theaurorian:aurorian_stone_sword",
      "name": "Aurorian Stone Sword",
      "age": "I",
@@ -184,6 +190,12 @@
      "name": "Crystalline Shield",
      "age": "IV",
      "text": ""
+    },
+    {
+     "id": "theaurorian:crystalline_sword",
+     "name": "Crystalline Sword",
+     "age": "IV",
+     "text": ""
     }
    ]
   },
@@ -223,6 +235,12 @@
      "text": ""
     },
     {
+     "id": "theaurorian:moonstone_sickle",
+     "name": "Moonstone Sickle",
+     "age": "II",
+     "text": ""
+    },
+    {
      "id": "theaurorian:moonstone_sword",
      "name": "Moonstone Sword",
      "age": "II",
@@ -256,6 +274,12 @@
     {
      "id": "theaurorian:silentwood_shovel",
      "name": "Silentwood Shovel",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:silentwood_sickle",
+     "name": "Silentwood Sickle",
      "age": "I",
      "text": ""
     },

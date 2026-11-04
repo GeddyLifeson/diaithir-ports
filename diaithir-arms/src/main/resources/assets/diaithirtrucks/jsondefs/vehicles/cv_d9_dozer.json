@@ -96,34 +96,62 @@
  ],
  "definitions": [
   {
-   "subName": "_c",
+   "subName": "",
    "name": "Caterpillar D9 Bulldozer (Yellow)",
    "modelName": "cv_d9_dozer",
-   "textureName": "paint_c",
+   "textureName": "paintc",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_orange",
+   "subName": "_orange",
    "name": "Caterpillar D9 Bulldozer (Orange)",
    "modelName": "cv_d9_dozer",
-   "textureName": "paint_c_orange",
+   "textureName": "paintc_orange",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_white",
+   "subName": "_white",
    "name": "Caterpillar D9 Bulldozer (White)",
    "modelName": "cv_d9_dozer",
-   "textureName": "paint_c_white",
+   "textureName": "paintc_white",
    "extraMaterialLists": [
     []
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "blade",
+    "animations": [
+     {
+      "animationType": "translation",
+      "variable": "blade_lift",
+      "centerPoint": [
+       0,
+       0,
+       0
+      ],
+      "axis": [
+       0,
+       0.8,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "blade_lift"
+  ]
+ },
  "car": {
   "isFrontWheelDrive": false,
   "isRearWheelDrive": true,

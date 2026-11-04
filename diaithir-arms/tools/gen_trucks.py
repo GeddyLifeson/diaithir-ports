@@ -16,7 +16,7 @@ D = f'{M}/src/main/resources/data/{PK}'
 random.seed(27)
 R = {'paint': (0, 0, .5, .5), 'steel': (.5, 0, .75, .5), 'chrome': (.75, 0, 1, .5), 'dark': (0, .5, .25, 1), 'glass': (.25, .5, .5, 1)}
 PAINTS = {'': ('Red', (150, 36, 32)), '_white': ('White', (226, 228, 230)), '_blue': ('Blue', (36, 70, 140))}
-CPAINTS = {'_c': ('Yellow', (230, 170, 20)), '_c_orange': ('Orange', (214, 98, 24)), '_c_white': ('White', (226, 228, 230))}
+CPAINTS = {'': ('Yellow', (230, 170, 20)), '_orange': ('Orange', (214, 98, 24)), '_white': ('White', (226, 228, 230))}
 
 def w(path, d):
     os.makedirs(os.path.dirname(path), exist_ok=True); open(path, 'w').write(json.dumps(d, indent=1, ensure_ascii=False))
@@ -261,7 +261,7 @@ def write_parts():
                                  ('tank_10', 'Tank 10000 L', 'BARREL', 1), ('tank_20', 'Tank 20000 L', 'BARREL', 2), ('tank_30', 'Tank 30000 L', 'BARREL', 3)):
         w(f'{A}/jsondefs/parts/{pid}.json', {
          'general': {'type': 'interactable_crate' if kind == 'CRATE' else 'interactable_barrel', 'name': nm, 'materialLists': [['minecraft:iron_ingot:0:%d' % (units * 6)]]},
-         'interactable': {'interactionType': kind, 'inventoryUnits': units, 'inventoryStackSize': 64, 'canBeOpenedInHand': False},
+         'interactable': {'interactionType': kind.lower(), 'inventoryUnits': units, 'inventoryStackSize': 64, 'canBeOpenedInHand': False},
          'definitions': [{'subName': '', 'name': nm, 'extraMaterialLists': [[]]}]})
         o = Obj(); o.add('hold', box(-0.4, 0.0, -0.4, 0.4, 0.6, 0.4), R['steel']); o.write(f'{A}/objmodels/parts/{pid}.obj'); atlas((90, 90, 94), f'{A}/textures/parts/{pid}.png')
         cargo.append(dict(id=pid, name=nm, kind=kind.lower(), units=units, slots=units * 9 if kind == 'CRATE' else 0, litres=units * 10000 if kind == 'BARREL' else 0))
@@ -270,7 +270,7 @@ def write_parts():
 def engine_for(kw, tier='stock', prim=None): return f'{PK}:engine_{eng_class(kw, prim)}_{tier}'
 def mats(mass, kind='truck'):
     return [['minecraft:iron_ingot:0:%d' % max(8, mass // 400)], ['minecraft:iron_block:0:%d' % max(1, mass // 4000)], ['minecraft:redstone:0:8'], ['minecraft:black_dye:0:4']]
-def paints(pal, name, mdl): return [{'subName': s, 'name': name + f' ({lab})', 'modelName': mdl, 'textureName': 'paint' + s, 'extraMaterialLists': [[]]} for s, (lab, _) in pal.items()]
+def paints(pal, name, mdl): return [{'subName': s, 'name': name + f' ({lab})', 'modelName': mdl, 'textureName': ('paintc' if pal is CPAINTS else 'paint') + s, 'extraMaterialLists': [[]]} for s, (lab, _) in pal.items()]
 
 def drive_defs(cls_, ws, r, kw):
     p = []
@@ -284,16 +284,38 @@ def motorized(mass, fuel, kw, trailer=False, big=True):
     if trailer: m['isTrailer'] = True
     return m
 
-def write_vehicle(vid, nm, desc, body_info, mass, hp, extra_parts, extra, pal, mdl, motor, trailer=False):
+def anim(objs, typ, var, center, axis, dur=100):
+    """IV animatedObjects entries for OBJ object names; custom switch variables show on the vehicle panel (parse-checked only, sign and feel untested)."""
+    return [{'objectName': ob, 'animations': [{'animationType': typ, 'variable': var, 'centerPoint': center, 'axis': axis, 'clampMin': 0.0, 'clampMax': 3000.0 if var.startswith('engine_') else 1.0, 'duration': dur}]} for ob in objs]
+
+def trailer_anims(kind, L):
+    z0 = -L / 2
+    if kind == 'dump': return anim(['floor', 'side-1', 'side1', 'front', 'tail'], 'rotation', 'dump_tilt', [0, 1.15, z0], [-35, 0, 0])
+    if kind == 'lowboy': return anim(['ramp'], 'rotation', 'ramp_down', [0, 0.6, z0], [-20, 0, 0])
+    if kind in ('box', 'livestock'): return anim(['door'], 'rotation', 'rear_doors', [1.2, 2.5, z0], [0, -110, 0])
+    return []
+
+def cons_anims(kind, i):
+    if kind == 'dozer': return anim(['blade'], 'translation', 'blade_lift', [0, 0, 0], [0, 0.8, 0])
+    if kind == 'excavator': return anim(['boom', 'stick', 'bucket'], 'rotation', 'boom_lift', [0, 1.8, 0.8], [-25, 0, 0])
+    if kind == 'paver': return anim(['screed'], 'translation', 'screed_lift', [0, 0, 0], [0, 0.5, 0])
+    if kind == 'haul': return anim(['bed'], 'rotation', 'dump_tilt', [0, 3.3, -4.3], [-40, 0, 0])
+    if kind == 'mixer': return anim(['drum'], 'rotation', 'engine_rpm_1', [0, 2.3, (i['rear'] + i['fifth']) / 2 + 1.1], [0, 0, 0.02], 0)
+    if kind in ('loader', 'backhoe', 'skid'): return anim(['bucket', 'arm'], 'rotation', 'bucket_lift', [0, 0.8, min(z for _, z in i['wheels']) + 1.0], [-30, 0, 0])
+    if kind == 'dumpcart': return anim(['bed', 'side-1', 'side1'], 'rotation', 'dump_tilt', [0, 0.7, -0.9], [-35, 0, 0])
+    if kind == 'steamshovel': return anim(['boom', 'bucket'], 'rotation', 'boom_lift', [0, 2.0, 1.2], [-25, 0, 0])
+    return []
+
+def write_vehicle(vid, nm, desc, body_info, mass, hp, extra_parts, extra, pal, mdl, motor, trailer=False, anims=()):
     d = {'general': {'type': 'vehicle', 'name': nm, 'description': desc, 'materialLists': mats(mass), 'health': hp}, 'motorized': motor, 'parts': extra_parts,
-         'collision': [{'pos': [0, body_info['h'] / 2 + 0.3, 0], 'width': body_info['w'], 'height': body_info['h']}], 'definitions': paints(pal, nm, mdl), 'rendering': {}}
+         'collision': [{'pos': [0, body_info['h'] / 2 + 0.3, 0], 'width': body_info['w'], 'height': body_info['h']}], 'definitions': paints(pal, nm, mdl), 'rendering': ({'animatedObjects': list(anims), 'customVariables': sorted({a['animations'][0]['variable'] for a in anims if not a['animations'][0]['variable'].startswith('engine_')})} if anims else {})}
     if not trailer: d['car'] = {'isFrontWheelDrive': False, 'isRearWheelDrive': True, 'axleRatio': 3.6, 'dragCoefficient': 0.8, 'isBigTruck': True}
     d.update(extra); w(f'{A}/jsondefs/vehicles/{vid}.json', d)
 
 def main():
     eng_parts, cargo_parts = write_parts()
     for s in PAINTS: atlas(PAINTS[s][1], f'{A}/textures/vehicles/paint{s}.png')
-    for s in CPAINTS: atlas(CPAINTS[s][1], f'{A}/textures/vehicles/paint{s}.png')
+    for s in CPAINTS: atlas(CPAINTS[s][1], f'{A}/textures/vehicles/paintc{s}.png')
     man = {'tractors': [], 'trailers': [], 'construction': [], 'engines': eng_parts, 'cargo_parts': cargo_parts}
     for (vid, nm, maker, yr, ctry, lay, ax, kw, page, gvw) in ros.TRACTORS + ros.PRIM_TRACTORS:
         prim = {'team': 'draft', 'steam': 'steam'}.get(lay)
@@ -325,7 +347,7 @@ def main():
         if cg == 'car':
             grp.append({'groupName': 'deck', 'canInitiateConnections': True, 'isHitch': True, 'connections': [{'type': 'tow', 'pos': [0, i['deck'] + 0.2, z], 'mounted': True, 'distance': 3.0} for z in (-L * 0.25, L * 0.1)]})
         mass = int(5000 + payload * 0.25) if not i.get('primitive') else int(150 + payload * 0.3)
-        write_vehicle(mid, nm, f'{nm} ({yr}): {L:.1f} m, {ax} axles, payload {payload} kg. Hooks onto a {"drawbar" if i.get("primitive") else "fifth wheel"}.', i, mass, 800, parts, {'connectionGroups': grp}, PAINTS, mid, motorized(mass, 0, 0, trailer=True), trailer=True)
+        write_vehicle(mid, nm, f'{nm} ({yr}): {L:.1f} m, {ax} axles, payload {payload} kg. Hooks onto a {"drawbar" if i.get("primitive") else "fifth wheel"}.', i, mass, 800, parts, {'connectionGroups': grp}, PAINTS, mid, motorized(mass, 0, 0, trailer=True), trailer=True, anims=trailer_anims(kind, L))
         man['trailers'].append(dict(id=mid, name=nm, year=yr, kind=kind, cargo=cg, crate=crate, tank=tank, payload_kg=payload, axles=ax, length_m=L, mass_kg=mass, age=age_of(mid, yr), wiki=page))
     for (vid, nm, maker, yr, ctry, kind, kw, mass, page, role) in ros.CONSTRUCTION + ros.PRIM_CONSTRUCTION:
         o, i = construction(kind, kw); mid = 'cv_' + vid; o.write(f'{A}/objmodels/vehicles/{mid}.obj')
@@ -333,7 +355,7 @@ def main():
             parts = [{'pos': [x, i.get('r', 0.35), z], 'types': ['ground_wheel'], 'defaultPart': f'{PK}:{"small_wheel" if kind == "hroller" else "truck_wheel"}'} for x, z in (i['wheels'] or [(-0.9, 0.0), (0.9, 0.0)])]
             if kind == 'dumpcart': parts.append({'pos': [0, 0.9, 0], 'types': ['interactable_crate'], 'defaultPart': f'{PK}:crate_s'})
             grp = [{'groupName': 'drawbar', 'canInitiateConnections': False, 'isHookup': True, 'connections': [{'type': 'drawbar', 'pos': [0, 0.8, 2.6], 'distance': 2.0}]}]
-            write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): drawn work vehicle, {mass} kg. Road role: {role}.', i, mass, 300, parts, {'connectionGroups': grp}, CPAINTS, mid, motorized(mass, 0, 0, trailer=True), trailer=True)
+            write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): drawn work vehicle, {mass} kg. Road role: {role}.', i, mass, 300, parts, {'connectionGroups': grp}, CPAINTS, mid, motorized(mass, 0, 0, trailer=True), trailer=True, anims=cons_anims(kind, i))
             man['construction'].append(dict(id=mid, name=nm, maker=maker, year=yr, country=ctry, kind=kind, power_w=0, mass_kg=mass, fuel_l=0, road_role=role, age=age_of(mid, yr), wiki=page)); continue
         if i.get('tread'):
             parts = [{'pos': [sx * i['tx'], 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:cv_track'} for sx in (-1, 1)]
@@ -353,7 +375,7 @@ def main():
         fuel = int(min(3000, max(60, kw * 2.4)))
         mot = motorized(mass, fuel, kw)
         if i.get('tread'): mot.update({'hasSkidSteer': True, 'hasPermanentSkidSteer': True})
-        write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): {kw} kW, {mass // 1000} t. Road role: {role}.', i, mass, int(600 + kw // 2), parts, extra, CPAINTS, mid, mot)
+        write_vehicle(mid, nm, f'{nm} ({yr}, {ctry}): {kw} kW, {mass // 1000} t. Road role: {role}.', i, mass, int(600 + kw // 2), parts, extra, CPAINTS, mid, mot, anims=cons_anims(kind, i))
         man['construction'].append(dict(id=mid, name=nm, maker=maker, year=yr, country=ctry, kind=kind, power_w=int(kw * 1000), mass_kg=mass, fuel_l=fuel, road_role=role, age=age_of(mid, yr), wiki=page))
     w(f'{M}/truck_manifest.json', man)
     return man

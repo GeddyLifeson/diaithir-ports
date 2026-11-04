@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/nail_clippers"
+  "layer0": "diaithirfurnishings:item/nail_clippers_head",
+  "layer1": "diaithirfurnishings:item/nail_clippers_handle",
+  "layer2": "diaithirfurnishings:item/nail_clippers_binding"
  }
 }

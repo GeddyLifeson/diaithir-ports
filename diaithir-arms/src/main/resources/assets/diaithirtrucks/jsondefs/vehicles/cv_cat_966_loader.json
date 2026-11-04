@@ -120,34 +120,84 @@
  ],
  "definitions": [
   {
-   "subName": "_c",
+   "subName": "",
    "name": "Caterpillar 966 Wheel Loader (Yellow)",
    "modelName": "cv_cat_966_loader",
-   "textureName": "paint_c",
+   "textureName": "paintc",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_orange",
+   "subName": "_orange",
    "name": "Caterpillar 966 Wheel Loader (Orange)",
    "modelName": "cv_cat_966_loader",
-   "textureName": "paint_c_orange",
+   "textureName": "paintc_orange",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_white",
+   "subName": "_white",
    "name": "Caterpillar 966 Wheel Loader (White)",
    "modelName": "cv_cat_966_loader",
-   "textureName": "paint_c_white",
+   "textureName": "paintc_white",
    "extraMaterialLists": [
     []
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "bucket",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "bucket_lift",
+      "centerPoint": [
+       0,
+       0.8,
+       -0.5
+      ],
+      "axis": [
+       -30,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   },
+   {
+    "objectName": "arm",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "bucket_lift",
+      "centerPoint": [
+       0,
+       0.8,
+       -0.5
+      ],
+      "axis": [
+       -30,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "bucket_lift"
+  ]
+ },
  "car": {
   "isFrontWheelDrive": false,
   "isRearWheelDrive": true,

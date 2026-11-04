@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/egg_beater"
+  "layer0": "diaithirfurnishings:item/egg_beater_head",
+  "layer1": "diaithirfurnishings:item/egg_beater_handle"
  }
 }

@@ -71,7 +71,59 @@ def make(name, tone, bands):
     bottom.save(os.path.join(ROOT, f"assets/{NS}/textures/block/{name}_bottom.png"))
 
 
+def steel(seed, rim=False):
+    """Worn dirty steel plate with rivets (Factorio look); rim=True draws the open pot top with dark water."""
+    r = random.Random(seed)
+    img = Image.new("RGB", (S, S))
+    px = img.load()
+    for x in range(S):
+        for y in range(S):
+            px[x, y] = shade((92, 96, 102), r.uniform(0.85, 1.1) * (0.9 if (x // 16 + y // 16) % 2 else 1.0))
+            if x % 16 in (0, 15) or y % 16 in (0, 15):
+                px[x, y] = shade(px[x, y], 0.6)
+    for x in range(8, S, 16):
+        for y in range(8, S, 16):
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    px[x + dx, y + dy] = shade((92, 96, 102), 1.4 if dx + dy < 0 else 0.55)
+    for _ in range(90):
+        px[r.randrange(S), r.randrange(S)] = (120 + r.randrange(40), 70, 40)
+    if rim:
+        c = S / 2 - 0.5
+        for x in range(S):
+            for y in range(S):
+                d = ((x - c) ** 2 + (y - c) ** 2) ** 0.5
+                if d < S / 2 - 6:
+                    px[x, y] = shade((38, 62, 74), r.uniform(0.9, 1.1))
+                elif d < S / 2 - 4:
+                    px[x, y] = shade((60, 62, 66), 0.8)
+    return img
+
+
+def jar(contents):
+    """16x16-style item art drawn at 64 px: glass jar, steel lid, coloured contents (None = empty)."""
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    px = img.load()
+    for x in range(16, 48):
+        for y in range(18, 56):
+            edge = x in (16, 47) or y in (18, 55)
+            px[x, y] = (200, 225, 235, 255) if edge else ((contents + (255,)) if contents and y > 26 else (170, 205, 220, 90))
+    for x in range(14, 50):
+        for y in range(8, 18):
+            px[x, y] = shade((92, 96, 102), 1.2 if y == 8 else 0.8 if y == 17 else 1.0) + (255,)
+    return img
+
+
 os.makedirs(os.path.join(ROOT, f"assets/{NS}/textures/block"), exist_ok=True)
+os.makedirs(os.path.join(ROOT, f"assets/{NS}/textures/item"), exist_ok=True)
+CANNED = {"jar": None, "canned_meat": (150, 60, 45), "canned_fish": (190, 130, 90), "canned_vegetables": (90, 150, 60), "canned_fruit": (200, 60, 90)}
+for n, col in CANNED.items():
+    jar(col).save(os.path.join(ROOT, f"assets/{NS}/textures/item/{n}.png"))
+    put(f"assets/{NS}/models/item/{n}.json", {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{n}"}})
+    put(f"assets/{NS}/items/{n}.json", {"model": {"type": "minecraft:model", "model": f"{NS}:item/{n}"}})
+steel(4).save(os.path.join(ROOT, f"assets/{NS}/textures/block/canning_pot_side.png"))
+steel(5, rim=True).save(os.path.join(ROOT, f"assets/{NS}/textures/block/canning_pot_top.png"))
+steel(6).save(os.path.join(ROOT, f"assets/{NS}/textures/block/canning_pot_bottom.png"))
 make("keg", (150, 105, 60), (8, 51))
 make("fermenting_barrel", (112, 78, 46), (6, 29, 53))
 # oak_cask art comes from the textures thread (64 px); only generate a placeholder if it is missing
@@ -79,7 +131,7 @@ if not os.path.exists(os.path.join(ROOT, f"assets/{NS}/textures/block/oak_cask_s
     make("oak_cask", (170, 135, 82), (10, 27, 46))
 
 # (Diaithiris, English)
-NAMES = {"keg": ("Boidellienda", "Keg"), "fermenting_barrel": ("Tundagrùduiri", "Fermenting Barrel"), "oak_cask": ("", "Oak Cask")}
+NAMES = {"keg": ("Boidellienda", "Keg"), "fermenting_barrel": ("Tundagrùduiri", "Fermenting Barrel"), "oak_cask": ("", "Oak Cask"), "canning_pot": ("", "Canning Pot")}
 lang = {}
 for n, (dia, _en) in NAMES.items():
     lang[f"block.{NS}.{n}"] = _en  # English main name; the Diaithiris name is shown in grey by the pack (assets/diaithirbrewing/diaithir_names/names.json, written by the names thread)
@@ -92,6 +144,8 @@ for n, (dia, _en) in NAMES.items():
         "type": "minecraft:block", "random_sequence": f"{NS}:blocks/{n}",
         "pools": [{"rolls": 1, "bonus_rolls": 0, "conditions": [{"condition": "minecraft:survives_explosion"}],
                    "entries": [{"type": "minecraft:item", "name": f"{NS}:{n}"}]}]})
+for n, en in {"jar": "Glass Jar", "canned_meat": "Canned Meat", "canned_fish": "Canned Fish", "canned_vegetables": "Canned Vegetables", "canned_fruit": "Canned Fruit"}.items():
+    lang[f"item.{NS}.{n}"] = en
 lang[f"block.{NS}.ready"] = "%2$s x %1$s ready to draw"
 lang[f"block.{NS}.fermenting"] = "Fermenting: %s%% (cellar %s/%s)"
 lang[f"block.{NS}.filling"] = "Contents: %s / %s"
@@ -109,7 +163,24 @@ put(f"data/{NS}/recipe/oak_cask.json", {
     "type": "minecraft:crafting_shaped", "category": "misc",
     "key": {"P": "minecraft:oak_planks", "I": "minecraft:iron_ingot", "B": f"{NS}:fermenting_barrel"},
     "pattern": ["PIP", "PBP", "PIP"], "result": {"id": f"{NS}:oak_cask"}})
+put(f"data/{NS}/recipe/canning_pot.json", {
+    "type": "minecraft:crafting_shaped", "category": "misc",
+    "key": {"I": "minecraft:iron_ingot", "C": "minecraft:cauldron"},
+    "pattern": ["I I", "ICI", "III"], "result": {"id": f"{NS}:canning_pot"}})
+put(f"data/{NS}/recipe/jar.json", {
+    "type": "minecraft:crafting_shaped", "category": "misc",
+    "key": {"G": "minecraft:glass", "I": "minecraft:iron_nugget"},
+    "pattern": ["I", "G", "G"], "result": {"id": f"{NS}:jar", "count": 4}})
 put(f"data/minecraft/tags/block/mineable/axe.json", {"values": [f"{NS}:keg", f"{NS}:fermenting_barrel", f"{NS}:oak_cask"]})
+put(f"data/minecraft/tags/block/mineable/pickaxe.json", {"values": [f"{NS}:canning_pot"]})
+put(f"data/{NS}/tags/item/preserved.json", {"values": [f"{NS}:{n}" for n in CANNED if n != "jar"]})
+
+# Canning recipes ship in the jar: a bucket of water (brine or syrup, bucket returned), the food, and jars; heat from below. food.canning, Age V.
+for n, ing, ticks in (("canned_meat", {"minecraft:cooked_beef": 3}, 1200), ("canned_fish", {"minecraft:cooked_cod": 3}, 1200),
+                      ("canned_vegetables", {"minecraft:carrot": 2, "minecraft:potato": 2}, 900), ("canned_fruit", {"minecraft:apple": 3, "minecraft:sugar": 1}, 900)):
+    put(f"data/{NS}/{NS}/{n}.json", {"station": "canning_pot", "base": "minecraft:water_bucket", "base_returns": "minecraft:bucket",
+        "ingredients": ing, "ticks": ticks, "drink": f"{NS}:{n}", "servings": 4, "container": f"{NS}:jar"})
+put(f"data/{NS}/age_gate.json", {"tier1": {"age": 5, "items": [f"{NS}:canning_pot", f"{NS}:jar", f"{NS}:canned_meat", f"{NS}:canned_fish", f"{NS}:canned_vegetables", f"{NS}:canned_fruit"]}})
 
 # Sample brew in the data format (the alcohol thread writes the real catalogue the same way); kept out of the jar.
 put("../../../tools/sample/data/diaithirbrewing/diaithirbrewing/selftest.json", {

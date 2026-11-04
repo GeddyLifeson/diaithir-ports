@@ -22,10 +22,10 @@ EFFECTS = {"DAMAGE_RESISTANCE": "resistance", "DAMAGE_BOOST": "strength", "MOVEM
 AGE = {"SILENTWOOD": "I", "AURORIAN_STONE": "I", "CERULEAN": "II", "MOONSTONE": "II", "KNIGHT": "II", "SPECTRAL": "III",
        "AURORIAN_STEEL": "III", "AURORIANITE": "IV", "UMBRA": "IV", "CRYSTALLINE": "IV"}
 # Items whose behaviour lives in Java we have not ported yet; they are listed, not registered.
-DEFERRED_ITEMS = {"mirror_of_guidance", "cerulean_arrow", "crystal_arrow", "silentwood_bow", "crystalline_sword"}
-DEFERRED_BLOCK_CLASS = {"SaplingBlock"}
+DEFERRED_ITEMS = set()
+DEFERRED_BLOCK_CLASS = set()
 BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "ScrapperBlock": "scrapper", "MoonlightForgeBlock": "moonlight_forge", "CrystalBlock": "full", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
-              "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "TallGrassBlock": "plant"}
+              "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "SaplingBlock": "sapling", "TallGrassBlock": "plant"}
 
 
 def num(s, default=0.0):
@@ -84,7 +84,7 @@ def build_items(tools, armor):
         rarity = re.search(r"Rarity\.(\w+)", body)
         dur = re.search(r"durability\((\d+)\)", body)
         burn = re.search(r"basicItemWithBurntime\(.*?, (\d+)\)", body)
-        if group == "_SPAWN_EGGS" or "BaseAurorianArrow" in body or False:
+        if group == "_SPAWN_EGGS" or False:
             continue
         spec = dict(id=iid)
         if rarity and rarity.group(1) != "COMMON":
@@ -119,7 +119,12 @@ def build_items(tools, armor):
                 spec["damage"], spec["speed"] = num(nums.group(1)), num(nums.group(2))
             used_t.add(mat)
         elif iid.endswith("_sickle"):
-            continue
+            spec.update(kind="sickle", mat=mat)
+            used_t.add(mat)
+        elif iid in ("cerulean_arrow", "crystal_arrow"):
+            spec["kind"] = "arrow"
+        elif iid == "silentwood_bow":
+            spec.update(kind="bow", durability=150, burn=200)
         else:
             spec.setdefault("kind", "item")
             if dur:
@@ -203,7 +208,8 @@ def conv_tag(t):
     if t.startswith("#"):
         return "#" + conv_tag(t[1:])
     if t.startswith("forge:"):
-        return "c:" + t[6:]
+        n = t[6:]
+        return "c:" + {"glass": "glass_blocks"}.get(n, n)
     return t
 
 
@@ -456,7 +462,7 @@ def main():
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 dst.write_text(json.dumps(dict(replace=False, values=vals), indent=1) + "\n")
     # worldgen, dimension, structures (validated by a server boot, see README)
-    for sub in ("dimension", "dimension_type", "worldgen"):
+    for sub in ("dimension", "dimension_type", "worldgen", "mirror_of_guidance"):
         s = MAIN / "data" / NS / sub
         if s.exists():
             shutil.copytree(s, D / sub, dirs_exist_ok=True)
@@ -510,6 +516,31 @@ def main():
     for mp in (A / "models/item").glob("*.json"):  # Forge-only loader models of unregistered items would fail to load
         if mp.stem not in allids and "forge:" in mp.read_text():
             mp.unlink()
+    bowdef = dict(model=dict(type="minecraft:condition", property="minecraft:using_item",
+        on_false=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow"),
+        on_true=dict(type="minecraft:range_dispatch", property="minecraft:use_duration", scale=0.05,
+                     fallback=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow_pulling_0"),
+                     entries=[dict(threshold=0.65, model=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow_pulling_1")),
+                              dict(threshold=0.9, model=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow_pulling_2"))])))
+    if (A / "models/item/silentwood_bow.json").exists():
+        (idir / "silentwood_bow.json").write_text(json.dumps(bowdef, indent=1) + "\n")
+        bm = json.loads((A / "models/item/silentwood_bow.json").read_text())
+        bm.pop("overrides", None)
+        (A / "models/item/silentwood_bow.json").write_text(json.dumps(bm, indent=1) + "\n")
+    cm = A / "models/item/crystalline_sword.json"
+    if cm.exists():
+        # legacy "charging"/"charge" overrides -> using_item + use_duration (charge in seconds = ticks / 20)
+        m = json.loads(cm.read_text())
+        ov = m.pop("overrides", [])
+        if ov:
+            entries = [dict(threshold=o["predicate"]["charge"], model=dict(type="minecraft:model", model=o["model"])) for o in ov if "charge" in o["predicate"]]
+            entries[-1]["threshold"] = 0.95  # final frame only once the 19-tick beam charge is reached
+            first = [o for o in ov if "charge" not in o["predicate"]][0]
+            (idir / "crystalline_sword.json").write_text(json.dumps(dict(model=dict(type="minecraft:condition", property="minecraft:using_item",
+                on_false=dict(type="minecraft:model", model=f"{NS}:item/crystalline_sword"),
+                on_true=dict(type="minecraft:range_dispatch", property="minecraft:use_duration", scale=0.05,
+                             fallback=dict(type="minecraft:model", model=first["model"]), entries=entries))), indent=1) + "\n")
+            cm.write_text(json.dumps(m, indent=1) + "\n")
     EGGS = ["hollow", "undead_knight", "dungeon_slime", "dungeon_keeper"]
     for n in EGGS:
         # 26.1 vanilla eggs are plain textures, so draw our own two-colour egg
@@ -531,6 +562,22 @@ def main():
         title = n.replace("_", " ").title()
         lang.setdefault(f"entity.{NS}.{n}", title)
         lang.setdefault(f"item.{NS}.{n}_spawn_egg", title + " Spawn Egg")
+    # upstream's Mirror of Guidance has no text for six of its twelve nodes; these are ours (clean-room, from what this port implements)
+    mir = {
+        "crafting": ("Crafting", "Silentwood makes a crafting table and a chest. A scrapper breaks tools and armour back into parts: put a crystal in the first slot and the item to scrap in the second. A crystal block placed above the scrapper makes it four times faster. The moonlight forge upgrades gear at night under open sky; the higher it stands, the faster it works. Chimneys on top of an Aurorian furnace make its fuel burn longer."),
+        "ore_cerulean": ("Cerulean Ore", "Cerulean ore generates underground in the Aurorian. Smelt it into cerulean ingots for cerulean armour, the cerulean shield and arrows."),
+        "ore_moonstone": ("Moonstone Ore", "Moonstone ore generates underground. Moonstone tools last longer: half of the hits cost no durability, but during the day each hit costs one extra point."),
+        "ore_geode": ("Geodes", "Geodes are crystal lumps buried in the stone. Crystals from them power a scrapper."),
+        "umbra": ("Umbra", "Umbra gear is heavy. The greatsword slows you but gives resistance while held, and the chestplate hits back at attackers while you sneak."),
+        "aurorian_steel": ("Aurorian Steel", "Aurorian steel tools and armour level up their own enchantments as they wear: enough use raises one enchantment by a level, and each next level needs 25 percent more wear than the last."),
+    }
+    for k, (nm, ds) in mir.items():
+        lang.setdefault(f"mirror_of_guidance.{NS}.{k}.name", nm)
+        lang.setdefault(f"mirror_of_guidance.{NS}.{k}.desc", ds)
+    # chat shows the guide, so drop the book-page padding
+    for k in list(lang):
+        if k.startswith("mirror_of_guidance.") and k.endswith(".desc"):
+            lang[k] = re.sub(r"\n{3,}", "\n\n", lang[k])
     (A / "lang/en_us.json").write_text(json.dumps(lang, indent=1, ensure_ascii=False) + "\n")
     # fuel data map
     fuels = {NS + ":" + i["id"]: {"burn_time": i["burn"]} for i in data["items"] if "burn" in i}

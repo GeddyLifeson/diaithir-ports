@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "pattern": ["NNN","NBN","NNN"], "key": { "N": "minecraft:netherite_ingot", "B": "diaithirportable:diamond_backpack" }, "result": { "id": "diaithirportable:netherite_backpack" } }

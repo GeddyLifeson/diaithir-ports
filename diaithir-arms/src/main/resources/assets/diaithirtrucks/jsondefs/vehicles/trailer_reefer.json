@@ -129,7 +129,35 @@
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "door",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "rear_doors",
+      "centerPoint": [
+       1.2,
+       2.5,
+       -8.1
+      ],
+      "axis": [
+       0,
+       -110,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "rear_doors"
+  ]
+ },
  "connectionGroups": [
   {
    "groupName": "kingpin",

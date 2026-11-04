@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithircreatureutils:item/fishing_rod_wood_item"
+ }
+}

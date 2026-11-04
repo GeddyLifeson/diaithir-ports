@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/heart_seashelf" },
+            { "model": "apothic_enchanting:block/heart_seashelf_2" },
+            { "model": "apothic_enchanting:block/heart_seashelf_3" }
+        ]
+    }
+}

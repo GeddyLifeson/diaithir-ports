@@ -144,7 +144,35 @@
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "ramp",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "ramp_down",
+      "centerPoint": [
+       0,
+       0.6,
+       -7.5
+      ],
+      "axis": [
+       -20,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "ramp_down"
+  ]
+ },
  "connectionGroups": [
   {
    "groupName": "kingpin",

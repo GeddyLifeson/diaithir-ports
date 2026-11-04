@@ -1,0 +1,28 @@
+{
+  "station": "machine.assembler",
+  "stage": "assembly",
+  "time_s": 18,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_guided_shell_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_guided_shell_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_guided_shell_filler",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_guided_shell_fuze",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_guided_shell",
+    "count": 1
+  },
+  "operator": true
+}

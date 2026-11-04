@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:tuscarora_crepe_myrtle_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:tuscarora_crepe_myrtle_planks",
+  "count": 4
+ }
+}

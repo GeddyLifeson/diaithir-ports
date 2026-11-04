@@ -1,49 +1,49 @@
 {
- "seat": {
-  "standing": false,
-  "widthScale": 1.0,
-  "heightScale": 1.0
- },
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "click",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "collisions": [
+  "seat": {
+    "standing": false,
+    "widthScale": 1.0,
+    "heightScale": 1.0
+  },
+  "collisionGroups": [
     {
-     "pos": [
-      0,
-      0,
-      0
-     ],
-     "width": 0.9,
-     "height": 0.9
+      "collisionTypes": [
+        "click",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "width": 0.9,
+          "height": 0.9
+        }
+      ]
     }
-   ]
-  }
- ],
- "general": {
-  "type": "seat",
-  "name": "Tank Crew Seat",
-  "width": 0.9,
-  "height": 0.9,
-  "mass": 60,
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:4"
-   ]
+  ],
+  "general": {
+    "type": "seat",
+    "name": "Tank Crew Seat",
+    "width": 0.9,
+    "height": 0.9,
+    "mass": 60,
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:4"
+      ]
+    ]
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Tank Crew Seat",
+      "extraMaterialLists": [
+        []
+      ]
+    }
   ]
- },
- "definitions": [
-  {
-   "subName": "",
-   "name": "Tank Crew Seat",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ]
 }

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:mangrove_planks"
+ },
+ "pattern": [
+  "P  ",
+  "PP ",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:mangrove_roof",
+  "count": 4
+ }
+}

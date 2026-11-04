@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "diaithirtrees:block/sycamore_fig_wood"
+  },
+  "axis=z": {
+   "model": "diaithirtrees:block/sycamore_fig_wood",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "diaithirtrees:block/sycamore_fig_wood",
+   "x": 90,
+   "y": 90
+  }
+ }
+}

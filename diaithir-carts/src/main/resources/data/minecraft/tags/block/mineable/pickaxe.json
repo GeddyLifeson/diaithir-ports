@@ -14,6 +14,18 @@
     "diaithircarts:one_way_rail",
     "diaithircarts:destination_rail",
     "diaithircarts:cart_loader",
-    "diaithircarts:locking_rail"
+    "diaithircarts:locking_rail",
+    "diaithircarts:reaper",
+    "diaithircarts:narrow_rail",
+    "diaithircarts:narrow_powered_rail",
+    "diaithircarts:dual_rail",
+    "diaithircarts:dual_powered_rail",
+    "diaithircarts:container_core",
+    "diaithircarts:container_door",
+    "diaithircarts:container_wall",
+    "diaithircarts:loading_dock",
+    "diaithircarts:reefer_unit",
+    "diaithircarts:rift_dock",
+    "diaithircarts:tank_vessel"
   ]
 }

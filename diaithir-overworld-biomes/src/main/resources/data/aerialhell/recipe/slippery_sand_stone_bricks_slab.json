@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aerialhell:slippery_sand_stone_bricks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "aerialhell:slippery_sand_stone_bricks_slab",
+  "count": 6
+ }
+}

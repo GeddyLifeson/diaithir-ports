@@ -29,16 +29,22 @@ BODY = {
  'pickup': (5.0, 1.9, 1.7, 0.38, (60, 90, 140), (1600, 75, 70)), 'van': (4.6, 1.8, 2.1, 0.36, (230, 230, 225), (1700, 70, 70)),
  'bus': (8.4, 2.5, 3.0, 0.5, (190, 30, 30), (7500, 90, 140)), 'armcar': (4.9, 1.9, 2.3, 0.42, (96, 100, 84), (4000, 60, 100)),
  'wrecker': (5.2, 2.0, 2.4, 0.4, (200, 170, 40), (2500, 60, 80)), 'firetruck': (6.5, 2.4, 2.9, 0.45, (190, 25, 25), (6000, 80, 150)),
- 'apc': (4.9, 2.7, 2.3, 0.0, (84, 94, 62), (11000, 156, 360))}
-LOW = {'sedan': .55, 'jeep': .55, 'pickup': .6, 'van': .5, 'bus': .5, 'armcar': .6, 'wrecker': .6, 'firetruck': .6, 'apc': .45}
+ 'apc': (4.9, 2.7, 2.3, 0.0, (84, 94, 62), (11000, 156, 360)),
+ 'tractor': (2.9, 1.6, 1.6, 0.55, (40, 80, 150), (1200, 15, 76))}
+LOW = {'sedan': .55, 'jeep': .55, 'pickup': .6, 'van': .5, 'bus': .5, 'armcar': .6, 'wrecker': .6, 'firetruck': .6, 'apc': .45, 'tractor': .5}
 
 def body_model(kind):
     L, W, H = BODY[kind][:3]; hl, hw = L / 2, W / 2; low = LOW[kind]; o = Obj()
     o.add('chassis', box(-hw, low, -hl, hw, low + .35, hl), R['body'])
     cab = {'sedan': (-.9, 1.0), 'jeep': (-.7, .7), 'pickup': (.1, 1.5), 'van': (-hl + .1, hl - .1), 'bus': (-hl + .1, hl - .1), 'armcar': (-1.6, 1.5),
-           'wrecker': (.2, 1.9), 'firetruck': (.9, hl - .1), 'apc': (-hl + .2, hl - .3)}[kind]
-    o.add('cabin', box(-hw + .1, low + .35, cab[0], hw - .1, H, cab[1]), R['body'])
-    o.add('windscreen', box(-hw + .2, low + .75, cab[1], hw - .2, H - .1, cab[1] + .05), R['glass'])
+           'wrecker': (.2, 1.9), 'firetruck': (.9, hl - .1), 'apc': (-hl + .2, hl - .3), 'tractor': (.2, hl - .1)}[kind]
+    if kind == 'tractor':   # open farm tractor: engine hood, steering post and a seat pan, no closed cabin
+        o.add('hood', box(-.3, low + .35, cab[0], .3, low + 1.0, cab[1]), R['body'])
+        o.add('seatpan', box(-.3, low + .35, -hl + .3, .3, low + .55, -hl + .9), R['dark'])
+        o.add('post', box(-.05, low + .35, cab[0] - .3, .05, low + 1.0, cab[0] - .25), R['metal'])
+    else:
+        o.add('cabin', box(-hw + .1, low + .35, cab[0], hw - .1, H, cab[1]), R['body'])
+    if kind != 'tractor': o.add('windscreen', box(-hw + .2, low + .75, cab[1], hw - .2, H - .1, cab[1] + .05), R['glass'])
     if kind == 'wrecker': o.add('boom', box(-.15, low + .35, -hl, .15, H + .4, -hl + 1.6), R['metal'])
     if kind == 'firetruck': o.add('ladder', box(-.3, H, -hl + .2, .3, H + .25, hl - 1.6), R['metal'])
     if kind == 'pickup': o.add('bed', box(-hw, low + .35, -hl, hw, low + .8, -.1), R['dark'])

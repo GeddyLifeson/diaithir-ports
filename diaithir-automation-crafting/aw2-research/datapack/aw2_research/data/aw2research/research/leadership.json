@@ -1,0 +1,27 @@
+{
+  "title": "Leadership",
+  "description": "Ancient Warfare 2 research: leadership.",
+  "prerequisites": [],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:paper",
+            "count": {
+              "min": 10
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:paper"
+    }
+  }
+}
