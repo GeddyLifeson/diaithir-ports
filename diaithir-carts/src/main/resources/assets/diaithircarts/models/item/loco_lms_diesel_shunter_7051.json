@@ -1,1 +1,1 @@
-{"parent": "minecraft:item/generated", "textures": {"layer0": "minecraft:item/minecart"}}
+{"parent": "minecraft:item/generated", "textures": {"layer0": "diaithircarts:item/loco_lms_diesel_shunter_7051"}}

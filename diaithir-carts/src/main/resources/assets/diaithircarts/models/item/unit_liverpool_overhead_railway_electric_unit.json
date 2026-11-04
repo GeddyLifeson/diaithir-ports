@@ -1,1 +1,1 @@
-{"parent": "minecraft:item/generated", "textures": {"layer0": "minecraft:item/minecart"}}
+{"parent": "minecraft:item/generated", "textures": {"layer0": "diaithircarts:item/unit_liverpool_overhead_railway_electric_unit"}}
