@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/maul"
+  "layer0": "diaithirfurnishings:item/maul_head",
+  "layer1": "diaithirfurnishings:item/maul_handle",
+  "layer2": "diaithirfurnishings:item/maul_binding"
  }
 }

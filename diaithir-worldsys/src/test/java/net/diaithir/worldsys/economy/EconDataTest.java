@@ -13,10 +13,10 @@ class EconDataTest {
     @Test
     void loadsAndRuns() throws Exception {
         EconData d = EconData.load();
-        assertEquals(32171, d.prices.size());
+        assertEquals(51011, d.prices.size());
         assertEquals(18, d.designs.size());
-        assertEquals(55, d.vendors.size());
-        assertEquals(335, d.drinks.size());
+        assertEquals(56, d.vendors.size());
+        assertEquals(512, d.drinks.size());
         assertNotNull(d.good("minecraft:iron_ingot"));
         // a run through the real tables: two cultures, a bank, a company, a market, a year of weeks
         EconData.DesignData salund = d.designs.get("salund");

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aerialhell:sky_cactus_fiber_planks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "aerialhell:sky_cactus_fiber_slab",
+  "count": 6
+ }
+}

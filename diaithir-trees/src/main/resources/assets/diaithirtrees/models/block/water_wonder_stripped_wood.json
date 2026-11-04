@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirtrees:block/water_wonder_stripped_log"
+ }
+}

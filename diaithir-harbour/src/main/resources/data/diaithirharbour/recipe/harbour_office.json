@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "minecraft:oak_planks",
+    "I": "minecraft:iron_ingot",
+    "C": "minecraft:clock",
+    "B": "minecraft:bell"
+  },
+  "pattern": [
+    "PBP",
+    "PCP",
+    "IPI"
+  ],
+  "result": {
+    "id": "diaithirharbour:harbour_office",
+    "count": 1
+  }
+}

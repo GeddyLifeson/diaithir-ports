@@ -68,5 +68,20 @@
  "material.diaithirgear.rodos_alloy": "Rodos Alloy",
  "material.diaithirgear.star_lattice": "Star Lattice",
  "slot.diaithirgear.pot": "Pot",
- "material.diaithirgear.clay": "Clay"
+ "material.diaithirgear.clay": "Clay",
+ "item.diaithirgear.item_magnet": "Item Magnet",
+ "item.diaithirgear.super_item_magnet": "Super Item Magnet",
+ "item.diaithirgear.duct_tape": "Duct Tape",
+ "item.diaithirgear.copper_repair_kit": "Copper Repair Kit",
+ "item.diaithirgear.iron_repair_kit": "Iron Repair Kit",
+ "item.diaithirgear.golden_repair_kit": "Golden Repair Kit",
+ "item.diaithirgear.diamond_repair_kit": "Diamond Repair Kit",
+ "item.diaithirgear.amethyst_repair_kit": "Amethyst Repair Kit",
+ "item.diaithirgear.netherite_repair_kit": "Netherite Repair Kit",
+ "fold.diaithirgear.repaired": "Repaired %1$s durability on %2$s",
+ "fold.diaithirgear.kit_left": "%1$s durability left to give",
+ "fold.diaithirgear.kit_slow": "Carrying it: Slowness %1$s",
+ "fold.diaithirgear.kit_fatigue": "Carrying it: Mining Fatigue %1$s",
+ "advancements.diaithirgear.repair.title": "Good as Chipped",
+ "advancements.diaithirgear.repair.description": "Repair a damaged anvil with an iron ingot"
 }

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:ceylon_ebony_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:ceylon_ebony_planks",
+  "count": 4
+ }
+}

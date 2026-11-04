@@ -1,0 +1,13 @@
+{
+ "station": "canning_pot",
+ "base": "minecraft:water_bucket",
+ "base_returns": "minecraft:bucket",
+ "ingredients": {
+  "minecraft:apple": 3,
+  "minecraft:sugar": 1
+ },
+ "ticks": 900,
+ "drink": "diaithirbrewing:canned_fruit",
+ "servings": 4,
+ "container": "diaithirbrewing:jar"
+}

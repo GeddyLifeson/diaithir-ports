@@ -23,6 +23,11 @@ public class TierRail extends RailBlock implements RailSpeed {
         return tier.maxSpeed;
     }
 
+    @Override
+    public Gauge gauge() {
+        return tier.gauge;
+    }
+
     public Tier tier() {
         return tier;
     }

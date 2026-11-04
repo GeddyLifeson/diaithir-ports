@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "diaithircarts:block/freight_barrel_side",
+  "end": "diaithircarts:block/freight_barrel_top"
+ }
+}

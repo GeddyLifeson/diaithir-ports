@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:apple"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithirfarmkitchen:crop_apple_pie",
+  "count": 1
+ }
+}

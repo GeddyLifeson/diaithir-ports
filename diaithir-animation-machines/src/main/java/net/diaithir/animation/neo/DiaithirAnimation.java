@@ -57,6 +57,15 @@ public final class DiaithirAnimation {
         return c.pose();
     }
 
+    private static final Map<String, State> OVERRIDE = new ConcurrentHashMap<>();
+
+    /** Machine mods force a state for a block ("dimension|packedPos") when a block property cannot tell: null clears. */
+    public static void setOverride(String key, State state) {
+        if (state == null) OVERRIDE.remove(key); else OVERRIDE.put(key, state);
+    }
+
+    public static State override(String key) { return OVERRIDE.get(key); }
+
     public static void forget(String key) { LIVE.remove(key); }
     public static void clear() { LIVE.clear(); }
 }

@@ -23,6 +23,13 @@ Clean-room, MIT. Replaces the all-rights-reserved Vic's Point Blank in the pack.
 - Names: `names_map.json` has English plus Diaithiris kennings (words from LEXICON.json, grammar from GRAMMAR.md, run through `diaithiris-archaic/tools/archaic.py`). Items are named in English with the Diaithiris name as a grey italic tooltip line (`names.json`).
 - Codex: `library/firearms_library.json` (arms_library format) and `codex/firearms_handbook.json` (handbook chapters).
 
+## Ammo containers and animation (round 2)
+- Containers follow Global-Repo `plans/MUNITIONS_CONTAINERS.md`: items tagged `c:ammo_container/<kind>` holding the component `diaithircrafting:ammo_container` {class, capacity, count, round}. `Containers` reads and writes it through its own codec as JSON, so there is no compile dependency on the crafting module; without it guns reload from loose ammo as before.
+- Reload takes rounds from the fullest matching container first (class equal, round unset or the gun's own ammo, any namespace), then tops up from loose ammo. Creative players skip containers.
+- `container_kinds.json` (gun class to container kinds, preference order) and the tags `diaithircrafting:uses_container/<kind>` and `diaithircrafting:ammo_class/<class>` are written by `tools/gen_containers.py` (run after gen.py and gen_roster.py). Casings are not items; the animation module spawns them as particles.
+- `AnimHook` (soft link, no-op without diaithir-animation) plays the fire, dry and reload clips; the reload clip is as long as the server reload.
+- Engine choice: TaCZ and Superb Warfare are GPL-3.0 and target 1.20.1, so folding either would put the jar under GPL and need a full port; this stays the MIT clean-room engine and uses TaCZ's pack layout only as a reference.
+
 ## Not done yet
 No underbarrel slot (the old underbarrel launchers map to the grenade launcher), no weapon printer / workstation blocks (their ids map to the smithing table), recoil is a view kick only, no first-person animation or gun models (items use flat sprites), quests for the guns wait for the quest lane.
 

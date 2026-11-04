@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:warped_planks",
+  "C": "minecraft:chest"
+ },
+ "pattern": [
+  "PPP",
+  "PCP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:warped_sideboard",
+  "count": 1
+ }
+}

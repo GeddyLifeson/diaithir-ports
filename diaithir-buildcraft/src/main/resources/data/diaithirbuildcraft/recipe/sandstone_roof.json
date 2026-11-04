@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:sandstone"
+ },
+ "pattern": [
+  "P  ",
+  "PP ",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:sandstone_roof",
+  "count": 4
+ }
+}

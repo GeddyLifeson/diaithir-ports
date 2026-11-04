@@ -195,6 +195,38 @@
   {
    "id": "diaithir_druidry:molten_rain",
    "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_bolt",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_touch",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_mend",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_blink",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_light",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_pull",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_wall",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:rune_seal",
+   "required": false
   }
  ]
 }

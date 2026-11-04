@@ -32,3 +32,11 @@ Foundry's `diaithir_stations` make parts and run processes (ingots, casts, gun i
 
 ## Tool Belt (survey part 2, PORT)
 Package `net.diaithir.gear.toolbelt` is a 26.1 port of Tool Belt (BSD-3, licence in META-INF/licenses). Namespace `toolbelt`; configs `diaithirgear-toolbelt-*.toml`. Belt craftable with leather and iron. The inventory-screen entity preview and effect list were dropped in the belt slot screen.
+## Folded survey items (survey part 2)
+| Item | Source | Licence | Notes |
+|---|---|---|---|
+| Item Magnet (4 m), Super Item Magnet (8 m) | Magnets by Juix 1.4 | CC0-1.0 | hold in either hand; pulls items and XP orbs older than 5 ticks |
+| Copper, Iron, Golden, Diamond, Amethyst, Netherite repair kits, Duct Tape | Iron Repair Kits 2.2 (Rolling Dice) | MIT | durability pools 300/780/930/1950/2150/5000/190; hold kit in one hand, damaged item in the other, use; heavy kits slow and fatigue the carrier |
+| Anvil repair | Anvil Repairing 26.1.2.3 (Darkhax) | LGPL-2.1 (package `fold.lgpl`) | iron ingot on a chipped or damaged anvil; config `anvil.repairChance` |
+
+Details and licence notices: `NOTICE-FOLDS.md`. Test: `/foldselftest`.

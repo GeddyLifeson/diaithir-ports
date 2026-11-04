@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "GGG",
+    "III"
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:glass"
+  },
+  "result": {
+    "id": "diaithirlogistics:pipe",
+    "count": 8
+  },
+  "category": "misc"
+}

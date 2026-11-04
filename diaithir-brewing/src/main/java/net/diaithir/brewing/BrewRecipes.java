@@ -58,7 +58,7 @@ public final class BrewRecipes implements ResourceManagerReloadListener {
         Map<Item, Integer> ingredients = new HashMap<>();
         j.getAsJsonObject("ingredients").entrySet().forEach(en -> ingredients.merge(item(en.getKey()), en.getValue().getAsInt(), Integer::sum));
         String station = j.get("station").getAsString();
-        if (!station.equals("keg") && !station.equals("fermenting_barrel") && !station.equals("oak_cask")) {
+        if (!station.equals("keg") && !station.equals("fermenting_barrel") && !station.equals("oak_cask") && !station.equals("canning_pot")) {
             throw new IllegalArgumentException("unknown station " + station);
         }
         Item returns = j.has("base_returns") ? item(j.get("base_returns").getAsString()) : Items.AIR;

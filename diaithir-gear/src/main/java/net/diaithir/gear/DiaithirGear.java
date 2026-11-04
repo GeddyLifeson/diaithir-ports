@@ -28,11 +28,12 @@ public final class DiaithirGear {
         net.diaithir.gear.toolbelt.ToolBelt.init(container, bus);
         if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient())
             new net.diaithir.gear.toolbelt.client.ToolBeltClient(container, bus);
+        net.diaithir.gear.fold.Folds.init(bus);
         NeoForge.EVENT_BUS.register(this);
     }
 
     @SubscribeEvent
-    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); net.diaithir.gear.workshop.WorkshopTest.register(e.getDispatcher()); }
+    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); net.diaithir.gear.workshop.WorkshopTest.register(e.getDispatcher()); net.diaithir.gear.fold.FoldTest.register(e.getDispatcher()); }
 
     @SubscribeEvent
     public void incoming(LivingIncomingDamageEvent e) {

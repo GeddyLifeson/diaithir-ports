@@ -42,7 +42,6 @@ public final class Machines {
 
     public static final List<DeferredBlock<MachineBlock>> ALL_BLOCKS = new ArrayList<>();
     public static final List<DeferredItem<BlockItem>> ALL_BLOCK_ITEMS = new ArrayList<>();
-    public static final List<DeferredItem<AugmentItem>> AUGMENTS = new ArrayList<>();
     public static final List<DeferredItem<Item>> MATERIALS = new ArrayList<>();
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MachineBlockEntity>> MACHINE_BE;
@@ -68,8 +67,11 @@ public final class Machines {
                 ALL_BLOCK_ITEMS.add(ITEMS.registerSimpleBlockItem(b));
             }
         }
-        for (Augment a : Augment.values()) {
-            AUGMENTS.add(ITEMS.registerItem(a.id, p -> new AugmentItem(a, p), () -> new Item.Properties().stacksTo(16)));
+        // The three augment items became the first-tier circuit modules of the shared upgrade system. Old stacks in saves,
+        // chests and machines load as the module items through these registry aliases.
+        for (String[] m : new String[][] {{"speed_augment", "circuit_speed_1"}, {"efficiency_augment", "circuit_efficiency_1"}, {"chance_augment", "circuit_productivity_1"}}) {
+            ITEMS.addAlias(net.minecraft.resources.Identifier.fromNamespaceAndPath(DiaithirForgeworks.ID, m[0]),
+                    net.minecraft.resources.Identifier.fromNamespaceAndPath("diaithirupgrades", m[1]));
         }
         for (String m : new String[] {"iron_dust", "copper_dust", "gold_dust", "sawdust", "bronze_ingot"}) {
             MATERIALS.add(ITEMS.registerSimpleItem(m));

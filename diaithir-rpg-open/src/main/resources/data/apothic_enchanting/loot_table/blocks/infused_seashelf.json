@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "apothic_enchanting:infused_seashelf"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "apothic_enchanting:blocks/infused_seashelf"
+}
