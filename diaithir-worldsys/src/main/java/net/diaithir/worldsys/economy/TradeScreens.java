@@ -29,6 +29,9 @@ final class TradeScreens {
 
     private static net.minecraft.world.item.Item item(String id) { return BuiltInRegistries.ITEM.getValue(Identifier.parse(id)); }
 
+    /** True when the id is a registered item in this pack; the price table names more ids than any one install has. */
+    private static boolean has(String id) { return BuiltInRegistries.ITEM.containsKey(Identifier.parse(id)); }
+
     private static ItemCost cost(EconOffers.Cost c) { return new ItemCost(item(c.item()), (int) Math.round(c.count())); }
 
     /** Builds this keeper's offers and installs them on the villager. */
@@ -54,6 +57,7 @@ final class TradeScreens {
         List<EconOffers.Offer> kept = new ArrayList<>();
         for (EconOffers.Offer o : plan) {
             List<EconOffers.Cost> costs = o.dir().equals("buy") ? o.cost() : List.of(new EconOffers.Cost(o.id(), o.n()));
+            if (!costs.stream().allMatch(c -> has(c.item())) || !has(o.dir().equals("buy") ? o.id() : o.result().item())) continue; // an unregistered id would trade as air
             ItemStack result = o.dir().equals("buy") ? new ItemStack(item(o.id()), o.n()) : new ItemStack(item(o.result().item()), (int) Math.round(o.result().count()));
             offers.add(new MerchantOffer(cost(costs.get(0)), costs.size() > 1 ? Optional.of(cost(costs.get(1))) : Optional.empty(), result, 0, 8, 0, 0f, 0));
             kept.add(o);
