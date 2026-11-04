@@ -54,6 +54,7 @@ public abstract class MixinLevelRendererShips implements LevelRendererDuck {
     @Shadow @Final private ObjectArrayList<SectionRenderDispatcher.RenderSection> visibleSections;
     @Shadow private ViewArea viewArea;
     @Shadow private ClientLevel level;
+    @Shadow @Final private net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher blockEntityRenderDispatcher;
     @Shadow private SectionRenderDispatcher sectionRenderDispatcher;
 
     /** Ship sections added to visibleSections for this frame, with the ship that draws them. */
@@ -173,5 +174,70 @@ public abstract class MixinLevelRendererShips implements LevelRendererDuck {
         final Matrix4d m = new Matrix4d().set(modelView).mul(af);
         return original.call(new Matrix4f().set(m), (int) cbx + (p.getX() - rx), (int) cby + (p.getY() - ry), (int) cbz + (p.getZ() - rz),
             visibility, w, h);
+    }
+
+    /** Extracts the block entities of ship sections; the dispatcher is told the camera in ship space for its range check. */
+    @Inject(method = "extractVisibleBlockEntities(Lnet/minecraft/client/Camera;FLnet/minecraft/client/renderer/state/level/LevelRenderState;Lnet/minecraft/client/renderer/culling/Frustum;)V",
+        at = @At("RETURN"))
+    private void vs$extractShipBlockEntities(final net.minecraft.client.Camera camera, final float partialTick,
+        final net.minecraft.client.renderer.state.level.LevelRenderState state, final net.minecraft.client.renderer.culling.Frustum frustum,
+        final CallbackInfo ci) {
+        if (level == null || viewArea == null) {
+            return;
+        }
+        vs$collect(false);
+        if (vs$frameShips.isEmpty()) {
+            return;
+        }
+        final Vec3 cam = camera.position();
+        final IdentityHashMap<ClientShip, Vec3> shipCams = new IdentityHashMap<>();
+        for (final var e : vs$frameShips.entrySet()) {
+            final var section = e.getKey();
+            final java.util.List<net.minecraft.world.level.block.entity.BlockEntity> bes = section.getSectionMesh().getRenderableBlockEntities();
+            if (bes.isEmpty()) {
+                continue;
+            }
+            final ClientShip ship = e.getValue();
+            final Vec3 sc = shipCams.computeIfAbsent(ship, sh -> {
+                final Vector3d v = sh.getRenderTransform().getWorldToShip().transformPosition(new Vector3d(cam.x, cam.y, cam.z));
+                return new Vec3(v.x, v.y, v.z);
+            });
+            blockEntityRenderDispatcher.prepare(sc);
+            for (final var be : bes) {
+                final var rs = blockEntityRenderDispatcher.tryExtractRenderState(be, partialTick, null, null);
+                if (rs != null) {
+                    state.blockEntityRenderStates.add(rs);
+                }
+            }
+        }
+        blockEntityRenderDispatcher.prepare(cam);
+    }
+
+    /** Puts the pose of a ship block entity at the block's world position with the ship's rotation and scale. */
+    @WrapOperation(method = "submitBlockEntities", at = @At(value = "INVOKE",
+        target = "Lnet/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher;submit(Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V"))
+    private void vs$submitShipBlockEntity(final net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher d,
+        final net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState rs, final com.mojang.blaze3d.vertex.PoseStack ps,
+        final net.minecraft.client.renderer.SubmitNodeCollector c, final net.minecraft.client.renderer.state.level.CameraRenderState camState,
+        final Operation<Void> original) {
+        final BlockPos bp = rs.blockPos;
+        final var ship = level == null ? null : VSGameUtilsKt.getShipObjectManagingPos(level, bp.getX() >> 4, bp.getZ() >> 4);
+        if (!(ship instanceof ClientShip cs)) {
+            original.call(d, rs, ps, c, camState);
+            return;
+        }
+        final Matrix4d s2w = new Matrix4d(cs.getRenderTransform().getShipToWorld());
+        final Vector3d w = s2w.transformPosition(new Vector3d(bp.getX(), bp.getY(), bp.getZ()));
+        final Vec3 cam = camState.pos;
+        final Vector3d sc = s2w.getScale(new Vector3d());
+        final org.joml.Quaterniond qd = s2w.getNormalizedRotation(new org.joml.Quaterniond());
+        ps.popPose(); // drop the caller's unmodified translation, then push our own and restore the balance afterwards
+        ps.pushPose();
+        ps.translate(w.x - cam.x, w.y - cam.y, w.z - cam.z);
+        ps.mulPose(new org.joml.Quaternionf((float) qd.x, (float) qd.y, (float) qd.z, (float) qd.w));
+        ps.scale((float) sc.x, (float) sc.y, (float) sc.z);
+        original.call(d, rs, ps, c, camState);
+        ps.popPose();
+        ps.pushPose();
     }
 }
