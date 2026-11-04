@@ -30,6 +30,9 @@ final class StationTest {
         if (level == null) return "no overworld";
         BlockPos base = new BlockPos(level.getRespawnData().pos().getX() + 8, 250, level.getRespawnData().pos().getZ() + 8);
         level.getChunk(base);
+        for (BlockPos b : new BlockPos[]{base, base.east(), base.west()}) {
+            if (!level.getBlockState(b).isAir()) return "test position occupied at " + b + "; the test would destroy it";
+        }
         Fake car = new Fake("diesel", 50), petrolCar = new Fake("petrol", 50);
         var source = (java.util.function.BiFunction<Level, net.minecraft.world.phys.AABB, List<FuelTarget>>) (l, b) -> List.of(car, petrolCar);
         Targets.SOURCES.add(source);
