@@ -13,10 +13,13 @@ import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.PoweredRailBlock;
 import net.minecraft.world.level.block.RailBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.RailShape;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 /**
@@ -35,6 +38,7 @@ final class ScheduleTest {
     private static Entity rider;
     private static int t = -1;
     private static final List<String> fails = new ArrayList<>();
+    private static final Map<BlockPos, BlockState> saved = new HashMap<>();
 
     static String start(CommandSourceStack s) {
         if (t >= 0) return "already running";
@@ -43,6 +47,8 @@ final class ScheduleTest {
         at = new BlockPos(0, 232, 80);
         for (int cx = 0; cx <= 2; cx++) for (int cz = 4; cz <= 6; cz++) { level.getChunk(cx, cz); level.setChunkForced(cx, cz, true); }
         fails.clear();
+        saved.clear();
+        for (int x = -2; x <= 40; x++) for (int z = -3; z <= 12; z++) for (int y = -1; y <= 4; y++) { BlockPos p = at.offset(x, y, z); saved.put(p, level.getBlockState(p)); }
         for (int x = -2; x <= 40; x++) for (int z = -3; z <= 12; z++) {
             for (int y = 0; y <= 4; y++) level.setBlock(at.offset(x, y, z), Blocks.AIR.defaultBlockState(), 3);
             level.setBlock(at.offset(x, -1, z), Blocks.STONE.defaultBlockState(), 3);
@@ -135,6 +141,8 @@ final class ScheduleTest {
             rider.discard();
             for (AbstractMinecart c : carts) c.discard();
             for (int cx = 0; cx <= 2; cx++) for (int cz = 4; cz <= 6; cz++) level.setChunkForced(cx, cz, false);
+            for (Map.Entry<BlockPos, BlockState> e : saved.entrySet()) level.setBlock(e.getKey(), e.getValue(), 3);
+            saved.clear();
             t = -1;
         }
     }
