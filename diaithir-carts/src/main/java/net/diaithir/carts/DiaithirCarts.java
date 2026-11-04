@@ -102,9 +102,7 @@ public final class DiaithirCarts {
         net.diaithir.freight.Freight.init(bus);
         net.diaithir.yards.YardContent.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(CART_READER_ITEM.get()); }
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(CART_READER_ITEM.get()); e.accept(REAPER_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) ROAD_ITEMS.forEach(i -> e.accept(i.get()));
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
                 e.accept(COUPLING_CHAIN.get());
