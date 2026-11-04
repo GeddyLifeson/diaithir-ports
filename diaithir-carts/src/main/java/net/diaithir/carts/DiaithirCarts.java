@@ -96,6 +96,8 @@ public final class DiaithirCarts {
         Autonomy.ATTACHMENTS.register(bus);
         Schedule.ATTACHMENTS.register(bus);
         GaugeData.ATTACHMENTS.register(bus);
+        RailCargo.ATTACHMENTS.register(bus);
+        bus.addListener(net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent.class, RailCargo::register);
         MagicFuel.ATTACHMENTS.register(bus);
         Schedule.COMPONENTS.register(bus);
         BLOCKS.register(bus);

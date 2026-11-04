@@ -102,6 +102,15 @@ PASS_SUB = ("sleeper", "dining", "observation", "baggage", "mail", "dome", "parl
 def sub(name, opts, default):
     n = name.lower()
     return next((o for o in opts if o in n), default)
+def cargo_bay(name, gauge):
+    """Cargo bay of a freight wagon in cells [w, h, l] (1 cell = 1 m cube, the freight layer's grid). Flat, well and container wagons take a 20 ft container
+    (4 x 4 x 7; a well wagon is two high); every other wagon is a loose-load bay for pallets, barrels, crates and chests. Narrow-gauge wagons are too small
+    for a container (axle load 10 t, 2 cells wide), which is the real reason containers stayed on standard gauge."""
+    what = sub(name, FREIGHT_SUB, "general")
+    if gauge == "narrow": return [2, 2, 3] if what in ("flat", "container", "well", "log") else [2, 1, 3]
+    if what in ("flat", "container"): return [4, 4, 7]
+    if what == "well": return [4, 8, 7]
+    return [2, 2, 3]
 def is_shunter(name, sp):
     return bool(re.search(r"switch|shunt|yard|\bSW\d|\bNW\d", name + " " + sp.get("role", ""), re.I))
 
@@ -180,7 +189,8 @@ for r in rows:
         sl.append({"id": sid, "slots": [{"kind": k, "count": n} for k, n in slots], "base_ticks": 100 if sid == "power" else 60, "ghost": f"{NS}:yard/{sid}"})
     yards.append({"id": f"yard_{r['id']}", "tier": tier(y), "site": "GROUND", "result": f"{NS}:{r['id']}", "gauge": r["gauge"], "stages": sl, "age": age(y), "footprint": [5, 20, 6]})
     items.append({"id": r["id"], "name": r["name"], "age": age(y), "category": cat, "mass_kg": int(r["mass_kg"]), "rated": int(r["power_w_or_capacity"]),
-                  "gauge": r["gauge"], "crew": CREW.get(cat, 0), "engine": ENGINE.get(cat, "")})
+                  "gauge": r["gauge"], "crew": CREW.get(cat, 0), "engine": ENGINE.get(cat, "")}
+                 | ({"bay": cargo_bay(r["name"], r["gauge"])} if cat == "freight" else {}))
 partdefs = [{"item": f"{NS}:{pid}", "kind": pid, "mass_kg": P["mass"], "power_w": P["power"], "hp": P["hp"], "min_age": P["age"], "block": "", "name": P["name"]}
             for pid, P in sorted(PARTS.items())]
 controllers = [("rail_workshop", "WORKSHOP", "Rail Workshop", 3), ("rail_erecting_shop", "ERECTING_SHOP", "Erecting Shop", 4),

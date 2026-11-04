@@ -94,6 +94,7 @@ public final class YardSelfTest {
         cart(level, rail, "loco_gp7", net.minecraft.world.entity.EntityType.FURNACE_MINECART, f);
         cart(level, rail, "pas_dining", net.minecraft.world.entity.EntityType.MINECART, f);
         gauge(level, rail.offset(6, 0, 0), f);
+        cargo(level, rail.offset(12, 0, 0), f);
         // blueprint build by a manned crane from a depot chest, no hand installs
         level.setBlock(at.offset(0, 0, 1), Blocks.CHEST.defaultBlockState(), 2);
         net.minecraft.world.Container depot = (net.minecraft.world.Container) level.getBlockEntity(at.offset(0, 0, 1));
@@ -150,6 +151,54 @@ public final class YardSelfTest {
             rocket.discard();
         } else f.add("loco_rocket is not a furnace cart");
         stdCart.discard(); narCart.discard();
+    }
+
+    /** Rail wagons as cargo carriers: bays by wagon type and gauge, loading, a container that keeps its own cargo, saving, aiming, and the client's view. */
+    private static void cargo(ServerLevel level, BlockPos p, List<String> f) {
+        level.setBlock(p, Blocks.RAIL.defaultBlockState(), 2);
+        var flat = spawnAt(level, p, "wag_flatcar"); var box = spawnAt(level, p, "wag_boxcar"); var nflat = spawnAt(level, p, "nwag_flatcar");
+        if (flat == null || box == null || nflat == null) { f.add("cargo test carts did not spawn"); return; }
+        var cf = flat.getCapability(net.diaithir.freight.Freight.CARRIER, null);
+        var cb = box.getCapability(net.diaithir.freight.Freight.CARRIER, null);
+        var cn = nflat.getCapability(net.diaithir.freight.Freight.CARRIER, null);
+        if (cf == null || cb == null || cn == null) { f.add("wagon is not a cargo carrier"); return; }
+        if (cf.bay().w != 4 || cf.bay().l != 7 || cb.bay().w != 2 || cn.bay().w != 2) f.add("bay sizes: flat " + cf.bay().w + "x" + cf.bay().l + ", box " + cb.bay().w + ", narrow flat " + cn.bay().w);
+        if (spawnAt(level, p, "pas_dining").getCapability(net.diaithir.freight.Freight.CARRIER, null) != null) f.add("a passenger car carries freight");
+        // a pallet with iron inside, and a container holding a pallet
+        net.minecraft.core.NonNullList<ItemStack> iron = net.minecraft.core.NonNullList.withSize(18, ItemStack.EMPTY);
+        iron.set(0, new ItemStack(net.minecraft.world.item.Items.IRON_INGOT, 64));
+        ItemStack pallet = new ItemStack(net.diaithir.freight.Freight.LOAD_ITEMS.get("pallet").get());
+        pallet.set(net.minecraft.core.component.DataComponents.CONTAINER, net.minecraft.world.item.component.ItemContainerContents.fromItems(iron));
+        ItemStack box20 = new ItemStack(net.diaithir.freight.Freight.CONTAINER_ITEMS.get("container_20").get());
+        box20.set(net.diaithir.freight.Freight.BAY.get(), new net.diaithir.freight.BayData(List.of(new net.diaithir.freight.BayData.Entry("pallet", 0, 0, 0, false, net.minecraft.world.item.component.ItemContainerContents.fromItems(iron)))));
+        var r = net.diaithir.freight.Carriers.put(cf, box20.copy(), 1, 3);
+        if (r != net.diaithir.freight.CargoBay.Result.OK) f.add("container refused by a flat wagon: " + r);
+        if (net.diaithir.freight.Carriers.put(cb, box20.copy(), 0, 0) == net.diaithir.freight.CargoBay.Result.OK) f.add("a box wagon took a container");
+        if (net.diaithir.freight.Carriers.put(cn, box20.copy(), 0, 0) == net.diaithir.freight.CargoBay.Result.OK) f.add("a narrow flat wagon took a container");
+        if (net.diaithir.freight.Carriers.put(cb, pallet.copy(), 0, 0) != net.diaithir.freight.CargoBay.Result.OK) f.add("box wagon refused a pallet");
+        if (net.diaithir.freight.Carriers.put(cn, pallet.copy(), 0, 0) != net.diaithir.freight.CargoBay.Result.OK) f.add("narrow wagon refused a pallet");
+        // saved loads come back, container interior included
+        var tree = flat.getData(net.diaithir.carts.RailCargo.LOADS);
+        var enc = net.diaithir.freight.BayTree.CODEC.encodeStart(net.minecraft.nbt.NbtOps.INSTANCE, tree).result();
+        var back = enc.flatMap(n -> net.diaithir.freight.BayTree.CODEC.parse(net.minecraft.nbt.NbtOps.INSTANCE, n).result());
+        if (back.isEmpty()) f.add("loads did not survive a save");
+        else {
+            var bay = back.get().toBay(4, 4, 7, 70_000);
+            var placed = bay.loads();
+            if (placed.size() != 1 || placed.get(0).inside == null || placed.get(0).inside.loads().size() != 1) f.add("container interior lost on save");
+            else if (!(placed.get(0).inside.loads().get(0).data instanceof List<?> l) || ((ItemStack) l.get(0)).getCount() != 64) f.add("pallet contents lost on save");
+        }
+        if (!flat.getData(net.diaithir.carts.RailCargo.VIEW).contains("container_20,0,0,0")) f.add("client view is " + flat.getData(net.diaithir.carts.RailCargo.VIEW));
+        // aiming at the middle of the wagon picks the middle column
+        int[] col = cf.columnAt(flat.position());
+        if (col == null || col[0] != 2 || col[1] != 3) f.add("middle column is " + (col == null ? "off the deck" : col[0] + "," + col[1]));
+        if (cf.columnAt(flat.position().add(3, 0, 3)) != null) f.add("a point far from the wagon hit its deck");
+        // the container comes off with its cargo intact
+        ItemStack out = net.diaithir.freight.Carriers.takeTop(cf, 1, 3);
+        var kept = out.get(net.diaithir.freight.Freight.BAY.get());
+        if (out.isEmpty() || kept == null || kept.loads().size() != 1) f.add("container came off without its cargo");
+        if (!cf.bay().loads().isEmpty()) f.add("wagon still holds the container");
+        flat.discard(); box.discard(); nflat.discard();
     }
 
     private static net.minecraft.world.entity.vehicle.minecart.AbstractMinecart spawnAt(ServerLevel level, BlockPos p, String id) {
