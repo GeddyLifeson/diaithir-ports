@@ -295,17 +295,7 @@
   "new": "minecraft:lava"
  },
  {
-  "registry": "minecraft:item",
-  "old": "stellaris:diesel",
-  "new": "minecraft:lava"
- },
- {
   "registry": "minecraft:block",
-  "old": "stellaris:fuel",
-  "new": "minecraft:lava"
- },
- {
-  "registry": "minecraft:item",
   "old": "stellaris:fuel",
   "new": "minecraft:lava"
  },
@@ -335,17 +325,7 @@
   "new": "minecraft:water"
  },
  {
-  "registry": "minecraft:item",
-  "old": "stellaris:astrum_liquidus",
-  "new": "minecraft:water"
- },
- {
   "registry": "minecraft:block",
-  "old": "stellaris:blue_liquid",
-  "new": "minecraft:water"
- },
- {
-  "registry": "minecraft:item",
   "old": "stellaris:blue_liquid",
   "new": "minecraft:water"
  },

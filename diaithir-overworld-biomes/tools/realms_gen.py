@@ -122,7 +122,7 @@ for n in items:
 put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'gear': list(GEAR.values()), 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
 for old, new in cfg.get('migrate_blocks', {}).items():  # ids the realm no longer registers (machines, fluids): old saves and recipes resolve to a vanilla stand-in
     migr.append({'registry': 'minecraft:block', 'old': f'{NS}:{old}', 'new': new})
-    migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{old}', 'new': new})
+    if new not in ('minecraft:lava', 'minecraft:water'): migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{old}', 'new': new})  # no such items
 for old, new in cfg.get('migrate_items', {}).items():
     migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{old}', 'new': new})
 put(f'data/{NS}/id_migrations.json', migr)
