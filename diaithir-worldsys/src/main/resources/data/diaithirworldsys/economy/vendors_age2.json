@@ -390,42 +390,42 @@
      "stock": 32
     },
     "minecraft:torchflower_seeds": {
-     "price": 2,
-     "stock": 16
+     "price": 1,
+     "stock": 32
     },
     "minecraft:copper_hoe": {
      "price": 6,
      "stock": 5
     },
-    "minecraft:golden_hoe": {
-     "price": 7,
-     "stock": 5
+    "farmingforblockheads:fertilized_farmland_healthy": {
+     "price": 1,
+     "stock": 32
+    },
+    "farmingforblockheads:fertilized_farmland_healthy_stable": {
+     "price": 1,
+     "stock": 32
+    },
+    "farmingforblockheads:fertilized_farmland_rich": {
+     "price": 1,
+     "stock": 32
+    },
+    "farmingforblockheads:fertilized_farmland_rich_stable": {
+     "price": 1,
+     "stock": 32
+    },
+    "farmingforblockheads:fertilized_farmland_stable": {
+     "price": 1,
+     "stock": 32
+    },
+    "farmingforblockheads:fox_note": {
+     "price": 1,
+     "stock": 32
     },
     "farmingforblockheads:feeding_trough": {
      "price": 3,
      "stock": 11
     },
-    "farmingforblockheads:fertilized_farmland_healthy": {
-     "price": 3,
-     "stock": 11
-    },
-    "farmingforblockheads:fertilized_farmland_healthy_stable": {
-     "price": 3,
-     "stock": 11
-    },
-    "farmingforblockheads:fertilized_farmland_rich": {
-     "price": 3,
-     "stock": 11
-    },
-    "farmingforblockheads:fertilized_farmland_rich_stable": {
-     "price": 3,
-     "stock": 11
-    },
-    "farmingforblockheads:fertilized_farmland_stable": {
-     "price": 3,
-     "stock": 11
-    },
-    "farmingforblockheads:fox_note": {
+    "farmingforblockheads:fishing_barrel": {
      "price": 3,
      "stock": 11
     },
@@ -434,6 +434,10 @@
      "stock": 11
     },
     "farmingforblockheads:market": {
+     "price": 3,
+     "stock": 11
+    },
+    "farmingforblockheads:rabbit_trap": {
      "price": 3,
      "stock": 11
     },
@@ -449,19 +453,43 @@
      "price": 7,
      "stock": 5
     },
-    "farmingforblockheads:fishing_barrel": {
-     "price": 7,
-     "stock": 5
-    },
-    "farmingforblockheads:rabbit_trap": {
-     "price": 7,
-     "stock": 5
+    "mysticalagriculture:blazing_crystal_seeds": {
+     "price": 1,
+     "stock": 32
     },
     "mysticalagriculture:deepslate_seeds": {
      "price": 1,
      "stock": 32
     },
     "mysticalagriculture:dirt_seeds": {
+     "price": 1,
+     "stock": 32
+    },
+    "mysticalagriculture:fiery_ingot_seeds": {
+     "price": 1,
+     "stock": 32
+    },
+    "mysticalagriculture:flux_infused_gem_seeds": {
+     "price": 1,
+     "stock": 32
+    },
+    "mysticalagriculture:flux_infused_ingot_seeds": {
+     "price": 1,
+     "stock": 32
+    },
+    "mysticalagriculture:niotic_crystal_seeds": {
+     "price": 1,
+     "stock": 32
+    },
+    "mysticalagriculture:nitro_crystal_seeds": {
+     "price": 1,
+     "stock": 32
+    },
+    "mysticalagriculture:rock_crystal_seeds": {
+     "price": 1,
+     "stock": 32
+    },
+    "mysticalagriculture:spirited_crystal_seeds": {
      "price": 1,
      "stock": 32
     },
@@ -497,10 +525,6 @@
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:blazing_crystal_seeds": {
-     "price": 2,
-     "stock": 16
-    },
     "mysticalagriculture:blitz_seeds": {
      "price": 2,
      "stock": 16
@@ -509,11 +533,11 @@
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:coal_seeds": {
+    "mysticalagriculture:breeze_seeds": {
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:cobalt_seeds": {
+    "mysticalagriculture:coal_seeds": {
      "price": 2,
      "stock": 16
     },
@@ -549,35 +573,11 @@
      "price": 2,
      "stock": 16
     },
+    "mysticalagriculture:dye_seeds": {
+     "price": 2,
+     "stock": 16
+    },
     "mysticalagriculture:earth_seeds": {
-     "price": 2,
-     "stock": 16
-    },
-    "mysticalagriculture:elementium_seeds": {
-     "price": 2,
-     "stock": 16
-    },
-    "mysticalagriculture:end_seeds": {
-     "price": 2,
-     "stock": 16
-    },
-    "mysticalagriculture:energetic_alloy_seeds": {
-     "price": 2,
-     "stock": 16
-    },
-    "mysticalagriculture:experience_seeds": {
-     "price": 2,
-     "stock": 16
-    },
-    "mysticalagriculture:fiery_ingot_seeds": {
-     "price": 2,
-     "stock": 16
-    },
-    "mysticalagriculture:fire_seeds": {
-     "price": 2,
-     "stock": 16
-    },
-    "mysticalagriculture:fluix_seeds": {
      "price": 2,
      "stock": 16
     }
@@ -665,212 +665,212 @@
      "stock": 11
     },
     "cookingforblockheads:black_cabinet": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:black_connector": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:black_cooking_table": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:black_counter": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:black_fridge": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:black_kitchen_floor": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:black_oven": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:black_sink": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_cabinet": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_connector": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_cooking_table": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_counter": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_fridge": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_kitchen_floor": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_oven": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:blue_sink": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_cabinet": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_connector": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_cooking_table": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_counter": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_fridge": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_kitchen_floor": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_oven": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:brown_sink": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cabinet": {
-     "price": 3,
-     "stock": 11
-    },
-    "cookingforblockheads:chef_hat": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:connector": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cooking_table": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:counter": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cow_jar": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_cabinet": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_connector": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_cooking_table": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_counter": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_fridge": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_kitchen_floor": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_oven": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:cyan_sink": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:fridge": {
-     "price": 3,
-     "stock": 11
-    },
-    "cookingforblockheads:fruit_basket": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_cabinet": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_connector": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_cooking_table": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_counter": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_fridge": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_kitchen_floor": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_oven": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:gray_sink": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:green_cabinet": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:green_connector": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:green_cooking_table": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
     },
     "cookingforblockheads:green_counter": {
-     "price": 3,
-     "stock": 11
+     "price": 1,
+     "stock": 32
+    },
+    "cookingforblockheads:green_fridge": {
+     "price": 1,
+     "stock": 32
+    },
+    "cookingforblockheads:green_kitchen_floor": {
+     "price": 1,
+     "stock": 32
     }
    }
   },

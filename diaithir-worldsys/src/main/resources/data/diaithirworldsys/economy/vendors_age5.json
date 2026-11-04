@@ -10,99 +10,83 @@
     "works"
    ],
    "items": {
-    "energizedpower:dirty_water_bucket": {
-     "price": 26,
+    "energizedpower:advanced_alloy_block": {
+     "price": 18,
      "stock": 4
     },
-    "modern_industrialization:raw_antimony": {
-     "price": 26,
+    "modern_industrialization:titanium_block": {
+     "price": 18,
      "stock": 4
     },
-    "modern_industrialization:beryllium_dust": {
+    "modern_industrialization:invar_nugget": {
      "price": 32,
      "stock": 4
     },
-    "modern_industrialization:he_mox_dust": {
-     "price": 32,
-     "stock": 4
-    },
-    "modern_industrialization:manganese_crushed_dust": {
-     "price": 32,
-     "stock": 4
-    },
-    "modern_industrialization:superconductor_dust": {
-     "price": 32,
-     "stock": 4
-    },
-    "energizedpower:tin_dust": {
+    "modern_industrialization:aluminum_tiny_dust": {
      "price": 40,
      "stock": 4
     },
-    "modern_industrialization:cadmium_tiny_dust": {
-     "price": 40,
-     "stock": 4
-    },
-    "modern_industrialization:iron_dust": {
-     "price": 40,
-     "stock": 4
-    },
-    "modern_industrialization:nickel_tiny_dust": {
-     "price": 40,
-     "stock": 4
-    },
-    "modern_industrialization:tin_tiny_dust": {
-     "price": 40,
-     "stock": 4
-    },
-    "energizedpower:coolant_cell": {
+    "energizedpower:charcoal_filter": {
      "price": 51,
      "stock": 4
     },
-    "energizedpower:fast_item_conveyor_belt_merger": {
+    "energizedpower:express_item_conveyor_belt_switch": {
      "price": 51,
      "stock": 4
     },
-    "energizedpower:item_conveyor_belt_splitter": {
+    "energizedpower:item_conveyor_belt": {
      "price": 51,
      "stock": 4
     },
-    "energizedpower:superconductor": {
+    "energizedpower:item_silo_small": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:acrylic_acid": {
+    "energizedpower:turbo_item_conveyor_belt": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:basic_upgrade": {
+    "modern_industrialization:acetylene_bucket": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:boosted_diesel_bucket": {
+    "modern_industrialization:advanced_upgrade": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:coke_oven": {
+    "modern_industrialization:black_item_pipe": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:deuterium_bucket": {
+    "modern_industrialization:butadiene_bucket": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:ethylene_bucket": {
+    "modern_industrialization:cooling_cell": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:green_item_pipe": {
+    "modern_industrialization:deuterium": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:helium_3": {
+    "modern_industrialization:ethylbenzene_bucket": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:highly_advanced_fluid_input_hatch": {
+    "modern_industrialization:gray_fluid_pipe": {
+     "price": 51,
+     "stock": 4
+    },
+    "modern_industrialization:heavy_water_steam": {
+     "price": 51,
+     "stock": 4
+    },
+    "modern_industrialization:high_pressure_heavy_water_steam": {
+     "price": 51,
+     "stock": 4
+    },
+    "modern_industrialization:highly_advanced_item_output_hatch": {
      "price": 51,
      "stock": 4
     },
@@ -110,11 +94,11 @@
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:light_blue_item_pipe": {
+    "modern_industrialization:light_fuel": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:lubricant": {
+    "modern_industrialization:lubricant_bucket": {
      "price": 51,
      "stock": 4
     },
@@ -122,35 +106,43 @@
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:orange_item_pipe": {
+    "modern_industrialization:nuke": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:polyethylene_bucket": {
+    "modern_industrialization:piston": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:red_fluid_pipe": {
+    "modern_industrialization:propene_bucket": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:sodium_hydroxide": {
+    "modern_industrialization:shale_oil": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:styrene_bucket": {
+    "modern_industrialization:steam_cracked_heavy_fuel": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:sulfuric_light_fuel": {
+    "modern_industrialization:styrene_butadiene_bucket": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:toluene": {
+    "modern_industrialization:sulfuric_heavy_fuel_bucket": {
      "price": 51,
      "stock": 4
     },
-    "modern_industrialization:vinyl_chloride": {
+    "modern_industrialization:superconductor_wire": {
+     "price": 51,
+     "stock": 4
+    },
+    "modern_industrialization:turbo_fluid_input_hatch": {
+     "price": 51,
+     "stock": 4
+    },
+    "modern_industrialization:wax": {
      "price": 51,
      "stock": 4
     },
@@ -158,11 +150,15 @@
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:compressed_stone": {
+    "pneumaticcraft:compressed_brick_pillar": {
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:ethanol_bucket": {
+    "pneumaticcraft:electric_compressor": {
+     "price": 51,
+     "stock": 4
+    },
+    "pneumaticcraft:fuel": {
      "price": 51,
      "stock": 4
     },
@@ -170,11 +166,15 @@
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:lubricant": {
+    "pneumaticcraft:logistics_configurator": {
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:pcb_blueprint": {
+    "pneumaticcraft:network_component": {
+     "price": 51,
+     "stock": 4
+    },
+    "pneumaticcraft:pressure_gauge": {
      "price": 51,
      "stock": 4
     },
@@ -182,67 +182,63 @@
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:uv_light_box": {
+    "pneumaticcraft:transfer_gadget": {
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:wall_lamp_inverted_blue": {
+    "pneumaticcraft:wall_lamp_black": {
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:wall_lamp_inverted_white": {
+    "pneumaticcraft:wall_lamp_inverted_gray": {
      "price": 51,
      "stock": 4
     },
-    "pneumaticcraft:yeast_culture_bucket": {
+    "pneumaticcraft:wall_lamp_inverted_red": {
      "price": 51,
      "stock": 4
     },
-    "stepcrafter:light_gray_step_crafter_manager": {
+    "pneumaticcraft:wall_lamp_red": {
      "price": 51,
      "stock": 4
     },
-    "stepcrafter:red_step_requester_manager": {
+    "stepcrafter:brown_step_requester_manager": {
      "price": 51,
      "stock": 4
     },
-    "energizedpower:crystal_matrix": {
+    "stepcrafter:lime_step_crafter_manager": {
+     "price": 51,
+     "stock": 4
+    },
+    "stepcrafter:red_step_crafter_manager": {
+     "price": 51,
+     "stock": 4
+    },
+    "energizedpower:copper_fluid_pipe": {
      "price": 64,
      "stock": 4
     },
-    "energizedpower:steel_fluid_pipe": {
+    "modern_industrialization:aluminum_barrel": {
      "price": 64,
      "stock": 4
     },
-    "modern_industrialization:antimony_ingot": {
+    "modern_industrialization:battery_alloy_nugget": {
      "price": 64,
      "stock": 4
     },
-    "modern_industrialization:bronze_bolt": {
+    "modern_industrialization:bronze_mixer": {
      "price": 64,
      "stock": 4
     },
-    "modern_industrialization:cadmium_rod": {
+    "modern_industrialization:cupronickel_cable": {
      "price": 64,
      "stock": 4
     },
-    "modern_industrialization:copper_rotor": {
+    "modern_industrialization:iron_barrel": {
      "price": 64,
      "stock": 4
     },
-    "modern_industrialization:he_mox_rod": {
-     "price": 64,
-     "stock": 4
-    },
-    "modern_industrialization:kanthal_coil": {
-     "price": 64,
-     "stock": 4
-    },
-    "modern_industrialization:platinum_dust": {
-     "price": 64,
-     "stock": 4
-    },
-    "modern_industrialization:steel_barrel": {
+    "modern_industrialization:steel_compressor": {
      "price": 64,
      "stock": 4
     },
@@ -250,83 +246,87 @@
      "price": 64,
      "stock": 4
     },
-    "modern_industrialization:titanium_blade": {
+    "modern_industrialization:titanium_ring": {
      "price": 64,
      "stock": 4
     },
-    "stepcrafter:cyan_step_crafting_monitor": {
+    "stepcrafter:light_gray_step_crafting_monitor": {
      "price": 64,
      "stock": 4
     },
-    "energizedpower:copper_plate": {
+    "stepcrafter:yellow_step_crafting_monitor": {
+     "price": 64,
+     "stock": 4
+    },
+    "energizedpower:tin_plate": {
      "price": 80,
      "stock": 4
     },
-    "modern_industrialization:aluminum_curved_plate": {
+    "modern_industrialization:battery_alloy_tiny_dust": {
      "price": 80,
      "stock": 4
     },
-    "modern_industrialization:cupronickel_double_ingot": {
+    "modern_industrialization:iron_gear": {
      "price": 80,
      "stock": 4
     },
-    "modern_industrialization:molten_redstone_bucket": {
+    "modern_industrialization:silver_cable": {
      "price": 80,
      "stock": 4
     },
-    "modern_industrialization:steel_ingot": {
+    "pneumaticcraft:jackhammer_bit_2": {
      "price": 80,
      "stock": 4
     },
-    "pneumaticcraft:jackhammer_bit_1": {
-     "price": 80,
-     "stock": 4
-    },
-    "energizedpower:fluid_tank_small": {
+    "energizedpower:fluid_tank_large": {
      "price": 100,
      "stock": 4
     },
-    "modern_industrialization:frostproof_machine_casing": {
+    "modern_industrialization:bronze_macerator": {
      "price": 100,
      "stock": 4
     },
-    "modern_industrialization:platinum_sulfuric_solution_bucket": {
+    "modern_industrialization:neodymium_block": {
      "price": 100,
      "stock": 4
     },
-    "modern_industrialization:sulfur_block": {
+    "modern_industrialization:sodium_battery": {
      "price": 100,
      "stock": 4
     },
-    "modern_industrialization:battery_alloy_double_ingot": {
+    "pneumaticcraft:assembly_program_drill": {
+     "price": 100,
+     "stock": 4
+    },
+    "modern_industrialization:battery_alloy_curved_plate": {
      "price": 126,
      "stock": 4
     },
-    "modern_industrialization:copper_drill_head": {
+    "modern_industrialization:bronze_machine_casing_pipe": {
      "price": 126,
      "stock": 4
     },
-    "modern_industrialization:steel_furnace": {
+    "modern_industrialization:stainless_steel_tank": {
      "price": 126,
      "stock": 4
     },
-    "pneumaticcraft:sourdough_bread": {
+    "modern_industrialization:titanium_tank": {
      "price": 126,
      "stock": 4
     },
-    "modern_industrialization:raw_nickel_block": {
-     "price": 288,
+    "modern_industrialization:diamond_hammer": {
+     "price": 159,
      "stock": 4
     },
-    "modern_industrialization:creative_storage_unit": {
+    "pneumaticcraft:spawner_core": {
+     "price": 317,
+     "stock": 4
+    },
+    "pneumaticcraft:creative_compressor": {
      "price": 502,
      "stock": 4
     },
-    "modern_industrialization:tungsten_block": {
-     "price": 576,
-     "stock": 4
-    },
-    "modern_industrialization:platinum_block": {
+    "modern_industrialization:battery_alloy_block": {
      "price": 1134,
      "stock": 4
     }
@@ -341,324 +341,324 @@
     "works"
    ],
    "items": {
-    "projectred_core:sand_coal_comp": {
-     "price": 26,
-     "stock": 4
-    },
-    "morered:and_gate": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:bitwise_xnor_gate": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:bundled_cable_post": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:gray_network_cable": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:light_gray_network_cable": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:nand_gate": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:pink_network_cable": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:redwire_post": {
-     "price": 51,
-     "stock": 4
-    },
-    "morered:xor_gate": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_core:blue_illumar": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_core:gray_illumar": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_core:magenta_illumar": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_core:pink_illumar": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_core:screwdriver": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_expansion:charging_bench": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_expansion:frame_actuator": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_expansion:recipe_plan_written": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_exploration:cyan_backpack": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_exploration:lime_backpack": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_exploration:red_backpack": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_illumination:black_fallout_light": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_illumination:black_inverted_fixture_light": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_illumination:blue_fallout_light": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_illumination:blue_inverted_fixture_light": {
-     "price": 51,
-     "stock": 4
-    },
-    "projectred_illumination:brown_fallout_light": {
+    "morered:acacia_axle": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:brown_inverted_fixture_light": {
+    "morered:alternator": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:cyan_fallout_light": {
+    "morered:alternator_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:cyan_inverted_fixture_light": {
+    "morered:birch_axle": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:gray_fallout_light": {
+    "morered:bitwise_and_gate": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:gray_inverted_fallout_light": {
+    "morered:bitwise_diode_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:green_cage_light": {
+    "morered:bitwise_multiplexer_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:green_inverted_fallout_light": {
+    "morered:bitwise_or_gate": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:illumar_smart_lamp": {
+    "morered:bitwise_xnor_gate_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:light_blue_inverted_cage_light": {
+    "morered:black_cable": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:light_blue_lantern": {
+    "morered:blue_cable": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:light_gray_inverted_cage_light": {
+    "morered:brown_tube": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:light_gray_lantern": {
+    "morered:cable_junction": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:lime_inverted_cage_light": {
+    "morered:cherry_clutch": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:lime_lantern": {
+    "morered:crimson_axle": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:magenta_inverted_cage_light": {
+    "morered:cyan_cable": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:magenta_lantern": {
+    "morered:dark_oak_clutch": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:orange_inverted_cage_light": {
+    "morered:diode": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:orange_lantern": {
+    "morered:extractor": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:pink_inverted_cage_light": {
+    "morered:extractor_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:pink_lantern": {
+    "morered:gray_tube": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:purple_inverted_cage_light": {
+    "morered:green_tube": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:purple_lantern": {
+    "morered:jungle_clutch": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:red_inverted_cage_light": {
+    "morered:latch_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:red_lantern": {
+    "morered:light_gray_cable": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:white_illumar_lamp": {
+    "morered:lime_cable": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:white_inverted_lantern": {
+    "morered:magenta_cable": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:yellow_illumar_lamp": {
+    "morered:mangrove_clutch": {
      "price": 51,
      "stock": 4
     },
-    "projectred_illumination:yellow_inverted_lantern": {
+    "morered:multiplexer": {
      "price": 51,
      "stock": 4
     },
-    "projectred_integration:buffer_gate": {
+    "morered:nand_gate_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_integration:light_sensor_gate": {
+    "morered:not_gate": {
      "price": 51,
      "stock": 4
     },
-    "projectred_integration:null_cell_gate": {
+    "morered:oak_clutch": {
      "price": 51,
      "stock": 4
     },
-    "projectred_integration:sr_latch_gate": {
+    "morered:or_gate": {
      "price": 51,
      "stock": 4
     },
-    "projectred_integration:xnor_gate": {
+    "morered:orange_tube": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:black_insulated_wire": {
+    "morered:pale_oak_clutch": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:brown_bundled_wire": {
+    "morered:pink_tube": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:cyan_framed_bundled_wire": {
+    "morered:pulse_gate": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:gray_framed_bundled_wire": {
+    "morered:red_alloy_wire": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:green_framed_insulated_wire": {
+    "morered:redwire_junction": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:light_blue_insulated_wire": {
+    "morered:redwire_spool": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:lime_bundled_wire": {
+    "morered:soldering_table": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:low_load_power_wire": {
+    "morered:spruce_windcatcher": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:neutral_bundled_wire": {
+    "morered:tube": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:orange_insulated_wire": {
+    "morered:two_input_nand_gate": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:purple_bundled_wire": {
+    "morered:warped_axle": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:red_alloy_wire": {
+    "morered:white_cable": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:white_bundled_wire": {
+    "morered:xnor_gate_preview": {
      "price": 51,
      "stock": 4
     },
-    "projectred_transmission:yellow_framed_bundled_wire": {
+    "morered:yellow_cable": {
      "price": 51,
      "stock": 4
     },
-    "morered:red_alloy_ingot": {
+    "morered:acacia_gear": {
      "price": 64,
      "stock": 4
     },
-    "projectred_core:electrotine_iron_comp": {
+    "morered:acacia_gearshifter_axle_preview": {
      "price": 64,
      "stock": 4
     },
-    "projectred_core:wired_plate": {
+    "morered:acacia_gearshifter_preview": {
      "price": 64,
      "stock": 4
     },
-    "projectred_core:ruby": {
-     "price": 100,
+    "morered:birch_gear": {
+     "price": 64,
      "stock": 4
     },
-    "projectred_expansion:battery_box_charge2": {
-     "price": 100,
+    "morered:birch_gearshifter_axle_preview": {
+     "price": 64,
      "stock": 4
     },
-    "projectred_expansion:battery_box_charge7": {
-     "price": 100,
+    "morered:birch_gearshifter_preview": {
+     "price": 64,
      "stock": 4
     },
-    "projectred_exploration:electrotine_block": {
-     "price": 126,
+    "morered:cherry_gearshifter_axle": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:cherry_gearshifter_gear": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:clutch_template": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:crimson_gearshifter": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:crimson_gearshifter_gear": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:crimson_gearshifter_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:dark_oak_gearshifter_axle": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:dark_oak_gearshifter_gear_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:gears": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:gearshifter_gear_template": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:jungle_gearshifter_axle": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:jungle_gearshifter_gear_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:mangrove_gear": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:mangrove_gearshifter_axle_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:mangrove_gearshifter_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:oak_gearshifter_axle": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:oak_gearshifter_gear": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:pale_oak_gear": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:pale_oak_gearshifter_axle_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:pale_oak_gearshifter_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:spruce_gearshifter": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:spruce_gearshifter_gear": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:warped_gear": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:warped_gearshifter_axle_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:warped_gearshifter_gear_preview": {
+     "price": 64,
+     "stock": 4
+    },
+    "morered:extractor_pump": {
+     "price": 100,
      "stock": 4
     }
    }
@@ -1031,6 +1031,22 @@
      "price": 13,
      "stock": 4
     },
+    "diaithir_drinks:cask_mild": {
+     "price": 15,
+     "stock": 4
+    },
+    "diaithir_drinks:hopped_lager_shandy": {
+     "price": 15,
+     "stock": 4
+    },
+    "diaithir_drinks:baobab_honey_beer": {
+     "price": 16,
+     "stock": 4
+    },
+    "diaithir_drinks:dark_wheat_beer": {
+     "price": 16,
+     "stock": 4
+    },
     "diaithir_drinks:dunkelweizen": {
      "price": 16,
      "stock": 4
@@ -1047,8 +1063,59 @@
      "price": 16,
      "stock": 4
     },
+    "diaithir_drinks:rye_pale_ale": {
+     "price": 16,
+     "stock": 4
+    },
     "diaithir_drinks:vienna_lager": {
      "price": 16,
+     "stock": 4
+    },
+    "diaithir_drinks:smoked_porter": {
+     "price": 25,
+     "stock": 4
+    },
+    "diaithir_drinks:export_stout": {
+     "price": 26,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "vintner",
+   "name": "Dèanaduirfìuna",
+   "role": "Vintner",
+   "spawn": [
+    "every settlement",
+    "vineyard"
+   ],
+   "items": {
+    "diaithir_drinks:chestnut_honey_mead": {
+     "price": 17,
+     "stock": 4
+    },
+    "diaithir_drinks:pear_champagne_method_perry": {
+     "price": 21,
+     "stock": 4
+    },
+    "diaithir_drinks:sparkling_red_shiraz": {
+     "price": 22,
+     "stock": 4
+    },
+    "diaithir_drinks:yellow_wall_rice_wine": {
+     "price": 23,
+     "stock": 4
+    },
+    "diaithir_drinks:dry_white_vermouth": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:sweet_red_vermouth": {
+     "price": 28,
+     "stock": 4
+    },
+    "diaithir_drinks:ocean_king_port_blend": {
+     "price": 38,
      "stock": 4
     }
    }
@@ -1082,6 +1149,10 @@
      "price": 29,
      "stock": 4
     },
+    "diaithir_drinks:lemon_cream_liqueur": {
+     "price": 29,
+     "stock": 4
+    },
     "diaithir_drinks:plymouth_gin": {
      "price": 29,
      "stock": 4
@@ -1098,28 +1169,44 @@
      "price": 31,
      "stock": 4
     },
+    "diaithir_drinks:harbour_spice_punch": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:navy_spiced_rum_cordial": {
+     "price": 31,
+     "stock": 4
+    },
+    "diaithir_drinks:pot_still_vodka": {
+     "price": 32,
+     "stock": 4
+    },
+    "diaithir_drinks:flame_rose_arrack": {
+     "price": 33,
+     "stock": 4
+    },
     "diaithir_drinks:grain_neutral_spirit": {
      "price": 36,
      "stock": 4
     },
-    "diaithir_drinks:navy_strength_gin": {
-     "price": 36,
+    "diaithir_drinks:rectified_grain_spirit": {
+     "price": 43,
      "stock": 4
     },
     "diaithir_drinks:cristalino_tequila": {
      "price": 48,
      "stock": 4
     },
+    "diaithir_drinks:plantation_cane_rum": {
+     "price": 48,
+     "stock": 4
+    },
+    "diaithir_drinks:london_dry_gin_cask_rested": {
+     "price": 49,
+     "stock": 4
+    },
     "diaithir_drinks:bottled_in_bond_bourbon": {
      "price": 54,
-     "stock": 4
-    },
-    "diaithir_drinks:cask_strength_bourbon": {
-     "price": 59,
-     "stock": 4
-    },
-    "diaithir_drinks:overproof_rum": {
-     "price": 61,
      "stock": 4
     }
    }
