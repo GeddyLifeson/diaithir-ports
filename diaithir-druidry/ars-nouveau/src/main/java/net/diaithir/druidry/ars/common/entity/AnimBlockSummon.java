@@ -1,0 +1,336 @@
+package net.diaithir.druidry.ars.common.entity;
+
+import net.diaithir.druidry.ars.setup.registry.DataSerializers;
+import net.diaithir.druidry.ars.api.entity.IDispellable;
+import net.diaithir.druidry.ars.api.entity.ISummon;
+import net.diaithir.druidry.ars.client.particle.ParticleColor;
+import net.diaithir.druidry.ars.client.particle.ParticleUtil;
+import net.diaithir.druidry.ars.common.block.MageBlock;
+import net.diaithir.druidry.ars.common.entity.goal.ConditionalLeapGoal;
+import net.diaithir.druidry.ars.common.entity.goal.ConditionalMeleeGoal;
+import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
+import net.diaithir.druidry.ars.setup.registry.ModEntities;
+import net.minecraft.core.Holder;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerEntity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import net.diaithir.druidry.ars.anim.GeoEntity;
+import net.diaithir.druidry.ars.anim.AnimatableInstanceCache;
+import net.diaithir.druidry.ars.anim.AnimatableManager;
+import net.diaithir.druidry.ars.anim.AnimationController;
+import net.diaithir.druidry.ars.anim.PlayState;
+import net.diaithir.druidry.ars.anim.RawAnimation;
+import net.diaithir.druidry.ars.anim.GeckoLibUtil;
+
+import java.util.Optional;
+import java.util.UUID;
+
+public class AnimBlockSummon extends TamableAnimal implements GeoEntity, ISummon, IDispellable {
+
+    private static final UUID NIL_UUID = new UUID(0L, 0L);
+
+    public BlockState blockState;
+    public int color;
+    private int ticksLeft;
+    public static final EntityDataAccessor<Integer> AGE = SynchedEntityData.defineId(AnimBlockSummon.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Boolean> CAN_WALK = SynchedEntityData.defineId(AnimBlockSummon.class, EntityDataSerializers.BOOLEAN);
+    public boolean isAlternateSpawn;
+    public boolean dropItem = true;
+    public AnimBlockSummon(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+        isAlternateSpawn = random.nextBoolean();
+    }
+
+    public AnimBlockSummon(Level pLevel, BlockState state){
+        this(ModEntities.ANIMATED_BLOCK.get(), pLevel);
+        this.blockState = state;
+    }
+
+    @Override
+    public double getAttributeValue(Holder<Attribute> pAttribute) {
+        if(pAttribute.is(Attributes.ATTACK_DAMAGE)){
+            return super.getAttributeValue(pAttribute) + getStateDamageBonus();
+        }
+        return super.getAttributeValue(pAttribute);
+    }
+
+    public float getStateDamageBonus() {
+        float destroySpeed = 1.0f;
+        try {
+            destroySpeed = this.blockState.getDestroySpeed(level(), blockPosition());
+        } catch (Exception e) {
+            // Passing unexpected values here, catch any errors
+        }
+
+        return destroySpeed;
+    }
+
+    @Override
+    public EntityType<?> getType() {
+        return ModEntities.ANIMATED_BLOCK.get();
+    }
+
+    protected void registerGoals() {
+        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(4, new ConditionalLeapGoal(this, 0.4F, () -> entityData.get(CAN_WALK)));
+        this.goalSelector.addGoal(5, new ConditionalMeleeGoal(this, 1.0D, true, () -> entityData.get(CAN_WALK)));
+        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F));
+        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
+        this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+        this.targetSelector.addGoal(3, (new HurtByTargetGoal(this, AnimBlockSummon.class)).setAlertOthers(AnimBlockSummon.class));
+    }
+
+    @Override
+    public boolean doHurtTarget(ServerLevel pLevel, Entity pEntity) {
+        if (getOwner() != null && pEntity.isAlliedTo(getOwner())) return false;
+        boolean result = super.doHurtTarget(pLevel, pEntity);
+        if (result) ticksLeft -= 20*20;
+        return result;
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 4.0D).add(Attributes.ATTACK_DAMAGE, 2.0D);
+    }
+
+    @Override
+    public boolean canAttack(LivingEntity pTarget) {
+        if (getOwnerUUID() != null) {
+            if (pTarget.getUUID().equals(getOwnerUUID()))
+                return false;
+            if (pTarget instanceof ISummon summon) {
+                return super.canAttack(pTarget) && !getOwnerUUID().equals(summon.getOwnerUUID());
+            }
+        }
+        return super.canAttack(pTarget);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (!level().isClientSide()) {
+            ticksLeft--;
+            this.entityData.set(AGE, this.entityData.get(AGE) + 1);
+            if(this.entityData.get(AGE) > 20) {
+                this.entityData.set(CAN_WALK, true);
+            }
+            if (ticksLeft <= 0) {
+                ParticleUtil.spawnPoof((ServerLevel) level(), blockPosition());
+                returnToFallingBlock(blockState);
+                this.remove(RemovalReason.DISCARDED);
+                onSummonDeath(level(), null, true);
+            }
+        }
+    }
+
+    public void returnToFallingBlock(BlockState blockState) {
+        if(blockState == null)
+            return;
+        EnchantedFallingBlock fallingBlock = new EnchantedFallingBlock(level(), blockPosition(), blockState);
+        fallingBlock.setOwner(this.getOwner());
+        fallingBlock.setDeltaMovement(this.getDeltaMovement());
+        fallingBlock.setColor(ParticleColor.fromInt(color));
+        fallingBlock.dropItem = this.dropItem;
+        if (blockState.getBlock() instanceof MageBlock) {
+            fallingBlock.dropItem = false;
+        }
+
+        level().addFreshEntity(fallingBlock);
+    }
+
+    private static final EntityDataAccessor<Optional<UUID>> OWNER_UUID = SynchedEntityData.defineId(AnimBlockSummon.class, DataSerializers.OPTIONAL_UUID.get());
+    public static final EntityDataAccessor<Integer> COLOR = SynchedEntityData.defineId(AnimBlockSummon.class, EntityDataSerializers.INT);
+
+    @Nullable
+    @Override
+    public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
+        return null;
+    }
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
+        super.defineSynchedData(pBuilder);
+        pBuilder.define(OWNER_UUID, Optional.of(NIL_UUID));
+        pBuilder.define(COLOR, ParticleColor.defaultParticleColor().getColor());
+        pBuilder.define(AGE, 0);
+        pBuilder.define(CAN_WALK, false);
+    }
+
+
+    @Override
+    public void die(DamageSource cause) {
+        super.die(cause);
+        returnToFallingBlock(getBlockState());
+        onSummonDeath(level(), cause, false);
+    }
+
+    @Nullable
+    @Override
+    public LivingEntity getOwner() {
+        return this.dead ? null : super.getOwner();
+    }
+
+    @Override
+    public boolean canBreed() {
+        return false;
+    }
+
+    @Override
+    public boolean canMate(Animal pOtherAnimal) {
+        return false;
+    }
+
+    @Override
+    public boolean isFood(ItemStack stack) {
+        return false;
+    }
+
+    protected int getBaseExperienceReward() {
+        return 0;
+    }
+
+    @Override
+    public int getTicksLeft() {
+        return ticksLeft;
+    }
+
+    @Override
+    public void setTicksLeft(int ticks) {
+        this.ticksLeft = ticks;
+    }
+
+    @Nullable
+    @Override
+    public UUID getOwnerUUID() {
+        return this.getEntityData().get(OWNER_UUID).isEmpty() ? this.getUUID() : this.getEntityData().get(OWNER_UUID).get();
+    }
+
+    @Override
+    public void setOwnerID(UUID uuid) {
+        this.getEntityData().set(OWNER_UUID, Optional.ofNullable(uuid));
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+        String spawnAnim = "spawn";
+        data.add(new AnimationController<>(this, spawnAnim, 1, (e) -> {
+            if (!entityData.get(CAN_WALK)) {
+                e.getController().setAnimation(RawAnimation.begin().thenPlay(spawnAnim));
+                return PlayState.CONTINUE;
+            }
+            return PlayState.STOP;
+        }));
+
+        data.add(new AnimationController<>(this, "run", 1, (e) -> {
+            if (e.isMoving() && entityData.get(CAN_WALK)) {
+                e.getController().setAnimation(RawAnimation.begin().thenPlay("run"));
+                return PlayState.CONTINUE;
+            }
+            return PlayState.STOP;
+        }));
+    }
+
+    final AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return factory;
+    }
+
+    public BlockState getBlockState() {
+        return blockState != null ? blockState : BlockRegistry.MAGE_BLOCK.get().defaultBlockState();
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity p_352287_) {
+        return new ClientboundAddEntityPacket(this, p_352287_, Block.getId(this.getBlockState()));
+    }
+
+//    @Override
+//    public double getBoneResetTime() {
+//        return 0;
+//    }
+
+    @Override
+    public void recreateFromPacket(ClientboundAddEntityPacket pPacket) {
+        super.recreateFromPacket(pPacket);
+        this.blockState = Block.stateById(pPacket.getData());
+        double d0 = pPacket.getX();
+        double d1 = pPacket.getY();
+        double d2 = pPacket.getZ();
+        this.setPos(d0, d1, d2);
+    }
+
+    public void setColor(int color){
+        this.color = color;
+        this.getEntityData().set(COLOR, color);
+    }
+
+    @Override
+    public void readAdditionalSaveData(ValueInput pCompound) {
+        super.readAdditionalSaveData(pCompound);
+        this.ticksLeft = pCompound.getIntOr("left", 0);
+        this.color = pCompound.getIntOr("color", 0);
+        this.blockState = Block.stateById(pCompound.getIntOr("blockState", 0));
+        this.getEntityData().set(AGE, pCompound.getIntOr("ticksAlive", 0));
+        this.getEntityData().set(CAN_WALK, pCompound.getBooleanOr("canWalk", false));
+        this.dropItem = pCompound.getBooleanOr("dropItem", true);
+        this.getEntityData().set(COLOR, this.color);
+    }
+
+    @Override
+    public void addAdditionalSaveData(ValueOutput pCompound) {
+        super.addAdditionalSaveData(pCompound);
+        pCompound.putInt("left", ticksLeft);
+        pCompound.putInt("color", color);
+        pCompound.putInt("blockState", Block.getId(blockState));
+        pCompound.putInt("ticksAlive", this.getEntityData().get(AGE));
+        pCompound.putBoolean("canWalk", this.getEntityData().get(CAN_WALK));
+        pCompound.putBoolean("dropItem", this.dropItem);
+    }
+
+    public int getColor() {
+        if (color == 0){
+            color = entityData.get(COLOR);
+        }
+        return color;
+    }
+
+    /**
+     * When dispel hits a target
+     *
+     * @param caster The entity that cast this spell. This can be NULL in the case of runes and machines that cast spells.
+     * @return Returns true if dispel was successful.
+     */
+    @Override
+    public boolean onDispel(@NotNull LivingEntity caster) {
+        this.setTicksLeft(0);
+        return true;
+    }
+}

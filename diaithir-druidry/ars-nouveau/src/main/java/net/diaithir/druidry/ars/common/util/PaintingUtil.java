@@ -1,0 +1,52 @@
+package net.diaithir.druidry.ars.common.util;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
+import net.minecraft.resources.RegistryOps;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.decoration.painting.PaintingVariant;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class PaintingUtil {
+    public static List<ItemStack> getAllPaintings(HolderLookup.Provider registries) {
+        return getAllPaintings(registries, ArsNouveau.MODID);
+    }
+
+    public static List<ItemStack> getAllPaintings(HolderLookup.Provider registries, String id) {
+        return registries.lookup(Registries.PAINTING_VARIANT)
+            .map(lookup -> {
+                RegistryOps<Tag> registryOps = registries.createSerializationContext(NbtOps.INSTANCE);
+                return lookup.listElementIds()
+                    .filter(key -> key.identifier().getNamespace().equals(id))
+                    .map(key -> getPainting(registries, key, registryOps))
+                    .collect(Collectors.toList());
+            }).orElse(new ArrayList<>());
+    }
+
+    public static ItemStack getPainting(HolderLookup.Provider registries, ResourceKey<PaintingVariant> key) {
+        RegistryOps<Tag> registryOps = registries.createSerializationContext(NbtOps.INSTANCE);
+
+        return getPainting(registries, key, registryOps);
+    }
+
+    public static ItemStack getPainting(HolderLookup.Provider registries, ResourceKey<PaintingVariant> key, RegistryOps<Tag> registryOps) {
+        Holder.Reference<PaintingVariant> painting = registries.lookup(Registries.PAINTING_VARIANT)
+                .flatMap(lookup -> lookup.get(key))
+                .orElse(null);
+        if (painting == null) return ItemStack.EMPTY;
+
+        ItemStack is = new ItemStack(Items.PAINTING);
+        is.set(DataComponents.PAINTING_VARIANT, painting);
+        return is;
+    }
+}

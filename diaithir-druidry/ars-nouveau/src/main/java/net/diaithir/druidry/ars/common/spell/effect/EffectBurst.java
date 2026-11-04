@@ -1,0 +1,100 @@
+package net.diaithir.druidry.ars.common.spell.effect;
+
+import net.diaithir.druidry.ars.api.spell.*;
+import net.diaithir.druidry.ars.api.util.BlockUtil;
+import net.diaithir.druidry.ars.common.lib.GlyphLib;
+import net.diaithir.druidry.ars.common.spell.augment.AugmentAOE;
+import net.diaithir.druidry.ars.common.spell.augment.AugmentDampen;
+import net.diaithir.druidry.ars.common.spell.augment.AugmentSensitive;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
+import java.util.function.Predicate;
+
+public class EffectBurst extends AbstractEffect {
+
+    public static final EffectBurst INSTANCE = new EffectBurst();
+
+    public EffectBurst() {
+        super(GlyphLib.EffectBurstID, "Burst");
+        EffectReset.RESET_LIMITS.add(this);
+    }
+
+    @Override
+    public String getBookDescription() {
+        return "Resolves the spell in a spherical area around the target. Augment with Sensitive to target blocks instead of entities and Dampen to make an empty sphere. Augment with AOE to increase the radius. ";
+    }
+
+    @Override
+    public void onResolveBlock(BlockHitResult rayTraceResult, Level world, @NotNull LivingEntity shooter, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
+        makeSphere(rayTraceResult.getBlockPos(), world, shooter, spellStats, spellContext, resolver);
+    }
+
+    @Override
+    public void onResolveEntity(EntityHitResult rayTraceResult, Level world, @NotNull LivingEntity shooter, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver) {
+        makeSphere(rayTraceResult.getEntity().blockPosition(), world, shooter, spellStats, spellContext, resolver);
+    }
+
+    public void makeSphere(BlockPos center, Level world, @NotNull LivingEntity shooter, SpellStats spellStats, SpellContext spellContext, SpellResolver resolver){
+        if (spellContext.getRemainingSpell().isEmpty()) return;
+        SpellContext newContext = spellContext.makeChildContext();
+        spellContext.setCanceled(true);
+
+        int radius = (int) (1 + spellStats.getAoeMultiplier());
+        Predicate<Double> Sphere = spellStats.hasBuff(AugmentDampen.INSTANCE) ? (distance) -> distance <= radius + 0.5 && distance >= radius - 0.5 : (distance) -> (distance <= radius + 0.5);
+        if (spellStats.isSensitive()) {
+            for (BlockPos pos : BlockPos.withinManhattan(center, radius, radius, radius)) {
+                if (Sphere.test(BlockUtil.distanceFromCenter(pos, center))) {
+                    pos = pos.immutable();
+                    SpellResolver resolver1 = resolver.getNewResolver(newContext);
+                    //TODO it needs a direction, UP as a dummy for now
+                    resolver1.onResolveEffect(world, new BlockHitResult(new Vec3(pos.getX(), pos.getY(), pos.getZ()), Direction.UP, pos, false));
+                }
+            }
+        } else {
+            for (LivingEntity entity : world.getEntitiesOfClass(LivingEntity.class, new AABB(center).inflate(radius, radius, radius))) {
+                if (Sphere.test(BlockUtil.distanceFromCenter(entity.blockPosition(), center))) {
+                    SpellResolver resolver1 = resolver.getNewResolver(newContext);
+                    resolver1.onResolveEffect(world, new EntityHitResult(entity));
+                }
+            }
+        }
+    }
+
+    @Override
+    public void buildConfig(ModConfigSpec.Builder builder) {
+        super.buildConfig(builder);
+        PER_SPELL_LIMIT = builder.comment("The maximum number of times this glyph may appear in a single spell").defineInRange("per_spell_limit", 1, 1, 1);
+    }
+
+    @Override
+    public int getDefaultManaCost() {
+        return 500;
+    }
+
+    @Override
+    public SpellTier defaultTier() {
+        return SpellTier.THREE;
+    }
+
+    @Override
+    protected @NotNull Set<AbstractAugment> getCompatibleAugments() {
+        return augmentSetOf(AugmentAOE.INSTANCE, AugmentSensitive.INSTANCE, AugmentDampen.INSTANCE);
+    }
+
+    @Override
+    protected void addDefaultInvalidCombos(Set<Identifier> defaults) {
+        defaults.add(EffectLinger.INSTANCE.getRegistryName());
+        defaults.add(EffectWall.INSTANCE.getRegistryName());
+    }
+}

@@ -1,0 +1,92 @@
+package net.diaithir.druidry.ars.common.network;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.api.event.DelayedSpellEvent;
+import net.diaithir.druidry.ars.api.event.EventQueue;
+import net.diaithir.druidry.ars.api.spell.Spell;
+import net.diaithir.druidry.ars.api.spell.SpellContext;
+import net.diaithir.druidry.ars.api.spell.SpellResolver;
+import net.diaithir.druidry.ars.api.spell.wrapped_caster.LivingCaster;
+import net.diaithir.druidry.ars.common.util.ANCodecs;
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+
+public class PacketClientDelayEffect extends AbstractPacket {
+    public static final Type<PacketClientDelayEffect> TYPE = new Type<>(ArsNouveau.prefix("client_delay_effect"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, PacketClientDelayEffect> CODEC = StreamCodec.ofMember(PacketClientDelayEffect::toBytes, PacketClientDelayEffect::new);
+
+    public Spell spell;
+    public int duration;
+    public int shooterID; // -1 is a null entity
+    public @Nullable BlockHitResult hitPos;
+    public int hitEntityID;
+
+    //Decoder
+    public PacketClientDelayEffect(RegistryFriendlyByteBuf buf) {
+        duration = buf.readInt();
+        spell = ANCodecs.decode(Spell.CODEC.codec(), buf.readNbt());
+        shooterID = buf.readInt();
+        hitEntityID = buf.readInt();
+        if (hitEntityID == -1) {
+            hitPos = buf.readBlockHitResult();
+        }
+    }
+
+    //Encoder
+    public void toBytes(RegistryFriendlyByteBuf buf) {
+        buf.writeInt(duration);
+        buf.writeNbt(ANCodecs.encode(Spell.CODEC.codec(), spell));
+        buf.writeInt(shooterID);
+        buf.writeInt(hitEntityID);
+
+        if (hitEntityID == -1 && hitPos != null) {
+            buf.writeBlockHitResult(hitPos);
+        }
+        // buf.writeBlockHitResult();
+    }
+
+    public PacketClientDelayEffect(int duration, @Nullable LivingEntity shooter, Spell spell, SpellContext context, @Nullable BlockHitResult hitPos, @Nullable Entity hitEntity) {
+        this.duration = duration;
+        this.shooterID = shooter == null ? -1 : shooter.getId();
+        this.spell = spell;
+        this.hitPos = hitPos;
+        this.hitEntityID = hitEntity == null ? -1 : hitEntity.getId();
+    }
+
+    @Override
+    public void onClientReceived(Minecraft minecraft, Player player) {
+        Level world = ArsNouveau.proxy.getClientWorld();
+        Entity hitEntity = world.getEntity(hitEntityID);
+        HitResult result;
+        if (hitEntityID == -1) {
+            result = hitPos;
+        } else if (hitEntity == null) {
+            result = BlockHitResult.miss(new Vec3(0, 0, 0), Direction.UP, BlockPos.ZERO);
+        } else {
+            result = new EntityHitResult(hitEntity);
+        }
+        LivingEntity entity = (LivingEntity) world.getEntity(shooterID);
+        EventQueue.getClientQueue().addEvent(new DelayedSpellEvent(duration, result, world,
+                new SpellResolver(new SpellContext(world, spell, entity, new LivingCaster(entity)))));
+    }
+
+    @Override
+    public @NotNull Type<? extends CustomPacketPayload> type() {
+        return TYPE;
+    }
+}

@@ -1,0 +1,47 @@
+package net.diaithir.druidry.ars.common.entity.goal.carbuncle;
+
+import net.diaithir.druidry.ars.common.block.tile.PotionJarTile;
+import net.diaithir.druidry.ars.common.entity.Starbuncle;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.alchemy.PotionContents;
+import org.jetbrains.annotations.Nullable;
+
+public class PotionStoreGoal extends GoToPosGoal<StarbyPotionBehavior> {
+    public PotionStoreGoal(Starbuncle starbuncle, StarbyPotionBehavior behavior) {
+        super(starbuncle, behavior, () -> {
+            return behavior.getHeldPotion() != PotionContents.EMPTY;
+        });
+    }
+
+    @Override
+    public void start() {
+        super.start();
+        starbuncle.goalState = Starbuncle.StarbuncleGoalState.STORING_ITEM;
+    }
+
+    @Nullable
+    @Override
+    public BlockPos getDestination() {
+        return behavior.getJarForStorage(behavior.getHeldPotion());
+    }
+
+    @Override
+    public boolean isDestinationStillValid(BlockPos pos) {
+        return behavior.isPositionValidStore(pos, behavior.getHeldPotion());
+    }
+
+    @Override
+    public boolean onDestinationReached() {
+        if(starbuncle.level().getBlockEntity(targetPos) instanceof PotionJarTile jarTile){
+            int room = jarTile.getMaxFill() - jarTile.getAmount();
+            int diff = Math.min(room, behavior.getAmount());
+            jarTile.add(behavior.getHeldPotion(), diff);
+            behavior.setHeldPotion(PotionContents.EMPTY);
+            starbuncle.level().playSound(null, targetPos, SoundEvents.BUCKET_EMPTY, SoundSource.NEUTRAL, 0.5f, 1.3f);
+            behavior.setAmount(behavior.getAmount() - diff);
+        }
+        return true;
+    }
+}
