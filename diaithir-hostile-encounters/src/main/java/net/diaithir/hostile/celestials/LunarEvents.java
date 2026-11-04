@@ -101,10 +101,20 @@ public final class LunarEvents {
                 if (ev.rise != null) p.sendSystemMessage(notice(ev.rise, ev));
             }
             lastActive = ev.id;
+            if (!old.id.equals(Lunar.DEFAULT_ID)) net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new LunarEventStarted(old.id, level, false));
+            if (!ev.id.equals(Lunar.DEFAULT_ID)) net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new LunarEventStarted(ev.id, level, true));
             sync(level, ev, null);
         }
         if (ev.meteor.interval_ticks > 0 && level.getGameTime() % ev.meteor.interval_ticks == 0) Meteors.strike(level, ev.meteor);
+        if (ev.boost.phantoms > 0 && level.getGameTime() % 200 == 0) phantoms(level, ev, level.players());
+        if (level.getGameTime() % 20 == 0 && ev.boost.chance > 0) redGlow(level);
         if (ev.horde.cap > 0 && level.getGameTime() % Math.max(1, ev.horde.interval_ticks) == 0) horde(level, ev);
+    }
+
+    private static void redGlow(ServerLevel level) {
+        for (ServerPlayer p : level.players())
+            for (Mob m : level.getEntitiesOfClass(Mob.class, p.getBoundingBox().inflate(48), x -> x.entityTags().contains("lunar_boosted")))
+                level.sendParticles(net.minecraft.core.particles.ParticleTypes.CRIMSON_SPORE, m.getX(), m.getY() + m.getBbHeight() / 2, m.getZ(), 6, 0.3, 0.5, 0.3, 0.02);
     }
 
     private static void horde(ServerLevel level, Lunar.Event ev) { horde(level, ev, level.players()); }
@@ -163,6 +173,66 @@ public final class LunarEvents {
             BuiltInRegistries.MOB_EFFECT.get(Identifier.parse(fx.effect)).ifPresent(h ->
                 le.addEffect(new MobEffectInstance(h, fx.duration_in_ticks, fx.amplifier, fx.ambient, fx.visible, fx.show_icon)));
         }
+    }
+
+    // ---- Blood Moon (KS) behaviour: boosted mobs, essence, creeper blasts, phantoms -------------------------------------
+
+    @SubscribeEvent
+    public static void boostOnJoin(net.neoforged.neoforge.event.entity.EntityJoinLevelEvent e) {
+        if (!(e.getEntity() instanceof Mob m) || e.getLevel().isClientSide() || m.getType().getCategory() != MobCategory.MONSTER) return;
+        active(e.getLevel()).ifPresent(ev -> boost(m, ev));
+    }
+
+    /** Marks and strengthens a hostile mob when the event asks for it. Returns true when it was boosted. */
+    static boolean boost(Mob m, Lunar.Event ev) {
+        Lunar.Boost b = ev.boost;
+        if (b.chance <= 0 || b.effects.isEmpty() || m.entityTags().contains("lunar_boosted") || m.getRandom().nextDouble() >= b.chance) return false;
+        String id = b.effects.get(m.getRandom().nextInt(b.effects.size()));
+        var fx = BuiltInRegistries.MOB_EFFECT.get(Identifier.parse(id));
+        if (fx.isEmpty()) return false;
+        m.addTag("lunar_boosted");
+        m.addEffect(new MobEffectInstance(fx.get(), 12000, b.amplifier, false, true, true));
+        return true;
+    }
+
+    @SubscribeEvent
+    public static void essence(net.neoforged.neoforge.event.entity.living.LivingDropsEvent e) {
+        LivingEntity le = e.getEntity();
+        if (le.level().isClientSide() || !le.entityTags().contains("lunar_boosted") || !e.isRecentlyHit()) return;
+        active(le.level()).ifPresent(ev -> {
+            if (le.getRandom().nextDouble() < ev.boost.essence_chance)
+                e.getDrops().add(new net.minecraft.world.entity.item.ItemEntity(le.level(), le.getX(), le.getY(), le.getZ(), new net.minecraft.world.item.ItemStack(MoonEssence.ITEM.get())));
+        });
+    }
+
+    @SubscribeEvent
+    public static void creeperBlast(net.neoforged.neoforge.event.level.ExplosionEvent.Detonate e) {
+        if (!(e.getLevel() instanceof ServerLevel sl) || !(e.getExplosion().getDirectSourceEntity() instanceof net.minecraft.world.entity.monster.Creeper)) return;
+        active(sl).ifPresent(ev -> {
+            for (Player p : sl.getEntitiesOfClass(Player.class, new net.minecraft.world.phys.AABB(e.getExplosion().center(), e.getExplosion().center()).inflate(6))) creeperEffects(p, ev);
+        });
+    }
+
+    static void creeperEffects(Player p, Lunar.Event ev) {
+        for (String id : ev.boost.creeper_effects)
+            BuiltInRegistries.MOB_EFFECT.get(Identifier.parse(id)).ifPresent(h -> p.addEffect(new MobEffectInstance(h, 200, 0)));
+    }
+
+    /** Keeps phantoms above each player up to the event's cap; returns how many came. */
+    static int phantoms(ServerLevel level, Lunar.Event ev, List<? extends ServerPlayer> players) {
+        int made = 0;
+        for (ServerPlayer p : players) {
+            if (ev.boost.phantoms <= 0 || p.isSpectator()) continue;
+            int near = level.getEntitiesOfClass(net.minecraft.world.entity.monster.Phantom.class, p.getBoundingBox().inflate(48)).size();
+            if (near >= ev.boost.phantoms) continue;
+            net.minecraft.world.entity.monster.Phantom ph = EntityType.PHANTOM.create(level, EntitySpawnReason.EVENT);
+            if (ph == null) continue;
+            ph.snapTo(p.getX() + level.getRandom().nextInt(-8, 9), p.getY() + 16 + level.getRandom().nextInt(8), p.getZ() + level.getRandom().nextInt(-8, 9), 0F, 0F);
+            ph.finalizeSpawn(level, level.getCurrentDifficultyAt(ph.blockPosition()), EntitySpawnReason.EVENT, null);
+            level.addFreshEntity(ph);
+            made++;
+        }
+        return made;
     }
 
     @SubscribeEvent
