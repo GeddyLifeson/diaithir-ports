@@ -68,10 +68,6 @@ public final class Station {
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
-        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, e -> {
-            int n = IvFuelTable.repair();
-            if (n > 0) com.mojang.logging.LogUtils.getLogger().info("[diaithirunits] filled {} empty Immersive Vehicles fuel types from IV defaults", n);
-        });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.ServerTickEvent.Post.class, e -> {
             if (watchLeft > 0 && --watchLeft % 20 == 0 && watchSource != null) {
                 var pos = watchSource.getEntity() != null ? watchSource.getEntity().position() : watchSource.getPosition();

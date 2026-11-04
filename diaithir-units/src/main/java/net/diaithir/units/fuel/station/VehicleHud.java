@@ -15,7 +15,6 @@ final class VehicleHud {
     private VehicleHud() {}
 
     static void init(IEventBus bus) {
-        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent.LoggingIn.class, e -> IvFuelTable.repair());
         bus.addListener(RegisterGuiLayersEvent.class, e -> e.registerAboveAll(Identifier.fromNamespaceAndPath(Station.ID, "dashboard"), VehicleHud::render));
     }
 
