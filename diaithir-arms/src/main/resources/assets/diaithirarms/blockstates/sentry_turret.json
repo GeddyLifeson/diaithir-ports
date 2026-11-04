@@ -1,0 +1,103 @@
+{
+ "variants": {
+  "ammo=0": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=1": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=2": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=3": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=4": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=5": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=6": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=7": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=8": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=9": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=10": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=11": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=12": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=13": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=14": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=15": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=16": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=17": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=18": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=19": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=20": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=21": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=22": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=23": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=24": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=25": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=26": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=27": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=28": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=29": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=30": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=31": {
+   "model": "diaithirarms:block/sentry_turret"
+  },
+  "ammo=32": {
+   "model": "diaithirarms:block/sentry_turret"
+  }
+ }
+}

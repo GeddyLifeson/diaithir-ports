@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "  E",
+  " I ",
+  "RI "
+ ],
+ "key": {
+  "E": "minecraft:end_rod",
+  "I": "minecraft:iron_ingot",
+  "R": "minecraft:redstone_block"
+ },
+ "result": {
+  "id": "diaithirarms:mining_laser",
+  "count": 1
+ }
+}
