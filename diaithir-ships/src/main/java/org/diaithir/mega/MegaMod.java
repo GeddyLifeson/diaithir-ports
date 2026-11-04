@@ -51,6 +51,7 @@ public final class MegaMod {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
+        MegaBlocks.init(bus);
         bus.addListener(RegisterCapabilitiesEvent.class, e -> e.registerBlockEntity(Capabilities.Item.BLOCK, DEPOT_BE.get(), (be, side) -> be.intake));
         NeoForge.EVENT_BUS.addListener(MegaMod::commands);
         if (Boolean.getBoolean("megamachines.selftest")) {
