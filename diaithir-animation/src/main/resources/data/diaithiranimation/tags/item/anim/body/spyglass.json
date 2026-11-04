@@ -1,0 +1,265 @@
+{
+"replace": false,
+"values": [
+{
+"id": "ae2:meteorite_compass",
+"required": false
+},
+{
+"id": "bibliocraft:acacia_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:acacia_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:bamboo_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:bamboo_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:birch_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:birch_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:cherry_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:cherry_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:crimson_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:crimson_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:dark_oak_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:dark_oak_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:jungle_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:jungle_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:mangrove_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:mangrove_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:oak_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:oak_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:pale_oak_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:pale_oak_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:spruce_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:spruce_grandfather_clock",
+"required": false
+},
+{
+"id": "bibliocraft:warped_fancy_clock",
+"required": false
+},
+{
+"id": "bibliocraft:warped_grandfather_clock",
+"required": false
+},
+{
+"id": "diaithirworldsys:wayfinder_compass",
+"required": false
+},
+{
+"id": "explorerscompass:explorerscompass",
+"required": false
+},
+{
+"id": "geore:allthemodium_spyglass",
+"required": false
+},
+{
+"id": "geore:aluminum_spyglass",
+"required": false
+},
+{
+"id": "geore:ancient_debris_spyglass",
+"required": false
+},
+{
+"id": "geore:black_quartz_spyglass",
+"required": false
+},
+{
+"id": "geore:coal_spyglass",
+"required": false
+},
+{
+"id": "geore:copper_spyglass",
+"required": false
+},
+{
+"id": "geore:diamond_spyglass",
+"required": false
+},
+{
+"id": "geore:emerald_spyglass",
+"required": false
+},
+{
+"id": "geore:gold_spyglass",
+"required": false
+},
+{
+"id": "geore:iron_spyglass",
+"required": false
+},
+{
+"id": "geore:lapis_spyglass",
+"required": false
+},
+{
+"id": "geore:lead_spyglass",
+"required": false
+},
+{
+"id": "geore:monazite_spyglass",
+"required": false
+},
+{
+"id": "geore:nickel_spyglass",
+"required": false
+},
+{
+"id": "geore:osmium_spyglass",
+"required": false
+},
+{
+"id": "geore:platinum_spyglass",
+"required": false
+},
+{
+"id": "geore:quartz_spyglass",
+"required": false
+},
+{
+"id": "geore:redstone_spyglass",
+"required": false
+},
+{
+"id": "geore:ruby_spyglass",
+"required": false
+},
+{
+"id": "geore:sapphire_spyglass",
+"required": false
+},
+{
+"id": "geore:silver_spyglass",
+"required": false
+},
+{
+"id": "geore:tin_spyglass",
+"required": false
+},
+{
+"id": "geore:topaz_spyglass",
+"required": false
+},
+{
+"id": "geore:tungsten_spyglass",
+"required": false
+},
+{
+"id": "geore:unobtainium_spyglass",
+"required": false
+},
+{
+"id": "geore:uraninite_spyglass",
+"required": false
+},
+{
+"id": "geore:uranium_spyglass",
+"required": false
+},
+{
+"id": "geore:vibranium_spyglass",
+"required": false
+},
+{
+"id": "geore:zinc_spyglass",
+"required": false
+},
+{
+"id": "immersive_aircraft:telescope",
+"required": false
+},
+{
+"id": "minecraft:clock",
+"required": false
+},
+{
+"id": "minecraft:compass",
+"required": false
+},
+{
+"id": "minecraft:recovery_compass",
+"required": false
+},
+{
+"id": "minecraft:spyglass",
+"required": false
+},
+{
+"id": "naturescompass:naturescompass",
+"required": false
+},
+{
+"id": "occultism:ritual_dummy/craft_vitality_compass",
+"required": false
+},
+{
+"id": "occultism:vitality_compass",
+"required": false
+},
+{
+"id": "utilitarian:redstone_clock",
+"required": false
+}
+]
+}

@@ -65,6 +65,8 @@ public final class DiaithirStorageNet {
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
+        bus.addListener(net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent.class, e ->
+                e.registerBlockEntity(net.neoforged.neoforge.capabilities.Capabilities.Item.BLOCK, CONTROLLER_BE.get(), (be, side) -> be.view()));
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
                 for (DeferredItem<BlockItem> i : List.of(CONTROLLER_ITEM, CABLE_ITEM, IMPORT_CABLE_ITEM, EXPORT_CABLE_ITEM, FILTER_CABLE_ITEM, TERMINAL_ITEM,
