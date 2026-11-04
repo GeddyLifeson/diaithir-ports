@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:kumquat_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:kumquat_planks",
+  "count": 4
+ }
+}

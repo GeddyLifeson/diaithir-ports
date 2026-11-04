@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:acacia_planks"
+ },
+ "pattern": [
+  "PPP",
+  "P P",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:acacia_cabinet",
+  "count": 1
+ }
+}

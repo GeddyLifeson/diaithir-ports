@@ -1,0 +1,15 @@
+{
+  "station": "station.fabricator",
+  "stage": "part",
+  "time_s": 18,
+  "ingredients": [
+    {
+      "item": "minecraft:recovery_compass",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_shard_missile_guidance",
+    "count": 1
+  }
+}

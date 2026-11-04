@@ -1,0 +1,20 @@
+{
+"type": "minecraft:block",
+"random_sequence": "diaithir_planets:blocks/tirakaluta_orerium_ore",
+"pools": [
+{
+"rolls": 1.0,
+"conditions": [
+{
+"condition": "minecraft:survives_explosion"
+}
+],
+"entries": [
+{
+"type": "minecraft:item",
+"name": "diaithir_planets:tirakaluta_orerium_ore"
+}
+]
+}
+]
+}

@@ -1,0 +1,263 @@
+{
+ "_doc": "Codex Rites page, Age Wardens. Same shape as ritual_hints.json; text equals the in-game clue.",
+ "hints": [
+  {
+   "boss": "age_warden_1",
+   "step": 0,
+   "quest": "age_wardens/rite_age_warden_1_0",
+   "text": "The first hearth was ringed with flint. Sixteen chips, laid at the foot of the stone."
+  },
+  {
+   "boss": "age_warden_1",
+   "step": 1,
+   "quest": "age_wardens/rite_age_warden_1_1",
+   "text": "The walking dead guard the old fire-ring. Let six fall in sight of the altar."
+  },
+  {
+   "boss": "age_warden_1",
+   "step": 2,
+   "quest": "age_wardens/rite_age_warden_1_2",
+   "text": "Trees stand in the stone's mind. Seal them in this order, no other: the gate the Fair Folk keep; then kin of the tree that holds up the world."
+  },
+  {
+   "boss": "age_warden_1",
+   "step": 3,
+   "quest": "age_wardens/rite_age_warden_1_3",
+   "text": "The stone will answer only in the breath between night and the first light. Use the altar then."
+  },
+  {
+   "boss": "age_warden_1",
+   "step": 4,
+   "quest": "age_wardens/rite_age_warden_1_4",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 30 breaths of the sun-count and do not leave it."
+  },
+  {
+   "boss": "age_warden_2",
+   "step": 0,
+   "quest": "age_wardens/rite_age_warden_2_0",
+   "text": "The green metal came before the bright one. Sixteen ingots, warm from the pot."
+  },
+  {
+   "boss": "age_warden_2",
+   "step": 1,
+   "quest": "age_wardens/rite_age_warden_2_1",
+   "text": "Bone-archers keep the ore roads. Ten must be unstrung."
+  },
+  {
+   "boss": "age_warden_2",
+   "step": 2,
+   "quest": "age_wardens/rite_age_warden_2_2",
+   "text": "Trees stand in the stone's mind. Seal them in this order, no other: the gate the Fair Folk keep; then the pale one that wears the first white."
+  },
+  {
+   "boss": "age_warden_2",
+   "step": 3,
+   "quest": "age_wardens/rite_age_warden_2_3",
+   "text": "The stone will answer only as the sun drowns and the first stars wake. Use the altar then."
+  },
+  {
+   "boss": "age_warden_2",
+   "step": 4,
+   "quest": "age_wardens/rite_age_warden_2_4",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 40 breaths of the sun-count and do not leave it."
+  },
+  {
+   "boss": "age_warden_3",
+   "step": 0,
+   "quest": "age_wardens/rite_age_warden_3_0",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift."
+  },
+  {
+   "boss": "age_warden_3",
+   "step": 1,
+   "quest": "age_wardens/rite_age_warden_3_1",
+   "text": "Two soft metals made one hard. Eight bronze bars upon the stone."
+  },
+  {
+   "boss": "age_warden_3",
+   "step": 2,
+   "quest": "age_wardens/rite_age_warden_3_2",
+   "text": "The weavers of the dark hollows resent the smiths. Twelve of them fewer."
+  },
+  {
+   "boss": "age_warden_3",
+   "step": 3,
+   "quest": "age_wardens/rite_age_warden_3_3",
+   "text": "Trees stand in the stone's mind. Seal them in this order, no other: red berries set against the witch; then the gate the Fair Folk keep; then red berries set against the witch."
+  },
+  {
+   "boss": "age_warden_3",
+   "step": 4,
+   "quest": "age_wardens/rite_age_warden_3_4",
+   "text": "The stone will answer only when no shadow falls beside the stone. Use the altar then."
+  },
+  {
+   "boss": "age_warden_3",
+   "step": 5,
+   "quest": "age_wardens/rite_age_warden_3_5",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 45 breaths of the sun-count and do not leave it."
+  },
+  {
+   "boss": "age_warden_4",
+   "step": 0,
+   "quest": "age_wardens/rite_age_warden_4_0",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift."
+  },
+  {
+   "boss": "age_warden_4",
+   "step": 1,
+   "quest": "age_wardens/rite_age_warden_4_1",
+   "text": "The grey metal rings truer than the bronze. Twenty-four ingots, cold and plain."
+  },
+  {
+   "boss": "age_warden_4",
+   "step": 2,
+   "quest": "age_wardens/rite_age_warden_4_2",
+   "text": "The brewers who sold the smiths their ruin. Five must answer."
+  },
+  {
+   "boss": "age_warden_4",
+   "step": 3,
+   "quest": "age_wardens/rite_age_warden_4_3",
+   "text": "Trees stand in the stone's mind. Seal them in this order, no other: kin of the tree that holds up the world; then the pale one that wears the first white; then the weeper by the water."
+  },
+  {
+   "boss": "age_warden_4",
+   "step": 4,
+   "quest": "age_wardens/rite_age_warden_4_4",
+   "text": "The stone will answer only when the moon stands highest over the stone. Use the altar then."
+  },
+  {
+   "boss": "age_warden_4",
+   "step": 5,
+   "quest": "age_wardens/rite_age_warden_4_5",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 60 breaths of the sun-count and do not leave it."
+  },
+  {
+   "boss": "age_warden_5",
+   "step": 0,
+   "quest": "age_wardens/rite_age_warden_5_0",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift."
+  },
+  {
+   "boss": "age_warden_5",
+   "step": 1,
+   "quest": "age_wardens/rite_age_warden_5_1",
+   "text": "Iron taught to bend and not break. Eight steel bars for the warden's gate."
+  },
+  {
+   "boss": "age_warden_5",
+   "step": 2,
+   "quest": "age_wardens/rite_age_warden_5_2",
+   "text": "The hissing ones undo what smiths make. Fifteen must be put out."
+  },
+  {
+   "boss": "age_warden_5",
+   "step": 3,
+   "quest": "age_wardens/rite_age_warden_5_3",
+   "text": "Trees stand in the stone's mind. Seal them in this order, no other: the nut of the one who knows; then the weeper by the water; then kin of the tree that holds up the world; then the gate the Fair Folk keep."
+  },
+  {
+   "boss": "age_warden_5",
+   "step": 4,
+   "quest": "age_wardens/rite_age_warden_5_4",
+   "text": "The stone will answer only in the breath between night and the first light. Use the altar then."
+  },
+  {
+   "boss": "age_warden_5",
+   "step": 5,
+   "quest": "age_wardens/rite_age_warden_5_5",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
+  },
+  {
+   "boss": "age_warden_5",
+   "step": 6,
+   "quest": "age_wardens/rite_age_warden_5_6",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 75 breaths of the sun-count and do not leave it."
+  },
+  {
+   "boss": "age_warden_6",
+   "step": 0,
+   "quest": "age_wardens/rite_age_warden_6_0",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift."
+  },
+  {
+   "boss": "age_warden_6",
+   "step": 1,
+   "quest": "age_wardens/rite_age_warden_6_1",
+   "text": "The late age runs on red dust and wire. Eight blocks, packed and dull."
+  },
+  {
+   "boss": "age_warden_6",
+   "step": 2,
+   "quest": "age_wardens/rite_age_warden_6_2",
+   "text": "Tall walkers step between the wires. Eight must lose their footing."
+  },
+  {
+   "boss": "age_warden_6",
+   "step": 3,
+   "quest": "age_wardens/rite_age_warden_6_3",
+   "text": "Trees stand in the stone's mind. Seal them in this order, no other: the winter king, green when all is grey; then red berries set against the witch; then the one that bleeds when it is cut; then the door-wood, the strong one."
+  },
+  {
+   "boss": "age_warden_6",
+   "step": 4,
+   "quest": "age_wardens/rite_age_warden_6_4",
+   "text": "The stone will answer only when no shadow falls beside the stone. Use the altar then."
+  },
+  {
+   "boss": "age_warden_6",
+   "step": 5,
+   "quest": "age_wardens/rite_age_warden_6_5",
+   "text": "It will not wake for one hand. 2 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
+  },
+  {
+   "boss": "age_warden_6",
+   "step": 6,
+   "quest": "age_wardens/rite_age_warden_6_6",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 90 breaths of the sun-count and do not leave it."
+  },
+  {
+   "boss": "age_warden_8",
+   "step": 0,
+   "quest": "age_wardens/rite_age_warden_8_0",
+   "text": "The altar eats before it fights. Set one feast upon the stone, a dish worth a guest-gift."
+  },
+  {
+   "boss": "age_warden_8",
+   "step": 1,
+   "quest": "age_wardens/rite_age_warden_8_1",
+   "text": "The last Age answers in echoes. Six shards, still ringing."
+  },
+  {
+   "boss": "age_warden_8",
+   "step": 2,
+   "quest": "age_wardens/rite_age_warden_8_2",
+   "text": "Sleepless watchers circle the end of days. Twelve must fall."
+  },
+  {
+   "boss": "age_warden_8",
+   "step": 3,
+   "quest": "age_wardens/rite_age_warden_8_3",
+   "text": "Trees stand in the stone's mind. Seal them in this order, no other: the weeper by the water; then the nut of the one who knows; then kin of the tree that holds up the world; then the nut of the one who knows; then the gate the Fair Folk keep."
+  },
+  {
+   "boss": "age_warden_8",
+   "step": 4,
+   "quest": "age_wardens/rite_age_warden_8_4",
+   "text": "The stone will answer only when the moon stands highest over the stone. Use the altar then."
+  },
+  {
+   "boss": "age_warden_8",
+   "step": 5,
+   "quest": "age_wardens/rite_age_warden_8_5",
+   "text": "It will not wake for one hand. 3 must stand at the altar together, or the stone will take a token for every spirit that stands in for a friend."
+  },
+  {
+   "boss": "age_warden_8",
+   "step": 6,
+   "quest": "age_wardens/rite_age_warden_8_6",
+   "text": "Whatever you woke will come to see who woke it. Hold the altar for 105 breaths of the sun-count and do not leave it."
+  }
+ ]
+}

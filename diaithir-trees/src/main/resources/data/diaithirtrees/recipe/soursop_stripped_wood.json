@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "L": "diaithirtrees:soursop_stripped_log"
+ },
+ "pattern": [
+  "LL",
+  "LL"
+ ],
+ "result": {
+  "id": "diaithirtrees:soursop_stripped_wood",
+  "count": 3
+ }
+}

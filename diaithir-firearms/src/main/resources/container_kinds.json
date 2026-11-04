@@ -1,0 +1,28 @@
+{
+ "pistol": [
+  "magazine",
+  "speedloader"
+ ],
+ "smg": [
+  "magazine",
+  "drum"
+ ],
+ "rifle": [
+  "magazine",
+  "clip"
+ ],
+ "sniper": [
+  "magazine"
+ ],
+ "lmg": [
+  "belt",
+  "magazine",
+  "drum"
+ ],
+ "energy": [
+  "cell"
+ ],
+ "shotgun": [],
+ "musket": [],
+ "launcher": []
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:black_locust_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:black_locust_planks",
+  "count": 4
+ }
+}

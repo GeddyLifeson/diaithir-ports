@@ -41,3 +41,8 @@ All realm blocks and simple items now use generated 64 px textures (tools/realm_
 
 ## Aerial Hell (round 2, 11-03 evening)
 Added as the fifth realm with the same generator (`tools/realms/aerial_hell.*`, ids read from the 0.7.8 NeoForge 26.1.2 jar, no code, art or data copied). Portal: volucite_shard on stellar_portal_frame_block. 50 creatures (shurikens and projectiles left out; they migrate with the item ids), 15 structures, 14 biomes. Age IV is a proposal, not in canon. Slices 4-7 output (mobs, structures, gear, art) come from the generator and are stand-ins like the other realms.
+## Slice 8: loot, gear abilities, sizes
+- Every structure template now holds chests with a per-structure loot table (`<modid>:chests/<structure>`: realm gear, ingots/crystals, vanilla staples; towers and shrines are richer and enchanted).
+- Gear abilities (RealmGear): weapon hits apply an effect picked from the material name (frost slows, ember ignites, rot poisons, honey heals the wielder, cloud lifts, default weakness). A full armour set of one material gives short Resistance when hit and slows the attacker.
+- Per-creature size: scale comes from the creature's id hash (0.8-1.4 monsters, 0.7-1.2 passive, 1.5-2.2 bosses). Hand-modelled bodies are still open.
+- Boss rituals: bosses are tagged `<modid>:bosses` for the diaithir-bosses lane; the rites thread owns the ritual itself.

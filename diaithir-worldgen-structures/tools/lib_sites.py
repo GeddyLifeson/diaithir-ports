@@ -371,10 +371,10 @@ def main():
     seen_b=set(); terra_shapes=collections.Counter()
     for i in range(0,len(rows),900):
         ch=rows[i:i+900]
-        txt={r[0]:r[1] for r in L.execute("select id,summary from entry where id in (%s)"%",".join("?"*len(ch)),[c[0] for c in ch])}
+        txt={r[0]:r[1] for r in L.execute("select id,summary from entry where id in (%s)"%",".join("?"*len(ch)),[c[0][:-5] if c[0].endswith(".site") else c[0] for c in ch])}
         for eid,uni,tier,name,form in ch:
             planet=re.sub(r"[^a-z0-9_]","",uni.lower()); pl=P[planet]; soil=pl["soil"]
-            text=txt[eid]; cls="settlement" if form=="SETTLEMENT" else classify(text); bd=band(tier or 1)
+            text=txt[eid[:-5] if eid.endswith(".site") else eid]; cls="settlement" if form=="SETTLEMENT" else classify(text); bd=band(tier or 1)
             slug=re.sub(r"[^a-z0-9_]","_",eid.lower().split(".",1)[1].replace(planet+".","")) if False else re.sub(r"[^a-z0-9]+","_",eid.lower()).strip("_")
             path=f"lib/{planet}/{slug}"
             target=f"{NS}:lib/bld/{soil.lower()}/{cls}"

@@ -1,0 +1,6 @@
+{
+  "mix_type": "potion",
+  "from": "apothic_attributes:haste",
+  "ingredient": "minecraft:glowstone_dust",
+  "to": "apothic_attributes:strong_haste"
+}

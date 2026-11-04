@@ -1,0 +1,11 @@
+{
+  "tier1": {
+    "age": 5,
+    "items": [
+      "diaithirlogistics:pipe",
+      "diaithirlogistics:sink_pipe",
+      "diaithirlogistics:extractor_pipe",
+      "diaithirlogistics:speed_pipe"
+    ]
+  }
+}

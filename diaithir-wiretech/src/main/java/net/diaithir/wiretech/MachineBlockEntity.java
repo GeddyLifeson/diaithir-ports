@@ -271,6 +271,7 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
     }
 
     private boolean powered(ServerLevel level) {
+        if (!net.diaithir.wiretech.circuit.CircuitBlock.gatesAllow(level, worldPosition)) return false;
         if (redstone == Redstone.IGNORE) return true;
         return (redstone == Redstone.HIGH) == level.hasNeighborSignal(worldPosition);
     }

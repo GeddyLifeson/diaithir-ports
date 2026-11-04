@@ -1,0 +1,31 @@
+{
+ "title": "Hunter's Trial",
+ "category": "example",
+ "description": "Take the trial, prove yourself against the night.",
+ "manual": true,
+ "repeatable": true,
+ "cooldown_seconds": 3600,
+ "min_points": 3,
+ "objectives": [
+  {
+   "type": "kill",
+   "target": "minecraft:skeleton",
+   "amount": 5
+  },
+  {
+   "type": "kill",
+   "target": "minecraft:spider",
+   "amount": 5
+  }
+ ],
+ "rewards": [
+  {
+   "type": "xp",
+   "amount": 200
+  },
+  {
+   "type": "points",
+   "amount": 1
+  }
+ ]
+}

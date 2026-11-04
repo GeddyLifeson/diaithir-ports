@@ -1,0 +1,19 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "assembly",
+  "time_s": 8,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_iron_ball_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_iron_ball_charge",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_iron_ball",
+    "count": 1
+  }
+}

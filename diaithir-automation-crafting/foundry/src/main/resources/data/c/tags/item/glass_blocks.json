@@ -1,0 +1,9 @@
+{
+  "values": [
+    "diaithir_materials:glass_blown",
+    "diaithir_materials:glass_sheet",
+    "diaithir_materials:glass_plate",
+    "diaithir_materials:glass_float",
+    "diaithir_materials:glass_laminated"
+  ]
+}
