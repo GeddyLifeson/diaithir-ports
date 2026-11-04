@@ -1,5 +1,7 @@
 package net.diaithir.druidry.ars.setup.registry;
 
+import net.diaithir.druidry.ars.common.items.data.StarbuncleCharmData;
+import net.diaithir.druidry.ars.common.items.data.PersistentFamiliarData;
 import net.diaithir.druidry.ars.api.spell.SpellCaster;
 import net.diaithir.druidry.ars.common.items.data.*;
 import com.mojang.serialization.Codec;
@@ -16,6 +18,8 @@ public class DataComponentRegistry {
 
 
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<PersistentFamiliarData>> PERSISTENT_FAMILIAR_DATA = DATA.register("persistent_familiar_data", () -> DataComponentType.<PersistentFamiliarData>builder().persistent(PersistentFamiliarData.CODEC.codec()).networkSynchronized(PersistentFamiliarData.STREAM_CODEC).build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<StarbuncleCharmData>> STARBUNCLE_DATA = DATA.register("starbuncle_data", () -> DataComponentType.<StarbuncleCharmData>builder().persistent(StarbuncleCharmData.CODEC.codec()).build());
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<ItemScrollData>> ITEM_SCROLL_DATA = DATA.register("item_scroll_data", () -> DataComponentType.<ItemScrollData>builder().persistent(ItemScrollData.CODEC).networkSynchronized(ItemScrollData.STREAM_CODEC).build());
 
 

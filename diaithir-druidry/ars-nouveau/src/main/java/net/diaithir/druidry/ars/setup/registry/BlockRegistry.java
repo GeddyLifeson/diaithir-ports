@@ -319,6 +319,13 @@ public class BlockRegistry {
         return new BlockRegistryWrapper<>(BLOCKS.register(name, withId(name, blockSupp)));
     }
 
+    public static BlockRegistryWrapper<WixieCauldron> WIXIE_CAULDRON = registerBlockAndItem(LibBlockNames.WIXIE_CAULDRON, WixieCauldron::new);
+    public static BlockEntityTypeRegistryWrapper<WixieCauldronTile> WIXIE_CAULDRON_TYPE = registerTile(LibBlockNames.WIXIE_CAULDRON, WixieCauldronTile::new, WIXIE_CAULDRON);
+    public static BlockRegistryWrapper<DrygmyStone> DRYGMY_BLOCK = registerBlockAndItem(LibBlockNames.DRYGMY_STONE, DrygmyStone::new);
+    public static BlockEntityTypeRegistryWrapper<DrygmyTile> DRYGMY_TILE = registerTile(LibBlockNames.DRYGMY_STONE, DrygmyTile::new, DRYGMY_BLOCK);
+    public static BlockRegistryWrapper<WhirlisprigFlower> WHIRLISPRIG_FLOWER = registerBlockAndItem(LibBlockNames.WHIRLISPRIG_BLOCK, WhirlisprigFlower::new);
+    public static BlockEntityTypeRegistryWrapper<WhirlisprigTile> WHIRLISPRIG_TILE = registerTile(LibBlockNames.WHIRLISPRIG_BLOCK, WhirlisprigTile::new, WHIRLISPRIG_FLOWER);
+
     public static <T extends Block> BlockRegistryWrapper<T> registerBlockAndItem(String name, Supplier<T> blockSupp) {
         BlockRegistryWrapper<T> blockReg = new BlockRegistryWrapper<>(BLOCKS.register(name, withId(name, blockSupp)));
         ItemsRegistry.register(name, () -> getDefaultBlockItem(blockReg.get()));

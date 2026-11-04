@@ -1,0 +1,111 @@
+package net.diaithir.druidry.ars.common.entity.goal.wixie;
+
+import net.diaithir.druidry.ars.api.util.BlockUtil;
+import net.diaithir.druidry.ars.common.block.tile.PotionJarTile;
+import net.diaithir.druidry.ars.common.block.tile.WixieCauldronTile;
+import net.diaithir.druidry.ars.common.entity.EntityFollowProjectile;
+import net.diaithir.druidry.ars.common.entity.EntityWixie;
+import net.diaithir.druidry.ars.common.entity.goal.ExtendedRangeGoal;
+import net.diaithir.druidry.ars.common.network.Networking;
+import net.diaithir.druidry.ars.common.network.PacketAnimEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+
+import java.util.EnumSet;
+
+public class FindPotionGoal extends ExtendedRangeGoal {
+    EntityWixie wixie;
+    BlockPos movePos;
+    boolean found;
+    PotionContents potionNeeded;
+
+    public FindPotionGoal(EntityWixie wixie) {
+        super(15);
+        this.wixie = wixie;
+        this.setFlags(EnumSet.of(Flag.LOOK, Flag.MOVE));
+    }
+
+    @Override
+    public void start() {
+        super.start();
+        BlockEntity tileEntity = wixie.level().getBlockEntity(wixie.cauldronPos);
+        found = false;
+        if (tileEntity instanceof WixieCauldronTile cauldronTile) {
+            potionNeeded = cauldronTile.getNeededPotion();
+            movePos = WixieCauldronTile.findNeededPotion(potionNeeded, 300, wixie.level(), wixie.cauldronPos);
+            this.startDistance = BlockUtil.distanceFrom(wixie.position(), movePos);
+        } else {
+            found = true;
+        }
+
+        if (movePos == null)
+            found = true;
+
+
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (found)
+            return;
+
+        if (movePos != null && BlockUtil.distanceFrom(wixie.position(), movePos.above()) < 2.0 + this.extendedRange) {
+            WixieCauldronTile tile = (WixieCauldronTile) wixie.level().getBlockEntity(wixie.cauldronPos);
+            Level world = wixie.level();
+            if (tile == null) {
+                found = true;
+                return;
+            }
+            PotionJarTile jar = (PotionJarTile) world.getBlockEntity(movePos);
+            if (jar == null) {
+                found = true;
+                return;
+            }
+            jar.remove(300);
+            tile.givePotion();
+            Networking.sendToNearbyClient(world, wixie, new PacketAnimEntity(wixie.getId(), EntityWixie.Animations.SUMMON_ITEM.ordinal()));
+            int color = jar.getColor();
+            int r = (color >> 16) & 0xFF;
+            int g = (color >> 8) & 0xFF;
+            int b = (color) & 0xFF;
+            EntityFollowProjectile aoeProjectile = new EntityFollowProjectile(world, movePos, wixie.cauldronPos, r, g, b);
+
+            world.addFreshEntity(aoeProjectile);
+            found = true;
+
+        }
+
+        if (movePos != null && !found) {
+            setPath(movePos.getX(), movePos.getY() + 1, movePos.getZ(), 1.2D);
+        }
+    }
+
+    @Override
+    public boolean canUse() {
+        if (wixie.cauldronPos == null)
+            return false;
+        BlockEntity tileEntity = wixie.level().getBlockEntity(wixie.cauldronPos);
+
+        return wixie.inventoryBackoff == 0 && tileEntity instanceof WixieCauldronTile cauldronTile
+               && cauldronTile.hasSource && cauldronTile.needsPotion() && !cauldronTile.isOff;
+    }
+
+    @Override
+    public boolean canContinueToUse() {
+        return !found;
+    }
+
+    public void setPath(double x, double y, double z, double speedIn) {
+        wixie.getNavigation().moveTo(wixie.getNavigation().createPath(x + 0.5, y + 0.5, z + 0.5, 0), speedIn);
+    }
+
+    @Override
+    public void stop() {
+        super.stop();
+        potionNeeded = PotionContents.EMPTY;
+        found = false;
+    }
+}

@@ -36,6 +36,11 @@ public class Networking {
         reg.playToClient(PacketUpdateBookGUI.TYPE, PacketUpdateBookGUI.CODEC, Networking::handle);
         reg.playToClient(PacketUpdateMana.TYPE, PacketUpdateMana.CODEC, Networking::handle);
         reg.playToServer(PacketUpdateDominionWand.TYPE, PacketUpdateDominionWand.CODEC, Networking::handle);
+        reg.playToServer(PacketDispelFamiliars.TYPE, PacketDispelFamiliars.CODEC, Networking::handle);
+        reg.playToServer(PacketSummonFamiliar.TYPE, PacketSummonFamiliar.CODEC, Networking::handle);
+        reg.playToServer(PacketSummonLily.TYPE, PacketSummonLily.CODEC, Networking::handle);
+        reg.playToServer(PacketToggleFamiliar.TYPE, PacketToggleFamiliar.CODEC, Networking::handle);
+        reg.playToServer(PacketUnsummonLily.TYPE, PacketUnsummonLily.CODEC, Networking::handle);
         reg.playToServer(PacketCastSpell.TYPE, PacketCastSpell.CODEC, Networking::handle);
     }
 
