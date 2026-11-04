@@ -46,6 +46,12 @@ public final class SelfTest {
         check(new Rule.DurabilityRule(0, 50).test(pick), "durability in range");
         check(!new Rule.DurabilityRule(50, 100).test(pick), "durability out of range");
         check(new Rule.EnchantRule("minecraft:efficiency").test(pick), "enchant");
+        check(new Rule.RegexRule("minecraft:.*pickaxe").test(pick), "regex match");
+        check(!new Rule.RegexRule("minecraft:.*pickaxe").test(dirt), "regex miss");
+        check(!new Rule.RegexRule("(").test(dirt), "bad regex matches nothing");
+        check(new Rule.StackSizeRule(1, 64).test(dirt), "stack size in range");
+        check(!new Rule.StackSizeRule(1, 16).test(dirt), "stack size out of range");
+        check(!new Rule.ComponentRule("minecraft:custom_name").test(dirt), "component absent");
 
         Rule and = new Rule.And(List.of(new Rule.ModRule("minecraft"), new Rule.TagRule("minecraft:pickaxes")));
         check(and.test(pick) && !and.test(dirt), "and");
@@ -56,7 +62,7 @@ public final class SelfTest {
 
         Rule nested = new Rule.And(List.of(or, new Rule.Not(new Rule.ItemRule("create:cogwheel"))));
         check(nested.test(dirt) && !nested.test(modded), "nested");
-        check(nested.depth() == 3 && nested.size() == 7, "depth and size");
+        check(nested.depth() == 3 && nested.size() == 6, "depth and size");
 
         FilterData empty = FilterData.EMPTY;
         check(Filters.matches(empty, dirt), "empty filter passes all");

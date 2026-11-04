@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/ice_box"
+  "layer0": "diaithirfurnishings:item/ice_box_pot"
  }
 }

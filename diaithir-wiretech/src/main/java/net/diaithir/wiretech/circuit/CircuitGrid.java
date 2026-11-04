@@ -47,11 +47,15 @@ public final class CircuitGrid {
         }
         Map<Net.Terminal, Signals> solved = Net.solve(links, outs);
         Map<CircuitNodeBE, Signals> next = new HashMap<>();
-        for (CircuitNodeBE n : nodes) {
-            if (gt % n.tier.period != 0) continue;
-            In in = new In(solved.getOrDefault(new Net.Terminal(n.id(), false, Color.RED), Signals.EMPTY),
-                    solved.getOrDefault(new Net.Terminal(n.id(), false, Color.GREEN), Signals.EMPTY));
-            next.put(n, n.compute(level, in, gt).limited(n.tier.maxValue, n.tier.maxTypes));
+        // Nodes that only compute run first and acting nodes (gate, lamp, speaker) change block state afterwards, so a reader
+        // facing one never depends on iteration order.
+        for (boolean acting : new boolean[]{false, true}) {
+            for (CircuitNodeBE n : nodes) {
+                if (gt % n.tier.period != 0 || n.kind.acts() != acting) continue;
+                In in = new In(solved.getOrDefault(new Net.Terminal(n.id(), false, Color.RED), Signals.EMPTY),
+                        solved.getOrDefault(new Net.Terminal(n.id(), false, Color.GREEN), Signals.EMPTY));
+                next.put(n, n.compute(level, in, gt).limited(n.tier.maxValue, n.tier.maxTypes));
+            }
         }
         next.forEach((n, o) -> n.out = o);
     }

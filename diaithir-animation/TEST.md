@@ -2,7 +2,7 @@
 
 Build: JDK 25, NeoForge 26.1.2.116, PAL 1.2.8+mc.26.1 from Modrinth. `./gradlew compileJava` ok.
 
-Dedicated server (gradle runServer + rcon), mod alone with PAL: boots with no error from the mod. `/animselftest` ok=455 bad=0:
+Dedicated server (gradle runServer + rcon), mod alone with PAL: boots with no error from the mod. `/animselftest, /animplay <clip> and /animgun <action> (op: send a clip to yourself for render tests)` ok=455 bad=0:
 - all four clip files load with PAL's own loader (`UniversalAnimLoader`), every clip has length and bones;
 - every class in `clips.json` has every listed clip; every gun class has hold, aim, fire, reload, dry, inspect, draw, sprint; all 17 own-gun reload clips exist;
 - tag resolution: iron sword/axe/pickaxe/shovel/hoe, bow, crossbow, shield, shears resolve to the right class (vanilla items only; the firearms jar was not loaded).
@@ -20,6 +20,8 @@ Dedicated server with PAL: boots clean, `/animselftest` ok=859 bad=0 (body.json 
 Single-mod client (gradle runClient under Xvfb, llvmpipe, joined the local server as Tester): the `body` PAL layer registers and plays on a real client. Driven by rcon, the log shows first plays of act.hurt (damage), act.fall (tp 150 up), act.tread (water), act.die and act.drop_item (server one-shot packet reached the client). Not tested: the other clips in motion, remote players seeing each other, first-person arms, and how the poses look (no screenshots; angles follow the vanilla ModelPart convention). "done" in ANIMATIONS_COVERAGE.csv means clip plus tag/state exists and loads, same standard as the weapon layer.
 Run: `./gradlew runClient -PjoinArgs="--username Tester --quickPlayMultiplayer 127.0.0.1:25565"` with `runServer` (rcon in run/server.properties).
 
+## Round 2 (effects, projectiles, seats)
+`/animselftest` ok=1695 bad=0: new class reload clips, unjam for all 9 gun classes, seat and cannon clips, projectile look picks (fire, frost, default). Paladins and rogues (26.3 jars) spells: all 309 spell animation ids across every checked jar exist. The particle effects, helix and seat logic compile and load on a dedicated server but have not run on a client.
 ## 3D skin layers
 Server: `/animselftest` ok=867 bad=0, including voxel counts (opaque hat 576 quads, single texel 1 outer + 4 walls, alpha 127 hole, alpha 128 opaque) and the winding of every quad. The first run caught a flipped normal on the top and bottom faces.
 Client (single-mod, Xvfb, llvmpipe): at startup `[skinlayers] verify vs vanilla cube: 0 vertices missing, 0 faces wound differently` (the voxel builder at thickness 0 reproduces every position and uv of vanilla's own ModelPart.Cube). Joining as Tester built the voxel model for the default skin (`noor`, wide) and a third-person screenshot showed the extruded hair and jacket without artifacts. Second round (two headless clients, Tester and Tester2, same server, NeoForge dev clients under Xvfb):

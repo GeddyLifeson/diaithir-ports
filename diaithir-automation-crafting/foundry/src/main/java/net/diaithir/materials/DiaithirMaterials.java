@@ -39,7 +39,7 @@ public final class DiaithirMaterials {
     static {
         for (Materials.Row row : Materials.all()) {
             if (!row.built() || row.id().equals("cement_powder")) continue;
-            DeferredBlock<Block> b = BLOCKS.registerSimpleBlock(row.id(), () -> properties(row));
+            DeferredBlock<Block> b = BLOCKS.registerBlock(row.id(), p -> new MaterialBlock(p, row), () -> properties(row));
             BLOCK_BY_ID.put(row.id(), b);
             BLOCK_ITEM_BY_ID.put(row.id(), ITEMS.registerSimpleBlockItem(b));
         }
@@ -67,6 +67,9 @@ public final class DiaithirMaterials {
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) for (DeferredItem<BlockItem> i : BLOCK_ITEM_BY_ID.values()) e.accept(i.get());
             if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) e.accept(CEMENT_POWDER.get());
+        });
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post.class, e -> {
+            if (e.getEntity() instanceof net.minecraft.server.level.ServerPlayer p) RoadSpeed.tick(p);
         });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> e.getDispatcher().register(Commands.literal(ID)
                 .then(Commands.literal("selftest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {

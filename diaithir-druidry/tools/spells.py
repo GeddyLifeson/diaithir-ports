@@ -187,8 +187,8 @@ def burst(school, n=10, col=None, shape="SPHERE", speed=(0.05, 0.2)):
 SCHOOLS = []
 
 
-def school(key, rod, en, power, focus, blurb):
-    s = dict(key=key, rod=rod, en=en, power=power, focus=focus, blurb=blurb, spells=[])
+def school(key, rod, en, power, focus, blurb, ingots=("bronze", "steel"), ages=("III", "V")):
+    s = dict(key=key, rod=rod, en=en, power=power, focus=focus, blurb=blurb, spells=[], ingots=ingots, ages=ages)
     SCHOOLS.append(s)
     return s
 
@@ -531,3 +531,55 @@ add(m, "molten_rain", "Oiskiliegti", "Molten Rain",
                                                "projectile": {"divergence": 6.0, "client_data": {"travel_particles": trail("fire", 3)}}}},
          impacts=[wrap_impact(dmg(0.75, 0.25), particles=burst("fire", 12)), burn(3)],
          area_impact={"radius": 2.5, "area": {"distance_dropoff": "SQUARED"}}, cd=22.0), "V")
+
+
+# ===== Lietir (Glyph): Age VI. Each spell is one form (self, touch, aim, area, cloud) joined to one effect, after the
+# compose-a-spell idea of glyph magic systems (Ars Nouveau, LGPL, idea only; nothing copied). Names join the school word
+# litir (letter, rune) to the effect word.
+g_ = school("glyph", "Lietirrùan", "Glyph", "arcane", "minecraft:lapis_lazuli",
+            "The letter-makers. Spells are written, not sung: a form and an effect cut into one rune. Silver and steel hold the ink; Age VI.",
+            ingots=("silver", "steel"), ages=("VI", "VI"))
+g = "glyph_self"
+w = "glyph_cast"
+add(g_, "rune_bolt", "Lietirsraudag", "Rune Bolt",
+    "Form aim, effect harm: a rune flies out and passes through one foe for {damage}.",
+    make("arcane", 0, w, rng=34, cast=standard(0.9, CHARGE_ANIM), rel_anim=REL_ANIM,
+         deliver=projectile(1.8, perks={"pierce": 1}, trail=trail("arcane", 3)),
+         impacts=[wrap_impact(dmg(1.1, 0.3), particles=burst("arcane", 10))], cd=5.0), "VI")
+add(g_, "rune_touch", "Lietirlàm", "Rune Touch",
+    "Form touch, effect harm: your hand carries the rune. A short reach strike for {damage} that slows the foe for 3 seconds.",
+    make("arcane", 1, w, rng=4, cast=standard(0.5, AREA_CH), rel_anim=AREA_RL,
+         target={"type": "AIM", "aim": {}},
+         impacts=[wrap_impact(dmg(1.9, 0.5), particles=burst("arcane", 12)), fx("minecraft:slowness", 3, 2)], cd=7.0), "VI")
+add(g_, "rune_mend", "Lietirkàirig", "Rune Mend",
+    "Form self or aim, effect heal: the target regains {heal} health and loses any poison.",
+    make("healing", 2, g, rng=22, cast=standard(1.0, HEAL_CH), rel_anim=HEAL_RL,
+         target={"type": "AIM", "aim": {"use_caster_as_fallback": True}},
+         impacts=[heal(0.9), cleanse()], cd=14.0, kit="healing"), "VI")
+add(g_, "rune_blink", "Lietirpriub", "Rune Blink",
+    "Form self, effect blink: you step 16 blocks ahead along your aim.",
+    make("arcane", 2, g, rng=0, cast=None, target={"type": "CASTER"},
+         impacts=[{"action": {"type": "TELEPORT", "teleport": {"mode": "FORWARD", "forward": {"distance": 16.0}}},
+                   "visuals": {"particles": burst("arcane", 14, shape="PIPE")}, "sound": S("spell_engine:generic_arcane_release")}],
+         cd=12.0), "VI")
+add(g_, "rune_light", "Lietirsoulas", "Rune Light",
+    "Form self, effect light: the rune glows in your eyes and you see in the dark for 2 minutes.",
+    make("arcane", 3, g, rng=0, cast=standard(0.6, HEAL_CH), rel_anim=HEAL_RL, target={"type": "CASTER"},
+         impacts=[fx("minecraft:night_vision", 120, 0)], cd=60.0), "VI")
+add(g_, "rune_pull", "Lietirtarruing", "Rune Pull",
+    "Form area, effect pull: foes within 8 blocks are dragged toward you and take {damage}.",
+    make("arcane", 3, w, rng=8, cast=standard(1.0, AREA_CH), rel_anim=AREA_RL,
+         target={"type": "AREA", "area": {"vertical_range_multiplier": 0.8}},
+         impacts=[dmg(0.45), push("ORIGIN", 0.0, 0.15, -1.2)], cd=16.0), "VI")
+add(g_, "rune_wall", "Lietirbalda", "Rune Wall",
+    "Form self, effect ward: for 20 seconds you take less damage and carry a shield of absorption.",
+    make("arcane", 3, g, rng=0, cast=standard(0.7, HEAL_CH), rel_anim=HEAL_RL, target={"type": "CASTER"},
+         impacts=[fx("minecraft:resistance", 20, 1), fx("minecraft:absorption", 20, 2)], cd=45.0), "VI")
+add(g_, "rune_seal", "Lietirseila", "Rune Seal",
+    "Form cloud, effect bind: a sealed circle settles at the target spot for 8 seconds and holds those inside, slow and weak.",
+    make("arcane", 3, w, rng=24, cast=standard(1.2, GROUND_CH), rel_anim=AREA_RL,
+         target={"type": "AIM", "aim": {}},
+         deliver={"type": "CLOUD", "clouds": [{"volume": {"radius": 3.5, "area": {"vertical_range_multiplier": 0.5}},
+                                               "time_to_live_seconds": 8.0, "impact_tick_interval": 10,
+                                               "placement": {"force_onto_ground": True}, "spawn": {}}]},
+         impacts=[dmg(0.2), fx("minecraft:slowness", 2, 2), fx("minecraft:weakness", 2, 1)], cd=24.0), "VI")

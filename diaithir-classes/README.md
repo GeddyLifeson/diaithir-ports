@@ -12,3 +12,5 @@ Clean-room class kits for the Diaithir pack. Replaces the all-rights-reserved Pa
 
 ## Crafting stations
 Grid recipes are gone: every gear recipe is an Age station recipe in `data/<ns>/diaithir_stations/station_recipe/` (hearth bench I-II, wright bench III-IV, steam forge V, assembler VI-VII, fabricator VIII+; framework in diaithir-automation-crafting/foundry). After `tools/gen.py` rewrites grid recipes, run `python3 -I ../diaithir-automation-crafting/foundry/tools/recipes_to_stations.py .` from this folder.
+## Class skill trees (survey part 2, clean-room)
+`net.diaithir.classes.tree`: eight nodes per class (fian, sleagh, ceilg, cleirech) in `data/diaithir_classes/skill_trees.json`. One point per experience level gained; `/skills class <name>`, `/skills show`, `/skills unlock <node>`, `/skills reset`, `/skills give <player> <n>` (ops). Nodes are permanent attribute modifiers, re-applied on login, respawn and clone; state is world SavedData. Ceilg nodes use `diaithircombat:crit_chance` and `crit_damage` and are skipped when that mod is absent.

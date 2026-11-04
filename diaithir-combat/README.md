@@ -42,3 +42,4 @@ Every WEAPON and ARMOR entry of the Panscriptum (99,823) is the same few items p
 - **Status build-up** (`Buildup`): hits fill a per-kind meter (bleeding for edged weapons, poison for spiders and bees, burning, freezing, shock, stagger for blunt weapons); it drains 5 per second and a full 100 fires a vanilla effect. Reference: Overhauled Damage (MIT, not copied).
 - **Mounted charge** (`Lance`): a rider with a lance, spear, halberd or pike adds damage with closing speed (up to x3.5). Reference: Jousting (all rights reserved, not read).
 Test: `/combatsurveytest`.
+- `Styles`: crit_chance and crit_damage player attributes (Critical Strike behaviour) and weapon styles from Epic Fight's weapon categories: dagger backstab x1.5, rapier +10% crit, katana bleed, warhammer stagger, glaive/halberd cleave to a second foe. Clean-room.

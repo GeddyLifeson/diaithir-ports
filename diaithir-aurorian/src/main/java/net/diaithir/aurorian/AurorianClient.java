@@ -33,6 +33,18 @@ final class AurorianClient {
         e.registerEntityRenderer((EntityType) AurorianMobs.TYPES.get("dungeon_slime").get(), ctx -> new SlimeRenderer(ctx) {
             @Override public Identifier getTextureLocation(SlimeRenderState s) { return slime; }
         });
+        for (var pair : java.util.List.of(java.util.Map.entry(AurorianProjectiles.CERULEAN, "cerulean_arrow"), java.util.Map.entry(AurorianProjectiles.CRYSTAL, "crystal_arrow"))) {
+            Identifier at = tex(pair.getValue());
+            e.registerEntityRenderer((EntityType) pair.getKey().get(), ctx -> new net.minecraft.client.renderer.entity.ArrowRenderer<>(ctx) {
+                @Override protected Identifier getTextureLocation(net.minecraft.client.renderer.entity.state.ArrowRenderState s) { return at; }
+                @Override public net.minecraft.client.renderer.entity.state.ArrowRenderState createRenderState() { return new net.minecraft.client.renderer.entity.state.ArrowRenderState(); }
+            });
+        }
+        Identifier beam = tex("crystalline_beam");
+        e.registerEntityRenderer((EntityType) AurorianProjectiles.BEAM.get(), ctx -> new net.minecraft.client.renderer.entity.ArrowRenderer<>(ctx) {
+            @Override protected Identifier getTextureLocation(net.minecraft.client.renderer.entity.state.ArrowRenderState s) { return beam; }
+            @Override public net.minecraft.client.renderer.entity.state.ArrowRenderState createRenderState() { return new net.minecraft.client.renderer.entity.state.ArrowRenderState(); }
+        });
         e.registerEntityRenderer((EntityType) AurorianMobs.TYPES.get("dungeon_keeper").get(), ctx -> new SkeletonRenderer(ctx) {
             @Override public Identifier getTextureLocation(SkeletonRenderState s) { return keeper; }
         });

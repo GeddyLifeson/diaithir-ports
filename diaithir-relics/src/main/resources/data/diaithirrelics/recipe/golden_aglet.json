@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " I ",
+  "IGI",
+  " I "
+ ],
+ "key": {
+  "G": "minecraft:gold_ingot",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "diaithirrelics:golden_aglet",
+  "count": 1
+ }
+}
