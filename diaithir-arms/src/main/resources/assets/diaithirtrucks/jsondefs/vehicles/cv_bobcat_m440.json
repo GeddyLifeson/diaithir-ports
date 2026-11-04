@@ -120,17 +120,6 @@
    "maxValue": 10.0
   }
  ],
- "collision": [
-  {
-   "pos": [
-    0,
-    1.975,
-    0
-   ],
-   "width": 2.2,
-   "height": 3.35
-  }
- ],
  "definitions": [
   {
    "subName": "",
@@ -217,5 +206,28 @@
   "axleRatio": 3.6,
   "dragCoefficient": 0.8,
   "isBigTruck": true
- }
+ },
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.975,
+      0
+     ],
+     "width": 2.2,
+     "height": 3.35
+    }
+   ]
+  }
+ ]
 }

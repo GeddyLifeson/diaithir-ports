@@ -201,17 +201,6 @@
    "maxValue": 10.0
   }
  ],
- "collision": [
-  {
-   "pos": [
-    0,
-    1.15,
-    0
-   ],
-   "width": 2.7,
-   "height": 2.3
-  }
- ],
  "definitions": [
   {
    "subName": "",
@@ -223,5 +212,28 @@
    ]
   }
  ],
- "rendering": {}
+ "rendering": {},
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.15,
+      0
+     ],
+     "width": 2.7,
+     "height": 2.3
+    }
+   ]
+  }
+ ]
 }
