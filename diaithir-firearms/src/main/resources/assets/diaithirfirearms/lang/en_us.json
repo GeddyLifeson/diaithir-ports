@@ -371,5 +371,8 @@
  "item.diaithirfirearms.ammo_408_cheytac": ".408 CheyTac Round",
  "item.diaithirfirearms.ammo_40_sw": ".40 S&W Round",
  "item.diaithirfirearms.ammo_30x29_grenade": "30x29 mm Grenade",
- "item.diaithirfirearms.ammo_40x53_grenade": "40x53 mm Grenade"
+ "item.diaithirfirearms.ammo_40x53_grenade": "40x53 mm Grenade",
+ "item.diaithirfirearms.ammo_box": "Ammo Box",
+ "diaithirfirearms.box.empty": "Empty (holds %s rounds of one kind). Use with rounds in the other hand to load.",
+ "diaithirfirearms.box.holds": "%s / %s %s"
 }

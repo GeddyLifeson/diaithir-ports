@@ -32,6 +32,9 @@ public final class DiaithirFirearms {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> MAG =
             COMPONENTS.registerComponentType("mag", b -> b.persistent(Codec.INT).networkSynchronized(ByteBufCodecs.VAR_INT));
     /** Installed attachment item ids (without namespace). */
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<AmmoBox.Content>> BOX =
+            COMPONENTS.registerComponentType("box", b -> b.persistent(AmmoBox.Content.CODEC).networkSynchronized(AmmoBox.Content.STREAM));
+
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<List<String>>> ATT =
             COMPONENTS.registerComponentType("att", b -> b.persistent(Codec.STRING.listOf()).networkSynchronized(ByteBufCodecs.STRING_UTF8.apply(ByteBufCodecs.list())));
 
@@ -51,6 +54,7 @@ public final class DiaithirFirearms {
         for (String a : Defs.ATTS.keySet()) ALL.add(ITEMS.registerSimpleItem(a));
         for (String id : EXTRA) ALL.add(ITEMS.registerSimpleItem(id));
         for (String id : Defs.AMMO) ALL.add(ITEMS.registerSimpleItem(id));
+        ALL.add(ITEMS.registerItem("ammo_box", AmmoBox::new, () -> new Item.Properties().stacksTo(1)));
         ITEMS.register(bus);
         COMPONENTS.register(bus);
         SOUNDS.register(bus);
