@@ -56,7 +56,7 @@ public final class FreightTest {
         BlockPos at = new BlockPos(level.getRespawnData().pos().getX() + 10, 240, level.getRespawnData().pos().getZ() + 10);
         for (int cx = (at.getX() - 8) >> 4; cx <= (at.getX() + 40) >> 4; cx++)
             for (int cz = (at.getZ() - 8) >> 4; cz <= (at.getZ() + 20) >> 4; cz++) level.getChunk(cx, cz);
-        BlockPos hi = at.offset(40, 6, 14), lo = at.offset(-6, -1, -6);
+        BlockPos hi = at.offset(40, 8, 14), lo = at.offset(-6, -1, -6);
         BlockPos.betweenClosedStream(lo, hi).forEach(p -> level.setBlock(p, Blocks.AIR.defaultBlockState(), 2 | 16));
 
         Direction f = Direction.EAST;
@@ -162,7 +162,7 @@ public final class FreightTest {
         level.setBlock(riftB, Freight.RIFT_DOCK.get().defaultBlockState(), 3);
         check(level.getCapability(Capabilities.Item.BLOCK, riftB, null) != null, "rift dock B serves the container at A");
         check(level.getBlockEntity(riftB) instanceof DockBlockEntity b && b.cycleChannel(1) == 2, "channel cycles");
-        check(level.getCapability(Capabilities.Item.BLOCK, riftB, null) == null, "other channel has no partner");
+        { ResourceHandler<ItemResource> none = level.getCapability(Capabilities.Item.BLOCK, riftB, null); check(none == null || none.size() == 0, "other channel has no partner"); }
 
         // tank
         LoadType tank = LoadType.byId("tank_20");
@@ -180,6 +180,16 @@ public final class FreightTest {
             try (Transaction tx = Transaction.openRoot()) { fh.extract(FluidResource.of(Fluids.WATER), 5_000, tx); tx.commit(); }
             check(Containers.lift(level, tpos, 100_000, false).result() == Containers.Result.OK, "empty tank lifts");
         }
+
+        // stacked boxes: a cell of the lower one next to the upper one's core still belongs to the lower one
+        BlockPos lowerAt = at.offset(34, 0, 0), upperAt = lowerAt.above(4);
+        check(Containers.deploy(level, t20, lowerAt, Direction.EAST, BayData.EMPTY) == Containers.Result.OK
+                && Containers.deploy(level, t20, upperAt, Direction.EAST, BayData.EMPTY) == Containers.Result.OK, "deploy two stacked containers");
+        ContainerCoreEntity low = Containers.find(level, Containers.cell(lowerAt, Direction.EAST, 0, 3, 0));
+        ContainerCoreEntity up = Containers.find(level, Containers.cell(upperAt, Direction.EAST, 0, 0, 1));
+        check(low != null && low.getBlockPos().equals(lowerAt), "top cell of the lower box finds the lower core");
+        check(up != null && up.getBlockPos().equals(upperAt), "bottom cell of the upper box finds the upper core");
+        check(Containers.deploy(level, t20, at.offset(0, 400, 0), Direction.EAST, BayData.EMPTY) == Containers.Result.BLOCKED, "deploy above the build height is refused");
 
         BlockPos.betweenClosedStream(lo, hi).forEach(p -> level.setBlock(p, Blocks.AIR.defaultBlockState(), 2 | 16));
         return fails.isEmpty() ? null : String.join("; ", fails);

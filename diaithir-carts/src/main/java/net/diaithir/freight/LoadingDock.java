@@ -10,6 +10,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -49,6 +51,12 @@ public final class LoadingDock extends Block implements EntityBlock {
             player.sendOverlayMessage(Component.literal("Rift channel " + be.cycleChannel(player.isShiftKeyDown() ? -1 : 1)));
         }
         return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public <T extends BlockEntity> @Nullable BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        if (level.isClientSide() || type != Freight.DOCK_BE.get()) return null;
+        return (l, pos, st, be) -> ((DockBlockEntity) be).serverTick();
     }
 
     @Override protected boolean hasAnalogOutputSignal(BlockState state) { return true; }

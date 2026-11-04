@@ -63,7 +63,10 @@ public final class Containers {
         for (int i = 0; i < t.w(); i++)
             for (int j = 0; j < t.h(); j++)
                 for (int k = 0; k < t.l(); k++)
-                    if (!level.getBlockState(cell(origin, facing, i, j, k)).canBeReplaced()) return Result.BLOCKED;
+                {
+                    BlockPos c = cell(origin, facing, i, j, k);
+                    if (level.isOutsideBuildHeight(c) || !level.getWorldBorder().isWithinBounds(c) || !level.getBlockState(c).canBeReplaced()) return Result.BLOCKED;
+                }
         Paint paint = Paint.of(t);
         for (int i = 0; i < t.w(); i++)
             for (int j = 0; j < t.h(); j++)
@@ -100,18 +103,30 @@ public final class Containers {
         ArrayDeque<BlockPos> todo = new ArrayDeque<>();
         todo.add(from);
         seen.add(from);
-        while (!todo.isEmpty() && seen.size() < 400) {
+        while (!todo.isEmpty() && seen.size() < 1024) {
             BlockPos p = todo.poll();
             if (!level.isLoaded(p)) continue;
             BlockState s = level.getBlockState(p);
             if (!isShell(s.getBlock())) continue;
-            if (s.getBlock() instanceof ContainerCore && level.getBlockEntity(p) instanceof ContainerCoreEntity c) return c;
+            if (s.getBlock() instanceof ContainerCore && level.getBlockEntity(p) instanceof ContainerCoreEntity c && owns(c, from)) return c;
             for (Direction d : Direction.values()) {
                 BlockPos n = p.relative(d);
-                if (seen.add(n)) todo.add(n);
+                if (level.isLoaded(n) && isShell(level.getBlockState(n).getBlock()) && seen.add(n)) todo.add(n);
             }
         }
         return null;
+    }
+
+    /** True when {@code p} lies inside the box of this container, so touching or stacked containers are told apart. */
+    private static boolean owns(ContainerCoreEntity c, BlockPos p) {
+        LoadType t = c.type();
+        if (t == null) return false;
+        Direction f = c.facing(), r = f.getClockWise();
+        BlockPos d = p.subtract(c.getBlockPos());
+        int k = d.getX() * f.getStepX() + d.getZ() * f.getStepZ();
+        int i = d.getX() * r.getStepX() + d.getZ() * r.getStepZ();
+        int j = d.getY();
+        return i >= 0 && i < t.w() && j >= 0 && j < t.h() && k >= 0 && k < t.l();
     }
 
     /** First container found by walking up to {@code reach} cells from {@code from} along {@code dir}: what a dock faces. */

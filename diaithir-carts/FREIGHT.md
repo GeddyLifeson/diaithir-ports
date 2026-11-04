@@ -22,11 +22,12 @@ Nothing here opens a storage screen on a container or trailer. A container is a 
 | container_40 | 4x4x13 | 2x2x11 | 3,800 | 26,680 | VI |
 | reefer_20 / _40 | 4x4x7 / 13 | 2x2x4 / 10 | 3,000 / 4,800 | 27,480 / 25,680 | VI |
 | tank_20 | 4x4x7 | 26,000 L | 3,700 | 32,300 | VI |
+
 Containers are drawn larger than real (a 1 m grid), so a player can walk in. Items weigh 0.25 kg each.
 
 ## The one interface for everything else
 Everything uses NeoForge's own item and fluid handlers, so storage cables, hoppers, pipes and depot workers need no special code.
-- **Loading dock** (Age V): stands up to three blocks from a container, facing it, and offers all the container's loads as one item handler (and the tank's fluid handler). The storage network (diaithir-storagenet) picks it up like any inventory. The comparator reads how full the container is, for the circuit network.
+- **Loading dock** (Age V): stands up to three blocks from a container, facing it, and offers all the container's loads as one item handler (and the tank's fluid handler). The storage network (diaithir-storagenet) picks it up like any inventory. The handler looks at what is ahead on every call, so cables that cache it stay correct as containers arrive and leave. The comparator reads how full the container is, for the circuit network.
 - **Rift dock** (Age VIII): serves the container at its partner, any other rift dock on the same channel (1 to 64, bare hand cycles) in any dimension. Load at one end, unload at the other. This is how later-Age interdimensional shipping plugs into the same handlers.
 - **Lift and lower** (for cranes #206, forklifts, trucks #210, rolling stock, ships #216, depot workers): `Containers.lift(level, pos, liftKg, simulate)` returns `Result.OK` and the item, `TOO_HEAVY` over the lifter's rating, `NOT_EMPTY` for a tank with fluid. `Containers.lower(level, stack, origin, facing)` sets it down. The cargo hook (Age VI, 35 t) does it by hand.
 - **Vehicle bays** (`CargoCarrier`): a trailer, truck bed, flatcar, wagon, ship hold or depot floor implements `CargoCarrier` (its `CargoBay`, `columnAt(worldPoint)`, `changed()`) and offers it through the entity capability `Freight.CARRIER`; carriers that are not entities add a finder to `Carriers.SOURCES`. Then everything works with no more code: `Carriers.put(carrier, stack, x, z)` / `takeTop` load and unload a pallet, barrel, chest, crate or container item (the load goes on the aimed column and stays; containers stack to the ISO limit); a player right-clicks the carrier with a load, or sneaks with an empty hand to take the top load; docks facing a carrier serve every load on it (container interiors included) through the same item handler. Walkable decks stay with the vehicle thread.

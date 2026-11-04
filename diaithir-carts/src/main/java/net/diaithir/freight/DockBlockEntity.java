@@ -3,11 +3,14 @@ package net.diaithir.freight;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.neoforged.neoforge.transfer.DelegatingResourceHandler;
 import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.fluid.FluidStacksResourceHandler;
 import net.neoforged.neoforge.transfer.fluid.FluidResource;
 import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
@@ -73,14 +76,37 @@ public final class DockBlockEntity extends BlockEntity {
         return k == null ? null : Carriers.view(k);
     }
 
-    public @Nullable ResourceHandler<ItemResource> items() {
-        Container v = view();
-        return v == null ? null : VanillaContainerWrapper.of(v);
-    }
+    private static final ResourceHandler<ItemResource> NO_ITEMS = VanillaContainerWrapper.of(new SimpleContainer(0));
+    private static final ResourceHandler<FluidResource> NO_FLUID = new FluidStacksResourceHandler(0, 0);
 
-    public @Nullable ResourceHandler<FluidResource> fluids() {
+    /**
+     * Handlers resolve what is ahead on every call, never once. A cable that caches the handler keeps working as containers arrive, leave or are
+     * emptied, and cannot extract from a load that has gone.
+     */
+    private final ResourceHandler<ItemResource> liveItems = new DelegatingResourceHandler<>(() -> {
+        Container v = view();
+        return v == null ? NO_ITEMS : VanillaContainerWrapper.of(v);
+    });
+    private final ResourceHandler<FluidResource> liveFluid = new DelegatingResourceHandler<>(() -> {
         ContainerCoreEntity c = container();
-        return c == null ? null : c.tank();
+        ResourceHandler<FluidResource> t = c == null ? null : c.tank();
+        return t == null ? NO_FLUID : t;
+    });
+
+    public ResourceHandler<ItemResource> items() { return liveItems; }
+
+    public ResourceHandler<FluidResource> fluids() { return liveFluid; }
+
+    private int lastSignal = -1;
+
+    /** Comparator output follows the cargo: checked once a second, neighbours told when it changes. */
+    public void serverTick() {
+        if (level == null || (level.getGameTime() + worldPosition.asLong()) % 20 != 0) return;
+        int now = fillSignal();
+        if (now != lastSignal) {
+            lastSignal = now;
+            level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());
+        }
     }
 
     /** 0 to 15: share of the container's item slots that hold something. */
