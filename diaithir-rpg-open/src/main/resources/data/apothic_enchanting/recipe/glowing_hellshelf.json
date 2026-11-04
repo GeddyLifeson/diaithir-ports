@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "G": "minecraft:glowstone",
+        "I": "apothic_enchanting:infused_hellshelf"
+    },
+    "pattern": [
+        " G ",
+        " I ",
+        "G G"
+    ],
+    "result": {
+        "id": "apothic_enchanting:glowing_hellshelf"
+    }
+}

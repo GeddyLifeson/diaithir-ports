@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,lit=false": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader"
+    },
+    "facing=east,lit=false": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader",
+      "y": 90
+    },
+    "facing=south,lit=false": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader",
+      "y": 180
+    },
+    "facing=west,lit=false": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader",
+      "y": 270
+    },
+    "facing=north,lit=true": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader"
+    },
+    "facing=east,lit=true": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader",
+      "y": 90
+    },
+    "facing=south,lit=true": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader",
+      "y": 180
+    },
+    "facing=west,lit=true": {
+      "model": "diaithir_wiretech:block/mechanical_circuit_reader",
+      "y": 270
+    }
+  }
+}

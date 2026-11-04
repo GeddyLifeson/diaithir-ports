@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:european_larch_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:european_larch_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,15 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 14,
+  "ingredients": [
+    {
+      "item": "minecraft:redstone",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_he_shell_fuze",
+    "count": 1
+  }
+}

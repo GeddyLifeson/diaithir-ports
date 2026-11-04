@@ -1,0 +1,22 @@
+{
+ "station": "station.steam_forge",
+ "stage": "part",
+ "time_s": 10,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 12
+  },
+  {
+   "item": "minecraft:iron_chain",
+   "count": 2
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:bogie_light_xs",
+  "count": 1
+ },
+ "power": "steam",
+ "w": 20000
+}

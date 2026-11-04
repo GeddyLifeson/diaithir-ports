@@ -1,0 +1,16 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "minecraft:carrot",
+    "max_requirements": {
+        "arcana": -1.0,
+        "eterna": 20.0,
+        "quanta": 30.0
+    },
+    "requirements": {
+        "eterna": 20.0,
+        "quanta": 10.0
+    },
+    "result": {
+        "id": "minecraft:golden_carrot"
+    }
+}

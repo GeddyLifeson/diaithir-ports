@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SPS",
+    "PCP",
+    "SPS"
+  ],
+  "key": {
+    "S": "minecraft:stick",
+    "P": "minecraft:oak_planks",
+    "C": "minecraft:compass"
+  },
+  "result": {
+    "id": "vs_yard:helm_kit",
+    "count": 1
+  }
+}
