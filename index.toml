@@ -67350,16 +67350,8 @@ file = "kubejs/data/silentgems/loot_table/blocks/silver_ore.json"
 hash = "7dea23364114ab02a7202a958a9c0ca9561e54518d70a4225a742d225fcdf660"
 
 [[files]]
-file = "kubejs/data/stellaris/loot_table/blocks/coal_generator.json"
-hash = "5080f5b0b6882fa5d99677d64fbcdf2785ec5f169dbe5bb19b5a7526b2606145"
-
-[[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/deepslate_titanium_ore.json"
 hash = "b61e3f99832f894a869735855472bd66e92d1c27e4390bce74f9289085092f4f"
-
-[[files]]
-file = "kubejs/data/stellaris/loot_table/blocks/diesel_generator.json"
-hash = "30293554d8d11b9ae0b82b3117b38d2d87f1cde4914a365faaa59f247c67efcf"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/moon_titanium_ore.json"
@@ -68586,7 +68578,7 @@ hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
+hash = "966b8906e6a03e4090af1eb521429aeea6c8d2ef2f621e805c18448b80a06020"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68636,7 +68628,7 @@ hash = "df010dae61b362a2c4a68345c146582d1ceb0b04b0b5c9989be6b2618aa2e244"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "6b5193bce5b4efebdaec0a43353894aa7bb34a6a0601fb6444122f2dfb797b6b"
+hash = "32510ad7e76dab9c14a9b660d6e4fb3802b381ef65babd55999969bf4b99163f"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
