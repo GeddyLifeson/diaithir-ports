@@ -36,6 +36,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     val def: YardDef? get() = YardRegistry.yard(yardId).orElse(null)
 
     fun chooseYard(id: String): Boolean {
+        if (rawSaved != null) return false // a retained unresolved build is only dropped by discardSaved()
         val d = YardRegistry.yard(id).orElse(null) ?: return false
         yardId = id
         rawSaved = null
@@ -56,8 +57,20 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         return st.slots().all { freeSlots(it.kind()) <= 0 }
     }
 
+    val holdsSavedBuild: Boolean get() = rawSaved != null
+
+    /** Explicit player action: drops a retained build whose yard or parts are not loaded. */
+    fun discardSaved() {
+        rawSaved = null; build = null; log.clear(); placedBlocks.clear(); yardId = ""; setChanged()
+    }
+
     /** Empty-hand use: picks a yard type when idle, launches when complete, else reports status. */
     fun onUse(sneak: Boolean): String {
+        if (rawSaved != null) {
+            if (!sneak) return "This slipway holds a saved build whose yard or parts are not loaded. Sneak-use with an empty hand to discard it."
+            discardSaved()
+            return "Saved build discarded."
+        }
         val b = build
         if (b == null || (sneak && b.stageIndex() == 0 && log.isEmpty())) {
             val ids = YardData.yardIds()

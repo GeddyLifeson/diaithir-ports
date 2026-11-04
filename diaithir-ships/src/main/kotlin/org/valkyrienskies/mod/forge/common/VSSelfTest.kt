@@ -152,6 +152,12 @@ object VSSelfTest {
         val victim = hull.first { level.getBlockState(it).block == Blocks.OAK_PLANKS }
         level.setBlock(victim, Blocks.DIRT.defaultBlockState(), 3)
         log.info("selftest-yard-obstruct: hull {} -> {} after replacing one block, missing={}, launch={}", hull.size, be.hullBlocks().size, be.missingCells().size, be.launch())
+        // retained unresolved build: selection refuses, sneak-use discards, then selection works again
+        val f = be.javaClass.getDeclaredField("rawSaved"); f.isAccessible = true
+        f.set(be, Triple(mapOf("Yard" to "gone:yard", "Placed" to "", "Log" to ""), 2, 5))
+        val refused = !be.chooseYard("vs_yard:motor_launch_slipway_water") && be.onUse(false).startsWith("This slipway holds") && be.holdsSavedBuild
+        val discarded = be.onUse(true) == "Saved build discarded." && !be.holdsSavedBuild
+        log.info("selftest-yard-retained: refused={} discarded={} reselect={}", refused, discarded, be.chooseYard("vs_yard:motor_launch_slipway_water"))
     }
 
     private fun yardRun(level: net.minecraft.server.level.ServerLevel, yardName: String, ox: Int, prefer: String? = null) {
