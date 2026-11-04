@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirportable"
+version = "${version}"
+displayName = "Diaithir Portable"
+description = "Tiered storage blocks, backpacks with upgrades, and a bottomless single-item portable store. Clean-room original."
+
+[[dependencies.diaithirportable]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
