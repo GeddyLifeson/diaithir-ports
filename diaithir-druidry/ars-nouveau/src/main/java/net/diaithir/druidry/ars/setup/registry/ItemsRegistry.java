@@ -1,6 +1,11 @@
 package net.diaithir.druidry.ars.setup.registry;
 
 import net.diaithir.druidry.ars.api.ArsNouveauAPI;
+import net.minecraft.world.item.SpawnEggItem;
+import net.diaithir.druidry.ars.common.items.WixieHat;
+import net.diaithir.druidry.ars.common.items.StarbuncleShades;
+import net.diaithir.druidry.ars.common.items.StarbuncleShard;
+import net.diaithir.druidry.ars.common.items.summon_charms.*;
 import net.diaithir.druidry.ars.api.familiar.AbstractFamiliarHolder;
 import net.diaithir.druidry.ars.api.perk.IPerk;
 import net.diaithir.druidry.ars.api.registry.FamiliarRegistry;
@@ -150,6 +155,21 @@ public class ItemsRegistry {
     public static final ItemRegistryWrapper<CasterTome> CASTER_TOME = register(LibItemNames.CASTER_TOME, CasterTome::new);
     public static final ItemRegistryWrapper<ManipulationEssence> MANIPULATION_ESSENCE = register(LibItemNames.MANIPULATION_ESSENCE, ManipulationEssence::new);
     public static final ItemRegistryWrapper<StableWarpScroll> STABLE_WARP_SCROLL = register(LibItemNames.STABLE_WARP_SCROLL, () -> new StableWarpScroll(defaultItemProperties().stacksTo(1)));
+
+    public static final ItemRegistryWrapper<StarbuncleCharm> STARBUNCLE_CHARM = register(LibItemNames.STARBUNCLE_CHARM, StarbuncleCharm::new);
+    public static final ItemRegistryWrapper<StarbuncleShard> STARBUNCLE_SHARD = register(LibItemNames.STARBUNCLE_SHARDS, StarbuncleShard::new);
+    public static final ItemRegistryWrapper<StarbuncleShades> STARBUNCLE_SHADES = register(LibItemNames.STARBUNCLE_SHADES, StarbuncleShades::new);
+    public static final ItemRegistryWrapper<WhirlisprigCharm> WHIRLISPRIG_CHARM = register(LibItemNames.WHIRLISPRIG_CHARM, WhirlisprigCharm::new);
+    public static final ItemRegistryWrapper<WixieCharm> WIXIE_CHARM = register(LibItemNames.WIXIE_CHARM, WixieCharm::new);
+    public static final ItemRegistryWrapper<DrygmyCharm> DRYGMY_CHARM = register(LibItemNames.DRYGMY_CHARM, DrygmyCharm::new);
+    public static final ItemRegistryWrapper<AmethystGolemCharm> AMETHYST_GOLEM_CHARM = register(LibItemNames.AMETHYST_GOLEM_CHARM, AmethystGolemCharm::new);
+    public static final ItemRegistryWrapper<ModItem> WIXIE_HAT = register(LibItemNames.WIXIE_HAT, () -> new WixieHat().withTooltip("tooltip.ars_nouveau.wixie_hat"));
+    public static final ItemRegistryWrapper<SpawnEggItem> DRYGMY_SE = register(LibItemNames.DRYGMY_SE, () -> new SpawnEggItem(defaultItemProperties().spawnEgg(ModEntities.ENTITY_DRYGMY.get())));
+    public static final ItemRegistryWrapper<SpawnEggItem> STARBUNCLE_SE = register(LibItemNames.STARBUNCLE_SE, () -> new SpawnEggItem(defaultItemProperties().spawnEgg(ModEntities.STARBUNCLE_TYPE.get())));
+    public static final ItemRegistryWrapper<SpawnEggItem> SYLPH_SE = register(LibItemNames.SYLPH_SE, () -> new SpawnEggItem(defaultItemProperties().spawnEgg(ModEntities.WHIRLISPRIG_TYPE.get())));
+    public static final ItemRegistryWrapper<SpawnEggItem> WILDEN_HUNTER_SE = register(LibItemNames.WILDEN_HUNTER_SE, () -> new SpawnEggItem(defaultItemProperties().spawnEgg(ModEntities.WILDEN_HUNTER.get())));
+    public static final ItemRegistryWrapper<SpawnEggItem> WILDEN_GUARDIAN_SE = register(LibItemNames.WILDEN_GUARDIAN_SE, () -> new SpawnEggItem(defaultItemProperties().spawnEgg(ModEntities.WILDEN_GUARDIAN.get())));
+    public static final ItemRegistryWrapper<SpawnEggItem> WILDEN_STALKER_SE = register(LibItemNames.WILDEN_STALKER_SE, () -> new SpawnEggItem(defaultItemProperties().spawnEgg(ModEntities.WILDEN_STALKER.get())));
 
     public static <T extends Item> ItemRegistryWrapper<T> register(String name, Supplier<T> item) {
         return new ItemRegistryWrapper<>(ITEMS.register(name, () -> {

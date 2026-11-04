@@ -1,0 +1,96 @@
+package net.diaithir.druidry.ars.common.entity.goal;
+
+import net.diaithir.druidry.ars.common.entity.Starbuncle;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.EntitySelector;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.ai.util.DefaultRandomPos;
+import net.minecraft.world.level.pathfinder.Path;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+
+import java.util.EnumSet;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class AvoidEntityGoalMC<T extends LivingEntity> extends Goal {
+    protected final Starbuncle mob;
+    private final double sprintSpeedModifier;
+    protected T toAvoid;
+    protected final float maxDist;
+    protected Path path;
+    protected final PathNavigation pathNav;
+    protected final Class<T> avoidClass;
+    protected final Predicate<LivingEntity> avoidPredicate;
+
+    private final TargetingConditions avoidEntityTargeting;
+
+    public AvoidEntityGoalMC(Starbuncle carby, Class<T> avoidClass, float maxDist, double sprintModifier) {
+        this(carby, avoidClass, (p_200828_0_) -> true, maxDist, sprintModifier, EntitySelector.NO_CREATIVE_OR_SPECTATOR::test);
+    }
+
+    public AvoidEntityGoalMC(Starbuncle carby, Class<T> avoidClass, Predicate<LivingEntity> avoidPredicate, float maxDist, double sprintModifier, Predicate<LivingEntity> selectPredicate) {
+        this.mob = carby;
+        this.avoidClass = avoidClass;
+        this.avoidPredicate = avoidPredicate;
+        this.maxDist = maxDist;
+        this.sprintSpeedModifier = sprintModifier;
+        this.pathNav = carby.getNavigation();
+        this.setFlags(EnumSet.of(Goal.Flag.MOVE));
+        final Predicate<LivingEntity> combined = selectPredicate.and(avoidPredicate);
+        this.avoidEntityTargeting = (TargetingConditions.forCombat().range(maxDist).selector((entity, level) -> combined.test(entity)));
+    }
+
+    public boolean canUse() {
+        if (!(this.mob.level() instanceof ServerLevel serverLevel)) {
+            return false;
+        }
+        AABB box = this.mob.getBoundingBox().inflate(this.maxDist, 3.0D, this.maxDist);
+        List<T> candidates = serverLevel.getEntitiesOfClass(this.avoidClass, box, e -> true);
+        T best = null;
+        double bestDist = Double.MAX_VALUE;
+        for (T candidate : candidates) {
+            if (!this.avoidEntityTargeting.test(serverLevel, this.mob, candidate)) {
+                continue;
+            }
+            double d = candidate.distanceToSqr(this.mob.getX(), this.mob.getY(), this.mob.getZ());
+            if (d < bestDist) {
+                bestDist = d;
+                best = candidate;
+            }
+        }
+        this.toAvoid = best;
+        if (this.toAvoid == null) {
+            return false;
+        } else {
+            Vec3 vector3d = DefaultRandomPos.getPosAway(this.mob, 16, 7, this.toAvoid.position());
+            if (vector3d == null) {
+                return false;
+            } else if (this.toAvoid.distanceToSqr(vector3d.x, vector3d.y, vector3d.z) < this.toAvoid.distanceToSqr(this.mob)) {
+                return false;
+            } else {
+                this.mob.getNavigation().tryMoveToBlockPos(BlockPos.containing(vector3d.x, vector3d.y, vector3d.z), sprintSpeedModifier);
+                return true;
+            }
+        }
+    }
+
+    public boolean canContinueToUse() {
+        return !this.pathNav.isDone();
+    }
+
+    public void start() {
+
+    }
+
+    public void stop() {
+        this.toAvoid = null;
+    }
+
+    public void tick() {
+    }
+}

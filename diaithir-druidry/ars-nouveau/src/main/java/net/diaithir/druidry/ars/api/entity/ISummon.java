@@ -44,6 +44,15 @@ public interface ISummon extends OwnableEntity {
             tag.putIntArray("owner", UUIDUtil.uuidToIntArray(getOwnerUUID()));
     }
 
+    default void writeOwner(net.minecraft.world.level.storage.ValueOutput out) {
+        if (getOwnerUUID() != null)
+            out.store("owner", UUIDUtil.CODEC, getOwnerUUID());
+    }
+
+    default @Nullable Entity readOwner(ServerLevel world, net.minecraft.world.level.storage.ValueInput in) {
+        return in.read("owner", UUIDUtil.CODEC).map(world::getEntity).orElse(null);
+    }
+
     default @Nullable Entity readOwner(ServerLevel world, CompoundTag tag) {
         return tag.getIntArray("owner").map(arr -> world.getEntity(UUIDUtil.uuidFromIntArray(arr))).orElse(null);
     }

@@ -3,6 +3,7 @@ package net.diaithir.druidry.ars.setup.registry;
 import net.diaithir.druidry.ars.api.spell.Spell;
 import net.diaithir.druidry.ars.client.particle.ParticleColor;
 import net.diaithir.druidry.ars.common.entity.*;
+import net.diaithir.druidry.ars.common.entity.familiar.*;
 import net.diaithir.druidry.ars.common.lib.LibEntityNames;
 import net.diaithir.druidry.ars.common.light.LightManager;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentAmplify;
@@ -127,9 +128,151 @@ public class ModEntities {
                     .clientTrackingRange(10)
     );
 
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityAllyVex>> ALLY_VEX = registerEntity(
+            LibEntityNames.ALLY_VEX,
+            EntityType.Builder.<EntityAllyVex>of(EntityAllyVex::new, MobCategory.MISC)
+                    .sized(0.4F, 0.8F).fireImmune());
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityEvokerFangs>> ENTITY_EVOKER_FANGS_ENTITY_TYPE = registerEntity(
+            LibEntityNames.FANGS,
+            EntityType.Builder.<EntityEvokerFangs>of(EntityEvokerFangs::new, MobCategory.MISC)
+                    .sized(0.5F, 0.8F)
+                    .setUpdateInterval(60));
+    public static final DeferredHolder<EntityType<?>, EntityType<Starbuncle>> STARBUNCLE_TYPE = registerEntity(LibEntityNames.STARBUNCLE, EntityType.Builder.<Starbuncle>of(Starbuncle::new, MobCategory.CREATURE)
+            .sized(0.6F, 0.63F).setTrackingRange(10)
+            .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<Whirlisprig>> WHIRLISPRIG_TYPE = registerEntity(LibEntityNames.WHIRLISPRIG, EntityType.Builder.<Whirlisprig>of(Whirlisprig::new, MobCategory.CREATURE)
+            .sized(0.6F, 0.98F).setTrackingRange(10)
+            .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityWixie>> ENTITY_WIXIE_TYPE = registerEntity(LibEntityNames.WIXIE, EntityType.Builder.<EntityWixie>of(EntityWixie::new, MobCategory.MISC)
+            .sized(0.6F, 0.98F).setTrackingRange(10)
+            .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityRitualProjectile>> ENTITY_RITUAL = registerEntity(
+            LibEntityNames.RITUAL_PROJ,
+            EntityType.Builder.<EntityRitualProjectile>of(EntityRitualProjectile::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .setTrackingRange(10).setUpdateInterval(60)
+                    .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<WildenHunter>> WILDEN_HUNTER = registerEntity(
+            LibEntityNames.WILDEN_HUNTER,
+            EntityType.Builder.<WildenHunter>of(WildenHunter::new, MobCategory.MONSTER)
+                    .sized(1.2f, 1.2F)
+                    .setTrackingRange(10)
+                    .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<SummonWolf>> SUMMON_WOLF = registerEntity(
+            LibEntityNames.SUMMONED_WOLF,
+            EntityType.Builder.of(SummonWolf::new, MobCategory.CREATURE).sized(0.6F, 0.85F).clientTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<WildenStalker>> WILDEN_STALKER = registerEntity(
+            LibEntityNames.WILDEN_STALKER,
+            EntityType.Builder.<WildenStalker>of(WildenStalker::new, MobCategory.MONSTER)
+                    .sized(0.95F, 1F)
+                    .setTrackingRange(10)
+                    .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<SummonHorse>> SUMMON_HORSE = registerEntity(
+            LibEntityNames.SUMMONED_HORSE,
+            EntityType.Builder.of(SummonHorse::new, MobCategory.CREATURE).sized(1.3964844F, 1.6F).clientTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<SummonSkeleton>> SUMMON_SKELETON = registerEntity(LibEntityNames.SUMMONED_SKELETON,
+            EntityType.Builder.<SummonSkeleton>of(SummonSkeleton::new, MobCategory.CREATURE).sized(1.0F, 1.8F).clientTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<WildenGuardian>> WILDEN_GUARDIAN = registerEntity(
+            LibEntityNames.WILDEN_GUARDIAN,
+            EntityType.Builder.<WildenGuardian>of(WildenGuardian::new, MobCategory.MONSTER)
+                    .sized(1.15F, 1.15F)
+                    .setTrackingRange(10)
+                    .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<WildenChimera>> WILDEN_BOSS = registerEntity(
+            LibEntityNames.WILDEN_CHIMERA,
+            EntityType.Builder.<WildenChimera>of(WildenChimera::new, MobCategory.MONSTER)
+                    .sized(2.5f, 2.25f)
+                    .setTrackingRange(10)
+                    .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityDummy>> ENTITY_DUMMY = registerEntity(
+            LibEntityNames.DUMMY,
+            EntityType.Builder.<EntityDummy>of(EntityDummy::new, MobCategory.MISC)
+                    .sized(1.0f, 2.0f)
+                    .setTrackingRange(10)
+                    .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityDrygmy>> ENTITY_DRYGMY = registerEntity(
+            LibEntityNames.DRYGMY,
+            EntityType.Builder.<EntityDrygmy>of(EntityDrygmy::new, MobCategory.CREATURE).sized(0.6F, 0.85F).clientTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<EntityChimeraProjectile>> ENTITY_CHIMERA_SPIKE = registerEntity(
+            LibEntityNames.CHIMERA_SPIKE,
+            EntityType.Builder.<EntityChimeraProjectile>of(EntityChimeraProjectile::new, MobCategory.MISC)
+                    .clientTrackingRange(20).updateInterval(20).setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<FamiliarStarbuncle>> ENTITY_FAMILIAR_STARBUNCLE = registerEntity(LibEntityNames.FAMILIAR_STARBUNCLE, EntityType.Builder.of(FamiliarStarbuncle::new, MobCategory.CREATURE)
+            .sized(0.5f, 0.5f).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<FamiliarWixie>> ENTITY_FAMILIAR_WIXIE = registerEntity(LibEntityNames.FAMILIAR_WIXIE, EntityType.Builder.of(FamiliarWixie::new, MobCategory.CREATURE)
+            .sized(0.5f, 0.5f).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<FamiliarDrygmy>> ENTITY_FAMILIAR_DRYGMY = registerEntity(LibEntityNames.FAMILIAR_DRYGMY, EntityType.Builder.of(FamiliarDrygmy::new, MobCategory.CREATURE)
+            .sized(0.5f, 0.5f).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<FamiliarWhirlisprig>> ENTITY_FAMILIAR_SYLPH = registerEntity(LibEntityNames.FAMILIAR_WHIRLISPRIG, EntityType.Builder.of(FamiliarWhirlisprig::new, MobCategory.CREATURE)
+            .sized(0.5f, 0.5f).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<FamiliarAmethystGolem>> FAMILIAR_AMETHYST_GOLEM = registerEntity(LibEntityNames.FAMILIAR_AMETHYST_GOLEM, EntityType.Builder.of(FamiliarAmethystGolem::new, MobCategory.CREATURE)
+            .sized(1.0f, 1.0f).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<WealdWalker>> ENTITY_CASCADING_WEALD = registerEntity(LibEntityNames.CASCADING_WEALD_WALKER, EntityType.Builder.<WealdWalker>of((type, world) -> {
+                WealdWalker walker = new WealdWalker(type, world);
+                walker.spell = new Spell(MethodProjectile.INSTANCE, EffectFreeze.INSTANCE, EffectColdSnap.INSTANCE);
+                walker.color = new ParticleColor(50, 50, 250);
+                return walker;
+            }, MobCategory.CREATURE)
+            .sized(1.4F, 3F).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<WealdWalker>> ENTITY_FLOURISHING_WEALD = registerEntity(LibEntityNames.FLOURISHING_WEALD_WALKER, EntityType.Builder.<WealdWalker>of((type, world) -> {
+                WealdWalker walker = new WealdWalker(type, world);
+                walker.spell = new Spell(MethodProjectile.INSTANCE, EffectHarm.INSTANCE, AugmentAmplify.INSTANCE, AugmentAmplify.INSTANCE, EffectSnare.INSTANCE);
+                walker.color = new ParticleColor(50, 250, 55);
+                return walker;
+            }, MobCategory.CREATURE)
+            .sized(1.4F, 3F).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<WealdWalker>> ENTITY_BLAZING_WEALD = registerEntity(LibEntityNames.BLAZING_WEALD_WALKER, EntityType.Builder.<WealdWalker>of((type, world) -> {
+                WealdWalker walker = new WealdWalker(type, world);
+                walker.spell = new Spell(MethodProjectile.INSTANCE, EffectIgnite.INSTANCE, AugmentSensitive.INSTANCE, EffectFlare.INSTANCE);
+                walker.color = new ParticleColor(250, 15, 15);
+                return walker;
+            }, MobCategory.CREATURE)
+            .sized(1.4F, 3F).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<WealdWalker>> ENTITY_VEXING_WEALD = registerEntity(LibEntityNames.VEXING_WEALD_WALKER, EntityType.Builder.<WealdWalker>of((type, world) -> {
+                WealdWalker walker = new WealdWalker(type, world);
+                walker.spell = new Spell(MethodProjectile.INSTANCE, EffectHex.INSTANCE, EffectWither.INSTANCE, AugmentAmplify.INSTANCE, AugmentAmplify.INSTANCE);
+                walker.color = new ParticleColor(250, 50, 250);
+                return walker;
+            }, MobCategory.CREATURE)
+            .sized(1.4F, 3F).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<AmethystGolem>> AMETHYST_GOLEM = registerEntity(LibEntityNames.AMETHYST_GOLEM, EntityType.Builder.of(AmethystGolem::new, MobCategory.CREATURE)
+            .sized(1.0f, 1.0f).setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<GiftStarbuncle>> GIFT_STARBY = registerEntity(LibEntityNames.GIFT_STARBY, EntityType.Builder.of(GiftStarbuncle::new, MobCategory.CREATURE)
+            .sized(0.6F, 0.63F).setTrackingRange(10)
+            .setShouldReceiveVelocityUpdates(true));
+    public static final DeferredHolder<EntityType<?>, EntityType<AnimBlockSummon>> ANIMATED_BLOCK = registerEntity(
+            "animated_block",
+            EntityType.Builder.<AnimBlockSummon>of(AnimBlockSummon::new, MobCategory.MISC)
+                    .sized(1.0f, 1.5f)
+                    .noSave()
+                    .setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<AnimHeadSummon>> ANIMATED_HEAD = registerEntity(
+            "animated_head",
+            EntityType.Builder.<AnimHeadSummon>of(AnimHeadSummon::new, MobCategory.MISC)
+                    .sized(1.0f, 1.5f)
+                    .noSave()
+                    .setTrackingRange(10));
+    public static final DeferredHolder<EntityType<?>, EntityType<Lily>> LILY = registerEntity(
+            LibEntityNames.LILY,
+            EntityType.Builder.<Lily>of(Lily::new, MobCategory.MISC)
+                    .sized(0.5F, 0.75F)
+                    .setTrackingRange(10));
+
     @SubscribeEvent
     public static void registerPlacements(RegisterSpawnPlacementsEvent event) {
 
+
+        event.register(STARBUNCLE_TYPE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(GIFT_STARBY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(WHIRLISPRIG_TYPE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(ENTITY_DRYGMY.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(WILDEN_GUARDIAN.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::wildenSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(WILDEN_HUNTER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::wildenSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(WILDEN_STALKER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::wildenSpawnRules, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(ENTITY_BLAZING_WEALD.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(ENTITY_CASCADING_WEALD.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(ENTITY_FLOURISHING_WEALD.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
+        event.register(ENTITY_VEXING_WEALD.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ModEntities::genericGroundSpawn, RegisterSpawnPlacementsEvent.Operation.AND);
 
         LightManager.init();
     }
@@ -144,6 +287,35 @@ public class ModEntities {
 
         @SubscribeEvent
         public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
+            event.put(ALLY_VEX.get(), Vex.createAttributes().build());
+            event.put(STARBUNCLE_TYPE.get(), Starbuncle.attributes().build());
+            event.put(WHIRLISPRIG_TYPE.get(), Whirlisprig.attributes().build());
+            event.put(ENTITY_DRYGMY.get(), Whirlisprig.attributes().build());
+            event.put(ENTITY_WIXIE_TYPE.get(), EntityWixie.attributes().build());
+            event.put(WILDEN_HUNTER.get(), WildenHunter.getModdedAttributes().build());
+            event.put(WILDEN_STALKER.get(), WildenStalker.getModdedAttributes().build());
+            event.put(SUMMON_WOLF.get(), Wolf.createAttributes().build());
+            event.put(SUMMON_HORSE.get(), AbstractHorse.createBaseHorseAttributes().build());
+            event.put(WILDEN_GUARDIAN.get(), WildenGuardian.getModdedAttributes().build());
+            event.put(ENTITY_DUMMY.get(), Mob.createMobAttributes()
+                    .add(Attributes.MAX_HEALTH, 20.0D)
+                    .add(Attributes.MOVEMENT_SPEED, 0.25D).build());
+            event.put(WILDEN_BOSS.get(), WildenChimera.getModdedAttributes().build());
+            event.put(ENTITY_FAMILIAR_STARBUNCLE.get(), FamiliarEntity.attributes().build());
+            event.put(ENTITY_FAMILIAR_WIXIE.get(), FamiliarEntity.attributes().build());
+            event.put(ENTITY_FAMILIAR_SYLPH.get(), FamiliarEntity.attributes().build());
+            event.put(ENTITY_FAMILIAR_DRYGMY.get(), FamiliarEntity.attributes().build());
+            event.put(FAMILIAR_AMETHYST_GOLEM.get(), FamiliarEntity.attributes().build());
+            event.put(ENTITY_CASCADING_WEALD.get(), WealdWalker.attributes().build());
+            event.put(ENTITY_BLAZING_WEALD.get(), WealdWalker.attributes().build());
+            event.put(ENTITY_FLOURISHING_WEALD.get(), WealdWalker.attributes().build());
+            event.put(ENTITY_VEXING_WEALD.get(), WealdWalker.attributes().build());
+            event.put(AMETHYST_GOLEM.get(), AmethystGolem.attributes().build());
+            event.put(SUMMON_SKELETON.get(), SummonSkeleton.createAttributes().build());
+            event.put(GIFT_STARBY.get(), GiftStarbuncle.attributes().build());
+            event.put(ANIMATED_BLOCK.get(), AnimBlockSummon.createAttributes().build());
+            event.put(ANIMATED_HEAD.get(), AnimBlockSummon.createAttributes().build());
+            event.put(LILY.get(), Lily.createAttributes().build());
         }
     }
 

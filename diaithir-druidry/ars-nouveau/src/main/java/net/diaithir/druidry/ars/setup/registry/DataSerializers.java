@@ -32,4 +32,10 @@ public class DataSerializers {
                     )
             )
     );
+
+    public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<java.util.Optional<java.util.UUID>>> OPTIONAL_UUID = DS.register("optional_uuid",
+            () -> EntityDataSerializer.forValueType(
+                    net.minecraft.network.codec.ByteBufCodecs.optional(net.minecraft.core.UUIDUtil.STREAM_CODEC)
+            )
+    );
 }
