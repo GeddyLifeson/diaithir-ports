@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IGI",
+    "IEI",
+    "III"
+  ],
+  "key": {
+    "I": "#c:ingots/iron",
+    "G": "#c:glass_blocks",
+    "E": "minecraft:end_crystal"
+  },
+  "result": {
+    "id": "diaithirtravel:laser_source_block",
+    "count": 2
+  }
+}
+

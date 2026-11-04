@@ -1,5 +1,6 @@
 | diaithir-worldgen-structures | own (clean-room) | MIT | data-only; no third-party content |
 | diaithir-worldsys | MIT | Own clean-room module (20 features), source in diaithir-worldsys/ |
+| diaithir-travel-structures | Laser Bridges & Doors (Mars) fold | MIT | laser bridge/fence sources and beams, upstream textures kept (MIT), NOTICE and LICENSE-LaserBridges-MIT in the module |
 | diaithir-storagenet (wireless transmitter) | idea from Interdimensional Wireless Transmitter (starforcraft, MIT) | MIT (own code) | clean code on this module's network; no upstream code or art copied |
 | diaithir-ships/archimedes (deck walking) | idea from aleki's Nifty Ships | MIT (own code) | clean code in org.diaithir.archimedes (DeckColliders, DeckWalk); no upstream code or art copied |
 | diaithir-ships/keelwright (Create: Propulsion data) | Create: Propulsion (chj990707) data fold | MIT | thruster/propeller/magnet statistics and fuel table as data; NOTICE-Propulsion and LICENSE-Propulsion-MIT in diaithir-ships |

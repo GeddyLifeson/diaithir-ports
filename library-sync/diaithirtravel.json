@@ -1,0 +1,12 @@
+[
+ {
+  "id": "diaithirtravel:laser_source_block",
+  "name": "Laser source",
+  "text": "Mounts on a floor, wall or ceiling. When powered it grows a solid laser bridge up to 14 m long, shorter with weaker redstone power; dye it to colour the beam. Lasers cut through air and grass but stop at solid blocks. Age VII."
+ },
+ {
+  "id": "diaithirtravel:laser_fence_source_block",
+  "name": "Laser fence source",
+  "text": "Same source as the bridge laser, but the beam is a thin fence you can see through and walk into. Craft it from a laser source and back again. Age VII."
+ }
+]

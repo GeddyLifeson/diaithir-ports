@@ -1,0 +1,10 @@
+Laser bridges (diaithir-travel-structures, package net.diaithir.travel.laser)
+
+Folded from Laser Bridges & Doors 6.3 by Mars (https://github.com/Mars-The-Planet/Laser-Bridges-And-Doors,
+branch 26.1.2, MIT licence, upstream LICENSE.txt included as LICENSE-LaserBridges-MIT).
+Copyright (c) 2026 Mars.
+
+Changes: packages renamed to net.diaithir.travel.laser; mod id and namespace diaithirtravel (ids migrate from
+laserbridges: via id_migrations.json); the Deimos config library replaced by a NeoForge server config; the
+multi-loader platform layer and empty mixin config dropped; Age gate, Library rows and integration data added.
+Textures are the upstream ones (MIT) until the Industrial Factory redraw.
