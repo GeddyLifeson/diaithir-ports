@@ -21,9 +21,26 @@ public final class MegaSelfTest {
     private static final Logger LOG = LoggerFactory.getLogger("Megamachines");
     private int fails;
 
+    /** Ticks to wait after start: a forced chunk only lets entity queries see its entities a few server ticks after it loads. */
+    private static final int SETTLE_TICKS = 100;
+    private int settle = -1;
+    private ServerLevel pending;
+
     @SubscribeEvent
     public void started(ServerStartedEvent e) {
-        ServerLevel level = e.getServer().overworld();
+        pending = e.getServer().overworld();
+        pending.setChunkForced(0, 0, true);
+        settle = SETTLE_TICKS;
+    }
+
+    @SubscribeEvent
+    public void tick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
+        if (settle < 0 || --settle > 0) return;
+        settle = -1;
+        run(pending);
+    }
+
+    private void run(ServerLevel level) {
         BlockPos pos = new BlockPos(0, 200, 0);
         level.setChunkForced(0, 0, true);
         for (int x = -6; x <= 6; x++) for (int z = -6; z <= 6; z++) for (int y = 198; y <= 204; y++)
@@ -39,6 +56,7 @@ public final class MegaSelfTest {
         check("no crew: UNCREWED, may not run", cab.status() == MegaCabBlockEntity.Status.UNCREWED && !cab.mayRun());
 
         var villager = EntityType.VILLAGER.spawn(level, pos.above(), EntitySpawnReason.COMMAND);
+        LOG.info("[selftest] villager spawned={} status={}", villager != null, cab.status());
         check("crew nearby: CREWED, may run", villager != null && cab.status() == MegaCabBlockEntity.Status.CREWED && cab.mayRun());
         if (villager != null) villager.discard();
 
