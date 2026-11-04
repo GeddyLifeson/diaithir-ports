@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "diaithirrouting:extractor_module",
+    "minecraft:repeater"
+  ],
+  "result": {
+    "id": "diaithirrouting:round_robin_module",
+    "count": 1
+  }
+}

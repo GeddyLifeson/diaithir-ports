@@ -41,6 +41,20 @@ class FuelsTest {
 
     @Test void upgradesNeverPassOne() { assertEquals(0.4, Fuels.upgradedEfficiency(0.25, 0.2), 1e-9); assertTrue(Fuels.upgradedEfficiency(0.9, 5) < 1); }
 
+    @Test void magicFuelIsPricedAtOneHundredJoulesPerMana() {
+        assertEquals(40_000 / 10.0, MagicFuel.joules("botania:mana_powder"), 1e-9);
+        assertEquals(1000.0 * 10, MagicFuel.joules("ars_nouveau:source_gem"), 1e-9);
+        assertEquals(9 * MagicFuel.joules("ars_nouveau:source_gem"), MagicFuel.joules("ars_nouveau:source_gem_block"), 1e-9);
+        assertEquals(0, MagicFuel.joules("minecraft:stick"), 0);
+        assertFalse(MagicFuel.isFuel("minecraft:coal"));
+    }
+
+    @Test void magicFuelIsFarWeakerThanCoal() {
+        for (String id : MagicFuel.ids()) assertTrue(MagicFuel.coalEquivalent(id) < 0.01, id);
+        // 80 kJ at 1 MW and 50 % is 0.04 s of shaft power
+        assertEquals(0.04, MagicFuel.burnSeconds("botania:mana_diamond", 1e6, 0.5), 1e-9);
+    }
+
     @Test void magicCarriersMatchTheUnitTable() {
         String[][] pairs = {{"mana", "botania:mana"}, {"aura", "naturesaura:aura"}, {"ember", "embers:ember"}, {"life_points", "bloodmagic:lp"}, {"vis", "thaumcraft:vis"}, {"source", "arsnouveau:source"}};
         for (String[] p : pairs)

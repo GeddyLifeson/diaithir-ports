@@ -56,6 +56,17 @@
    "tank_l": 150.0
   },
   {
+   "id": "fordson_f",
+   "name": "Fordson Model F",
+   "age": "VI",
+   "role": "utility",
+   "type": "farm tractor",
+   "fuel": "petrol",
+   "mass_kg": 1200.0,
+   "power_kw": 15.0,
+   "tank_l": 76.0
+  },
+  {
    "id": "willys_mb",
    "name": "Willys MB",
    "age": "VI",

@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/tureen"
+  "layer0": "diaithirfurnishings:item/tureen_pot"
  }
 }

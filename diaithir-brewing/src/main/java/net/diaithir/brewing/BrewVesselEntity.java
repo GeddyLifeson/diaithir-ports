@@ -148,7 +148,7 @@ public final class BrewVesselEntity extends BlockEntity {
             if (level.getGameTime() % 20 == 0 || be.score < 0) {
                 be.score = Cellar.score(level, pos);
             }
-            be.progress += Cellar.rate(be.score);
+            be.progress += be.station().equals("canning_pot") ? Heat.rate(level, pos) : Cellar.rate(be.score);
             if (be.progress >= be.active.ticks() * 4) {
                 be.finish(be.score);
             }

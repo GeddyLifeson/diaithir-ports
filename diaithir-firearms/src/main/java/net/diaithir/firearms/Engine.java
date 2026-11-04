@@ -137,6 +137,7 @@ public final class Engine {
         float recoil = g.recoil() * modifier(stack, "muzzle_recoil") * (sp.isShiftKeyDown() ? 0.7f : 1f);
         sp.connection.send(new ClientboundPlayerRotationPacket(0f, true, -recoil, true));
         say(sp, Component.translatable("diaithirfirearms.mag").append(": " + mag(stack) + "/" + g.mag()));
+        AnimHook.gun(sp, "fire");
         return hits;
     }
 

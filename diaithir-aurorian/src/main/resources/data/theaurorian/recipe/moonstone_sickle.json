@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "III",
+  "I S",
+  "  S"
+ ],
+ "key": {
+  "S": "#c:rods/wooden",
+  "I": "theaurorian:moonstone_ingot"
+ },
+ "result": {
+  "id": "theaurorian:moonstone_sickle",
+  "count": 1
+ }
+}

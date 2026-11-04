@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/ladle_foundry"
+  "layer0": "diaithirfurnishings:item/ladle_foundry_head",
+  "layer1": "diaithirfurnishings:item/ladle_foundry_handle",
+  "layer2": "diaithirfurnishings:item/ladle_foundry_binding"
  }
 }
