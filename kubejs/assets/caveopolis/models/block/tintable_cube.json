@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "caveopolis:block/_gap_tintable_cube"
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "rftoolspower:block/blazing/blazing_agitator_side"
+ }
+}
