@@ -53,6 +53,10 @@ public final class SurveyTest {
         z.discard();
 
         check(Lance.bonus(0.05) == 0 && Lance.bonus(0.3) > 1.0F && Lance.bonus(5) == Lance.MAX_BONUS, "lance curve");
+        check(Styles.critMultiplier(0.05, 1.5, 0.01) == 1.5F && Styles.critMultiplier(0.05, 1.5, 0.5) == 1.0F, "crit roll");
+        // target facing +z (yaw 0); attacker at -z so dx,dz toward target is +z: behind
+        check(Styles.isBehind(0, 0, 1) && !Styles.isBehind(0, 0, -1) && !Styles.isBehind(0, 1, 0), "backstab arc");
+        check(Styles.CRIT_CHANCE.isBound() && Styles.CRIT_DAMAGE.isBound(), "crit attributes registered");
         check(Lance.isLance(new ItemStack(Items.IRON_SPEAR)), "iron spear is a lance");
         check(!Lance.isLance(new ItemStack(Items.IRON_SWORD)), "sword is not");
     }

@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/spit"
+  "layer0": "diaithirfurnishings:item/spit_pot",
+  "layer1": "diaithirfurnishings:item/spit_handle"
  }
 }

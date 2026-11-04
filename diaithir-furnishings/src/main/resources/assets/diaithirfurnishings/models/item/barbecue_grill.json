@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/barbecue_grill"
+  "layer0": "diaithirfurnishings:item/barbecue_grill_pot",
+  "layer1": "diaithirfurnishings:item/barbecue_grill_handle"
  }
 }

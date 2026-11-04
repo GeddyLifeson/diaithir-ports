@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/microplane"
+  "layer0": "diaithirfurnishings:item/microplane_head",
+  "layer1": "diaithirfurnishings:item/microplane_handle"
  }
 }

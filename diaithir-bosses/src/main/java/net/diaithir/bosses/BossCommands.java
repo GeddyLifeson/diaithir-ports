@@ -12,7 +12,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.phys.Vec3;
 
-/** /boss spawn|spawnall|list|age|champion, and /bossesselftest. */
+/** /boss spawn|warden|spawnall|list|age|champion, and /bossesselftest. */
 public final class BossCommands {
     private static boolean gm(CommandSourceStack s) { return s.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER); }
 
@@ -34,6 +34,13 @@ public final class BossCommands {
                     if (m == null) { c.getSource().sendFailure(Component.literal(p.entity + " is not installed")); return 0; }
                     return 1;
                 })))
+            .then(Commands.literal("warden").then(Commands.argument("age", IntegerArgumentType.integer(1, 8)).executes(c -> {
+                int age = IntegerArgumentType.getInteger(c, "age");
+                Mob m = AgeWardens.spawn(c.getSource().getLevel(), age, c.getSource().getPosition(), null);
+                if (m == null) { c.getSource().sendFailure(Component.literal("no Age warden")); return 0; }
+                c.getSource().sendSuccess(() -> Component.literal("Age warden woken: " + AgeWardens.idFor(age)), true);
+                return 1;
+            })))
             .then(Commands.literal("spawnall").executes(c -> {
                 int n = 0, i = 0;
                 for (Data.Profile p : Data.profiles().values()) {

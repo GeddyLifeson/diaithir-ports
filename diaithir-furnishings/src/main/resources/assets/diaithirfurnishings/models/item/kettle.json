@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/kettle"
+  "layer0": "diaithirfurnishings:item/kettle_pot",
+  "layer1": "diaithirfurnishings:item/kettle_handle"
  }
 }

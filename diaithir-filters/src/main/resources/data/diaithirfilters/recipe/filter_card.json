@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "diaithirfilters:filter",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "diaithirfilters:filter_card",
+    "count": 2
+  }
+}
