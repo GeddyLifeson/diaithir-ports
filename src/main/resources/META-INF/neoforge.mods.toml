@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[1,)"
-license="MIT (code and data); assets are original to the Diaithir pack (see LICENSE.md)"
+license="MIT (code and data), except the GPL-3.0-only gantry split module (net.diaithir.gantries, see gpl/gantries/NOTICE); assets are original to the Diaithir pack (see LICENSE.md)"
 
 [[mods]]
 modId="diaithir_create"
@@ -14,6 +14,9 @@ config="create.mixins.json"
 
 [[mixins]]
 config="create.client.mixins.json"
+
+[[mixins]]
+config="diaithirgantries.mixins.json"
 
 [[dependencies.diaithir_create]]
 modId="neoforge"

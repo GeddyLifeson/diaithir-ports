@@ -11,6 +11,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 public class CreateNeoForge {
     public CreateNeoForge(IEventBus modBus, ModContainer container) {
         new Create().onInitialize();
+        net.diaithir.gantries.DiaithirGantries.init(modBus); // separate GPL-3.0 module, see gpl/gantries/NOTICE
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(new NeoEvents());
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(new DevDump());
         if (FMLEnvironment.getDist() == Dist.CLIENT) {
