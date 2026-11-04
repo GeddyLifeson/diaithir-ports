@@ -1,0 +1,26 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 18,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a6",
+   "count": 1
+  },
+  {
+   "item": "minecraft:string",
+   "count": 2
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_bow",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 6
+  }
+ }
+}

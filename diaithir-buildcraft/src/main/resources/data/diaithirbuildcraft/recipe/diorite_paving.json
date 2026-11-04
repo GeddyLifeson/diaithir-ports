@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:diorite"
+ },
+ "pattern": [
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:diorite_paving",
+  "count": 6
+ }
+}

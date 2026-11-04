@@ -109,6 +109,7 @@ class ValkyrienSkiesModForge(modBus: IEventBus, container: ModContainer) {
         org.valkyrienskies.eureka.EurekaMod.init(modBus, container)
         if (isClient) org.valkyrienskies.eureka.EurekaMod.initClient(modBus)
         org.valkyrienskies.tournament.TournamentMod.init(modBus, container)
+        net.diaithir.ships.yard.ShipYardMod.init(modBus)
         if (isClient) org.valkyrienskies.tournament.TournamentMod.initClient(modBus)
         org.diaithir.archimedes.ArchimedesMod.init(modBus, container)
         org.diaithir.mega.MegaMod.init(modBus)

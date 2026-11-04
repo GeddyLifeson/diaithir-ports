@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "stellaris:titanium_ingot",
+  "G": "minecraft:glass",
+  "A": "minecraft:copper_ingot",
+  "P": "minecraft:lightning_rod"
+ },
+ "pattern": [
+  "#G#",
+  "GAG",
+  "#P#"
+ ],
+ "result": {
+  "id": "stellaris:oxygen_distributor"
+ }
+}

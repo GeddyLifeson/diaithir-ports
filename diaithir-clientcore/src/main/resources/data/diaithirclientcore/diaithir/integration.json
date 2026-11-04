@@ -2,7 +2,12 @@
  "module": "diaithirclientcore",
  "side": "client",
  "features": [
-  "diaithirearlywindow"
+  "diaithirearlywindow",
+  "disableaccessibility",
+  "gpl.melodies",
+  "soundmuffler",
+  "soundphysics",
+  "surroundings"
  ],
  "codex": {
   "entry": "diaithirclientcore.overview",

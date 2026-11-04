@@ -119,6 +119,11 @@ for n in items:
             break
     else: sitems.append(n)
 put(f'data/{OWN}/realms/{NS}.json', {'modid': NS, 'blocks': man, 'items': sitems, 'gear': list(GEAR.values()), 'portals': [{k: p[k] for k in ('block', 'activator', 'frame')} for p in cfg.get('portals', [])]})
+for old, new in cfg.get('migrate_blocks', {}).items():  # ids the realm no longer registers (machines, fluids): old saves and recipes resolve to a vanilla stand-in
+    migr.append({'registry': 'minecraft:block', 'old': f'{NS}:{old}', 'new': new})
+    migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{old}', 'new': new})
+for old, new in cfg.get('migrate_items', {}).items():
+    migr.append({'registry': 'minecraft:item', 'old': f'{NS}:{old}', 'new': new})
 put(f'data/{NS}/id_migrations.json', migr)
 
 # ---------- assets: copy vanilla shapes, rename, stand-in textures ----------
@@ -353,7 +358,8 @@ for D in dims:
     ns_['sea_level'] = D.get('sea_level', 40)
     if base != 'overworld': ns_['aquifers_enabled'] = False
     sr = ns_['surface_rule']['sequence'][:2] if base == 'nether' else ([ns_['surface_rule']['sequence'][0]] if base == 'overworld' else [])
-    if base == 'overworld': ns_['default_fluid'] = {'Name': 'minecraft:water', 'Properties': {'level': '0'}}
+    if base == 'overworld': ns_['default_fluid'] = {'Name': 'minecraft:water', 'Properties': {'level': '0'}} if D.get('fluid') != 'air' else {'Name': 'minecraft:air'}
+    if D.get('fluid') == 'air': ns_['aquifers_enabled'] = False
     rules = []
     for b, st in style.items():
         if 'top' in st and b in dbio:
@@ -407,8 +413,8 @@ from PIL import Image
 KIND_TEX = {'zombie':'zombie/zombie','illager':'illager/vindicator','golem':'iron_golem/iron_golem','spider':'spider/spider','ravager':'illager/ravager',
             'blaze':'blaze/blaze','silverfish':'silverfish/silverfish','phantom':'phantom/phantom','guardian':'guardian/guardian','hoglin':'hoglin/hoglin'}
 BASE = {'zombie':(20,3),'illager':(24,5),'golem':(100,9),'spider':(16,3),'ravager':(60,7),'blaze':(20,4),'silverfish':(8,1.5),'phantom':(18,3),'guardian':(30,6),'hoglin':(40,5)}
-BOSS_RX = re.compile(r'(queen|_prime$|gigas|verdant_engine|forgotten_guardian|greater_dweller|^slider$|sentry_golem|^tempest$|^fractus_prime$)')
-PASSIVE_RX = re.compile(r'(bunny|whale|cow|phyg|sheepuff|^moa$|glitterwing|prismallard|lizard|^gwib|^mog$|smog_mog|rootmin|variant_bee|honey_slime|kirrid|burrukai|aechor|sprout|^gloomper$|stoneborn)')
+BOSS_RX = re.compile(r'(heart_of_luna|star_crawler_boss|queen|_prime$|gigas|verdant_engine|forgotten_guardian|greater_dweller|^slider$|sentry_golem|^tempest$|^fractus_prime$)')
+PASSIVE_RX = re.compile(r'(^alien$|blue_fish|bunny|whale|cow|phyg|sheepuff|^moa$|glitterwing|prismallard|lizard|^gwib|^mog$|smog_mog|rootmin|variant_bee|honey_slime|kirrid|burrukai|aechor|sprout|^gloomper$|stoneborn)')
 KIND_RX = [('spider', r'(spider|weaver|vermis|trilobita|echinus|spina|palus|scuttler|skephid)'), ('phantom', r'(bee|wing|zephyr|whale|flying|prismallard|tempest)'),
            ('guardian', r'(gwib|watcher|aechor)'), ('golem', r'(golem|slider|taluton|stoneborn|forgotten|nargoyle|sentry)'),
            ('ravager', r'(beast|burrukai|taegore|gigas|muncher|rotbelcher|engine|moa)'), ('hoglin', r'(dweller|brute|^mog$|smog_mog|kirrid|phyg|cow|sheepuff)'),
@@ -420,9 +426,10 @@ for n in ([l.strip() for l in mp.read_text().split('\n') if l.strip()] if mp.exi
     kind = next((k for k, rx in KIND_RX if re.search(rx, n)), 'zombie')
     boss = bool(BOSS_RX.search(n)); passive = (not boss) and bool(PASSIVE_RX.search(n))
     hp, atk = BASE[kind]
-    if boss: hp, atk, sc = hp * 5 + 200, atk * 2, 1.6
-    elif passive: hp, atk, sc = max(8, hp // 2), 2, 1.0
-    else: sc = 1.0
+    hv = int(hashlib.sha256(f'{NS}:{n}:size'.encode()).hexdigest()[:4], 16) / 65535.0   # own proportions per creature
+    if boss: hp, atk, sc = hp * 5 + 200, atk * 2, round(1.5 + 0.7 * hv, 2)
+    elif passive: hp, atk, sc = max(8, hp // 2), 2, round(0.7 + 0.5 * hv, 2)
+    else: sc = round(0.8 + 0.6 * hv, 2)
     mobs.append({'id': n, 'kind': kind, 'role': 'boss' if boss else ('passive' if passive else 'monster'), 'hp': hp, 'atk': atk, 'scale': sc})
 def tint(png, key, bright=1.0):
     h = int(hashlib.sha256(f'{NS}:{key}'.encode()).hexdigest()[:8], 16)
@@ -515,9 +522,13 @@ def payload(tag, v):
     if tag == 10: return b''.join(nb(t, k, x) for k, (t, x) in v.items()) + b'\x00'
     raise ValueError(tag)
 def write_template(path, size, palette, blocks):
-    pal = [{'Name': (8, n)} for n in palette]
+    pal = [{'Name': (8, n)} if isinstance(n, str) else {'Name': (8, n[0]), 'Properties': (10, {k: (8, v) for k, v in n[1].items()})} for n in palette]
+    def be(p, i, nbt=None):
+        d = {'pos': (9, (3, list(p))), 'state': (3, i)}
+        if nbt: d['nbt'] = (10, {k: (8, v) for k, v in nbt.items()})
+        return d
     root = {'DataVersion': (3, 4790), 'size': (9, (3, list(size))), 'palette': (9, (10, pal)),
-            'blocks': (9, (10, [{'pos': (9, (3, list(p))), 'state': (3, i)} for p, i in blocks])), 'entities': (9, (10, []))}
+            'blocks': (9, (10, [be(*b) for b in blocks])), 'entities': (9, (10, []))}
     data = bytes([10]) + _s('') + payload(10, root)
     p = RES / path; p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(gzip.compress(data))
 sp = T / f'{A.realm}.structures.txt'
@@ -526,6 +537,17 @@ solid = [b for b in made if (b.endswith(('_bricks', '_planks', '_tiles', '_flags
 if not solid: solid = [D0 for D0 in [cfg.get('default_block') or dims[0]['default_block']] if ':' not in D0] or ['stone']
 def pick(n, salt, lst): return lst[int(hashlib.sha256(f'{NS}:{n}:{salt}'.encode()).hexdigest()[:6], 16) % len(lst)]
 def full(b): return b if ':' in b else f'{NS}:{b}'
+def _loot(name, rich):
+    gear = [g['id'] for g in GEAR.values()]
+    mats_ = [i for i in sitems if re.search(r'(ingot|crystal|nugget|raw_)', i)]
+    pools = []
+    if gear: pools.append({'rolls': {'type': 'minecraft:uniform', 'min': 1.0 if rich else 0.0, 'max': 2.0 if rich else 1.0}, 'entries': [{'type': 'minecraft:item', 'name': f'{NS}:{g}', 'weight': 1,
+        'functions': [{'function': 'minecraft:set_damage', 'damage': {'type': 'minecraft:uniform', 'min': 0.3, 'max': 0.9}}] + ([{'function': 'minecraft:enchant_with_levels', 'levels': 20, 'options': '#minecraft:on_random_loot'}] if rich else [])} for g in gear]})
+    if mats_: pools.append({'rolls': {'type': 'minecraft:uniform', 'min': 2.0, 'max': 5.0 if rich else 3.0}, 'entries': [{'type': 'minecraft:item', 'name': f'{NS}:{m_}', 'weight': 3,
+        'functions': [{'function': 'minecraft:set_count', 'count': {'type': 'minecraft:uniform', 'min': 1.0, 'max': 4.0}}]} for m_ in mats_]})
+    pools.append({'rolls': {'type': 'minecraft:uniform', 'min': 1.0, 'max': 4.0}, 'entries': [{'type': 'minecraft:item', 'name': n_, 'weight': w_,
+        'functions': [{'function': 'minecraft:set_count', 'count': {'type': 'minecraft:uniform', 'min': 1.0, 'max': 6.0}}]} for n_, w_ in (('minecraft:bread', 4), ('minecraft:torch', 4), ('minecraft:iron_ingot', 2), ('minecraft:gold_ingot', 1), ('minecraft:diamond', 1 if rich else 0)) if w_]})
+    put(f'data/{NS}/loot_table/chests/{name}.json', {'type': 'minecraft:chest', 'random_sequence': f'{NS}:chests/{name}', 'pools': pools})
 sset = []
 for si, n in enumerate(structs):
     base = n.replace('/', '_'); wall = full(pick(base, 'w', solid)); floor = full(pick(base, 'f', solid)); acc = full(pick(base, 'a', solid))
@@ -557,7 +579,12 @@ for si, n in enumerate(structs):
                         for y in range(1, 5): put_(x, 5 + y, z, 1)
                     else: put_(x, 6, z, 3)
                 if x in range(2, W - 2) and z in range(2, W - 2): put_(x, 5 + 5, z, 3)
-    write_template(f'data/{NS}/structure/{base}.json'.replace('.json', '.nbt'), (W, H + 5, W), pal, [((x, y, z), i) for (x, y, z), i in sorted(blocks.items())])
+    rich = arche != 'ruin'; _loot(base, rich)
+    pal += [('minecraft:chest', {'facing': 'south', 'type': 'single', 'waterlogged': 'false'})]; ci = len(pal) - 1
+    chests = [(c, 6, c)] if arche != 'shrine' else [(2, 6, 2), (W - 3, 6, W - 3)]
+    for (cx_, cy_, cz_) in chests: blocks[(cx_, cy_, cz_)] = ci
+    tl = {'id': 'minecraft:chest', 'LootTable': f'{NS}:chests/{base}'}
+    write_template(f'data/{NS}/structure/{base}.json'.replace('.json', '.nbt'), (W, H + 5, W), pal, [((x, y, z), i, tl if i == ci else None) for (x, y, z), i in sorted(blocks.items())])
     put(f'data/{NS}/worldgen/template_pool/{base}.json', {'fallback': 'minecraft:empty', 'elements': [{'weight': 1, 'element': {'element_type': 'minecraft:single_pool_element',
         'location': f'{NS}:{base}', 'processors': 'minecraft:empty', 'projection': 'rigid'}}]})
     dn = dimtags[si % len(dimtags)]; Dd = next(d for d in dims if d['name'] == dn); cave = Dd.get('base', 'nether') == 'nether'

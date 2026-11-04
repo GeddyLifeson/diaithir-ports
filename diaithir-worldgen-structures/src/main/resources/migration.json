@@ -948,7 +948,59 @@
   "yggdrasil:runic_labyrinth": "diaithir_worldgen:none",
   "yggdrasil:vanaheim": "diaithir_worldgen:none",
   "yggdrasil:voroblom": "diaithir_worldgen:none",
-  "yggdrasil:zenflors": "diaithir_worldgen:none"
+  "yggdrasil:zenflors": "diaithir_worldgen:none",
+  "mns:bridge_1": "diaithir_worldgen:nether_span_bridge",
+  "mns:bridge_2": "diaithir_worldgen:nether_span_bridge",
+  "mns:bridge_3": "diaithir_worldgen:nether_span_bridge",
+  "mns:bridge_4": "diaithir_worldgen:nether_span_bridge",
+  "mns:bridge_5": "diaithir_worldgen:nether_span_bridge",
+  "mns:bridge_6": "diaithir_worldgen:nether_span_bridge",
+  "mns:circle_blackstone": "diaithir_worldgen:nether_blackstone_ring",
+  "mns:circle_nether_brick": "diaithir_worldgen:nether_brick_ring",
+  "mns:copper_tower": "diaithir_worldgen:nether_copper_spire",
+  "mns:crimson_forge": "diaithir_worldgen:nether_crimson_smithy",
+  "mns:crimson_lava_well": "diaithir_worldgen:nether_lava_well",
+  "mns:dragon_arena": "diaithir_worldgen:nether_wyrm_arena",
+  "mns:giant_skull": "diaithir_worldgen:nether_skull_colossus",
+  "mns:grave_yard": "diaithir_worldgen:nether_boneyard",
+  "mns:large_arena": "diaithir_worldgen:nether_grand_arena",
+  "mns:large_blackstone_pillars": "diaithir_worldgen:nether_pillar_court",
+  "mns:large_blackstone_walls": "diaithir_worldgen:nether_wall_maze",
+  "mns:large_house_1": "diaithir_worldgen:nether_brick_manor",
+  "mns:large_nether_brick": "diaithir_worldgen:nether_brick_bastion",
+  "mns:lava_pool": "diaithir_worldgen:nether_magma_pool",
+  "mns:leafy_rubble": "diaithir_worldgen:nether_overgrowth_ruin",
+  "mns:medium_blackstone": "diaithir_worldgen:nether_blackstone_hut",
+  "mns:medium_crimson_fungus": "diaithir_worldgen:nether_crimson_grove_hall",
+  "mns:medium_crimson_fungus_2": "diaithir_worldgen:nether_crimson_grove_hall",
+  "mns:medium_crimson_well": "diaithir_worldgen:nether_lava_well",
+  "mns:medium_house": "diaithir_worldgen:nether_brick_manor",
+  "mns:medium_house_2": "diaithir_worldgen:nether_warped_cottage",
+  "mns:medium_warped_fungus": "diaithir_worldgen:nether_warped_grove_hall",
+  "mns:medium_warped_fungus_2": "diaithir_worldgen:nether_warped_grove_hall",
+  "mns:medium_warped_well": "diaithir_worldgen:nether_lava_well",
+  "mns:mega_fortress": "diaithir_worldgen:nether_citadel",
+  "mns:nether_tower": "diaithir_worldgen:nether_watch_tower",
+  "mns:nether_wart_farm": "diaithir_worldgen:nether_wart_terrace",
+  "mns:ruined_portal": "diaithir_worldgen:nether_broken_gate",
+  "mns:sandy_skull": "diaithir_worldgen:nether_bone_dune_skull",
+  "mns:shrine": "diaithir_worldgen:nether_altar_shrine",
+  "mns:small_arena": "diaithir_worldgen:nether_grand_arena",
+  "mns:small_nether_brick": "diaithir_worldgen:nether_brick_bastion",
+  "mns:smoking_shrine": "diaithir_worldgen:nether_altar_shrine",
+  "mns:soul_fire": "diaithir_worldgen:nether_soul_pyre",
+  "mns:sword": "diaithir_worldgen:nether_blade_monument",
+  "mns:train": "diaithir_worldgen:nether_rail_depot",
+  "mns:very_small_blackstone": "diaithir_worldgen:nether_micro_blackstone",
+  "mns:very_small_blackstone_2": "diaithir_worldgen:nether_micro_blackstone",
+  "mns:very_small_blackstone_3": "diaithir_worldgen:nether_micro_blackstone",
+  "mns:very_small_blackstone_4": "diaithir_worldgen:nether_micro_blackstone",
+  "mns:very_small_nether_brick": "diaithir_worldgen:nether_micro_brick",
+  "mns:very_small_nether_brick_2": "diaithir_worldgen:nether_micro_brick",
+  "mns:very_small_nether_brick_3": "diaithir_worldgen:nether_micro_brick",
+  "mns:warped_dome": "diaithir_worldgen:nether_warped_dome",
+  "mns:warped_house": "diaithir_worldgen:nether_warped_cottage",
+  "mns:warped_pool": "diaithir_worldgen:nether_warped_tarn"
  },
  "new_from_mod": {
   "abandoned_mine_camp": {
@@ -1934,6 +1986,171 @@
   "weathered_waystation": {
    "from_mod": "unknown",
    "source_file": "dungeons-and-taverns-5.2.0.jar",
+   "merge_with": null
+  },
+  "nether_altar_shrine": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_blackstone_hut": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_blackstone_ring": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_blade_monument": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_bone_dune_skull": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_boneyard": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_brick_bastion": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_brick_manor": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_brick_ring": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_broken_gate": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_citadel": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_copper_spire": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_crimson_grove_hall": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_crimson_smithy": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_grand_arena": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_lava_well": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_magma_pool": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_micro_blackstone": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_micro_brick": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_overgrowth_ruin": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_pillar_court": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_rail_depot": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_skull_colossus": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_soul_pyre": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_span_bridge": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_wall_maze": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_warped_cottage": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_warped_dome": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_warped_grove_hall": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_warped_tarn": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_wart_terrace": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_watch_tower": {
+   "from_mod": "mns",
+   "source_file": "mns",
+   "merge_with": null
+  },
+  "nether_wyrm_arena": {
+   "from_mod": "mns",
+   "source_file": "mns",
    "merge_with": null
   }
  }

@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/winch"
+  "layer0": "diaithirfurnishings:item/winch_head",
+  "layer1": "diaithirfurnishings:item/winch_handle",
+  "layer2": "diaithirfurnishings:item/winch_binding"
  }
 }

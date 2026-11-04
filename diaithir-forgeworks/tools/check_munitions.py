@@ -38,5 +38,11 @@ for r in d["rounds"]:
     if prev and ages[r["age"]] > ages[prev["age"]] and r["blast_J"] < prev["blast_J"] and r["line"] != "incendiary":
         errs.append(f"{r['id']}: weaker than {prev['id']}")
     last[r["line"]] = r
+cids = [c["id"] for c in d.get("containers", [])]
+if len(set(cids)) != len(cids):
+    errs.append("duplicate container id")
+for c in d.get("containers", []):
+    if c["capacity"] <= 0 or c["age"] not in ages or not c["tags"][0].startswith("c:ammo_container/"):
+        errs.append(f"{c['id']}: bad container")
 print("\n".join(errs) or f"OK: {len(d['rounds'])} rounds, {len(d['parts'])} parts")
 sys.exit(1 if errs else 0)

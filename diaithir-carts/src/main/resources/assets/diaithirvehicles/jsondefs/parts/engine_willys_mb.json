@@ -1,0 +1,85 @@
+{
+ "general": {
+  "type": "engine_car",
+  "name": "Willys MB Engine",
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:2"
+   ],
+   [
+    "minecraft:piston:0:2"
+   ]
+  ]
+ },
+ "engine": {
+  "type": "NORMAL",
+  "isAutomatic": true,
+  "fuelType": "avgas",
+  "fuelConsumption": 0.275,
+  "maxRPM": 6000,
+  "maxSafeRPM": 5580,
+  "idleRPM": 700,
+  "startRPM": 500,
+  "stallRPM": 350,
+  "revlimitRPM": 6300,
+  "starterPower": 6,
+  "gearRatios": [
+   -3.5,
+   0.0,
+   3.6,
+   2.1,
+   1.4,
+   1.0
+  ],
+  "upShiftRPM": [
+   4200,
+   4200,
+   4200,
+   4200
+  ],
+  "downShiftRPM": [
+   1800,
+   1800,
+   1800,
+   1800
+  ],
+  "shiftSpeed": 10,
+  "clutchTime": 12,
+  "revResistance": 8,
+  "heatingCoefficient": 0.4,
+  "coolingCoefficient": 0.6,
+  "engineWearFactor": 0.3
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Willys MB Engine",
+   "modelName": "vehicle_engine",
+   "textureName": "vehicle_engine",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 1.0,
+     "height": 0.8
+    }
+   ]
+  }
+ ]
+}

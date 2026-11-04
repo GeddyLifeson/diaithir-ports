@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/grater"
+  "layer0": "diaithirfurnishings:item/grater_head",
+  "layer1": "diaithirfurnishings:item/grater_handle"
  }
 }

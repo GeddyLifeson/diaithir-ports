@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Tank Road Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:6"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.8,
+  "height": 0.9,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.4
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Tank Road Wheel",
+   "modelName": "tank_wheel",
+   "textureName": "tank_wheel",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

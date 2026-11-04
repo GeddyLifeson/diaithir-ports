@@ -14796,6 +14796,303 @@
   "model": "shovel"
  },
  {
+  "id": "ev_chair",
+  "station": "workshop",
+  "base": "diaithirfurnishings:chair",
+  "age": 3,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_stool",
+  "station": "workshop",
+  "base": "diaithirfurnishings:stool",
+  "age": 3,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_bench",
+  "station": "workshop",
+  "base": "diaithirfurnishings:bench",
+  "age": 3,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_table",
+  "station": "workshop",
+  "base": "diaithirfurnishings:table",
+  "age": 3,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_bed",
+  "station": "workshop",
+  "base": "diaithirfurnishings:bed",
+  "age": 3,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_cradle",
+  "station": "workshop",
+  "base": "diaithirfurnishings:cradle",
+  "age": 3,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_bookshelf",
+  "station": "workshop",
+  "base": "diaithirfurnishings:bookshelf",
+  "age": 4,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_cupboard",
+  "station": "workshop",
+  "base": "diaithirfurnishings:cupboard",
+  "age": 4,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
+  "id": "ev_wardrobe",
+  "station": "workshop",
+  "base": "diaithirfurnishings:wardrobe",
+  "age": 4,
+  "kind": "item",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 100,
+  "ref_mass_kg": 1.0,
+  "improvements": 1,
+  "slots": [
+   {
+    "name": "frame",
+    "role": "handle",
+    "count": 4,
+    "litres": 0.8,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 1.0
+   },
+   {
+    "name": "fixing",
+    "role": "binding",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.2,
+    "speed": 0.5
+   }
+  ],
+  "model": "shovel"
+ },
+ {
   "id": "ev_fire_shovel",
   "station": "smithy",
   "base": "diaithirfurnishings:fire_shovel",

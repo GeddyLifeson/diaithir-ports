@@ -1,0 +1,85 @@
+{
+ "general": {
+  "type": "engine_car",
+  "name": "AEC Routemaster Engine",
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:2"
+   ],
+   [
+    "minecraft:piston:0:2"
+   ]
+  ]
+ },
+ "engine": {
+  "type": "NORMAL",
+  "isAutomatic": true,
+  "fuelType": "diesel",
+  "fuelConsumption": 0.343,
+  "maxRPM": 2800,
+  "maxSafeRPM": 2604,
+  "idleRPM": 700,
+  "startRPM": 500,
+  "stallRPM": 350,
+  "revlimitRPM": 2940,
+  "starterPower": 6,
+  "gearRatios": [
+   -3.5,
+   0.0,
+   3.6,
+   2.1,
+   1.4,
+   1.0
+  ],
+  "upShiftRPM": [
+   1959,
+   1959,
+   1959,
+   1959
+  ],
+  "downShiftRPM": [
+   840,
+   840,
+   840,
+   840
+  ],
+  "shiftSpeed": 10,
+  "clutchTime": 12,
+  "revResistance": 8,
+  "heatingCoefficient": 0.4,
+  "coolingCoefficient": 0.6,
+  "engineWearFactor": 0.3
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "AEC Routemaster Engine",
+   "modelName": "vehicle_engine",
+   "textureName": "vehicle_engine",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 1.0,
+     "height": 0.8
+    }
+   ]
+  }
+ ]
+}

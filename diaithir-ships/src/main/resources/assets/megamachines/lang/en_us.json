@@ -10,5 +10,9 @@
  "megamachines.dig_head.status.halted": "Cab will not run (no crew)",
  "megamachines.dig_head.status.no_target": "Nothing to dig ahead",
  "megamachines.dig_head.status.blocked": "Output container missing or full (%s dug)",
- "megamachines.dig_head.status.digging": "Digging (%s dug)"
+ "megamachines.dig_head.status.digging": "Digging (%s dug)",
+ "block.megamachines.site_office": "Site Office",
+ "block.megamachines.depot": "Site Depot",
+ "megamachines.site.status": "%s: stage %s, %s, function %s",
+ "megamachines.site.started": "Site started: %s"
 }

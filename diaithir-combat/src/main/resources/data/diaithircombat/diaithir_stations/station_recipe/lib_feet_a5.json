@@ -1,0 +1,18 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "time_s": 14,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a5",
+   "count": 4
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_feet",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 5
+  }
+ }
+}

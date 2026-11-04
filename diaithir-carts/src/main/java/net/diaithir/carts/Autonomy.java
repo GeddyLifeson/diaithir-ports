@@ -60,8 +60,19 @@ public final class Autonomy {
 
     public static Status status(Entity vehicle) {
         if (autonomous(vehicle)) return Status.AUTONOMOUS;
-        for (Entity rider : vehicle.getPassengers()) if (rider instanceof LivingEntity && !(rider instanceof Player p && p.isSpectator())) return Status.CREWED;
-        return Status.UNCREWED;
+        return crewOnBoard(vehicle) >= crewRequired(vehicle) ? Status.CREWED : Status.UNCREWED;
+    }
+
+    /** Crew the vehicle needs: its rolling stock's crew count (steam locomotive 2, driver and fireman), at least 1. */
+    public static int crewRequired(Entity vehicle) {
+        return vehicle instanceof net.minecraft.world.entity.vehicle.minecart.AbstractMinecart c ? Math.max(1, c.getData(GaugeData.CREW)) : 1;
+    }
+
+    /** Living riders aboard (spectators excluded). The wages thread pays each of them while the vehicle is CREWED, up to {@link #crewRequired}. */
+    public static int crewOnBoard(Entity vehicle) {
+        int n = 0;
+        for (Entity rider : vehicle.getPassengers()) if (rider instanceof LivingEntity && !(rider instanceof Player p && p.isSpectator())) n++;
+        return n;
     }
 
     /** True when the vehicle may run its schedule now. */

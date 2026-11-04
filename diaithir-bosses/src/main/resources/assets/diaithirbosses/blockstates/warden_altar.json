@@ -1,0 +1,28 @@
+{
+ "variants": {
+  "age=1": {
+   "model": "diaithirbosses:block/warden_altar_1"
+  },
+  "age=2": {
+   "model": "diaithirbosses:block/warden_altar_2"
+  },
+  "age=3": {
+   "model": "diaithirbosses:block/warden_altar_3"
+  },
+  "age=4": {
+   "model": "diaithirbosses:block/warden_altar_4"
+  },
+  "age=5": {
+   "model": "diaithirbosses:block/warden_altar_5"
+  },
+  "age=6": {
+   "model": "diaithirbosses:block/warden_altar_6"
+  },
+  "age=7": {
+   "model": "diaithirbosses:block/warden_altar_7"
+  },
+  "age=8": {
+   "model": "diaithirbosses:block/warden_altar_8"
+  }
+ }
+}

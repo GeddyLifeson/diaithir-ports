@@ -9,6 +9,8 @@ public final class Module {
     public static final String ID = "diaithirclientviewinput";
 
     public Module(IEventBus bus, ModContainer container) {
+        net.diaithir.clientviewinput.zoomify.Feature.init(bus, container);
+        net.diaithir.clientviewinput.guiscaler.Feature.init(bus, container);
         net.diaithir.clientviewinput.firstpersonmodel.Feature.init(bus, container);
     }
 }

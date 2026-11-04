@@ -1,0 +1,13 @@
+{
+ "realm": "stellaris",
+ "dimension": "stellaris:moon",
+ "dimensions": [
+  "stellaris:moon",
+  "stellaris:earth_orbit"
+ ],
+ "age": 7,
+ "age_gate": "diaithir:age/7",
+ "units": "SI",
+ "replaces": "stellaris",
+ "licence_note": "clean-room; no third-party code, art or data copied"
+}

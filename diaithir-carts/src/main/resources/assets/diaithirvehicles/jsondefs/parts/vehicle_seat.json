@@ -1,0 +1,41 @@
+{
+ "general": {
+  "type": "seat",
+  "name": "Vehicle Seat",
+  "materialLists": [
+   [
+    "minecraft:white_wool:0:2"
+   ]
+  ]
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Vehicle Seat",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 0.9,
+     "height": 0.9
+    }
+   ]
+  }
+ ]
+}

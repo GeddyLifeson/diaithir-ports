@@ -1,0 +1,25 @@
+id,domain,role,type,iconic_design,year,age,engine,fuel,seats,empty_mass_kg,power_kw,thrust_kn,tank_l_or_kg,body,pack,confidence,source,deck_cells,deck_rating_k
+travois,ground,utility,drag sledge,Plains travois,,I,draft_animal,hay,1,,0.3,,,,data,med,"Wikipedia: Travois (power is one dog or horse, no fixed year)",,
+lectica,ground,travel,litter,Roman lectica (carried litter),-100,III,human_muscle,,1,,0.3,,,,data,low,Wikipedia: Litter (vehicle) (year approximate; verify),,
+sintashta_chariot,ground,military,chariot,Sintashta spoke-wheeled chariot,-2000,III,draft_animal,hay,2,,1.5,,,,data,med,Wikipedia: Chariot,,
+ox_cart,ground,utility,cart,Two-wheeled ox cart,-3000,III,draft_animal,hay,2,,0.7,,,,data,low,Wikipedia: Cart (year approximate; verify),1x1x2,500
+stagecoach,ground,travel,coach,Concord stagecoach,1827,V,draft_animal,oats,9,,4.5,,,,data,med,Wikipedia: Concord coach,,
+gurney_steam_carriage,ground,travel,steam carriage,Gurney steam carriage,1827,V,steam_piston,coal,6,,,,,,data,med,Wikipedia: Goldsworthy Gurney,,
+rover_safety_bicycle,ground,travel,bicycle,Rover safety bicycle,1885,V,human_muscle,,1,15,0.15,,,,data,high,Wikipedia: Safety bicycle,,
+cugnot_fardier,ground,travel,steam tractor,Cugnot fardier a vapeur,1769,V,steam_piston,coal,2,,,,,,data,high,Wikipedia: Fardier a vapeur,,
+benz_motorwagen,ground,travel,first car,Benz Patent-Motorwagen,1886,VI,petrol_engine,petrol,2,265,0.7,,4,sedan,pack,high,Wikipedia: Benz Patent-Motorwagen,,
+model_t,ground,travel,sedan,Ford Model T,1908,VI,petrol_engine,petrol,5,540,15,,38,sedan,pack,high,Wikipedia: Ford Model T,,
+rolls_royce_armoured_car,ground,military,armoured car,Rolls-Royce Armoured Car,1914,VI,petrol_engine,petrol,3,,56,,,armcar,pack,med,Wikipedia: Rolls-Royce Armoured Car,,
+holmes_wrecker,ground,utility,tow truck,Holmes wrecker (Ernest Holmes),1916,VI,petrol_engine,petrol,2,,,,,wrecker,pack,med,Wikipedia: Tow truck,,
+mack_type_75,ground,utility,fire truck,Mack Type 75 pumper,1935,VI,petrol_engine,petrol,4,,,,,firetruck,pack,low,Wikipedia: Mack Trucks (year approximate; verify),,
+fordson_f,ground,utility,farm tractor,Fordson Model F,1917,VI,petrol_engine,petrol,1,,15,,,tractor,pack,med,Wikipedia: Fordson (20 hp; mass and tank are body defaults),,
+willys_mb,ground,military,jeep,Willys MB,1941,VI,petrol_engine,petrol,3,1040,44,,57,jeep,pack,high,Wikipedia: Willys MB,,
+ford_f1,ground,utility,pickup,Ford F-1,1948,VII,petrol_engine,petrol,3,,75,,,pickup,pack,high,Wikipedia: Ford F-Series (first generation),1x1x2,454
+land_rover_series_i,ground,travel,off-roader,Land Rover Series I,1948,VII,petrol_engine,petrol,4,,37,,45,jeep,pack,high,Wikipedia: Land Rover Series,,
+vw_type_2,ground,utility,van,Volkswagen Type 2,1950,VII,petrol_engine,petrol,2,1000,18,,40,van,pack,high,Wikipedia: Volkswagen Type 2,1x1x2,800
+routemaster,ground,travel,bus,AEC Routemaster,1954,VII,diesel_engine,diesel,64,,86,,,bus,pack,high,Wikipedia: AEC Routemaster,,
+honda_super_cub,ground,travel,motorcycle,Honda Super Cub,1958,VII,petrol_engine,petrol,2,85,3.3,,3.4,,data,high,Wikipedia: Honda Super Cub,,
+m113,ground,military,armoured personnel carrier,M113A1,1964,VII,diesel_engine,diesel,13,11000,156,,360,apc,pack,med,Wikipedia: M113 armored personnel carrier,,
+ford_econoline_ambulance,ground,utility,ambulance,Ford Econoline ambulance,1961,VII,petrol_engine,petrol,4,,63,,,van,pack,med,Wikipedia: Ford E-Series,,
+toyota_corolla,ground,travel,sedan,Toyota Corolla (E10),1966,VII,petrol_engine,petrol,5,700,44,,40,sedan,pack,high,Wikipedia: Toyota Corolla (E10),,
+nissan_leaf,ground,travel,electric car,Nissan Leaf (ZE0),2010,VII,electric_motor,li_ion_battery,5,1520,80,,96,,data,high,Wikipedia: Nissan Leaf,,

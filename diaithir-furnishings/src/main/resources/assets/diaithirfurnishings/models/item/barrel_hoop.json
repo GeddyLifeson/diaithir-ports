@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/barrel_hoop"
+  "layer0": "diaithirfurnishings:item/barrel_hoop_head",
+  "layer1": "diaithirfurnishings:item/barrel_hoop_handle",
+  "layer2": "diaithirfurnishings:item/barrel_hoop_binding"
  }
 }

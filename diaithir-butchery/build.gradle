@@ -15,7 +15,10 @@ neoForge {
             programArgument '--nogui'
         }
     }
-    mods { diaithirbutchery { sourceSet(sourceSets.main) } }
+    mods {
+        diaithirbutchery { sourceSet(sourceSets.main) }
+        nutritionalbalance { sourceSet(sourceSets.main) }
+    }
 }
 
 processResources {

@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "stellaris:blocks/heart_of_luna_trophy",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:heart_of_luna_trophy"
+    }
+   ]
+  }
+ ]
+}

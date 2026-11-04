@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "pattern": ["IPI","PCP","IPI"], "key": { "I": "minecraft:iron_ingot", "P": "minecraft:paper", "C": "minecraft:chest" }, "result": { "id": "diaithirportable:stack_upgrade" } }

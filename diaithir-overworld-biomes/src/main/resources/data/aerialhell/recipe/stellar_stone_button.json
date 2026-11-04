@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "aerialhell:stellar_stone"
+ ],
+ "result": {
+  "id": "aerialhell:stellar_stone_button"
+ }
+}

@@ -1,0 +1,12 @@
+[
+ {
+  "id": "diaithirfilters:filter",
+  "name": "Filter",
+  "text": "filter. Age 5."
+ },
+ {
+  "id": "diaithirfilters:filter_card",
+  "name": "Filter Card",
+  "text": "filter_card. Age 5."
+ }
+]

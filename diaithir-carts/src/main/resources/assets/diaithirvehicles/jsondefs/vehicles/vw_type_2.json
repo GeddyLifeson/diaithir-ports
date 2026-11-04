@@ -1,0 +1,244 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Volkswagen Type 2",
+  "description": "Van (1950). Fuel: Petrol.",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:16"
+   ],
+   [
+    "minecraft:redstone:0:4"
+   ]
+  ],
+  "health": 200
+ },
+ "motorized": {
+  "emptyMass": 1000.0,
+  "fuelCapacity": 40000,
+  "defaultFuelQty": 20000,
+  "hasRunningLights": true,
+  "hasHeadlights": true,
+  "axleRatio": 3.6,
+  "brakingFactor": 1.0,
+  "dragCoefficient": 0.5,
+  "crossSectionalArea": 3.02,
+  "steeringForceFactor": 1.0,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0,
+  "isBigTruck": false
+ },
+ "car": {
+  "isFrontWheelDrive": false,
+  "isRearWheelDrive": true,
+  "axleRatio": 3.6,
+  "dragCoefficient": 0.5
+ },
+ "parts": [
+  {
+   "pos": [
+    0,
+    0.7,
+    1.2999999999999998
+   ],
+   "types": [
+    "engine_car"
+   ],
+   "defaultPart": "diaithirvehicles:engine_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    -0.78,
+    0.36,
+    1.4
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
+  },
+  {
+   "pos": [
+    0.78,
+    0.36,
+    1.4
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
+  },
+  {
+   "pos": [
+    -0.78,
+    0.36,
+    -1.4
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    0.78,
+    0.36,
+    -1.4
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_vw_type_2",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    -0.4,
+    0.9,
+    0.2
+   ],
+   "types": [
+    "seat"
+   ],
+   "isController": true,
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "dismountPos": [
+    -1.7000000000000002,
+    0.5,
+    0.2
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    0.4,
+    0.9,
+    -0.8
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  }
+ ],
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Volkswagen Type 2",
+   "modelName": "vw_type_2",
+   "textureName": "vw_type_2",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "rendering": {},
+ "instruments": [
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 78,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:speedo"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:fuel"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 302,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:tacho"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 100,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:readout"
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.05,
+      0
+     ],
+     "width": 1.8,
+     "height": 2.1
+    }
+   ]
+  }
+ ]
+}

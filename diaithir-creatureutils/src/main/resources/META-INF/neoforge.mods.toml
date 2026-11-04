@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithircreatureutils"
+version = "${version}"
+displayName = "Diaithir Creature Utils"
+description = "Diaithir Creature Utils: clean-room rebuild from behaviour only; no code or art taken from the original mods."
+
+[[dependencies.diaithircreatureutils]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

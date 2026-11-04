@@ -77,9 +77,9 @@ public final class RealmMobs {
     }
 
     /** every mob registered by any realm: type, attributes, role */
-    static final Map<String, DeferredHolder<EntityType<?>, ? extends EntityType<? extends Mob>>> TYPES = new LinkedHashMap<>();
-    static final Set<String> PASSIVE = new java.util.HashSet<>();   // "modid:id"
-    static final Map<String, String> KIND_OF = new HashMap<>();     // "modid:id" -> kind
+    static final Map<String, DeferredHolder<EntityType<?>, ? extends EntityType<? extends Mob>>> TYPES = new java.util.concurrent.ConcurrentHashMap<>();
+    static final Set<String> PASSIVE = java.util.concurrent.ConcurrentHashMap.newKeySet();   // "modid:id"
+    static final Map<String, String> KIND_OF = new java.util.concurrent.ConcurrentHashMap<>();     // "modid:id" -> kind
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     static void register(String modId, JsonObject manifest, IEventBus bus, DeferredRegister.Items items) {
@@ -101,20 +101,22 @@ public final class RealmMobs {
             items.registerItem(id + "_spawn_egg", props -> new SpawnEggItem(props.spawnEgg(t.get())));
         }
         ents.register(bus);
-        if (!hooked) {
-            hooked = true;
-            bus.addListener(EntityAttributeCreationEvent.class, ev -> TYPES.forEach((key, t) -> ev.put((EntityType) t.get(), ATTR_SRC.get(key).get().build())));
-            bus.addListener(RegisterSpawnPlacementsEvent.class, ev -> TYPES.values().forEach(t ->
-                    ev.register((EntityType) t.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND,
-                            net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                            (type, level, reason, pos, rand) -> true, RegisterSpawnPlacementsEvent.Operation.REPLACE)));
-            NeoForge.EVENT_BUS.addListener(RealmMobs::onJoin);
-            if (FMLEnvironment.getDist().isClient()) RealmMobsClient.init(bus);
-        }
+        // Realms are constructed in parallel and each has its own mod bus: every realm wires its own creatures on its own bus.
+        String pre = modId + ":";
+        bus.addListener(EntityAttributeCreationEvent.class, ev -> TYPES.forEach((key, t) -> {
+            if (key.startsWith(pre)) ev.put((EntityType) t.get(), ATTR_SRC.get(key).get().build());
+        }));
+        bus.addListener(RegisterSpawnPlacementsEvent.class, ev -> TYPES.forEach((key, t) -> {
+            if (key.startsWith(pre)) ev.register((EntityType) t.get(), net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND,
+                    net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    (type, level, reason, pos, rand) -> true, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        }));
+        if (HOOKED.compareAndSet(false, true)) NeoForge.EVENT_BUS.addListener(RealmMobs::onJoin);
+        if (FMLEnvironment.getDist().isClient()) RealmMobsClient.init(bus, modId);
     }
 
-    private static final Map<String, Supplier<AttributeSupplier.Builder>> ATTR_SRC = new HashMap<>();
-    private static boolean hooked;
+    private static final Map<String, Supplier<AttributeSupplier.Builder>> ATTR_SRC = new java.util.concurrent.ConcurrentHashMap<>();
+    private static final java.util.concurrent.atomic.AtomicBoolean HOOKED = new java.util.concurrent.atomic.AtomicBoolean();
 
     private static void onJoin(EntityJoinLevelEvent e) {
         if (e.getLevel().isClientSide() || !(e.getEntity() instanceof Mob mob)) return;

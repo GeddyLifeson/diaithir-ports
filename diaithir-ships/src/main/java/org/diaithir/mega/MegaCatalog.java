@@ -8,7 +8,10 @@ import java.util.Map;
 
 /** Vehicle rows of data/megamachines/catalog.json that the cab needs: autonomy capability and crew seats. */
 public final class MegaCatalog {
-    public record Row(String id, boolean autonomyCapable, int crew) {}
+    /** {@code engines} are diaithir-units engine class ids (Fuels.engine); the first is stock, arcane_motor lets the machine burn magic. */
+    public record Row(String id, boolean autonomyCapable, int crew, java.util.List<String> engines) {
+        public boolean acceptsEngine(String engineId) { return engines.contains(engineId); }
+    }
 
     private static final Map<String, Row> ROWS = new HashMap<>();
 
@@ -18,7 +21,8 @@ public final class MegaCatalog {
             for (var e : root.getAsJsonArray("vehicles")) {
                 JsonObject o = e.getAsJsonObject();
                 String id = o.get("id").getAsString();
-                ROWS.put(id, new Row(id, o.get("autonomy_capable").getAsBoolean(), o.get("crew").getAsInt()));
+                ROWS.put(id, new Row(id, o.get("autonomy_capable").getAsBoolean(), o.get("crew").getAsInt(),
+                        o.getAsJsonArray("engines").asList().stream().map(x -> x.getAsString()).toList()));
             }
         } catch (java.io.IOException | RuntimeException ex) {
             throw new IllegalStateException("megamachines catalog unreadable", ex);

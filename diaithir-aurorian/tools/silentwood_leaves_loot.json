@@ -16,7 +16,7 @@
           {
            "condition": "minecraft:match_tool",
            "predicate": {
-            "items": "minecraft:shears"
+            "items": ["minecraft:shears", "theaurorian:aurorian_stone_sickle", "theaurorian:moonstone_sickle", "theaurorian:silentwood_sickle"]
            }
           },
           {
@@ -55,7 +55,7 @@
        {
         "condition": "minecraft:match_tool",
         "predicate": {
-         "items": "minecraft:shears"
+         "items": ["minecraft:shears", "theaurorian:aurorian_stone_sickle", "theaurorian:moonstone_sickle", "theaurorian:silentwood_sickle"]
         }
        },
        {

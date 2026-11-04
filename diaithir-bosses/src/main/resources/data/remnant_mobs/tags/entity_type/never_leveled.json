@@ -104,6 +104,34 @@
   {
    "id": "diaithirbosses:tribal_chief",
    "required": false
+  },
+  {
+   "id": "diaithirbosses:age_warden_1",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:age_warden_2",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:age_warden_3",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:age_warden_4",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:age_warden_5",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:age_warden_6",
+   "required": false
+  },
+  {
+   "id": "diaithirbosses:age_warden_8",
+   "required": false
   }
  ]
 }

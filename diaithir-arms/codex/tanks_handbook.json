@@ -50,19 +50,13 @@
    "tier": "parts",
    "name": "Ballaí",
    "age": "VII",
-   "text": "Tracks, engine, seat, guns and shells.",
+   "text": "Road wheels, engine, seat, guns and shells.",
    "items": [
     {
-     "id": "mts:diaithirtanks.tank_track",
+     "id": "mts:diaithirtanks.tank_wheel",
      "name": "lourg iaruind",
      "age": "VII",
-     "text": "Tank Track"
-    },
-    {
-     "id": "mts:diaithirtanks.tank_track2",
-     "name": "lourg chael",
-     "age": "VII",
-     "text": "Tank Track (narrow)"
+     "text": "Tank Road Wheel"
     },
     {
      "id": "mts:diaithirtanks.tank_engine",

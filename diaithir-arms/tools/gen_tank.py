@@ -45,18 +45,19 @@ def hull_model():
     o.add('hatch_driver', box(-0.35, 1.0, 2.0, 0.35, 1.2, 2.7), R['dark'])
     o.add('lamp_l', box(-1.0, 0.95, 3.55, -0.7, 1.15, 3.7), R['glass'])
     o.add('lamp_r', box(0.7, 0.95, 3.55, 1.0, 1.15, 3.7), R['glass'])
+    track_model(o, -1.35, 'l')
+    track_model(o, 1.35, 'r')
     return o
 
-def track_model():
-    o = Obj()
-    o.add('track', box(-0.4, 0.05, -3.55, 0.4, 0.75, 3.55), R['track'])
+def track_model(o, dx, tag):
+    # the track is baked into the hull model: Immersive Vehicles tread parts need a tread path the model lacks, and ground wheels spin their whole model
+    o.add('track' + tag, box(-0.4 + dx, 0.05, -3.55, 0.4 + dx, 0.75, 3.55), R['track'])
     for i in range(7):
         z = -3.0 + i * 1.0
-        o.add(f'wheel{i}', cyl_x(0.45, z, -0.45, 0.45, 0.35, 8), R['metal'])
-    o.add('sprocket', cyl_x(0.5, 3.15, -0.45, 0.45, 0.4, 8), R['dark'])
-    o.add('idler', cyl_x(0.5, -3.3, -0.45, 0.45, 0.38, 8), R['dark'])
-    o.add('fender', box(-0.45, 0.78, -3.6, 0.45, 0.86, 3.6), R['camo'])
-    return o
+        o.add(f'wheel{i}{tag}', cyl_x(0.45, z, -0.45 + dx, 0.45 + dx, 0.35, 8), R['metal'])
+    o.add('sprocket' + tag, cyl_x(0.5, 3.15, -0.45 + dx, 0.45 + dx, 0.4, 8), R['dark'])
+    o.add('idler' + tag, cyl_x(0.5, -3.3, -0.45 + dx, 0.45 + dx, 0.38, 8), R['dark'])
+    o.add('fender' + tag, box(-0.45 + dx, 0.78, -3.6, 0.45 + dx, 0.86, 3.6), R['camo'])
 
 def turret_model():
     o = Obj()
@@ -83,16 +84,16 @@ def hull2_model():
     o.add('hatch_driver', box(-0.3, 0.9, 1.9, 0.3, 1.1, 2.5), R['dark'])
     o.add('lamp_l', box(-0.9, 0.85, 3.2, -0.65, 1.0, 3.3), R['glass'])
     o.add('lamp_r', box(0.65, 0.85, 3.2, 0.9, 1.0, 3.3), R['glass'])
+    track2_model(o, -1.25, 'l')
+    track2_model(o, 1.25, 'r')
     return o
 
-def track2_model():
-    o = Obj()
-    o.add('track', box(-0.35, 0.05, -3.2, 0.35, 0.7, 3.2), R['track'])
+def track2_model(o, dx, tag):
+    o.add('track' + tag, box(-0.35 + dx, 0.05, -3.2, 0.35 + dx, 0.7, 3.2), R['track'])
     for i in range(6):
-        o.add(f'wheel{i}', cyl_x(0.42, -2.5 + i * 0.95, -0.4, 0.4, 0.34, 8), R['metal'])
-    o.add('sprocket', cyl_x(0.5, 2.9, -0.4, 0.4, 0.36, 8), R['dark'])
-    o.add('idler', cyl_x(0.5, -3.0, -0.4, 0.4, 0.34, 8), R['dark'])
-    return o
+        o.add(f'wheel{i}{tag}', cyl_x(0.42, -2.5 + i * 0.95, -0.4 + dx, 0.4 + dx, 0.34, 8), R['metal'])
+    o.add('sprocket' + tag, cyl_x(0.5, 2.9, -0.4 + dx, 0.4 + dx, 0.36, 8), R['dark'])
+    o.add('idler' + tag, cyl_x(0.5, -3.0, -0.4 + dx, 0.4 + dx, 0.34, 8), R['dark'])
 
 def turret2_model():
     o = Obj()
@@ -117,7 +118,7 @@ def shell_model():
 
 for sub, kind in (('vehicles', 'tank_mk1'),):
     hull_model().write(f'{A}/objmodels/vehicles/tank_mk1.obj')
-track_model().write(f'{A}/objmodels/parts/tank_track.obj')
+tank_wheel = Obj(); tank_wheel.add('hub', box(-0.01, 0.44, -0.01, 0.01, 0.46, 0.01), R['dark']); tank_wheel.write(f'{A}/objmodels/parts/tank_wheel.obj')
 turret_model().write(f'{A}/objmodels/parts/tank_gun_main.obj')
 engine_model().write(f'{A}/objmodels/parts/tank_engine.obj')
 seat_model().write(f'{A}/objmodels/parts/tank_seat.obj')
@@ -129,11 +130,10 @@ for suf, (base, spots) in camos.items():
     atlas(base, spots, f'{A}/textures/vehicles/tank_mk1{suf}.png')
     atlas(base, spots, f'{A}/textures/parts/tank_track{suf}.png') if False else None
 hull2_model().write(f'{A}/objmodels/vehicles/tank_mk2.obj')
-track2_model().write(f'{A}/objmodels/parts/tank_track2.obj')
 turret2_model().write(f'{A}/objmodels/parts/tank_gun_main2.obj')
 for suf, (base, spots) in camos.items():
     atlas(base, spots, f'{A}/textures/vehicles/tank_mk2{suf}.png')
-for n in ('tank_track', 'tank_gun_main', 'tank_engine', 'tank_seat', 'tank_track2', 'tank_gun_main2'):
+for n in ('tank_wheel', 'tank_gun_main', 'tank_engine', 'tank_seat', 'tank_gun_main2'):
     atlas(camos[''][0], camos[''][1], f'{A}/textures/parts/{n}.png')
 for n in ('tank_shell_ap', 'tank_shell_he'):
     atlas((120, 110, 70), [(150, 140, 90)], f'{A}/textures/bullets/{n}.png')
@@ -142,18 +142,19 @@ def w(path, d): os.makedirs(os.path.dirname(path), exist_ok=True); open(path, 'w
 w(f'{A}/packdefinition.json', {'packID': PK, 'packName': 'Diaithir Armour', 'packItem': 'tank_mk1', 'fileStructure': 0})
 
 MAT_VEH = [['minecraft:iron_ingot:0:96'], ['minecraft:iron_block:0:12'], ['minecraft:redstone:0:16'], ['minecraft:gunpowder:0:8']]
-w(f'{A}/jsondefs/parts/tank_track.json', {
- 'general': {'type': 'ground_tread', 'name': 'Tank Track', 'materialLists': [['minecraft:iron_ingot:0:24']]},
- 'ground': {'isTread': True, 'width': 0.8, 'height': 0.9, 'flatHeight': 0.9, 'climbHeight': 0.9, 'motiveFriction': 1.0, 'lateralFriction': 1.4, 'extraCollisionBoxOffset': 0.0, 'spacing': 7.1, 'canGoFlat': False},
- 'definitions': [{'subName': '', 'name': 'Tank Track', 'extraMaterialLists': [[]]}]})
+w(f'{A}/jsondefs/parts/tank_wheel.json', {  # invisible road wheel: the tracks are drawn on the hull, these only carry and drive it
+ 'general': {'type': 'ground_wheel', 'name': 'Tank Road Wheel', 'materialLists': [['minecraft:iron_ingot:0:6']]},
+ 'ground': {'isWheel': True, 'width': 0.8, 'height': 0.9, 'motiveFriction': 1.0, 'lateralFriction': 1.4},
+ 'definitions': [{'subName': '', 'name': 'Tank Road Wheel', 'modelName': 'tank_wheel', 'textureName': 'tank_wheel', 'extraMaterialLists': [[]]}]})
 w(f'{A}/jsondefs/parts/tank_engine.json', {
- 'general': {'type': 'engine_tank', 'name': 'Tank Diesel Engine', 'materialLists': [['minecraft:iron_block:0:6'], ['minecraft:piston:0:4']]},
+ 'general': {'type': 'engine_tank', 'name': 'Tank Diesel Engine', 'width': 1.0, 'height': 0.8, 'mass': 900, 'materialLists': [['minecraft:iron_block:0:6'], ['minecraft:piston:0:4']]},
  'engine': {'type': 'NORMAL', 'isAutomatic': True, 'fuelType': 'diesel', 'fuelConsumption': 1.4, 'maxRPM': 2800, 'maxSafeRPM': 2600, 'idleRPM': 600, 'startRPM': 500, 'stallRPM': 350, 'revlimitRPM': 3000,
             'starterPower': 6, 'gearRatios': [-4.0, 0.0, 4.5, 2.8, 1.8], 'upShiftRPM': [2200, 2200, 2200], 'downShiftRPM': [1000, 1000, 1000], 'shiftSpeed': 10, 'clutchTime': 12, 'revResistance': 8,
             'heatingCoefficient': 0.4, 'coolingCoefficient': 0.6, 'engineWearFactor': 0.3},
  'definitions': [{'subName': '', 'name': 'Tank Diesel Engine', 'extraMaterialLists': [[]]}]})
 w(f'{A}/jsondefs/parts/tank_seat.json', {
- 'general': {'type': 'seat', 'name': 'Tank Crew Seat', 'materialLists': [['minecraft:iron_ingot:0:4']]},
+ 'seat': {'standing': False, 'widthScale': 1.0, 'heightScale': 1.0},
+ 'general': {'type': 'seat', 'name': 'Tank Crew Seat', 'width': 0.9, 'height': 0.9, 'mass': 60, 'materialLists': [['minecraft:iron_ingot:0:4']]},
  'definitions': [{'subName': '', 'name': 'Tank Crew Seat', 'extraMaterialLists': [[]]}]})
 GUNS = {  # id: (name, bore mm, reload ticks, velocity, model, yaw speed, pitch speed)
  'tank_gun_105': ('Tank Gun 105 mm', 105, 90, 150, 'tank_gun_main', 0.55, 0.45),
@@ -162,9 +163,9 @@ GUNS = {  # id: (name, bore mm, reload ticks, velocity, model, yaw speed, pitch 
 }
 for gid, (nm, bore, rl, vel, model, ys, ps) in GUNS.items():
     w(f'{A}/jsondefs/parts/{gid}.json', {
-     'general': {'type': 'gun_tank', 'name': nm, 'materialLists': [['minecraft:iron_block:0:8'], ['minecraft:gunpowder:0:16']]},
-     'gun': {'capacity': 1, 'reloadTime': rl, 'muzzleVelocity': vel, 'fireDelay': 2.0, 'bulletSpreadFactor': 0.0, 'diameter': bore, 'minCaseLength': 100, 'maxCaseLength': 900,
-             'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20, 'yawSpeed': ys, 'pitchSpeed': ps, 'isSemiAuto': True, 'autoReload': True},
+     'general': {'type': 'gun_tank', 'name': nm, 'width': 0.8, 'height': 0.8, 'mass': 1500, 'materialLists': [['minecraft:iron_block:0:8'], ['minecraft:gunpowder:0:16']]},
+     'gun': {'capacity': 1, 'reloadTime': rl, 'muzzleVelocity': vel, 'fireDelay': 2.0, 'bulletSpreadFactor': 0.0, 'diameter': 120, 'minCaseLength': 100, 'maxCaseLength': 900,
+             'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20, 'yawSpeed': ys, 'pitchSpeed': ps, 'isSemiAuto': True, 'autoReload': True, 'preloadedBullet': f'{PK}:tank_shell_ap', 'muzzleGroups': [{'muzzles': [{'pos': [0, 0, 3.0]}]}]},
      'definitions': [{'subName': '', 'name': nm, 'modelName': model, 'textureName': model, 'extraMaterialLists': [[]]}]})
 for b, desc, dmg, types, extra in (('ap', 'Armour-Piercing Tank Shell', 55.0, ['armor_piercing'], {'armorPenetration': 80.0}),
                                     ('he', 'High-Explosive Tank Shell', 25.0, ['explosive'], {'blastStrength': 4.0, 'blastDamage': 40.0, 'blastRadiusXZ': 6.0, 'blastRadiusY': 4.0, 'maxDamageRadius': 2.5})):
@@ -176,12 +177,13 @@ for b, desc, dmg, types, extra in (('ap', 'Armour-Piercing Tank Shell', 55.0, ['
 def parts(design, gun, track):
     seat_z = 1.9 if design == 1 else 1.7
     return [
-     {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'defaultPart': f'{PK}:tank_engine'},
-     {'pos': [-1.35 if design == 1 else -1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
-     {'pos': [1.35 if design == 1 else 1.25, 0.0, 0.0], 'types': ['ground_tread'], 'defaultPart': f'{PK}:{track}'},
-     {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
+     {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'minValue': 0.0, 'maxValue': 10.0, 'defaultPart': f'{PK}:tank_engine'},
+     *[{'pos': [side * (1.35 if design == 1 else 1.25), 0.45, z], 'types': ['ground_wheel'], 'minValue': 0.0, 'maxValue': 10.0, 'defaultPart': f'{PK}:tank_wheel'}
+       for side in (-1, 1) for z in (-2.5, 0.0, 2.5)],
+    # parts slots (linkedParts counts from 1): 1 engine, 2-7 road wheels, 8 controller seat, 9 second seat, 10 gun; the controller seat is linked to the gun so Space fires it
+     {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'linkedParts': [10], 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
      {'pos': [0.6, 1.2, -0.4], 'types': ['seat'], 'defaultPart': f'{PK}:tank_seat'},
-     {'pos': [0.0, 1.5 if design == 1 else 1.25, -0.3], 'types': ['gun_tank'], 'defaultPart': f'{PK}:{gun}', 'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20},
+     {'pos': [0.0, 1.5 if design == 1 else 1.25, -0.3], 'types': ['gun_tank'], 'minValue': 0.0, 'maxValue': 1000.0, 'defaultPart': f'{PK}:{gun}', 'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20},
     ]
 # id, design, display, gun, health, mass, Age, description
 VEHICLES = [
@@ -198,21 +200,61 @@ for vid, design, nm, gun, hp, mass, age, desc in VEHICLES:
     mat = [['minecraft:iron_ingot:0:%d' % (hp // 12)], ['minecraft:iron_block:0:%d' % (hp // 100)], ['minecraft:redstone:0:16'], ['minecraft:gunpowder:0:8']]
     w(f'{A}/jsondefs/vehicles/{vid}.json', {
      'general': {'type': 'vehicle', 'name': nm, 'description': desc, 'materialLists': mat, 'health': hp},
-     'motorized': {'emptyMass': mass, 'fuelCapacity': 1500, 'defaultFuelQty': 600, 'hasSkidSteer': True, 'hasPermanentSkidSteer': True, 'hasRunningLights': True, 'hasHeadlights': True,
+     'motorized': {'emptyMass': mass, 'fuelCapacity': 1500000, 'defaultFuelQty': 600000, 'hasSkidSteer': True, 'hasPermanentSkidSteer': True, 'hasRunningLights': True, 'hasHeadlights': True,
                    'axleRatio': 3.6, 'brakingFactor': 1.2, 'dragCoefficient': 0.9, 'crossSectionalArea': 8.0, 'steeringForceFactor': 1.0, 'overSteer': 0.0, 'underSteer': 0.0,
                    'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0, 'isBigTruck': False},
-     'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': False, 'axleRatio': 3.6, 'dragCoefficient': 0.9},
-     'parts': parts(design, gun, 'tank_track' if design == 1 else 'tank_track2'),
-     'collision': [{'pos': [0, 1.1, 0.0], 'width': 2.6, 'height': 1.2}, {'pos': [0, 1.0, 2.4], 'width': 2.6, 'height': 1.0}, {'pos': [0, 1.0, -2.4], 'width': 2.6, 'height': 1.0},
-                   {'pos': [-1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}, {'pos': [1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}],
+     'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': True, 'axleRatio': 3.6, 'dragCoefficient': 0.9},
+     'parts': parts(design, gun, None),
+     'collisionGroups': [{'collisionTypes': ['block', 'entity', 'vehicle', 'attack', 'bullet'], 'isInterior': False, 'health': hp, 'armorThickness': 300.0, 'collisions': [
+         {'pos': [0, 1.1, 0.0], 'width': 2.6, 'height': 1.2}, {'pos': [0, 1.0, 2.4], 'width': 2.6, 'height': 1.0}, {'pos': [0, 1.0, -2.4], 'width': 2.6, 'height': 1.0},
+         {'pos': [-1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}, {'pos': [1.6, 0.7, 0.0], 'width': 1.0, 'height': 1.2}]}],
      'definitions': [{'subName': sfx, 'name': nm + lab, 'modelName': mdl, 'textureName': mdl + sfx, 'extraMaterialLists': [[]]} for sfx, lab in CAMO_N],
      'rendering': {}})
-w(f'{A}/jsondefs/parts/tank_track2.json', {
- 'general': {'type': 'ground_tread', 'name': 'Tank Track (narrow)', 'materialLists': [['minecraft:iron_ingot:0:20']]},
- 'ground': {'isTread': True, 'width': 0.7, 'height': 0.85, 'flatHeight': 0.85, 'climbHeight': 0.85, 'motiveFriction': 1.0, 'lateralFriction': 1.4, 'extraCollisionBoxOffset': 0.0, 'spacing': 6.4, 'canGoFlat': False},
- 'definitions': [{'subName': '', 'name': 'Tank Track (narrow)', 'extraMaterialLists': [[]]}]})
 import pathlib
 pathlib.Path(f'{A}/jsondefs/parts/tank_gun_main.json').unlink(missing_ok=True)
 w(f'{M}/tank_manifest.json', {'vehicles': [{'id': v[0], 'name': v[2], 'age': v[6], 'desc': v[7], 'camo': [c[0] for c in CAMO_N]} for v in VEHICLES],
-                              'parts': ['tank_track', 'tank_track2', 'tank_engine', 'tank_seat'] + list(GUNS), 'bullets': ['tank_shell_ap', 'tank_shell_he']})
+                              'parts': ['tank_wheel', 'tank_engine', 'tank_seat'] + list(GUNS), 'bullets': ['tank_shell_ap', 'tank_shell_he']})
+
+# ---- inventory icons: textures/items/<systemName><subName>.png (IV looks them up by item resource name) ----
+CAMO_RGB = {'': (74, 92, 58), '_desert': (176, 150, 100), '_snow': (214, 220, 226)}
+KIND_DIR = {'tank1': 'vehicles', 'tank2': 'vehicles', 'track': 'parts', 'engine': 'parts', 'seat': 'parts', 'gun': 'parts', 'shell': 'bullets'}
+def icon(path, body, kind):
+    im = Image.new('RGBA', (32, 32), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    dark = tuple(max(0, c - 40) for c in body); track = (38, 38, 40)
+    if kind == 'tank1' or kind == 'tank2':
+        d.rounded_rectangle([3, 19, 28, 26], 3, fill=track); d.rectangle([5, 14, 26, 21], fill=body, outline=dark)
+        if kind == 'tank1': d.rectangle([10, 8, 21, 14], fill=body, outline=dark)
+        else: d.ellipse([10, 6, 21, 15], fill=body, outline=dark)
+        d.rectangle([20, 10, 30, 12], fill=dark)
+        for x in range(6, 27, 5): d.ellipse([x, 22, x + 3, 25], fill=(90, 90, 94))
+    elif kind == 'track':
+        d.rounded_rectangle([3, 12, 28, 22], 4, fill=track, outline=(20, 20, 22))
+        for x in range(6, 27, 5): d.ellipse([x, 15, x + 3, 19], fill=(110, 110, 116))
+    elif kind == 'engine':
+        d.rectangle([6, 10, 25, 24], fill=(104, 108, 114), outline=(50, 52, 56)); d.rectangle([9, 6, 22, 10], fill=(80, 84, 90))
+        for x in (10, 15, 20): d.rectangle([x, 12, x + 2, 21], fill=(60, 62, 66))
+    elif kind == 'seat':
+        d.rectangle([9, 5, 22, 17], fill=(88, 64, 48), outline=(50, 36, 28)); d.rectangle([7, 17, 24, 24], fill=(70, 52, 40), outline=(40, 30, 24))
+    elif kind == 'gun':
+        d.rectangle([2, 13, 24, 17], fill=(70, 74, 80), outline=(36, 38, 42)); d.rectangle([22, 10, 29, 21], fill=(90, 94, 100), outline=(36, 38, 42))
+    elif kind == 'shell':
+        d.rectangle([12, 10, 19, 25], fill=(190, 150, 60), outline=(100, 76, 30)); d.polygon([(12, 10), (19, 10), (15, 3)], fill=body, outline=dark)
+    os.makedirs(os.path.dirname(path), exist_ok=True); im.save(path)
+    base = os.path.basename(path)[:-4]
+    folder = KIND_DIR[kind]
+    w(f'{A}/models/item/{folder}/{base}.json', {'parent': 'mts:item/basic', 'textures': {'layer0': f'{PK}:item/{base}'}})
+for vid, design, *_ in VEHICLES:
+    for sfx, _l in CAMO_N: icon(f'{A}/textures/item/{vid}{sfx}.png', CAMO_RGB[sfx], 'tank%d' % design)
+icon(f'{A}/textures/item/tank_wheel.png', (0, 0, 0), 'track')
+icon(f'{A}/textures/item/tank_engine.png', (0, 0, 0), 'engine'); icon(f'{A}/textures/item/tank_seat.png', (0, 0, 0), 'seat')
+for g in GUNS: icon(f'{A}/textures/item/{g}.png', (0, 0, 0), 'gun')
+icon(f'{A}/textures/item/tank_shell_ap.png', (110, 110, 118), 'shell'); icon(f'{A}/textures/item/tank_shell_he.png', (170, 60, 40), 'shell')
+# parts need an explicit click box in collisionGroups (seats are mounted by clicking this box, engines and guns by their GUIs)
+CLICKBOX = {'tank_seat': (0.9, 0.9), 'tank_engine': (1.0, 0.8)}
+CLICKBOX.update({g: (0.8, 0.8) for g in GUNS})
+for pn, (wd, ht) in CLICKBOX.items():
+    fp = f'{A}/jsondefs/parts/{pn}.json'
+    d = json.load(open(fp))
+    d['collisionGroups'] = [{'collisionTypes': ['click', 'attack', 'bullet'], 'isInterior': False, 'collisions': [{'pos': [0, 0.0, 0], 'width': wd, 'height': ht}]}]
+    w(fp, d)
 print('tank pack written', A)

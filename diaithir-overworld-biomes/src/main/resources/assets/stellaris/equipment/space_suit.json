@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "stellaris:space_suit"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "stellaris:space_suit"
+   }
+  ]
+ }
+}

@@ -1,0 +1,22 @@
+[
+ {
+  "id": "diaithirvehiclescrayfish:gas_pump",
+  "name": "Fuel Pump",
+  "text": "Stands on a Carrier Tank. Use it to take the hose, then use a vehicle or tank trailer to pump 50 L per use. The hose lets go if you walk 10 m away. Age V."
+ },
+ {
+  "id": "diaithirvehiclescrayfish:trailer_hitch",
+  "name": "Trailer Hitch",
+  "text": "Use on a trailer to hook it to yourself or unhook it; use a vehicle with a tow bar to pass the trailer to it. Age V."
+ },
+ {
+  "id": "diaithirvehiclescrayfish:repair_hammer",
+  "name": "Repair Hammer",
+  "text": "Each blow gives a damaged vehicle or trailer 5 health back. Age V."
+ },
+ {
+  "id": "diaithirvehiclescrayfish:tank_trailer",
+  "name": "Tank Trailer",
+  "text": "Two-wheel fuel bowser with a 2,000 L tank. Towed with a hitch, filled by a pump, emptied into cans and vehicles. It takes crash damage and snaps free if the tow bar gets too far. Age V."
+ }
+]

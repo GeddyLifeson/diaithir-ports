@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/wall_inventory",
+ "textures": {
+  "wall": "aerialhell:block/stellar_stone_bricks_wall"
+ }
+}

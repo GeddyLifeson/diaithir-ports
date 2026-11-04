@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab_top",
+ "textures": {
+  "bottom": "aerialhell:block/copper_pine_slab",
+  "side": "aerialhell:block/copper_pine_slab",
+  "top": "aerialhell:block/copper_pine_slab"
+ }
+}

@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/citrus_juicer"
+  "layer0": "diaithirfurnishings:item/citrus_juicer_head",
+  "layer1": "diaithirfurnishings:item/citrus_juicer_handle"
  }
 }

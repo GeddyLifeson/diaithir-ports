@@ -48,6 +48,22 @@ final class SelfTest {
             out.add(check("explosion list emptied", boom.isEmpty(), true));
             ch.setData(DiaithirClaims.CLAIM, Optional.of(new Claim(owner.getUUID(), owner.getGameProfile().name(), List.of(stranger.getUUID()))));
             out.add(check("trusted break allowed", brk(level, pos, stranger), false));
+            ch.setData(DiaithirClaims.CLAIM, Optional.of(new Claim(owner.getUUID(), owner.getGameProfile().name(), List.of()).withFlags(Claim.PUBLIC_USE)));
+            out.add(check("public_use flag lets a stranger use", use(level, pos, stranger), false));
+            out.add(check("public_use flag still denies break", brk(level, pos, stranger), true));
+            ch.setData(DiaithirClaims.CLAIM, Optional.of(new Claim(owner.getUUID(), owner.getGameProfile().name(), List.of()).withFlags(Claim.ALLOW_EXPLOSIONS)));
+            List<BlockPos> boom2 = new ArrayList<>(List.of(pos));
+            Guard.strip(level, boom2);
+            out.add(check("explosions flag keeps blocks in the list", boom2.size() == 1, true));
+            ch.setData(DiaithirClaims.CLAIM, Optional.of(new Claim(owner.getUUID(), owner.getGameProfile().name(), List.of())));
+            out.add(check("team: stranger denied before invite", brk(level, pos, stranger), true));
+            Teams.create(owner.getUUID(), "selftest_team");
+            Teams.invite(owner.getUUID(), stranger.getUUID());
+            Teams.join(stranger.getUUID());
+            out.add(check("team: member may break", brk(level, pos, stranger), false));
+            Teams.leave(stranger.getUUID());
+            Teams.leave(owner.getUUID());
+            out.add(check("team: left member denied again", brk(level, pos, stranger), true));
         } finally {
             ch.setData(DiaithirClaims.CLAIM, old);
             level.setBlock(pos, before, 3);

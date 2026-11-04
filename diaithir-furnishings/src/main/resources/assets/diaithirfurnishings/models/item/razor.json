@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/razor"
+  "layer0": "diaithirfurnishings:item/razor_head",
+  "layer1": "diaithirfurnishings:item/razor_handle",
+  "layer2": "diaithirfurnishings:item/razor_binding"
  }
 }
