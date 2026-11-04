@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:item/generated",
+"textures": {
+"layer0": "diaithir_planets:block/thurdock_elionae_plant"
+}
+}

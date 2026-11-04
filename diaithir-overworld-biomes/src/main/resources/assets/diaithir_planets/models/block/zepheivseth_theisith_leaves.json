@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/leaves",
+"textures": {
+"all": "diaithir_planets:block/zepheivseth_theisith_leaves"
+}
+}

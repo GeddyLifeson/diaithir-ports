@@ -1,0 +1,12 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "apothic_enchanting:seashelf",
+    "requirements": {
+        "arcana": 10.0,
+        "eterna": 45.0,
+        "quanta": 15.0
+    },
+    "result": {
+        "id": "apothic_enchanting:infused_seashelf"
+    }
+}

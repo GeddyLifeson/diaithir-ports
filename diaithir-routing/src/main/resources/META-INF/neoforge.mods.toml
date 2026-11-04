@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirrouting"
+version = "${version}"
+displayName = "Diaithir Routing"
+description = "Routers with up to nine modules, laser nodes with visible beams, a shared filter item, filter hoppers, fast hoppers and an item collector. Clean-room original."
+
+[[dependencies.diaithirrouting]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

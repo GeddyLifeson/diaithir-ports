@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/leaves",
+ "textures": {
+  "all": "diaithirtrees:block/white_poplar_leaves"
+ }
+}

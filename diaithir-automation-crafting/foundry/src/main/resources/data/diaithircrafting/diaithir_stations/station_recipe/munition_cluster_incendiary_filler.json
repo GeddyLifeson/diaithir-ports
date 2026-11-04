@@ -1,0 +1,15 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 14,
+  "ingredients": [
+    {
+      "item": "minecraft:tnt",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_cluster_incendiary_filler",
+    "count": 1
+  }
+}

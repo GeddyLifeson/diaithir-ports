@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#aerialhell:copper_pine_logs"
+ ],
+ "result": {
+  "id": "aerialhell:copper_pine_planks",
+  "count": 4
+ }
+}

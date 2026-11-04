@@ -6,10 +6,10 @@ import net.diaithir.units.fuel.*;
 import org.junit.jupiter.api.Test;
 
 class FuelsTest {
-    @Test void csvLoads() { assertEquals(17, Fuels.all().size()); assertEquals(Fuel.Kind.LIQUID, Fuels.get("diesel").kind()); }
+    @Test void csvLoads() { assertEquals(23, Fuels.all().size()); assertEquals(Fuel.Kind.LIQUID, Fuels.get("diesel").kind()); }
 
     @Test void everyEngineFuelExists() {
-        for (String e : new String[]{"draft_animal", "steam_piston", "petrol_engine", "diesel_engine", "avgas_piston", "jet_turbine", "electric_motor", "fuel_cell"})
+        for (String e : new String[]{"draft_animal", "steam_piston", "petrol_engine", "diesel_engine", "avgas_piston", "jet_turbine", "electric_motor", "fuel_cell", "arcane_motor"})
             for (String f : Fuels.engine(e).fuels()) assertNotNull(Fuels.get(f), f);
     }
 
@@ -53,5 +53,23 @@ class FuelsTest {
         for (String id : MagicFuel.ids()) assertTrue(MagicFuel.coalEquivalent(id) < 0.01, id);
         // 80 kJ at 1 MW and 50 % is 0.04 s of shaft power
         assertEquals(0.04, MagicFuel.burnSeconds("botania:mana_diamond", 1e6, 0.5), 1e-9);
+    }
+
+    @Test void magicCarriersMatchTheUnitTable() {
+        String[][] pairs = {{"mana", "botania:mana"}, {"aura", "naturesaura:aura"}, {"ember", "embers:ember"}, {"life_points", "bloodmagic:lp"}, {"vis", "thaumcraft:vis"}, {"source", "arsnouveau:source"}};
+        for (String[] p : pairs)
+            assertEquals(Units.convert(1, p[1], "j"), Fuels.get(p[0]).energyJ(1), 1e-6, p[0]);
+        assertEquals(0, Fuels.get("mana").massKg(5));
+    }
+
+    @Test void anyEngineClassCanTakeMagicOnlyIfListed() {
+        assertTrue(Fuels.engine("arcane_motor").accepts("mana"));
+        assertTrue(Fuels.engine("steam_piston").accepts("ember"));
+        assertFalse(Fuels.engine("diesel_engine").accepts("mana"));
+    }
+
+    @Test void trainOnManaBurnsQuantaAtTheCarrierRate() {
+        // 1 MW arcane locomotive at 60 %: 1e6 / 0.6 / 100 J = about 16 667 quanta per second.
+        assertEquals(16_667, Fuels.flowPerSecond(Fuels.get("mana"), 1_000_000, 0.60), 1);
     }
 }

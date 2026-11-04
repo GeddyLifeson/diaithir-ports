@@ -1,0 +1,8 @@
+{
+    "blocks": "apothic_enchanting:infused_hellshelf",
+    "stats": {
+        "eterna": 5.0,
+        "maxEterna": 60.0,
+        "quanta": 5.0
+    }
+}

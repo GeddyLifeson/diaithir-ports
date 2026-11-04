@@ -2,5 +2,6 @@
  "block.diaithircreatureutilities.wooden_crate": "Wooden Crate",
  "block.diaithircreatureutilities.iron_crate": "Iron Crate",
  "block.diaithircreatureutilities.golden_crate": "Golden Crate",
- "tooltip.diaithircreatureutilities.crate_info": "Sounds like there's something inside..."
+ "tooltip.diaithircreatureutilities.crate_info": "Sounds like there's something inside...",
+ "entity.diaithircreatureutilities.guard": "Village Guard"
 }

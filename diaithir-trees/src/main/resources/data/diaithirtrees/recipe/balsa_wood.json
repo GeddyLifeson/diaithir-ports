@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "L": "diaithirtrees:balsa_log"
+ },
+ "pattern": [
+  "LL",
+  "LL"
+ ],
+ "result": {
+  "id": "diaithirtrees:balsa_wood",
+  "count": 3
+ }
+}
