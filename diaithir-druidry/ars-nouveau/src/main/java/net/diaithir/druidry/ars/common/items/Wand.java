@@ -27,7 +27,7 @@ public class Wand extends ModItem implements ICasterTool {
     }
 
     public Wand() {
-        super(new Item.Properties().stacksTo(1).component(DataComponentRegistry.SPELL_CASTER, new SpellCaster()));
+        super(net.diaithir.druidry.ars.setup.registry.ItemsRegistry.defaultItemProperties().stacksTo(1).component(DataComponentRegistry.SPELL_CASTER, new SpellCaster()));
     }
 
     @Override

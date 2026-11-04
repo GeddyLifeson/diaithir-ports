@@ -25,7 +25,7 @@ public class MageBloomCrop extends CropBlock {
     public static final IntegerProperty AGE_0_4 = IntegerProperty.create("age", 0, 4);
 
     public MageBloomCrop() {
-        super(Properties.of().randomTicks().strength(0.0F).noCollision().sound(SoundType.CROP).noOcclusion().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY));
+        super(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().randomTicks().strength(0.0F).noCollision().sound(SoundType.CROP).noOcclusion().mapColor(MapColor.PLANT).pushReaction(PushReaction.DESTROY));
     }
 
     private static final VoxelShape[] SHAPES = new VoxelShape[]{Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D)};

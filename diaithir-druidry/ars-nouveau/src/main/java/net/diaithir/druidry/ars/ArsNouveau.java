@@ -37,6 +37,8 @@ public class ArsNouveau {
 
     public ArsNouveau(IEventBus bus, ModContainer container) {
         ArsGlyphs.register();
+        BlockRegistry.onBlocksRegistry();
+        BlockRegistry.onBlockItemsRegistry();
         BlockRegistry.BLOCKS.register(bus);
         BlockRegistry.BLOCK_ENTITIES.register(bus);
         BlockRegistry.BS_PROVIDERS.register(bus);

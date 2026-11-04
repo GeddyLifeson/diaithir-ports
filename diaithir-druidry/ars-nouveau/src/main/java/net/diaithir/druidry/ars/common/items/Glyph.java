@@ -31,7 +31,7 @@ public class Glyph extends ModItem {
     public AbstractSpellPart spellPart;
 
     public Glyph(AbstractSpellPart part) {
-        super(new Item.Properties());
+        super(net.diaithir.druidry.ars.setup.registry.ItemsRegistry.defaultItemProperties());
         this.spellPart = part;
     }
 

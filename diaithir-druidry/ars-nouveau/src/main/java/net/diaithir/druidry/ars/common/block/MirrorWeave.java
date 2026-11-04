@@ -37,7 +37,7 @@ public class MirrorWeave extends ModBlock implements EntityBlock {
     }
 
     public MirrorWeave(){
-        this(Block.Properties.of().strength(0.1F).sound(SoundType.WOOL).noOcclusion());
+        this(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(0.1F).sound(SoundType.WOOL).noOcclusion());
     }
 
     @Override

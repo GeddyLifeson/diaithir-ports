@@ -40,7 +40,7 @@ public class ModItem extends Item {
     }
 
     protected static Properties defaultProps() {
-        return new Item.Properties();
+        return net.diaithir.druidry.ars.setup.registry.ItemsRegistry.defaultItemProperties();
     }
 
     /**

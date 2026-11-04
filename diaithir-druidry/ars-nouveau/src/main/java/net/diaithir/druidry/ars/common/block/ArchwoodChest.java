@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ArchwoodChest extends ChestBlock {
     public ArchwoodChest() {
-        super(() -> BlockRegistry.ARCHWOOD_CHEST_TILE.get(), net.minecraft.sounds.SoundEvents.CHEST_OPEN, net.minecraft.sounds.SoundEvents.CHEST_CLOSE, BlockBehaviour.Properties.of().strength(2.5F).sound(SoundType.WOOD));
+        super(() -> BlockRegistry.ARCHWOOD_CHEST_TILE.get(), net.minecraft.sounds.SoundEvents.CHEST_OPEN, net.minecraft.sounds.SoundEvents.CHEST_CLOSE, net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(2.5F).sound(SoundType.WOOD));
     }
 
     @Override

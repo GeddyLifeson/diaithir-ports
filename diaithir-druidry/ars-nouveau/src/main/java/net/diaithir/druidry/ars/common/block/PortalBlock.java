@@ -54,7 +54,7 @@ public class PortalBlock extends TickableModBlock {
     }
 
     public PortalBlock() {
-        super(BlockBehaviour.Properties.of().pushReaction(PushReaction.BLOCK).noCollision().strength(-1.0F, 3600000.0F).noLootTable());
+        super(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().pushReaction(PushReaction.BLOCK).noCollision().strength(-1.0F, 3600000.0F).noLootTable());
         this.registerDefaultState(this.defaultBlockState().setValue(AXIS, Direction.Axis.X).setValue(ALTERNATE, false));
     }
 

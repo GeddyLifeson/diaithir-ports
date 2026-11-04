@@ -15,6 +15,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
@@ -52,7 +54,7 @@ public class BlockRegistry {
     public static TagKey<Block> BLAZING_LOGS = BlockTags.create(ArsNouveau.prefix("blazing_logs"));
 
 
-    public static Block.Properties woodProp = BlockBehaviour.Properties.of().strength(2.0F, 3.0F).ignitedByLava().mapColor(MapColor.WOOD).sound(SoundType.WOOD);
+    public static Block.Properties woodProp() { return net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(2.0F, 3.0F).ignitedByLava().mapColor(MapColor.WOOD).sound(SoundType.WOOD); }
     public static final WoodType ARCHWOOD = register(new WoodType("ars_nouveau:archwood", BlockSetType.OAK));
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, ArsNouveau.MODID);
@@ -60,8 +62,8 @@ public class BlockRegistry {
     public static final DeferredRegister<BlockStateProviderType<?>> BS_PROVIDERS = DeferredRegister.create(BuiltInRegistries.BLOCKSTATE_PROVIDER_TYPE, ArsNouveau.MODID);
     public static final Holder<BlockStateProviderType<?>> stateProviderType = BS_PROVIDERS.register(LibBlockNames.STATE_PROVIDER, () -> new BlockStateProviderType<>(SupplierBlockStateProvider.CODEC));
 
-    public static BlockBehaviour.Properties LOG_PROP = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(2.0F, 3.0F).ignitedByLava().sound(SoundType.WOOD);
-    public static BlockBehaviour.Properties SAP_PROP = BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY);
+    public static BlockBehaviour.Properties LOG_PROP() { return net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().mapColor(MapColor.WOOD).strength(2.0F, 3.0F).ignitedByLava().sound(SoundType.WOOD); }
+    public static BlockBehaviour.Properties SAP_PROP() { return net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY); }
 
     public static BlockRegistryWrapper<LightBlock> LIGHT_BLOCK = registerBlock(LibBlockNames.LIGHT_BLOCK, LightBlock::new);
     public static BlockEntityTypeRegistryWrapper<LightTile> LIGHT_TILE = registerTile(LibBlockNames.LIGHT_BLOCK, LightTile::new, LIGHT_BLOCK);
@@ -69,27 +71,27 @@ public class BlockRegistry {
     public static BlockEntityTypeRegistryWrapper<SourceJarTile> SOURCE_JAR_TILE = registerTile(LibBlockNames.SOURCE_JAR, SourceJarTile::new, SOURCE_JAR);
     public static BlockRegistryWrapper<ScribesBlock> SCRIBES_BLOCK = registerBlockAndItem(LibBlockNames.SCRIBES_BLOCK, ScribesBlock::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
     public static BlockEntityTypeRegistryWrapper<ScribesTile> SCRIBES_TABLE_TILE = registerTile(LibBlockNames.SCRIBES_BLOCK, ScribesTile::new, SCRIBES_BLOCK);
-    public static BlockRegistryWrapper<SaplingBlock> CASCADING_SAPLING = registerBlockAndItem(LibBlockNames.CASCADING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("cascading_tree", WorldgenRegistry.CONFIGURED_CASCADING_TREE), SAP_PROP));
-    public static BlockRegistryWrapper<SaplingBlock> BLAZING_SAPLING = registerBlockAndItem(LibBlockNames.BLAZING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("blazing_tree", WorldgenRegistry.CONFIGURED_BLAZING_TREE), SAP_PROP));
-    public static BlockRegistryWrapper<SaplingBlock> VEXING_SAPLING = registerBlockAndItem(LibBlockNames.VEXING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("vexing_tree", WorldgenRegistry.CONFIGURED_VEXING_TREE), SAP_PROP));
-    public static BlockRegistryWrapper<SaplingBlock> FLOURISHING_SAPLING = registerBlockAndItem(LibBlockNames.FLOURISHING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("flourishing_tree", WorldgenRegistry.CONFIGURED_FLOURISHING_TREE), SAP_PROP));
-    public static BlockRegistryWrapper<ModBlock> ARCHWOOD_PLANK = registerBlockAndItem(LibBlockNames.ARCHWOOD_PLANK, () -> new ModBlock(LOG_PROP));
-    public static BlockRegistryWrapper<ButtonBlock> ARCHWOOD_BUTTON = registerBlockAndItem(LibBlockNames.ARCHWOOD_BUTTON, () -> new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.of().noCollision().strength(0.5F).sound(SoundType.WOOD)));
-    public static BlockRegistryWrapper<StairBlock> ARCHWOOD_STAIRS = registerBlockAndItem(LibBlockNames.ARCHWOOD_STAIRS, () -> new StairBlock(ARCHWOOD_PLANK.defaultBlockState(), woodProp));
-    public static BlockRegistryWrapper<SlabBlock> ARCHWOOD_SLABS = registerBlockAndItem(LibBlockNames.ARCHWOOD_SLABS, () -> new SlabBlock(woodProp));
-    public static BlockRegistryWrapper<FenceGateBlock> ARCHWOOD_FENCE_GATE = registerBlockAndItem(LibBlockNames.ARCHWOOD_FENCE_GATE, () -> new FenceGateBlock(ARCHWOOD, woodProp.forceSolidOn()));
-    public static BlockRegistryWrapper<TrapDoorBlock> ARCHWOOD_TRAPDOOR = registerBlockAndItem(LibBlockNames.ARCHWOOD_TRAPDOOR, () -> new TrapDoorBlock(BlockSetType.OAK, woodProp));
-    public static BlockRegistryWrapper<PressurePlateBlock> ARCHWOOD_PPlate = registerBlockAndItem(LibBlockNames.ARCHWOOD_PRESSURE_PLATE, () -> new PressurePlateBlock(BlockSetType.OAK, woodProp.forceSolidOn()));
-    public static BlockRegistryWrapper<FenceBlock> ARCHWOOD_FENCE = registerBlockAndItem(LibBlockNames.ARCHWOOD_FENCE, () -> new FenceBlock(woodProp));
-    public static BlockRegistryWrapper<DoorBlock> ARCHWOOD_DOOR = registerBlockAndItem(LibBlockNames.ARCHWOOD_DOOR, () -> new DoorBlock(BlockSetType.OAK, woodProp));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_BLUE = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_BLUE, () -> new RotatedPillarBlock(LOG_PROP));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_BLUE = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_BLUE, () -> new RotatedPillarBlock(LOG_PROP));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_GREEN = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_GREEN, () -> new RotatedPillarBlock(LOG_PROP));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_GREEN = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_GREEN, () -> new RotatedPillarBlock(LOG_PROP));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_RED = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_RED, () -> new RotatedPillarBlock(LOG_PROP));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_RED = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_RED, () -> new RotatedPillarBlock(LOG_PROP));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_PURPLE = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_PURPLE, () -> new RotatedPillarBlock(LOG_PROP));
-    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_PURPLE = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_PURPLE, () -> new RotatedPillarBlock(LOG_PROP));
+    public static BlockRegistryWrapper<SaplingBlock> CASCADING_SAPLING = registerBlockAndItem(LibBlockNames.CASCADING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("cascading_tree", WorldgenRegistry.CONFIGURED_CASCADING_TREE), SAP_PROP()));
+    public static BlockRegistryWrapper<SaplingBlock> BLAZING_SAPLING = registerBlockAndItem(LibBlockNames.BLAZING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("blazing_tree", WorldgenRegistry.CONFIGURED_BLAZING_TREE), SAP_PROP()));
+    public static BlockRegistryWrapper<SaplingBlock> VEXING_SAPLING = registerBlockAndItem(LibBlockNames.VEXING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("vexing_tree", WorldgenRegistry.CONFIGURED_VEXING_TREE), SAP_PROP()));
+    public static BlockRegistryWrapper<SaplingBlock> FLOURISHING_SAPLING = registerBlockAndItem(LibBlockNames.FLOURISHING_SAPLING, () -> new SaplingBlock(MagicTree.getGrower("flourishing_tree", WorldgenRegistry.CONFIGURED_FLOURISHING_TREE), SAP_PROP()));
+    public static BlockRegistryWrapper<ModBlock> ARCHWOOD_PLANK = registerBlockAndItem(LibBlockNames.ARCHWOOD_PLANK, () -> new ModBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<ButtonBlock> ARCHWOOD_BUTTON = registerBlockAndItem(LibBlockNames.ARCHWOOD_BUTTON, () -> new ButtonBlock(BlockSetType.OAK, 30, net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().noCollision().strength(0.5F).sound(SoundType.WOOD)));
+    public static BlockRegistryWrapper<StairBlock> ARCHWOOD_STAIRS = registerBlockAndItem(LibBlockNames.ARCHWOOD_STAIRS, () -> new StairBlock(ARCHWOOD_PLANK.defaultBlockState(), woodProp()));
+    public static BlockRegistryWrapper<SlabBlock> ARCHWOOD_SLABS = registerBlockAndItem(LibBlockNames.ARCHWOOD_SLABS, () -> new SlabBlock(woodProp()));
+    public static BlockRegistryWrapper<FenceGateBlock> ARCHWOOD_FENCE_GATE = registerBlockAndItem(LibBlockNames.ARCHWOOD_FENCE_GATE, () -> new FenceGateBlock(ARCHWOOD, woodProp().forceSolidOn()));
+    public static BlockRegistryWrapper<TrapDoorBlock> ARCHWOOD_TRAPDOOR = registerBlockAndItem(LibBlockNames.ARCHWOOD_TRAPDOOR, () -> new TrapDoorBlock(BlockSetType.OAK, woodProp()));
+    public static BlockRegistryWrapper<PressurePlateBlock> ARCHWOOD_PPlate = registerBlockAndItem(LibBlockNames.ARCHWOOD_PRESSURE_PLATE, () -> new PressurePlateBlock(BlockSetType.OAK, woodProp().forceSolidOn()));
+    public static BlockRegistryWrapper<FenceBlock> ARCHWOOD_FENCE = registerBlockAndItem(LibBlockNames.ARCHWOOD_FENCE, () -> new FenceBlock(woodProp()));
+    public static BlockRegistryWrapper<DoorBlock> ARCHWOOD_DOOR = registerBlockAndItem(LibBlockNames.ARCHWOOD_DOOR, () -> new DoorBlock(BlockSetType.OAK, woodProp()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_BLUE = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_BLUE, () -> new RotatedPillarBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_BLUE = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_BLUE, () -> new RotatedPillarBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_GREEN = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_GREEN, () -> new RotatedPillarBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_GREEN = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_GREEN, () -> new RotatedPillarBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_RED = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_RED, () -> new RotatedPillarBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_RED = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_RED, () -> new RotatedPillarBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWLOG_PURPLE = registerBlockAndItem(LibBlockNames.STRIPPED_AWLOG_PURPLE, () -> new RotatedPillarBlock(LOG_PROP()));
+    public static BlockRegistryWrapper<RotatedPillarBlock> STRIPPED_AWWOOD_PURPLE = registerBlockAndItem(LibBlockNames.STRIPPED_AWWOOD_PURPLE, () -> new RotatedPillarBlock(LOG_PROP()));
     public static BlockRegistryWrapper<ModBlock> SOURCE_GEM_BLOCK = registerBlockAndItem(LibBlockNames.SOURCE_GEM_BLOCK, () -> new ModBlock(ModBlock.defaultProperties().noOcclusion().lightLevel(s -> 6)));
     public static BlockRegistryWrapper<SconceBlock> GOLD_SCONCE_BLOCK = registerBlockAndItem(LibBlockNames.SCONCE, SconceBlock::new);
     public static BlockRegistryWrapper<SconceBlock> SOURCESTONE_SCONCE_BLOCK = registerBlockAndItem(LibBlockNames.SOURCESTONE_SCONCE, SconceBlock::new);
@@ -102,13 +104,13 @@ public class BlockRegistry {
     public static BlockEntityTypeRegistryWrapper<ScryerCrystalTile> SCRYER_CRYSTAL_TILE = registerTile(LibBlockNames.SCRYERS_CRYSTAL, ScryerCrystalTile::new, SCRYERS_CRYSTAL);
     public static BlockRegistryWrapper<MobJar> MOB_JAR = registerBlockAndItem(LibBlockNames.MOB_JAR, MobJar::new, (reg) -> new MobJarItem(reg.get(), defaultItemProperties()));
     public static BlockEntityTypeRegistryWrapper<MobJarTile> MOB_JAR_TILE = registerTile(LibBlockNames.MOB_JAR, MobJarTile::new, MOB_JAR);
-    public static BlockRegistryWrapper<ModBlock> MAGEBLOOM_BLOCK = registerBlockAndItem(LibBlockNames.MAGEBLOOM_BLOCK, () -> new ModBlock(BlockBehaviour.Properties.of().strength(0.1F).sound(SoundType.WOOL)));
+    public static BlockRegistryWrapper<ModBlock> MAGEBLOOM_BLOCK = registerBlockAndItem(LibBlockNames.MAGEBLOOM_BLOCK, () -> new ModBlock(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(0.1F).sound(SoundType.WOOL)));
     public static final BlockRegistryWrapper<RitualBrazierBlock> RITUAL_BLOCK = registerBlockAndItem(LibBlockNames.RITUAL_BRAZIER, RitualBrazierBlock::new);
-    public static final BlockRegistryWrapper<ModBlock> SOURCEBERRY_SACK = registerBlockAndItem(LibBlockNames.SOURCEBERRY_SACK, () -> new ModBlock(BlockBehaviour.Properties.of().strength(0.1F).sound(SoundType.WOOL)));
-    public static final BlockRegistryWrapper<StandingSignBlock> ARCHWOOD_SIGN = registerBlock(LibBlockNames.ARCHWOOD_SIGN, () -> new StandingSignBlock(ARCHWOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
-    public static final BlockRegistryWrapper<CeilingHangingSignBlock> ARCHWOOD_HANGING_SIGN = registerBlock(LibBlockNames.ARCHWOOD_HANGING_SIGN, () -> new CeilingHangingSignBlock(ARCHWOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
-    public static final BlockRegistryWrapper<WallSignBlock> ARCHWOOD_WALL_SIGN = registerBlock(LibBlockNames.ARCHWOOD_WALL_SIGN, () -> new WallSignBlock(ARCHWOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
-    public static final BlockRegistryWrapper<WallHangingSignBlock> ARCHWOOD_HANGING_WALL_SIGN = registerBlock(LibBlockNames.ARCHWOOD_HANGING_WALL_SIGN, () -> new WallHangingSignBlock(ARCHWOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
+    public static final BlockRegistryWrapper<ModBlock> SOURCEBERRY_SACK = registerBlockAndItem(LibBlockNames.SOURCEBERRY_SACK, () -> new ModBlock(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(0.1F).sound(SoundType.WOOL)));
+    public static final BlockRegistryWrapper<StandingSignBlock> ARCHWOOD_SIGN = registerBlock(LibBlockNames.ARCHWOOD_SIGN, () -> new StandingSignBlock(ARCHWOOD, net.diaithir.druidry.ars.setup.registry.BlockRegistry.ofFullCopy(Blocks.OAK_SIGN)));
+    public static final BlockRegistryWrapper<CeilingHangingSignBlock> ARCHWOOD_HANGING_SIGN = registerBlock(LibBlockNames.ARCHWOOD_HANGING_SIGN, () -> new CeilingHangingSignBlock(ARCHWOOD, net.diaithir.druidry.ars.setup.registry.BlockRegistry.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+    public static final BlockRegistryWrapper<WallSignBlock> ARCHWOOD_WALL_SIGN = registerBlock(LibBlockNames.ARCHWOOD_WALL_SIGN, () -> new WallSignBlock(ARCHWOOD, net.diaithir.druidry.ars.setup.registry.BlockRegistry.ofFullCopy(Blocks.OAK_WALL_SIGN)));
+    public static final BlockRegistryWrapper<WallHangingSignBlock> ARCHWOOD_HANGING_WALL_SIGN = registerBlock(LibBlockNames.ARCHWOOD_HANGING_WALL_SIGN, () -> new WallHangingSignBlock(ARCHWOOD, net.diaithir.druidry.ars.setup.registry.BlockRegistry.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final BlockEntityTypeRegistryWrapper<RitualBrazierTile> RITUAL_TILE = registerTile(LibBlockNames.RITUAL_BRAZIER, RitualBrazierTile::new, RITUAL_BLOCK);
     public static BlockRegistryWrapper<MageBlock> MAGE_BLOCK = registerBlockAndItem(LibBlockNames.MAGE_BLOCK, MageBlock::new);
     public static BlockEntityTypeRegistryWrapper<MageBlockTile> MAGE_BLOCK_TILE = registerTile(LibBlockNames.MAGE_BLOCK, MageBlockTile::new, MAGE_BLOCK);
@@ -135,21 +137,21 @@ public class BlockRegistry {
     public static BlockEntityTypeRegistryWrapper<IntangibleAirTile> INTANGIBLE_AIR_TYPE = registerTile(LibBlockNames.INTANGIBLE_AIR, IntangibleAirTile::new, INTANGIBLE_AIR);
     public static BlockRegistryWrapper<VolcanicSourcelinkBlock> VOLCANIC_BLOCK = registerBlockAndItem(LibBlockNames.VOLCANIC_SOURCELINK, VolcanicSourcelinkBlock::new);
     public static BlockEntityTypeRegistryWrapper<VolcanicSourcelinkTile> VOLCANIC_TILE = registerTile(LibBlockNames.VOLCANIC_SOURCELINK, VolcanicSourcelinkTile::new, VOLCANIC_BLOCK);
-    public static BlockRegistryWrapper<SourceBerryBush> SOURCEBERRY_BUSH = registerBlockAndItem(LibBlockNames.SOURCEBERRY_BUSH, () -> new SourceBerryBush(BlockBehaviour.Properties.of().randomTicks().noCollision().sound(SoundType.SWEET_BERRY_BUSH)), (reg) -> new BlockItem(reg.get(), defaultItemProperties().food(ItemsRegistry.SOURCE_BERRY_FOOD)));
+    public static BlockRegistryWrapper<SourceBerryBush> SOURCEBERRY_BUSH = registerBlockAndItem(LibBlockNames.SOURCEBERRY_BUSH, () -> new SourceBerryBush(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().randomTicks().noCollision().sound(SoundType.SWEET_BERRY_BUSH)), (reg) -> new BlockItem(reg.get(), defaultItemProperties().food(ItemsRegistry.SOURCE_BERRY_FOOD)));
     public static BlockRegistryWrapper<CreativeSourceJar> CREATIVE_SOURCE_JAR = registerBlockAndItem(LibBlockNames.CREATIVE_SOURCE_JAR, CreativeSourceJar::new);
     public static BlockEntityTypeRegistryWrapper<CreativeSourceJarTile> CREATIVE_SOURCE_JAR_TILE = registerTile(LibBlockNames.CREATIVE_SOURCE_JAR, CreativeSourceJarTile::new, CREATIVE_SOURCE_JAR);
-    public static BlockRegistryWrapper<StrippableLog> CASCADING_LOG = registerBlockAndItem(LibBlockNames.CASCADING_LOG, () ->  new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWLOG_BLUE));
+    public static BlockRegistryWrapper<StrippableLog> CASCADING_LOG = registerBlockAndItem(LibBlockNames.CASCADING_LOG, () ->  new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWLOG_BLUE));
     public static BlockRegistryWrapper<MagicLeaves> CASCADING_LEAVE = registerBlockAndItem(LibBlockNames.CASCADING_LEAVES, () -> createLeavesBlock(MapColor.COLOR_BLUE));
-    public static BlockRegistryWrapper<StrippableLog> CASCADING_WOOD = registerBlockAndItem(LibBlockNames.CASCADING_WOOD, () -> new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWWOOD_BLUE));
-    public static BlockRegistryWrapper<StrippableLog> BLAZING_LOG = registerBlockAndItem(LibBlockNames.BLAZING_LOG, () -> new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWLOG_RED));
+    public static BlockRegistryWrapper<StrippableLog> CASCADING_WOOD = registerBlockAndItem(LibBlockNames.CASCADING_WOOD, () -> new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWWOOD_BLUE));
+    public static BlockRegistryWrapper<StrippableLog> BLAZING_LOG = registerBlockAndItem(LibBlockNames.BLAZING_LOG, () -> new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWLOG_RED));
     public static BlockRegistryWrapper<MagicLeaves> BLAZING_LEAVES = registerBlockAndItem(LibBlockNames.BLAZING_LEAVES, () -> createLeavesBlock(MapColor.COLOR_RED));
-    public static BlockRegistryWrapper<StrippableLog> BLAZING_WOOD = registerBlockAndItem(LibBlockNames.BLAZING_WOOD, () -> new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWWOOD_RED));
-    public static BlockRegistryWrapper<StrippableLog> VEXING_LOG = registerBlockAndItem(LibBlockNames.VEXING_LOG, () -> new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWLOG_PURPLE));
+    public static BlockRegistryWrapper<StrippableLog> BLAZING_WOOD = registerBlockAndItem(LibBlockNames.BLAZING_WOOD, () -> new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWWOOD_RED));
+    public static BlockRegistryWrapper<StrippableLog> VEXING_LOG = registerBlockAndItem(LibBlockNames.VEXING_LOG, () -> new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWLOG_PURPLE));
     public static BlockRegistryWrapper<MagicLeaves> VEXING_LEAVES = registerBlockAndItem(LibBlockNames.VEXING_LEAVES, () -> createLeavesBlock(MapColor.COLOR_PURPLE));
-    public static BlockRegistryWrapper<StrippableLog> VEXING_WOOD = registerBlockAndItem(LibBlockNames.VEXING_WOOD, () -> new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWWOOD_PURPLE));
-    public static BlockRegistryWrapper<StrippableLog> FLOURISHING_LOG = registerBlockAndItem(LibBlockNames.FLOURISHING_LOG, () -> new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWLOG_GREEN));
+    public static BlockRegistryWrapper<StrippableLog> VEXING_WOOD = registerBlockAndItem(LibBlockNames.VEXING_WOOD, () -> new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWWOOD_PURPLE));
+    public static BlockRegistryWrapper<StrippableLog> FLOURISHING_LOG = registerBlockAndItem(LibBlockNames.FLOURISHING_LOG, () -> new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWLOG_GREEN));
     public static BlockRegistryWrapper<MagicLeaves> FLOURISHING_LEAVES = registerBlockAndItem(LibBlockNames.FLOURISHING_LEAVES, () -> createLeavesBlock(MapColor.COLOR_GREEN));
-    public static BlockRegistryWrapper<StrippableLog> FLOURISHING_WOOD = registerBlockAndItem(LibBlockNames.FLOURISHING_WOOD, () -> new StrippableLog(LOG_PROP, BlockRegistry.STRIPPED_AWWOOD_GREEN));
+    public static BlockRegistryWrapper<StrippableLog> FLOURISHING_WOOD = registerBlockAndItem(LibBlockNames.FLOURISHING_WOOD, () -> new StrippableLog(LOG_PROP(), BlockRegistry.STRIPPED_AWWOOD_GREEN));
     public static BlockRegistryWrapper<PotionJar> POTION_JAR = registerBlockAndItem(LibBlockNames.POTION_JAR_BLOCK, PotionJar::new);
     public static BlockEntityTypeRegistryWrapper<PotionJarTile> POTION_JAR_TYPE = registerTile(LibBlockNames.POTION_JAR_BLOCK, PotionJarTile::new, POTION_JAR);
     public static BlockRegistryWrapper<PotionMelder> POTION_MELDER = registerBlockAndItem(LibBlockNames.POTION_MELDER_BLOCK, PotionMelder::new);
@@ -159,7 +161,7 @@ public class BlockRegistry {
     public static BlockRegistryWrapper<ItemGrate> GOLD_GRATE = registerBlockAndItem(LibBlockNames.GOLD_GRATE, ItemGrate::new);
     public static BlockRegistryWrapper<ItemGrate> ARCHWOOD_GRATE = registerBlockAndItem(LibBlockNames.ARCHWOOD_GRATE, ItemGrate::new);
     public static BlockRegistryWrapper<SourceLamp> SOURCE_LAMP = registerBlockAndItem(LibBlockNames.SOURCE_LAMP, SourceLamp::new);
-    public static BlockRegistryWrapper<MagicFire> MAGIC_FIRE = registerBlockAndItem(LibBlockNames.MAGIC_FIRE, () -> new MagicFire(BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).replaceable().noCollision().instabreak().lightLevel((p_152607_) -> {
+    public static BlockRegistryWrapper<MagicFire> MAGIC_FIRE = registerBlockAndItem(LibBlockNames.MAGIC_FIRE, () -> new MagicFire(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().mapColor(MapColor.FIRE).replaceable().noCollision().instabreak().lightLevel((p_152607_) -> {
         return 15;
     }).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY), 1.0f));
     public static BlockRegistryWrapper<AlchemicalSourcelinkBlock> ALCHEMICAL_BLOCK = registerBlockAndItem(LibBlockNames.ALCHEMICAL_SOURCELINK, AlchemicalSourcelinkBlock::new);
@@ -198,8 +200,8 @@ public class BlockRegistry {
     public static final BlockEntityTypeRegistryWrapper<ArcanePedestalTile> ARCANE_PEDESTAL_TILE = new BlockEntityTypeRegistryWrapper<>(BLOCK_ENTITIES.register(LibBlockNames.ARCANE_PEDESTAL, () -> new BlockEntityType<>(ArcanePedestalTile::new, ARCANE_PEDESTAL.get(), ARCANE_PLATFORM.get())));
     public static final BlockRegistryWrapper<MagelightTorch> MAGELIGHT_TORCH = registerBlockAndItem(LibBlockNames.MAGELIGHT_TORCH, MagelightTorch::new);
     public static final BlockEntityTypeRegistryWrapper<MagelightTorchTile> MAGELIGHT_TORCH_TILE = registerTile(LibBlockNames.MAGELIGHT_TORCH, MagelightTorchTile::new, MAGELIGHT_TORCH);
-    public static final BlockRegistryWrapper<SkyWeave> SKY_WEAVE = registerBlockAndItem(LibBlockNames.SKY_WEAVE, () ->  new SkyWeave(Block.Properties.of().strength(0.1F).sound(SoundType.WOOL).noOcclusion()));
-    public static final BlockRegistryWrapper<TemporaryBlock> TEMPORARY_BLOCK = registerBlock(LibBlockNames.TEMPORARY_BLOCK, () -> new TemporaryBlock(BlockBehaviour.Properties.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final BlockRegistryWrapper<SkyWeave> SKY_WEAVE = registerBlockAndItem(LibBlockNames.SKY_WEAVE, () ->  new SkyWeave(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(0.1F).sound(SoundType.WOOL).noOcclusion()));
+    public static final BlockRegistryWrapper<TemporaryBlock> TEMPORARY_BLOCK = registerBlock(LibBlockNames.TEMPORARY_BLOCK, () -> new TemporaryBlock(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
     public static final BlockRegistryWrapper<ItemDetector> ITEM_DETECTOR = registerBlockAndItem(LibBlockNames.ITEM_DETECTOR, ItemDetector::new);
     public static BlockRegistryWrapper<SpellSensor> SPELL_SENSOR = registerBlockAndItem(LibBlockNames.SPELL_SENSOR, SpellSensor::new);
     public static BlockRegistryWrapper<RedstoneRelay> REDSTONE_RELAY = registerBlockAndItem(LibBlockNames.REDSTONE_RELAY, RedstoneRelay::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
@@ -228,29 +230,29 @@ public class BlockRegistry {
     public static void onBlocksRegistry() {
         for (String s : LibBlockNames.DECORATIVE_SOURCESTONE) {
             if (LibBlockNames.DIRECTIONAL_SOURCESTONE.contains(s)) {
-                BLOCKS.register(s, () -> new DirectionalModBlock());
+                BLOCKS.register(s, withId(s, () -> new DirectionalModBlock()));
             } else {
-                BLOCKS.register(s, () -> new ModBlock());
+                BLOCKS.register(s, withId(s, () -> new ModBlock()));
             }
         }
         for (String s : LibBlockNames.DECORATIVE_SLABS) {
-            BLOCKS.register(s, () -> new SlabBlock(BlockBehaviour.Properties.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+            BLOCKS.register(s, withId(s, () -> new SlabBlock(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(1.5F, 6.0F).sound(SoundType.STONE))));
         }
         for (String s : LibBlockNames.DECORATIVE_SOURCESTONE) {
-            BLOCKS.register(s + "_stairs", () -> new StairBlock(BuiltInRegistries.BLOCK.getValue(ArsNouveau.prefix(s)).defaultBlockState(), BlockBehaviour.Properties.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+            BLOCKS.register(s + "_stairs", withId(s + "_stairs", () -> new StairBlock(BuiltInRegistries.BLOCK.getValue(ArsNouveau.prefix(s)).defaultBlockState(), net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().strength(1.5F, 6.0F).sound(SoundType.STONE))));
         }
-        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.MAGE_BLOOM), () -> createPottedBlock(() -> MAGE_BLOOM_CROP.get()));
-        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.BLAZING_SAPLING), () -> createPottedBlock(() -> BLAZING_SAPLING.get()));
-        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.CASCADING_SAPLING), () -> createPottedBlock(() -> CASCADING_SAPLING.get()));
-        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.FLOURISHING_SAPLING), () -> createPottedBlock(() -> FLOURISHING_SAPLING.get()));
-        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.VEXING_SAPLING), () -> createPottedBlock(() -> VEXING_SAPLING.get()));
+        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.MAGE_BLOOM), withId(LibBlockNames.Pot(LibBlockNames.MAGE_BLOOM), () -> createPottedBlock(() -> MAGE_BLOOM_CROP.get())));
+        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.BLAZING_SAPLING), withId(LibBlockNames.Pot(LibBlockNames.BLAZING_SAPLING), () -> createPottedBlock(() -> BLAZING_SAPLING.get())));
+        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.CASCADING_SAPLING), withId(LibBlockNames.Pot(LibBlockNames.CASCADING_SAPLING), () -> createPottedBlock(() -> CASCADING_SAPLING.get())));
+        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.FLOURISHING_SAPLING), withId(LibBlockNames.Pot(LibBlockNames.FLOURISHING_SAPLING), () -> createPottedBlock(() -> FLOURISHING_SAPLING.get())));
+        BLOCKS.register(LibBlockNames.Pot(LibBlockNames.VEXING_SAPLING), withId(LibBlockNames.Pot(LibBlockNames.VEXING_SAPLING), () -> createPottedBlock(() -> VEXING_SAPLING.get())));
 
     }
 
 
 
     public static MagicLeaves createLeavesBlock(MapColor color) {
-        return new MagicLeaves(BlockBehaviour.Properties.of().mapColor(color).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(
+        return new MagicLeaves(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().mapColor(color).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(
                 BlockRegistry::allowsSpawnOnLeaves).isSuffocating(BlockRegistry::isntSolid).isViewBlocking(BlockRegistry::isntSolid).pushReaction(PushReaction.DESTROY).isRedstoneConductor(BlockRegistry::isntSolid).ignitedByLava());
     }
 
@@ -285,18 +287,42 @@ public class BlockRegistry {
         return BuiltInRegistries.BLOCK.getValue(ArsNouveau.prefix(s));
     }
 
+    /** Id of the block being built; 26.1 block properties need their registry key before the Block exists. */
+    private static ResourceKey<Block> CURRENT_BLOCK;
+
+    public static BlockBehaviour.Properties of() {
+        BlockBehaviour.Properties p = BlockBehaviour.Properties.of();
+        return CURRENT_BLOCK == null ? p : p.setId(CURRENT_BLOCK);
+    }
+
+    public static BlockBehaviour.Properties ofFullCopy(BlockBehaviour b) {
+        BlockBehaviour.Properties p = BlockBehaviour.Properties.ofFullCopy(b);
+        return CURRENT_BLOCK == null ? p : p.setId(CURRENT_BLOCK);
+    }
+
+    private static <T extends Block> Supplier<T> withId(String name, Supplier<T> supplier) {
+        return () -> {
+            CURRENT_BLOCK = ResourceKey.create(Registries.BLOCK, ArsNouveau.prefix(name));
+            try {
+                return supplier.get();
+            } finally {
+                CURRENT_BLOCK = null;
+            }
+        };
+    }
+
     public static <T extends Block> BlockRegistryWrapper<T> registerBlock(String name, Supplier<T> blockSupp) {
-        return new BlockRegistryWrapper<>(BLOCKS.register(name, blockSupp));
+        return new BlockRegistryWrapper<>(BLOCKS.register(name, withId(name, blockSupp)));
     }
 
     public static <T extends Block> BlockRegistryWrapper<T> registerBlockAndItem(String name, Supplier<T> blockSupp) {
-        BlockRegistryWrapper<T> blockReg = new BlockRegistryWrapper<>(BLOCKS.register(name, blockSupp));
+        BlockRegistryWrapper<T> blockReg = new BlockRegistryWrapper<>(BLOCKS.register(name, withId(name, blockSupp)));
         ItemsRegistry.register(name, () -> getDefaultBlockItem(blockReg.get()));
         return blockReg;
     }
 
     public static <T extends Block> BlockRegistryWrapper<T> registerBlockAndItem(String name, Supplier<T> blockSupp, Function<BlockRegistryWrapper<T>, Item> blockItemFunc) {
-        BlockRegistryWrapper<T> blockReg = new BlockRegistryWrapper<>(BLOCKS.register(name, blockSupp));
+        BlockRegistryWrapper<T> blockReg = new BlockRegistryWrapper<>(BLOCKS.register(name, withId(name, blockSupp)));
         ItemsRegistry.register(name, () -> blockItemFunc.apply(blockReg));
         return blockReg;
     }
@@ -304,7 +330,7 @@ public class BlockRegistry {
     public static final Map<Supplier<Identifier>, FlowerPotBlock> flowerPots = new HashMap<>();
 
     public static FlowerPotBlock createPottedBlock(Supplier<? extends Block> block) {
-        FlowerPotBlock pot = new FlowerPotBlock(block.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion());
+        FlowerPotBlock pot = new FlowerPotBlock(block.get(), net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().instabreak().noOcclusion());
         flowerPots.put(() -> BuiltInRegistries.BLOCK.getKey(block.get()), pot);
         return pot;
     }

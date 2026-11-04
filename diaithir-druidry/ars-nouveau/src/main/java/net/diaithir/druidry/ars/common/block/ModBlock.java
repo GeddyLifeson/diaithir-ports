@@ -20,7 +20,7 @@ public class ModBlock extends Block {
     }
 
     public static BlockBehaviour.Properties defaultProperties() {
-        return BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(2.0f, 6.0f).mapColor(MapColor.STONE);
+        return net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().sound(SoundType.STONE).strength(2.0f, 6.0f).mapColor(MapColor.STONE);
     }
 
     @Override

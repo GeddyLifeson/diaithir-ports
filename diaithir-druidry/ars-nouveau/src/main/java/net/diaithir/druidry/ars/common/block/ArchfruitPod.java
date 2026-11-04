@@ -50,12 +50,12 @@ public class ArchfruitPod extends CocoaBlock implements ILightable {
 
     @Deprecated(since = "4.12.0", forRemoval = true)
     public ArchfruitPod(Supplier<Block> surviveBlock) {
-       this(BlockBehaviour.Properties.of().randomTicks().strength(0.2F, 3.0F).sound(SoundType.WOOD).noOcclusion().lightLevel((b) -> b.getValue(LIGHT_LEVEL)).pushReaction(PushReaction.DESTROY).mapColor(MapColor.PLANT));
+       this(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().randomTicks().strength(0.2F, 3.0F).sound(SoundType.WOOD).noOcclusion().lightLevel((b) -> b.getValue(LIGHT_LEVEL)).pushReaction(PushReaction.DESTROY).mapColor(MapColor.PLANT));
        this.surviveBlock = surviveBlock;
     }
 
     public ArchfruitPod(TagKey<Block> surviveBlocks) {
-        this(BlockBehaviour.Properties.of().randomTicks().strength(0.2F, 3.0F).sound(SoundType.WOOD).noOcclusion().lightLevel((b) -> b.getValue(LIGHT_LEVEL)).pushReaction(PushReaction.DESTROY).mapColor(MapColor.PLANT));
+        this(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().randomTicks().strength(0.2F, 3.0F).sound(SoundType.WOOD).noOcclusion().lightLevel((b) -> b.getValue(LIGHT_LEVEL)).pushReaction(PushReaction.DESTROY).mapColor(MapColor.PLANT));
         this.surviveTag = surviveBlocks;
     }
 

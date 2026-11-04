@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 public class IntangibleAirBlock extends TickableModBlock implements LiquidBlockContainer {
 
     public IntangibleAirBlock() {
-        super(Block.Properties.of().noCollision().noLootTable().pushReaction(PushReaction.BLOCK).mapColor(MapColor.NONE));
+        super(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().noCollision().noLootTable().pushReaction(PushReaction.BLOCK).mapColor(MapColor.NONE));
     }
 
     public RenderShape getRenderShape(BlockState state) {

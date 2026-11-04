@@ -115,9 +115,6 @@ public class ItemsRegistry {
     public static final ItemRegistryWrapper<AnimatedMagicArmor> BATTLEMAGE_HOOD = register(LibItemNames.BATTLEMAGE_HOOD, () -> AnimatedMagicArmor.heavy(ArmorType.HELMET));
     public static final ItemRegistryWrapper<ScryerScroll> SCRYER_SCROLL = register(LibItemNames.SCRYER_SCROLL, ScryerScroll::new);
 
-    public static final ItemRegistryWrapper<Item> FIREL_DISC = register(LibItemNames.FIREL_DISC, () -> new Item(defaultItemProperties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxRegistry.ARIA_BIBLIO)));
-    public static final ItemRegistryWrapper<Item> SOUND_OF_GLASS = register(LibItemNames.SOUND_OF_GLASS, () -> new Item(defaultItemProperties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxRegistry.SOUND_OF_GLASS)));
-    public static final ItemRegistryWrapper<Item> WILD_HUNT = register(LibItemNames.FIREL_WILD_HUNT, () -> new Item(defaultItemProperties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxRegistry.WILD_HUNT)));
     // TODO: 1.22 rename to EnchantersCrossbow
     public static final ItemRegistryWrapper<Item> ALAKARKINOS_SHARD = register(LibItemNames.ALAKARKINOS_SHARD, () -> new ModItem().withTooltip("tooltip.alakarkinos_shard1").withTooltip(Component.translatable("tooltip.alakarkinos_shard2").withStyle(LORE_STYLE)));
 
@@ -172,25 +169,25 @@ public class ItemsRegistry {
     public static void onItemRegistry(RegisterEvent.RegisterHelper<Item> helper) {
         ArsNouveauAPI api = ArsNouveauAPI.getInstance();
         for (Map.Entry<Identifier, Supplier<Glyph>> glyphEntry : GlyphRegistry.getGlyphItemMap().entrySet()) {
-            Glyph glyph = glyphEntry.getValue().get();
+            Glyph glyph = scoped(glyphEntry.getKey(), glyphEntry.getValue());
             helper.register(glyphEntry.getKey(), glyph);
             glyph.spellPart.glyphItem = glyph;
         }
 
         for (AbstractRitual ritual : RitualRegistry.getRitualMap().values()) {
-            RitualTablet tablet = new RitualTablet(ritual);
+            RitualTablet tablet = scoped(ritual.getRegistryName(), () -> new RitualTablet(ritual));
             helper.register(ritual.getRegistryName(), tablet);
             RitualRegistry.getRitualItemMap().put(ritual.getRegistryName(), tablet);
         }
 
         for (AbstractFamiliarHolder holder : FamiliarRegistry.getFamiliarHolderMap().values()) {
-            FamiliarScript script = new FamiliarScript(holder);
+            FamiliarScript script = scoped(holder.getRegistryName(), () -> new FamiliarScript(holder));
             FamiliarRegistry.getFamiliarScriptMap().put(holder.getRegistryName(), script);
             helper.register(holder.getRegistryName(), script);
         }
 
         for (IPerk perk : PerkRegistry.getPerkMap().values()) {
-            PerkItem perkItem = new PerkItem(perk);
+            PerkItem perkItem = scoped(perk.getRegistryName(), () -> new PerkItem(perk));
             PerkRegistry.getPerkItemMap().put(perk.getRegistryName(), perkItem);
             helper.register(perk.getRegistryName(), perkItem);
             if (perk instanceof EmptyPerk) {
@@ -198,6 +195,15 @@ public class ItemsRegistry {
             }
         }
 
+    }
+
+    private static <T> T scoped(Identifier id, Supplier<T> item) {
+        CURRENT_ID = ResourceKey.create(Registries.ITEM, id);
+        try {
+            return item.get();
+        } finally {
+            CURRENT_ID = null;
+        }
     }
 
     public static Item.Properties defaultItemProperties() {

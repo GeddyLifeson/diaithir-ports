@@ -21,7 +21,7 @@ public class SourceLamp extends CopperBulbBlock implements ILightable {
     public static final IntegerProperty LIGHT_LEVEL = IntegerProperty.create("light_level", 0, 15);
 
     public SourceLamp() {
-        super(BlockBehaviour.Properties.of().lightLevel((p) -> p.getValue(LIT) ? p.getValue(LIGHT_LEVEL) : 0));
+        super(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().lightLevel((p) -> p.getValue(LIT) ? p.getValue(LIGHT_LEVEL) : 0));
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, Boolean.valueOf(false)).setValue(LIGHT_LEVEL, 15).setValue(POWERED, Boolean.valueOf(false)));
     }
 

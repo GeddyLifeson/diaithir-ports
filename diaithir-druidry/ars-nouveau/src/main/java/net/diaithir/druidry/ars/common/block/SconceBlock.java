@@ -32,7 +32,7 @@ public class SconceBlock extends TickableModBlock {
     public static final Property<Integer> LIGHT_LEVEL = IntegerProperty.create("level", 0, 15);
 
     public SconceBlock() {
-        super(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(2.0f, 3.0f).noOcclusion().noCollision().lightLevel((b) -> b.getValue(LIGHT_LEVEL)));
+        super(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().sound(SoundType.STONE).strength(2.0f, 3.0f).noOcclusion().noCollision().lightLevel((b) -> b.getValue(LIGHT_LEVEL)));
     }
 
     @Override

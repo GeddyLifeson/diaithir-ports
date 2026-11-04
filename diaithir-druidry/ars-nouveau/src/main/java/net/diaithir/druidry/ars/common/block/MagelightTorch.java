@@ -28,7 +28,7 @@ public class MagelightTorch extends TickableModBlock{
     public static final BooleanProperty FLOOR = BooleanProperty.create("floor");
     public static final BooleanProperty ROOF = BooleanProperty.create("roof");
     public MagelightTorch(){
-        super(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(2.0f, 3.0f).noOcclusion().noCollision().lightLevel((b) -> b.getValue(SconceBlock.LIGHT_LEVEL)));
+        super(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().sound(SoundType.STONE).strength(2.0f, 3.0f).noOcclusion().noCollision().lightLevel((b) -> b.getValue(SconceBlock.LIGHT_LEVEL)));
         registerDefaultState(defaultBlockState().setValue(BlockStateProperties.FACING, Direction.NORTH).setValue(FLOOR, true).setValue(ROOF, false));
     }
 

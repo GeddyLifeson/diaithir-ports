@@ -31,7 +31,7 @@ public class SpellBook extends ModItem implements ICasterTool {
     public SpellTier tier;
 
     public SpellBook(SpellTier tier) {
-        this(new Item.Properties().stacksTo(1)
+        this(net.diaithir.druidry.ars.setup.registry.ItemsRegistry.defaultItemProperties().stacksTo(1)
                 .component(DataComponents.BASE_COLOR, DyeColor.PURPLE)
                 .component(DataComponentRegistry.SPELL_CASTER, new SpellCaster(10)), tier);
     }
