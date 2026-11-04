@@ -62,10 +62,20 @@ public final class DockBlockEntity extends BlockEntity {
         return Containers.findAlong(s.level, s.worldPosition, facing, 3);
     }
 
-    public @Nullable ResourceHandler<ItemResource> items() {
-        ContainerCoreEntity c = container();
+    /** Every load's items as one Container: the deployed container ahead, else a carrier (trailer, flatcar, hold) ahead. */
+    private @Nullable Container view() {
         DockBlockEntity s = source();
-        return c == null || s == null || s.level == null ? null : VanillaContainerWrapper.of(Containers.view(s.level, c));
+        if (s == null || s.level == null) return null;
+        Direction facing = s.getBlockState().getValue(LoadingDock.FACING);
+        ContainerCoreEntity c = Containers.findAlong(s.level, s.worldPosition, facing, 3);
+        if (c != null) return Containers.view(s.level, c);
+        CargoCarrier k = Carriers.near(s.level, s.worldPosition, facing, 3);
+        return k == null ? null : Carriers.view(k);
+    }
+
+    public @Nullable ResourceHandler<ItemResource> items() {
+        Container v = view();
+        return v == null ? null : VanillaContainerWrapper.of(v);
     }
 
     public @Nullable ResourceHandler<FluidResource> fluids() {
@@ -75,10 +85,8 @@ public final class DockBlockEntity extends BlockEntity {
 
     /** 0 to 15: share of the container's item slots that hold something. */
     public int fillSignal() {
-        ContainerCoreEntity c = container();
-        DockBlockEntity s = source();
-        if (c == null || s == null || s.level == null) return 0;
-        Container v = Containers.view(s.level, c);
+        Container v = view();
+        if (v == null) return 0;
         int used = 0, n = v.getContainerSize();
         for (int i = 0; i < n; i++) if (!v.getItem(i).isEmpty()) used++;
         return n == 0 ? 0 : 1 + (int) (14L * used / n);

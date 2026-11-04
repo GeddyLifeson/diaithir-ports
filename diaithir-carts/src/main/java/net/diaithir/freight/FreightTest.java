@@ -110,9 +110,46 @@ public final class FreightTest {
         CargoBay onItem = Containers.bayOf(lift.stack());
         check(Math.abs(onItem.payloadKg() - (3 * 0 + 25 + 30 + 20 + 0.25 * (14 + 5 + 12))) < 1e-6, "carried mass is tare of loads plus items, got " + onItem.payloadKg());
 
+        // ride a flatcar-sized carrier: put on, dock serves it, take off
+        CargoBay deck = new CargoBay(4, 8, 13, 1_000_000);
+        CargoCarrier flatcar = new CargoCarrier() {
+            public CargoBay bay() { return deck; }
+            public int[] columnAt(net.minecraft.world.phys.Vec3 w) { return null; }
+            public void changed() {}
+        };
+        BlockPos carBox = at.offset(22, 0, 6);
+        net.minecraft.world.phys.AABB carArea = new net.minecraft.world.phys.AABB(carBox).inflate(1.5);
+        java.util.function.BiFunction<Level, net.minecraft.world.phys.AABB, CargoCarrier> finder = (l, box) -> box.intersects(carArea) ? flatcar : null;
+        Carriers.SOURCES.add(finder);
+        ItemStack boxStack = lift.stack();
+        check(Carriers.put(flatcar, boxStack, 0, 0) == CargoBay.Result.OK && boxStack.isEmpty(), "container goes on the carrier and leaves the hand");
+        check(deck.loads().size() == 1 && deck.at(0, 0, 0).inside.loads().size() == 3, "carrier holds the container and its three loads");
+        check(deck.payloadKg() > 2_300, "carrier bears the container's weight");
+        ItemStack second20 = new ItemStack(Freight.CONTAINER_ITEMS.get("container_20").get());
+        check(Carriers.put(flatcar, second20, 0, 0) == CargoBay.Result.OK && deck.at(0, 4, 0) != null, "a second container stacks on the first");
+        check(Carriers.takeTop(flatcar, 0, 0).getItem() instanceof ContainerItem ci && ci.type == t20, "take the top one first");
+        check(Carriers.takeTop(flatcar, 0, 0).isEmpty() == false, "then the loaded one");
+        check(deck.loads().isEmpty(), "carrier is empty again");
+        ItemStack back = new ItemStack(Freight.CONTAINER_ITEMS.get("container_20").get());
+        back.set(Freight.BAY.get(), carried);
+        Carriers.put(flatcar, back, 0, 0);
+        BlockPos dockC = carBox.offset(-2, 0, 0);
+        level.setBlock(dockC, Freight.LOADING_DOCK.get().defaultBlockState().setValue(LoadingDock.FACING, Direction.EAST), 3);
+        ResourceHandler<ItemResource> hc = level.getCapability(Capabilities.Item.BLOCK, dockC, null);
+        check(hc != null && count(hc, ItemResource.of(Items.IRON_INGOT)) == 14, "dock serves the container riding the carrier");
+        if (hc != null) {
+            try (Transaction tx = Transaction.openRoot()) { hc.insert(ItemResource.of(Items.IRON_INGOT), 10, tx); tx.commit(); }
+            int out;
+            try (Transaction tx = Transaction.openRoot()) { out = hc.extract(ItemResource.of(Items.IRON_INGOT), 10, tx); tx.commit(); }
+            check(out == 10, "dock unloads from the carrier, got " + out);
+        }
+        ItemStack unloaded = Carriers.takeTop(flatcar, 0, 0);
+        check(unloaded.getItem() instanceof ContainerItem && unloaded.getOrDefault(Freight.BAY.get(), BayData.EMPTY).equals(carried), "container comes off with its cargo unchanged");
+        Carriers.SOURCES.remove(finder);
+
         // lower elsewhere with cargo intact
         BlockPos second = at.offset(0, 0, 8);
-        check(Containers.lower(level, lift.stack(), second, Direction.SOUTH) == Containers.Result.OK, "lower at a new place and heading");
+        check(Containers.lower(level, unloaded, second, Direction.SOUTH) == Containers.Result.OK, "lower at a new place and heading");
         ContainerCoreEntity core2 = level.getBlockEntity(second) instanceof ContainerCoreEntity c ? c : null;
         BayData again = core2 == null ? BayData.EMPTY : Containers.contents(level, core2);
         check(again.equals(carried), "cargo identical after lowering");

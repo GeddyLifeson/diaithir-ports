@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.EntityCapability;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -38,6 +39,10 @@ public final class Freight {
     /** What a container item carries: the loads standing in it (each with its items), so a lifted container keeps its cargo. */
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<BayData>> BAY = COMPONENTS.registerComponentType("bay",
             b -> b.persistent(BayData.CODEC));
+
+    /** Vehicles (trailers, trucks, flatcars, wagons, ship holds) offer their cargo space through this. */
+    public static final EntityCapability<CargoCarrier, Void> CARRIER = EntityCapability.createVoid(
+            net.minecraft.resources.Identifier.fromNamespaceAndPath(ID, "cargo_carrier"), CargoCarrier.class);
 
     private static BlockBehaviour.Properties wood() { return BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 3F).sound(SoundType.WOOD); }
 
@@ -83,11 +88,33 @@ public final class Freight {
 
     private Freight() {}
 
+    /** Hand loading: a load or container item on a carrier goes on the aimed column; an empty hand while sneaking takes the top load off. */
+    private static void interact(net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteractSpecific e) {
+        CargoCarrier c = e.getTarget().getCapability(CARRIER, null);
+        if (c == null) return;
+        net.minecraft.world.item.ItemStack held = e.getItemStack();
+        boolean put = Carriers.loadable(held), take = held.isEmpty() && e.getEntity().isShiftKeyDown();
+        if (!put && !take) return;
+        e.setCancellationResult(net.minecraft.world.InteractionResult.SUCCESS);
+        e.setCanceled(true);
+        if (e.getLevel().isClientSide()) return;
+        int[] col = c.columnAt(e.getTarget().position().add(e.getLocalPos()));
+        if (col == null) return;
+        if (put) {
+            CargoBay.Result r = Carriers.put(c, held, col[0], col[1]);
+            if (r != CargoBay.Result.OK) e.getEntity().sendOverlayMessage(net.minecraft.network.chat.Component.literal("Cannot load there: " + r.name().toLowerCase(java.util.Locale.ROOT).replace('_', ' ')));
+        } else {
+            net.minecraft.world.item.ItemStack out = Carriers.takeTop(c, col[0], col[1]);
+            if (!out.isEmpty() && !e.getEntity().getInventory().add(out)) e.getEntity().drop(out, false);
+        }
+    }
+
     public static void init(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         COMPONENTS.register(bus);
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteractSpecific.class, Freight::interact);
         bus.addListener(RegisterCapabilitiesEvent.class, e -> {
             e.registerBlockEntity(Capabilities.Item.BLOCK, DOCK_BE.get(), (be, side) -> be.items());
             e.registerBlockEntity(Capabilities.Fluid.BLOCK, DOCK_BE.get(), (be, side) -> be.fluids());

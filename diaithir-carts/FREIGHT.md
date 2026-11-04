@@ -29,15 +29,16 @@ Everything uses NeoForge's own item and fluid handlers, so storage cables, hoppe
 - **Loading dock** (Age V): stands up to three blocks from a container, facing it, and offers all the container's loads as one item handler (and the tank's fluid handler). The storage network (diaithir-storagenet) picks it up like any inventory. The comparator reads how full the container is, for the circuit network.
 - **Rift dock** (Age VIII): serves the container at its partner, any other rift dock on the same channel (1 to 64, bare hand cycles) in any dimension. Load at one end, unload at the other. This is how later-Age interdimensional shipping plugs into the same handlers.
 - **Lift and lower** (for cranes #206, forklifts, trucks #210, rolling stock, ships #216, depot workers): `Containers.lift(level, pos, liftKg, simulate)` returns `Result.OK` and the item, `TOO_HEAVY` over the lifter's rating, `NOT_EMPTY` for a tank with fluid. `Containers.lower(level, stack, origin, facing)` sets it down. The cargo hook (Age VI, 35 t) does it by hand.
-- **Vehicle bays**: a vehicle that carries containers or pallets keeps a `CargoBay` (deck cells, payload rating) and calls `place`/`take`; `Containers.bayOf(stack)` reads a container item's cargo. Walkable decks on big vehicles stay with the vehicle thread.
+- **Vehicle bays** (`CargoCarrier`): a trailer, truck bed, flatcar, wagon, ship hold or depot floor implements `CargoCarrier` (its `CargoBay`, `columnAt(worldPoint)`, `changed()`) and offers it through the entity capability `Freight.CARRIER`; carriers that are not entities add a finder to `Carriers.SOURCES`. Then everything works with no more code: `Carriers.put(carrier, stack, x, z)` / `takeTop` load and unload a pallet, barrel, chest, crate or container item (the load goes on the aimed column and stays; containers stack to the ISO limit); a player right-clicks the carrier with a load, or sneaks with an empty hand to take the top load; docks facing a carrier serve every load on it (container interiors included) through the same item handler. Walkable decks stay with the vehicle thread.
 
 ## Made at stations
 Nothing here is a grid recipe. `data/diaithircarts/freight/station_recipes.csv` lists output, Age, station and inputs for the station lanes (workshop bench, cooperage, machine works, container works). The container works is the Assembly Yard tier that builds containers.
 
 ## Known gaps
-- Docks serve a deployed container, not yet a container riding a vehicle (the vehicle thread supplies its `CargoBay`).
+- No vehicle implements `CargoCarrier` yet; the vehicle, rail and ship threads register theirs. Tested with a stub carrier.
+- Carried loads are not drawn on the vehicle (vehicle thread).
 - Tank fluid is not carried when lifting; pump it empty first. A tank container is a plain vessel block, not an ISO frame.
 - No client test: models and textures are generated but unseen.
 - Door leaves do not animate.
 
-Tests: `CargoBayTest` (6 unit tests) and `/diaithircarts freighttest` (owners; deploy, doors, dock insert and extract through the real block capability, lift weight rule, lower with cargo intact, rift pair, tank fluid rule). Assets: `tools/gen_freight_assets.py`.
+Tests: `CargoBayTest` (6 unit tests) and `/diaithircarts freighttest` (owners; deploy, doors, dock insert and extract through the real block capability, lift weight rule, carrier put, stack, dock and take with cargo intact, lower, rift pair, tank fluid rule). Assets: `tools/gen_freight_assets.py`.
