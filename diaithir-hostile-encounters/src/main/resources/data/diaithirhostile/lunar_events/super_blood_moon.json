@@ -15,5 +15,20 @@
     "interval_ticks": 30,
     "biome_monsters": true
   },
-  "block_sleeping": true
+  "block_sleeping": true,
+  "boost": {
+    "chance": 0.6,
+    "effects": [
+      "minecraft:strength",
+      "minecraft:speed",
+      "minecraft:resistance"
+    ],
+    "amplifier": 1,
+    "essence_chance": 0.5,
+    "creeper_effects": [
+      "minecraft:nausea",
+      "minecraft:infested"
+    ],
+    "phantoms": 8
+  }
 }

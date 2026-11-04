@@ -69,6 +69,27 @@ public final class SelfTest {
         check(spawned > 0, "blood moon horde spawns mobs near a player: " + spawned);
         check(!lvl.getEntitiesOfClass(net.minecraft.world.entity.Mob.class, p.getBoundingBox().inflate(80), m -> m.entityTags().contains("lunar_horde")).isEmpty(), "horde mobs carry the lunar_horde tag");
 
+        // blood moon (KS): boosted mobs, essence drop, creeper effects, phantoms, essence use
+        var zombie = net.minecraft.world.entity.EntityType.ZOMBIE.create(lvl, net.minecraft.world.entity.EntitySpawnReason.EVENT);
+        zombie.snapTo(top.getX() + 3.5, top.getY(), top.getZ() + 0.5, 0F, 0F);
+        Lunar.Event bm = Lunar.get("diaithirhostile:blood_moon");
+        boolean boosted = false;
+        for (int i = 0; i < 100 && !boosted; i++) { zombie.entityTags().remove("lunar_boosted"); boosted = LunarEvents.boost(zombie, bm); }
+        check(boosted && zombie.entityTags().contains("lunar_boosted") && !zombie.getActiveEffects().isEmpty(), "blood moon boosts a hostile mob with an effect");
+        var loot = new java.util.ArrayList<net.minecraft.world.entity.item.ItemEntity>();
+        int got = 0;
+        for (int i = 0; i < 40 && got == 0; i++) { bus.post(new net.neoforged.neoforge.event.entity.living.LivingDropsEvent(zombie, lvl.damageSources().generic(), loot, true)); got = loot.size(); }
+        check(got > 0 && loot.get(0).getItem().is(MoonEssence.ITEM.get()), "boosted mob drops Moon Essence");
+        LunarEvents.creeperEffects(p, bm);
+        check(p.hasEffect(net.minecraft.world.effect.MobEffects.NAUSEA) && p.hasEffect(net.minecraft.world.effect.MobEffects.INFESTED), "creeper blast gives nausea and infested");
+        check(LunarEvents.phantoms(lvl, bm, List.of(p)) == 1, "blood moon sends phantoms above the player");
+        p.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, new net.minecraft.world.item.ItemStack(MoonEssence.ITEM.get(), 2));
+        MoonEssence.ITEM.get().use(lvl, p, net.minecraft.world.InteractionHand.MAIN_HAND);
+        check(p.getItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND).getCount() == 1, "using Moon Essence consumes one");
+        check(!lvl.getEntitiesOfClass(net.minecraft.world.entity.ExperienceOrb.class, p.getBoundingBox().inflate(4)).isEmpty(), "using Moon Essence drops experience");
+        var qf = SelfTest.class.getResourceAsStream("/data/diaithirhostile/quests/lunar_events.json");
+        check(qf != null && Lunar.GSON.fromJson(new java.io.InputStreamReader(qf), com.google.gson.JsonObject.class).getAsJsonArray("quests").size() == 7, "quest file lists the 7 moons");
+
         // blue moon: luck, xp x2, anvil, enchant, beacon
         fc.force(lvl, "diaithirhostile:blue_moon");
         check(fc.current(lvl).id.equals("diaithirhostile:blue_moon"), "blue moon active");
