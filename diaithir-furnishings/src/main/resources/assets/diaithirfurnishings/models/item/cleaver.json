@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/cleaver"
+  "layer0": "diaithirfurnishings:item/cleaver_head",
+  "layer1": "diaithirfurnishings:item/cleaver_handle"
  }
 }

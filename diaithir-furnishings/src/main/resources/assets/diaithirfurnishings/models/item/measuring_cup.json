@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/measuring_cup"
+  "layer0": "diaithirfurnishings:item/measuring_cup_head",
+  "layer1": "diaithirfurnishings:item/measuring_cup_handle"
  }
 }

@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/papyrus_scroll"
+  "layer0": "diaithirfurnishings:item/papyrus_scroll_head",
+  "layer1": "diaithirfurnishings:item/papyrus_scroll_handle",
+  "layer2": "diaithirfurnishings:item/papyrus_scroll_binding"
  }
 }
