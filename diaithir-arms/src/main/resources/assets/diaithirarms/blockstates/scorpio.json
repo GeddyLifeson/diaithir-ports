@@ -1,0 +1,36 @@
+{
+ "variants": {
+  "facing=north,loaded=false": {
+   "model": "diaithirarms:block/scorpio",
+   "y": 0
+  },
+  "facing=north,loaded=true": {
+   "model": "diaithirarms:block/scorpio_loaded",
+   "y": 0
+  },
+  "facing=east,loaded=false": {
+   "model": "diaithirarms:block/scorpio",
+   "y": 90
+  },
+  "facing=east,loaded=true": {
+   "model": "diaithirarms:block/scorpio_loaded",
+   "y": 90
+  },
+  "facing=south,loaded=false": {
+   "model": "diaithirarms:block/scorpio",
+   "y": 180
+  },
+  "facing=south,loaded=true": {
+   "model": "diaithirarms:block/scorpio_loaded",
+   "y": 180
+  },
+  "facing=west,loaded=false": {
+   "model": "diaithirarms:block/scorpio",
+   "y": 270
+  },
+  "facing=west,loaded=true": {
+   "model": "diaithirarms:block/scorpio_loaded",
+   "y": 270
+  }
+ }
+}
