@@ -45,7 +45,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_routemaster"
+   "defaultPart": "diaithirvehicles:engine_routemaster",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -56,7 +58,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -67,7 +72,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -78,7 +86,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -89,7 +99,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -100,7 +112,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -111,7 +125,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_routemaster"
+   "defaultPart": "diaithirvehicles:wheel_routemaster",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -128,7 +144,9 @@
     -2.05,
     0.5,
     0.2
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -139,7 +157,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -150,7 +170,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -161,7 +183,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -172,7 +196,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -183,7 +209,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -194,7 +222,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -205,7 +235,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -216,18 +248,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    1.5,
-    0
-   ],
-   "width": 2.5,
-   "height": 3.0
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
@@ -310,6 +333,29 @@
    "hudY": 100,
    "hudScale": 0.85,
    "defaultInstrument": "diaithirvehicles:readout"
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.5,
+      0
+     ],
+     "width": 2.5,
+     "height": 3.0
+    }
+   ]
   }
  ]
 }

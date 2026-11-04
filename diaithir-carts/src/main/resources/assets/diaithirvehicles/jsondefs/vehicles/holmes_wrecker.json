@@ -45,7 +45,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:engine_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -56,7 +58,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -67,7 +72,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -78,7 +86,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -89,7 +99,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker"
+   "defaultPart": "diaithirvehicles:wheel_holmes_wrecker",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -106,7 +118,9 @@
     -1.8,
     0.5,
     0.2
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -117,18 +131,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    1.2,
-    0
-   ],
-   "width": 2.0,
-   "height": 2.4
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
@@ -211,6 +216,29 @@
    "hudY": 100,
    "hudScale": 0.85,
    "defaultInstrument": "diaithirvehicles:readout"
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.2,
+      0
+     ],
+     "width": 2.0,
+     "height": 2.4
+    }
+   ]
   }
  ]
 }
