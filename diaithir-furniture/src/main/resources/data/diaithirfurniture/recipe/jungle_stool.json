@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:jungle_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "PPP",
+  "S S"
+ ],
+ "result": {
+  "id": "diaithirfurniture:jungle_stool",
+  "count": 2
+ }
+}

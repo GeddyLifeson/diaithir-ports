@@ -1,0 +1,44 @@
+{
+    "name": "Níveis 30–60",
+    "icon": "apothic_enchanting:hellshelf",
+    "category": "apotheosis:enchanting/progression",
+    "flag": "apotheosis:enchanting",
+    "pages": [
+        {
+            "type": "patchouli:crafting",
+            "title": "Alcançando o nível 45",
+            "recipe": "apothic_enchanting:hellshelf",
+            "text": "Para atingir o nível 45, você vai querer criar algumas $(9)Estantes Infernais$() e adicioná-las às suas Estantes de Livros existentes."
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "Alcançando o nível 45",
+            "recipe": "apothic_enchanting:seashelf",
+            "text": "Se você não gosta do Nether, você também pode se aventurar no oceano e criar $(9)Estante Marinha$()."
+        },
+        {
+            "type": "patchouli:spotlight",
+            "title": "Alcançando o nível 60",
+            "item": "apothic_enchanting:infused_hellshelf",
+            "text": "Depois de alcançar o nível 45, você precisará explorar $(l:apotheosis:enchanting/table/infusion)Encantamento por Infusão$() para melhorar suas estantes."
+        },
+        {
+            "type": "patchouli:spotlight",
+            "title": "Alcançando o nível 60",
+            "item": "apothic_enchanting:infused_seashelf",
+            "text": "Crie mais algumas estantes do tipo que você estava usando, infunda-as e atualize-as.$(p)Essas novas estantes, em cima das antigas, permitirão que você alcance o nível 60."
+        },
+        {
+            "type": "patchouli:spotlight",
+            "title": "Outros atributos",
+            "item": "apothic_enchanting:sightshelf",
+            "text": "Agora você tem opções melhores para aumentar os outros atributos.$(p)Além dos bônus das Estantes Infernais e Estantes Marinhas, você pode fabricar uma $(9)Estante Infernal da Visão$() para aumentar suas $(pistas)."
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "Outros atributos",
+            "recipe": "apothic_enchanting:geode_shelf",
+            "text": "Se você tiver uma quantidade boa de ametista, você também pode fazer $(9)retificadores$() para aumentar ainda mais sua $(retificacao)."
+        }
+    ]
+}

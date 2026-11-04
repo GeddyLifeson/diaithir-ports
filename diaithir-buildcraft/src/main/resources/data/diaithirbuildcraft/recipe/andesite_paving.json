@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:andesite"
+ },
+ "pattern": [
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:andesite_paving",
+  "count": 6
+ }
+}

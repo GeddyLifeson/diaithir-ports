@@ -27,8 +27,6 @@ public final class ClientBootstrap {
     public static void init(IEventBus modBus, ModContainer container) {
         modContainer = container;
         container.registerConfig(ModConfig.Type.CLIENT, AnimationConfig.SPEC, "diaithir_entityanimation-client.toml");
-        modBus.register(ModBusEvents.class);
-        NeoForge.EVENT_BUS.register(ClientEvents.class);
         container.registerExtensionPoint(IConfigScreenFactory.class,
                 (IConfigScreenFactory) (mc, parent) -> new net.neoforged.neoforge.client.gui.ConfigurationScreen(container, parent));
     }

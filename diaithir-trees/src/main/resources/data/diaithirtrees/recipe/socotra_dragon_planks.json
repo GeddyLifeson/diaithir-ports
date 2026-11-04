@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:socotra_dragon_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:socotra_dragon_planks",
+  "count": 4
+ }
+}

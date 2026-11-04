@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/cross",
+"textures": {
+"cross": "diaithir_planets:block/silena_silerae_plant"
+}
+}

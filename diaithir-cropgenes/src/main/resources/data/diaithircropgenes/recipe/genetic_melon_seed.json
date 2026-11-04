@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:melon_seeds"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithircropgenes:genetic_melon_seed",
+  "count": 1
+ }
+}

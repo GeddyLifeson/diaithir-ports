@@ -1,0 +1,19 @@
+{
+  "type": "diaithir_wiretech:arc_furnace",
+  "inputs": [
+    {
+      "ingredient": "diaithir_wiretech:steel_wire_coil",
+      "count": 1
+    },
+    {
+      "ingredient": "minecraft:red_dye",
+      "count": 1
+    }
+  ],
+  "energy": 1800,
+  "time": 80,
+  "result": {
+    "id": "diaithir_wiretech:electronic_red_circuit_wire",
+    "count": 2
+  }
+}

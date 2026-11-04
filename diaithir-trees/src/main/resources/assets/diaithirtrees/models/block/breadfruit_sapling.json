@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "diaithirtrees:block/breadfruit_sapling"
+ }
+}

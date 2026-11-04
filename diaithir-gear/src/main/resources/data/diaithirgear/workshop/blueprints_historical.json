@@ -7531,5 +7531,689 @@
    }
   ],
   "model": "axe"
+ },
+ {
+  "id": "hw_self_bow",
+  "station": "workshop",
+  "base": "diaithirarms:self_bow",
+  "age": 1,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_gastraphetes",
+  "station": "workshop",
+  "base": "diaithirarms:gastraphetes",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 450,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.8,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "prod",
+    "role": "head",
+    "count": 2,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.5
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "crossbow"
+ },
+ {
+  "id": "hw_repeating_crossbow_zhuge_nu",
+  "station": "workshop",
+  "base": "diaithirarms:repeating_crossbow_zhuge_nu",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 450,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.8,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "prod",
+    "role": "head",
+    "count": 2,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.5
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "crossbow"
+ },
+ {
+  "id": "hw_yumi",
+  "station": "workshop",
+  "base": "diaithirarms:yumi",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_longbow_english",
+  "station": "workshop",
+  "base": "diaithirarms:longbow_english",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_arbalest_steel_crossbow",
+  "station": "workshop",
+  "base": "diaithirarms:arbalest_steel_crossbow",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 450,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.8,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "prod",
+    "role": "head",
+    "count": 2,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.5
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "crossbow"
+ },
+ {
+  "id": "hw_stonebow_bullet_crossbow",
+  "station": "workshop",
+  "base": "diaithirarms:stonebow_bullet_crossbow",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 450,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.8,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "prod",
+    "role": "head",
+    "count": 2,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.5
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "crossbow"
+ },
+ {
+  "id": "hw_plains_bow",
+  "station": "workshop",
+  "base": "diaithirarms:plains_bow",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_korean_horn_bow_gakgung",
+  "station": "workshop",
+  "base": "diaithirarms:korean_horn_bow_gakgung",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_cranequin_crossbow",
+  "station": "workshop",
+  "base": "diaithirarms:cranequin_crossbow",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 450,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.8,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "prod",
+    "role": "head",
+    "count": 2,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.5
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "crossbow"
+ },
+ {
+  "id": "hw_hungarian_magyar_bow",
+  "station": "workshop",
+  "base": "diaithirarms:hungarian_magyar_bow",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_tibetan_crossbow",
+  "station": "workshop",
+  "base": "diaithirarms:tibetan_crossbow",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 450,
+  "ref_mass_kg": 2.5,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "stock",
+    "role": "stock",
+    "count": 2,
+    "litres": 0.8,
+    "damage": 0.3,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "prod",
+    "role": "head",
+    "count": 2,
+    "litres": 0.2,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 0.5
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "lock",
+    "role": "lock",
+    "count": 1,
+    "litres": 0.02,
+    "damage": 0.0,
+    "durability": 0.4,
+    "speed": 0.5
+   }
+  ],
+  "model": "crossbow"
+ },
+ {
+  "id": "hw_bhutanese_bamboo_bow",
+  "station": "workshop",
+  "base": "diaithirarms:bhutanese_bamboo_bow",
+  "age": 5,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_nubian_self_bow",
+  "station": "workshop",
+  "base": "diaithirarms:nubian_self_bow",
+  "age": 3,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
+ },
+ {
+  "id": "hw_cretan_short_bow",
+  "station": "workshop",
+  "base": "diaithirarms:cretan_short_bow",
+  "age": 4,
+  "kind": "ranged",
+  "damage": 1.0,
+  "speed": 0.0,
+  "durability": 400,
+  "ref_mass_kg": 0.8,
+  "improvements": 2,
+  "slots": [
+   {
+    "name": "limbs",
+    "role": "limb",
+    "count": 2,
+    "litres": 0.4,
+    "damage": 1.0,
+    "durability": 0.6,
+    "speed": 1.0
+   },
+   {
+    "name": "string",
+    "role": "bowstring",
+    "count": 1,
+    "litres": 0.01,
+    "damage": 0.5,
+    "durability": 0.5,
+    "speed": 0.5
+   },
+   {
+    "name": "grip",
+    "role": "grip",
+    "count": 1,
+    "litres": 0.03,
+    "damage": 0.0,
+    "durability": 0.3,
+    "speed": 0.5
+   }
+  ],
+  "model": "bow"
  }
 ]

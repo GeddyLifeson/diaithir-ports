@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/leaves",
+"textures": {
+"all": "diaithir_planets:block/jorernodath_elina_leaves"
+}
+}
