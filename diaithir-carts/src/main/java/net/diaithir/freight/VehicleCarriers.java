@@ -118,6 +118,9 @@ public final class VehicleCarriers {
         if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks" + lastProbe)); return 0; }
         StringBuilder sb = new StringBuilder(String.format("Bay %dx%dx%d cells, %d free, payload %.0f of %.0f kg, displays %d; loads:", c.spec.w, c.spec.h, c.spec.l, c.bay.freeCells(), c.bay.payloadKg(), c.bay.maxPayloadKg, c.displays.size()));
         for (CargoBay.Placed p : c.bay.loads()) sb.append(' ').append(p.type.id()).append('@').append(p.x).append(',').append(p.y).append(',').append(p.z);
+        Vec3 vp = c.position();
+        if (vp != null) sb.append(String.format(" | vehicle at %.2f,%.2f,%.2f", vp.x, vp.y, vp.z));
+        for (Display.BlockDisplay d : c.displays) sb.append(String.format(" | display at %.2f,%.2f,%.2f", d.getX(), d.getY(), d.getZ()));
         String line = sb.toString();
         src.sendSuccess(() -> net.minecraft.network.chat.Component.literal(line), false);
         return 1;
@@ -126,7 +129,9 @@ public final class VehicleCarriers {
     private static int clear(net.minecraft.commands.CommandSourceStack src) {
         VehicleCarrier c = nearest(src);
         if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks" + lastProbe)); return 0; }
-        for (CargoBay.Placed p : c.bay.loads()) c.bay.take(p);
+        List<CargoBay.Placed> all = new ArrayList<>(c.bay.loads());
+        all.sort((a, b) -> Integer.compare(b.y, a.y));  // top loads first: a load with another on it cannot be taken
+        for (CargoBay.Placed p : all) c.bay.take(p);
         c.changed();
         src.sendSuccess(() -> net.minecraft.network.chat.Component.literal("Bay emptied"), false);
         return 1;
@@ -291,6 +296,7 @@ public final class VehicleCarriers {
                 d.setNoGravity(true);
                 d.setInvulnerable(true);
                 call(setPosRot(), d, 2);
+                call(setBrightness(), d, new net.minecraft.util.Brightness(15, 15));
                 level.addFreshEntity(d);
                 displays.add(d);
             }
@@ -325,6 +331,13 @@ public final class VehicleCarriers {
     private static Method setTransformation() {
         if (setTransformation == null) setTransformation = method(Display.class, "setTransformation", Transformation.class);
         return setTransformation;
+    }
+
+    private static Method setBrightness;
+
+    private static Method setBrightness() {
+        if (setBrightness == null) setBrightness = method(Display.class, "setBrightnessOverride", net.minecraft.util.Brightness.class);
+        return setBrightness;
     }
 
     private static Method setPosRot() {
