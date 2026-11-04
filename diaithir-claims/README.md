@@ -27,6 +27,9 @@ Package `net.diaithir.claims.law`. Handcuffs (use on a player: slowed, cannot at
 Package `net.diaithir.claims.parties`: `/party create|invite|accept|leave|kick|disband|info|list`. Party members count as trusted on each other's claims (`Claim.allows`). Clean-room from behaviour (Open Parties and Claims is LGPL-3.0); no code taken. Later: shared claim map colours per party, party chat, claim limits per party.
 ## Capitals (MCA Capitals replacement, stage 1)
 Package `net.diaithir.claims.capitals`: `/capital found|list|info|swear|leave|heir|abdicate`. A capital stands on your own claim; one ruler, an optional heir, subjects in the order they swore; when the ruler dies or abdicates the heir (else the first subject) rules. Clean-room from the behaviour of MCA Capitals (GPL-3.0, 1.21.1, 28.8k lines on MCA 7.7.7 internals); no code taken. Later stages: MCA Reborn villagers as subjects, nobles and houses, taxes via Lightman's Currency.
+
+## Taxes (Tale of Kingdoms idea, clean-room)
+`/capital tax set ITEM AMOUNT` (ruler), `/capital pay` (subject, once per real day), `/capital treasury [take]` (ruler). Stacked on the capitals package. Tale of Kingdoms is LGPL-3.0 (Fabric 1.21.1); no code taken. Later: Lightman's Currency coins as the tax item, tax collection by MCA villagers.
 ## Permission nodes (PermissionGate port)
 Package `net.diaithir.claims.permissions`: nodes `pg.break`, `pg.interact`, `pg.use`, `pg.attack` on NeoForge's PermissionAPI (default allowed). From PermissionGate by ngoclinh_ (MIT, Fabric, 219 lines); events remapped to NeoForge. Test 2026-11-03: compile OK, server boots with nodes registered. Not tested with a permission handler such as LuckPerms.
 ## Graves (Epitaphs replacement)
