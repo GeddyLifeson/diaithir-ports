@@ -134,16 +134,296 @@ file = "keybinds.txt"
 hash = "7c94295f04a1c53ff70d245e6d61ae68ffe9d85882bb9f9bd98a0801171c7732"
 
 [[files]]
+file = "kubejs/assets/actuallyadditions/textures/block/double_furnace_front.png"
+hash = "cdbf5bcccd3eca12980acd242d131fc226993211ab9d6f43892a1ccfc9d59d59"
+
+[[files]]
+file = "kubejs/assets/actuallyadditions/textures/block/green_block.png"
+hash = "152e4299009bff481f8c7d214a6568f5a6350310fd8103bae9b4db9a929dcb98"
+
+[[files]]
+file = "kubejs/assets/actuallyadditions/textures/block/white_block.png"
+hash = "f8f6f1b48ea65c5223e87da30890d58b0303640f51e935892a8884174d9a61b9"
+
+[[files]]
+file = "kubejs/assets/advanced_ae/models/block/quantum_core_formed_on.json"
+hash = "0ecb8f964b8626c425fd100600c65a5e521f78594d238ac528d93f9547bddf8a"
+
+[[files]]
+file = "kubejs/assets/ae2/textures/part/conversion_monitor.png"
+hash = "0ebaac1bd96114ad0b2371f0a087f36e019cb2987e91a0a16e5bf0a3afb1d898"
+
+[[files]]
+file = "kubejs/assets/ae2/textures/part/crafting_terminal.png"
+hash = "f9cdbcccb9c5c79060020882e52d0667f5c82efc89a7baf81532cff46bdedfb2"
+
+[[files]]
+file = "kubejs/assets/ae2/textures/part/pattern_access_terminal.png"
+hash = "e73d942f5bb2127591d9f1bef95d18976d48b6c6f7de4298c3a45d4885b817b9"
+
+[[files]]
+file = "kubejs/assets/ae2/textures/part/pattern_encoding_terminal.png"
+hash = "6c4c830db48fe76ef4892331f53fdcf807a41bb9ab8e04ec7dc201b57fa7d3a2"
+
+[[files]]
+file = "kubejs/assets/ae2/textures/part/storage_monitor.png"
+hash = "395572b19dd20e5011f22184aa51ee22e668c2c86869c2e6be2d725b35c08601"
+
+[[files]]
+file = "kubejs/assets/ae2/textures/part/terminal.png"
+hash = "e74754a63eec43fdc241e0297c58f476fa771f43d6304cca6ee30306dae70654"
+
+[[files]]
+file = "kubejs/assets/ae2addonlib/textures/block/water_still.png"
+hash = "f2d45db5da97dd1c701b5528cb87fee10118f2283fe6ad7f2d9ddb42570c91c9"
+
+[[files]]
+file = "kubejs/assets/agritechevolved/models/block/pale_oak_planter.json"
+hash = "e74902a5080c27c83423234dfbfc3a8683e4a4a271dc9a7b755f486ac160b121"
+
+[[files]]
+file = "kubejs/assets/agritechevolved/textures/block/infused_farmland_sides_wet.png"
+hash = "d4a19dbb4d2d06eac2ef09e084cb42760893371d3b746c1249955b2c633ab35d"
+
+[[files]]
+file = "kubejs/assets/amendments/models/block/hanging_flower_pot_rope.json"
+hash = "5d3f5cfb06ae4c180c8e9dc32a3ab59af5ba259177b85d8439e0dd5360759a12"
+
+[[files]]
+file = "kubejs/assets/apotheosis/textures/items/ender_lead.png"
+hash = "d4a2288b9e92a79272f4bb08313127b7327adae170d58293c45003b2f358d6b2"
+
+[[files]]
+file = "kubejs/assets/apothic_enchanting/textures/blocks/boss_spawner.png"
+hash = "bb545760084d3ff0b84d7af82aef7c52d445c2a12f00e6ee589d65c04378d7b0"
+
+[[files]]
+file = "kubejs/assets/apothic_enchanting/textures/blocks/boss_spawner_top.png"
+hash = "184ff50c8772380613ffdc1e4e4f981e7a6ddc2dff8c1227c57eaec3918e06af"
+
+[[files]]
+file = "kubejs/assets/apothic_enchanting/textures/blocks/reforging/simple_table_lit.png"
+hash = "524468bac659550836e2dbd2583239ee3a26fc1ec9c556613ae3bddcc172d199"
+
+[[files]]
+file = "kubejs/assets/apothic_enchanting/textures/blocks/reforging/simple_table_side.png"
+hash = "3a85ad2c19b9684faab5cea61f8e5be8d4ab445c2ec8485b077d9bdecf0e0739"
+
+[[files]]
+file = "kubejs/assets/apothic_enchanting/textures/blocks/reforging/simple_table_top.png"
+hash = "524468bac659550836e2dbd2583239ee3a26fc1ec9c556613ae3bddcc172d199"
+
+[[files]]
+file = "kubejs/assets/appliede/models/item/cable_emc_interface.json"
+hash = "6458a560e3c0ad594e86b9243f058fdbcd1ab3cb86a1e396fc35999254137054"
+
+[[files]]
+file = "kubejs/assets/appliede/models/part/emc_export_bus.json"
+hash = "d5e67632ab76e2011b6b6eddbb77a4d13eaeb35d740523400a8cfe48dd9899b5"
+
+[[files]]
+file = "kubejs/assets/appliede/models/part/emc_import_bus.json"
+hash = "faa566596f663a57324282cdc25ac2cbccd7cb3c4656f6b4b7ce5580ba0bdeb9"
+
+[[files]]
+file = "kubejs/assets/appliede/models/part/emc_interface.json"
+hash = "f64dbdd6f5ccf4654ae2e9897b35f9961a67762e203a9fcb3faf73c52d7d2a10"
+
+[[files]]
+file = "kubejs/assets/appliede/textures/block/_gap_cable_emc_interface.png"
+hash = "a95a201c446234e971d804605b2f0df81900c388517b186e1d09137bb9457233"
+
+[[files]]
+file = "kubejs/assets/appliede/textures/block/_gap_emc_export_bus.png"
+hash = "3ce7e519bd3936d7cf5731263ec84bff16ea709de9bdf27d71aa944bb3e75908"
+
+[[files]]
+file = "kubejs/assets/appliede/textures/block/_gap_emc_import_bus.png"
+hash = "b132844565abbad32a9ec9798acf056c89e557ad46c0d1e2fd7a33109078b330"
+
+[[files]]
+file = "kubejs/assets/appliede/textures/block/_gap_emc_interface.png"
+hash = "4f2fb953594e7c375466d34dabc87fef95f99028035cb253c5de2126bc2ac697"
+
+[[files]]
 file = "kubejs/assets/backrooms/lang/en_us.json"
 hash = "8bbe92b17dd2bd0b5ccac450382a79749d1af81ad2dc79ca2f01b1ff3a8a77b1"
+
+[[files]]
+file = "kubejs/assets/bblcore/models/block/planks.json"
+hash = "cff195bcfb2001e1056d299b567dbabf886bb5a29e81243534b261a8db2d5886"
+
+[[files]]
+file = "kubejs/assets/bblcore/textures/block/colored_block.png"
+hash = "0eae8668c2023335b94b12d119a12c7703932e51cb8a2e57e9b669529773952e"
 
 [[files]]
 file = "kubejs/assets/betterf3/lang/en_us.json"
 hash = "87bfd11e1db402c2381c3099c2e42b6aae97e3f229d4620acbcbc7e62845ff98"
 
 [[files]]
+file = "kubejs/assets/betternether/models/block/quartz_glass_framed_noside.json"
+hash = "3e5d4b4b41161682269981f6da6ded0787cc99934a5818cf5355a6599d5d0017"
+
+[[files]]
+file = "kubejs/assets/betternether/models/block/quartz_glass_framed_noside_alt.json"
+hash = "f8e3c491b6741038b8afa956707b2c2d4edfc326113682883389d6c26bbf458b"
+
+[[files]]
+file = "kubejs/assets/betternether/textures/item/empty_slot_block.png"
+hash = "4a50cbb6486ded3c6c03d46d45f7db189747f183d89995614a88f300822d6f49"
+
+[[files]]
+file = "kubejs/assets/betternether/textures/item/empty_slot_bowl.png"
+hash = "a8c7fefd5b8ab2ad3531c2766c5e59d3a4e503e3cbe1badd3d1b8f465103e862"
+
+[[files]]
 file = "kubejs/assets/biomesoplenty/lang/en_us.json"
 hash = "cd70ffdbfff1a94bcb57e0ce5db871eebdffb4e42a63c381f471edaeb20ecdab"
+
+[[files]]
+file = "kubejs/assets/biomesoplenty/textures/block/barley.png"
+hash = "4f6d57683ac8787a3f171b20703f82b28784075dcef1d225d2ad672e9fe7d504"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/models/block/construction_block.json"
+hash = "79903b8a275a8d8c251f7d8d2de6fa1addb62b30a59809f6f5f279ee1e440478"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/models/block/construction_block_dense.json"
+hash = "ba971047ad1b5bd3c77043b1978f5d970221ace8446fa6f6848efac23fb4acc3"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/models/block/construction_block_powder.json"
+hash = "e1180e1dc652200a2d37bf65550b82d26c94bfcf116cabaa18c281ed3bea0d76"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/models/block/effect_block.json"
+hash = "20fed06e516eda4b03c297c2bad5ddeb0a2028196e1fccaa709fc9264c64d85e"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/block/_gap_construction_block.png"
+hash = "5e05fe21b3e025b8a52892364a5db71bbacede0d732ff2864a6c8bcfe7d98c7a"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/block/_gap_construction_block_dense.png"
+hash = "dfd0d585e705e44eae119052b36aaaece26e6f0c061b09241a43b8d52ed45143"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/block/_gap_construction_block_powder.png"
+hash = "b3bdbe52966aa32fe6e788d496d888f9b6d191ff4d09b2cf4a5aaa62970b106d"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/block/_gap_effect_block.png"
+hash = "0c45c488fbd5ac5e321c92422e8d9124af12655b6682a4f73b73d9587037570d"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/blocks/construction_block.png"
+hash = "a05c1c7290840d07fa7b9029032b86e5a7881f86d05b266c653bee7c1ccc558e"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/blocks/construction_block_dense.png"
+hash = "a52504eb5537164260847c921ba8a1ecdd2efc4213930bba38b4e7c137d59280"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/blocks/construction_block_powder.png"
+hash = "8aa3e4f46faa7d6ecb3f3ff5be552be6b80a61bca18d670a9b15a176854c7f23"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/blocks/constructionblock_dense.png"
+hash = "a52504eb5537164260847c921ba8a1ecdd2efc4213930bba38b4e7c137d59280"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/blocks/effect_block.png"
+hash = "4559d5b688fcbd25ab0380b54268a811e4e1a0564ea6c57427390ecef99f3698"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_chunk_dense.png"
+hash = "36ebebdd1af85590e6baa7c71c915e0edc6de663ac6211b07264dc84b98b1cf0"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste.png"
+hash = "b543116a93592c915504525ebbbbe750f8c5de4e79f79e73bfd88c8dc486ab31"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_creative.png"
+hash = "21df7b67977a722bd5b565c3901fa281efab12f99399b48ab8a6c382e9dd45c4"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t1.png"
+hash = "2a70983ac9c898be2c80376bb63f274d9c6d053f5366edefa10fa1f5c22b8a16"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t1_3quarter.png"
+hash = "6e8e9d0ae61e7267931596244372605c11e03e5398d95d72e9331e5ce17c147a"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t1_full.png"
+hash = "e6885d3e300e65b07701c497af9a65e9e70fdd0ca529f80a913c960d9ac874b0"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t1_half.png"
+hash = "291ddd52c66136eaeda1700be3a7d5e26c8d515b620218effbea6dd2cde4b8cf"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t1_quarter.png"
+hash = "cbc9fa4a164883d16e93bf8265edf87579c962c222442888a1ee2f10d320bedf"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t2.png"
+hash = "bfcdb4b92e6cd66dd93c2d8b445912a0212f0ca249c0b40b5cb576a9f25e361f"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t2_3quarter.png"
+hash = "7f3ea8c0c38a8511c9ccf5f167e923d87b81d3ca51ad865f4e2116b302b41fce"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t2_full.png"
+hash = "638dd8cb57c386bc8065fa5e85ba431ac8f18a44c3cda88bf8274ab23f5cd81a"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t2_half.png"
+hash = "afd0b5747cb9512f5aedd572c36f16690c1172f9c93e910651569b770192148a"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t2_quarter.png"
+hash = "d7df9fe910a89f63b8a5f1cdc7b8aec8e7fa3b4e091e85b51ab7fd1c4675dbbb"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t3.png"
+hash = "b4426a2206658ffcfbf5847ef806d2d90305a85cd95d93ab44f1048a43eeb78f"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t3_3quarter.png"
+hash = "1c41d39cf2f573c0e9db04f63ea46d204b6960233e84c6a7222690d70edef88f"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t3_full.png"
+hash = "1a791854b2c0216101330f3b686fae49b3e798fd6ca8896f8351e7b0c2b179d2"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t3_half.png"
+hash = "5c44f9fefe9d1a0b75380b822f41da94475088dd93f8b31b244f0fead0b08a73"
+
+[[files]]
+file = "kubejs/assets/buildinggadgets/textures/items/construction_paste_container_t3_quarter.png"
+hash = "378451ca91aafaed775bd9c81ad50e96be612fde3e343e9def78bdc24fd5c37a"
+
+[[files]]
+file = "kubejs/assets/buzzier_bees/textures/block/soul_candle_lit.png"
+hash = "168afd645b30eaa0ddd50d5b96dc8294f4415565069349abbade72fa426c7e9b"
+
+[[files]]
+file = "kubejs/assets/caveopolis/models/block/tintable_cube.json"
+hash = "39c9116670b8c18f90be30f17dae5fec52f2646ac4d4d88709e5e2319269055e"
+
+[[files]]
+file = "kubejs/assets/caveopolis/textures/block/_gap_tintable_cube.png"
+hash = "df77c6f1722194063fb8416002632c506c944001459e79a2e39da37394270fa4"
+
+[[files]]
+file = "kubejs/assets/cobblegengalore/textures/iron_block/side.png"
+hash = "4b560c5c2caebaa3934db2433c99313f40b494ee4acfe6a30f9bec88bd7ba79f"
 
 [[files]]
 file = "kubejs/assets/deepworlds/textures/block/charter_stone.png"
@@ -51066,6 +51346,14 @@ file = "kubejs/assets/diaithir/textures/item/white_coal.png"
 hash = "f480d84b433e561bcee3865669109c0472db48405923459b17ad2b3b90b2a3c2"
 
 [[files]]
+file = "kubejs/assets/diaithir_end/textures/block/ash_sediment.png"
+hash = "2299c8006af16ef3f7fc811998d16e493dd9be8cfa166fc0fe097a653b91d2fa"
+
+[[files]]
+file = "kubejs/assets/diaithir_end/textures/block/void_stone.png"
+hash = "b613eb8730e0d8e6c45c9c7707743ab53419a87b621f5dea6a691eff6563ac2f"
+
+[[files]]
 file = "kubejs/assets/diaithir_integration/textures/item/duslachluibhe.png"
 hash = "306fea3f3679292ef649a7cd7c74d7ed71e091ec69dd7b2b4c348bc23e0b9a93"
 
@@ -51570,8 +51858,268 @@ file = "kubejs/assets/diaithir_integration/textures/item/truinnsearlainne.png"
 hash = "11e87e419da942dec0667b889f41eda641235f68b80dbfa05a314b2fb561babe"
 
 [[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/biolum_vein.png"
+hash = "b9613bc10d4f88bfaa2b1d7c07b470268401b25d5a79a777023f444e507e7051"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/crystal_vault_stone.png"
+hash = "8ea5a151d6f2b8a7b42bd172075f32e164b869b197005a72835a280b98bb2405"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/drip_pipe_block.png"
+hash = "e928ec5ebf99519e0b2b6892f57e5d6a09062b8fd96d5d357695e1bb64685e9f"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/ember_basalt.png"
+hash = "fca97b467b055cc8d6626c2d9d2b3a14e7b0a828ba761edfe407e93e032a3b6e"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/frost_stone.png"
+hash = "a6f3924783ff878daf60a4c8c9d36e3177e3dc7ba4954c3e732936d446b9268c"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/glow_crystal_cluster.png"
+hash = "009d21ffef4032f16d7b07dd5e85330c5d02639c7dc0b600ffc6bfe5e82e59ad"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/glow_fungus_stalk.png"
+hash = "08015d8bfdd37ce2053c52bb55038d841b8acf2b6b5f13d015d556d054c2cf0c"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/ice_spike.png"
+hash = "13e0121fe07e3a6d84287aed4f8f8c9b44e5523e9505bc4f44c9eb1d2493ab2b"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/meteor_trace.png"
+hash = "2f73cecb49c64a32ca8ffe3a1305d660f05b0e1902c16cfb15fb4c02416ac780"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/rusted_plate.png"
+hash = "c38108702e73dbcd820ddd82710623c77f202a262120407bf71cdaa55931742a"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/spore_moss.png"
+hash = "635815c0074fbe73d5ffe66eb262edc36d62f6b075ec4ed923ae4b5a42b14ace"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/block/vent_stone.png"
+hash = "b29a1daaf0e755f3533860a3aa54df2d40b7a09af94a65cf995969bf0b7a9fbe"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/item/biome_compass_00.png"
+hash = "0ecf97136fa639fc490426aefaa8c0ae944dac087e2fd5792da8f4ce32bed05f"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/item/biome_compass_16.png"
+hash = "9997e7af5c24f5e959df8c345b54cecd855f7e1e71719f131d57c5283f7b1dc8"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/item/crystal_shard.png"
+hash = "bbab4b8aedaf1f2cf97b7e40afb2db439854a7180d7f3b051d3ba5b72a0623a6"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/item/ember_core.png"
+hash = "52486808896e8f66a485aea2b57e69603144c4e01387a387f9a1afb45b3fb2bb"
+
+[[files]]
+file = "kubejs/assets/diaithir_overworld_biomes/textures/item/spore_dust.png"
+hash = "11b7ff6c372ac444e5fd5e0aa262dabdc66afdf381abd4df29ec7c7d71c4d7ae"
+
+[[files]]
 file = "kubejs/assets/diaithir_worlds/lang/en_us.json"
 hash = "4000473b367f86f300c4c4e50407bd17ba47e76f79e7318c811218deceb31116"
+
+[[files]]
+file = "kubejs/assets/dimdoors/textures/block/quartz_door_lower.png"
+hash = "9739ba6e21f955d3085fa5bee9229ccc573f7e29b77623e3afc1e22e18aed687"
+
+[[files]]
+file = "kubejs/assets/dimdoors/textures/block/quartz_door_upper.png"
+hash = "9739ba6e21f955d3085fa5bee9229ccc573f7e29b77623e3afc1e22e18aed687"
+
+[[files]]
+file = "kubejs/assets/dimstorage/textures/block/dimtank_bottom.png"
+hash = "58dd3a98e77943e14dc011b21b30d09278ad9f8c4eda5d1768728922e579f8e2"
+
+[[files]]
+file = "kubejs/assets/dimstorage/textures/block/dimtank_side.png"
+hash = "a7913cc01f3e099348f29d9177bb2b8b3961992db9ad341f21b7ccb30c4e4f97"
+
+[[files]]
+file = "kubejs/assets/domum_ornamentum/models/block/timber_frame/dynamic_timberframe_item.json"
+hash = "d3f676facfe0e3507981303945486f4ac1c4a0db68a682b2ab1f1a67ead18a2f"
+
+[[files]]
+file = "kubejs/assets/easy_npc/models/block/easy_npc_spawner.json"
+hash = "37a736cc69f66c12e166ca55d12cf41ef6de7eda95e4e3b0b74b0c7c3d6ce0ee"
+
+[[files]]
+file = "kubejs/assets/ecologics/textures/block/maple_leaves.png"
+hash = "05f1fbe128f06f4e4d6f20fd2bb6df895769079d96cc481c9628df535e8e8fd1"
+
+[[files]]
+file = "kubejs/assets/ecologics/textures/item/walnut_slice.png"
+hash = "2aef464c6ae541bb09aae2a4396d44892ccda0fa99f969be44a7945c34634f18"
+
+[[files]]
+file = "kubejs/assets/enderio/textures/block/stirling_generator_front_off.png"
+hash = "9bcaa44bfca95f3957005bffb18adfcec9b9acf3a2a87f20a1e0d6cdd6ba8f31"
+
+[[files]]
+file = "kubejs/assets/endrem/models/block/lost_frame.json"
+hash = "a341bed5b98f99f301c9d28d0840815c0c5a244aef2df181c467053065a7e3d8"
+
+[[files]]
+file = "kubejs/assets/equivox/textures/block/dm_furnace_front_on.png"
+hash = "c4af1c1e456d1e595ac9846f91f2acea52d27172a7e22dab6681a37bb0e6cac8"
+
+[[files]]
+file = "kubejs/assets/equivox/textures/block/entropy_sink/top_1.png"
+hash = "dafee0e0371a2067269b76a16511566024da42894cce909c85e5f30848c2839b"
+
+[[files]]
+file = "kubejs/assets/equivox/textures/block/entropy_sink/top_2.png"
+hash = "d8a4878b9480eba543414a0145a88a8c3fc2c96a9b94cb614eb8dc95fac52b90"
+
+[[files]]
+file = "kubejs/assets/equivox/textures/block/entropy_sink/top_3.png"
+hash = "44c522337580f725335a5b4dc212d021e9a7afa491563e548d06ffc524c6cebe"
+
+[[files]]
+file = "kubejs/assets/equivox/textures/block/rm_furnace_front_on.png"
+hash = "c4af1c1e456d1e595ac9846f91f2acea52d27172a7e22dab6681a37bb0e6cac8"
+
+[[files]]
+file = "kubejs/assets/evilcraft/models/block/excrement_pile.json"
+hash = "b6e1f5982d1782ac164e3f4d0768358815bb794bcee1f819c98f23da1a0b6c2f"
+
+[[files]]
+file = "kubejs/assets/fossil/models/block/ancient_stone_stairs.json"
+hash = "c4f14ca3b327e2e616a7b079495a826f8e29a7a18e73a4df09a169b84c53f1b3"
+
+[[files]]
+file = "kubejs/assets/fossil/textures/block/_gap_ancient_stone_stairs.png"
+hash = "d47749df47f117ec87cb835c8aae886da654517486188c7e0d5d44af274e6789"
+
+[[files]]
+file = "kubejs/assets/framedblocks/textures/block/stonecutter_saw_still.png"
+hash = "ec1be9d7963529bd91dd9290480b852ea0be55d63b4060c44dd14e7488eaddfb"
+
+[[files]]
+file = "kubejs/assets/iceandfire/models/block/copper_block.json"
+hash = "5d5435827d3b8961bf2314f09a79733ba544e6fb7cd28ca9fd46a184f99e7c50"
+
+[[files]]
+file = "kubejs/assets/iceandfire/models/block/copper_ore.json"
+hash = "1ab21c1b0691702ceaf93570233210838c1b9e1593e71f435dd8ab9ab279bbf2"
+
+[[files]]
+file = "kubejs/assets/iceandfire/textures/item/jar_5.png"
+hash = "6b0d0317134bd34f219aa428c626eecc8900a509b8643a196550e20c0184b1b4"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/biofuel_block.json"
+hash = "94fe4d6922b4ec1604ff7f20ae3c4ba7f9a870348bbe491100385805b07240bb"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/essence_block.json"
+hash = "94fe4d6922b4ec1604ff7f20ae3c4ba7f9a870348bbe491100385805b07240bb"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/ether_gas_block.json"
+hash = "94fe4d6922b4ec1604ff7f20ae3c4ba7f9a870348bbe491100385805b07240bb"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/latex_block.json"
+hash = "94fe4d6922b4ec1604ff7f20ae3c4ba7f9a870348bbe491100385805b07240bb"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/meat_block.json"
+hash = "aba6b563304b61ce38aba96070bac2c9911441eb7b7f60c792b44907b1dd9774"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/milk_block.json"
+hash = "aba6b563304b61ce38aba96070bac2c9911441eb7b7f60c792b44907b1dd9774"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/sewage_block.json"
+hash = "94fe4d6922b4ec1604ff7f20ae3c4ba7f9a870348bbe491100385805b07240bb"
+
+[[files]]
+file = "kubejs/assets/industrialforegoing/models/block/sludge_block.json"
+hash = "94fe4d6922b4ec1604ff7f20ae3c4ba7f9a870348bbe491100385805b07240bb"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspect/read/boolean/ic2/eu/isprovider.png"
+hash = "2fd58c59312d200bae0acd90f5883df618ad46a3d315a72c12c22296e4323040"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspect/read/boolean/ic2/eu/isreceiver.png"
+hash = "e13cbfb9bf2f1041ba2c8d44b620d163ce5cbb07b2bb5a6a3940ba668c49162b"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/boolean/thaumcraft/isaspectcontainer.png"
+hash = "f02ff1b770316a62b8a787f8b93f62442e0580bda7dc68aa752dec97ac41b4a0"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/boolean/thaumcraft/isessentiaprovider.png"
+hash = "e166a6d0b51c23014d829db1e0bad97444d93f8f3d59fa35b8d974a0ffb0f33f"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/boolean/thaumcraft/isessentiareceiver.png"
+hash = "13986f459aed5e80ef1b7658bfbb7af8647c9a6631d474a6fa553e7fb4323836"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/boolean/thaumcraft/isessentiatransport.png"
+hash = "8ea1ffecc891b82efd9e8900c02330eb00c4a715628ce2c1bbb4accceb44b0a2"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/double/thaumcraft/auraflux.png"
+hash = "3d51228ccf8437ce9060a054195208b39592bba408174a7f3ec2f71a3f34aaa2"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/double/thaumcraft/auravis.png"
+hash = "dc61d0060cfd7fb1ab7b527ed3bfbce4c27255168b61371593a6d9057e7a9e56"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/integer/thaumcraft/aurabase.png"
+hash = "dc61d0060cfd7fb1ab7b527ed3bfbce4c27255168b61371593a6d9057e7a9e56"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/integer/thaumcraft/essentiaminsuction.png"
+hash = "c620eec1478d05eaf66beb0a592e2dab4c7ffbf508e255e7203ecdb319927561"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/list/thaumcraft/allaspects.png"
+hash = "ef4943759f9cdca49d05c7086eca9d8910d4be32dbbf8b12fb0f2324de457793"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/list/thaumcraft/aspectcontainer.png"
+hash = "f02ff1b770316a62b8a787f8b93f62442e0580bda7dc68aa752dec97ac41b4a0"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/thaumcraftaspect/thaumcraft/aspectcontainer.png"
+hash = "f02ff1b770316a62b8a787f8b93f62442e0580bda7dc68aa752dec97ac41b4a0"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/thaumcraftaspect/thaumcraft/essentia.png"
+hash = "5fa572da176022ab9ba65f5a19644c57bf2c581bc30aa0e1f36165ab30bc68e7"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/read/thaumcraftaspect/thaumcraft/suction.png"
+hash = "5fcc7a92cf4e9fbfc619c6690c293995bac2ae6ef4f805eee93fb8b5f3d46b06"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/write/integer/signals/destindex.png"
+hash = "6c54e8a56f25b38aeb581388d79529a3296da953e4186f8014255659f8e51156"
+
+[[files]]
+file = "kubejs/assets/integrateddynamics/textures/aspects/write/list/signals/destinations.png"
+hash = "d1c4548d4da0dcafbbb9aa08be4b1168a5fb3ca141e0073294797f9ce8575698"
+
+[[files]]
+file = "kubejs/assets/kaleidoscope_tavern/textures/block/deco/sandwich_board/base.png"
+hash = "fe376596b961c5924b161f5515696c44cfc9456c58104e5d3b14e3c410782b3c"
 
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/moonstone.png"
@@ -51582,6 +52130,46 @@ file = "kubejs/assets/kubejs/textures/item/onyx.png"
 hash = "ed1c0b288abef250d94421b44032494c291d8bf5b18ac3d5a6a61ab05ddd2fbb"
 
 [[files]]
+file = "kubejs/assets/lightmanscurrency/models/block/block1_2_alt.json"
+hash = "87cb71afd318886d95ea0139529e7793f3cf4ad9b7ac22f8384858dfb7debe66"
+
+[[files]]
+file = "kubejs/assets/lootr/textures/block/trophy_chest.png"
+hash = "d0b3f42626a0259129238511f68919421024f0f889e2898df4d9b63818cf7611"
+
+[[files]]
+file = "kubejs/assets/lootr/textures/block/trophy_steve.png"
+hash = "bbe325f51c0456b0bac1dd568c4f84a9cb81b9006dc4a75aaffdb7ab9a128e65"
+
+[[files]]
+file = "kubejs/assets/mcwdoors/models/block/parent/fixed/stable_bottom.json"
+hash = "e0d99f9f8a8adf8acb1f0bf03d8cc8c4923ab9151b07022b47f9848e41721252"
+
+[[files]]
+file = "kubejs/assets/mcwdoors/models/block/parent/fixed/stable_bottom_rh.json"
+hash = "e3b171774bc25bb6b32cf18f0f115200301263cc9ab1d91b22fa5e5bbd4b3bf6"
+
+[[files]]
+file = "kubejs/assets/mcwfences/textures/block/bricks.png"
+hash = "e7c7bb2a8e1d5a80d2c43c8e5a8715cd195d1528931b57d9e6a963c6ef4d1ef9"
+
+[[files]]
+file = "kubejs/assets/mcwfences/textures/block/cobblestone.png"
+hash = "b85dcadff026ad13883e7e1ff6559b839d3914fa7e39a7d8b3ff6a961a662b00"
+
+[[files]]
+file = "kubejs/assets/mcwfences/textures/block/stone_bricks.png"
+hash = "331ab884ed0052ebc89b76064f6a5ca43cd650fb0d1246ad064ba5ac59dd941a"
+
+[[files]]
+file = "kubejs/assets/mcwpaths/textures/block/snow_path.png"
+hash = "3314eacde2acadca22a4eb42b4c75443ffee10dd452be93fbefba36f24784bd7"
+
+[[files]]
+file = "kubejs/assets/mcwtrpdoors/textures/block/bamboo/bamboo_bamboo_trapdoor.png"
+hash = "a03179c85bdcf85e9f5a30373a80833505c054d009e6d957fcb2e1c5f27595b0"
+
+[[files]]
 file = "kubejs/assets/minecraft/lang/en_us.json"
 hash = "55d46827c236f3a1eac038e9186223d7f9bdd177faab17637822a8a544edb3ca"
 
@@ -51590,8 +52178,32 @@ file = "kubejs/assets/minecraft/sounds.json"
 hash = "52a4f694beec28302929cb11d2e95be54bff39305415a5420f1baec90fcd82bc"
 
 [[files]]
+file = "kubejs/assets/morered/models/block/distributor.json"
+hash = "c6c9538346f8e29c2dff55fef6952b8901f5a67535c07d3bee8704b47fbaae1f"
+
+[[files]]
 file = "kubejs/assets/mutantmonsters/lang/en_us.json"
 hash = "4d8b854ecb06f5f4fe1917a209de28be3ea20d74feef0fd13838f57f7c3713d9"
+
+[[files]]
+file = "kubejs/assets/mysticalagriculture/textures/block/imperium_growth_accelerator_static.png"
+hash = "0013cb3696439189ae22ef4164fddc01466cd2e0010b25cf70a37c8a3dec0532"
+
+[[files]]
+file = "kubejs/assets/mysticalagriculture/textures/block/inferium_growth_accelerator_static.png"
+hash = "f41f03eafe60a6ccbd4a576f079cf2c175d90cc7f35c25ae290a2b6734ab0e53"
+
+[[files]]
+file = "kubejs/assets/mysticalagriculture/textures/block/prudentium_growth_accelerator_static.png"
+hash = "f1c744f036235f4f42c4a04b5e55bf1b5b9278793efccb6a68dbc1c4d9214d99"
+
+[[files]]
+file = "kubejs/assets/mysticalagriculture/textures/block/supremium_growth_accelerator_static.png"
+hash = "49ea268e617596f831346a2c71f189f4550e55aebb9ea848613e1afda3cc4abe"
+
+[[files]]
+file = "kubejs/assets/mysticalagriculture/textures/block/tertium_growth_accelerator_static.png"
+hash = "88e42cb09700918f47c904431e736b4562c65e68fedb90cb8cb24eae13363f99"
 
 [[files]]
 file = "kubejs/assets/neoorigins/lang/en_us.json"
@@ -51602,16 +52214,396 @@ file = "kubejs/assets/nutritionalbalance/items/lunchbox_3d.json"
 hash = "3bf6bc92eb2c01872d3031a6f6cdd1b155b61916edcaa68c01c9d23c5726cb67"
 
 [[files]]
+file = "kubejs/assets/occultism/textures/block/chalk_glyph/0.png"
+hash = "b32d8e163dbbfa133487d00c9574f19102f151b77e7dfaf51a9c7bafbce0dc18"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/electric_compressor_back.png"
+hash = "7782274a02bd17f4a8778409969cdf39526e993eeef1480122a74b31077786b3"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/electric_compressor_front.png"
+hash = "6898c9250f6236300a551673767292f9efe43e51bb1f29c64335fae175c0f4fb"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/electric_compressor_side.png"
+hash = "6bb487f7e4df702c39e03b06ea98f8ddc70c3c46c70404ff0892b51bbcafcc28"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/electric_compressor_top.png"
+hash = "6bb487f7e4df702c39e03b06ea98f8ddc70c3c46c70404ff0892b51bbcafcc28"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/flux_compressor_bottom.png"
+hash = "6bb487f7e4df702c39e03b06ea98f8ddc70c3c46c70404ff0892b51bbcafcc28"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/pneumatic_generator_back.png"
+hash = "93ca5b2b076b153b4d03ec0fbe8112331b8a096ca1946e3b49ccec31ba13c59b"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/pneumatic_generator_front.png"
+hash = "3aeaa9644edd8d9a0783d290d357c4fb0c2e3919ca797b42d2e0ea731cefdcd3"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/pneumatic_generator_left.png"
+hash = "e6bd4a2418f2d414ea7b60136f8ec2754accf5b75ee26235e6a56ab0a107c05d"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/pneumatic_generator_right.png"
+hash = "a47f7be1e58d98290b181d27faf23b1d999eb7766983beb1f0db652f883a9672"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/block/pneumatic_generator_top.png"
+hash = "93ca5b2b076b153b4d03ec0fbe8112331b8a096ca1946e3b49ccec31ba13c59b"
+
+[[files]]
+file = "kubejs/assets/pneumaticcraft/textures/pnc_model/omnihopper_outside.png"
+hash = "2972a2313613eabc685a14a2160457df0c7f5ce7f9492fbab349acbfbc3a71ae"
+
+[[files]]
 file = "kubejs/assets/pointblank/lang/en_us.json"
 hash = "9804a6d29af85a90d3220c97522ccc512edcaffa92448b1a0e3cc16526c152e1"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/breaker_front_horizontal.png"
+hash = "3ff88bc78d7327570ea2ed754b2f37d7e7cd85a483bc299ac62c62b659ec43a6"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/breaker_front_vertical.png"
+hash = "1edd913e4a8521a86e05ecf200bb799660f25b2738c60ad4685f8504ebd7167e"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/exp_pump_bottom.png"
+hash = "8168ed51ca57a8fa5ca3f2efcbabc882e695d862c94378338b8865defc6a648e"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/exp_pump_side.png"
+hash = "08945c76d988172e7e0072a01551aacd8323c63a42ee7e5171414586d451e2b0"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/exp_pump_top.png"
+hash = "0a0e3495584eae0598793c232236f42ba78913f1073a43a1afafeb4e5269faf3"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/exp_pump_top_w.png"
+hash = "f3f062cb85ee536259a132f292e180beba938e96b7402650812defc190024a50"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/laser_bottom.png"
+hash = "6aba8c69dc04ddcaf600319c35e2e400439bfbfcd61a64fe4a43fd092259b0b4"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/laser_side.png"
+hash = "0f58b39add51e9b70cd1c6cb33c424fccdcf3e304594113af60f54f6ea4f0cc5"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/laser_top.png"
+hash = "765b6cd3dd0655f1035bb76da6658a25f7a037c77a85d54daea0eaa7738e9775"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/plainpipe.png"
+hash = "a14552bb9c860dc0e0390391d805306c0a81725e4b8cef09667943c58ed7adf8"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/plus_stone_side.png"
+hash = "d155af672dfbe30c11b831c8002cc7cdfa06d1bfa223794aaa1267b901017af3"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/plus_stone_top.png"
+hash = "bc86b262de566bbc25567d30ba1ed5738a67066656a50044ec39a2970c1d8848"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/pump_bottom.png"
+hash = "e0c4d5def2faa35f5f90b2fe86859208700378cd5db60a55e133320d1b5513ce"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/pump_side.png"
+hash = "3fb97f1778a54880935e85c63a135af8f194d412a61b321a1714cb7a5daf1fd6"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/pump_top.png"
+hash = "abee09cefb4169cbfe3d97fd61a62dddf528e83ec0b2bd921a954ad4f1643caf"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/pump_top_c.png"
+hash = "26b1d3114676c4c158657317770a50aff8f62ef24d173ad4ae483b6e583e66ae"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/pump_top_w.png"
+hash = "bd4b5dedeca8491d65977de62554c22ed97a7c38d4d71e73ce1ca09083efcf72"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/refine.png"
+hash = "4f1218dd97d3949f372d2b40b8ea70213b755d9aacf47bb82d0f748f5cacadb8"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/replacer_bottom.png"
+hash = "e256d12959d47bb76395e5afe8bfc953a7d6e5de8905fdf3d70e994eba250166"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/replacer_side.png"
+hash = "32097012863ba221060f92c9de12f683afb977a45ccd9f8b3fea01874ae3b496"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/replacer_top.png"
+hash = "d9b92ee3542afc284fdab73bd0737bf06de5fbe58df1f4e0b3220fda8e9b26a9"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/blocks/replacer_top_c.png"
+hash = "147fa9a13a951131e96e628037b57e9576eabca1ab906e59e3e957a669d19871"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/controller.png"
+hash = "f90198d84bb6b0dd61d0b21856d1f7b2c465dbb163e8fe8a6bb3d03e186a57a0"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/debugchecker.png"
+hash = "4a61b54657fe7eaf50e43498dc87e333ecb9e9835f6f54ecfaf10cadbc65c1b4"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/fuel_module_creative.png"
+hash = "45dcbd4effb2a7500bdc992216fbb50073a1cd0c52775858fc7149b38f729fc5"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/liquidselector.png"
+hash = "63ee594aecb63cf2f5d188d86936db0e92335f52ec0422753455660baac828bc"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/listeditor.png"
+hash = "5852319342aee0530e124e1457fca38c4f23f4db23fda9085da3b00a4d628ab1"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/mm.png"
+hash = "4ef721587884f1d8a3e19bd31044d2a57924c6c315ef08fbc79a13a8c34d5861"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/template.png"
+hash = "fcb8a3dbfcc0d9ae72dad38b39929c43f72c2b5529aaec01eab35a76aec93efb"
+
+[[files]]
+file = "kubejs/assets/quarryplus/textures/items/torch_module.png"
+hash = "c8c24998164acda16cfdc9e968779278cee74a55f42d86292328dd5332ea97ef"
+
+[[files]]
+file = "kubejs/assets/railcraft/textures/block/crusher_top_none.png"
+hash = "1d7dc23efaf11bbe833c8517b47d20d200fd08f4a44208764e91218efe23fc61"
 
 [[files]]
 file = "kubejs/assets/regions_unexplored/lang/en_us.json"
 hash = "8befae59bb9f24999fb3f035a7173bda2680f65d776f6d279eb4bc638da9ceb8"
 
 [[files]]
+file = "kubejs/assets/regions_unexplored/models/block/flowering_leaves_item.json"
+hash = "507c1fcaa76cef90f6bc1ce2dffe3372bfd84e9dd713aba3f98ade77e307aa8b"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/models/block/one_layer_tall_sapling.json"
+hash = "3373957b52dd7a7c377a8989c8628bd9e3371aad1b0a4964af46dcd792e91341"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/models/block/wall_mushroom.json"
+hash = "acac332783ebe8bf12257b24136093aba2b8e61ff50b2a588df2067d26ce8d36"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/models/block/wall_mushroom_2.json"
+hash = "eba587d6f616e2bdf41215c7943699245b831ddbca0f2d528b60331216a2056c"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/models/block/wall_mushroom_3.json"
+hash = "2e4411fe388200ae610adc54785740e4b0fb6c2971bce10a42c76a3da2ffc36c"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/models/block/wall_mushroom_4.json"
+hash = "acc9513e0a229afb02d78ebc3b72c06ead239c3f78196a190fc0af8c08ed6390"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/models/block/wall_mushroom_5.json"
+hash = "fed88bf8c999ffc06aae54cec9f55aac043803615a18e6bd0165f1ce132042ac"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/textures/block/ashen_shrub_smouldering.png"
+hash = "195443cb6f60a11703822165e4bbafe0d744fda664751bd65bc30ab4f02c2864"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/textures/block/bonsai_pot.png"
+hash = "8a6d5a8781352cfed92ceed330d884d5f167675690434fe9fd04e8988c4a1fc0"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/blazing_agitator.json"
+hash = "e3f5c7433b06e6422094e20d7505bfe3554fbf863dcf23356c1ed2b6d4646683"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/blazing_generator_busy.json"
+hash = "4a536e8fc7a9adc37b1d090c11134f9dd162e1065d3a604ce31c25be07ce842b"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/blazing_infuser.json"
+hash = "a22a41c8a8316f259f18cddcf5aeb23a038e6327b7d66518ec5b693b63390b7f"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/ender_monitor_0.json"
+hash = "4a536e8fc7a9adc37b1d090c11134f9dd162e1065d3a604ce31c25be07ce842b"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/endergenic.json"
+hash = "202f19d8ec4d66521b031b16257b3bde28a678c6a70fc0a4e6f3e61bbaef4e88"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/pearl_injector.json"
+hash = "a16f6fbdcbc52cc92256925e58cdecdc299561c27172e593c98036daa88e286f"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/power_level_0.json"
+hash = "202f19d8ec4d66521b031b16257b3bde28a678c6a70fc0a4e6f3e61bbaef4e88"
+
+[[files]]
+file = "kubejs/assets/rftoolspower/models/block/power_monitor5_0.json"
+hash = "6f934ada22bd1f5edaf5ba0b67bbbe90fe593dafb31464b045b7e245efb01878"
+
+[[files]]
+file = "kubejs/assets/rftoolsutility/textures/item/modules/storagecontrolmoduleitem.png"
+hash = "b90a7e11880e39cf66b7b87bd9bb5da3f2cb62f103cb63f507e2e64f74928f8b"
+
+[[files]]
+file = "kubejs/assets/rootsclassic/textures/block/druid_chalice.png"
+hash = "36557f40d9ba2fd3074249dd4fe50b8b0e44c64f6e907d4ddab486fa0e398067"
+
+[[files]]
 file = "kubejs/assets/roulettecasino/lang/en_us.json"
 hash = "e49f2bacf54e3d960d63985674f41bc254403a98f27969b6f3c0882bf5e671e0"
+
+[[files]]
+file = "kubejs/assets/rusticdelight/textures/block/tray_bottom.png"
+hash = "45af5ee0bf191d3f14f74f33c4f87974185dc0d9d069e2de9adc259b9a0093a4"
+
+[[files]]
+file = "kubejs/assets/securitycraft/textures/block/deactivated_cage_trap.png"
+hash = "cafee5391d121acacccf869538524894b145239a97bef78cdcd934c1469ea5c8"
+
+[[files]]
+file = "kubejs/assets/silentgear/textures/item/trident.png"
+hash = "d844c1aa7a211b30689db5f8df7b04e68e7766681577edbbfca15eb1bfcf42f2"
+
+[[files]]
+file = "kubejs/assets/structurize/models/block/blocktimberframe.json"
+hash = "0032ca336a714c3ea3bb77bf4f8da14637bbb7dd7f48bd06e306171060f3884f"
+
+[[files]]
+file = "kubejs/assets/structurize/models/block/multiblock.json"
+hash = "3d8b36dd6acf05f2c314c43242143d316a2a6d152d9c48693265aee265708287"
+
+[[files]]
+file = "kubejs/assets/structurize/textures/block/info/info_poster.png"
+hash = "e0fa21321e4692c71124e9d2ab09004094bb0dd933b52d7e486b0b764f4e901d"
+
+[[files]]
+file = "kubejs/assets/structurize/textures/block/info/info_poster_wax.png"
+hash = "e0fa21321e4692c71124e9d2ab09004094bb0dd933b52d7e486b0b764f4e901d"
+
+[[files]]
+file = "kubejs/assets/structurize/textures/block/waypoints/waypoints.png"
+hash = "81ff69c7cedb6ee96b13884890a8511085ad5a9b626eb2b71d0fc7d92a083bdb"
+
+[[files]]
+file = "kubejs/assets/tconstruct/models/block/slimy_mud_blue.json"
+hash = "3f8d9535a834e032e829e737ec881ec5ed36fa7d32f3ffd805858c5ef04536e2"
+
+[[files]]
+file = "kubejs/assets/tconstruct/models/block/slimy_mud_green.json"
+hash = "d7a22122af52e4cc079887fe081ce37c0e217c32fc52f4502b9c9730caca33d8"
+
+[[files]]
+file = "kubejs/assets/tconstruct/models/block/slimy_mud_magma.json"
+hash = "a3bb1dd4a58d7d1a7bb0847bec8085eb5dc0205dce0961e4004f1915783291ab"
+
+[[files]]
+file = "kubejs/assets/theaurorian/textures/item/forgotton_sword.png"
+hash = "892015d851ab72609c7ff46de21d6e8c307e6d46fc17361c4472561c20aac080"
+
+[[files]]
+file = "kubejs/assets/theaurorian/textures/item/forgotton_sword_handheld.png"
+hash = "63042f6c41d135be5d6ac0cecc4a6e92ece918a2c7d003edfacda6f7de28c93e"
+
+[[files]]
+file = "kubejs/assets/theurgy-assets/textures/emitter_socket.png"
+hash = "5de72b501e25c0d4f0f67309def75f3de8b498268854864a010db45a2887ed9d"
+
+[[files]]
+file = "kubejs/assets/theurgy-assets/textures/socket.png"
+hash = "19685526071166e298ff779879bb2c02030f2c08053b94d0afc1a2e3bf6394d9"
+
+[[files]]
+file = "kubejs/assets/theurgy/textures/caloric_flux_emitter.png"
+hash = "b8ee72dbcb1446be82cf1e242b0db9d6abcbf9843aa90727984bf5f6279a3e33"
+
+[[files]]
+file = "kubejs/assets/theurgy/textures/liquefaction_cauldron.png"
+hash = "f074b8b70bf4198d36d2460fd506cb3df18242c06f3789be6ebf716ad7e68e18"
+
+[[files]]
+file = "kubejs/assets/theurgy/textures/mercury_flux_emitter.png"
+hash = "ce03ea4a6d933b4369a1c8a910af403d0b0b897d37c7d1c2e73f2533f23b860d"
+
+[[files]]
+file = "kubejs/assets/theurgy/textures/sulfuric_flux_emitter.png"
+hash = "b21726a1c52b5a5dbad75a47ca36dd85251d8e15f976167a9683d33ae4c46183"
+
+[[files]]
+file = "kubejs/assets/twilightforest/textures/block/stone_twist/twist_crown.png"
+hash = "4d655089e911601cf480d700e54b2eacb68f247e78f7209c63ba007572cb074a"
+
+[[files]]
+file = "kubejs/assets/untamedwilds/textures/blocks/carpet_bear_black.png"
+hash = "3e92b28cafa5ce0d35e822d3ed90890977a4b764dfe461640d20bdf962304680"
+
+[[files]]
+file = "kubejs/assets/untamedwilds/textures/item/spawn/snake_sea_krait.png"
+hash = "a0570675a85a566aea82fe9dab67b495ff20abfe68c03ffe091cff0edd0fef40"
+
+[[files]]
+file = "kubejs/assets/vampirism/models/block/blood_container/blood_container.json"
+hash = "17659ceebb0ca4e88ac3e0456842fe2f7a1c96a14a20dd636e037b9961e3c80e"
+
+[[files]]
+file = "kubejs/assets/vampirism/models/block/totem_base.json"
+hash = "6a3758472e8cefb77cd133d798d99fb700a1f0369bc730b7e7e929ad065c831c"
+
+[[files]]
+file = "kubejs/assets/vampirism/models/block/totem_top_crafted.json"
+hash = "82fab98a2d86a00467150115a8f2378f9bebae2d173742d8a2821bdf9114b793"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/altar_pillar_stone.png"
+hash = "e242b984941065055c87a6fe0e1fb02bb729c8526250160e5c31b7b98897e0ef"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/block/cursed_grass_block_snowy.png"
+hash = "518f474f73982f09b91def3106ad3bbf3fa387eba0320f5db84827ec747d65ff"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/block/cursed_grass_block_top.png"
+hash = "aa00f0045a746ea94fd0abda78d94c0332c45c61198e70a3c41add2b96e81095"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/block/garlic_stage_0.png"
+hash = "82413f524ccb7576116b4d2aa89d5677de767a8efdc94eb46125c02446626e49"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/block/garlic_stage_1.png"
+hash = "e1b8512616dc14105e50367aee9c558878e10827af73ee6ca83df0de41f81436"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/block/garlic_stage_2.png"
+hash = "d1628b489143f7b8ff3623083c125555d5788504537e29cf401b585bbdbc0f1d"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/block/garlic_stage_3.png"
+hash = "6869be24a5783fda8dcfc45afa5641809d765005a01d26e34e0676e5130c5255"
+
+[[files]]
+file = "kubejs/assets/vampirism/textures/block/spirit_lantern.png"
+hash = "79080600f1a3aeef5f3e1b4621a4348fb7d130da9c532707346b14fd0ae04305"
 
 [[files]]
 file = "kubejs/client_scripts/diaithir/cuisine_tooltips.js"
