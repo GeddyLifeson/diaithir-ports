@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/xaasseth/landmark/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/xaasseth/st_xaasseth_e6_places_001141",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "enabled=false": {
+      "model": "diaithirminers:block/electric_miner"
+    },
+    "enabled=true": {
+      "model": "diaithirminers:block/electric_miner_on"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/delve_0_cave",
+   "weight": 441
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/delve_1_cave",
+   "weight": 897
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/delve_2_cave",
+   "weight": 21
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 4432242
+ }
+}

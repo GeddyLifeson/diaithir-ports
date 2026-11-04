@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/stirrup_head",
+  "layer1": "diaithirfurnishings:item/stirrup_handle",
+  "layer2": "diaithirfurnishings:item/stirrup_binding"
+ }
+}

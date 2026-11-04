@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/cheese_mold_head",
+  "layer1": "diaithirfurnishings:item/cheese_mold_handle",
+  "layer2": "diaithirfurnishings:item/cheese_mold_binding"
+ }
+}

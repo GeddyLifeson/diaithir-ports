@@ -1,0 +1,19 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "theaurorian:cerulean"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "theaurorian:cerulean"
+   }
+  ],
+  "humanoid_baby": [
+   {
+    "texture": "theaurorian:cerulean"
+   }
+  ]
+ }
+}

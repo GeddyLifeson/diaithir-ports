@@ -116,6 +116,10 @@ public final class DiaithirRelics {
     }
 
     public DiaithirRelics(IEventBus bus) {
+        Consolidated.load();
+        ConsolidatedItems.register(bus);
+        ConsolidatedBehaviour.register();
+        net.diaithir.relics.yori.YoriStats.register(bus);
         for (Def d : DATA.items()) {
             DeferredItem<Item> it = ITEMS.registerItem(d.id(), p -> new RelicItem(p, d), () -> props(d));
             ALL.put(d.id(), it);
@@ -124,10 +128,12 @@ public final class DiaithirRelics {
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey().equals(CreativeModeTabs.COMBAT)) {
                 ALL.values().forEach(i -> e.accept(i.get()));
+                net.diaithir.relics.yori.YoriStats.all().values().forEach(i -> e.accept(i.get()));
             }
         });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));
         RelicEvents.register();
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> net.diaithir.relics.yori.YoriStats.commands(e.getDispatcher()));
     }
 
     /** The relic definition of a stack, or null. */

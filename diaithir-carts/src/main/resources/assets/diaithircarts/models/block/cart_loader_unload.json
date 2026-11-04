@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithircarts:block/cart_loader_unload"
+ }
+}

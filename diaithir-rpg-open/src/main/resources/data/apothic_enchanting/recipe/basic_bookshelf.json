@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "P": "#minecraft:planks",
+        "T": "#apothic_enchanting:tomes"
+    },
+    "pattern": [
+        "PPP",
+        "TTT",
+        "PPP"
+    ],
+    "result": {
+        "id": "apothic_enchanting:basic_bookshelf"
+    }
+}

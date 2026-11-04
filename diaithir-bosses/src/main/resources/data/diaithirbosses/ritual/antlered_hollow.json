@@ -1,0 +1,42 @@
+{
+ "boss": "antlered_hollow",
+ "steps": [
+  {
+   "type": "offer",
+   "item": "#diaithirbosses:offering_feast",
+   "count": 1
+  },
+  {
+   "type": "offer",
+   "item": "minecraft:bone",
+   "count": 16
+  },
+  {
+   "type": "hunt",
+   "mob": "minecraft:zombie",
+   "count": 20
+  },
+  {
+   "type": "stones",
+   "sequence": [
+    6,
+    2,
+    1
+   ]
+  },
+  {
+   "type": "hour",
+   "from": 17000,
+   "to": 19000
+  },
+  {
+   "type": "defend",
+   "seconds": 60,
+   "mobs": [
+    "minecraft:zombie",
+    "minecraft:skeleton",
+    "minecraft:spider"
+   ]
+  }
+ ]
+}

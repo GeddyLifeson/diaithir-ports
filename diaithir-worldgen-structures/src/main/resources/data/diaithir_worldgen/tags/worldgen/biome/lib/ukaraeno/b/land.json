@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ukaraeno_anamarum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ukaraeno_anatalum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ukaraeno_osunarsalum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ukaraeno_osutamoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ukaraeno_suralameno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ukaraeno_tentarala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ukaraeno_ukasamira",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/oriarium/settlement/1/sillum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/oriarium/my_oriarium_e4_places_000704",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

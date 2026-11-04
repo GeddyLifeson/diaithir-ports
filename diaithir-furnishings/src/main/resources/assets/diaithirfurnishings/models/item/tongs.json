@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/tongs_head",
+  "layer1": "diaithirfurnishings:item/tongs_handle",
+  "layer2": "diaithirfurnishings:item/tongs_binding"
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:lapis_robinia_log",
+  "aerialhell:lapis_robinia_wood",
+  "aerialhell:stripped_lapis_robinia_log",
+  "aerialhell:stripped_lapis_robinia_wood"
+ ]
+}

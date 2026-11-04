@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ISI",
+  "III",
+  " I "
+ ],
+ "key": {
+  "S": "theaurorian:plant_fiber",
+  "I": "theaurorian:moonstone_ingot"
+ },
+ "result": {
+  "id": "theaurorian:moonstone_shield",
+  "count": 1
+ }
+}

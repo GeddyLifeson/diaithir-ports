@@ -10,7 +10,6 @@ LIB = os.path.join(HERE, "..", "..", "library-sync", "diaithirforgeworks.json")
 NS = "diaithirforgeworks"
 KINDS = {  # id: display, front kind
     "crusher": "Brakkulon", "alloy_furnace": "Meldrathex", "sawmill": "Skerrivane", "crucible": "Ulmarkesh"}
-AUGMENTS = {"speed_augment": "Veloqith", "efficiency_augment": "Thrimvael", "chance_augment": "Ostravine"}
 # tier: (plate, light, dark, accent) real materials: iron plate with copper, bronze plate with iron, graphite steel with gold
 TIERS = {4: ((126, 130, 136), (160, 164, 170), (72, 75, 80), (184, 115, 51)),
          5: ((168, 122, 58), (206, 158, 84), (104, 72, 32), (150, 154, 160)),
@@ -143,31 +142,6 @@ def ingot():
     return img
 
 
-def augment(kind):
-    img = item_img(); card, edge, pin = (46, 50, 56), (88, 94, 102), (214, 176, 70)
-    for x in range(3, 13):
-        for y in range(2, 14): img.putpixel((x, y), A(card))
-    for x in range(3, 13):
-        img.putpixel((x, 2), A(edge)); img.putpixel((x, 13), A(edge))
-    for y in range(2, 14):
-        img.putpixel((3, y), A(edge)); img.putpixel((12, y), A(edge))
-    for x in (4, 6, 8, 10): img.putpixel((x, 14), A(pin)); img.putpixel((x, 15), A(pin))
-    if kind == "speed_augment":
-        c = (232, 96, 48)
-        for i in range(4):
-            for d in range(3): img.putpixel((4 + i + d, 4 + i), A(c)); img.putpixel((4 + i + d, 11 - i), A(c))
-    elif kind == "efficiency_augment":
-        c = (80, 200, 110)
-        for y in range(4, 12): img.putpixel((7, y), A(c)); img.putpixel((8, y), A(c))
-        for i in range(3): img.putpixel((5 + i, 8 - i), A(c)); img.putpixel((10 - i, 8 - i), A(c))
-        for x in range(5, 11): img.putpixel((x, 11), A(c))
-    else:
-        c = (110, 150, 240)
-        for x in range(5, 11):
-            for y in range(5, 11): img.putpixel((x, y), A(c))
-        for p in ((6, 6), (9, 6), (7, 8), (6, 9), (9, 9)): img.putpixel(p, A((20, 30, 60)))
-    return img
-
 
 def write(path, data):
     path = os.path.join(ROOT, path); os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -231,8 +205,6 @@ def main():
             item_def(name, f"block/{name}")
             loot(name)
             lang[f"block.{NS}.{name}"] = f"{disp} (Age {['', '', '', '', 'IV', 'V', 'VI'][age]})"
-    for name, disp in AUGMENTS.items():
-        flat_item(name, augment(name)); lang[f"item.{NS}.{name}"] = disp + " Augment"
     mats = {"iron_dust": ((190, 194, 200), "Iron Dust"), "copper_dust": ((196, 112, 70), "Copper Dust"), "gold_dust": ((240, 200, 60), "Gold Dust"),
             "sawdust": ((206, 170, 112), "Sawdust")}
     for n, (c, d) in mats.items():
@@ -247,9 +219,9 @@ def main():
                      ("dusts/wood", ["sawdust"]), ("dusts", ["iron_dust", "copper_dust", "gold_dust", "sawdust"]), ("ingots", ["bronze_ingot"])):
         write(f"data/c/tags/item/{d}.json", {"values": [f"{NS}:{i}" for i in items]})
 
-    # age gate: Age IV, V, VI casings, augments with Age V, materials with Age IV
+    # age gate: Age IV, V, VI casings, materials with Age IV
     gate = {"age4": {"age": 4, "items": [f"{NS}:{n}" for n in machine_names if n.endswith("age4")] + [f"{NS}:{n}" for n in list(mats) + ["bronze_ingot"]]},
-            "age5": {"age": 5, "items": [f"{NS}:{n}" for n in machine_names if n.endswith("age5")] + [f"{NS}:{n}" for n in AUGMENTS]},
+            "age5": {"age": 5, "items": [f"{NS}:{n}" for n in machine_names if n.endswith("age5")]},
             "age6": {"age": 6, "items": [f"{NS}:{n}" for n in machine_names if n.endswith("age6")]}}
     write(f"data/{NS}/age_gate.json", gate)
 
@@ -263,9 +235,6 @@ def main():
         shaped(f"craft/{k}_age4", pat, key, f"{NS}:{k}_age4")
         shaped(f"craft/{k}_age5", [" B ", "BMB", " B "], {"B": B, "M": f"{NS}:{k}_age4"}, f"{NS}:{k}_age5")
         shaped(f"craft/{k}_age6", ["BDB", "DMD", "BDB"], {"B": B, "D": D, "M": f"{NS}:{k}_age5"}, f"{NS}:{k}_age6")
-    shaped("craft/speed_augment", ["RGR", "GCG", "RGR"], {"R": R, "G": "minecraft:gold_ingot", "C": C}, f"{NS}:speed_augment")
-    shaped("craft/efficiency_augment", ["RCR", "CLC", "RCR"], {"R": R, "C": C, "L": "minecraft:lapis_lazuli"}, f"{NS}:efficiency_augment")
-    shaped("craft/chance_augment", ["RQR", "QAQ", "RQR"], {"R": R, "Q": "minecraft:quartz", "A": "minecraft:amethyst_shard"}, f"{NS}:chance_augment")
     for dname, ing in (("iron", "minecraft:iron_ingot"), ("copper", "minecraft:copper_ingot"), ("gold", "minecraft:gold_ingot")):
         for typ, cook in (("smelting", 200), ("blasting", 100)):
             write(f"data/{NS}/recipe/{typ}/{dname}_dust.json", {"type": f"minecraft:{typ}", "category": "misc", "ingredient": f"{NS}:{dname}_dust",
@@ -312,10 +281,7 @@ def main():
         for kind, disp in KINDS.items():
             lib.append({"id": f"{NS}:{kind}_age{age}", "name": f"{disp} ({tiername[age]})",
                         "text": f"{desc[kind]} {tiername[age]} casing, {speed[age]} speed. Has GUI, FE bar, redstone control and per-face side config."})
-    lib += [{"id": f"{NS}:speed_augment", "name": "Veloqith Augment", "text": "Augment. Put up to 4 in the augment slot: each adds 50% speed for a little extra FE per job."},
-            {"id": f"{NS}:efficiency_augment", "name": "Thrimvael Augment", "text": "Augment. Put up to 4 in the augment slot: each cuts the FE cost of a job by 15%."},
-            {"id": f"{NS}:chance_augment", "name": "Ostravine Augment", "text": "Augment. Put up to 4 in the augment slot: each raises the chance of bonus outputs by half again."},
-            {"id": f"{NS}:iron_dust", "name": "Iron Dust", "text": "Ground iron ore. Smelt it back to an ingot."},
+    lib += [{"id": f"{NS}:iron_dust", "name": "Iron Dust", "text": "Ground iron ore. Smelt it back to an ingot."},
             {"id": f"{NS}:copper_dust", "name": "Copper Dust", "text": "Ground copper ore. Smelt it back to an ingot."},
             {"id": f"{NS}:gold_dust", "name": "Gold Dust", "text": "Ground gold ore. Smelt it back to an ingot."},
             {"id": f"{NS}:sawdust", "name": "Sawdust", "text": "Bonus output of the sawmill."},

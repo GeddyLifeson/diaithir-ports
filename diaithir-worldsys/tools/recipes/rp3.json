@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#c:ingots/steel",
+    "minecraft:lapis_lazuli",
+    "minecraft:bread"
+  ],
+  "result": {
+    "id": "diaithircrafting:foundry_research_pack_3",
+    "count": 1
+  },
+  "category": "misc"
+}

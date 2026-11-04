@@ -1,0 +1,150 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_1_land",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_2_land",
+   "weight": 137
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/forge_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_0_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_1_land",
+   "weight": 120
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_2_land",
+   "weight": 228
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/fortress_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_0_land",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_1_land",
+   "weight": 17
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_2_land",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/garden_3_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_0_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_1_land",
+   "weight": 72
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_2_land",
+   "weight": 191
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/hall_3_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_0_land",
+   "weight": 69
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_1_land",
+   "weight": 110
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_2_land",
+   "weight": 280
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/landmark_3_land",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_0_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_1_land",
+   "weight": 56
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_2_land",
+   "weight": 77
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/ruin_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_1_land",
+   "weight": 43
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_2_land",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/temple_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tomb_0_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tomb_1_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tomb_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_0_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_1_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_2_land",
+   "weight": 66
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kroukagar/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 121078931
+ }
+}

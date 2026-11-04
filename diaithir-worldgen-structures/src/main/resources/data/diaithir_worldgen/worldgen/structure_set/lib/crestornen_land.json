@@ -1,0 +1,46 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/forge_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/forge_3_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/fortress_2_land",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/fortress_3_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/hall_2_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/landmark_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/landmark_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/ruin_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestornen/tower_2_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 198030577
+ }
+}

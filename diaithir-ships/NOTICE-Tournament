@@ -1,0 +1,6 @@
+The package org.valkyrienskies.tournament, the assets under assets/vs_tournament and the data under data/vs_tournament
+are derived from Valkyrien Skies: Tournament (https://github.com/alex-s168/VS-Tournament, branch 1.20.1/main, commit a9ccdaf),
+Copyright the VS-Tournament contributors (alex_s168, ConstantDust, Illuc, Percant Pie and others), licensed under the
+Apache License, Version 2.0 (see LICENSE-Tournament-Apache-2.0).
+Changes: ported from Minecraft 1.20.1 (Forge/Fabric, Architectury) to Minecraft 26.1.2 / NeoForge 26.1.2.109; platform abstraction
+layers, Fabric/Forge compat code and the mixin-based event hooks removed (replaced by NeoForge events and data packs); merged into this module.

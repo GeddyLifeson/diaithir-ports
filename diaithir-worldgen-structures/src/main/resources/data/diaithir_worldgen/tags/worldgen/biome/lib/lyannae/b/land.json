@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:lyannae_eliolaerwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannae_eluaraenys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannae_ilyaleth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannae_ilyenna",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannae_lyirwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannae_oriena",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannae_ryeneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lyannae_veneina",
+   "required": false
+  }
+ ]
+}

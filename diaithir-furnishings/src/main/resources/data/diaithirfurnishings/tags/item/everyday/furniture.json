@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:chair",
+  "diaithirfurnishings:stool",
+  "diaithirfurnishings:bench",
+  "diaithirfurnishings:table",
+  "diaithirfurnishings:bed",
+  "diaithirfurnishings:cradle",
+  "diaithirfurnishings:bookshelf",
+  "diaithirfurnishings:cupboard",
+  "diaithirfurnishings:wardrobe"
+ ]
+}

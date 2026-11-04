@@ -1,0 +1,35 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-computing-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+    mods { diaithircomputing { sourceSet(sourceSets.main) } }
+}
+
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // LuaJ (MIT) is the Lua 5.2 interpreter; the mod's API, sandbox and blocks are our own.
+    implementation 'org.luaj:luaj-jse:3.0.1'
+    jarJar('org.luaj:luaj-jse:[3.0.1,3.1)')
+}

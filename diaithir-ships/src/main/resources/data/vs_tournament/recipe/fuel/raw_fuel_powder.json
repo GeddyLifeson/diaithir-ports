@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:sugar",
+    "vs_tournament:coal_dust",
+    "minecraft:gunpowder",
+    "minecraft:gunpowder"
+  ],
+  "result": {
+    "id": "vs_tournament:basic_fuel_powder",
+    "count": 4
+  }
+}

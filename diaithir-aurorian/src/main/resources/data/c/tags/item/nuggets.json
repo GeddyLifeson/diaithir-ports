@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "theaurorian:aurorian_coal_nugget",
+  "theaurorian:cerulean_nugget",
+  "theaurorian:moonstone_nugget",
+  "theaurorian:aurorian_steel_nugget"
+ ]
+}

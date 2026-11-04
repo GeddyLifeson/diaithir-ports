@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:khogar_ciantanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khogar_joreraden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khogar_jorurede",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khogar_osumatarala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khogar_seisiazeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khogar_sirantium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khogar_theren",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:khogar_thourkurn",
+   "required": false
+  }
+ ]
+}

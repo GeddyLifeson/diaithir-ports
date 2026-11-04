@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_0_kelunasten",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_1_kelunasten",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_2_kelunasten",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_3_kelunasten",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 206732580
+ }
+}

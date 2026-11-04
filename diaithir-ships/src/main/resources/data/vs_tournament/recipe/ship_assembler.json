@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#*#",
+    "O*O",
+    "OCO"
+  ],
+  "key": {
+    "*": "vs_tournament:physics_shard",
+    "#": "minecraft:redstone",
+    "O": "#minecraft:planks",
+    "C": "minecraft:cobblestone"
+  },
+  "result": {
+    "id": "vs_tournament:ship_assembler",
+    "count": 1
+  }
+}

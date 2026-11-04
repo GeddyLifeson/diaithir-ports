@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "MR",
+  "RM"
+ ],
+ "key": {
+  "M": "diaithirfirearms:gunmetal_mesh",
+  "R": "minecraft:redstone"
+ },
+ "result": {
+  "id": "diaithirfirearms:gun_internals",
+  "count": 1
+ }
+}

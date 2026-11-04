@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:teleontanum_broranen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_droggar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_gragun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_graithogoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_moranedock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_rantanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_theron",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_thonar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_thyuzasha",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:teleontanum_zephyuthess",
+   "required": false
+  }
+ ]
+}

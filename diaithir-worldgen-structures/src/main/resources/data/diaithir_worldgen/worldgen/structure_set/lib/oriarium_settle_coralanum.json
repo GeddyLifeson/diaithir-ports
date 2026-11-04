@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_1_coralanum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/settlement_2_coralanum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 157039641
+ }
+}

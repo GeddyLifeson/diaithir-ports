@@ -1,0 +1,24 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/bronze",
+   "count": 1
+  },
+  {
+   "tag": "c:planks",
+   "count": 1
+  },
+  {
+   "tag": "c:string",
+   "count": 1
+  },
+  {
+   "tag": "c:leather",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:archery_trader_bench",
+ "time_s": 20
+}

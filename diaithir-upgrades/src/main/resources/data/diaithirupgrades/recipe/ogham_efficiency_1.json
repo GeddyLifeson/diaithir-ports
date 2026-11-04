@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["ABA", "BKB", "ACA"], "key": {"A": "minecraft:amethyst_shard", "B": "minecraft:stone", "C": "minecraft:lapis_lazuli", "K": "minecraft:glowstone_dust"}, "result": {"id": "diaithirupgrades:ogham_efficiency_1", "count": 1}}

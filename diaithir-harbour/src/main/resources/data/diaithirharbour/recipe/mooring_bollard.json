@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "L": "minecraft:lead",
+    "B": "minecraft:iron_block"
+  },
+  "pattern": [
+    " L ",
+    "III",
+    " B "
+  ],
+  "result": {
+    "id": "diaithirharbour:mooring_bollard",
+    "count": 2
+  }
+}

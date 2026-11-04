@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_0_brede",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_1_brede",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breroldock/settlement_3_brede",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 215716926
+ }
+}

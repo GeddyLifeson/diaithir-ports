@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/lialintor/tomb/2/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lialintor/my_lialintor_e5_assay_001803",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

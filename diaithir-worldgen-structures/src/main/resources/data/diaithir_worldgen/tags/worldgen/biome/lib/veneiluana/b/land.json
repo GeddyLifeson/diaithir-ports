@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:veneiluana_drurnagak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_karakuggoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_kharnaigoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_mileostum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_nuilae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_osusalira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_ryerlys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_toroggar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veneiluana_venerlae",
+   "required": false
+  }
+ ]
+}

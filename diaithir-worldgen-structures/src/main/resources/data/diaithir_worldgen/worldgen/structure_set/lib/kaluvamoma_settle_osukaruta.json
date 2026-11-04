@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_0_osukaruta",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_2_osukaruta",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/settlement_3_osukaruta",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 121399771
+ }
+}

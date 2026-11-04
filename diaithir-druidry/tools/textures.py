@@ -40,9 +40,9 @@ GLOW = {
     "amber": ((120, 64, 20), (240, 168, 64), (255, 226, 150)),
 }
 SCHOOL_GLOW = {"druid": "green", "ovate": "silver", "bard": "amber", "filid": "silver",
-               "fitech": "amber", "sidhe": "silver", "smith": "amber"}
+               "fitech": "amber", "sidhe": "silver", "smith": "amber", "glyph": "silver"}
 WOOD = {"druid": (118, 86, 56), "ovate": (94, 60, 48), "bard": (150, 112, 76), "filid": (132, 100, 62),
-        "fitech": (84, 56, 46), "sidhe": (176, 160, 140), "smith": (104, 72, 48)}
+        "fitech": (84, 56, 46), "sidhe": (176, 160, 140), "smith": (104, 72, 48), "glyph": (70, 76, 92)}
 
 GLYPH = {  # spell id -> vanilla item sprite used as the glyph
     "thornlash": "sweet_berries", "dewdrop": "slime_ball", "briar_snare": "string", "oakskin": "leather",
@@ -59,6 +59,8 @@ GLYPH = {  # spell id -> vanilla item sprite used as the glyph
     "silver_branch": "iron_nugget", "folk_hour": "clock_00", "hail_fall": "prismarine_shard",
     "forge_spark": "flint_and_steel", "quench": "water_bucket", "hot_iron": "iron_ingot", "tempering": "iron_pickaxe",
     "slag_cloud": "coal", "forge_breath": "fire_charge", "molten_rain": "lava_bucket",
+    "rune_bolt": "amethyst_shard", "rune_touch": "iron_nugget", "rune_mend": "glow_berries", "rune_blink": "ender_pearl",
+    "rune_light": "glowstone_dust", "rune_pull": "lead", "rune_wall": "heart_of_the_sea", "rune_seal": "lapis_lazuli",
 }
 
 

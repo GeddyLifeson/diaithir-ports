@@ -11,7 +11,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,7 +25,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  * Foundry courier depots and ghost placement. Clean-room: written from a behaviour spec (docs/SPEC.md) and the general idea of
  * construction-bot networks; no code or assets from any other mod.
  */
-@Mod(DiaithirLogistics.ID)
 public final class DiaithirLogistics {
     public static final String ID = "diaithirlogistics";
 
@@ -53,11 +51,14 @@ public final class DiaithirLogistics {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GhostBlockEntity>> GHOST_BE = BLOCK_ENTITIES.register("foundry_ghost",
             () -> new BlockEntityType<>(GhostBlockEntity::new, GHOST.get()));
 
-    public DiaithirLogistics(IEventBus bus, ModContainer container) {
+    private DiaithirLogistics() {}
+
+    /** Called from the one @Mod class of this jar (LogisticsMod): a second @Mod with the same id would stop the jar loading. */
+    public static void init(IEventBus bus, ModContainer container) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
-        container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
+        container.registerConfig(ModConfig.Type.SERVER, Config.SPEC, "diaithirlogistics-depots-server.toml");
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) e.accept(DEPOT_ITEM.get());
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) e.accept(PLAN_WAND.get());

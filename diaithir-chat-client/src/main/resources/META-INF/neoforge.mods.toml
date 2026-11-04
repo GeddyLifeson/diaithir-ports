@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirchatclient"
+version = "${version}"
+displayName = "Diaithir Chat Client"
+description = "Clean-room Diaithir module combining: longerchathistory."
+
+[[dependencies.diaithirchatclient]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+side = "BOTH"

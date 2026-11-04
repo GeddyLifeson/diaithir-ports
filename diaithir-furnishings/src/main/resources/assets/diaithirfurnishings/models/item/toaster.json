@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/toaster_pot",
+  "layer1": "diaithirfurnishings:item/toaster_handle"
+ }
+}

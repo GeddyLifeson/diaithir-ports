@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_0_suralameno",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/settlement_1_suralameno",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 2289221
+ }
+}

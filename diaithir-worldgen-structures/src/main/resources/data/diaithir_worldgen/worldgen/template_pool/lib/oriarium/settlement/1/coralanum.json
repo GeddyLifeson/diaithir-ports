@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/oriarium/settlement/1/coralanum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/oriarium/my_oriarium_e2_places_000677",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

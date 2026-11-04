@@ -1,0 +1,27 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:arsonist_pickaxe",
+  "aerialhell:azurite_pickaxe",
+  "aerialhell:lunatic_pickaxe",
+  "aerialhell:magma_cube_pickaxe",
+  "aerialhell:magmatic_gel_pickaxe",
+  "aerialhell:obsidian_pickaxe",
+  "aerialhell:ruby_pickaxe",
+  "aerialhell:sky_wood_pickaxe",
+  "aerialhell:stellar_stone_pickaxe",
+  "aerialhell:volucite_pickaxe",
+  "aether_ii:arkenium_pickaxe",
+  "aether_ii:gravitite_pickaxe",
+  "aether_ii:holystone_pickaxe",
+  "aether_ii:skyroot_pickaxe",
+  "aether_ii:zanite_pickaxe",
+  "the_backwoods:faded_pickaxe",
+  "the_backwoods:recovered_faded_pickaxe",
+  "the_backwoods:rotten_pickaxe",
+  "undergarden:cloggrum_pickaxe",
+  "undergarden:forgotten_pickaxe",
+  "undergarden:froststeel_pickaxe",
+  "undergarden:utherium_pickaxe"
+ ]
+}

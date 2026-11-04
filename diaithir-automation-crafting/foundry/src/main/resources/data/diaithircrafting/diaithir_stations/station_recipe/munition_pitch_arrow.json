@@ -1,0 +1,19 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "assembly",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_pitch_arrow_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_pitch_arrow_filler",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_pitch_arrow",
+    "count": 1
+  }
+}

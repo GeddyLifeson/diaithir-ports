@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/tape_measure_head",
+  "layer1": "diaithirfurnishings:item/tape_measure_handle",
+  "layer2": "diaithirfurnishings:item/tape_measure_binding"
+ }
+}

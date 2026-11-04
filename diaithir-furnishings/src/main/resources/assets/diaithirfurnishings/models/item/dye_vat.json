@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/dye_vat_head",
+  "layer1": "diaithirfurnishings:item/dye_vat_handle",
+  "layer2": "diaithirfurnishings:item/dye_vat_binding"
+ }
+}

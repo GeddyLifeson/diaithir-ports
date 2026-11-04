@@ -3,7 +3,11 @@
     "age": 6,
     "items": [
       "diaithirlogistics:foundry_depot",
-      "diaithirlogistics:foundry_plan_wand"
+      "diaithirlogistics:foundry_plan_wand",
+      "diaithirlogistics:pipe",
+      "diaithirlogistics:sink_pipe",
+      "diaithirlogistics:extractor_pipe",
+      "diaithirlogistics:speed_pipe"
     ]
   }
 }

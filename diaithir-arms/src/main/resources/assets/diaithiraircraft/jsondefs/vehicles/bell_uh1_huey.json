@@ -1,0 +1,87 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Bell UH-1 Iroquois",
+  "description": "helicopter, USA, 1956. Source: https://en.wikipedia.org/wiki/Bell_UH-1_Iroquois",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:19"
+   ]
+  ],
+  "health": 237
+ },
+ "motorized": {
+  "isAircraft": true,
+  "emptyMass": 2370,
+  "fuelCapacity": 850,
+  "defaultFuelQty": 212,
+  "wingSpan": 14.6,
+  "wingArea": 22.4,
+  "tailDistance": 5.8,
+  "aileronArea": 2.2,
+  "elevatorArea": 1.8,
+  "rudderArea": 0.9,
+  "dragCoefficient": 0.05,
+  "crossSectionalArea": 1.5,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    0.0,
+    0.8,
+    2.5600000000000005
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:bell_uh1_huey_engine"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -0.6400000000000001
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -1.4400000000000002
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -0.6400000000000001
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -1.4400000000000002
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  }
+ ]
+}

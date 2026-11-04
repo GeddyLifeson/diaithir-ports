@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/bridge_0_river",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ukaraeno/bridge_1_river",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 234751117
+ }
+}

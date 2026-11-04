@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#R#",
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:wool",
+    "R": "minecraft:redstone"
+  },
+  "result": {
+    "id": "vs_tournament:balloon",
+    "count": 4
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:mangrove_planks"
+ },
+ "pattern": [
+  "BB",
+  "BB"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft2:mangrove_fence",
+  "count": 4
+ }
+}

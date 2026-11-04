@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_0_amiriastium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_1_amiriastium",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nueriel/settlement_2_amiriastium",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 136753701
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column_horizontal",
+ "textures": {
+  "end": "diaithirtrees:block/blue_yonder_log_top",
+  "side": "diaithirtrees:block/blue_yonder_log"
+ }
+}

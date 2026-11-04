@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:drernen_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drernen_grottoes",
+   "required": false
+  }
+ ]
+}

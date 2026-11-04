@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/oriarium/delve/1/cave",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/oriarium/my_oriarium_e3_places_000700",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

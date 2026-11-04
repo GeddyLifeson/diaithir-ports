@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirtrees:block/tuscarora_crepe_myrtle_stripped_log"
+ }
+}

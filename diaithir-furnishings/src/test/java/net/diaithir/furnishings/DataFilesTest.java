@@ -40,4 +40,24 @@ class DataFilesTest {
         assertTrue(r.get("type").getAsString().equals("minecraft:crafting_transmute"), "transmute copies the input's components, including the contents");
         assertTrue(r.get("input").getAsString().equals("diaithirfurnishings:sack"));
     }
+
+    @Test
+    void everyEverydayItemHasItsFiles() throws Exception {
+        var items = json("data/diaithirfurnishings/everyday.json").getAsJsonArray("items");
+        assertTrue(items.size() >= 400, "roster size " + items.size());
+        JsonObject lang = json("assets/diaithirfurnishings/lang/en_us.json");
+        java.util.Set<String> ids = new java.util.HashSet<>();
+        for (var e : items) {
+            String n = e.getAsJsonObject().get("id").getAsString();
+            assertTrue(ids.add(n), "duplicate " + n);
+            json("assets/diaithirfurnishings/items/" + n + ".json");
+            for (var tex : json("assets/diaithirfurnishings/models/item/" + n + ".json").getAsJsonObject("textures").entrySet()) {
+                String path = tex.getValue().getAsString().substring("diaithirfurnishings:".length());
+                assertNotNull(DataFilesTest.class.getResourceAsStream("/assets/diaithirfurnishings/textures/" + path + ".png"), n + " texture " + path);
+            }
+            assertTrue(lang.has("item.diaithirfurnishings." + n + ".native"), n + " native name");
+            assertTrue(lang.has("item.diaithirfurnishings." + n), n + " name");
+            assertTrue(!lang.get("item.diaithirfurnishings." + n).getAsString().contains("\u2014"), "no em dash");
+        }
+    }
 }

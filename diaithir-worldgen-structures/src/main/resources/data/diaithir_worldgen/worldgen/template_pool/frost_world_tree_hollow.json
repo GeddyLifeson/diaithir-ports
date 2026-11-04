@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:frost_world_tree_hollow",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:frost_world_tree_hollow",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

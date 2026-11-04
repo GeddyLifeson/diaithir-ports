@@ -1,0 +1,50 @@
+{
+ "id": "truck_volvo_fh",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 16,
+  "h": 6
+ },
+ "result": "mts:diaithirtrucks.truck_volvo_fh",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 600,
+   "ghost": "diaithirtrucks:ghost/truck_volvo_fh_chassis"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "wheel",
+     "count": 6
+    }
+   ],
+   "base_ticks": 400,
+   "ghost": "diaithirtrucks:ghost/truck_volvo_fh_gear"
+  },
+  {
+   "id": "crew",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 1
+    }
+   ],
+   "base_ticks": 100,
+   "ghost": "diaithirtrucks:ghost/truck_volvo_fh_cab"
+  }
+ ],
+ "crane_speedup": 1.0
+}

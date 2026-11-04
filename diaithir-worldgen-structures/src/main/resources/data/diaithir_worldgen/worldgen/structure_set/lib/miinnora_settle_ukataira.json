@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_ukataira",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_1_ukataira",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 115925147
+ }
+}

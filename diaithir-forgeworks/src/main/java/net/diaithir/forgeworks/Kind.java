@@ -1,6 +1,6 @@
 package net.diaithir.forgeworks;
 
-/** The four machine kinds. Slot layout of every machine: 0 and 1 inputs, 2 main output, 3 bonus output, 4 augment. */
+/** The four machine kinds. Slot layout of every machine: 0 and 1 inputs, 2 main output, 3 bonus output, 4 legacy augment slot (migrated into module slots, no longer shown). */
 public enum Kind {
     CRUSHER("crusher", "Brakkulon", 1, true, false),
     ALLOY_FURNACE("alloy_furnace", "Meldrathex", 2, false, false),

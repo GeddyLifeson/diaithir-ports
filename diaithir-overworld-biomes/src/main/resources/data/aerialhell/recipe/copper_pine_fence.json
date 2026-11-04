@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "aerialhell:copper_pine_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "#S#",
+  "#S#"
+ ],
+ "result": {
+  "id": "aerialhell:copper_pine_fence",
+  "count": 3
+ }
+}

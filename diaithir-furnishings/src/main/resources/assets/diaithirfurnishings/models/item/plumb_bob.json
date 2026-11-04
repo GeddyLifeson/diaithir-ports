@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/plumb_bob_head",
+  "layer1": "diaithirfurnishings:item/plumb_bob_handle",
+  "layer2": "diaithirfurnishings:item/plumb_bob_binding"
+ }
+}

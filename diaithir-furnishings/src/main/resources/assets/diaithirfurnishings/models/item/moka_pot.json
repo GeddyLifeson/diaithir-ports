@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/moka_pot_pot",
+  "layer1": "diaithirfurnishings:item/moka_pot_handle"
+ }
+}

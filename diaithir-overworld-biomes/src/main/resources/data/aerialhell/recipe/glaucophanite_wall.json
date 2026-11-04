@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aerialhell:glaucophanite"
+ },
+ "pattern": [
+  "###",
+  "###"
+ ],
+ "result": {
+  "id": "aerialhell:glaucophanite_wall",
+  "count": 6
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drore/harbor_0_coast",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/harbor_1_coast",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drore/harbor_2_coast",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 202031328
+ }
+}

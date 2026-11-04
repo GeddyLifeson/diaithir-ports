@@ -1,0 +1,154 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Four-Wheeled Wagon",
+  "description": "Four-Wheeled Wagon (-500): 4.5 m, 2 axles, payload 2000 kg. Hooks onto a drawbar.",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:8"
+   ],
+   [
+    "minecraft:iron_block:0:1"
+   ],
+   [
+    "minecraft:redstone:0:8"
+   ],
+   [
+    "minecraft:black_dye:0:4"
+   ]
+  ],
+  "health": 800
+ },
+ "motorized": {
+  "emptyMass": 750,
+  "fuelCapacity": 0,
+  "defaultFuelQty": 0,
+  "hasRunningLights": true,
+  "hasHeadlights": true,
+  "axleRatio": 3.6,
+  "brakingFactor": 1.4,
+  "dragCoefficient": 0.8,
+  "crossSectionalArea": 9.0,
+  "steeringForceFactor": 1.0,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0,
+  "isTrailer": true
+ },
+ "parts": [
+  {
+   "pos": [
+    -0.75,
+    0.5,
+    -1.45
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0.75,
+    0.5,
+    -1.45
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    -0.75,
+    0.5,
+    1.45
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0.75,
+    0.5,
+    1.45
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirtrucks:truck_wheel"
+  },
+  {
+   "pos": [
+    0,
+    1.15,
+    0
+   ],
+   "types": [
+    "interactable_crate"
+   ],
+   "defaultPart": "diaithirtrucks:crate_s"
+  }
+ ],
+ "collision": [
+  {
+   "pos": [
+    0,
+    1.6500000000000001,
+    0
+   ],
+   "width": 1.8,
+   "height": 2.7
+  }
+ ],
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Four-Wheeled Wagon (Red)",
+   "modelName": "trailer_wagon",
+   "textureName": "paint",
+   "extraMaterialLists": [
+    []
+   ]
+  },
+  {
+   "subName": "_white",
+   "name": "Four-Wheeled Wagon (White)",
+   "modelName": "trailer_wagon",
+   "textureName": "paint_white",
+   "extraMaterialLists": [
+    []
+   ]
+  },
+  {
+   "subName": "_blue",
+   "name": "Four-Wheeled Wagon (Blue)",
+   "modelName": "trailer_wagon",
+   "textureName": "paint_blue",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "rendering": {},
+ "connectionGroups": [
+  {
+   "groupName": "drawbar",
+   "canInitiateConnections": false,
+   "isHookup": true,
+   "connections": [
+    {
+     "type": "drawbar",
+     "pos": [
+      0,
+      0.8,
+      3.85
+     ],
+     "distance": 2.0
+    }
+   ]
+  }
+ ]
+}

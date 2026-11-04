@@ -1,0 +1,3469 @@
+{
+ "items": [
+  {
+   "id": "hand_axe",
+   "category": "stone_tool",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "adze",
+   "category": "woodwork",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "felling_axe",
+   "category": "woodwork",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "broad_axe",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hatchet",
+   "category": "woodwork",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hammer",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "sledgehammer",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "mallet",
+   "category": "general",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "maul",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "wedge",
+   "category": "woodwork",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "chisel",
+   "category": "woodwork",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "gouge",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "punch",
+   "category": "metalwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "awl",
+   "category": "leather",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bradawl",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hand_saw",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "frame_saw",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bow_saw",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "two_man_saw",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hacksaw",
+   "category": "metalwork",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "coping_saw",
+   "category": "woodwork",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "tenon_saw",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "plane",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "spokeshave",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "drawknife",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "froe",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bow_drill",
+   "category": "woodwork",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "brace_bit",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "auger",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "gimlet",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hand_drill",
+   "category": "woodwork",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "file",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "rasp",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "whetstone",
+   "category": "sharpening",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "grindstone",
+   "category": "sharpening",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "tongs",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "anvil",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "swage",
+   "category": "metalwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bellows",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "vise",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "pliers",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "pincers",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "wrench",
+   "category": "general",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "monkey_wrench",
+   "category": "general",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "screwdriver",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "crowbar",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "pickaxe",
+   "category": "mining",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "mattock",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "pick_hammer",
+   "category": "mining",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "miners_lamp",
+   "category": "mining",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "mining_hammer",
+   "category": "mining",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "shovel",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "spade",
+   "category": "farm",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "trowel",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hoe",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "rake",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "pitchfork",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hay_fork",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "scythe",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "sickle",
+   "category": "farm",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "billhook",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "machete",
+   "category": "farm",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "secateurs",
+   "category": "farm",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "shears",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hedge_shears",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "wheelbarrow",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "plough",
+   "category": "farm",
+   "age": "II",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "moldboard_plough",
+   "category": "farm",
+   "age": "IV",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "harrow",
+   "category": "farm",
+   "age": "IV",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "seed_drill",
+   "category": "farm",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "flail",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "winnowing_basket",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "quern",
+   "category": "food_prep",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "millstone",
+   "category": "food_prep",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mortar_pestle",
+   "category": "food_prep",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "yoke",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "milk_pail",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "churn",
+   "category": "dairy",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cheese_press",
+   "category": "dairy",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cheese_mold",
+   "category": "dairy",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "milking_stool",
+   "category": "dairy",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "beehive_skep",
+   "category": "apiary",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "smoker",
+   "category": "apiary",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "honey_extractor",
+   "category": "apiary",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fishing_rod",
+   "category": "fishing",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "fishhook",
+   "category": "fishing",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "fishing_net",
+   "category": "fishing",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "fish_trap",
+   "category": "fishing",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "harpoon",
+   "category": "fishing",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "lobster_pot",
+   "category": "fishing",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "snare",
+   "category": "hunting",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "tape_measure",
+   "category": "measuring",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "ruler",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "set_square",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "try_square",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "plumb_bob",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spirit_level",
+   "category": "measuring",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "chalk_line",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "compass_dividers",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sundial",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hourglass",
+   "category": "measuring",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "water_clock",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "balance_scale",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "steelyard",
+   "category": "measuring",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spring_scale",
+   "category": "measuring",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "magnetic_compass",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "astrolabe",
+   "category": "measuring",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sextant",
+   "category": "measuring",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mercury_thermometer",
+   "category": "measuring",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "barometer",
+   "category": "measuring",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spinning_spindle",
+   "category": "textile",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "distaff",
+   "category": "textile",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spinning_wheel",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wool_comb",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "carding_paddle",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "niddy_noddy",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "warp_weighted_loom",
+   "category": "textile",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "backstrap_loom",
+   "category": "textile",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "shuttle",
+   "category": "textile",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "flying_shuttle",
+   "category": "textile",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spinning_jenny",
+   "category": "textile",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "needle",
+   "category": "textile",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bone_needle",
+   "category": "textile",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "thimble",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sewing_machine",
+   "category": "textile",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "scissors",
+   "category": "textile",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "knitting_needles",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "crochet_hook",
+   "category": "textile",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "embroidery_hoop",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tatting_shuttle",
+   "category": "textile",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sad_iron",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "dye_vat",
+   "category": "textile",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fulling_mallet",
+   "category": "textile",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tanning_beam",
+   "category": "leather",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "cobblers_last",
+   "category": "leather",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "skinning_knife",
+   "category": "leather",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "scraper",
+   "category": "stone_tool",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "flint_blade",
+   "category": "stone_tool",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "stone_knife",
+   "category": "stone_tool",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "fire_drill",
+   "category": "fire",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fire_plough",
+   "category": "fire",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "flint_and_steel",
+   "category": "fire",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tinderbox",
+   "category": "fire",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "match",
+   "category": "fire",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "lighter",
+   "category": "fire",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tinder_fungus",
+   "category": "fire",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "stone_hammerstone",
+   "category": "stone_tool",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "pitching_tool",
+   "category": "masonry",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "brick_mold",
+   "category": "masonry",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "lime_slaking_trough",
+   "category": "masonry",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "pulley",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "block_and_tackle",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "winch",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "windlass",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "capstan",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "lever",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "ladder",
+   "category": "general",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "grappling_hook",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "shackle",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "chain",
+   "category": "general",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "padlock",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "key",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pin_tumbler_lock",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "lever_lock",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hinge",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "nail",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "screw",
+   "category": "general",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bolt_nut",
+   "category": "general",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "rivet",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "glue_pot",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "clamp",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "sawhorse",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "workbench",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "lathe",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "turning_tool",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "cooper_adze",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "barrel_hoop",
+   "category": "woodwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "wheelwright_wheel",
+   "category": "woodwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "axle_grease_pot",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bucket",
+   "category": "household",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "well_bucket",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "funnel",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "ladle_big",
+   "category": "household",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "oil_can",
+   "category": "general",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "grease_gun",
+   "category": "general",
+   "age": "VI",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hand_pump",
+   "category": "general",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "archimedes_screw",
+   "category": "farm",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "shaduf",
+   "category": "farm",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "noria",
+   "category": "farm",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "watering_can",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "cooking_pot",
+   "category": "cookware",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cauldron",
+   "category": "cookware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "dutch_oven",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "frying_pan",
+   "category": "cookware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wok",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "saucepan",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tagine",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "clay_pot",
+   "category": "cookware",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "steamer_basket",
+   "category": "cookware",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pressure_cooker",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "kettle",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "teapot",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "samovar",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "coffee_pot",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cezve",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "moka_pot",
+   "category": "cookware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "percolator",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "double_boiler",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "baking_sheet",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "roasting_pan",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "griddle",
+   "category": "cookware",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "comal",
+   "category": "cookware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tandoor",
+   "category": "cookware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bread_oven",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spit",
+   "category": "cookware",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "trivet",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fire_dog",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "trammel",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "waffle_iron",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "popcorn_popper",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "toaster",
+   "category": "cookware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "muffin_tin",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bundt_pan",
+   "category": "cookware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "springform_pan",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cake_pan",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pie_dish",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "casserole",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "terrine",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "ramekin",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "paella_pan",
+   "category": "cookware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fondue_pot",
+   "category": "cookware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "raclette_grill",
+   "category": "cookware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "barbecue_grill",
+   "category": "cookware",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hibachi",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "kamado",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tabun",
+   "category": "cookware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "earth_oven",
+   "category": "cookware",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "clay_baker",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "rice_cooker",
+   "category": "cookware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "slow_cooker",
+   "category": "cookware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "food_steamer",
+   "category": "cookware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "smoker_box",
+   "category": "cookware",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "dehydrator_rack",
+   "category": "food_prep",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "canning_jar",
+   "category": "food_prep",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "preserving_jar",
+   "category": "food_prep",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pickle_crock",
+   "category": "food_prep",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "amphora",
+   "category": "storage",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pithos",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "kvevri",
+   "category": "storage",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "storage_jar",
+   "category": "storage",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "canopic_jar",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "oil_lamp",
+   "category": "lighting",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "candle",
+   "category": "lighting",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "rushlight",
+   "category": "lighting",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "candlestick",
+   "category": "lighting",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "candelabra",
+   "category": "lighting",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "lantern",
+   "category": "lighting",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hurricane_lantern",
+   "category": "lighting",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "torch",
+   "category": "lighting",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "chimney_lamp",
+   "category": "lighting",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "snuffer",
+   "category": "lighting",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "knife_kitchen",
+   "category": "utensil",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "chef_knife",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cleaver",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "santoku",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bread_knife",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "boning_knife",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fillet_knife",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cheese_knife",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "butter_knife",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "table_knife",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "ulu",
+   "category": "utensil",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mezzaluna",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "peeler",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "grater",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "microplane",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mandoline",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fork_table",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spoon",
+   "category": "utensil",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "soup_spoon",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "teaspoon",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wooden_spoon",
+   "category": "utensil",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spork",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "chopsticks",
+   "category": "utensil",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spatula",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "whisk",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "rolling_pin",
+   "category": "food_prep",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pasta_cutter",
+   "category": "food_prep",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cookie_cutter",
+   "category": "food_prep",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cookie_press",
+   "category": "food_prep",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "piping_bag",
+   "category": "food_prep",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "dough_scraper",
+   "category": "food_prep",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "kneading_trough",
+   "category": "food_prep",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "proofing_basket",
+   "category": "food_prep",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bread_lame",
+   "category": "food_prep",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mixing_bowl",
+   "category": "food_prep",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "colander",
+   "category": "food_prep",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sieve",
+   "category": "food_prep",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cheesecloth",
+   "category": "food_prep",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "masher",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "ricer",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "garlic_press",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "citrus_juicer",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "nutcracker",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "meat_mallet",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "meat_grinder",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sausage_stuffer",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "can_opener",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bottle_opener",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "corkscrew",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "egg_beater",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hand_mixer",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "blender",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "food_mill",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "salad_spinner",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tea_infuser",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tea_strainer",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "coffee_grinder",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "salt_cellar",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sugar_nippers",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "measuring_cup",
+   "category": "utensil",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "measuring_spoon",
+   "category": "utensil",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cutting_board",
+   "category": "utensil",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "butcher_block",
+   "category": "utensil",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bowl",
+   "category": "tableware",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "plate",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "trencher",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "platter",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "dinner_plate",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "saucer",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mug",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tankard",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "goblet",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wine_glass",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tumbler",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "shot_glass",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "drinking_horn",
+   "category": "tableware",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tea_bowl",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "gaiwan",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sake_cup",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pitcher",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "carafe",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "decanter",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wine_skin",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "flask",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bottle_glass",
+   "category": "storage",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "gourd_canteen",
+   "category": "tableware",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "canteen",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "thermos",
+   "category": "tableware",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "punch_bowl",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tureen",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "gravy_boat",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "butter_dish",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cake_stand",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "egg_cup",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "napkin",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tablecloth",
+   "category": "tableware",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "placemat",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tray",
+   "category": "tableware",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "lazy_susan",
+   "category": "tableware",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "toothpick",
+   "category": "tableware",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "basket",
+   "category": "storage",
+   "age": "I",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wicker_basket",
+   "category": "storage",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "creel",
+   "category": "storage",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hamper",
+   "category": "storage",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "keg",
+   "category": "storage",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "crate",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "chest",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "coffer",
+   "category": "storage",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "trunk",
+   "category": "storage",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "satchel",
+   "category": "storage",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "saddlebag",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "backpack",
+   "category": "storage",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "purse",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tin_can",
+   "category": "storage",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cookie_jar",
+   "category": "storage",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "spice_rack",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tea_caddy",
+   "category": "storage",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bread_box",
+   "category": "storage",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "ice_box",
+   "category": "storage",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "root_cellar_bin",
+   "category": "storage",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "broom",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "dustpan",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mop",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "scrub_brush",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wash_basin",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "washboard",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "laundry_tub",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "laundry_paddle",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mangle",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "clothespin",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "clothesline",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "soap",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "chamber_pot",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bed_warmer",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hot_water_bottle",
+   "category": "household",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fan_hand",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "umbrella",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "mirror_bronze",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "comb",
+   "category": "household",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "hairbrush",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "razor",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tweezers",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "toothbrush",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "nail_clippers",
+   "category": "household",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "chair",
+   "category": "furniture",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "stool",
+   "category": "furniture",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bench",
+   "category": "furniture",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "table",
+   "category": "furniture",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bed",
+   "category": "furniture",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cradle",
+   "category": "furniture",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "bookshelf",
+   "category": "furniture",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "cupboard",
+   "category": "furniture",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wardrobe",
+   "category": "furniture",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fire_shovel",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "tinder_pouch",
+   "category": "fire",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "coal_scuttle",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "stove_cast_iron",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pot_belly_stove",
+   "category": "household",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "kang",
+   "category": "household",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "brazier",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "kotatsu",
+   "category": "household",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "quill",
+   "category": "writing",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "reed_pen",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "stylus",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "wax_tablet",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "brush_pen",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "inkwell",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "ink_stick",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "inkstone",
+   "category": "writing",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "steel_nib",
+   "category": "writing",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "fountain_pen",
+   "category": "writing",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pencil",
+   "category": "writing",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "sealing_stamp",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "papyrus_scroll",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "abacus",
+   "category": "writing",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "slide_rule",
+   "category": "measuring",
+   "age": "V",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "printing_press",
+   "category": "writing",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "typewriter",
+   "category": "writing",
+   "age": "VI",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "potters_wheel",
+   "category": "pottery",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "pottery_paddle",
+   "category": "pottery",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "kiln",
+   "category": "pottery",
+   "age": "II",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "glassblowing_pipe",
+   "category": "glass",
+   "age": "IV",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "crucible",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "ingot_mold",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "ladle_foundry",
+   "category": "metalwork",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "swage_hammer",
+   "category": "metalwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "trip_hammer",
+   "category": "metalwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "wire_drawplate",
+   "category": "metalwork",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "jewelers_saw",
+   "category": "metalwork",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "horseshoe",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "farrier_rasp",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "hoof_pick",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "saddle",
+   "category": "farm",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "stirrup",
+   "category": "farm",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bridle",
+   "category": "farm",
+   "age": "II",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "halter",
+   "category": "farm",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "cowbell",
+   "category": "farm",
+   "age": "III",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "bell",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "gong",
+   "category": "household",
+   "age": "III",
+   "durability": 0,
+   "stack": 16
+  },
+  {
+   "id": "digging_stick",
+   "category": "farm_machine",
+   "age": "I",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "dibber",
+   "category": "farm_machine",
+   "age": "IV",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "cradle_scythe",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 200,
+   "stack": 1
+  },
+  {
+   "id": "cultivator",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "disc_harrow",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "cultipacker",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "corn_planter",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "mechanical_reaper",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "reaper_binder",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "mowing_machine",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "hay_rake",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "tedder",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "manure_spreader",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "baler",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "threshing_machine",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "cotton_gin",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "chaff_cutter",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "milking_machine",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "traction_engine",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 12000,
+   "stack": 1
+  },
+  {
+   "id": "tractor",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 18000,
+   "stack": 1
+  },
+  {
+   "id": "crawler_tractor",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 36000,
+   "stack": 1
+  },
+  {
+   "id": "walking_tractor",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 3000,
+   "stack": 1
+  },
+  {
+   "id": "rice_transplanter",
+   "category": "farm_machine",
+   "age": "VII",
+   "durability": 1800,
+   "stack": 1
+  },
+  {
+   "id": "combine_harvester",
+   "category": "farm_machine",
+   "age": "V",
+   "durability": 90000,
+   "stack": 1
+  },
+  {
+   "id": "forage_harvester",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 60000,
+   "stack": 1
+  },
+  {
+   "id": "cotton_picker",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 45000,
+   "stack": 1
+  },
+  {
+   "id": "corn_picker",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 24000,
+   "stack": 1
+  },
+  {
+   "id": "sugar_cane_harvester",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 60000,
+   "stack": 1
+  },
+  {
+   "id": "potato_harvester",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 24000,
+   "stack": 1
+  },
+  {
+   "id": "sprayer",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 24000,
+   "stack": 1
+  },
+  {
+   "id": "center_pivot",
+   "category": "farm_machine",
+   "age": "VII",
+   "durability": 9000,
+   "stack": 1
+  },
+  {
+   "id": "agricultural_drone",
+   "category": "farm_machine",
+   "age": "VII",
+   "durability": 1200,
+   "stack": 1
+  },
+  {
+   "id": "agricultural_robot",
+   "category": "farm_machine",
+   "age": "VII",
+   "durability": 1200,
+   "stack": 1
+  },
+  {
+   "id": "cream_separator",
+   "category": "farm_machine",
+   "age": "VI",
+   "durability": 400,
+   "stack": 1
+  },
+  {
+   "id": "swather",
+   "category": "farm_machine",
+   "age": "VII",
+   "durability": 36000,
+   "stack": 1
+  }
+ ]
+}

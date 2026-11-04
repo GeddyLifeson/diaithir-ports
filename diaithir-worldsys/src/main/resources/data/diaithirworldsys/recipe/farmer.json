@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "HCH",
+  "III"
+ ],
+ "key": {
+  "I": "#c:ingots/iron",
+  "H": "#minecraft:hoes",
+  "C": "minecraft:composter"
+ },
+ "result": {
+  "id": "diaithirworldsys:easy_villagers_farmer",
+  "count": 1
+ }
+}

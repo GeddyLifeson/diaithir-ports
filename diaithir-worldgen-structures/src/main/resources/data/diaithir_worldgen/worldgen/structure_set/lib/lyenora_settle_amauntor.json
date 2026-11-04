@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_0_amauntor",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_1_amauntor",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_2_amauntor",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 263316462
+ }
+}

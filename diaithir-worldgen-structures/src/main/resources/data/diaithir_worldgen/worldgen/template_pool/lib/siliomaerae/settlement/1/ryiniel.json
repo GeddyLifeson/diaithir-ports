@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/siliomaerae/settlement/1/ryiniel",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/siliomaerae/ar_siliomaerae_e6_places_000899",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

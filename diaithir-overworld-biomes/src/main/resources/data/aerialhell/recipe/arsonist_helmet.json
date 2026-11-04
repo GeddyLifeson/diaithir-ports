@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "aerialhell:arsonist_ingot"
+ },
+ "pattern": [
+  "###",
+  "# #"
+ ],
+ "result": {
+  "id": "aerialhell:arsonist_helmet"
+ }
+}

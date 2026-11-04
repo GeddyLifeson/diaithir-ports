@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:miimeth_grimaithok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_miama",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_nuaniollys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_osutameno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_serolaurnus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_shistora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_silera",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_tenkansaum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_tharkoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miimeth_xaasseth",
+   "required": false
+  }
+ ]
+}

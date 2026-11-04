@@ -1,0 +1,16 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  },
+  {
+   "tag": "c:stones",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:fráma_teallaigh_2",
+ "time_s": 20
+}

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/bolt_nut_head",
+  "layer1": "diaithirfurnishings:item/bolt_nut_handle",
+  "layer2": "diaithirfurnishings:item/bolt_nut_binding"
+ }
+}

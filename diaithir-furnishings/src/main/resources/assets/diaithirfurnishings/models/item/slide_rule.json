@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/slide_rule_head",
+  "layer1": "diaithirfurnishings:item/slide_rule_handle",
+  "layer2": "diaithirfurnishings:item/slide_rule_binding"
+ }
+}

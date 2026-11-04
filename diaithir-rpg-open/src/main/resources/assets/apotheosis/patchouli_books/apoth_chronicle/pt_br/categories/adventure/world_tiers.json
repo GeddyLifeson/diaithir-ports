@@ -1,0 +1,7 @@
+{
+    "name": "Níveis de Mundo",
+    "description": "À medida que você fica mais forte, o mundo ao seu redor também evolui.$(p)Esta seção explica os Níveis de Mundo Apóticos, o que eles alteram, como desbloqueá-los e como mudar o nível ativo.",
+    "icon": "apotheosis:textures/gui/book/summit_icon.png",
+    "flag": "apotheosis:adventure",
+    "parent": "apotheosis:adventure/adventure"
+}

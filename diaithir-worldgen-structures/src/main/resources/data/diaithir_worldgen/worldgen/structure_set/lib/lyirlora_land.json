@@ -1,0 +1,110 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/forge_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/fortress_0_land",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/fortress_1_land",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/fortress_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/hall_0_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/hall_1_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/hall_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/landmark_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/landmark_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/landmark_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/ruin_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/ruin_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/temple_0_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/temple_1_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/temple_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/temple_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/tomb_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/tomb_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/tower_0_land",
+   "weight": 35
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/tower_1_land",
+   "weight": 34
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/tower_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyirlora/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 64121016
+ }
+}
