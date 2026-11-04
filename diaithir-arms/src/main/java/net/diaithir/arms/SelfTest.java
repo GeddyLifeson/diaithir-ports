@@ -23,6 +23,12 @@ public final class SelfTest {
                 };
                 if (good) ok++; else { bad++; System.out.println("[armsselftest] BAD " + s.id()); }
             }
+            for (var e : Roster.entries()) {
+                ItemStack st = new ItemStack(DiaithirArms.all().get(e.id()).get());
+                var mods = st.get(DataComponents.ATTRIBUTE_MODIFIERS);
+                boolean reach = mods != null && mods.modifiers().stream().anyMatch(m -> m.attribute().is(net.minecraft.world.entity.ai.attributes.Attributes.ENTITY_INTERACTION_RANGE));
+                if (st.getMaxDamage() > 0 && st.has(DataComponents.WEAPON) && reach == (e.reach() > 0)) ok++; else { bad++; System.out.println("[armsselftest] BAD roster " + e.id()); }
+            }
             ItemStack helm = new ItemStack(DiaithirArms.all().get("bone_helmet").get()), look = new ItemStack(DiaithirArms.all().get("steel_helmet").get());
             ItemStack tm = TransmogRecipe.apply(helm, look);
             boolean t1 = tm.get(DataComponents.EQUIPPABLE).assetId().equals(look.get(DataComponents.EQUIPPABLE).assetId())
