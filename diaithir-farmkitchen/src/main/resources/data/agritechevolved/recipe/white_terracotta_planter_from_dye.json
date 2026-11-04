@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "agritechevolved:terracotta_planter",
+    "minecraft:white_dye"
+  ],
+  "result": {
+    "id": "agritechevolved:white_terracotta_planter"
+  }
+}

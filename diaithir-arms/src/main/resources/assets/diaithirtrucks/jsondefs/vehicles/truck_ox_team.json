@@ -1,216 +1,332 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Ox Team and Limber",
-  "description": "Ox Team and Limber (-3000, Mesopotamia): 1.5 kW motive unit, 2 axles, gross 3 t.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:8"
-   ],
-   [
-    "minecraft:iron_block:0:1"
-   ],
-   [
-    "minecraft:redstone:0:8"
-   ],
-   [
-    "minecraft:black_dye:0:4"
-   ]
+  "general": {
+    "type": "vehicle",
+    "name": "Ox Team and Limber",
+    "description": "Ox Team and Limber (-3000, Mesopotamia): 1.5 kW motive unit, 2 axles, gross 3 t.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:8"
+      ],
+      [
+        "minecraft:iron_block:0:1"
+      ],
+      [
+        "minecraft:redstone:0:8"
+      ],
+      [
+        "minecraft:black_dye:0:4"
+      ]
+    ],
+    "health": 701
+  },
+  "motorized": {
+    "emptyMass": 2021,
+    "fuelCapacity": 60,
+    "defaultFuelQty": 30,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.4,
+    "dragCoefficient": 0.8,
+    "crossSectionalArea": 9.0,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0
+  },
+  "parts": [
+    {
+      "pos": [
+        0,
+        1.0,
+        0.09999999999999987
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_draft_stock",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -0.7,
+        0.5,
+        0.2
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.7,
+        0.5,
+        0.2
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -0.7,
+        0.5,
+        -0.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.7,
+        0.5,
+        -0.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -0.5,
+        1.5,
+        -0.7
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -1.8,
+        0.0,
+        -0.7
+      ]
+    },
+    {
+      "pos": [
+        0.5,
+        1.5,
+        -0.7
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirtrucks:seat"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.09999999999999987
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_draft_stock",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.7,
+        0.5,
+        0.2
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        0.7,
+        0.5,
+        0.2
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        -0.7,
+        0.5,
+        -0.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.7,
+        0.5,
+        -0.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.5,
+        1.5,
+        -0.7
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -1.8,
+        0.0,
+        -0.7
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.5,
+        1.5,
+        -0.7
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirtrucks:seat",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    }
   ],
-  "health": 701
- },
- "motorized": {
-  "emptyMass": 2021,
-  "fuelCapacity": 60,
-  "defaultFuelQty": 30,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.4,
-  "dragCoefficient": 0.8,
-  "crossSectionalArea": 9.0,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0
- },
- "parts": [
-  {
-   "pos": [
-    0,
-    1.0,
-    0.09999999999999987
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirtrucks:engine_draft_stock",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    -0.7,
-    0.5,
-    0.2
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:truck_wheel",
-   "minValue": 0.0,
-   "maxValue": 10.0,
-   "turnsWithSteer": true
-  },
-  {
-   "pos": [
-    0.7,
-    0.5,
-    0.2
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:truck_wheel",
-   "minValue": 0.0,
-   "maxValue": 10.0,
-   "turnsWithSteer": true
-  },
-  {
-   "pos": [
-    -0.7,
-    0.5,
-    -0.9
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:truck_wheel",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    0.7,
-    0.5,
-    -0.9
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:truck_wheel",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    -0.5,
-    1.5,
-    -0.7
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirtrucks:seat",
-   "dismountPos": [
-    -1.8,
-    0.0,
-    -0.7
-   ],
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    0.5,
-    1.5,
-    -0.7
-   ],
-   "types": [
-    "seat"
-   ],
-   "defaultPart": "diaithirtrucks:seat",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Ox Team and Limber (Red)",
-   "modelName": "truck_ox_team",
-   "textureName": "paint",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_white",
-   "name": "Ox Team and Limber (White)",
-   "modelName": "truck_ox_team",
-   "textureName": "paint_white",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_blue",
-   "name": "Ox Team and Limber (Blue)",
-   "modelName": "truck_ox_team",
-   "textureName": "paint_blue",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {},
- "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.8,
-  "isBigTruck": true
- },
- "connectionGroups": [
-  {
-   "groupName": "drawbar",
-   "canInitiateConnections": true,
-   "isHitch": true,
-   "connections": [
+  "definitions": [
     {
-     "type": "drawbar",
-     "pos": [
-      0,
-      0.8,
-      -1.5
-     ],
-     "distance": 2.0
-    }
-   ]
-  }
- ],
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "entity",
-    "vehicle",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "collisions": [
+      "subName": "",
+      "name": "Ox Team and Limber (Red)",
+      "modelName": "truck_ox_team",
+      "textureName": "paint",
+      "extraMaterialLists": [
+        []
+      ]
+    },
     {
-     "pos": [
-      0,
-      1.4000000000000001,
-      0
-     ],
-     "width": 1.8,
-     "height": 2.2
+      "subName": "_white",
+      "name": "Ox Team and Limber (White)",
+      "modelName": "truck_ox_team",
+      "textureName": "paint_white",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_blue",
+      "name": "Ox Team and Limber (Blue)",
+      "modelName": "truck_ox_team",
+      "textureName": "paint_blue",
+      "extraMaterialLists": [
+        []
+      ]
     }
-   ]
-  }
- ]
+  ],
+  "rendering": {},
+  "car": {
+    "isFrontWheelDrive": false,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.8,
+    "isBigTruck": true
+  },
+  "connectionGroups": [
+    {
+      "groupName": "drawbar",
+      "canInitiateConnections": true,
+      "isHitch": true,
+      "connections": [
+        {
+          "type": "drawbar",
+          "pos": [
+            0,
+            0.8,
+            -1.5
+          ],
+          "distance": 2.0
+        }
+      ]
+    }
+  ],
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 701,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.4000000000000001,
+            0
+          ],
+          "width": 1.8,
+          "height": 2.2
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.4000000000000001,
+            0
+          ],
+          "width": 1.8,
+          "height": 2.2
+        }
+      ]
+    }
+  ]
 }

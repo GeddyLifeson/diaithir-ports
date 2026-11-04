@@ -1,0 +1,8 @@
+{
+  "required": false,
+  "package": "net.diaithir.worldvisuals.betterclouds.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "minVersion": "0.8",
+  "client": [ "CloudRendererMixin" ],
+  "injectors": { "defaultRequire": 0 }
+}

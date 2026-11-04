@@ -58,6 +58,10 @@ public final class DiaithirArms {
     public static final net.neoforged.neoforge.registries.DeferredBlock<TransmogTableBlock> TRANSMOG_TABLE = BLOCKS.registerBlock("transmog_table",
             TransmogTableBlock::new, () -> net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRAFTING_TABLE));
     private static net.neoforged.neoforge.registries.DeferredItem<net.minecraft.world.item.BlockItem> TRANSMOG_ITEM;
+    public static final net.neoforged.neoforge.registries.DeferredBlock<net.diaithir.arms.gadgets.SentryTurret> SENTRY_TURRET = BLOCKS.registerBlock("sentry_turret",
+            net.diaithir.arms.gadgets.SentryTurret::new, () -> net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.DISPENSER));
+    private static net.neoforged.neoforge.registries.DeferredItem<net.minecraft.world.item.BlockItem> TURRET_ITEM;
+    public static net.neoforged.neoforge.registries.DeferredItem<net.diaithir.arms.gadgets.MiningLaser> LASER;
     private static final List<DeferredItem<net.minecraft.world.item.BlockItem>> ENGINES = new java.util.ArrayList<>();
     private static final Map<String, DeferredItem<Item>> ALL = new LinkedHashMap<>();
 
@@ -178,6 +182,8 @@ public final class DiaithirArms {
             }
         }
         Roster.register(ITEMS, ALL);
+        net.diaithir.arms.immersive.Sets.register(ITEMS);
+        NeoForge.EVENT_BUS.register(new net.diaithir.arms.immersive.Effects());
         for (String id : DATA.parts()) {
             ALL.put(id, ITEMS.registerSimpleItem(id));
         }
@@ -197,11 +203,16 @@ public final class DiaithirArms {
         RECIPES.register("transmog", () -> TransmogRecipe.SERIALIZER);
         RECIPES.register(bus);
         TRANSMOG_ITEM = ITEMS.registerSimpleBlockItem("transmog_table", TRANSMOG_TABLE);
+        TURRET_ITEM = ITEMS.registerSimpleBlockItem("sentry_turret", SENTRY_TURRET);
+        LASER = ITEMS.registerItem("mining_laser", net.diaithir.arms.gadgets.MiningLaser::new, () -> new Item.Properties().stacksTo(1).durability(600));
         ITEMS.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey().equals(CreativeModeTabs.COMBAT)) {
                 ALL.values().forEach(i -> e.accept(i.get()));
                 e.accept(TRANSMOG_ITEM.get());
+                e.accept(TURRET_ITEM.get());
+                e.accept(LASER.get());
+                net.diaithir.arms.immersive.Sets.all().values().forEach(i -> e.accept(i.get()));
                 ENGINES.forEach(i -> e.accept(i.get()));
             }
         });

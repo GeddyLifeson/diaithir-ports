@@ -240,4 +240,11 @@ public abstract class MixinLevelRendererShips implements LevelRendererDuck {
         ps.popPose();
         ps.pushPose();
     }
+
+    /** Draws the loads carried by cargo ships (diaithir-carts containers API) in each ship's render transform. */
+    @Inject(method = "submitBlockEntities", at = @At("RETURN"))
+    private void vs$submitCargo(final com.mojang.blaze3d.vertex.PoseStack ps, final net.minecraft.client.renderer.state.level.LevelRenderState state,
+        final net.minecraft.client.renderer.SubmitNodeStorage storage, final CallbackInfo ci) {
+        net.diaithir.ships.cargo.ClientCargo.submit(ps, state.cameraRenderState.pos, storage);
+    }
 }

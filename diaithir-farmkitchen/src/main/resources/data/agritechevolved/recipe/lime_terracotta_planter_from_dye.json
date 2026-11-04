@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "agritechevolved:terracotta_planter",
+    "minecraft:lime_dye"
+  ],
+  "result": {
+    "id": "agritechevolved:lime_terracotta_planter"
+  }
+}

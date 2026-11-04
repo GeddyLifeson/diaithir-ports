@@ -9,7 +9,9 @@ import csv, fnmatch, sys
 rules_path, cov_path = sys.argv[1:3]
 OWNER = '4-machines-blocks-vehicles'
 rules = []
-for line in open(rules_path, encoding='utf-8'):
+import os
+bones = os.path.join(os.path.dirname(rules_path), 'rules_bones.tsv')
+for line in (list(open(bones, encoding='utf-8')) if os.path.exists(bones) else []) + list(open(rules_path, encoding='utf-8')):
     if line.startswith('#') or not line.strip():
         continue
     f = line.rstrip('\n').split('\t')
@@ -33,7 +35,7 @@ with open(cov_path, newline='', encoding='utf-8') as fh:
     rows = list(rd)
 n = fb = 0
 for r in rows:
-    if r['owner'] != OWNER or r['status'] not in ('todo', 'route'):
+    if r['owner'] != OWNER or r['status'] not in ('todo', 'route') or r['engine_route'].startswith('native'):
         continue
     m = match(r['thing'])
     if m is None and r['category'] in FALLBACK:

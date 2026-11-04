@@ -37,7 +37,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:dc3_engine"
+   "defaultPart": "diaithiraircraft:dc3_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
@@ -48,7 +50,9 @@
    "types": [
     "engine_aircraft"
    ],
-   "defaultPart": "diaithiraircraft:dc3_engine"
+   "defaultPart": "diaithiraircraft:dc3_engine",
+   "minValue": 0.0,
+   "maxValue": 1000.0
   },
   {
    "pos": [
