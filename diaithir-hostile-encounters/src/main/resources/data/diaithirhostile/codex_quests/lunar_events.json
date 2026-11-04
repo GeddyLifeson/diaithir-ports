@@ -1,0 +1,58 @@
+[
+  {
+    "id": "diaithirhostile:lunar/super_moon",
+    "title": "Super Moon",
+    "summary": "The Super Moon rises. Slimes crawl out of the ground nearby.",
+    "kind": "world_event",
+    "how": "Appears in the lunar forecast. Play it however you like, or leave it as a misc task.",
+    "tab": "Codex Quests"
+  },
+  {
+    "id": "diaithirhostile:lunar/blood_moon",
+    "title": "Blood Moon",
+    "summary": "The Blood Moon rises. The dead walk in numbers tonight.",
+    "kind": "world_event",
+    "how": "Appears in the lunar forecast. Play it however you like, or leave it as a misc task.",
+    "tab": "Codex Quests"
+  },
+  {
+    "id": "diaithirhostile:lunar/super_blood_moon",
+    "title": "Super Blood Moon",
+    "summary": "The Super Blood Moon rises. The night is thick with the dead.",
+    "kind": "world_event",
+    "how": "Appears in the lunar forecast. Play it however you like, or leave it as a misc task.",
+    "tab": "Codex Quests"
+  },
+  {
+    "id": "diaithirhostile:lunar/harvest_moon",
+    "title": "Harvest Moon",
+    "summary": "The Harvest Moon rises. Crops give a fuller yield.",
+    "kind": "world_event",
+    "how": "Appears in the lunar forecast. Play it however you like, or leave it as a misc task.",
+    "tab": "Codex Quests"
+  },
+  {
+    "id": "diaithirhostile:lunar/super_harvest_moon",
+    "title": "Super Harvest Moon",
+    "summary": "The Super Harvest Moon rises. Crops give an exceptional yield.",
+    "kind": "world_event",
+    "how": "Appears in the lunar forecast. Play it however you like, or leave it as a misc task.",
+    "tab": "Codex Quests"
+  },
+  {
+    "id": "diaithirhostile:lunar/blue_moon",
+    "title": "Blue Moon",
+    "summary": "The Blue Moon rises. Luck is with you, and learning comes cheap.",
+    "kind": "world_event",
+    "how": "Appears in the lunar forecast. Play it however you like, or leave it as a misc task.",
+    "tab": "Codex Quests"
+  },
+  {
+    "id": "diaithirhostile:lunar/super_blue_moon",
+    "title": "Super Blue Moon",
+    "summary": "The Super Blue Moon rises. Luck runs high and learning comes cheaper still.",
+    "kind": "world_event",
+    "how": "Appears in the lunar forecast. Play it however you like, or leave it as a misc task.",
+    "tab": "Codex Quests"
+  }
+]
