@@ -3,6 +3,6 @@ filename = "diaithir-client-suite-neoforge-26.1.2-1.0.0.jar"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-wave11/client/diaithir-client-suite-neoforge-26.1.2-1.0.0.jar"
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-wave13/client/diaithir-client-suite-neoforge-26.1.2-1.0.0.jar"
 hash-format = "sha256"
-hash = "efdf90fcb8347308f8a7e5741250dea046e7935e284e9ce528729b4dc00fed39"
+hash = "b875fb5dd1a065f9f1404a5ff80846768598668c69c31a69e8eb3b53180c7169"
