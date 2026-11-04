@@ -134,4 +134,34 @@ final class IvControl {
         Object cv = vehicle.getClass().getField(field).get(vehicle);
         cv.getClass().getMethod("setTo", double.class, boolean.class).invoke(cv, value, true);
     }
+
+    /** Dashboard numbers for the nearest vehicle: {km/h, fuel 0..1, rpm, gear, brake 0..1, engines running 0/1}. Null when none is near or it is idle and unmanned. */
+    static double[] dash(Level level, Vec3 at, double reach) {
+        Object v = nearest(level, at, reach);
+        if (v == null) return null;
+        try {
+            boolean running = v.getClass().getField("enginesRunning").getBoolean(v);
+            double kmh = Math.abs(named(v, "velocity")) * 3.6;
+            if (!running && kmh < 0.5) return null;
+            Object tank = v.getClass().getField("fuelTank").get(v);
+            double max = ((Number) tank.getClass().getMethod("getMaxLevel").invoke(tank)).doubleValue();
+            double lvl = ((Number) tank.getClass().getMethod("getFluidLevel").invoke(tank)).doubleValue();
+            double rpm = 0, gear = 0;
+            try {
+                rpm = named(v, "engine_rpm_1");
+                gear = named(v, "engine_gear_1");
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                // no engine numbers
+            }
+            double brake;
+            try {
+                brake = var(v, "brakeVar");
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                brake = 0;
+            }
+            return new double[] {kmh, max > 0 ? lvl / max : 0, rpm, gear, brake, running ? 1 : 0};
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            return null;
+        }
+    }
 }

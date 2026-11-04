@@ -64,7 +64,7 @@ public final class Station {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
-        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) IgnitionKey.init(bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) { IgnitionKey.init(bus); VehicleHud.init(bus); }
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
