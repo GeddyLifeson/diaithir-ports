@@ -77,6 +77,32 @@ register("mooring_bollard", "Cleatvarn", "Mooring bollard. Make it fast and any 
 RECIPES["mooring_bollard"] = {"type": "minecraft:crafting_shaped", "category": "misc", "key": {"I": "minecraft:iron_ingot", "L": "minecraft:lead", "B": "minecraft:iron_block"},
                               "pattern": [" L ", "III", " B "], "result": {"id": f"{NS}:mooring_bollard", "count": 2}}
 
+# harbour office: four stages of quay office (timber, brick, iron, steel), same box with a pitched sign board
+STAGES = [("timber", (122, 92, 58), (96, 70, 42)), ("brick", (150, 78, 62), (112, 54, 44)), ("iron", (104, 112, 124), (70, 76, 86)), ("steel", (176, 188, 204), (120, 132, 150))]
+for i, (nm, light, dark) in enumerate(STAGES):
+    side = Image.new("RGBA", (16, 16))
+    sp = side.load()
+    for y in range(16):
+        for x in range(16):
+            c = light if (y // 4 + (x // 8 if nm == "brick" else 0)) % 2 == 0 else dark
+            if nm in ("iron", "steel") and (x % 8 == 0 or y % 8 == 0):
+                c = (c[0] - 30, c[1] - 30, c[2] - 30)
+            sp[x, y] = tuple(max(0, min(255, v + rnd.randrange(-6, 7))) for v in c) + (255,)
+    for y in range(5, 9):
+        for x in range(4, 12):
+            sp[x, y] = (30, 40, 56, 255)          # window
+    for x in range(3, 13):
+        sp[x, 11] = (240, 190, 30, 255)         # sign board stripe
+    side.save(os.path.join(A, f"textures/block/harbour_office_{i}_side.png"))
+    top = iron(16, 16, 80 + i * 10, (6, 4, 0))
+    top.save(os.path.join(A, f"textures/block/harbour_office_{i}_top.png"))
+    block_model(f"harbour_office_{i}", "minecraft:block/cube_column", {"end": f"{NS}:block/harbour_office_{i}_top", "side": f"{NS}:block/harbour_office_{i}_side"})
+wj(A, "blockstates/harbour_office.json", {"variants": {f"stage={i}": {"model": f"{NS}:block/harbour_office_{i}"} for i in range(4)}})
+item_model("harbour_office", f"{NS}:block/harbour_office_0")
+register("harbour_office", "Quaymorrek", "Harbour office. A quay station that grows with the Age without any input: timber, then brick, iron and steel. Each stage widens the reach of every mooring bollard within 16 blocks (3 blocks, then 5, 7 and 9) and lets a boat there carry more cargo crates. Use it to read its stage. Age III.", 3)
+RECIPES["harbour_office"] = {"type": "minecraft:crafting_shaped", "category": "misc", "key": {"P": "minecraft:oak_planks", "I": "minecraft:iron_ingot", "C": "minecraft:clock", "B": "minecraft:bell"},
+                            "pattern": ["PBP", "PCP", "IPI"], "result": {"id": f"{NS}:harbour_office", "count": 1}}
+
 # ---- extension point: the other pieces append to NAMES/RECIPES/GATE above this line ----
 lang = {f"block.{NS}.{k}": v[0] for k, v in NAMES.items() if not k.endswith("_crate")}
 wj(A, "lang/en_us.json", lang)

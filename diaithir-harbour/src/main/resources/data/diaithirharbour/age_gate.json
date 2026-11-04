@@ -2,7 +2,8 @@
   "tier1": {
     "age": 3,
     "items": [
-      "diaithirharbour:mooring_bollard"
+      "diaithirharbour:mooring_bollard",
+      "diaithirharbour:harbour_office"
     ]
   }
 }
