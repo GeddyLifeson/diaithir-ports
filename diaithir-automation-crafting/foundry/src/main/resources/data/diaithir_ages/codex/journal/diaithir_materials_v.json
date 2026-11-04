@@ -1,0 +1,56 @@
+{
+  "age": "V",
+  "names": {
+    "mat_glass_plate": "Make Plate Glass",
+    "mat_lining_board": "Make Plasterboard",
+    "mat_roofing_metal_sheet": "Make Metal Roofing Sheet",
+    "mat_road_asphalt": "Make Asphalt",
+    "mat_insulation_glass_wool": "Make Glass Wool",
+    "mat_steel_plate_angle": "Make Steel Plate and Angle",
+    "mat_concrete_portland": "Make Portland Concrete"
+  },
+  "side": [
+    {
+      "id": "mat_glass_plate",
+      "title_key": "mat_glass_plate",
+      "goal": "obtain:1 glass_plate",
+      "text": "Make Plate Glass at the steam forge."
+    },
+    {
+      "id": "mat_lining_board",
+      "title_key": "mat_lining_board",
+      "goal": "obtain:1 lining_board",
+      "text": "Make Plasterboard at the steam forge."
+    },
+    {
+      "id": "mat_roofing_metal_sheet",
+      "title_key": "mat_roofing_metal_sheet",
+      "goal": "obtain:1 roofing_metal_sheet",
+      "text": "Make Metal Roofing Sheet at the steam forge."
+    },
+    {
+      "id": "mat_road_asphalt",
+      "title_key": "mat_road_asphalt",
+      "goal": "obtain:1 road_asphalt",
+      "text": "Make Asphalt at the steam forge."
+    },
+    {
+      "id": "mat_insulation_glass_wool",
+      "title_key": "mat_insulation_glass_wool",
+      "goal": "obtain:1 insulation_glass_wool",
+      "text": "Make Glass Wool at the steam forge."
+    },
+    {
+      "id": "mat_steel_plate_angle",
+      "title_key": "mat_steel_plate_angle",
+      "goal": "obtain:1 steel_plate_angle",
+      "text": "Make Steel Plate and Angle at the steam forge."
+    },
+    {
+      "id": "mat_concrete_portland",
+      "title_key": "mat_concrete_portland",
+      "goal": "obtain:1 concrete_portland",
+      "text": "Make Portland Concrete at the steam forge."
+    }
+  ]
+}

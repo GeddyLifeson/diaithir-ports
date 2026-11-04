@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/rasp"
+  "layer0": "diaithirfurnishings:item/rasp_head",
+  "layer1": "diaithirfurnishings:item/rasp_handle",
+  "layer2": "diaithirfurnishings:item/rasp_binding"
  }
 }

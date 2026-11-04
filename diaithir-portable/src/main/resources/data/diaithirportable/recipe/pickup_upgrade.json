@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "pattern": [" H ","IRI"," P "], "key": { "H": "minecraft:hopper", "I": "minecraft:iron_ingot", "R": "minecraft:redstone", "P": "minecraft:paper" }, "result": { "id": "diaithirportable:pickup_upgrade" } }

@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" E ", "IHI", " R "],
+  "key": { "E": "minecraft:ender_pearl", "I": "minecraft:iron_ingot", "H": "minecraft:hopper", "R": "minecraft:redstone" },
+  "result": { "id": "diaithirrouting:item_collector", "count": 1 }
+}

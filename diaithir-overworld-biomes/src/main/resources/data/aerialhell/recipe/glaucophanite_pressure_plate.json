@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "#": "aerialhell:glaucophanite"
+ },
+ "pattern": [
+  "##"
+ ],
+ "result": {
+  "id": "aerialhell:glaucophanite_pressure_plate"
+ }
+}

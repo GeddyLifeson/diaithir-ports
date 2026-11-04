@@ -2,7 +2,10 @@
  "module": "diaithirclientcore",
  "side": "client",
  "features": [
-  "diaithirearlywindow"
+  "diaithirearlywindow",
+  "soundmuffler",
+  "soundphysics",
+  "surroundings"
  ],
  "codex": {
   "entry": "diaithirclientcore.overview",

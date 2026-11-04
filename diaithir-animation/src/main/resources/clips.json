@@ -76,7 +76,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.smg": [
    "aim",
@@ -86,7 +87,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.rifle": [
    "aim",
@@ -96,7 +98,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.sniper": [
    "aim",
@@ -106,7 +109,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.shotgun": [
    "aim",
@@ -116,7 +120,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.lmg": [
    "aim",
@@ -126,7 +131,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.launcher": [
    "aim",
@@ -136,7 +142,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.musket": [
    "aim",
@@ -146,7 +153,8 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
   ],
   "gun.energy": [
    "aim",
@@ -156,7 +164,14 @@
    "hold",
    "inspect",
    "reload",
-   "sprint"
+   "sprint",
+   "unjam"
+  ],
+  "seat": [
+   "turret",
+   "driver",
+   "mounted_gun",
+   "cannon"
   ],
   "own_gun_reloads": [
    "aa12",

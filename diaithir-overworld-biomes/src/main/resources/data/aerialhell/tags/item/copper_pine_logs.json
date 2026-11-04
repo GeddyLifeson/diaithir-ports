@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:copper_pine_log",
+  "aerialhell:copper_pine_wood",
+  "aerialhell:stripped_copper_pine_log",
+  "aerialhell:stripped_copper_pine_wood"
+ ]
+}

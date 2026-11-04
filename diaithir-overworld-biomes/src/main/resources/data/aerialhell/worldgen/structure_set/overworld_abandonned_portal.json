@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "aerialhell:overworld_abandonned_portal",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 30,
+  "separation": 8,
+  "salt": 18097
+ }
+}

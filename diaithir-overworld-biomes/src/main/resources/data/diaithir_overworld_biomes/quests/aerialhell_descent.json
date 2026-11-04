@@ -1,0 +1,21 @@
+{
+ "id": "diaithir_overworld_biomes:aerialhell_descent",
+ "codex_link": "diaithir_overworld_biomes:aerialhell",
+ "age": 4,
+ "age_gate": "diaithir:age/4",
+ "title": "Descent: Aerial Hell",
+ "description": "Enter Aerial Hell and mine its first ore.",
+ "tasks": [
+  {
+   "type": "dimension",
+   "dimension": "aerialhell:aerial_hell"
+  }
+ ],
+ "rewards": [
+  {
+   "type": "energy",
+   "amount_j": 100
+  }
+ ],
+ "next": []
+}

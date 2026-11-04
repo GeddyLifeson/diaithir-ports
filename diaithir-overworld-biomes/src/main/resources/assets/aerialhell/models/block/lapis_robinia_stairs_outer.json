@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/outer_stairs",
+ "textures": {
+  "bottom": "aerialhell:block/lapis_robinia_stairs",
+  "side": "aerialhell:block/lapis_robinia_stairs",
+  "top": "aerialhell:block/lapis_robinia_stairs"
+ }
+}

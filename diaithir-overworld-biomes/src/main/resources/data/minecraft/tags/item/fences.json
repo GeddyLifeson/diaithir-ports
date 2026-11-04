@@ -1,6 +1,15 @@
 {
  "replace": false,
  "values": [
+  "aerialhell:aerial_tree_fence",
+  "aerialhell:copper_pine_fence",
+  "aerialhell:ghost_boat_fence",
+  "aerialhell:golden_beech_fence",
+  "aerialhell:gray_shroom_fence",
+  "aerialhell:lapis_robinia_fence",
+  "aerialhell:shadow_pine_fence",
+  "aerialhell:sky_cactus_fiber_fence",
+  "aerialhell:stellar_jungle_tree_fence",
   "aether_ii:amberoot_fence",
   "aether_ii:greatroot_fence",
   "aether_ii:skyroot_fence",

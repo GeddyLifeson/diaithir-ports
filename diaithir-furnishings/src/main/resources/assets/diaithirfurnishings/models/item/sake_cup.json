@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/sake_cup"
+  "layer0": "diaithirfurnishings:item/sake_cup_pot"
  }
 }

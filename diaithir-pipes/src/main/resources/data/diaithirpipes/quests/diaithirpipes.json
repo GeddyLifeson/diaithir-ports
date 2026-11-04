@@ -1,0 +1,11 @@
+[
+  {
+    "id": "diaithirpipes/first",
+    "name": "Lay your first pipe run",
+    "text": "Join a chest to a furnace with item pipes, then move water with a fluid pipe.",
+    "age": 5,
+    "links": [
+      "diaithirstoragenet/first"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Fordson Model F Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 1.1,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Fordson Model F Wheel",
+   "modelName": "wheel_fordson_f",
+   "textureName": "wheel_fordson_f",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

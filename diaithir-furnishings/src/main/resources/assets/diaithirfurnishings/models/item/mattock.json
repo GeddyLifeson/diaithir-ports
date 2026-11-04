@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/mattock"
+  "layer0": "diaithirfurnishings:item/mattock_head",
+  "layer1": "diaithirfurnishings:item/mattock_handle",
+  "layer2": "diaithirfurnishings:item/mattock_binding"
  }
 }
