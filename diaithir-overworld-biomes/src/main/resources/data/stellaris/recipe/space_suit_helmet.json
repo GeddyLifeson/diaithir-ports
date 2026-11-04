@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "stellaris:desh_ingot",
+  "G": "minecraft:glass"
+ },
+ "pattern": [
+  "###",
+  "#G#"
+ ],
+ "result": {
+  "id": "stellaris:space_suit_helmet"
+ }
+}

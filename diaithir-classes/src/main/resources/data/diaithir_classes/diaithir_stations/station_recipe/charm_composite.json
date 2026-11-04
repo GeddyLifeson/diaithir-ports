@@ -1,0 +1,19 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 22,
+ "ingredients": [
+  {
+   "item": "diaithirarms:ceramic_plate",
+   "count": 4
+  },
+  {
+   "item": "minecraft:lapis_lazuli",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:charm_composite",
+  "count": 1
+ }
+}

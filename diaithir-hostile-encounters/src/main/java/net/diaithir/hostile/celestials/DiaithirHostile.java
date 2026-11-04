@@ -12,7 +12,9 @@ import net.neoforged.neoforge.common.NeoForge;
 public final class DiaithirHostile {
     public static final String ID = "diaithirhostile";
 
-    public DiaithirHostile(IEventBus bus) {
+    public DiaithirHostile(net.neoforged.bus.api.IEventBus bus, net.neoforged.fml.ModContainer container, net.neoforged.api.distmarker.Dist dist) {
+        net.diaithir.hostile.raided.Raided.init(bus, container, dist);
+        net.diaithir.hostile.hordes.neoforge.HordeHoardModNeoForge.init(bus);
         net.diaithir.hostile.encounters.Consolidated.load();
         net.diaithir.hostile.encounters.ConsolidatedItems.register(bus);
         net.diaithir.hostile.encounters.ConsolidatedBehaviour.register();

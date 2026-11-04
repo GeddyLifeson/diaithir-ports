@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 6000.0,
   "fuelCapacity": 150000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 75000,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,
@@ -45,7 +45,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_mack_type_75"
+   "defaultPart": "diaithirvehicles:engine_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -56,7 +58,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -67,7 +72,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -78,7 +86,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -89,7 +99,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75"
+   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -106,7 +118,9 @@
     -2.0,
     0.5,
     0.2
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -117,7 +131,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -128,7 +144,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -139,18 +157,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    1.45,
-    0
-   ],
-   "width": 2.4,
-   "height": 2.9
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
@@ -164,5 +173,98 @@
    ]
   }
  ],
- "rendering": {}
+ "rendering": {},
+ "instruments": [
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 78,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:speedo"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:fuel"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 302,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:tacho"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 100,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:readout"
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.45,
+      0
+     ],
+     "width": 2.4,
+     "height": 2.9
+    }
+   ]
+  }
+ ]
 }

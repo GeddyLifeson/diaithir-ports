@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/door_top_left",
+ "textures": {
+  "bottom": "stellaris:block/lunar_door",
+  "top": "stellaris:block/lunar_door"
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "id": "terraform_builder",
+ "tier": "AUTOMATED",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 77,
+  "l": 154,
+  "h": 38
+ },
+ "result": "diaithirmega:terraform_builder",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 126400,
+   "ghost": "diaithirmega:ghost/terraform_builder_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 2
+    }
+   ],
+   "base_ticks": 94800,
+   "ghost": "diaithirmega:ghost/terraform_builder_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "printer_head",
+     "count": 1
+    }
+   ],
+   "base_ticks": 158000,
+   "ghost": "diaithirmega:ghost/terraform_builder_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 6
+    }
+   ],
+   "base_ticks": 240,
+   "ghost": "diaithirmega:ghost/terraform_builder_crew"
+  },
+  {
+   "id": "autonomy",
+   "order": 5,
+   "slots": [
+    {
+     "kind": "autonomy_module",
+     "count": 1
+    }
+   ],
+   "base_ticks": 100,
+   "ghost": "diaithirmega:ghost/terraform_builder_autonomy"
+  }
+ ],
+ "crane_speedup": 1.0
+}

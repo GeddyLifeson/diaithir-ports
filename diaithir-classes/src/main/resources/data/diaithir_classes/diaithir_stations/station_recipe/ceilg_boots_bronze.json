@@ -1,0 +1,19 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "item": "diaithirarms:bronze_boots",
+   "count": 1
+  },
+  {
+   "item": "diaithir_classes:ceilg_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_boots_bronze",
+  "count": 1
+ }
+}

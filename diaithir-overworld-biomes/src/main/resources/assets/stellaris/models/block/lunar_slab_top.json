@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab_top",
+ "textures": {
+  "bottom": "stellaris:block/lunar_slab",
+  "side": "stellaris:block/lunar_slab",
+  "top": "stellaris:block/lunar_slab"
+ }
+}

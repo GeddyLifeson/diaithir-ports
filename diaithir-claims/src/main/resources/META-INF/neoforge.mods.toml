@@ -8,6 +8,12 @@ version = "${version}"
 displayName = "Diaithir Claims"
 description = "Claim the chunk you stand in: others cannot break, build, open or blow it up unless you trust them. Clean-room; written from how chunk-claim mods behave, no code taken."
 
+[[mods]]
+modId = "ftbchunks"
+version = "${version}"
+displayName = "FTB Chunks (Diaithir)"
+description = "Compatibility alias: Diaithir Claims replaces FTB Chunks. Dependents on ftbchunks resolve here; /ftbchunks is an alias of /claim."
+
 [[dependencies.diaithirclaims]]
 modId = "neoforge"
 type = "required"

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "stellaris:iron_plating_block"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "stellaris:iron_plating_slab",
+  "count": 6
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "stellaris:desh_plating_block"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "stellaris:desh_plating_slab",
+  "count": 6
+ }
+}

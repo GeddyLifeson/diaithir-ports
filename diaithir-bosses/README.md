@@ -19,6 +19,12 @@ Every Panscriptum planet has 6 to 12 bosses (more for bigger planets, one per Ag
 
 Note: tools/gen.py still writes the old vanilla-body textures; rerun tools/gen_planet_bosses.py after it, which gives every own boss (the 7 older, the mythic kits when diaithir_myth is absent, the 9 Ascendant) its own look and re-sizes it.
 
+## Shardfall Gate (survey part 2, clean-room Boss Checklist idea)
+
+`diaithirbosses:shardfall_gate` is a block that reads `data/diaithirbosses/gate/requirements.json`
+(the 18 needs of the win.gate beat) and opens only when every need is marked done. Commands:
+`/gate status`, `/gate mark <need>` (ops), `/gateselftest` (ops). State is world SavedData.
+Written from the behaviour of Boss Checklist only; no upstream code.
 ## Age Wardens (mini-boss per Age: I-VI and VIII)
 `age_warden_1..6` and `age_warden_8` (Age 7 maps to the Age VI warden). Each copies an existing boss of the module (same body kind, same attack classes, look and texture copied and tinted, no new art): health about 45% of that boss, damage 80%, Age-gated loot filtered from it plus `champion_token` and `ageshard`, Age scaling capped (0.2 x 3 steps), boss tags (dwarfsandgiants size pre-tagged, remnant_mobs never_leveled/never_ranked, c:bosses). `summon.rite = "warden_altar"` (block `diaithirbosses:warden_altar`, built by the rites thread; rite chains are ports #242). Age IV calls a wolf pack in place of the steam cloud.
 - Spawn hook for rites: `AgeWardens.spawn(level, age, pos, altarOrNull)`, `AgeWardens.spawnCurrent(level, pos, altarOrNull)`, `AgeWardens.profileFor(age)`. Death fires `EventHooks.BossDefeatedEvent` with id `age_warden_<age>`. Commands: `/boss warden <age>` or `/boss spawn age_warden_<age>`.

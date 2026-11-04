@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#stellaris:is_earth_orbit",
+ "spawners": {
+  "type": "stellaris:star_crawler",
+  "weight": 10,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

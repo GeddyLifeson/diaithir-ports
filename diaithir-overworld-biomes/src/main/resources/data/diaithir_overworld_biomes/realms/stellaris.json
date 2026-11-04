@@ -1,0 +1,762 @@
+{
+ "modid": "stellaris",
+ "blocks": [
+  {
+   "id": "ash_layer",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ash_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "astrum_vitreus_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "astrum_vitreus_cluster",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "casus_astrum_dirt",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "casus_astrum_grass",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "casus_astrum_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_moon_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_moon_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dark_cobblestone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dark_infected_dirt",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "deepslate_titanium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "desh_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "desh_pillar",
+   "kind": "pillar",
+   "mat": "metal"
+  },
+  {
+   "id": "desh_plating_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dustbloom",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "earth_globe",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "eclipse_tulip",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "heart_of_luna_trophy",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "iced_magma_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "iron_pillar",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "iron_plating_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunar_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_dirt",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_fence_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_grass",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "lunar_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "lunar_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_rock",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_stoned_wood_log",
+   "kind": "pillar",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_vines",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "lunar_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "mars_cobblestone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mars_ice",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mars_regolith",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mars_rock",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mars_sand",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mars_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "meteorite",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_cobblestone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_cracked_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_deepslate",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_desh_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "moon_globe",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_pillar",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_polished_stone_brick_slab",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_polished_stone_brick_stairs",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_sand",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_stone_dust",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_stone_iron_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "moon_stone_pillar",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "moon_titanium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "moon_vines",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "novite_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "novite_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "oxygen_distributor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "packed_ice_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "packed_ice_pillar",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "polished_moon_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "polished_packed_ice",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "raw_desh_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "raw_novite_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "raw_titanium_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "rusted_iron",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "star_crawler_boss_trophy",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "star_light_panel",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "starlight_bush",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stripped_lunar_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_lunar_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "titanium_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "titanium_door",
+   "kind": "door",
+   "mat": "stone"
+  },
+  {
+   "id": "titanium_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "titanium_pillar",
+   "kind": "pillar",
+   "mat": "metal"
+  },
+  {
+   "id": "titanium_plating_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "vertical_desh_plating_slab",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "vertical_desh_slab",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "vertical_iron_plating_slab",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "vertical_moon_stone_slab",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "vertical_titanium_plating_slab",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "vertical_titanium_slab",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "casus_astrum_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "casus_astrum_stone"
+  },
+  {
+   "id": "casus_astrum_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "casus_astrum_stone"
+  },
+  {
+   "id": "desh_plating_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "desh_plating_block"
+  },
+  {
+   "id": "desh_plating_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "desh_plating_block"
+  },
+  {
+   "id": "desh_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "desh_block"
+  },
+  {
+   "id": "iron_plating_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "iron_plating_block"
+  },
+  {
+   "id": "iron_plating_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "iron_plating_block"
+  },
+  {
+   "id": "lunar_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "lunar_planks"
+  },
+  {
+   "id": "lunar_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "lunar_planks"
+  },
+  {
+   "id": "moon_stone_brick_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "moon_stone_bricks"
+  },
+  {
+   "id": "moon_stone_brick_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "moon_stone_bricks"
+  },
+  {
+   "id": "moon_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "moon_stone"
+  },
+  {
+   "id": "moon_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "moon_stone"
+  },
+  {
+   "id": "titanium_plating_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "titanium_plating_block"
+  },
+  {
+   "id": "titanium_plating_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "titanium_plating_block"
+  },
+  {
+   "id": "titanium_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "titanium_block"
+  },
+  {
+   "id": "titanium_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "titanium_block"
+  }
+ ],
+ "items": [
+  "blue_plasma",
+  "casus_vitreus_cluster",
+  "desh_ingot",
+  "engine_fan",
+  "fluid_cell",
+  "hydrogen_motor",
+  "launch_pad_towers",
+  "lunar_crawler_spike_cluster",
+  "lunar_parasite_tooth",
+  "moon_berries",
+  "moon_pillar_end",
+  "moon_pillar_side",
+  "moon_stone_pillar_end",
+  "moon_stone_pillar_side",
+  "neural_fiber",
+  "neural_tissue",
+  "novite_ingot",
+  "oil_finder",
+  "parasite",
+  "pathogen_storage_cell",
+  "raw_desh",
+  "raw_novite",
+  "raw_titanium",
+  "rocket",
+  "rocket_engine",
+  "rocket_fin",
+  "rocket_nose_cone",
+  "silicon",
+  "space_suit_damage_protection_module_tier_1",
+  "space_suit_damage_protection_module_tier_2",
+  "space_suit_damage_protection_module_tier_3",
+  "space_suit_diesel_tank_module_tier_1",
+  "space_suit_diesel_tank_module_tier_2",
+  "space_suit_diesel_tank_module_tier_3",
+  "space_suit_hydrogen_tank_module_tier_1",
+  "space_suit_hydrogen_tank_module_tier_2",
+  "space_suit_hydrogen_tank_module_tier_3",
+  "space_suit_jet_module_tier_1",
+  "space_suit_jet_module_tier_2",
+  "space_suit_jet_module_tier_3",
+  "space_suit_night_vision_module",
+  "space_suit_oil_finder_module_tier_1",
+  "space_suit_oil_finder_module_tier_2",
+  "space_suit_oil_finder_module_tier_3",
+  "space_suit_oxygen_module_tier_1",
+  "space_suit_oxygen_module_tier_2",
+  "space_suit_oxygen_module_tier_3",
+  "titanium_ingot",
+  "titanium_nugget",
+  "vaccine",
+  "big_black_can",
+  "big_blue_can",
+  "big_brown_can",
+  "big_cyan_can",
+  "big_gray_can",
+  "big_green_can",
+  "big_light_blue_can",
+  "big_light_gray_can",
+  "big_lime_can",
+  "big_magenta_can",
+  "big_orange_can",
+  "big_pink_can",
+  "big_purple_can",
+  "big_red_can",
+  "big_white_can",
+  "big_yellow_can",
+  "black_can",
+  "blue_can",
+  "brown_can",
+  "cyan_can",
+  "gray_can",
+  "green_can",
+  "light_blue_can",
+  "light_gray_can",
+  "lime_can",
+  "magenta_can",
+  "orange_can",
+  "pink_can",
+  "purple_can",
+  "red_can",
+  "white_can",
+  "yellow_can"
+ ],
+ "gear": [
+  {
+   "id": "space_suit_boots",
+   "prefix": "space_suit",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "space_suit_chestplate",
+   "prefix": "space_suit",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "space_suit_helmet",
+   "prefix": "space_suit",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "space_suit_leggings",
+   "prefix": "space_suit",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "titanium_axe",
+   "prefix": "titanium",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "titanium_hoe",
+   "prefix": "titanium",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "titanium_pickaxe",
+   "prefix": "titanium",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "titanium_shovel",
+   "prefix": "titanium",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "titanium_sword",
+   "prefix": "titanium",
+   "kind": "sword",
+   "tier": "iron"
+  }
+ ],
+ "portals": [],
+ "mobs": [
+  {
+   "id": "alien",
+   "kind": "zombie",
+   "role": "passive",
+   "hp": 10,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "blue_fish",
+   "kind": "zombie",
+   "role": "passive",
+   "hp": 10,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "heart_of_luna",
+   "kind": "zombie",
+   "role": "boss",
+   "hp": 300,
+   "atk": 6,
+   "scale": 1.6
+  },
+  {
+   "id": "luna_shadow",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lunar_parasite",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "parasite_affected_villager",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "parasite_affected_villager_evolved",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "star_crawler",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "star_crawler_boss",
+   "kind": "zombie",
+   "role": "boss",
+   "hp": 300,
+   "atk": 6,
+   "scale": 1.6
+  }
+ ]
+}

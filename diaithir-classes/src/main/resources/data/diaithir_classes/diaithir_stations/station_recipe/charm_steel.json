@@ -1,0 +1,19 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "time_s": 14,
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 4
+  },
+  {
+   "item": "minecraft:lapis_lazuli",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:charm_steel",
+  "count": 1
+ }
+}

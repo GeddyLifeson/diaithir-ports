@@ -1,0 +1,27 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 22,
+ "ingredients": [
+  {
+   "item": "minecraft:leather",
+   "count": 1
+  },
+  {
+   "item": "minecraft:string",
+   "count": 1
+  },
+  {
+   "item": "diaithirarms:ceramic_plate",
+   "count": 3
+  },
+  {
+   "item": "diaithir_classes:sleagh_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:sleagh_sling_composite",
+  "count": 1
+ }
+}
