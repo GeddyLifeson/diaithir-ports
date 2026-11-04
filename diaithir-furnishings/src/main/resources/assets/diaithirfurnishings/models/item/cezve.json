@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/cezve"
+  "layer0": "diaithirfurnishings:item/cezve_pot",
+  "layer1": "diaithirfurnishings:item/cezve_handle"
  }
 }

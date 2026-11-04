@@ -1,0 +1,17 @@
+{
+  "station": "station.steam_forge",
+  "stage": "part",
+  "time_s": 12,
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_radio_missile_motor",
+    "count": 1
+  },
+  "power": "steam",
+  "w": 20000.0
+}

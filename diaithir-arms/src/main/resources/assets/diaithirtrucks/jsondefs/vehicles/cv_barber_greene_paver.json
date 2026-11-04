@@ -101,34 +101,62 @@
  ],
  "definitions": [
   {
-   "subName": "_c",
+   "subName": "",
    "name": "Asphalt Paver (Yellow)",
    "modelName": "cv_barber_greene_paver",
-   "textureName": "paint_c",
+   "textureName": "paintc",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_orange",
+   "subName": "_orange",
    "name": "Asphalt Paver (Orange)",
    "modelName": "cv_barber_greene_paver",
-   "textureName": "paint_c_orange",
+   "textureName": "paintc_orange",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_white",
+   "subName": "_white",
    "name": "Asphalt Paver (White)",
    "modelName": "cv_barber_greene_paver",
-   "textureName": "paint_c_white",
+   "textureName": "paintc_white",
    "extraMaterialLists": [
     []
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "screed",
+    "animations": [
+     {
+      "animationType": "translation",
+      "variable": "screed_lift",
+      "centerPoint": [
+       0,
+       0,
+       0
+      ],
+      "axis": [
+       0,
+       0.5,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "screed_lift"
+  ]
+ },
  "car": {
   "isFrontWheelDrive": true,
   "isRearWheelDrive": true,

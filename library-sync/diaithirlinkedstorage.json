@@ -1,0 +1,17 @@
+[
+ {
+  "id": "diaithirlinkedstorage:linked_cell",
+  "name": "Linked Cell",
+  "text": "Linked Cell. Age 6."
+ },
+ {
+  "id": "diaithirlinkedstorage:linked_chest",
+  "name": "Linked Chest",
+  "text": "Linked Chest. Age 6."
+ },
+ {
+  "id": "diaithirlinkedstorage:linked_tank",
+  "name": "Linked Tank",
+  "text": "Linked Tank. Age 6."
+ }
+]

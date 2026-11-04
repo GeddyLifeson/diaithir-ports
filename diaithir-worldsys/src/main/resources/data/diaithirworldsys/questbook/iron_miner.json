@@ -1,0 +1,25 @@
+{
+ "title": "Iron Miner",
+ "category": "early",
+ "objectives": [
+  {
+   "type": "mine",
+   "target": "minecraft:iron_ore",
+   "amount": 12
+  }
+ ],
+ "rewards": [
+  {
+   "type": "item",
+   "value": "minecraft:iron_ingot",
+   "amount": 16
+  },
+  {
+   "type": "points",
+   "amount": 1
+  }
+ ],
+ "requires": [
+  "stone_age"
+ ]
+}

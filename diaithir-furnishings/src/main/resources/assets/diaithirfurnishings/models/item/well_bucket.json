@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/well_bucket"
+  "layer0": "diaithirfurnishings:item/well_bucket_head",
+  "layer1": "diaithirfurnishings:item/well_bucket_handle",
+  "layer2": "diaithirfurnishings:item/well_bucket_binding"
  }
 }

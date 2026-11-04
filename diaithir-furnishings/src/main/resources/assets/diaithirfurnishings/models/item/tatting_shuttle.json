@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/tatting_shuttle"
+  "layer0": "diaithirfurnishings:item/tatting_shuttle_head",
+  "layer1": "diaithirfurnishings:item/tatting_shuttle_handle",
+  "layer2": "diaithirfurnishings:item/tatting_shuttle_binding"
  }
 }

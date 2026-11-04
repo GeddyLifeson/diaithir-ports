@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "aerialhell:block/sky_cactus_fiber_vine_rope_spool"
+ }
+}

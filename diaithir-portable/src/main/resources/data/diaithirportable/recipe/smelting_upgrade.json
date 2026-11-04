@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "pattern": [" F ","IRI"," P "], "key": { "F": "minecraft:furnace", "I": "minecraft:iron_ingot", "R": "minecraft:redstone", "P": "minecraft:paper" }, "result": { "id": "diaithirportable:smelting_upgrade" } }

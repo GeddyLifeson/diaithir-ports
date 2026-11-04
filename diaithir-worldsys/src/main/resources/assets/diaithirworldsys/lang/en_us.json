@@ -146,5 +146,7 @@
  "block.diaithirworldsys.utilitarian_white_soliciting_carpet": "Utilitarian White Soliciting Carpet",
  "block.diaithirworldsys.utilitarian_white_trapped_soliciting_carpet": "Utilitarian White Trapped Soliciting Carpet",
  "block.diaithirworldsys.utilitarian_yellow_soliciting_carpet": "Utilitarian Yellow Soliciting Carpet",
- "block.diaithirworldsys.utilitarian_yellow_trapped_soliciting_carpet": "Utilitarian Yellow Trapped Soliciting Carpet"
+ "block.diaithirworldsys.utilitarian_yellow_trapped_soliciting_carpet": "Utilitarian Yellow Trapped Soliciting Carpet",
+ "chapters.craft.blocked": "You have not unlocked %s yet",
+ "chapters.dimension.blocked": "You cannot enter %s yet"
 }

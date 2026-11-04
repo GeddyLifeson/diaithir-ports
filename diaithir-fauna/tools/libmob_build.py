@@ -12,9 +12,9 @@ KG = {'tiny': 0.3, 'small': 6, 'medium': 70, 'large': 700, 'huge': 7000, 'coloss
 DIET = {'herb': 'herb', 'carn': 'carn', 'omni': 'omni', 'pisc': 'pisc', 'insect': 'insect', 'none': 'herb'}
 EL = {'none', 'fire', 'ice', 'lightning', 'poison', 'shadow', 'light', 'earth', 'water', 'wind'}
 # no bear, deer or humanoid plan exists in fauna: nearest body shape
-ALIAS = {'ungulate': 'giraffid', 'ungulate_placeholder': 'giraffid', 'ursine': 'primate_ape', 'ghost': 'primate_ape',
+ALIAS = {'ungulate': 'cervid', 'ungulate_placeholder': 'cervid', 'ghost': 'humanoid', 'bear': 'ursine', 'deer': 'cervid', 'cat': 'felid', 'dog': 'canid', 'feline': 'felid', 'person': 'humanoid',
          'turtle': 'sea_turtle', 'tortoise': 'sea_turtle', 'viperid_small': 'lizard', 'ant': 'beetle', 'spider': 'scorpion', 'finch': 'songbird',
-         'woodpecker': 'songbird', 'cuckoo': 'songbird', 'pelican': 'seabird', 'wolf': 'mustelid'}
+         'woodpecker': 'songbird', 'cuckoo': 'songbird', 'pelican': 'seabird', 'wolf': 'canid'}
 F_FLIES, F_SWIMS, F_AGGRESSIVE = 1 << 0, 1 << 7, 1 << 8
 sp = json.load(open(f'{RES}/species.json'))['species']
 plans = set(json.load(open(f'{RES}/plans/index.json')))
@@ -39,6 +39,7 @@ OUTF = f'{RES}/library_mobs.tsv.gz'
 if os.path.exists(OUTF):  # incremental: keep rows from earlier runs (job + retry jobs)
     for l in gzip.open(OUTF, 'rt', encoding='utf-8'):
         if l.strip(): rows[l.split('\t', 1)[0]] = l.rstrip('\n')
+hab = {k: v.split('\t')[9] for k, v in rows.items() if len(v.split('\t')) > 9}  # habitat column survives a re-sort
 for rid, o in src.items():
     t = (done.get(rid) or {}).get('text', '')
     try:
@@ -57,7 +58,7 @@ for rid, o in src.items():
             kg = KG[a['size']]; sc0, kg0 = ref[a['plan']]
             scale = max(0.2, min(6.0, sc0 * (kg / kg0) ** (1 / 3)))
             fl = (F_FLIES if cls[a['plan']] == 'fly' else 0) | (F_SWIMS if cls[a['plan']] == 'water' else 0) | (F_AGGRESSIVE if a.get('temper') == 'hostile' else 0)
-            rows[eid] = '\t'.join([eid, n.replace('\t', ' '), a['plan'], str(tier), str(kg), f'{scale:.2f}', DIET.get(a['diet'], 'omni'), str(fl), a['element']])
+            rows[eid] = '\t'.join([eid, n.replace('\t', ' '), a['plan'], str(tier), str(kg), f'{scale:.2f}', DIET.get(a['diet'], 'omni'), str(fl), a['element']] + ([hab[eid]] if eid in hab else []))
         except Exception:
             pass
     if any(e not in rows for e in o['ids']): retry.append(o)

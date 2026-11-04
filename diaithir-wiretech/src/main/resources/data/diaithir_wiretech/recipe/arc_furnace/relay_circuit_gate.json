@@ -1,0 +1,19 @@
+{
+  "type": "diaithir_wiretech:arc_furnace",
+  "inputs": [
+    {
+      "ingredient": "diaithir_wiretech:mechanical_circuit_gate",
+      "count": 1
+    },
+    {
+      "ingredient": "minecraft:redstone",
+      "count": 2
+    }
+  ],
+  "energy": 1800,
+  "time": 100,
+  "result": {
+    "id": "diaithir_wiretech:relay_circuit_gate",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "diaithir_materials:roofing_thatch",
+    "diaithir_materials:roofing_slate",
+    "diaithir_materials:roofing_tile",
+    "diaithir_materials:roofing_metal_sheet",
+    "diaithir_materials:roofing_insulated_panel"
+  ]
+}

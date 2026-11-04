@@ -2,7 +2,8 @@
  "module": "diaithirhudoverlays",
  "side": "client",
  "features": [
-  "betteradvancements"
+  "betteradvancements",
+  "lookat"
  ],
  "codex": {
   "entry": "diaithirhudoverlays.overview",

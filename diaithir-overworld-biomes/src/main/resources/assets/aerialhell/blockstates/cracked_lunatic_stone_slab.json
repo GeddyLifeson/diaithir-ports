@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aerialhell:block/cracked_lunatic_stone_slab"
+    },
+    "type=double": {
+      "model": "aerialhell:block/cracked_lunatic_stone"
+    },
+    "type=top": {
+      "model": "aerialhell:block/cracked_lunatic_stone_slab_top"
+    }
+  }
+}

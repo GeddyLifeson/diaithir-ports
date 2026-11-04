@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "diaithirtrees:block/socotra_dragon_stripped_log"
+  },
+  "axis=z": {
+   "model": "diaithirtrees:block/socotra_dragon_stripped_log_horizontal",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "diaithirtrees:block/socotra_dragon_stripped_log_horizontal",
+   "x": 90,
+   "y": 90
+  }
+ }
+}
