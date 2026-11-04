@@ -29,6 +29,14 @@ public final class SelfTest {
                 boolean reach = mods != null && mods.modifiers().stream().anyMatch(m -> m.attribute().is(net.minecraft.world.entity.ai.attributes.Attributes.ENTITY_INTERACTION_RANGE));
                 if (st.getMaxDamage() > 0 && st.has(DataComponents.WEAPON) && reach == (e.reach() > 0)) ok++; else { bad++; System.out.println("[armsselftest] BAD roster " + e.id()); }
             }
+            {
+                boolean g1 = net.diaithir.arms.gadgets.SentryTurret.loaded(0, 2, 1) == 8 && net.diaithir.arms.gadgets.SentryTurret.loaded(30, 5, 2) == net.diaithir.arms.gadgets.SentryTurret.MAX;
+                boolean g2 = net.diaithir.arms.gadgets.MiningLaser.canCut(1.5F) && !net.diaithir.arms.gadgets.MiningLaser.canCut(50F) && !net.diaithir.arms.gadgets.MiningLaser.canCut(-1F);
+                boolean g3 = DiaithirArms.SENTRY_TURRET.isBound() && new ItemStack(DiaithirArms.LASER.get()).getMaxDamage() == 600;
+                var ts = DiaithirArms.SENTRY_TURRET.get().defaultBlockState();
+                boolean g4 = ts.getValue(net.diaithir.arms.gadgets.SentryTurret.AMMO) == 0;
+                for (boolean x : new boolean[] {g1, g2, g3, g4}) if (x) ok++; else { bad++; System.out.println("[armsselftest] BAD gadgets " + g1 + g2 + g3 + g4); }
+            }
             ItemStack helm = new ItemStack(DiaithirArms.all().get("bone_helmet").get()), look = new ItemStack(DiaithirArms.all().get("steel_helmet").get());
             ItemStack tm = TransmogRecipe.apply(helm, look);
             boolean t1 = tm.get(DataComponents.EQUIPPABLE).assetId().equals(look.get(DataComponents.EQUIPPABLE).assetId())

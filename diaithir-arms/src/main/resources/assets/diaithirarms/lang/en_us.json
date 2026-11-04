@@ -110,5 +110,7 @@
  "item.diaithirarms.future_katana": "Future Katana",
  "item.diaithirarms.future_glaive": "Future Glaive",
  "item.diaithirarms.future_halberd": "Future Halberd",
- "item.diaithirarms.future_warhammer": "Future Warhammer"
+ "item.diaithirarms.future_warhammer": "Future Warhammer",
+ "block.diaithirarms.sentry_turret": "Sentry Turret",
+ "item.diaithirarms.mining_laser": "Mining Laser"
 }

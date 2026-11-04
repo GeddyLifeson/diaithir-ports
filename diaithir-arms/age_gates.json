@@ -115,6 +115,8 @@
   "diaithirarms:future_katana": "RODOS",
   "diaithirarms:future_glaive": "RODOS",
   "diaithirarms:future_halberd": "RODOS",
-  "diaithirarms:future_warhammer": "RODOS"
+  "diaithirarms:future_warhammer": "RODOS",
+  "diaithirarms:sentry_turret": "V",
+  "diaithirarms:mining_laser": "V"
  }
 }

@@ -17,3 +17,6 @@ Not tested: a real client (rendering of icons, worn armour layers, bow and cross
 
 ## Roster
 `/armsselftest` after the roster: ok=108 bad=0 (30 roster items checked for weapon component, durability and reach), 0 ERROR lines (2026-11-03).
+
+## Gadgets
+`/armsselftest` ok=112 bad=0. Live: a turret with ammo=8 killed a 20 hp husk 6 blocks away in line of sight in under 10 s and was left at ammo=2. The mining laser needs a player and was only checked by its pure rules. (2026-11-04)

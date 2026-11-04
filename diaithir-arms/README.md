@@ -45,3 +45,6 @@ Second content pack in this jar (no new jar). No 26.1 mod covers semi trucks, tr
 
 ## Roster (survey part 2, Spartan Weaponry behaviour, clean-room)
 `Roster.java` + `tools/gen_roster.py` add dagger, rapier, katana, glaive, halberd and warhammer in steel, tempered, composite, rodos and future (30 items). Long shapes add entity interaction range; textures are drawn procedurally from each material's sword palette. Age gates follow the material's sword.
+
+## Gadgets (survey part 2: turrets and mining laser, clean-room)
+`net.diaithir.arms.gadgets`: `sentry_turret` block (shoots the nearest hostile in line of sight within 14 blocks every 12 ticks, ammo as a block-state level loaded with arrows, no block entity) and `mining_laser` item (cuts the block in the crosshair up to 16 blocks, hardness cap 10, 600 uses). Written from the behaviour of Jungdab's Turrets and Mining Gadgets; no upstream code.
