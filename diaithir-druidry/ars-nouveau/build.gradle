@@ -3,9 +3,9 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.148'
 }
 
-// LGPL-3.0 module, ported from Ars Nouveau (code only). Compiled classes are folded into the diaithir-druidry jar by ../build.py.
+// LGPL-3.0 module, ported from Ars Nouveau (code only). The jar task builds the complete diaithir_druidry mod jar (druidry data + these classes), same content as ../build.py.
 version = project.mod_version
-base.archivesName = 'diaithir-druidry-ars-neoforge-26.1.2'
+base.archivesName = 'diaithir_druidry'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
@@ -22,3 +22,17 @@ dependencies {
 }
 
 tasks.withType(JavaCompile).configureEach { options.compilerArgs += ['-Xmaxerrs', '100000'] }
+
+// The built jar is the whole mod: druidry data and mods.toml (version filled in) beside the compiled classes.
+tasks.named('jar') {
+    from('../src/main/resources') { exclude 'META-INF/neoforge.mods.toml' }
+    from('../src/main/resources/META-INF') {
+        include 'neoforge.mods.toml'
+        into 'META-INF'
+        filter { it.replace('${version}', project.mod_version) }
+    }
+    from('../LICENSE')
+    from('LICENSE') { rename { 'LICENSE-Ars' } }
+    from('NOTICE') { rename { 'NOTICE-Ars' } }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
