@@ -27,7 +27,23 @@ public final class Sites {
         return GHOSTS.getOrDefault(level, Set.of());
     }
 
+    private static final Map<Level, Set<BlockPos>> DEPOTS = new WeakHashMap<>();
+
+    static void addDepot(Level level, BlockPos pos) {
+        DEPOTS.computeIfAbsent(level, l -> new LinkedHashSet<>()).add(pos.immutable());
+    }
+
+    static void removeDepot(Level level, BlockPos pos) {
+        Set<BlockPos> s = DEPOTS.get(level);
+        if (s != null) s.remove(pos);
+    }
+
+    static Set<BlockPos> depots(Level level) {
+        return DEPOTS.getOrDefault(level, Set.of());
+    }
+
     static void clear() {
+        DEPOTS.clear();
         GHOSTS.clear();
     }
 }

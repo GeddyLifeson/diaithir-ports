@@ -30,18 +30,71 @@ import java.util.List;
  */
 public final class DepotBlockEntity extends BlockEntity {
     /** One courier trip. done = the block was built (or the item returned), the courier is flying home until freeAt. */
-    public record Job(long ghost, ItemResource item, long arriveAt, long freeAt, boolean done) {
+    public record Job(long ghost, ItemResource item, long arriveAt, long freeAt, boolean done, boolean demolish) {
+        Job(long ghost, ItemResource item, long arriveAt, long freeAt, boolean done) {
+            this(ghost, item, arriveAt, freeAt, done, false);
+        }
+
         static final Codec<Job> CODEC = RecordCodecBuilder.create(i -> i.group(
                 Codec.LONG.fieldOf("ghost").forGetter(Job::ghost),
                 ItemResource.CODEC.fieldOf("item").forGetter(Job::item),
                 Codec.LONG.fieldOf("arriveAt").forGetter(Job::arriveAt),
                 Codec.LONG.fieldOf("freeAt").forGetter(Job::freeAt),
-                Codec.BOOL.fieldOf("done").forGetter(Job::done)).apply(i, Job::new));
+                Codec.BOOL.fieldOf("done").forGetter(Job::done),
+                Codec.BOOL.optionalFieldOf("demolish", false).forGetter(Job::demolish)).apply(i, Job::new));
     }
 
     private static final int MAX_CHECKS = 64;
 
     private final List<Job> jobs = new ArrayList<>();
+    /** Blocks marked for demolition with the plan wand. A courier breaks one and brings the drops to stock (deconstruction plans). */
+    private final java.util.LinkedHashSet<Long> marks = new java.util.LinkedHashSet<>();
+    /** Carried by demolition jobs in place of a real item; never inserted anywhere. */
+    private static final ItemResource NONE = ItemResource.of(Items.STICK);
+
+    public boolean mark(BlockPos p) {
+        boolean added = marks.add(p.asLong());
+        if (added) setChanged();
+        return added;
+    }
+
+    public int marked() {
+        return marks.size();
+    }
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if (level != null && !level.isClientSide()) Sites.addDepot(level, worldPosition);
+    }
+
+    @Override
+    public void setRemoved() {
+        if (level != null) Sites.removeDepot(level, worldPosition);
+        super.setRemoved();
+    }
+
+    private void giveBackStack(ServerLevel level, net.minecraft.world.item.ItemStack st) {
+        ItemResource r = ItemResource.of(st);
+        int left = st.getCount();
+        for (ResourceHandler<ItemResource> h : stock(level)) {
+            if (left <= 0) break;
+            try (Transaction tx = Transaction.openRoot()) {
+                int in = h.insert(r, left, tx);
+                if (in > 0) {
+                    tx.commit();
+                    left -= in;
+                }
+            }
+        }
+        if (left > 0) level.addFreshEntity(new ItemEntity(level, worldPosition.getX() + 0.5, worldPosition.getY() + 1.0, worldPosition.getZ() + 0.5, st.copyWithCount(left)));
+    }
+
+    private boolean demolishable(ServerLevel level, BlockPos p) {
+        BlockState st = level.getBlockState(p);
+        return !st.isAir() && !(st.getBlock() instanceof DepotBlock) && !(st.getBlock() instanceof GhostBlock)
+                && st.getDestroySpeed(level, p) >= 0 && st.getFluidState().isEmpty();
+    }
 
     public DepotBlockEntity(BlockPos pos, BlockState state) {
         super(DiaithirLogistics.DEPOT_BE.get(), pos, state);
@@ -109,14 +162,20 @@ public final class DepotBlockEntity extends BlockEntity {
             if (!j.done() && now >= j.arriveAt()) {
                 BlockPos gp = BlockPos.of(j.ghost());
                 if (!level.isLoaded(gp)) continue;
-                if (level.getBlockEntity(gp) instanceof GhostBlockEntity g && level.getBlockState(gp).getBlock() instanceof GhostBlock) {
+                if (j.demolish()) {
+                    if (demolishable(level, gp)) {
+                        BlockState st = level.getBlockState(gp);
+                        for (net.minecraft.world.item.ItemStack d : net.minecraft.world.level.block.Block.getDrops(st, level, gp, level.getBlockEntity(gp), null, net.minecraft.world.item.ItemStack.EMPTY)) giveBackStack(level, d);
+                        level.destroyBlock(gp, false);
+                    }
+                } else if (level.getBlockEntity(gp) instanceof GhostBlockEntity g && level.getBlockState(gp).getBlock() instanceof GhostBlock) {
                     BlockState target = g.target();
                     level.setBlock(gp, target, 3);
                     level.playSound(null, gp, target.getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0F, 0.8F);
                 } else {
                     giveBack(level, j.item());
                 }
-                jobs.set(i, new Job(j.ghost(), j.item(), j.arriveAt(), j.freeAt(), true));
+                jobs.set(i, new Job(j.ghost(), j.item(), j.arriveAt(), j.freeAt(), true, j.demolish()));
                 changed = true;
             }
         }
@@ -152,6 +211,20 @@ public final class DepotBlockEntity extends BlockEntity {
                 }
             }
         }
+        // 2b. demolition marks go to free couriers too; no stock is needed, the drops come back to stock
+        free = Config.COURIERS_PER_DEPOT.get() - jobs.size();
+        for (Iterator<Long> it = marks.iterator(); it.hasNext() && free > 0; ) {
+            BlockPos mp = BlockPos.of(it.next());
+            if (mp.distSqr(worldPosition) > Math.pow(Config.SERVICE_RADIUS.get(), 2) || !level.isLoaded(mp) || !demolishable(level, mp)) {
+                if (level.isLoaded(mp) && !demolishable(level, mp)) { it.remove(); changed = true; }
+                continue;
+            }
+            it.remove();
+            long leg = (long) Math.ceil(trip(worldPosition, mp)) + 4;
+            jobs.add(new Job(mp.asLong(), NONE, now + leg, now + leg * 2, false, true));
+            free--;
+            changed = true;
+        }
         // 3. a trail of sparks along each courier's path
         for (Job j : jobs) {
             long leg = Math.max(1, j.freeAt() - j.arriveAt());
@@ -174,7 +247,7 @@ public final class DepotBlockEntity extends BlockEntity {
     /** Called when the depot is broken: couriers in flight drop what they carry. */
     void dropCargo(ServerLevel level) {
         for (Job j : jobs) {
-            if (!j.done()) {
+            if (!j.done() && !j.demolish()) {
                 level.addFreshEntity(new ItemEntity(level, worldPosition.getX() + 0.5, worldPosition.getY() + 0.5, worldPosition.getZ() + 0.5, j.item().toStack(1)));
                 BlockPos gp = BlockPos.of(j.ghost());
                 if (level.isLoaded(gp) && level.getBlockEntity(gp) instanceof GhostBlockEntity g) g.release();
@@ -187,6 +260,7 @@ public final class DepotBlockEntity extends BlockEntity {
     protected void saveAdditional(ValueOutput out) {
         super.saveAdditional(out);
         out.store("jobs", Job.CODEC.listOf(), new ArrayList<>(jobs));
+        out.store("marks", Codec.LONG.listOf(), new ArrayList<>(marks));
     }
 
     @Override
@@ -194,5 +268,7 @@ public final class DepotBlockEntity extends BlockEntity {
         super.loadAdditional(in);
         jobs.clear();
         in.read("jobs", Job.CODEC.listOf()).ifPresent(jobs::addAll);
+        marks.clear();
+        in.read("marks", Codec.LONG.listOf()).ifPresent(marks::addAll);
     }
 }
