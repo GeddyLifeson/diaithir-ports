@@ -1,0 +1,333 @@
+{
+ "type": "minecraft:chest",
+ "random_sequence": "stellaris:chests/meteor",
+ "pools": [
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:space_suit_boots",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:space_suit_chestplate",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:space_suit_helmet",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:space_suit_leggings",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:titanium_axe",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:titanium_hoe",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:titanium_pickaxe",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:titanium_shovel",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:titanium_sword",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "min": 0.3,
+        "max": 0.9
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 2.0,
+    "max": 3.0
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:desh_ingot",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 4.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:novite_ingot",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 4.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:raw_desh",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 4.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:raw_novite",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 4.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:raw_titanium",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 4.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:titanium_ingot",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 4.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "stellaris:titanium_nugget",
+     "weight": 3,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 4.0
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 1.0,
+    "max": 4.0
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:bread",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 6.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:torch",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 6.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:iron_ingot",
+     "weight": 2,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 6.0
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:gold_ingot",
+     "weight": 1,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 6.0
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

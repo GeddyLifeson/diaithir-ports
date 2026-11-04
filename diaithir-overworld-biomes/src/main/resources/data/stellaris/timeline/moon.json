@@ -1,0 +1,11 @@
+{
+  "clock": "stellaris:moon",
+  "period_ticks": 24000,
+  "time_markers": {
+    "stellaris:lunar_day": {"show_in_commands": true, "ticks": 1000},
+    "stellaris:lunar_noon": {"show_in_commands": true, "ticks": 6000},
+    "stellaris:lunar_night": {"show_in_commands": true, "ticks": 13000},
+    "stellaris:lunar_midnight": {"show_in_commands": true, "ticks": 18000}
+  },
+  "tracks": {}
+}
