@@ -216,6 +216,23 @@
    "hudY": 40,
    "hudScale": 0.85,
    "defaultInstrument": "diaithirvehicles:tacho"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 100,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:readout"
   }
  ]
 }

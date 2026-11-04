@@ -50,6 +50,18 @@ for key, (ox, oy, label, var, top, ticks, labels) in inst.items():
              "rotationVariable": var, "rotationOffset": -135.0, "rotationFactor": factor, "rotationClampMin": -135.0, "rotationClampMax": 135.0 + 0.0},
         ],
     }
+# digital readout: dark plate from the sheet plus a text component showing km/h (text draws without the dial textures, which also tells a broken texture path from a broken HUD)
+d.rounded_rectangle([384 + 4, 40, 384 + 124, 88], 8, fill=(15, 15, 18, 255), outline=(150, 150, 155, 255), width=3)
+inst["readout"] = (384, 0, "Speed readout", None, None, None, None)
+defs["readout"] = {
+    "general": {"name": "Speed readout", "materialLists": [["minecraft:iron_ingot:0:1"]]},
+    "textureName": "instruments.png",
+    "components": [
+        {"xCenter": 0, "yCenter": 0, "scale": 1.0, "textureXCenter": 384 + 64, "textureYCenter": 64, "textureWidth": 128, "textureHeight": 128},
+        {"xCenter": 0, "yCenter": 0, "scale": 1.0, "textObject": {"pos": [0, 0, 0], "rot": [0, 0, 0], "scale": 1.0, "variableName": "velocity", "variableFactor": 3.6, "variableOffset": 0.0,
+                                                                  "variableFormat": "%.0f km/h", "fontName": "default", "defaultText": "", "maxLength": 9, "color": "#FFFFFF", "renderPosition": 1}},
+    ],
+}
 os.makedirs(os.path.join(root, "textures"), exist_ok=True)
 sheet.save(os.path.join(root, "textures", "instruments.png"))
 os.makedirs(os.path.join(root, "textures", "item", "instruments"), exist_ok=True)
@@ -62,13 +74,11 @@ os.makedirs(os.path.join(root, "jsondefs", "instruments"), exist_ok=True)
 for k, v in defs.items():
     json.dump(v, open(os.path.join(root, "jsondefs", "instruments", k + ".json"), "w"), indent=1)
 
-layout = [("speedo", 78, 40), ("fuel", 190, 40), ("tacho", 302, 40)]
+layout = [("speedo", 78, 40), ("fuel", 190, 40), ("tacho", 302, 40), ("readout", 190, 100)]
 vdir = os.path.join(root, "jsondefs", "vehicles")
 for f in sorted(os.listdir(vdir)):
     p = os.path.join(vdir, f)
     v = json.load(open(p))
-    if v.get("instruments"):
-        continue
     v["instruments"] = [
         {"pos": [0, 1.0, 0.8], "rot": [0, 0, 0], "scale": 0.1, "hudX": x, "hudY": y, "hudScale": 0.85, "defaultInstrument": f"{pack}:{k}"} for k, x, y in layout]
     v.get("motorized", {}).pop("instruments", None)
