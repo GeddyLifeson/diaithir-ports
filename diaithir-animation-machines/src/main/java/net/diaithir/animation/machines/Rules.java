@@ -1,4 +1,4 @@
-package net.diaithir.animation;
+package net.diaithir.animation.machines;
 
 import java.util.ArrayList;
 import java.util.List;

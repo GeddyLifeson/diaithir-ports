@@ -1,4 +1,4 @@
-package net.diaithir.animation;
+package net.diaithir.animation.machines;
 
 /** Motion families. Every block, machine and vehicle part maps to one of these. */
 public enum Kind {

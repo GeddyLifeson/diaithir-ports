@@ -1,4 +1,4 @@
-package net.diaithir.animation;
+package net.diaithir.animation.machines;
 
 /** Part transform: rotation in degrees, offset in blocks (1 = 16 px), uniform scale. Minecraft-free. */
 public record Pose(float rx, float ry, float rz, float ox, float oy, float oz, float scale) {

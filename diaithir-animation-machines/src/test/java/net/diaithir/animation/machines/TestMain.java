@@ -1,4 +1,4 @@
-package net.diaithir.animation;
+package net.diaithir.animation.machines;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +20,7 @@ public final class TestMain {
         check(rules.match("minecraft:lever").get().spec().kind() == Kind.SWING, "lever");
         check(rules.match("create:cogwheel").get().spec().kind() == Kind.SPIN, "cog spins");
         check(rules.match("diaithir:upgrade_beacon").get().spec().kind() == Kind.HOVER, "beacon hovers");
+        check(rules.match("Keelwright ship piloting").get().spec().kind() == Kind.SPIN, "bone rule beats keyword");
         check(rules.match("minecraft:stone").isEmpty(), "stone has no rule");
 
         // SPIN: idle stopped, winds up when working

@@ -1,4 +1,4 @@
-package net.diaithir.animation;
+package net.diaithir.animation.machines;
 
 /**
  * Per-instance animation state. The block entity renderer ticks it with frame time and reads pose().

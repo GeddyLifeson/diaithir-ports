@@ -1,9 +1,9 @@
-package net.diaithir.animation.neo;
+package net.diaithir.animation.machines.neo;
 
-import net.diaithir.animation.Controller;
-import net.diaithir.animation.Pose;
-import net.diaithir.animation.Rules;
-import net.diaithir.animation.State;
+import net.diaithir.animation.machines.Controller;
+import net.diaithir.animation.machines.Pose;
+import net.diaithir.animation.machines.Rules;
+import net.diaithir.animation.machines.State;
 import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,17 +21,24 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Mod(DiaithirAnimation.ID)
 public final class DiaithirAnimation {
-    public static final String ID = "diaithiranimation";
+    public static final String ID = "diaithirmachineanim";
     private static final Logger LOG = LoggerFactory.getLogger(ID);
     private static final Map<String, Controller> LIVE = new ConcurrentHashMap<>();
     private static volatile Rules rules = Rules.parse("");
 
     public DiaithirAnimation() {
-        try (InputStream in = DiaithirAnimation.class.getResourceAsStream("/data/diaithir_animation/rules.tsv")) {
-            rules = Rules.parse(new String(in.readAllBytes(), StandardCharsets.UTF_8));
+        try {
+            String text = read("/data/diaithir_animation/rules_bones.tsv") + "\n" + read("/data/diaithir_animation/rules.tsv");
+            rules = Rules.parse(text);
             LOG.info("Loaded {} animation rules", rules.size());
         } catch (IOException | RuntimeException e) {
             throw new IllegalStateException("animation rules failed to load", e);
+        }
+    }
+
+    private static String read(String path) throws IOException {
+        try (InputStream in = DiaithirAnimation.class.getResourceAsStream(path)) {
+            return new String(in.readAllBytes(), StandardCharsets.UTF_8);
         }
     }
 
