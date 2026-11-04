@@ -10,6 +10,12 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 neoForge {
     version = project.neo_version
     runs {
+        client {
+            client()
+            gameDirectory = file('run-client')
+            programArguments.addAll('--username','Tester','--width','640','--height','360','--quickPlayMultiplayer','127.0.0.1:25565')
+            jvmArguments.add('-Dmixin.debug.verify=true')
+        }
         server {
             server()
             programArgument '--nogui'

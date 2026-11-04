@@ -1,0 +1,21 @@
+{
+ "id": "diaithir_overworld_biomes:stellaris_hunt",
+ "codex_link": "diaithir_overworld_biomes:stellaris_bestiary",
+ "age": 7,
+ "age_gate": "diaithir:age/7",
+ "title": "Hunt: Stellaris",
+ "description": "Defeat one creature of Stellaris.",
+ "tasks": [
+  {
+   "type": "kill",
+   "entity_tag": "stellaris:stellaris_mobs",
+   "count": 1
+  }
+ ],
+ "rewards": [
+  {
+   "type": "energy",
+   "amount_j": 100
+  }
+ ]
+}

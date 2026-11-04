@@ -1,0 +1,730 @@
+{
+ "slug": "diaithir_caravans",
+ "items": [
+  {
+   "id": "caravan_standard",
+   "kind": "relic",
+   "name_en": "Standard of the Slua Siubhail",
+   "attrs": {
+    "mass_kg": 2.4,
+    "banner_height_m": 2.1,
+    "aura_radius_m": 24,
+    "bad_omen_duration_s": 6000,
+    "durability_uses": 1
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "minecraft:red_banner",
+    "c:rods/wooden"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "caravan_cart",
+   "kind": "block",
+   "name_en": "Cairt Siubhail",
+   "attrs": {
+    "mass_kg": 420,
+    "loot_chest_count_min": 1,
+    "loot_chest_count_max": 3,
+    "travel_speed_m_s": 4.0,
+    "hit_points_J_equiv": 600,
+    "width_m": 1.8,
+    "length_m": 3.2
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "caravan_strongbox",
+   "kind": "block",
+   "name_en": "Ciste Creiche",
+   "attrs": {
+    "mass_kg": 38,
+    "inventory_slots": 27,
+    "loot_table": "diaithir_caravans:chests/age_iii",
+    "break_time_s": 4.0
+   },
+   "recipe": [
+    "c:planks",
+    "c:ingots/iron",
+    "c:chests/wooden"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "caravan_banner_bearer_tag",
+   "kind": "event",
+   "name_en": "Fear an Bhrat Dhuaibhseach",
+   "attrs": {
+    "max_hp_hearts": 24,
+    "mass_kg": 95,
+    "drops_bad_omen_on_death": true,
+    "omen_level": 1
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "caravan_horn",
+   "kind": "relic",
+   "name_en": "Adharc an Bhealaigh",
+   "attrs": {
+    "mass_kg": 0.9,
+    "sound_range_m": 96,
+    "cooldown_s": 60,
+    "reveals_caravan_radius_m": 128,
+    "reveal_duration_s": 30
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "c:leathers",
+    "c:dusts/redstone"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "caravan_scout_spear",
+   "kind": "weapon",
+   "name_en": "Sleagh Tochaltoir",
+   "attrs": {
+    "mass_kg": 1.8,
+    "length_m": 2.1,
+    "damage_J": 22,
+    "reach_m": 3.2,
+    "attack_period_s": 1.1
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "c:rods/wooden",
+    "c:string"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "caravan_warden_axe",
+   "kind": "weapon",
+   "name_en": "Tua Coimhdeachta",
+   "attrs": {
+    "mass_kg": 2.6,
+    "length_m": 0.9,
+    "damage_J": 34,
+    "attack_period_s": 1.6,
+    "shield_disable_s": 3.0
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:rods/wooden",
+    "c:leathers"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "caravan_marauder_helm",
+   "kind": "armor",
+   "name_en": "Clogad Creachadora",
+   "attrs": {
+    "mass_kg": 1.6,
+    "armor_points": 3,
+    "toughness": 1.0,
+    "durability_J": 2400
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:leathers",
+    "c:nuggets/iron"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "caravan_marauder_mail",
+   "kind": "armor",
+   "name_en": "Cota Creachadora",
+   "attrs": {
+    "mass_kg": 9.5,
+    "armor_points": 7,
+    "toughness": 1.0,
+    "durability_J": 5200,
+    "speed_penalty_m_s": 0.1
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:leathers",
+    "c:chains"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "caravan_ward_charm",
+   "kind": "relic",
+   "name_en": "Cluain Faire",
+   "attrs": {
+    "mass_kg": 0.12,
+    "damage_reduction_vs_illagers_pct": 15,
+    "sockets": 1,
+    "slot": "charm"
+   },
+   "recipe": [
+    "c:gems/emerald",
+    "c:ingots/bronze",
+    "c:strings"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "caravan_lodestone_compass",
+   "kind": "relic",
+   "name_en": "Compas an Chairt",
+   "attrs": {
+    "mass_kg": 0.3,
+    "track_range_m": 256,
+    "update_period_s": 5,
+    "durability_uses": 16
+   },
+   "recipe": [
+    "c:ingots/iron",
+    "c:dusts/redstone",
+    "c:gems/amethyst"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "caravan_ravager_hide",
+   "kind": "relic",
+   "name_en": "Craiceann Reabhlaigh",
+   "attrs": {
+    "mass_kg": 4.0,
+    "knockback_resist_pct": 20,
+    "slot": "back"
+   },
+   "recipe": [
+    "c:leathers",
+    "c:ingots/steel",
+    "c:strings"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "caravan_tithe_blade",
+   "kind": "weapon",
+   "name_en": "Lann an Dheachmaidh",
+   "attrs": {
+    "mass_kg": 1.5,
+    "length_m": 1.05,
+    "damage_J": 48,
+    "attack_period_s": 1.0,
+    "bonus_vs_illager_pct": 25
+   },
+   "recipe": [
+    "c:ingots/composite",
+    "c:rods/wooden",
+    "c:gems/diamond"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "caravan_overseer_plate",
+   "kind": "armor",
+   "name_en": "Plata an Fheitheamhaigh",
+   "attrs": {
+    "mass_kg": 12.0,
+    "armor_points": 9,
+    "toughness": 2.5,
+    "durability_J": 9000,
+    "knockback_resist_pct": 5
+   },
+   "recipe": [
+    "c:ingots/composite",
+    "c:leathers",
+    "c:gems/diamond"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "caravan_spawn_scheduler",
+   "kind": "event",
+   "name_en": "Cur Siubhail",
+   "attrs": {
+    "spawn_chance_per_day_pct": 15,
+    "cooldown_days_min": 1,
+    "cooldown_days_max": 3,
+    "min_player_distance_m": 80,
+    "despawn_distance_m": 128,
+    "escort_min": 4,
+    "escort_max": 10
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "caravan_escort_tier_iii",
+   "kind": "event",
+   "name_en": "Coimhdeacht Aois III",
+   "attrs": {
+    "escort_pool": [
+     "pillager",
+     "vindicator"
+    ],
+    "gear": "fian_bronze",
+    "evoker_chance_pct": 0,
+    "ravager_chance_pct": 0
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "caravan_escort_tier_v",
+   "kind": "event",
+   "name_en": "Coimhdeacht Aois V",
+   "attrs": {
+    "escort_pool": [
+     "pillager",
+     "vindicator",
+     "evoker"
+    ],
+    "gear": "fian_steel",
+    "evoker_chance_pct": 20,
+    "ravager_chance_pct": 5
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "caravan_escort_tier_vii",
+   "kind": "event",
+   "name_en": "Coimhdeacht Aois VII",
+   "attrs": {
+    "escort_pool": [
+     "pillager",
+     "vindicator",
+     "evoker",
+     "ravager"
+    ],
+    "gear": "fian_composite",
+    "evoker_chance_pct": 35,
+    "ravager_chance_pct": 20
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "caravan_loot_age_iii",
+   "kind": "event",
+   "name_en": "Creach Aois III",
+   "attrs": {
+    "table": "diaithir_caravans:chests/age_iii",
+    "rolls_per_chest": 3,
+    "rolls_scale_per_escort": 0.25
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "caravan_loot_age_v",
+   "kind": "event",
+   "name_en": "Creach Aois V",
+   "attrs": {
+    "table": "diaithir_caravans:chests/age_v",
+    "rolls_per_chest": 4,
+    "rolls_scale_per_escort": 0.3
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "caravan_loot_age_vii",
+   "kind": "event",
+   "name_en": "Creach Aois VII",
+   "attrs": {
+    "table": "diaithir_caravans:chests/age_vii",
+    "rolls_per_chest": 5,
+    "rolls_scale_per_escort": 0.35
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "rune_caravan_seeker",
+   "kind": "rune",
+   "name_en": "Rune an Lorgaire",
+   "attrs": {
+    "attribute": "diaithir_caravans:caravan_detect_range",
+    "amount_m": 64,
+    "op": "add_value"
+   },
+   "recipe": [
+    "c:gems/amethyst",
+    "c:dusts/redstone",
+    "c:ingots/bronze"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "rune_plunder_fortune",
+   "kind": "rune",
+   "name_en": "Rune an Chreiche",
+   "attrs": {
+    "attribute": "diaithir_caravans:caravan_loot_bonus",
+    "amount_pct": 10,
+    "op": "add_multiplied_base"
+   },
+   "recipe": [
+    "c:gems/emerald",
+    "c:dusts/redstone",
+    "c:ingots/steel"
+   ],
+   "age": "VII"
+  },
+  {
+   "id": "skill_road_reader",
+   "kind": "skill",
+   "name_en": "Leitheoir Bothair",
+   "attrs": {
+    "detect_radius_m": 96,
+    "cooldown_s": 120,
+    "cost_stamina_J": 150
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skill_ambush_master",
+   "kind": "skill",
+   "name_en": "Maistir Lu\u00edoch\u00e1in",
+   "attrs": {
+    "damage_bonus_pct_vs_unaware": 30,
+    "duration_s": 8,
+    "cooldown_s": 45
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skill_wagon_breaker",
+   "kind": "skill",
+   "name_en": "Briseoir Cairte",
+   "attrs": {
+    "damage_bonus_pct_vs_cart": 100,
+    "cooldown_s": 20
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "enchant_illager_bane",
+   "kind": "enchant",
+   "name_en": "Namhaid Illager",
+   "attrs": {
+    "max_level": 5,
+    "damage_J_per_level": 2.5,
+    "applies_to": "weapon"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "caravan_tithe_coin",
+   "kind": "relic",
+   "name_en": "Bonn an Dheachmaidh",
+   "attrs": {
+    "mass_kg": 0.015,
+    "stack_size": 64,
+    "vendor_value_coin": 5
+   },
+   "recipe": [
+    "c:ingots/gold"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "caravan_trophy_banner",
+   "kind": "relic",
+   "name_en": "Tr\u00f3fa\u00ed an Bhrait",
+   "attrs": {
+    "mass_kg": 1.0,
+    "hook": "diaithir_relics:nemesis_trophy",
+    "drops_from": "banner_bearer"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "caravan_cartwright_kit",
+   "kind": "relic",
+   "name_en": "Trealamh Cairtire",
+   "attrs": {
+    "mass_kg": 6.0,
+    "enables_static_cart_structure": true,
+    "durability_uses": 1
+   },
+   "recipe": [
+    "c:planks",
+    "c:ingots/iron",
+    "c:leathers",
+    "c:rods/wooden"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "caravan_ledger",
+   "kind": "relic",
+   "name_en": "Leabhar Cuntais an Chairt",
+   "attrs": {
+    "mass_kg": 0.4,
+    "records_caravans_slain": true,
+    "unlocks_codex_page": "caravan_lore"
+   },
+   "recipe": [
+    "c:paper",
+    "c:leathers",
+    "c:dyes/black"
+   ],
+   "age": "III"
+  }
+ ],
+ "events": [
+  {
+   "id": "caravan_spawn",
+   "trigger": "daily_roll_server_tick_at_dawn",
+   "effect": "If cooldown elapsed and a random roll under 15 percent succeeds, spawn a caravan of 4 to 10 escorts plus 1 to 3 carts at least 80 m from a player, tier chosen by scoreboard age (III, V or VII)"
+  },
+  {
+   "id": "caravan_travel",
+   "trigger": "each_server_tick_while_caravan_alive",
+   "effect": "Leader follows a road or open-ground path at 4 m/s, carts leashed to mounts follow at 1.5 m spacing, escorts flank within 8 m"
+  },
+  {
+   "id": "caravan_despawn",
+   "trigger": "no_player_within_128_m_for_300_s",
+   "effect": "Remove all caravan entities and start cooldown"
+  },
+  {
+   "id": "caravan_banner_bearer_death",
+   "trigger": "banner_bearer_killed_by_player",
+   "effect": "Apply Bad Omen level 1 to killer for 6000 s equivalent and drop trophy banner"
+  },
+  {
+   "id": "caravan_loot_open",
+   "trigger": "player_opens_cart_chest_first_time",
+   "effect": "Roll age-tier loot table with rolls scaled by 0.25 to 0.35 per surviving or slain escort and award advancement"
+  },
+  {
+   "id": "caravan_alarm",
+   "trigger": "player_within_48_m_of_caravan",
+   "effect": "Play bell sound and raise caravan banner, escorts aggro on player and villagers within 32 m"
+  }
+ ],
+ "skills": [
+  {
+   "id": "skill_road_reader",
+   "branch": "scout",
+   "effect": "Reveals caravans within 96 m for 30 s"
+  },
+  {
+   "id": "skill_ambush_master",
+   "branch": "ceilg",
+   "effect": "30 percent bonus damage against unaware escorts for 8 s"
+  },
+  {
+   "id": "skill_wagon_breaker",
+   "branch": "fian",
+   "effect": "Double damage to carts and a guaranteed extra loot roll when a cart is destroyed"
+  }
+ ],
+ "id_migration": {
+  "pillagercaravans:caravan_cart": "diaithir_caravans:caravan_cart",
+  "pillagercaravans:caravan_chest": "diaithir_caravans:caravan_strongbox",
+  "pillagercaravans:caravan_banner": "diaithir_caravans:caravan_standard",
+  "pillagercaravans:chests/caravan_loot": "diaithir_caravans:chests/age_iii",
+  "pillagercaravans:escorts": "diaithir_caravans:escorts",
+  "pillagercaravans-common.toml": "diaithircaravans-common.toml"
+ },
+ "c_tags": {
+  "c:ingots/bronze": [
+   "diaithirarms:bronze_ingot"
+  ],
+  "c:ingots/steel": [
+   "diaithirarms:steel_ingot"
+  ],
+  "c:ingots/composite": [
+   "diaithirarms:composite_ingot"
+  ],
+  "c:ingots/iron": [
+   "minecraft:iron_ingot"
+  ],
+  "c:ingots/gold": [
+   "minecraft:gold_ingot"
+  ],
+  "c:gems/emerald": [
+   "minecraft:emerald"
+  ],
+  "c:gems/diamond": [
+   "minecraft:diamond"
+  ],
+  "c:gems/amethyst": [
+   "minecraft:amethyst_shard"
+  ],
+  "c:dusts/redstone": [
+   "minecraft:redstone"
+  ],
+  "c:leathers": [
+   "minecraft:leather"
+  ],
+  "c:strings": [
+   "minecraft:string"
+  ],
+  "c:rods/wooden": [
+   "minecraft:stick"
+  ],
+  "c:chests/wooden": [
+   "minecraft:chest"
+  ],
+  "c:dyes/black": [
+   "minecraft:black_dye"
+  ],
+  "c:nuggets/iron": [
+   "minecraft:iron_nugget"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "caravan_standard_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "caravan_horn_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:leathers",
+    "c:dusts/redstone"
+   ]
+  },
+  {
+   "id": "caravan_marauder_mail_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:leathers"
+   ]
+  },
+  {
+   "id": "caravan_tithe_blade_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/composite",
+    "c:gems/diamond",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "rune_plunder_fortune_craft",
+   "inputs_as_c_tags": [
+    "c:gems/emerald",
+    "c:dusts/redstone",
+    "c:ingots/steel"
+   ]
+  },
+  {
+   "id": "caravan_ward_charm_craft",
+   "inputs_as_c_tags": [
+    "c:gems/emerald",
+    "c:ingots/bronze",
+    "c:strings"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "diaithir_caravans:caravan_strongbox",
+   "kind": "item",
+   "units_SI": "27 slots, 64 items per slot max, 38 kg empty mass"
+  },
+  {
+   "block": "diaithir_caravans:caravan_cart",
+   "kind": "item",
+   "units_SI": "81 slots across 3 chests, 420 kg empty mass"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "caravan_charm_sockets",
+   "target": "diaithir_caravans:caravan_ward_charm",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "caravan_blade_sockets",
+   "target": "diaithir_caravans:caravan_tithe_blade",
+   "slots": 2,
+   "kinds": [
+    "rune",
+    "enchant"
+   ],
+   "max_quality": 4
+  },
+  {
+   "id": "caravan_plate_sockets",
+   "target": "diaithir_caravans:caravan_overseer_plate",
+   "slots": 2,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 4
+  }
+ ],
+ "global_events": [
+  {
+   "id": "caravan_world_event",
+   "subscribes_to": "diaithir_global_events:daily_roll",
+   "effect": "Registers caravan spawn as a rare world event; reports spawn, slain and looted outcomes to the global event log"
+  },
+  {
+   "id": "caravan_age_advance",
+   "subscribes_to": "diaithir_global_events:age_changed",
+   "effect": "Re-selects escort tier and loot table for new caravans when scoreboard age crosses III, V or VII"
+  },
+  {
+   "id": "caravan_omen_link",
+   "subscribes_to": "minecraft:bad_omen_applied",
+   "effect": "Raises caravan spawn chance by 5 percentage points for one in-game day"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "caravan_lore",
+   "connects_to": [
+    "relics_nemesis",
+    "arms_bronze_age",
+    "classes_ceilg"
+   ]
+  },
+  {
+   "entry": "caravan_escorts",
+   "connects_to": [
+    "combat_illagers",
+    "arms_steel_age"
+   ]
+  },
+  {
+   "entry": "caravan_loot_tables",
+   "connects_to": [
+    "relics_chests",
+    "global_events_log"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "caravan_first_blood",
+  "intro": "Fear an Bhealaigh tells of a crooked train of carts hauling plunder along the old roads, guarded by raiders. Find one, break its escort, and open the strongbox.",
+  "links_to": [
+   "relics_nemesis",
+   "arms_bronze_age",
+   "global_events_log"
+  ]
+ },
+ "java_notes": "Needs a server-side caravan controller: spawn scheduler with cooldown, leader path-following and follower leashing of cart entities to mounts, despawn timer, Age-scaled escort loadouts read from the scoreboard, bad-omen banner death hook, the caravan_detect_range and caravan_loot_bonus attributes, client entity renderers, and Global Events plus Codex registration."
+}

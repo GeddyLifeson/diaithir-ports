@@ -17,7 +17,6 @@ def w(path, d): os.makedirs(os.path.dirname(path), exist_ok=True); open(path, 'w
 
 KEN = {'tractor': 'carbad tarraing', 'trailer': 'carbad luchda', 'construction': 'carbad oibre'}
 names, ages, lib, rows = {}, {}, [], []
-paint = ['', '_white', '_blue']; cpaint = ['', '_c', '_c_orange', '_c_white']
 for kind, items in (('tractor', man['tractors']), ('trailer', man['trailers']), ('construction', man['construction'])):
     for v in items:
         n = nat(KEN[kind] + ' ' + v['name'])
@@ -72,3 +71,25 @@ def yard(v):
 for key in ('tractors', 'trailers', 'construction'):
     for v in man[key]: w(f'{D_}/yards/{v["id"]}.json', yard(v))
 print(len(names), 'names', len(ages), 'age gates', len(lib), 'library entries', len(rows), 'roster rows', len(parts), 'catalog parts')
+
+# data contracts for the depot and road lanes (the loaders and the road builder live in other PRs; these files only say what each vehicle is)
+def fuel_id(v):
+    n = v['id']
+    if n in ('truck_ox_team', 'truck_horse_team'): return 'hay'
+    if n in ('truck_steam_traction', 'truck_steam_wagon', 'cv_steam_shovel'): return 'coal'
+    if n in ('truck_scammell_scarab', 'truck_diamond_t_980'): return 'petrol'
+    return 'diesel' if v.get('power_w', 0) else ''
+for key in ('tractors', 'construction'):
+    for v in man[key]: v['fuel'] = fuel_id(v)
+cargo = {}
+for v in man['trailers']:
+    cargo[v['id']] = {'class': 'liquid' if v['tank'] else 'vehicle' if v['cargo'] == 'car' else 'bulk' if v['kind'] in ('dump', 'log') else 'general', 'payload_kg': v['payload_kg'],
+                      'hold': v['crate'] or v['tank'], 'hitch': 'drawbar' if v['kind'] in ('cart', 'wagon', 'dray') else 'fifthwheel'}
+for v in man['construction']:
+    if v['kind'] in ('mixer', 'haul', 'dumpcart', 'pump'): cargo[v['id']] = {'class': 'liquid' if v['kind'] == 'pump' else 'bulk', 'payload_kg': v['mass_kg'] // 2, 'hold': None, 'hitch': 'self'}
+w(f'{D_}/depot_cargo.json', {'_doc': 'Cargo class, payload and hitch per vehicle for depot loaders and the company loop. Hold ids are IV part ids of this pack.', 'vehicles': cargo})
+ROADS = {'grade': ['dirt_track', 'gravel'], 'compact': ['gravel', 'cobbled', 'macadam', 'asphalt'], 'pave': ['asphalt'], 'mix': ['concrete'], 'mill': ['asphalt'], 'haul': ['gravel', 'macadam', 'asphalt', 'concrete'], 'dig': ['dirt_track']}
+rr = {}
+for v in man['construction']: rr.setdefault(v['road_role'], {'surfaces': ROADS[v['road_role']], 'machines': []})['machines'].append(dict(id=v['id'], age=v['age']))
+w(f'{D_}/road_roles.json', {'_doc': 'Which machine does which road job. Surface ids are the six road blocks of diaithir-carts roads.csv (ports #190); the builder that reads this is not written.', 'roles': rr})
+json.dump(man, open(f'{M}/truck_manifest.json', 'w'), indent=1)

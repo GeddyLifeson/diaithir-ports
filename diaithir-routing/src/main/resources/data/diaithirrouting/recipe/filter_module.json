@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": ["diaithirrouting:extractor_module", "diaithirrouting:filter"],
+  "result": { "id": "diaithirrouting:filter_module", "count": 1 }
+}

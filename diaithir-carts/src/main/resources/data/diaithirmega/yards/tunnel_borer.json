@@ -1,0 +1,63 @@
+{
+ "id": "tunnel_borer",
+ "tier": "ASSEMBLY_LINE",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 9,
+  "l": 18,
+  "h": 6
+ },
+ "result": "diaithirmega:tunnel_borer",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 6000,
+   "ghost": "diaithirmega:ghost/tunnel_borer_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 2
+    }
+   ],
+   "base_ticks": 4500,
+   "ghost": "diaithirmega:ghost/tunnel_borer_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "cutter_head",
+     "count": 1
+    }
+   ],
+   "base_ticks": 7500,
+   "ghost": "diaithirmega:ghost/tunnel_borer_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 6
+    }
+   ],
+   "base_ticks": 240,
+   "ghost": "diaithirmega:ghost/tunnel_borer_crew"
+  }
+ ],
+ "crane_speedup": 1.0
+}

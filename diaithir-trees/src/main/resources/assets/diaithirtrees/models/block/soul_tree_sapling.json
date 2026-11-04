@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "diaithirtrees:block/soul_tree_sapling"
+ }
+}

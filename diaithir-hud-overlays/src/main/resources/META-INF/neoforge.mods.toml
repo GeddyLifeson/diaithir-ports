@@ -13,3 +13,9 @@ modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
 side = "BOTH"
+
+[[mixins]]
+config = "leavebars.mixins.json"
+
+[[mixins]]
+config = "net.diaithir.hudoverlays.pickupnotifier.mixins.json"

@@ -1,0 +1,18 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a3",
+   "count": 7
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_legs",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 3
+  }
+ }
+}

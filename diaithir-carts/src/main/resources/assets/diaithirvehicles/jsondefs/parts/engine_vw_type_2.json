@@ -14,7 +14,7 @@
  "engine": {
   "type": "NORMAL",
   "isAutomatic": true,
-  "fuelType": "gasoline",
+  "fuelType": "avgas",
   "fuelConsumption": 0.113,
   "maxRPM": 6000,
   "maxSafeRPM": 5580,
@@ -58,6 +58,27 @@
    "textureName": "vehicle_engine",
    "extraMaterialLists": [
     []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 1.0,
+     "height": 0.8
+    }
    ]
   }
  ]

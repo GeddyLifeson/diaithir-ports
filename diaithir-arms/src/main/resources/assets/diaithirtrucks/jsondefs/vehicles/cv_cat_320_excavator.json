@@ -46,7 +46,9 @@
    "types": [
     "ground_tread"
    ],
-   "defaultPart": "diaithirtrucks:cv_track"
+   "defaultPart": "diaithirtrucks:cv_track",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -57,7 +59,9 @@
    "types": [
     "ground_tread"
    ],
-   "defaultPart": "diaithirtrucks:cv_track"
+   "defaultPart": "diaithirtrucks:cv_track",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -68,7 +72,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirtrucks:engine_e150_stock"
+   "defaultPart": "diaithirtrucks:engine_e150_stock",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -85,55 +91,141 @@
     -2.0,
     0.0,
     0.2
-   ]
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    1.85,
-    0
    ],
-   "width": 3.0,
-   "height": 3.1
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
   {
-   "subName": "_c",
+   "subName": "",
    "name": "Caterpillar 320 Excavator (Yellow)",
    "modelName": "cv_cat_320_excavator",
-   "textureName": "paint_c",
+   "textureName": "paintc",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_orange",
+   "subName": "_orange",
    "name": "Caterpillar 320 Excavator (Orange)",
    "modelName": "cv_cat_320_excavator",
-   "textureName": "paint_c_orange",
+   "textureName": "paintc_orange",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_white",
+   "subName": "_white",
    "name": "Caterpillar 320 Excavator (White)",
    "modelName": "cv_cat_320_excavator",
-   "textureName": "paint_c_white",
+   "textureName": "paintc_white",
    "extraMaterialLists": [
     []
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "boom",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "boom_lift",
+      "centerPoint": [
+       0,
+       1.8,
+       0.8
+      ],
+      "axis": [
+       -25,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   },
+   {
+    "objectName": "stick",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "boom_lift",
+      "centerPoint": [
+       0,
+       1.8,
+       0.8
+      ],
+      "axis": [
+       -25,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   },
+   {
+    "objectName": "bucket",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "boom_lift",
+      "centerPoint": [
+       0,
+       1.8,
+       0.8
+      ],
+      "axis": [
+       -25,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "boom_lift"
+  ]
+ },
  "car": {
-  "isFrontWheelDrive": false,
+  "isFrontWheelDrive": true,
   "isRearWheelDrive": true,
   "axleRatio": 3.6,
   "dragCoefficient": 0.8,
   "isBigTruck": true
- }
+ },
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      1.85,
+      0
+     ],
+     "width": 3.0,
+     "height": 3.1
+    }
+   ]
+  }
+ ]
 }

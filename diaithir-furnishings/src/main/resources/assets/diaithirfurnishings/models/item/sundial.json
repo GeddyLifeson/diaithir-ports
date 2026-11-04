@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/sundial"
+  "layer0": "diaithirfurnishings:item/sundial_head",
+  "layer1": "diaithirfurnishings:item/sundial_handle",
+  "layer2": "diaithirfurnishings:item/sundial_binding"
  }
 }

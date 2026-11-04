@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/cross",
+"textures": {
+"cross": "diaithir_planets:block/ryamiel_lyala_plant"
+}
+}

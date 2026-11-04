@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:sweet_crabapple_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:sweet_crabapple_planks",
+  "count": 4
+ }
+}

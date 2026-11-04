@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/cube_all",
+"textures": {
+"all": "diaithir_planets:block/tarnordath_coreornum_ore"
+}
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Seafaring",
+  "description": "Ancient Warfare 2 research: seafaring.",
+  "prerequisites": [
+    "aw2research:the_wheel",
+    "aw2research:mathematics",
+    "aw2research:trade"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:planks",
+            "count": {
+              "min": 12
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:paper"
+    }
+  }
+}

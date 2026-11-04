@@ -13,3 +13,6 @@ Not tested: a real client (icons, spear in-hand model, shield off-hand model), a
 
 ## Full pack (batch 1) note
 mist_bell "no veil" was NeoOrigins cancelling all damage to a player without an origin (every wearer-side check passed or failed with no damage landing). The test now marks the fake player picker-abandoned (reflection), resets item cooldowns (fake player does not tick), and strips Mob Champions / level buffs from the target mobs. Full pack: ok=26 bad=0 in 6 runs on one boot.
+
+## Yori stage 1
+`/yoriselftest`: ok=6 bad=0 (eight items registered, piece lookup, bonuses in force, modifiers added and removed on a zombie). Wearing in a real Curios slot is not exercised (Curios is not on the bare server; the off hand path shares the code). (2026-11-04)

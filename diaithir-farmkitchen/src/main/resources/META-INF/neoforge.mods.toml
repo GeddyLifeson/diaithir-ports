@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirfarmkitchen"
+version = "${version}"
+displayName = "Diaithir Farm Kitchen"
+description = "Diaithir Farm Kitchen: clean-room rebuild from behaviour only; no code or art taken from the original mods."
+
+[[dependencies.diaithirfarmkitchen]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

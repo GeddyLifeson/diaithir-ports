@@ -24,8 +24,23 @@ public final class DiaithirClaims {
     public static final Supplier<AttachmentType<Integer>> COUNT = ATTACH.register("count",
         () -> AttachmentType.<Integer>builder(() -> 0).serialize(com.mojang.serialization.Codec.INT.fieldOf("n")).copyOnDeath().build());
 
+    /** On a player: how many claimed chunks they keep loaded. */
+    public static final Supplier<AttachmentType<Integer>> LOADED = ATTACH.register("loaded",
+        () -> AttachmentType.<Integer>builder(() -> 0).serialize(com.mojang.serialization.Codec.INT.fieldOf("n")).copyOnDeath().build());
+    public static final int MAX_LOADED = 5;
+
     public DiaithirClaims(IEventBus bus) {
         ATTACH.register(bus);
+        net.diaithir.claims.structures.StructureGuard.init();
+        net.diaithir.claims.log.GriefLog.init();
+        net.diaithir.claims.law.Law.init(bus);
+        net.diaithir.claims.parties.Parties.init();
+        net.diaithir.claims.capitals.Capitals.init();
+        net.diaithir.claims.permissions.Gate.init(bus);
+        net.diaithir.claims.graves.Graves.init(bus);
+        new net.diaithir.claims.waypoints.DiaithirWaypoints(bus);
+        new net.diaithir.claims.compass.DiaithirCompass(bus);
+        new net.diaithir.claims.ultimine.DiaithirUltimine(bus);
         bus.addListener((net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent e) ->
             e.registrar("1").optional()
                 .playToClient(MapPayload.TYPE, MapPayload.CODEC, (payload, ctx) -> {
@@ -49,6 +64,9 @@ public final class DiaithirClaims {
             bus.addListener((net.neoforged.fml.event.lifecycle.InterModEnqueueEvent e) -> e.enqueueWork(ClientHooks::register));
         }
         NeoForge.EVENT_BUS.register(new Guard());
+        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.server.ServerStartedEvent e) ->
+            Teams.load(e.getServer().getWorldPath(net.minecraft.world.level.storage.LevelResource.ROOT)));
+        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.server.ServerStoppingEvent e) -> Teams.save());
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.RegisterCommandsEvent e) -> Commands.register(e.getDispatcher()));
     }
 

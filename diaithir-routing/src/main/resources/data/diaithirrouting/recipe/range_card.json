@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["RER", "EPE", "RER"],
+  "key": { "R": "minecraft:redstone", "E": "minecraft:ender_pearl", "P": "minecraft:paper" },
+  "result": { "id": "diaithirrouting:range_card", "count": 1 }
+}

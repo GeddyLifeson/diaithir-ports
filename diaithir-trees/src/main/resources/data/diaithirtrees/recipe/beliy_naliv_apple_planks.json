@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:beliy_naliv_apple_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:beliy_naliv_apple_planks",
+  "count": 4
+ }
+}

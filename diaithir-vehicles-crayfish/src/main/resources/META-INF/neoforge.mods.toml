@@ -1,0 +1,20 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "GPL-3.0-only"
+
+[[mods]]
+modId = "diaithirvehiclescrayfish"
+version = "${version}"
+displayName = "Diaithir Vehicles: Crayfish Fold"
+authors = "MrCrayfish, bay4lly (unofficial 1.20.1 port), Phylogeny; folded for NeoForge 26.1.2 by the Diaithir project"
+description = "Fuel pump on a fuel tank, trailer hitch with a pulled tank trailer, and vehicle health with crash and repair rules, folded from MrCrayfish's Vehicle Mod (Unofficial). GPL-3.0-only code; art is redrawn."
+
+[[dependencies.diaithirvehiclescrayfish]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirvehiclescrayfish]]
+modId = "diaithirvehicles"
+type = "required"
+versionRange = "[1.0.0,)"

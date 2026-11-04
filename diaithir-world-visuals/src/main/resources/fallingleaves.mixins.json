@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.cheaterpaul.fallingleaves.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "leaves.LeavesBlockMixin",
+    "snow.LeavesBlockMixin"
+  ],
+  "client": [
+    "NativeImageAccessor",
+    "decay.ClientLevelMixin",
+    "leaves.ClientLevelMixin",
+    "snow.ClientLevelMixin",
+    "wind.ClientLevelMixin",
+    "wind.FallingLeavesParticleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

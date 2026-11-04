@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/mangle"
+  "layer0": "diaithirfurnishings:item/mangle_head",
+  "layer1": "diaithirfurnishings:item/mangle_handle",
+  "layer2": "diaithirfurnishings:item/mangle_binding"
  }
 }

@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/archimedes_screw"
+  "layer0": "diaithirfurnishings:item/archimedes_screw_head",
+  "layer1": "diaithirfurnishings:item/archimedes_screw_handle",
+  "layer2": "diaithirfurnishings:item/archimedes_screw_binding"
  }
 }

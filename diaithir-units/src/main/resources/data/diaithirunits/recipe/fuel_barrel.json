@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": "minecraft:oak_planks",
+    "I": "minecraft:iron_nugget"
+  },
+  "pattern": [
+    "P",
+    "I",
+    "P"
+  ],
+  "result": {
+    "id": "diaithirunits:fuel_barrel",
+    "count": 1
+  },
+  "category": "misc"
+}

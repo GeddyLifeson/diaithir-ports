@@ -1,0 +1,22 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "LGPL-3.0-only"
+
+[[mods]]
+modId = "diaithirhostile"
+version = "${version}"
+displayName = "Diaithir Hostile Encounters"
+authors = "Diaithir; lunar events derived from Enhanced Celestials by Corgitaco; raiders from Raided by Mrbysco and silentine (MIT)"
+description = '''Hostile encounters in one module. Lunar events (blood, blue and harvest moons and their super variants) are a port of Enhanced Celestials (LGPL-3.0, Corgitaco), rebuilt on plain NeoForge events with no CorgiLib or Data Anchor. Horde nights and invasion tuning join them here.'''
+
+enumExtensions="META-INF/enumextensions.json"
+
+[[dependencies.diaithirhostile]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "diaithirhostile.mixins.json"

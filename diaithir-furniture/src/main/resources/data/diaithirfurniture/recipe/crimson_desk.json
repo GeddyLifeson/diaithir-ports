@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:crimson_planks"
+ },
+ "pattern": [
+  "PPP",
+  "P P",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:crimson_desk",
+  "count": 1
+ }
+}

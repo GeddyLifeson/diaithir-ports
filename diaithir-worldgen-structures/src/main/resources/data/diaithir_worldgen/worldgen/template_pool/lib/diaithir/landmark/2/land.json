@@ -15,6 +15,33 @@
    "weight": 1,
    "element": {
     "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_002600_site",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_002642_site",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_002643_site",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
     "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_015889",
     "projection": "rigid",
     "processors": "minecraft:empty"
@@ -52,6 +79,15 @@
    "element": {
     "element_type": "minecraft:single_pool_element",
     "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_016150",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_016158_site",
     "projection": "rigid",
     "processors": "minecraft:empty"
    }
