@@ -1,0 +1,9 @@
+{
+    "blocks": "apothic_enchanting:glowing_hellshelf",
+    "stats": {
+        "arcana": 3.3333,
+        "eterna": 5.0,
+        "maxEterna": 60.0,
+        "quanta": 5.0
+    }
+}

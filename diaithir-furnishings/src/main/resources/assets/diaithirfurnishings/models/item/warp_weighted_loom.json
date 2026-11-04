@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/warp_weighted_loom"
+  "layer0": "diaithirfurnishings:item/warp_weighted_loom_head",
+  "layer1": "diaithirfurnishings:item/warp_weighted_loom_handle",
+  "layer2": "diaithirfurnishings:item/warp_weighted_loom_binding"
  }
 }

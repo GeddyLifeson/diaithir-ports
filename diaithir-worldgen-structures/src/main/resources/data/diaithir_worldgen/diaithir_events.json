@@ -1584,6 +1584,270 @@
     "looted",
     "overgrown"
    ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_altar_shrine",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_blackstone_hut",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_blackstone_ring",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_blade_monument",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_bone_dune_skull",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_boneyard",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_brick_bastion",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_brick_manor",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_brick_ring",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_broken_gate",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_citadel",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_copper_spire",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_crimson_grove_hall",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_crimson_smithy",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_grand_arena",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_lava_well",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_magma_pool",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_micro_blackstone",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_micro_brick",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_overgrowth_ruin",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_pillar_court",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_rail_depot",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_skull_colossus",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_soul_pyre",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_span_bridge",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_wall_maze",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_warped_cottage",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_warped_dome",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_warped_grove_hall",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_warped_tarn",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_wart_terrace",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_watch_tower",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
+  },
+  {
+   "structure": "diaithir_worldgen:nether_wyrm_arena",
+   "ruin_states": [
+    "intact",
+    "looted",
+    "overgrown"
+   ]
   }
  ]
 }

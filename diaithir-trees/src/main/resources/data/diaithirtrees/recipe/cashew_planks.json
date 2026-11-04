@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:cashew_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:cashew_planks",
+  "count": 4
+ }
+}

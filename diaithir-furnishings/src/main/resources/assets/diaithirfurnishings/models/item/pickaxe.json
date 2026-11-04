@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/pickaxe"
+  "layer0": "diaithirfurnishings:item/pickaxe_head",
+  "layer1": "diaithirfurnishings:item/pickaxe_handle",
+  "layer2": "diaithirfurnishings:item/pickaxe_binding"
  }
 }

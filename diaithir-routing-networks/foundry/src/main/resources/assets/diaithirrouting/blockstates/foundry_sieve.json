@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "diaithirrouting:block/foundry_sieve"
+    },
+    "facing=east": {
+      "model": "diaithirrouting:block/foundry_sieve",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithirrouting:block/foundry_sieve",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithirrouting:block/foundry_sieve",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "diaithirrouting:block/foundry_sieve",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "diaithirrouting:block/foundry_sieve",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/deepshelf" },
+            { "model": "apothic_enchanting:block/deepshelf_2" },
+            { "model": "apothic_enchanting:block/deepshelf_3" }
+        ]
+    }
+}

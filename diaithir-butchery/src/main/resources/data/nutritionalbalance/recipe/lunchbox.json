@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " t ",
+    "nsn",
+    " c "
+  ],
+  "key": {
+    "t": "#minecraft:trapdoors",
+    "n": "minecraft:iron_nugget",
+    "s": "minecraft:black_dye",
+    "c": "#c:chests"
+  },
+  "result": {
+    "id": "nutritionalbalance:lunchbox",
+    "count": 1
+  }
+}

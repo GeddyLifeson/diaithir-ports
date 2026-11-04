@@ -1,0 +1,3820 @@
+{
+ "modid": "aerialhell",
+ "blocks": [
+  {
+   "id": "aerial_berry_bush",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "aerial_hell_portal",
+   "kind": "portal",
+   "mat": "portal",
+   "target": "aerialhell:aerial_hell",
+   "back": "minecraft:overworld",
+   "pad": "aerialhell:stellar_stone_bricks"
+  },
+  {
+   "id": "aerial_netherrack",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "aerial_tree_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_chest_mimic",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "aerial_tree_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "aerial_tree_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "aerial_tree_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "arsonist_block",
+   "kind": "block",
+   "mat": "metal"
+  },
+  {
+   "id": "azurite_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "azurite_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "bellflower",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "black_rose",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "black_slippery_sand_glass",
+   "kind": "block",
+   "mat": "glass"
+  },
+  {
+   "id": "black_slippery_sand_glass_pane",
+   "kind": "pane",
+   "mat": "glass"
+  },
+  {
+   "id": "blossoming_vines",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "blue_flower",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "blue_meanie_cluster",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "blue_meanie_crop",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "blue_slippery_sand_glass",
+   "kind": "block",
+   "mat": "glass"
+  },
+  {
+   "id": "blue_slippery_sand_glass_pane",
+   "kind": "pane",
+   "mat": "glass"
+  },
+  {
+   "id": "blue_solid_ether",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "bluish_fern",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "bone_shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "brambles",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "broken_high_power_light_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "broken_high_power_shadow_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "broken_weak_light_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "broken_weak_shadow_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chained_god_trophy",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_aerial_tree_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "chiseled_golden_beech_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "chiseled_golden_nether_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_smoky_quartz_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_stellar_dirt",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_stellar_grass_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "chiseled_volucite_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "climbing_vine",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "copper_pine_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_chest_mimic",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "copper_pine_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "copper_pine_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "copper_pine_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "cortinarius_violaceus",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_golden_nether_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_light_golden_nether_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_light_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_light_mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_light_shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_light_volucite_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_slippery_sand_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cracked_volucite_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "crystal_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "crystal_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "crystallized_fire",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "crystallized_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "cursed_crystal_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "cut_slippery_sand_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dark_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dead_roots",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "dead_stellar_jungle_tree_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "deepslate_stellar_portal_frame_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "diamond_stellar_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "enchanted_lapis_robinia_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "eye_shadow_pine_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "fluorite_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "fluorite_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "freezer",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "full_moon_flower",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "ghost_azurite_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ghost_boat_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "ghost_boat_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_boat_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "ghost_boat_wool",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "ghost_fluorite_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ghost_gold_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ghost_ruby_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ghost_stellar_cobblestone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ghost_stellar_furnace",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_cortinarius_violaceus_bark_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_cortinarius_violaceus_cap_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_cortinarius_violaceus_light",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_cortinarius_violaceus_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_ganoderma_applanatum_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_root",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_root_shroom",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_verdigris_agaric_bark_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_verdigris_agaric_cap_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "giant_verdigris_agaric_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "glaucophanite",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "glaucophanite_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "glaucophanite_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "glowing_boletus",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "glowing_roots",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "glowing_stellar_grass",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "glowing_stick_fruit_vines",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "gold_stellar_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "golden_beech_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_chest_mimic",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "golden_beech_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "golden_beech_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "golden_beech_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "golden_nether_bookshelf",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "golden_nether_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "golden_nether_chest",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "golden_nether_dungeon_core",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "golden_nether_prison_glyph_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "golden_solid_ether",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "gray_shroom_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "gray_shroom_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "green_slippery_sand_glass",
+   "kind": "block",
+   "mat": "glass"
+  },
+  {
+   "id": "green_slippery_sand_glass_pane",
+   "kind": "pane",
+   "mat": "glass"
+  },
+  {
+   "id": "green_solid_ether",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "high_power_light_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "high_power_shadow_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "hollow_purple_shadow_pine_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "hollow_shadow_pine_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "hollow_shadow_pine_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "intangible_temporary_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "iron_stellar_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "lapis_robinia_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "lapis_robinia_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "lapis_robinia_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "lapis_robinia_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "lazuli_roots",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "light_golden_nether_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "light_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "light_mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "light_shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "light_volucite_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lilith_trophy",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "liquid_of_the_gods",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunar_priest_trophy",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_bookshelf",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_chain",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_chest",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_crystal_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_dungeon_core",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_glyph_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_pillar",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_pillar_top",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "magmatic_gel_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "magmatic_gel_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "mossy_mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mossy_shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mossy_stellar_cobblestone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mossy_stellar_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_bone_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_bone_pile_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_bookshelf",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_chest",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_cycle_mage_trophy",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_dungeon_core",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "mud_glyph_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "obsidian_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "oscillator",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "petrified_aerial_tree_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "polished_glaucophanite",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "polychrome_fern",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "purple_shadow_pine_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "purple_shadow_pine_sapling",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "purple_solid_ether",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "purplish_stellar_grass",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "raw_azurite_crystal_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "raw_ruby_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "raw_volucite_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "red_slippery_sand_glass",
+   "kind": "block",
+   "mat": "glass"
+  },
+  {
+   "id": "red_slippery_sand_glass_pane",
+   "kind": "pane",
+   "mat": "glass"
+  },
+  {
+   "id": "roof_light_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "roof_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ruby_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ruby_chain",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "ruby_door",
+   "kind": "door",
+   "mat": "stone"
+  },
+  {
+   "id": "ruby_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "ruby_trapdoor",
+   "kind": "trapdoor",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_aerial_tree_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "shadow_aerial_tree_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_brambles",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_catacombs_bookshelf",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_catacombs_chest",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_catacombs_dungeon_core",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_catacombs_glyph_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_chain",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_copper_pine_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "shadow_copper_pine_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_crystal_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_glowing_roots",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_golden_beech_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "shadow_golden_beech_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_grass",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "shadow_grass_ball",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "shadow_grass_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_lapis_robinia_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "shadow_lapis_robinia_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_pine_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_barrel_mimic",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "shadow_pine_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "shadow_pine_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "shadow_pine_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "shadow_stellar_jungle_tree_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "shadow_stellar_jungle_tree_log",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "shadow_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "skull_shadow_catacombs_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sky_cactus",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "sky_cactus_fiber_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_chest_mimic",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "sky_cactus_fiber_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "slippery_sand",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "slippery_sand_glass",
+   "kind": "block",
+   "mat": "glass"
+  },
+  {
+   "id": "slippery_sand_glass_pane",
+   "kind": "pane",
+   "mat": "glass"
+  },
+  {
+   "id": "slippery_sand_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "slippery_sand_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "slippery_sand_stone_bricks_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "slippery_sand_stone_bricks_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "slippery_sand_stone_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "slippery_sand_stone_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "smoky_quartz_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "smoky_quartz_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "smoky_quartz_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "smoky_quartz_pillar",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "smooth_smoky_quartz",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_clay",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_clovers",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_coarse_dirt",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_cobblestone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_cobblestone_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_cobblestone_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_crystal_podzol",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_dead_bush",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stellar_dirt",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_dirt_path",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_fern",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stellar_furnace",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_grass",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stellar_grass_ball",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stellar_grass_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_jungle_tree_barrel",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_bookshelf",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_button",
+   "kind": "button",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_chest",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_composter",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_crafting_table",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_door",
+   "kind": "door",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_fence",
+   "kind": "fence",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_gate",
+   "kind": "gate",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_leaves",
+   "kind": "leaves",
+   "mat": "leaves"
+  },
+  {
+   "id": "stellar_jungle_tree_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stellar_jungle_tree_planks",
+   "kind": "block",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_pressure_plate",
+   "kind": "plate",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_sapling",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_trapdoor",
+   "kind": "trapdoor",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_vine_rope_spool",
+   "kind": "cross",
+   "mat": "wood"
+  },
+  {
+   "id": "stellar_jungle_tree_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stellar_podzol",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_portal_frame_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_portal_frame_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "stellar_roots",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_stone_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_stone_bricks_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_stone_bricks_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_stone_button",
+   "kind": "button",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_stone_crystal_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_stone_pressure_plate",
+   "kind": "plate",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_sugar_cane",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stellar_tall_fern",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stellar_tall_grass",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stellar_very_tall_grass",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "stellar_wheat",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "stripped_aerial_tree_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_aerial_tree_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_copper_pine_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_copper_pine_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_giant_cortinarius_violaceus_bark_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "stripped_giant_cortinarius_violaceus_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "stripped_giant_verdigris_agaric_bark_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "stripped_giant_verdigris_agaric_stem",
+   "kind": "pillar",
+   "mat": "stone"
+  },
+  {
+   "id": "stripped_golden_beech_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_golden_beech_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_lapis_robinia_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_lapis_robinia_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_shadow_pine_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_shadow_pine_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_stellar_jungle_tree_log",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "stripped_stellar_jungle_tree_wood",
+   "kind": "pillar",
+   "mat": "log"
+  },
+  {
+   "id": "tall_bluish_fern",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "tall_glowing_boletus",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "tall_polychrome_fern",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "thorny_cobweb",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "trapped_golden_nether_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "trapped_light_golden_nether_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "trapped_light_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "trapped_light_mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "trapped_lunatic_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "trapped_mud_bricks",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "verdigris_agaric",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "vibrant_aerial_berry_bush",
+   "kind": "cross",
+   "mat": "plant"
+  },
+  {
+   "id": "vibrant_sky_cactus",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "volucite_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "volucite_bookshelf",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "volucite_chain",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "volucite_chest",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "volucite_dungeon_core",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "volucite_glyph_block",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "volucite_ore",
+   "kind": "block",
+   "mat": "ore"
+  },
+  {
+   "id": "volucite_stone",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "weak_light_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "weak_shadow_reactor",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "white_solid_ether",
+   "kind": "block",
+   "mat": "stone"
+  },
+  {
+   "id": "aerial_netherrack_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "aerial_netherrack"
+  },
+  {
+   "id": "aerial_netherrack_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "aerial_netherrack"
+  },
+  {
+   "id": "aerial_netherrack_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "aerial_netherrack"
+  },
+  {
+   "id": "aerial_tree_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "aerial_tree_planks"
+  },
+  {
+   "id": "aerial_tree_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "aerial_tree_planks"
+  },
+  {
+   "id": "copper_pine_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "copper_pine_planks"
+  },
+  {
+   "id": "copper_pine_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "copper_pine_planks"
+  },
+  {
+   "id": "cracked_golden_nether_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "cracked_golden_nether_bricks"
+  },
+  {
+   "id": "cracked_golden_nether_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "cracked_golden_nether_bricks"
+  },
+  {
+   "id": "cracked_golden_nether_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "cracked_golden_nether_bricks"
+  },
+  {
+   "id": "cracked_lunatic_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "cracked_lunatic_stone"
+  },
+  {
+   "id": "cracked_lunatic_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "cracked_lunatic_stone"
+  },
+  {
+   "id": "cracked_lunatic_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "cracked_lunatic_stone"
+  },
+  {
+   "id": "cracked_mud_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "cracked_mud_bricks"
+  },
+  {
+   "id": "cracked_mud_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "cracked_mud_bricks"
+  },
+  {
+   "id": "cracked_mud_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "cracked_mud_bricks"
+  },
+  {
+   "id": "cracked_shadow_catacombs_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "cracked_shadow_catacombs_bricks"
+  },
+  {
+   "id": "cracked_shadow_catacombs_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "cracked_shadow_catacombs_bricks"
+  },
+  {
+   "id": "cracked_shadow_catacombs_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "cracked_shadow_catacombs_bricks"
+  },
+  {
+   "id": "cracked_slippery_sand_stone_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "cracked_slippery_sand_stone_bricks"
+  },
+  {
+   "id": "cracked_slippery_sand_stone_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "cracked_slippery_sand_stone_bricks"
+  },
+  {
+   "id": "cracked_slippery_sand_stone_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "cracked_slippery_sand_stone_bricks"
+  },
+  {
+   "id": "cracked_volucite_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "cracked_volucite_stone"
+  },
+  {
+   "id": "cracked_volucite_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "cracked_volucite_stone"
+  },
+  {
+   "id": "cracked_volucite_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "cracked_volucite_stone"
+  },
+  {
+   "id": "crystal_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "crystal_bricks"
+  },
+  {
+   "id": "crystal_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "crystal_bricks"
+  },
+  {
+   "id": "crystal_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "crystal_bricks"
+  },
+  {
+   "id": "dark_lunatic_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "dark_lunatic_stone"
+  },
+  {
+   "id": "dark_lunatic_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "dark_lunatic_stone"
+  },
+  {
+   "id": "dark_lunatic_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "dark_lunatic_stone"
+  },
+  {
+   "id": "ghost_boat_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "ghost_boat_planks"
+  },
+  {
+   "id": "ghost_boat_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "ghost_boat_planks"
+  },
+  {
+   "id": "glaucophanite_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "glaucophanite"
+  },
+  {
+   "id": "golden_beech_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "golden_beech_planks"
+  },
+  {
+   "id": "golden_beech_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "golden_beech_planks"
+  },
+  {
+   "id": "golden_nether_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "golden_nether_bricks"
+  },
+  {
+   "id": "golden_nether_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "golden_nether_bricks"
+  },
+  {
+   "id": "golden_nether_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "golden_nether_bricks"
+  },
+  {
+   "id": "gray_shroom_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "gray_shroom_planks"
+  },
+  {
+   "id": "gray_shroom_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "gray_shroom_planks"
+  },
+  {
+   "id": "lapis_robinia_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "lapis_robinia_planks"
+  },
+  {
+   "id": "lapis_robinia_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "lapis_robinia_planks"
+  },
+  {
+   "id": "lunatic_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "lunatic_stone"
+  },
+  {
+   "id": "lunatic_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "lunatic_stone"
+  },
+  {
+   "id": "lunatic_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "lunatic_stone"
+  },
+  {
+   "id": "magmatic_gel_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "magmatic_gel_block"
+  },
+  {
+   "id": "magmatic_gel_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "magmatic_gel_block"
+  },
+  {
+   "id": "magmatic_gel_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "magmatic_gel_block"
+  },
+  {
+   "id": "mossy_mud_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "mossy_mud_bricks"
+  },
+  {
+   "id": "mossy_mud_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "mossy_mud_bricks"
+  },
+  {
+   "id": "mossy_mud_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "mossy_mud_bricks"
+  },
+  {
+   "id": "mossy_shadow_catacombs_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "mossy_shadow_catacombs_bricks"
+  },
+  {
+   "id": "mossy_shadow_catacombs_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "mossy_shadow_catacombs_bricks"
+  },
+  {
+   "id": "mossy_shadow_catacombs_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "mossy_shadow_catacombs_bricks"
+  },
+  {
+   "id": "mossy_stellar_cobblestone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "mossy_stellar_cobblestone"
+  },
+  {
+   "id": "mossy_stellar_cobblestone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "mossy_stellar_cobblestone"
+  },
+  {
+   "id": "mossy_stellar_cobblestone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "mossy_stellar_cobblestone"
+  },
+  {
+   "id": "mossy_stellar_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "mossy_stellar_stone"
+  },
+  {
+   "id": "mossy_stellar_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "mossy_stellar_stone"
+  },
+  {
+   "id": "mossy_stellar_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "mossy_stellar_stone"
+  },
+  {
+   "id": "mud_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "mud_bricks"
+  },
+  {
+   "id": "mud_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "mud_bricks"
+  },
+  {
+   "id": "mud_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "mud_bricks"
+  },
+  {
+   "id": "polished_glaucophanite_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "polished_glaucophanite"
+  },
+  {
+   "id": "polished_glaucophanite_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "polished_glaucophanite"
+  },
+  {
+   "id": "polished_glaucophanite_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "polished_glaucophanite"
+  },
+  {
+   "id": "shadow_catacombs_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "shadow_catacombs_bricks"
+  },
+  {
+   "id": "shadow_catacombs_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "shadow_catacombs_bricks"
+  },
+  {
+   "id": "shadow_catacombs_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "shadow_catacombs_bricks"
+  },
+  {
+   "id": "shadow_pine_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "shadow_pine_planks"
+  },
+  {
+   "id": "shadow_pine_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "shadow_pine_planks"
+  },
+  {
+   "id": "sky_cactus_fiber_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "sky_cactus_fiber_planks"
+  },
+  {
+   "id": "sky_cactus_fiber_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "sky_cactus_fiber_planks"
+  },
+  {
+   "id": "slippery_sand_stone_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "slippery_sand_stone_bricks"
+  },
+  {
+   "id": "slippery_sand_stone_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "slippery_sand_stone_bricks"
+  },
+  {
+   "id": "slippery_sand_stone_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "slippery_sand_stone_bricks"
+  },
+  {
+   "id": "slippery_sand_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "slippery_sand_stone"
+  },
+  {
+   "id": "slippery_sand_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "slippery_sand_stone"
+  },
+  {
+   "id": "slippery_sand_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "slippery_sand_stone"
+  },
+  {
+   "id": "smoky_quartz_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "smoky_quartz_block"
+  },
+  {
+   "id": "smoky_quartz_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "smoky_quartz_block"
+  },
+  {
+   "id": "smooth_smoky_quartz_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "smooth_smoky_quartz"
+  },
+  {
+   "id": "smooth_smoky_quartz_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "smooth_smoky_quartz"
+  },
+  {
+   "id": "stellar_cobblestone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "stellar_cobblestone"
+  },
+  {
+   "id": "stellar_cobblestone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "stellar_cobblestone"
+  },
+  {
+   "id": "stellar_cobblestone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "stellar_cobblestone"
+  },
+  {
+   "id": "stellar_jungle_tree_slab",
+   "kind": "slab",
+   "mat": "wood",
+   "base": "stellar_jungle_tree_planks"
+  },
+  {
+   "id": "stellar_jungle_tree_stairs",
+   "kind": "stairs",
+   "mat": "wood",
+   "base": "stellar_jungle_tree_planks"
+  },
+  {
+   "id": "stellar_stone_bricks_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "stellar_stone_bricks"
+  },
+  {
+   "id": "stellar_stone_bricks_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "stellar_stone_bricks"
+  },
+  {
+   "id": "stellar_stone_bricks_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "stellar_stone_bricks"
+  },
+  {
+   "id": "stellar_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "stellar_stone"
+  },
+  {
+   "id": "stellar_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "stellar_stone"
+  },
+  {
+   "id": "stellar_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "stellar_stone"
+  },
+  {
+   "id": "volucite_stone_slab",
+   "kind": "slab",
+   "mat": "stone",
+   "base": "volucite_stone"
+  },
+  {
+   "id": "volucite_stone_stairs",
+   "kind": "stairs",
+   "mat": "stone",
+   "base": "volucite_stone"
+  },
+  {
+   "id": "volucite_stone_wall",
+   "kind": "wall",
+   "mat": "stone",
+   "base": "volucite_stone"
+  }
+ ],
+ "items": [
+  "aerial_berry",
+  "aerial_berry_seeds",
+  "aerial_hell_guide_book",
+  "aerial_hell_painting",
+  "agility_totem",
+  "arsonist_ingot",
+  "arsonist_shuriken",
+  "axe_of_light",
+  "azurite_copper_pine_cone",
+  "azurite_crystal",
+  "azurite_shuriken",
+  "block_cracker",
+  "block_updater",
+  "blue_meanie_cap",
+  "blue_meanie_spores",
+  "blue_solid_ether_fragment",
+  "cooked_phantom_meat",
+  "cooked_turtle_meat",
+  "copper_pine_cone",
+  "cortinarius_violaceus_piece",
+  "crystal",
+  "cursed_crystal",
+  "cursed_totem",
+  "dark_shadow_fruit",
+  "diamond_shuriken",
+  "dimension_shatterer_projectile",
+  "fluorite",
+  "forgotten_battle_trident",
+  "frozen_aerial_berry",
+  "frozen_chicken",
+  "frozen_glowing_stick_fruit",
+  "frozen_mutton",
+  "frozen_phantom_meat",
+  "frozen_solid_ether_soup",
+  "frozen_turtle_meat",
+  "ganoderma_applanatum_piece",
+  "glowing_stick_fruit",
+  "god_totem",
+  "gods_volucite_aerial_berry",
+  "gold_shuriken",
+  "golden_nether_meat_piece",
+  "golden_nether_steak",
+  "golden_solid_ether_fragment",
+  "green_solid_ether_fragment",
+  "head_in_the_clouds_totem",
+  "hero_totem",
+  "iron_shuriken",
+  "lightning_shuriken",
+  "lunatic_crystal",
+  "lunatic_crystal_shuriken",
+  "magmatic_gel",
+  "magmatic_gel_shuriken",
+  "mud_bone",
+  "netherite_shuriken",
+  "night_vision_totem",
+  "obsidian_shard",
+  "obsidian_shuriken",
+  "overheated_ruby",
+  "overheated_volucite",
+  "phantom_meat",
+  "phoenix_feather",
+  "purple_shadow_fruit",
+  "purple_solid_ether_fragment",
+  "raw_azurite_crystal",
+  "raw_ruby",
+  "raw_volucite",
+  "reaper_scythe",
+  "regeneration_totem",
+  "roasted_aerial_berry",
+  "rotten_leather",
+  "ruby",
+  "ruby_aerial_berry",
+  "ruby_blowpipe",
+  "ruby_blowpipe_arrow",
+  "ruby_resonator",
+  "ruby_shard",
+  "ruby_shuriken",
+  "shadow_crystal",
+  "shadow_shard",
+  "shadow_spider_eye",
+  "shadow_totem",
+  "sky_cactus_fiber",
+  "sky_stick",
+  "smoky_quartz",
+  "solid_ether_soup",
+  "speed_ii_totem",
+  "speed_totem",
+  "stellar_bread",
+  "stellar_egg",
+  "stellar_lighter",
+  "stellar_portal_frame_brick",
+  "stellar_stone_breaker",
+  "stellar_stone_crystal",
+  "stellar_wheat_seeds",
+  "structure_void_placer",
+  "sword_of_light",
+  "turtle_meat",
+  "venomous_snake_skin",
+  "vibrant_aerial_berry",
+  "vibrant_aerial_berry_seeds",
+  "vibrant_chicken",
+  "vibrant_glowing_stick_fruit",
+  "vibrant_golden_nether_steak",
+  "vibrant_phantom_meat",
+  "vibrant_sky_cactus_fiber",
+  "vibrant_solid_ether_soup",
+  "vibrant_turtle_meat",
+  "vine_blossom",
+  "volucite_aerial_berry",
+  "volucite_blowpipe",
+  "volucite_blowpipe_arrow",
+  "volucite_resonator",
+  "volucite_shard",
+  "volucite_shuriken",
+  "volucite_vibrant",
+  "white_solid_ether_fragment"
+ ],
+ "gear": [
+  {
+   "id": "absolute_zero_sword",
+   "prefix": "absolute_zero",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "antidote_sword",
+   "prefix": "antidote",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_axe",
+   "prefix": "arsonist",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_boots",
+   "prefix": "arsonist",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_chestplate",
+   "prefix": "arsonist",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_helmet",
+   "prefix": "arsonist",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_hoe",
+   "prefix": "arsonist",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_leggings",
+   "prefix": "arsonist",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_pickaxe",
+   "prefix": "arsonist",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_shovel",
+   "prefix": "arsonist",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_spear",
+   "prefix": "arsonist",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "arsonist_sword",
+   "prefix": "arsonist",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_axe",
+   "prefix": "azurite",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_boots",
+   "prefix": "azurite",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_chestplate",
+   "prefix": "azurite",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_helmet",
+   "prefix": "azurite",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_hoe",
+   "prefix": "azurite",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_leggings",
+   "prefix": "azurite",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_pickaxe",
+   "prefix": "azurite",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_shovel",
+   "prefix": "azurite",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_spear",
+   "prefix": "azurite",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "azurite_sword",
+   "prefix": "azurite",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "berserk_axe",
+   "prefix": "berserk",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "cursed_axe",
+   "prefix": "cursed",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "cursed_sword",
+   "prefix": "cursed",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "disloyal_sword",
+   "prefix": "disloyal",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "glass_canon_sword",
+   "prefix": "glass_canon",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "glouton_sword",
+   "prefix": "glouton",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "god_sword",
+   "prefix": "god",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "health_boost_spear",
+   "prefix": "health_boost",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "health_boost_sword",
+   "prefix": "health_boost",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "heavy_axe",
+   "prefix": "heavy",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "heavy_sword",
+   "prefix": "heavy",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_axe",
+   "prefix": "lunatic",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_boots",
+   "prefix": "lunatic",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_chestplate",
+   "prefix": "lunatic",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_helmet",
+   "prefix": "lunatic",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_hoe",
+   "prefix": "lunatic",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_leggings",
+   "prefix": "lunatic",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_pickaxe",
+   "prefix": "lunatic",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_shovel",
+   "prefix": "lunatic",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_spear",
+   "prefix": "lunatic",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "lunatic_sword",
+   "prefix": "lunatic",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "magma_cube_pickaxe",
+   "prefix": "magma_cube",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "magma_cube_shovel",
+   "prefix": "magma_cube",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_axe",
+   "prefix": "magmatic_gel",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_boots",
+   "prefix": "magmatic_gel",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_chestplate",
+   "prefix": "magmatic_gel",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_helmet",
+   "prefix": "magmatic_gel",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_hoe",
+   "prefix": "magmatic_gel",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_leggings",
+   "prefix": "magmatic_gel",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_pickaxe",
+   "prefix": "magmatic_gel",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_shovel",
+   "prefix": "magmatic_gel",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_spear",
+   "prefix": "magmatic_gel",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "magmatic_gel_sword",
+   "prefix": "magmatic_gel",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "netherian_king_sword",
+   "prefix": "netherian_king",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "ninja_master_sword",
+   "prefix": "ninja_master",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "ninja_sword",
+   "prefix": "ninja",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_axe",
+   "prefix": "obsidian",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_boots",
+   "prefix": "obsidian",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_chestplate",
+   "prefix": "obsidian",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_helmet",
+   "prefix": "obsidian",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_hoe",
+   "prefix": "obsidian",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_leggings",
+   "prefix": "obsidian",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_pickaxe",
+   "prefix": "obsidian",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_shovel",
+   "prefix": "obsidian",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_spear",
+   "prefix": "obsidian",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "obsidian_sword",
+   "prefix": "obsidian",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "random_sword",
+   "prefix": "random",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_axe",
+   "prefix": "ruby",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_boots",
+   "prefix": "ruby",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_chestplate",
+   "prefix": "ruby",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_helmet",
+   "prefix": "ruby",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_hoe",
+   "prefix": "ruby",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_leggings",
+   "prefix": "ruby",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_pickaxe",
+   "prefix": "ruby",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_shovel",
+   "prefix": "ruby",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_spear",
+   "prefix": "ruby",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "ruby_sword",
+   "prefix": "ruby",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "shadow_boots",
+   "prefix": "shadow",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "shadow_chestplate",
+   "prefix": "shadow",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "shadow_helmet",
+   "prefix": "shadow",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "shadow_leggings",
+   "prefix": "shadow",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "sky_wood_axe",
+   "prefix": "sky_wood",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "sky_wood_hoe",
+   "prefix": "sky_wood",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "sky_wood_pickaxe",
+   "prefix": "sky_wood",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "sky_wood_shovel",
+   "prefix": "sky_wood",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "sky_wood_spear",
+   "prefix": "sky_wood",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "sky_wood_sword",
+   "prefix": "sky_wood",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "stellar_stone_axe",
+   "prefix": "stellar_stone",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "stellar_stone_hoe",
+   "prefix": "stellar_stone",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "stellar_stone_pickaxe",
+   "prefix": "stellar_stone",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "stellar_stone_shovel",
+   "prefix": "stellar_stone",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "stellar_stone_spear",
+   "prefix": "stellar_stone",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "stellar_stone_sword",
+   "prefix": "stellar_stone",
+   "kind": "sword",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_axe",
+   "prefix": "volucite",
+   "kind": "axe",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_boots",
+   "prefix": "volucite",
+   "kind": "boots",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_chestplate",
+   "prefix": "volucite",
+   "kind": "chestplate",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_helmet",
+   "prefix": "volucite",
+   "kind": "helmet",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_hoe",
+   "prefix": "volucite",
+   "kind": "hoe",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_leggings",
+   "prefix": "volucite",
+   "kind": "leggings",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_pickaxe",
+   "prefix": "volucite",
+   "kind": "pickaxe",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_shovel",
+   "prefix": "volucite",
+   "kind": "shovel",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_spear",
+   "prefix": "volucite",
+   "kind": "spear",
+   "tier": "iron"
+  },
+  {
+   "id": "volucite_sword",
+   "prefix": "volucite",
+   "kind": "sword",
+   "tier": "iron"
+  }
+ ],
+ "portals": [
+  {
+   "block": "aerial_hell_portal",
+   "activator": "aerialhell:volucite_shard",
+   "frame": "aerialhell:stellar_portal_frame_block"
+  }
+ ],
+ "mobs": [
+  {
+   "id": "aerial_tree_mimic",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "chained_god",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "copper_pine_mimic",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "cortinarius_cow",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "crystal_caterpillar",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "crystal_golem",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "crystal_slime",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "crystal_spider",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "electro_spirit",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "evil_cow",
+   "kind": "hoglin",
+   "role": "passive",
+   "hp": 20,
+   "atk": 2,
+   "scale": 1.0
+  },
+  {
+   "id": "fat_phantom",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "fire_spirit",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "flying_jellyfish",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "forest_caterpillar",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "ghost_slime_ninja_pirate",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "ghost_slime_pirate",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "gliding_turtle",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "golden_beech_mimic",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "hell_spider",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "ice_spirit",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "kodama",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lilith",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "lunatic_priest",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "mud_cycle_mage",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "mud_golem",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "mud_soldier",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "mud_spectral_cycle_mage",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "mud_spectral_golem",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "mud_spectral_soldier",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "mummy",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "sandy_sheep",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "shadow_automaton",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "shadow_flying_skull",
+   "kind": "phantom",
+   "role": "monster",
+   "hp": 18,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "shadow_pine_mimic",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "shadow_spider",
+   "kind": "spider",
+   "role": "monster",
+   "hp": 16,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "shadow_troll",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "shroomboom",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "sky_cactus_fiber_mimic",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "slime_ninja_pirate",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "slime_pirate",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "stellar_boar",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "stellar_chicken",
+   "kind": "silverfish",
+   "role": "monster",
+   "hp": 8,
+   "atk": 1.5,
+   "scale": 1.0
+  },
+  {
+   "id": "stellar_ent",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "stellar_stone_automaton",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "torn_spirit",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "venomous_snake",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "verdigris_zombie",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "volucite_golem",
+   "kind": "golem",
+   "role": "monster",
+   "hp": 100,
+   "atk": 9,
+   "scale": 1.0
+  },
+  {
+   "id": "volucite_warden",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  },
+  {
+   "id": "worm",
+   "kind": "zombie",
+   "role": "monster",
+   "hp": 20,
+   "atk": 3,
+   "scale": 1.0
+  }
+ ]
+}

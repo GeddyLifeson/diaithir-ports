@@ -1,0 +1,24 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 35,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 64
+  },
+  {
+   "item": "minecraft:copper_ingot",
+   "count": 64
+  },
+  {
+   "item": "minecraft:redstone",
+   "count": 64
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:motor_e_l",
+  "count": 1
+ }
+}

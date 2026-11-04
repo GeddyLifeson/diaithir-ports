@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/tandoor"
+  "layer0": "diaithirfurnishings:item/tandoor_pot",
+  "layer1": "diaithirfurnishings:item/tandoor_handle"
  }
 }

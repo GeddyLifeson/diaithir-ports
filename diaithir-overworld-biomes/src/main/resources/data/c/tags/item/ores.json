@@ -3,19 +3,27 @@
  "values": [
   "#c:ores/ambrosium",
   "#c:ores/arkenium",
+  "#c:ores/azurite",
   "#c:ores/cloggrum",
   "#c:ores/coal",
   "#c:ores/corrobonite",
   "#c:ores/diamond",
+  "#c:ores/fluorite",
+  "#c:ores/frame",
   "#c:ores/froststeel",
+  "#c:ores/gel",
   "#c:ores/glint",
   "#c:ores/gold",
   "#c:ores/gravitite",
   "#c:ores/iron",
+  "#c:ores/obsidian",
   "#c:ores/quartz",
   "#c:ores/regalium",
   "#c:ores/rogdorium",
+  "#c:ores/ruby",
+  "#c:ores/stellar",
   "#c:ores/utherium",
+  "#c:ores/volucite",
   "#c:ores/zanite"
  ]
 }

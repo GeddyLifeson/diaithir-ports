@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "/": "minecraft:stick",
+    "@": "minecraft:string",
+    "B": "minecraft:coal"
+  },
+  "pattern": [
+    "  B",
+    "@/ ",
+    "/@ "
+  ],
+  "result": {
+    "id": "oredetector:coal_detector"
+  }
+}

@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/lever"
+  "layer0": "diaithirfurnishings:item/lever_head",
+  "layer1": "diaithirfurnishings:item/lever_handle",
+  "layer2": "diaithirfurnishings:item/lever_binding"
  }
 }

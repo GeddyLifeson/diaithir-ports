@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "aerialhell:blocks/stellar_very_tall_grass",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aerialhell:stellar_very_tall_grass"
+    }
+   ]
+  }
+ ]
+}

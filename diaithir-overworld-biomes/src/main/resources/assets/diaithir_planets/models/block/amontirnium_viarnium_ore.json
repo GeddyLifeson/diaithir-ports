@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:block/cube_all",
+"textures": {
+"all": "diaithir_planets:block/amontirnium_viarnium_ore"
+}
+}

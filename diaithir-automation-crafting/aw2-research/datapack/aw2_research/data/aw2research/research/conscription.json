@@ -1,0 +1,29 @@
+{
+  "title": "Conscription",
+  "description": "Ancient Warfare 2 research: conscription.",
+  "prerequisites": [
+    "aw2research:leadership"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:paper",
+            "count": {
+              "min": 12
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:paper"
+    }
+  }
+}

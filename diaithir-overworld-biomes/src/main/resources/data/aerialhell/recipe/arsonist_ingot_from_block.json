@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "aerialhell:arsonist_block"
+ ],
+ "result": {
+  "id": "aerialhell:arsonist_ingot",
+  "count": 9
+ }
+}

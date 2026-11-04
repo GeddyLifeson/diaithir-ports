@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "diaithirfoundry:foundry_bricks",
+    "diaithirfoundry:foundry_controller",
+    "diaithirfoundry:foundry_drain",
+    "diaithirfoundry:foundry_tank",
+    "diaithirfoundry:gem_cutter"
+  ]
+}

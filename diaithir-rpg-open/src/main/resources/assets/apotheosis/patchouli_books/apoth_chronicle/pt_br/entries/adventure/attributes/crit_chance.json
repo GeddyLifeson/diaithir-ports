@@ -1,0 +1,17 @@
+{
+    "name": "Chance de acerto crítico",
+    "icon": "minecraft:netherite_sword",
+    "category": "apotheosis:adventure/attributes",
+    "flag": "apotheosis:adventure",
+    "sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "A $(9)chance de acerto crítico$() determina a probabilidade de qualquer dano causado se tornar um acerto crítico. Valores acima de 100% permitem que um mesmo ataque cause múltiplos acertos críticos.$(p)Encontrada em armas."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "A quantidade de dano que seus ataques críticos causam depende do seu $(l:apotheosis:adventure/attributes/crit_damage)dano crítico$()."
+        }
+    ]
+}

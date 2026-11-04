@@ -41,6 +41,8 @@ public final class CreatureUtilities {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         bus.addListener(CreatureUtilities::tab);
+        net.diaithir.creatureutilities.guards.Guards.init(bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) net.diaithir.creatureutilities.guards.GuardsClient.init(bus);
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(CreatureUtilities::tooltip);
     }
 

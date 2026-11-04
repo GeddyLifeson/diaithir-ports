@@ -1,0 +1,16 @@
+{
+"variants": {
+"axis=x": {
+"model": "diaithir_planets:block/shyuthora_coreoliasum_log_horizontal",
+"x": 90,
+"y": 90
+},
+"axis=y": {
+"model": "diaithir_planets:block/shyuthora_coreoliasum_log"
+},
+"axis=z": {
+"model": "diaithir_planets:block/shyuthora_coreoliasum_log_horizontal",
+"x": 90
+}
+}
+}

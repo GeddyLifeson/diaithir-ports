@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:diamond_stellar_ore",
+  "aerialhell:gold_stellar_ore",
+  "aerialhell:iron_stellar_ore"
+ ]
+}
