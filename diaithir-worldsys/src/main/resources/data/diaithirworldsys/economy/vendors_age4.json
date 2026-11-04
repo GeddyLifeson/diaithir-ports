@@ -11,59 +11,95 @@
    ],
    "needs": "water_mill",
    "items": {
-    "aether_ii:cockatrice_feather": {
+    "auroral:sugared_roasted_snowball": {
      "price": 1,
      "stock": 32
     },
-    "biomesoplenty:fir_chest_boat": {
+    "biomesoplenty:maple_boat": {
      "price": 1,
      "stock": 32
     },
-    "biomesoplenty:origin_oak_chest_boat": {
+    "diaithircompat:wild_einkorn_grain": {
      "price": 1,
      "stock": 32
     },
-    "biomesoplenty:willow_chest_boat": {
+    "farmersdelight:fried_rice": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:birch_boat": {
+    "framedblocks:framed_double_corner_board": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:mangrove_chest_boat": {
+    "framedblocks:framed_flat_double_slope_slab_corner": {
      "price": 1,
      "stock": 32
     },
-    "productivetrees:butternut_planks": {
+    "framedblocks:framed_flat_stacked_inner_slope_slab_corner": {
      "price": 1,
      "stock": 32
     },
-    "framedblocks:framed_flat_elev_inner_double_slope_slab_corner": {
+    "framedblocks:framed_large_inner_corner_slope_panel_w": {
+     "price": 1,
+     "stock": 32
+    },
+    "framedblocks:framed_small_inner_prism_corner_slope_panel_w": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:cherry_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:spruce_chest_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "productivetrees:butternut": {
+     "price": 1,
+     "stock": 32
+    },
+    "productivetrees:butternut_stripped_wood": {
+     "price": 1,
+     "stock": 32
+    },
+    "productivetrees:sugar_maple_sapling": {
+     "price": 1,
+     "stock": 32
+    },
+    "regions_unexplored:dead_chest_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "regions_unexplored:redwood_boat": {
+     "price": 1,
+     "stock": 32
+    },
+    "croptopia:basil_seed": {
      "price": 2,
      "stock": 16
     },
-    "minecraft:wheat": {
+    "croptopia:hops_seed": {
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:breeze_seeds": {
+    "croptopia:spinach_seed": {
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:dye_seeds": {
+    "mcwbridges:sandstone_bridge_pier": {
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:gaia_spirit_seeds": {
+    "mysticalagriculture:cobalt_seeds": {
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:knightmetal_seeds": {
+    "mysticalagriculture:fluix_seeds": {
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:neutronium_seeds": {
+    "mysticalagriculture:manyullyn_seeds": {
      "price": 2,
      "stock": 16
     },
@@ -71,99 +107,55 @@
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:spirited_crystal_seeds": {
+    "mysticalagriculture:terrasteel_seeds": {
      "price": 2,
      "stock": 16
     },
-    "mysticalagriculture:wood_seeds": {
+    "productivefarming:blue_borage_seeds": {
      "price": 2,
      "stock": 16
     },
-    "productivetrees:butternut_stairs": {
+    "productivefarming:cauliflower_seeds_bag": {
      "price": 2,
      "stock": 16
     },
-    "strainers:seed_bag": {
+    "productivefarming:dill_seeds": {
      "price": 2,
      "stock": 16
     },
-    "aether_ii:moa_egg_curved_green": {
+    "productivefarming:kohlrabi_seeds_bag": {
+     "price": 2,
+     "stock": 16
+    },
+    "productivefarming:quinoa_seeds_bag": {
+     "price": 2,
+     "stock": 16
+    },
+    "productivefarming:sarsaparilla_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "productivefarming:tobacco_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "productivetrees:breadfruit_stairs": {
+     "price": 2,
+     "stock": 16
+    },
+    "tconstruct:cheese_ingot": {
+     "price": 2,
+     "stock": 16
+    },
+    "domum_ornamentum:black_floating_carpet": {
      "price": 3,
      "stock": 11
     },
-    "aether_ii:moa_egg_eyes_blue": {
+    "ecologics:maple_pancake": {
      "price": 3,
      "stock": 11
     },
-    "aether_ii:moa_egg_flat_light_blue": {
-     "price": 3,
-     "stock": 11
-    },
-    "aether_ii:moa_egg_pointed_blooming_red": {
-     "price": 3,
-     "stock": 11
-    },
-    "aether_ii:moa_egg_pointed_orange": {
-     "price": 3,
-     "stock": 11
-    },
-    "farmersdelight:bacon_and_eggs": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:baobab_chest_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:coconut_chest_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:fir_chest_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:kapok_chest_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:mahoe_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:palm_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:plum_chest_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "forestry:wenge_boat": {
-     "price": 3,
-     "stock": 11
-    },
-    "framedblocks:framed_double_corner": {
-     "price": 3,
-     "stock": 11
-    },
-    "framedblocks:framed_ext_double_corner_slope_panel": {
-     "price": 3,
-     "stock": 11
-    },
-    "framedblocks:framed_flat_inv_double_slope_panel_corner": {
-     "price": 3,
-     "stock": 11
-    },
-    "framedblocks:framed_inv_double_corner_slope_panel_w": {
-     "price": 3,
-     "stock": 11
-    },
-    "framedblocks:framed_masonry_corner": {
-     "price": 3,
-     "stock": 11
-    },
-    "framedblocks:framed_small_prism_corner_slope_panel_w": {
+    "mcwbridges:acacia_bridge_pier": {
      "price": 3,
      "stock": 11
     },
@@ -171,35 +163,35 @@
      "price": 3,
      "stock": 11
     },
-    "minecraft:lime_candle_cake": {
+    "minecraft:red_candle_cake": {
      "price": 3,
      "stock": 11
     },
-    "mysticalagriculture:gold_seeds": {
+    "productivefarming:barley": {
      "price": 3,
      "stock": 11
     },
-    "productivetrees:butternut_crate": {
+    "productivefarming:rye": {
      "price": 3,
      "stock": 11
     },
-    "productivetrees:roasted_butternut_crate": {
+    "productivetrees:breadfruit_pressure_plate": {
      "price": 3,
      "stock": 11
     },
-    "aether_ii:moa_egg_keratin_bley": {
+    "strainers:emerald_ore_piece": {
+     "price": 3,
+     "stock": 11
+    },
+    "untamedwilds:egg_spitter": {
+     "price": 3,
+     "stock": 11
+    },
+    "croptopia:raspberry_seed": {
      "price": 4,
      "stock": 8
     },
-    "mcwbridges:cobblestone_bridge_pier": {
-     "price": 4,
-     "stock": 8
-    },
-    "minecraft:wheat_seeds": {
-     "price": 4,
-     "stock": 8
-    },
-    "mysticalagriculture:rabbit_seeds": {
+    "mysticalagriculture:honey_seeds": {
      "price": 4,
      "stock": 8
     },
@@ -207,35 +199,15 @@
      "price": 4,
      "stock": 8
     },
-    "productivetrees:breadfruit_door": {
-     "price": 5,
-     "stock": 6
-    },
-    "productivetrees:sugar_apple_sign": {
-     "price": 5,
-     "stock": 6
-    },
-    "mysticalagriculture:compressed_iron_seeds": {
+    "diaithir_drinks:cave_wild_wheat_beer": {
      "price": 6,
      "stock": 5
     },
-    "farmersdelight:sweet_berry_cookie": {
+    "croptopia:banana_nut_bread": {
      "price": 7,
      "stock": 5
     },
-    "mcwbridges:birch_bridge_pier": {
-     "price": 7,
-     "stock": 5
-    },
-    "mcwbridges:nether_bricks_bridge_pier": {
-     "price": 7,
-     "stock": 5
-    },
-    "minecolonies:barbarianegg": {
-     "price": 7,
-     "stock": 5
-    },
-    "minecolonies:norsemenchiefegg": {
+    "croptopia:steamed_rice": {
      "price": 7,
      "stock": 5
     },
@@ -243,92 +215,120 @@
      "price": 7,
      "stock": 5
     },
-    "productivetrees:breadfruit_fruit": {
+    "twilightforest:mining_boat": {
      "price": 7,
      "stock": 5
     },
-    "productivetrees:sugar_apple_stripped_log": {
+    "vampirism:hunter_coat_head_normal": {
      "price": 7,
      "stock": 5
     },
-    "tconstruct:ender_slime_grass_seeds": {
-     "price": 8,
-     "stock": 4
-    },
-    "mysticalagriculture:awakened_supremium_leggings": {
+    "auroral:chainmail_leggings_shimmersteel_trim": {
      "price": 10,
      "stock": 4
     },
-    "mysticalagriculture:end_steel_seeds": {
-     "price": 13,
+    "productivetrees:breadfruit_hanging_sign": {
+     "price": 12,
      "stock": 4
     },
-    "farmersdelight:milk_bottle": {
+    "cookingforblockheads:cookie_jar": {
      "price": 16,
      "stock": 4
     },
-    "tconstruct:earth_cake": {
+    "croptopia:tres_leche_cake": {
      "price": 16,
      "stock": 4
     },
-    "silentgear:coating_blueprint": {
-     "price": 20,
+    "tconstruct:blood_cake": {
+     "price": 16,
      "stock": 4
     },
-    "silentgear:leggings": {
+    "vampirism:hunter_coat_legs_enhanced": {
+     "price": 16,
+     "stock": 4
+    },
+    "iceandfire:pixie_dust_milky_tea": {
      "price": 26,
      "stock": 4
     },
-    "diaithir_drinks:eggnog": {
-     "price": 31,
+    "twilightforest:yeti_leggings": {
+     "price": 26,
      "stock": 4
     },
-    "diaithir_drinks:grain_neutral_spirit": {
-     "price": 36,
+    "tconstruct:leggings_plating_sand_cast": {
+     "price": 32,
      "stock": 4
     },
-    "mysticalagriculture:netherite_seeds": {
+    "aether_ii:moa_egg_curved_classic_black": {
      "price": 40,
      "stock": 4
     },
-    "diaithir_drinks:high_rye_bourbon": {
-     "price": 48,
+    "aether_ii:moa_egg_eyes_green": {
+     "price": 40,
      "stock": 4
     },
-    "mysticalagriculture:prudentium_leggings": {
+    "aether_ii:moa_egg_flat_pink": {
+     "price": 40,
+     "stock": 4
+    },
+    "aether_ii:moa_egg_pointed_magenta": {
+     "price": 40,
+     "stock": 4
+    },
+    "evilcraft:piercing_vengeance_focus_1": {
+     "price": 40,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_eggplant": {
+     "price": 40,
+     "stock": 4
+    },
+    "aether_ii:arkenium_leggings": {
      "price": 64,
      "stock": 4
     },
-    "productivebees:spawn_egg_creeper_bee": {
+    "iceandfire:armor_green_leggings": {
      "price": 64,
      "stock": 4
     },
-    "productivebees:spawn_egg_nomad_bee": {
+    "iceandfire:tide_teal_leggings": {
      "price": 64,
      "stock": 4
     },
-    "occultism:spawn_egg/afrit_unbound": {
+    "productivebees:spawn_egg_farmer_bee": {
+     "price": 64,
+     "stock": 4
+    },
+    "twilightforest:naga_leggings": {
+     "price": 64,
+     "stock": 4
+    },
+    "iceandfire:dragonegg_black": {
      "price": 159,
      "stock": 4
     },
-    "occultism:spawn_egg/familiar_devil": {
+    "occultism:spawn_egg/familiar_cthulhu": {
      "price": 159,
      "stock": 4
     },
-    "occultism:spawn_egg/marid": {
+    "occultism:spawn_egg/possessed_blaze": {
      "price": 159,
      "stock": 4
     },
-    "occultism:spawn_egg/possessed_skeleton": {
+    "occultism:spawn_egg/wild_horde_drowned": {
      "price": 159,
      "stock": 4
     },
-    "occultism:spawn_egg/wild_hunt_wither_skeleton": {
-     "price": 159,
+    "iceandfire:dragonegg_amethyst": {
+     "price": 317,
      "stock": 4
     },
-    "occultism:spawn_egg/familiar_dragon": {
-     "price": 631,
+    "iceandfire:spawn_egg_dread_thrall": {
+     "price": 399,
+     "stock": 4
+    },
+    "iceandfire:spawn_egg_lightning_dragon": {
+     "price": 1585,
      "stock": 4
     }
    }
@@ -343,251 +343,211 @@
    ],
    "needs": "writing",
    "items": {
-    "bibliocraft:acacia_fancy_sign": {
-     "price": 12,
-     "stock": 4
-    },
-    "bibliocraft:acacia_shelf": {
+    "bibliocraft:acacia_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:black_acacia_small_seat_back": {
+    "bibliocraft:acacia_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:black_cherry_wall_display_case": {
+    "bibliocraft:acacia_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:black_mangrove_fancy_seat_back": {
+    "bibliocraft:bamboo_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:black_spruce_raised_seat_back": {
+    "bibliocraft:bamboo_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:blue_bamboo_seat": {
+    "bibliocraft:bamboo_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:blue_crimson_small_seat_back": {
+    "bibliocraft:birch_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:blue_mangrove_wall_display_case": {
+    "bibliocraft:birch_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:blue_warped_display_case": {
+    "bibliocraft:birch_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:brown_birch_flat_seat_back": {
+    "bibliocraft:cherry_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:brown_dark_oak_seat": {
+    "bibliocraft:cherry_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:brown_oak_small_seat_back": {
+    "bibliocraft:cherry_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:brown_warped_tall_seat_back": {
+    "bibliocraft:crimson_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:cyan_acacia_wall_display_case": {
+    "bibliocraft:crimson_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:cyan_crimson_fancy_seat_back": {
+    "bibliocraft:crimson_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:cyan_mangrove_raised_seat_back": {
+    "bibliocraft:dark_oak_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:cyan_spruce_seat_back": {
+    "bibliocraft:dark_oak_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:gray_acacia_seat": {
+    "bibliocraft:dark_oak_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:gray_cherry_small_seat_back": {
+    "bibliocraft:jungle_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:gray_jungle_tall_seat_back": {
+    "bibliocraft:jungle_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:gray_spruce_display_case": {
+    "bibliocraft:jungle_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:green_bamboo_fancy_seat_back": {
+    "bibliocraft:mangrove_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:green_crimson_raised_seat_back": {
+    "bibliocraft:mangrove_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:green_mangrove_seat_back": {
+    "bibliocraft:mangrove_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:green_spruce_tall_seat_back": {
+    "bibliocraft:oak_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_blue_acacia_wall_display_case": {
+    "bibliocraft:oak_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_blue_crimson_fancy_seat_back": {
+    "bibliocraft:oak_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_blue_mangrove_raised_seat_back": {
+    "bibliocraft:pale_oak_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_blue_spruce_seat_back": {
+    "bibliocraft:pale_oak_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_gray_bamboo_small_seat_back": {
+    "bibliocraft:pale_oak_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_gray_crimson_wall_display_case": {
+    "bibliocraft:spruce_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_gray_oak_fancy_seat_back": {
+    "bibliocraft:spruce_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:light_gray_warped_flat_seat_back": {
+    "bibliocraft:spruce_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:lime_birch_seat": {
+    "bibliocraft:warped_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:lime_dark_oak_small_seat_back": {
+    "bibliocraft:warped_grandfather_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:lime_oak_wall_display_case": {
+    "bibliocraft:warped_wall_fancy_clock": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:lock_and_key": {
+    "bibliocraft:wood/acacia/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:magenta_cherry_fancy_seat_back": {
+    "bibliocraft:wood/acacia/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:magenta_jungle_raised_seat_back": {
+    "bibliocraft:wood/bamboo/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:magenta_pale_oak_seat_back": {
+    "bibliocraft:wood/bamboo/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:mangrove_table": {
+    "bibliocraft:wood/birch/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:orange_bamboo_wall_display_case": {
+    "bibliocraft:wood/birch/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:orange_dark_oak_fancy_seat_back": {
+    "bibliocraft:wood/cherry/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:orange_oak_raised_seat_back": {
+    "bibliocraft:wood/cherry/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:orange_warped_seat": {
+    "bibliocraft:wood/crimson/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:pink_bamboo_small_seat_back": {
+    "bibliocraft:wood/crimson/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:pink_crimson_wall_display_case": {
+    "bibliocraft:wood/dark_oak/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:pink_oak_fancy_seat_back": {
+    "bibliocraft:wood/dark_oak/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:pink_warped_flat_seat_back": {
+    "bibliocraft:wood/jungle/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:purple_birch_raised_seat_back": {
+    "bibliocraft:wood/jungle/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:purple_dark_oak_seat_back": {
+    "bibliocraft:wood/mangrove/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:purple_oak_tall_seat_back": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:purple_warped_wall_display_case": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:red_cherry_fancy_seat_back": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:red_jungle_raised_seat_back": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:red_pale_oak_seat_back": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:spruce_shelf": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:white_bamboo_fancy_seat_back": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:white_crimson_raised_seat_back": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:white_mangrove_seat": {
-     "price": 16,
-     "stock": 4
-    },
-    "bibliocraft:white_spruce_small_seat_back": {
+    "bibliocraft:wood/mangrove/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
@@ -595,72 +555,40 @@
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:yellow_birch_flat_seat_back": {
+    "bibliocraft:wood/oak/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:yellow_dark_oak_seat": {
+    "bibliocraft:wood/pale_oak/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:yellow_oak_small_seat_back": {
+    "bibliocraft:wood/pale_oak/grandfather_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:yellow_warped_tall_seat_back": {
+    "bibliocraft:wood/spruce/fancy_clock_inventory": {
      "price": 16,
      "stock": 4
     },
-    "bibliocraft:blue_waxed_exposed_fancy_copper_lantern": {
+    "bibliocraft:wood/spruce/grandfather_clock_inventory": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:wood/warped/fancy_clock_inventory": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:wood/warped/grandfather_clock_inventory": {
+     "price": 16,
+     "stock": 4
+    },
+    "bibliocraft:iron_printing_table": {
      "price": 20,
      "stock": 4
     },
-    "bibliocraft:cyan_fancy_copper_lamp": {
+    "bibliocraft:printing_table": {
      "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:gray_oxidized_fancy_copper_lamp": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:green_weathered_fancy_copper_lantern": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:light_gray_waxed_exposed_fancy_copper_lantern": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:magenta_fancy_copper_lamp": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:orange_waxed_oxidized_fancy_copper_lantern": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:purple_fancy_copper_lantern": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:red_waxed_weathered_fancy_copper_lamp": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:white_waxed_weathered_fancy_copper_lamp": {
-     "price": 20,
-     "stock": 4
-    },
-    "bibliocraft:brown_fancy_gold_lamp": {
-     "price": 26,
-     "stock": 4
-    },
-    "bibliocraft:pale_oak_fancy_armor_stand": {
-     "price": 26,
-     "stock": 4
-    },
-    "bibliocraft:cookie_jar": {
-     "price": 40,
      "stock": 4
     }
    }
@@ -674,323 +602,35 @@
     "workshop"
    ],
    "items": {
-    "mcwwindows:andesite_four_window": {
-     "price": 8,
-     "stock": 4
-    },
-    "mcwwindows:granite_window": {
-     "price": 8,
-     "stock": 4
-    },
-    "mcwdoors:acacia_western_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:birch_barn_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:cherry_cottage_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:crimson_japanese2_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:dark_oak_mystic_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:jungle_modern_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:mangrove_nether_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:oak_nether_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:pale_oak_stable_head_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:spruce_western_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwdoors:warped_whispering_door": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:bamboo_barn_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:birch_cottage_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:cherry_whispering_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:dark_oak_barrel_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:jungle_four_panel_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:metal_full_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:pale_oak_barn_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:spruce_cottage_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "mcwtrpdoors:warped_swamp_trapdoor": {
-     "price": 12,
-     "stock": 4
-    },
-    "utilitarian:blue_soliciting_carpet": {
-     "price": 15,
-     "stock": 4
-    },
-    "utilitarian:pink_trapped_soliciting_carpet": {
-     "price": 15,
-     "stock": 4
-    },
-    "mcwdoors:print_whispering": {
+    "utilitarian:cursed_grrass": {
      "price": 16,
      "stock": 4
     },
-    "mcwfurnitures:acacia_kitchen_sink": {
+    "utilitarian:magnet": {
      "price": 16,
      "stock": 4
     },
-    "mcwfurnitures:birch_double_drawer_counter": {
+    "utilitarian:slime_bucket": {
      "price": 16,
      "stock": 4
     },
-    "mcwfurnitures:black_chaise": {
+    "utilitarian:slime_bucket_active": {
      "price": 16,
      "stock": 4
     },
-    "mcwfurnitures:cherry_drawer_counter": {
+    "utilitarian:slime_bucket_description": {
      "price": 16,
      "stock": 4
     },
-    "mcwfurnitures:crimson_coffee_table": {
+    "utilitarian:unname_tag": {
      "price": 16,
      "stock": 4
     },
-    "mcwfurnitures:crimson_stool_chair": {
-     "price": 16,
+    "utilitarian:redstone_clock": {
+     "price": 26,
      "stock": 4
     },
-    "mcwfurnitures:dark_oak_drawer_counter": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:jungle_bookshelf": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:jungle_lower_bookshelf_drawer": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:mangrove_coffee_table": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:mangrove_modern_wardrobe": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:oak_end_table": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:pale_oak_chair": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:pale_oak_modern_wardrobe": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:spruce_double_drawer": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:spruce_wardrobe": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_acacia_large_drawer": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_birch_double_kitchen_cabinet": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_cherry_bookshelf_cupboard": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_cherry_lower_triple_drawer": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_crimson_double_wardrobe": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_dark_oak_chair": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_dark_oak_modern_desk": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_jungle_drawer_counter": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_mangrove_coffee_table": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_mangrove_stool_chair": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_oak_glass_kitchen_cabinet": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_pale_oak_covered_desk": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_pale_oak_striped_chair": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_spruce_kitchen_cabinet": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_warped_desk": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:stripped_warped_triple_drawer": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwfurnitures:warped_kitchen_sink": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwlights:black_ceiling_light": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwlights:dark_oak_ceiling_fan_light": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwlights:lime_ceiling_light": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwlights:red_ceiling_light": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwlights:striped_garden_light": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwtrpdoors:print_four_panel": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:birch_four_window": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:blue_curtain": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:crimson_louvered_shutter": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:dark_oak_plank_parapet": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:jungle_louvered_shutter": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:mangrove_log_parapet": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:oak_louvered_shutter": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:pale_oak_plank_window": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:red_sandstone_window2": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:stripped_acacia_log_window": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:stripped_jungle_pane_window": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwwindows:warped_blinds": {
-     "price": 16,
-     "stock": 4
-    },
-    "utilitarian:drit": {
-     "price": 16,
-     "stock": 4
-    },
-    "mcwlights:copper_small_chandelier": {
-     "price": 20,
-     "stock": 4
-    },
-    "utilitarian:no_soliciting_banner": {
-     "price": 20,
-     "stock": 4
-    },
-    "utilitarian:angel_block": {
+    "utilitarian:no_raider_block": {
      "price": 32,
      "stock": 4
     }
@@ -1006,259 +646,255 @@
    ],
    "needs": "alchemy",
    "items": {
-    "neovitae:raw_crystal_shard": {
-     "price": 7,
-     "stock": 5
-    },
-    "theurgy:alchemical_sulfur_cobbled_deepslate": {
+    "evilcraft:bloody_cobblestone": {
      "price": 8,
      "stock": 4
     },
-    "forbidden_arcanus:nuggety_aurum_leaves": {
+    "evilcraft:hardened_blood_shard": {
      "price": 10,
      "stock": 4
     },
-    "evilcraft:undead_fence_gate": {
+    "evilcraft:dark_blood_brick_stairs": {
      "price": 12,
      "stock": 4
     },
-    "forbidden_arcanus:edelwood_door": {
+    "forbidden_arcanus:deorum_door": {
      "price": 12,
      "stock": 4
     },
-    "forbidden_arcanus:runic_glass_pane": {
+    "forbidden_arcanus:polished_darkstone_button": {
      "price": 12,
      "stock": 4
     },
-    "neovitae:dungeon_polished_stairs": {
+    "neovitae:dungeon_brick_stairs_v": {
      "price": 12,
      "stock": 4
     },
-    "neovitae:dungeon_tile_wall": {
+    "neovitae:dungeon_stone_stairs_st": {
      "price": 12,
      "stock": 4
     },
-    "evilcraft:blood_chest": {
+    "neovitae:lex_vitae/pickaxe_raw_in_hand": {
+     "price": 13,
+     "stock": 4
+    },
+    "evilcraft:bowl_of_promises_tier0": {
      "price": 16,
      "stock": 4
     },
-    "evilcraft:bucket_eternal_water": {
+    "evilcraft:exalted_crafter": {
      "price": 16,
      "stock": 4
     },
-    "evilcraft:garmonbozia": {
+    "evilcraft:necromancer_staff": {
      "price": 16,
      "stock": 4
     },
-    "evilcraft:promise_tier_1": {
+    "evilcraft:undead_leaves": {
      "price": 16,
      "stock": 4
     },
-    "evilcraft:vengeance_focus_2": {
+    "forbidden_arcanus:artisan_relic": {
      "price": 16,
      "stock": 4
     },
-    "forbidden_arcanus:blood_test_tube": {
+    "forbidden_arcanus:carved_edelwood_log": {
      "price": 16,
      "stock": 4
     },
-    "forbidden_arcanus:dark_oak_wand": {
+    "forbidden_arcanus:desk": {
      "price": 16,
      "stock": 4
     },
-    "forbidden_arcanus:elementarium": {
+    "forbidden_arcanus:eternal_stella": {
      "price": 16,
      "stock": 4
     },
-    "forbidden_arcanus:omega_arcoin": {
+    "forbidden_arcanus:polished_soulless_sandstone": {
      "price": 16,
      "stock": 4
     },
-    "forbidden_arcanus:stone_blacksmith_gavel": {
+    "forbidden_arcanus:stripped_aurum_wood": {
      "price": 16,
      "stock": 4
     },
-    "mysticalagriculture:imperium_growth_accelerator": {
+    "mysticalagriculture:imperium_scythe": {
      "price": 16,
      "stock": 4
     },
-    "mysticalagriculture:prudentium_watering_can": {
+    "mysticalagriculture:prudentium_upgrade": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:air_scribe_tool": {
+    "mysticalagriculture:tertium_watering_can": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:array_liquified_experience": {
+    "neovitae:array_freeze": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:blight_whetstone": {
+    "neovitae:base_spiritus_soul_nihilum": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:bow_power_anointment_xl": {
+    "neovitae:bottled_spite": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:dungeon_brick2_c": {
+    "neovitae:deus_reverter": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:dungeon_eye_d": {
+    "neovitae:dungeon_brick_gate_d": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:dungeon_pillar_special_v": {
+    "neovitae:dungeon_pillar_cap_d": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:dungeon_stone": {
+    "neovitae:dungeon_polished_st": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:dungeon_tilespecial_st": {
+    "neovitae:dungeon_stone_wall_st": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:hellfire_forge": {
+    "neovitae:essentia_vitae_bucket": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:master_core_speed": {
+    "neovitae:hidden_knowledge_anointment_2": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:reagent_growth": {
+    "neovitae:lex_vitae/axe_raw": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:rune_2_dislocation": {
+    "neovitae:lex_vitae/hoe_ruina": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:shaped_charge_deep": {
+    "neovitae:phantom_bridge": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:simple_key": {
+    "neovitae:ritual_diviner_deus": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:sulfur": {
+    "neovitae:rune_efficiency": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:variant/blood_orb_apprentice_fill_1": {
+    "neovitae:sigil_necromancy": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:variant/blood_orb_master_fill_5": {
+    "neovitae:spiritus_ruina_catalyst": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:variant/sentient_axe_nihilum": {
+    "neovitae:tenebrae_ritual_stone": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:variant/spiritus_gem_greater_ruina": {
+    "neovitae:variant/blood_orb_magician_fill_1": {
      "price": 16,
      "stock": 4
     },
-    "neovitae:weak_filling_agent": {
+    "neovitae:variant/blood_orb_weak_fill_4": {
      "price": 16,
      "stock": 4
     },
-    "occultism:vitality_compass/compass_09": {
+    "neovitae:vas_maleficum": {
      "price": 16,
      "stock": 4
     },
-    "occultism:vitality_compass/compass_31": {
+    "neovitae:worn_stone_tile_path": {
      "price": 16,
      "stock": 4
     },
-    "reliquary:fertile_lily_pad": {
+    "occultism:vitality_compass/compass_18": {
      "price": 16,
      "stock": 4
     },
-    "reliquary:pedestals/light_blue_pedestal": {
+    "reliquary:apothecary_mortar": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_niter_animals_abundant": {
+    "reliquary:hero_medallion": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_acacia_log": {
+    "reliquary:pedestals/pink_pedestal": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_birch_log": {
+    "theurgy:alchemical_niter_animals_rare": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_colorless": {
+    "theurgy:alchemical_sulfur_almond": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_flax": {
+    "theurgy:alchemical_sulfur_bellpepper": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_illwood": {
+    "theurgy:alchemical_sulfur_coarse_dirt": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_mandarin": {
+    "theurgy:alchemical_sulfur_end_stone": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_onion": {
+    "theurgy:alchemical_sulfur_heart_of_the_sea": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_rooted_dirt": {
+    "theurgy:alchemical_sulfur_lime": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_stone": {
+    "theurgy:alchemical_sulfur_nectarine": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_white_wool": {
+    "theurgy:alchemical_sulfur_phantom_membrane": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:divination_rod_t2/0": {
+    "theurgy:alchemical_sulfur_slime_ball": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:divination_rod_t4/2": {
+    "theurgy:alchemical_sulfur_trumpet": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:jar_label_frame_common_icon": {
+    "theurgy:caloric_flux_emitter": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:pyromantic_brazier": {
+    "theurgy:jar_label_frame_precious_icon": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:sulfur_attuned_divination_rod_common/4": {
+    "theurgy:metals_rare_icon": {
      "price": 16,
      "stock": 4
     },
-    "theurgy:sulfur_attuned_divination_rod_rare/7": {
-     "price": 16,
-     "stock": 4
-    },
-    "forbidden_arcanus:corrupted_arcane_crystal": {
+    "evilcraft:promise_acceptor_iron": {
      "price": 20,
      "stock": 4
     },
-    "neovitae:basic_cutting_fluid": {
+    "mysticalagriculture:steel_essence": {
      "price": 20,
      "stock": 4
     },
@@ -1266,60 +902,64 @@
      "price": 20,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_tin": {
+    "theurgy:crystallized_water": {
      "price": 20,
      "stock": 4
     },
-    "mysticalagriculture:imperium_axe": {
+    "mysticalagriculture:imperium_crossbow": {
      "price": 26,
      "stock": 4
     },
-    "mysticalagriculture:prudentium_bow": {
+    "mysticalagriculture:prudentium_helmet": {
      "price": 26,
      "stock": 4
     },
-    "mysticalagriculture:tertium_helmet": {
+    "mysticalagriculture:tertium_hoe": {
      "price": 26,
      "stock": 4
     },
-    "neovitae:variant/sentient_shovel_invictus": {
+    "neovitae:lex_vitae/shovel_ruina_in_hand": {
      "price": 26,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_azure_silver": {
+    "neovitae:variant/sentient_pickaxe_deactivated": {
      "price": 26,
      "stock": 4
     },
-    "forbidden_arcanus:aurealic_obsidian_skull": {
+    "neovitae:variant/sentient_spear_ruina_in_hand": {
+     "price": 26,
+     "stock": 4
+    },
+    "forbidden_arcanus:aureal_tank": {
      "price": 32,
      "stock": 4
     },
-    "neovitae:essentia_vitae_block": {
+    "mysticalagriculture:diamond_sickle": {
      "price": 32,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_echo": {
+    "neovitae:spectral_block": {
      "price": 32,
      "stock": 4
     },
-    "theurgy:other_minerals_common_icon": {
+    "theurgy:alchemical_sulfur_purpur_block": {
      "price": 32,
      "stock": 4
     },
-    "neovitae:netherite_scrap_dust": {
+    "neovitae:fragment_netherite_scrap": {
      "price": 40,
      "stock": 4
     },
-    "theurgy:alchemical_sulfur_pineapple": {
+    "theurgy:alchemical_sulfur_honeydew": {
      "price": 40,
      "stock": 4
     },
-    "forbidden_arcanus:aquatic_dragon_scale": {
+    "mysticalagriculture:tertium_fishing_rod": {
+     "price": 51,
+     "stock": 4
+    },
+    "theurgy:alchemical_sulfur_nether_star": {
      "price": 64,
-     "stock": 4
-    },
-    "evilcraft:blood_waxed_coal_block": {
-     "price": 144,
      "stock": 4
     },
     "forbidden_arcanus:stygian_steel_block": {
@@ -1341,7 +981,11 @@
      "price": 8,
      "stock": 4
     },
-    "archers:large_quiver": {
+    "minecraft:gunpowder": {
+     "price": 10,
+     "stock": 4
+    },
+    "geore:ancient_debris_spyglass_in_hand": {
      "price": 16,
      "stock": 4
     },
@@ -1349,47 +993,39 @@
      "price": 16,
      "stock": 4
     },
-    "geore:uraninite_spyglass_in_hand": {
+    "geore:tungsten_spyglass_in_hand": {
      "price": 16,
      "stock": 4
     },
-    "ironfurnaces:item_copy": {
+    "ironfurnaces:augment_smoking": {
      "price": 16,
      "stock": 4
     },
-    "minecraft:deepslate_diamond_ore": {
+    "ironfurnaces:item_spooky": {
      "price": 16,
      "stock": 4
     },
-    "minecraft:lodestone_compass": {
+    "minecraft:compass": {
      "price": 16,
      "stock": 4
     },
-    "paladins:ruby_claymore": {
+    "minecraft:firework_rocket": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedbackpacks:advanced_magnet_upgrade": {
+    "minecraft:map": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedbackpacks:advanced_void_upgrade": {
+    "paladins:diamond_claymore": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedbackpacks:chipped/alchemy_bench_upgrade": {
+    "sophisticatedbackpacks:anvil_upgrade": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedbackpacks:feeding_upgrade": {
-     "price": 16,
-     "stock": 4
-    },
-    "sophisticatedbackpacks:mob_catcher_upgrade": {
-     "price": 16,
-     "stock": 4
-    },
-    "sophisticatedbackpacks:stack_downgrade_tier_2": {
+    "sophisticatedbackpacks:jukebox_upgrade": {
      "price": 16,
      "stock": 4
     },
@@ -1397,119 +1033,75 @@
      "price": 16,
      "stock": 4
     },
-    "sophisticatedbackpacks:stack_upgrade_tier_2": {
+    "sophisticatedbackpacks:stack_upgrade_tier_2_to_tier_3_conversion": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedbackpacks:stonecutter_upgrade": {
+    "sophisticatedbackpacks:stack_upgrade_tier_4": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:acacia_storage_connector": {
+    "sophisticatedstorage:chipped/alchemy_bench_upgrade": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:advanced_magnet_upgrade": {
+    "sophisticatedstorage:stack_upgrade_tier_1_plus_to_tier_4_conversion": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:barrel": {
+    "sophisticatedstorage:stack_upgrade_tier_2_to_tier_4_conversion": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:chipped/botanist_workbench_upgrade": {
+    "sophisticatedstorage:stack_upgrade_tier_4": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:dark_oak_storage_connector": {
+    "sophisticatedstorage:storage_tool": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:jukebox_upgrade": {
+    "waystones:mossy_andesite_waystone": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:magnet_upgrade": {
+    "waystones:prismarine_portstone": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:pale_oak_storage_connector": {
+    "waystones:red_nether_bricks_waystone": {
      "price": 16,
      "stock": 4
     },
-    "sophisticatedstorage:stack_downgrade_tier_2": {
-     "price": 16,
-     "stock": 4
-    },
-    "sophisticatedstorage:stack_upgrade_tier_1_plus_to_tier_3_conversion": {
-     "price": 16,
-     "stock": 4
-    },
-    "sophisticatedstorage:stack_upgrade_tier_1_to_tier_4_conversion": {
-     "price": 16,
-     "stock": 4
-    },
-    "sophisticatedstorage:stack_upgrade_tier_3": {
-     "price": 16,
-     "stock": 4
-    },
-    "sophisticatedstorage:stonecutter_upgrade": {
-     "price": 16,
-     "stock": 4
-    },
-    "sophisticatedstorage:upgrade_base": {
-     "price": 16,
-     "stock": 4
-    },
-    "waystones:mud_bricks_waystone": {
-     "price": 16,
-     "stock": 4
-    },
-    "waystones:purpur_waystone": {
-     "price": 16,
-     "stock": 4
-    },
-    "geore:diamond_shard": {
+    "geore:copper_spyglass_in_hand": {
      "price": 20,
      "stock": 4
     },
-    "geore:medium_zinc_bud": {
+    "geore:large_zinc_bud": {
      "price": 20,
      "stock": 4
     },
-    "geore:zinc_spyglass_in_hand": {
+    "geore:small_zinc_bud": {
      "price": 20,
      "stock": 4
     },
-    "ironfurnaces:upgrade_iron": {
+    "geore:zinc_spyglass": {
      "price": 20,
      "stock": 4
     },
-    "sophisticatedbackpacks:auto_smelting_upgrade": {
+    "ironfurnaces:rainbow_plating": {
      "price": 20,
      "stock": 4
     },
-    "sophisticatedbackpacks:iron_backpack": {
+    "ironfurnaces:upgrade_iron2": {
      "price": 20,
      "stock": 4
     },
-    "sophisticatedstorage:basic_to_iron_tier_upgrade": {
+    "waystones:copper_warp_stone": {
      "price": 20,
      "stock": 4
     },
-    "sophisticatedstorage:copper_to_iron_tier_upgrade": {
-     "price": 20,
-     "stock": 4
-    },
-    "sophisticatedstorage:limited_copper_barrel_2": {
-     "price": 20,
-     "stock": 4
-    },
-    "sophisticatedstorage:limited_iron_barrel_4": {
-     "price": 20,
-     "stock": 4
-    },
-    "archers:royal_longbow": {
+    "geore:gold_spyglass_in_hand": {
      "price": 26,
      "stock": 4
     },
@@ -1517,27 +1109,31 @@
      "price": 26,
      "stock": 4
     },
-    "ironfurnaces:upgrade_silver2": {
+    "ironfurnaces:upgrade_gold2": {
      "price": 26,
      "stock": 4
     },
-    "sophisticatedstorage:gold_shulker_box": {
+    "waystones:gold_portstone": {
      "price": 26,
      "stock": 4
     },
-    "waystones:gold_warp_stone": {
+    "waystones:redstone_portstone": {
      "price": 26,
      "stock": 4
     },
-    "geore:black_quartz_spyglass_in_hand": {
+    "geore:budding_diamond": {
      "price": 32,
      "stock": 4
     },
-    "geore:emerald_spyglass_in_hand": {
+    "geore:emerald_spyglass": {
      "price": 32,
      "stock": 4
     },
-    "geore:quartz_spyglass": {
+    "geore:platinum_spyglass": {
+     "price": 32,
+     "stock": 4
+    },
+    "geore:ruby_spyglass": {
      "price": 32,
      "stock": 4
     },
@@ -1545,51 +1141,67 @@
      "price": 32,
      "stock": 4
     },
-    "minecraft:ender_chest": {
+    "ironfurnaces:upgrade_obsidian": {
      "price": 32,
      "stock": 4
     },
-    "sophisticatedbackpacks:advanced_pump_upgrade": {
+    "minecraft:ender_pearl": {
      "price": 32,
      "stock": 4
     },
-    "sophisticatedstorage:basic_to_diamond_tier_upgrade": {
+    "sophisticatedbackpacks:diamond_backpack": {
      "price": 32,
      "stock": 4
     },
-    "sophisticatedstorage:limited_diamond_barrel_1": {
+    "sophisticatedstorage:diamond_chest": {
      "price": 32,
      "stock": 4
     },
-    "sophisticatedstorage:xp_pump_upgrade": {
+    "sophisticatedstorage:limited_diamond_barrel_3": {
      "price": 32,
      "stock": 4
     },
-    "waystones:emerald_portstone": {
+    "waystones:diamond_portstone": {
      "price": 32,
      "stock": 4
     },
-    "ironfurnaces:iron_furnace": {
+    "waystones:emerald_warp_stone": {
+     "price": 32,
+     "stock": 4
+    },
+    "ironfurnaces:crystal_furnace": {
      "price": 40,
      "stock": 4
     },
-    "archers:ruby_rapid_crossbow": {
+    "sophisticatedstorage:iron_to_diamond_tier_upgrade": {
+     "price": 40,
+     "stock": 4
+    },
+    "archers:ruby_spear": {
      "price": 51,
      "stock": 4
     },
-    "minecraft:diamond_helmet": {
+    "minecraft:diamond_boots": {
      "price": 51,
      "stock": 4
     },
-    "minecraft:diamond_spear": {
+    "minecraft:diamond_nautilus_armor": {
      "price": 51,
      "stock": 4
     },
-    "paladins:ruby_great_hammer": {
+    "minecraft:diamond_sword": {
      "price": 51,
      "stock": 4
     },
-    "archers:netherite_longbow_pulling_1": {
+    "paladins:diamond_mace": {
+     "price": 51,
+     "stock": 4
+    },
+    "sophisticatedstorage:gold_to_diamond_tier_upgrade": {
+     "price": 51,
+     "stock": 4
+    },
+    "archers:netherite_shortbow_pulling_0": {
      "price": 64,
      "stock": 4
     },
@@ -1597,23 +1209,35 @@
      "price": 64,
      "stock": 4
     },
-    "minecraft:diamond_chestplate": {
+    "minecraft:bolt_armor_trim_smithing_template": {
      "price": 64,
      "stock": 4
     },
-    "minecraft:rib_armor_trim_smithing_template": {
+    "minecraft:eye_armor_trim_smithing_template": {
      "price": 64,
      "stock": 4
     },
-    "minecraft:tide_armor_trim_smithing_template": {
+    "minecraft:raiser_armor_trim_smithing_template": {
      "price": 64,
      "stock": 4
     },
-    "paladins:netherite_holy_wand": {
+    "minecraft:silence_armor_trim_smithing_template": {
      "price": 64,
      "stock": 4
     },
-    "sophisticatedstorage:basic_to_netherite_tier_upgrade": {
+    "minecraft:vex_armor_trim_smithing_template": {
+     "price": 64,
+     "stock": 4
+    },
+    "paladins:netherite_holy_staff": {
+     "price": 64,
+     "stock": 4
+    },
+    "paladins:netherite_prior_robe_head": {
+     "price": 64,
+     "stock": 4
+    },
+    "sophisticatedstorage:limited_netherite_barrel_1": {
      "price": 64,
      "stock": 4
     },
@@ -1621,7 +1245,11 @@
      "price": 64,
      "stock": 4
     },
-    "archers:netherite_heavy_crossbow": {
+    "sophisticatedstorage:copper_to_netherite_tier_upgrade": {
+     "price": 80,
+     "stock": 4
+    },
+    "archers:netherite_heavy_crossbow_firework": {
      "price": 100,
      "stock": 4
     },
@@ -1629,7 +1257,11 @@
      "price": 100,
      "stock": 4
     },
-    "archers:netherite_rapid_crossbow_arrow": {
+    "archers:netherite_ranger_armor_legs": {
+     "price": 100,
+     "stock": 4
+    },
+    "archers:netherite_rapid_crossbow_pulling_0": {
      "price": 100,
      "stock": 4
     },
@@ -1637,20 +1269,28 @@
      "price": 100,
      "stock": 4
     },
-    "minecraft:netherite_nautilus_armor": {
+    "minecraft:netherite_hoe": {
      "price": 100,
      "stock": 4
     },
-    "paladins:netherite_crusader_armor_chest": {
+    "minecraft:netherite_shovel": {
      "price": 100,
      "stock": 4
     },
-    "paladins:netherite_kite_shield_blocking": {
+    "paladins:netherite_crusader_armor_feet": {
      "price": 100,
      "stock": 4
     },
-    "sophisticatedstorage:diamond_to_netherite_tier_upgrade": {
+    "paladins:netherite_kite_shield": {
+     "price": 100,
+     "stock": 4
+    },
+    "ironfurnaces:netherite_furnace": {
      "price": 126,
+     "stock": 4
+    },
+    "minecraft:netherite_upgrade_smithing_template": {
+     "price": 159,
      "stock": 4
     },
     "minecraft:diamond_block": {
@@ -2102,10 +1742,6 @@
      "price": 47,
      "stock": 4
     },
-    "diaithir_drinks:extra_anejo_tequila": {
-     "price": 47,
-     "stock": 4
-    },
     "diaithir_drinks:hot_climate_corn_whiskey": {
      "price": 47,
      "stock": 4
@@ -2147,10 +1783,6 @@
      "stock": 4
     },
     "diaithir_drinks:demerara_rum": {
-     "price": 50,
-     "stock": 4
-    },
-    "diaithir_drinks:navy_rum": {
      "price": 50,
      "stock": 4
     }

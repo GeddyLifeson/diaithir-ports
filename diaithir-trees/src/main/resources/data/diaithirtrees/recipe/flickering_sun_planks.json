@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:flickering_sun_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:flickering_sun_planks",
+  "count": 4
+ }
+}

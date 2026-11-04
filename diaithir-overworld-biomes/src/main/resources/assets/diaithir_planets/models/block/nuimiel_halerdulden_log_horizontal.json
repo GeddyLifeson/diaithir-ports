@@ -1,0 +1,7 @@
+{
+"parent": "minecraft:block/cube_column_horizontal",
+"textures": {
+"end": "diaithir_planets:block/nuimiel_halerdulden_log_top",
+"side": "diaithir_planets:block/nuimiel_halerdulden_log"
+}
+}

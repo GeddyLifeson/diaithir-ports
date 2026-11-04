@@ -1,0 +1,16 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:gems/jade",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/silver",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:seun_fiain",
+ "time_s": 20
+}

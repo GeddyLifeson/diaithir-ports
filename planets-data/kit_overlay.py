@@ -60,6 +60,8 @@ def adapt(pid,k,pfid):
     cache[key]=out; return out
 def main(ids):
     n=0
+    try: FL=json.load(open('/mnt/project-files/planets/flora_features.json'))
+    except Exception: FL={}
     for sp in sorted(glob.glob(SP+'/*.json')):
         pid=os.path.basename(sp)[:-5]; s=json.load(open(sp)); k=s.get('kit')
         if not k or pid=='alaima' or (ids and pid not in ids): continue
@@ -76,19 +78,23 @@ def main(ids):
                 new=[]
                 for x in ft[st]:
                     if x.startswith('diaithir_planets:k') and ('/' not in x) and x.split(':')[1].startswith(('kt_','k_')): continue
+                    if x.startswith('diaithir_planets:'+pid+'_') and re.search(r'_(tree|plant|ore)$|_log_tree$',x): continue
                     y=adapt(pid,k,x) if x.startswith('diaithir_planets:') else x
                     if y: new.append(y)
                 ft[st]=new
             ft[9]=ft[9]+extra
+            fl=FL.get(pid)
+            if fl: ft[9]=ft[9]+fl['veg']; ft[6]=ft[6]+fl['ore']
             json.dump(d,open(bf,'w'),separators=(',',':')); n+=1
     print('biomes layered',n)
 if __name__=='__main__': main(set(sys.argv[1:]))
 # fix-up: planetfeat prefixes vanilla refs (e.g. minecraft:huge_red_mushroom) with the family; point missing ones back to vanilla.
 def fixrefs():
+    blocks={x['id'] for x in json.load(open(M.replace('/worldgen','')+'/planet_flora.json'))} if os.path.exists(M.replace('/worldgen','')+'/planet_flora.json') else set()
     for f in glob.glob(M+'/configured_feature/*.json'):
         t=open(f).read(); ch=False
         for m in set(re.findall(r'diaithir_planets:([a-z0-9_]+)',t)):
-            if not os.path.exists(f'{M}/configured_feature/{m}.json') and not os.path.exists(f'{M}/placed_feature/{m}.json'):
+            if m not in blocks and not os.path.exists(f'{M}/configured_feature/{m}.json') and not os.path.exists(f'{M}/placed_feature/{m}.json'):
                 v=re.sub(r'^[a-z_]+?_[abc]_','',m); t=t.replace('diaithir_planets:'+m,'minecraft:'+v); ch=True
         if ch: open(f,'w').write(t)
 fixrefs()

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": "minecraft:gravel",
+    "C": "minecraft:cobblestone"
+  },
+  "pattern": [
+    "GC",
+    "CG"
+  ],
+  "result": {
+    "id": "diaithircarts:macadam_road",
+    "count": 4
+  },
+  "category": "building"
+}

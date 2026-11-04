@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:item/generated",
+"textures": {
+"layer0": "diaithir_planets:block/ryerlae_teleoranum_vinanum_plant"
+}
+}

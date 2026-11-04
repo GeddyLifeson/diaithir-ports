@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:brazilwood_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:brazilwood_planks",
+  "count": 4
+ }
+}

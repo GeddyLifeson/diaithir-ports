@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:sand_pear_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:sand_pear_planks",
+  "count": 4
+ }
+}

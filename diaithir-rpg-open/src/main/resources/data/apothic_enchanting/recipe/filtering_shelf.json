@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "I": "apothic_enchanting:infused_seashelf",
+        "P": "minecraft:prismarine_bricks",
+        "R": "minecraft:prismarine_brick_slab"
+    },
+    "pattern": [
+        "PIP",
+        "RRR",
+        "PIP"
+    ],
+    "result": {
+        "id": "apothic_enchanting:filtering_shelf"
+    }
+}

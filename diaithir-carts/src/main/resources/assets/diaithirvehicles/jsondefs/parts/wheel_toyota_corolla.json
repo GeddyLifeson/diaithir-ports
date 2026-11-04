@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Toyota Corolla (E10) Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 0.66,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Toyota Corolla (E10) Wheel",
+   "modelName": "wheel_toyota_corolla",
+   "textureName": "wheel_toyota_corolla",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}
