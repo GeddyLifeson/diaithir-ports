@@ -40,6 +40,7 @@ final class ArsSelfTest {
             LOG.error("ARS_SELFTEST FAIL: exception", t);
         }
         restoredContent(event);
+        energyCap(event);
     }
 
     /** Checks the restored scrying, imbuement and effect content: registration plus a few real casts. */
@@ -88,6 +89,37 @@ final class ArsSelfTest {
             }
         } catch (Throwable t) {
             LOG.error("ARS_SELFTEST FAIL: restored content exception", t);
+        }
+    }
+
+    /** A source jar holding 5 Source must report 5000 FE, give back whole Source only on extract, and refuse insertion. */
+    private static void energyCap(ServerStartedEvent event) {
+        try {
+            ServerLevel level = event.getServer().overworld();
+            net.minecraft.core.BlockPos pos = new net.minecraft.core.BlockPos(40, 100, 40);
+            level.setBlockAndUpdate(pos, net.diaithir.druidry.ars.setup.registry.BlockRegistry.SOURCE_JAR.get().defaultBlockState());
+            var tile = (net.diaithir.druidry.ars.common.block.tile.SourceJarTile) level.getBlockEntity(pos);
+            tile.getSourceStorage().setSource(5);
+            var cap = level.getCapability(net.neoforged.neoforge.capabilities.Capabilities.Energy.BLOCK, pos, null);
+            long amount = cap == null ? -1 : cap.getAmountAsLong();
+            int got1 = 0, got2 = 0, ins = -1;
+            if (cap != null) {
+                try (var tx = net.neoforged.neoforge.transfer.transaction.Transaction.openRoot()) {
+                    ins = cap.insert(5000, tx);
+                    got1 = cap.extract(999, tx);   // less than one Source: nothing moves
+                    got2 = cap.extract(2500, tx);  // two whole Source
+                    tx.commit();
+                }
+            }
+            int left = tile.getSourceStorage().getSource();
+            level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+            if (amount == 5000 && ins == 0 && got1 == 0 && got2 == 2000 && left == 3) {
+                LOG.info("ARS_SELFTEST PASS energy capability (5 Source = 5000 FE, extract 999 -> 0, extract 2500 -> 2000, insert refused, 3 Source left)");
+            } else {
+                LOG.error("ARS_SELFTEST FAIL energy: amount={} insert={} got1={} got2={} left={}", amount, ins, got1, got2, left);
+            }
+        } catch (Throwable t) {
+            LOG.error("ARS_SELFTEST FAIL: energy exception", t);
         }
     }
 }
