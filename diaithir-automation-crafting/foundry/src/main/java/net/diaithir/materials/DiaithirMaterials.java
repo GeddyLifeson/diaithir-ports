@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Building materials (plans/BUILDING_MATERIALS.md): block strength comes from the shared property table. Built so far: the concrete line,
- * pozzolan (II), kiln cement powder (IV), Portland (V), reinforced (VI), precast (VII). Recipes are Foundry station recipes in this jar's data.
+ * Building materials (plans/BUILDING_MATERIALS.md): every built stage of the shared property table is a block (cement powder is an item), with strength
+ * from the table. Recipes are Foundry station recipes in this jar's data, one per stage, made at the station of the stage's Age.
  */
 @Mod(DiaithirMaterials.ID)
 public final class DiaithirMaterials {
@@ -37,13 +37,27 @@ public final class DiaithirMaterials {
     public static final Map<String, DeferredBlock<Block>> BLOCK_BY_ID = new LinkedHashMap<>();
     public static final Map<String, DeferredItem<BlockItem>> BLOCK_ITEM_BY_ID = new LinkedHashMap<>();
     static {
-        for (String id : List.of("concrete_pozzolan", "concrete_portland", "concrete_reinforced", "concrete_precast")) {
-            Materials.Row row = Materials.get(id);
-            DeferredBlock<Block> b = BLOCKS.registerSimpleBlock(id, () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
-                    .strength(row.hardness(), row.resistance()).sound(SoundType.STONE).requiresCorrectToolForDrops());
-            BLOCK_BY_ID.put(id, b);
-            BLOCK_ITEM_BY_ID.put(id, ITEMS.registerSimpleBlockItem(b));
+        for (Materials.Row row : Materials.all()) {
+            if (!row.built() || row.id().equals("cement_powder")) continue;
+            DeferredBlock<Block> b = BLOCKS.registerSimpleBlock(row.id(), () -> properties(row));
+            BLOCK_BY_ID.put(row.id(), b);
+            BLOCK_ITEM_BY_ID.put(row.id(), ITEMS.registerSimpleBlockItem(b));
         }
+    }
+
+    /** Strength from the table; the class picks sound and colour, glass lets light through, soft stages break by hand. */
+    private static BlockBehaviour.Properties properties(Materials.Row row) {
+        BlockBehaviour.Properties p = BlockBehaviour.Properties.of().strength(row.hardness(), row.resistance());
+        switch (row.cls()) {
+            case "timber" -> p.mapColor(MapColor.WOOD).sound(SoundType.WOOD);
+            case "steel" -> p.mapColor(MapColor.METAL).sound(SoundType.METAL);
+            case "glass" -> p.mapColor(MapColor.NONE).sound(SoundType.GLASS).noOcclusion();
+            case "insulation" -> p.mapColor(MapColor.WOOL).sound(SoundType.WOOL);
+            case "roofing" -> p.mapColor(row.id().equals("roofing_thatch") ? MapColor.COLOR_YELLOW : MapColor.STONE).sound(row.id().equals("roofing_thatch") ? SoundType.GRASS : SoundType.STONE);
+            default -> p.mapColor(MapColor.STONE).sound(SoundType.STONE);
+        }
+        if (row.hardness() >= 1.5F && !row.cls().equals("timber")) p.requiresCorrectToolForDrops();
+        return p;
     }
     public static final DeferredItem<Item> CEMENT_POWDER = ITEMS.registerSimpleItem("cement_powder");
 
