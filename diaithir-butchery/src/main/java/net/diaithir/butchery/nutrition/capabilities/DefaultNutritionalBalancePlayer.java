@@ -1,0 +1,86 @@
+package net.diaithir.butchery.nutrition.capabilities;
+
+import net.diaithir.butchery.nutrition.Config;
+import net.diaithir.butchery.nutrition.api.INutritionalBalancePlayer;
+import net.diaithir.butchery.nutrition.api.IPlayerNutrient;
+import net.diaithir.butchery.nutrition.nutrients.Nutrient;
+import net.diaithir.butchery.nutrition.nutrients.WorldNutrients;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DefaultNutritionalBalancePlayer implements INutritionalBalancePlayer {
+
+    private final List<IPlayerNutrient> playerNutrients = new ArrayList<>();
+    private float savedSaturation;
+    private IPlayerNutrient.NutrientStatus cachedStatus = IPlayerNutrient.NutrientStatus.SAFE;
+
+    public DefaultNutritionalBalancePlayer() {
+        for (Nutrient nutrient:WorldNutrients.get()) {
+            this.playerNutrients.add(new DefaultPlayerNutrient(nutrient));
+        }
+    }
+
+    @Override
+    public List<IPlayerNutrient> getPlayerNutrients() { return this.playerNutrients; }
+
+    @Override
+    public IPlayerNutrient getPlayerNutrientByName(String name) {
+        for (IPlayerNutrient iPlayerNutrient:this.playerNutrients) {
+            if (iPlayerNutrient.getNutrient().name.equals(name)) return iPlayerNutrient;
+        }
+        return null;
+    }
+
+    public void processSaturationChange(float currentSaturation) {
+        if (currentSaturation==this.savedSaturation) return;
+        if (currentSaturation<this.savedSaturation) {
+            float decrementer = Config.NUTRIENT_DECAY_RATE.get().floatValue()*(currentSaturation-savedSaturation)/this.playerNutrients.size();
+            for (IPlayerNutrient playernutrient:this.playerNutrients) {
+                playernutrient.changeValue(decrementer);
+            }
+        }
+        this.resetSavedSaturation(currentSaturation);
+    }
+
+    public void resetSavedSaturation(float savedSaturation) { this.savedSaturation = savedSaturation; }
+
+    @Override
+    public void consume(ItemStack itemStack, Level world) {
+        FoodProperties food = itemStack.get(DataComponents.FOOD);
+        if (food!=null) {
+            List<Nutrient> nutrients = WorldNutrients.getNutrients(itemStack, world);
+            for (Nutrient nutrient : nutrients) {
+                float nutrientUnits = WorldNutrients.getEffectiveFoodQuality(food,nutrients.size()) * Config.NUTRIENT_INCREMENT_RATE.get().floatValue() / nutrients.size();
+                this.getPlayerNutrientByName(nutrient.name).changeValue(nutrientUnits);
+            }
+        }
+    }
+
+    @Override
+    public void consume(List<IPlayerNutrient> nutrients, float health, float saturation) {
+        for (IPlayerNutrient nutrient:nutrients) {
+            float nutrientUnits=WorldNutrients.getEffectiveFoodQuality(health,saturation,nutrients.size()) * Config.NUTRIENT_INCREMENT_RATE.get().floatValue() / nutrients.size();
+            this.getPlayerNutrientByName(nutrient.getNutrientName()).changeValue(nutrientUnits);
+        }
+    }
+
+    public IPlayerNutrient.NutrientStatus getStatus() {
+        boolean safeFound = false;
+        for (IPlayerNutrient playernutrient : this.playerNutrients) {
+            IPlayerNutrient.NutrientStatus nutrientStatus = playernutrient.getStatus();
+            if (nutrientStatus==IPlayerNutrient.NutrientStatus.MALNOURISHED) { this.cachedStatus = nutrientStatus; return nutrientStatus; }
+            if (nutrientStatus==IPlayerNutrient.NutrientStatus.ENGORGED) { this.cachedStatus = nutrientStatus; return nutrientStatus; }
+            if (nutrientStatus==IPlayerNutrient.NutrientStatus.SAFE) safeFound = true;
+        }
+        this.cachedStatus = safeFound ? IPlayerNutrient.NutrientStatus.SAFE : IPlayerNutrient.NutrientStatus.ON_TARGET;
+        return this.cachedStatus;
+    }
+
+    public IPlayerNutrient.NutrientStatus getCachedStatus() { return this.cachedStatus; }
+}
