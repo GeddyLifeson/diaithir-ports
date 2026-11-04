@@ -67477,11 +67477,6 @@ file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.8.jar"
 hash = "038907a947c37a9e616387963009937027d8bde555aea75394103def37e3307a"
 
 [[files]]
-file = "mods/The_Undergarden-26.1.2-0.9.8.pw.toml"
-hash = "113395056aca1163b9688c5480f79e39c54152d522f47b81bc112f149b4941ed"
-metafile = true
-
-[[files]]
 file = "mods/TinkersConstruct-26.1.2-3.12.13-diaithir.1.jar"
 hash = "ff07116b28b252f8ae29d33812e8cd403ed632558b6ec7ff981c381dd895666b"
 
@@ -67492,16 +67487,6 @@ hash = "f223c7a3a06d9efa7ce6de4c9a4126f2e58ef20c8724575bac0df37eaafb9bea"
 [[files]]
 file = "mods/VisualWorkbench-v26.1.0-mc26.1.x-NeoForge.pw.toml"
 hash = "dbf91719c8bffc24c7b30eeb2ddeb2a96fd031911956e0962a5ab006f636e2d9"
-metafile = true
-
-[[files]]
-file = "mods/aerialhell-0.7.8_neoforge26.1.2.pw.toml"
-hash = "eb24f616e4fb98fb9d4a23f477944e7a231c241910c0d52edc70034c6e723dc1"
-metafile = true
-
-[[files]]
-file = "mods/aether_ii-26.1.2-alpha.4.1-neoforge.pw.toml"
-hash = "3a1cbd1b76cbf5594ace89ceb6e964ce3e09af9710e17249e34ed2e1a3f75e22"
 metafile = true
 
 [[files]]
@@ -67601,7 +67586,7 @@ hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
+hash = "39a7d0f604ec0e92069cae013286038e37d8be69425b1e8e7a020874af996c1c"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -67618,11 +67603,11 @@ hash = "ab391fb6f4332268fbb27ab334bb4a8ba49843faae9cd81987db61f64c6227f5"
 
 [[files]]
 file = "mods/diaithir-realms-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "8b7b913438863622265e772734d0c9d4eae769f300158fa84d1ad59ce85bd456"
+hash = "7eecccf55fd33f76bed814860785fb97fc09162e35b598a7ff1f2a6af6df49da"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "9348d49e6faaf9d402823d1948c4825a58fee5be813642fcf9a418fd62277059"
+hash = "e84ecb018a9a353dbd9eefed4530313dd95fad24bf8f67a9396819c504de58f3"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
@@ -67651,7 +67636,7 @@ hash = "df010dae61b362a2c4a68345c146582d1ceb0b04b0b5c9989be6b2618aa2e244"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "6a58d15ef3fb85a8d7342c3ee9b83a36584c106fe492acbd9290a42c5c22d0e9"
+hash = "a42519903cd2000c4e62de3b65bf542bf955ec41d7337bc82872d6c9dfe268a3"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
@@ -67805,11 +67790,6 @@ metafile = true
 [[files]]
 file = "mods/the-backrooms-2.10.11.pw.toml"
 hash = "6d297e0de70153d51411f4308acf24a2be12f72f27ba05289121e745d8387675"
-metafile = true
-
-[[files]]
-file = "mods/the_backwoods-1.8.0-neoforge-26.1.2.pw.toml"
-hash = "01d5437e426883f4983f2480acdb3a62f3aef0e213d9bbbd229d6161712e9c91"
 metafile = true
 
 [[files]]
