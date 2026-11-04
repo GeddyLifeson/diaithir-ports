@@ -26,12 +26,15 @@ Not done yet: vehicles are plain carts (no per-class models, mass or power in mo
 - **Locking rail**: stops a cart and keeps it. Bare hand cycles the mode. Latch (amber) holds until the rail goes from unpowered to powered (a pulse; already powered on arrival does not release). Interlock (green) holds until the 32 rails ahead are clear of other carts. The routing test covers both.
 - Coke oven and blast furnace are not built here: they already exist in diaithir-wiretech (ports #163).
 
+## Freight
+Pallets, barrels, chests, crates, walkable shipping containers (20 and 40 ft, reefer, tank), loading docks and rift docks. See FREIGHT.md. Test: `/diaithircarts freighttest` (owners).
 ## Timetables and autonomy
 - **Timetable** (Age V): use on station rails in order to write the stops, then use on a cart to give it the schedule; it loops. A scheduled cart stops only at its next stop and waits there by the station's own rule (a timer, or a redstone signal, so a circuit gate or reader on the station controls release). Sneak and use in the air to wipe it.
 - **Crew and autonomy.** A scheduled cart runs only with a living rider aboard (player, villager or other NPC); without one it holds at the next station. Autonomy is never automatic: the vehicle type must be capable (entity type tag `diaithircarts:autonomy_capable`, which other vehicle mods add to) and it must have an **Autonomy Module** (Age VII item, use it on the vehicle) fitted. Then it runs with no crew. `Autonomy.status(vehicle)` gives UNCREWED, CREWED or AUTONOMOUS, and `Autonomy.autonomousCrew(job, vehicle)` is the predicate behind `global.AUTONOMOUS_CREW(job, vehicle)` for the wages thread.
 - **Cart reader** (Age V): put it under a rail; it gives a redstone signal for the cart above (0 none, 1 unscheduled, 2 to 13 heading for stop (signal - 2) (13 = stop 11 and later), 14 scheduled but uncrewed, 15 autonomous), so circuit gates can read vehicles. Control goes the other way through the station rail's redstone release.
 - Test: `/diaithircarts scheduletest` (owners).
 
+Assets: run `tools/gen_assets.py` first, then `tools/gen_roads.py`, then the add-on generators (`gen_routing_assets.py`, `gen_signal_assets.py`, `gen_schedule_assets.py`, `gen_freight_assets.py`); the add-ons append to the lang, age gate and Codex files the base generator writes.
 Assets: run `tools/gen_assets.py` first, then `tools/gen_roads.py`, then the add-on generators (`gen_routing_assets.py`, `gen_signal_assets.py`, `gen_schedule_assets.py`); the add-ons append to the lang, age gate and Codex files the base generator writes.
 
 ## Gauges and the full US/UK roster
