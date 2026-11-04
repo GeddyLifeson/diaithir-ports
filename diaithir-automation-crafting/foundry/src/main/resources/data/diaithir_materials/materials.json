@@ -1,5 +1,5 @@
 {
- "_doc": "One shared property table for the nine building-material classes (plans/BUILDING_MATERIALS.md in Global-Repo). SI, approximate real-world orders of magnitude, tuned in game later. fire_min: minutes of fire resistance, 0 = burns or fails at once. hardness and resistance are Minecraft block strength numbers. built=true means the stage exists in game. Read by net.diaithir.materials.Materials.",
+ "_doc": "One shared property table for the nine building-material classes (plans/BUILDING_MATERIALS.md in Global-Repo). SI, approximate real-world orders of magnitude, tuned in game later. fire_min: minutes of fire resistance, 0 = burns or fails at once. hardness and resistance are Minecraft block strength numbers. built=true means the stage exists in game. Read by net.diaithir.materials.Materials. fire_spread and flammability are the vanilla fire odds (planks are 5 and 20, 0 = does not burn). road_speed is the walking speed bonus on that surface (0.3 = 30 percent).",
  "rows": [
   {
    "id": "timber_post_beam",
@@ -12,7 +12,10 @@
    "fire_min": 0,
    "hardness": 2.0,
    "resistance": 3.0,
-   "built": true
+   "built": true,
+   "fire_spread": 5,
+   "flammability": 20,
+   "road_speed": 0.0
   },
   {
    "id": "timber_sawn",
@@ -25,7 +28,10 @@
    "fire_min": 0,
    "hardness": 2.0,
    "resistance": 3.0,
-   "built": true
+   "built": true,
+   "fire_spread": 5,
+   "flammability": 20,
+   "road_speed": 0.0
   },
   {
    "id": "timber_engineered",
@@ -38,7 +44,10 @@
    "fire_min": 60,
    "hardness": 2.5,
    "resistance": 4.0,
-   "built": true
+   "built": true,
+   "fire_spread": 2,
+   "flammability": 8,
+   "road_speed": 0.0
   },
   {
    "id": "masonry_mud_brick",
@@ -51,7 +60,10 @@
    "fire_min": 120,
    "hardness": 1.5,
    "resistance": 3.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "masonry_fired_brick",
@@ -64,7 +76,10 @@
    "fire_min": 240,
    "hardness": 2.0,
    "resistance": 6.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "masonry_cut_stone",
@@ -77,7 +92,10 @@
    "fire_min": 240,
    "hardness": 3.0,
    "resistance": 8.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "masonry_block",
@@ -90,7 +108,10 @@
    "fire_min": 240,
    "hardness": 2.5,
    "resistance": 6.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "concrete_pozzolan",
@@ -103,7 +124,10 @@
    "fire_min": 120,
    "hardness": 3.0,
    "resistance": 6.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "cement_powder",
@@ -116,7 +140,10 @@
    "fire_min": 0,
    "hardness": 0,
    "resistance": 0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "concrete_portland",
@@ -129,7 +156,10 @@
    "fire_min": 180,
    "hardness": 4.0,
    "resistance": 9.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "concrete_reinforced",
@@ -142,7 +172,10 @@
    "fire_min": 240,
    "hardness": 5.0,
    "resistance": 12.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "concrete_precast",
@@ -155,7 +188,10 @@
    "fire_min": 240,
    "hardness": 6.0,
    "resistance": 15.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "steel_wrought_bar",
@@ -168,7 +204,10 @@
    "fire_min": 15,
    "hardness": 4.0,
    "resistance": 8.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "steel_rolled_iron",
@@ -181,7 +220,10 @@
    "fire_min": 15,
    "hardness": 5.0,
    "resistance": 10.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "steel_plate_angle",
@@ -194,7 +236,10 @@
    "fire_min": 15,
    "hardness": 5.0,
    "resistance": 12.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "steel_i_beam",
@@ -207,7 +252,10 @@
    "fire_min": 20,
    "hardness": 5.0,
    "resistance": 12.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "steel_light_gauge",
@@ -220,7 +268,10 @@
    "fire_min": 15,
    "hardness": 4.0,
    "resistance": 10.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "steel_alloy_lattice",
@@ -233,7 +284,10 @@
    "fire_min": 60,
    "hardness": 6.0,
    "resistance": 16.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "glass_blown",
@@ -246,7 +300,10 @@
    "fire_min": 0,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "glass_sheet",
@@ -259,7 +316,10 @@
    "fire_min": 0,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "glass_plate",
@@ -272,7 +332,10 @@
    "fire_min": 0,
    "hardness": 0.4,
    "resistance": 0.4,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "glass_float",
@@ -285,7 +348,10 @@
    "fire_min": 0,
    "hardness": 0.4,
    "resistance": 0.4,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "glass_laminated",
@@ -298,7 +364,10 @@
    "fire_min": 30,
    "hardness": 1.0,
    "resistance": 3.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "lining_lime_plaster",
@@ -311,7 +380,10 @@
    "fire_min": 60,
    "hardness": 0.5,
    "resistance": 1.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "lining_gypsum_plaster",
@@ -324,7 +396,10 @@
    "fire_min": 90,
    "hardness": 0.5,
    "resistance": 1.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "lining_board",
@@ -337,7 +412,10 @@
    "fire_min": 60,
    "hardness": 0.8,
    "resistance": 1.5,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "lining_fire_board",
@@ -350,7 +428,10 @@
    "fire_min": 120,
    "hardness": 0.8,
    "resistance": 1.5,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "roofing_thatch",
@@ -363,7 +444,10 @@
    "fire_min": 0,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 60,
+   "flammability": 80,
+   "road_speed": 0.0
   },
   {
    "id": "roofing_slate",
@@ -376,7 +460,10 @@
    "fire_min": 240,
    "hardness": 1.5,
    "resistance": 3.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "roofing_tile",
@@ -389,7 +476,10 @@
    "fire_min": 240,
    "hardness": 1.0,
    "resistance": 2.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "roofing_metal_sheet",
@@ -402,7 +492,10 @@
    "fire_min": 15,
    "hardness": 1.0,
    "resistance": 2.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "roofing_insulated_panel",
@@ -415,7 +508,10 @@
    "fire_min": 30,
    "hardness": 1.0,
    "resistance": 2.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "road_flagstone",
@@ -428,7 +524,10 @@
    "fire_min": 240,
    "hardness": 1.5,
    "resistance": 4.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.05
   },
   {
    "id": "road_cobble",
@@ -441,7 +540,10 @@
    "fire_min": 240,
    "hardness": 2.0,
    "resistance": 5.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.1
   },
   {
    "id": "road_macadam",
@@ -454,7 +556,10 @@
    "fire_min": 0,
    "hardness": 1.0,
    "resistance": 2.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.2
   },
   {
    "id": "road_asphalt",
@@ -467,7 +572,10 @@
    "fire_min": 0,
    "hardness": 1.0,
    "resistance": 2.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.3
   },
   {
    "id": "road_concrete",
@@ -480,7 +588,10 @@
    "fire_min": 180,
    "hardness": 2.0,
    "resistance": 6.0,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.3
   },
   {
    "id": "insulation_turf",
@@ -493,7 +604,10 @@
    "fire_min": 0,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 20,
+   "flammability": 30,
+   "road_speed": 0.0
   },
   {
    "id": "insulation_rock_wool",
@@ -506,7 +620,10 @@
    "fire_min": 240,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "insulation_glass_wool",
@@ -519,7 +636,10 @@
    "fire_min": 240,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   },
   {
    "id": "insulation_foam",
@@ -532,7 +652,10 @@
    "fire_min": 0,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 15,
+   "flammability": 40,
+   "road_speed": 0.0
   },
   {
    "id": "insulation_aerogel",
@@ -545,7 +668,10 @@
    "fire_min": 240,
    "hardness": 0.3,
    "resistance": 0.3,
-   "built": true
+   "built": true,
+   "fire_spread": 0,
+   "flammability": 0,
+   "road_speed": 0.0
   }
  ]
 }

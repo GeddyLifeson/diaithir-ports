@@ -20,9 +20,25 @@ Mod-first: everything rides on the Immersive Vehicles (IV) stack already in the 
 - Driving: controls are `ComputedVariable`s on the vehicle (`throttleVar`, `brakeVar`, `parkingBrakeVar`, `autopilotValueVar`, steering angle through the physics class). An NPC driver should set these, not add physics.
 - Vehicles are Minecraft entities of `mcinterface261.BuilderEntityExisting` with a protected `entity` field, so a bridge from our mods needs reflection or a compile-only IV jar.
 
+## Pumps and storage (built, in diaithir-units, `net.diaithir.units.fuel.station`)
+Fuel barrel (Age II, 200 L), hand pump (Age III, 5 L per use), fuel tank (Age VI, 20,000 L), pump station (Age VI, 1 L/s, automatic, 5-block reach) and loading rack (Age VII, 20 L/s). A pump or rack pulls from an adjacent tank into every fuelable target in reach. Targets are anything registered in `Targets.SOURCES`; Immersive Vehicles is bridged by reflection (its vehicle fluid tank), so tank cars and ships add their own source. `/diaithirfuel fill <pos> <fuel> <litres>` fills a tank (owners) until Foundry refining supplies it. `/diaithirfuel selftest` passes on a headless server: pump and rack rates, fuel conserved, no mixing, full targets respected, save and load. Not tested: the IV reflection against a real vehicle entity, pipes into tanks, client look (cube blocks with drawn textures), recipes are vanilla placeholders.
+
+## Cargo decks (freight, diaithir-ports #229)
+`roster.csv` has `deck_cells` (w x h x l in 1 m cells) and `deck_rating_kg` for vehicles with a load deck: ox cart, Ford F-1 pickup, VW Type 2 van (half-ton and van ratings, approximate). Plan: each such vehicle entity carries a `CargoBay` (attachment on the IV entity) sized from these columns, and loading uses `Containers.lift` / `Containers.lower` with the deck rating as the lifter weight so docks can reach containers riding a vehicle. Waiting on #229 to merge (CargoBay is only on that branch). Trucks, rolling stock and ships set their own decks.
+
+## Integration tickets (plans/INTEGRATION_TICKETS.tsv, lane Cars)
+About 60 pairings (CARxMAG, CARxELE, CARxFLU, CARxFUL, CARxHEA, CARxMEC, CARxPNE, CARxTRN, CARxNPC, CARxUPG, CARxWTH and so on). First: CARxMAG, magic-burning engines. ports #257 adds the `arcane_motor` engine class and magic fuel rows to the shared table (`Engine.accepts(id)`); it is not on the base yet. When it lands: merge it, add arcane engine variants to the pack, and decide how mana reaches an IV tank (IV fuel is a fluid name, so mana needs its own fluid name and a pump source). The rest follow the Age and upgrade rules of the lanes that own the other side.
+
+## Port sources from the mod survey (plans/MOD_SURVEY.md)
+MrCrayfish's Vehicle Unofficial (GPL-3) for car features, MineColonies (GPL-3) and the Guard Villagers fork (MIT) for NPC driver behaviour. Porting GPL-3 code makes the receiving module GPL-3, so anything ported from them goes in its own module or jar section with its licence recorded, not into this MIT module. Check IV first (it already has pumps, tanks, roads and control variables), then these.
+
 ## NPC drivers and roads (plan, not built)
+- Wages (RPG #259): every NPC driver is paid crew, registered when hired with `global.WAGE_HIRE(entity, job, companyKey, vehicle)` where `vehicle` is the unit they crew. The crew retires from the payroll only when that vehicle has an autonomy module fitted (Age VII and later); `global.AUTONOMOUS_CREW` no longer exists. The autonomy and wages threads own those rules.
 - Drivers: an NPC takes the controller seat of a parked vehicle and follows a route of waypoints between stations or depots (courier depots #112 and the waypoints module are the existing hooks). Steering and throttle go through IV's own controller variables, not new physics. Ground first, trucks and trains threads reuse the same route format.
 - Road use: NPC drivers prefer higher tiers. Settlement and worldgen threads decide generated road networks.
 
+## Tested
+Headless NeoForge 26.1.2.109 server with the IV jar and the pack as its own mod jar (a dev run loads carts as a folder, which IV does not scan): all 13 vehicles, an engine, a wheel, the seat and the APC track register as items (`summon item ... mts:diaithirvehicles.<id>` gives the named item, a bogus id gives Air) and the log has no pack parse errors. `/diaithircarts roadtest` passes.
+
 ## Not tested
-IV loading of the new pack (a headless dev-server boot with IV loaded no errors but did not register the pack's items, because IV scans mod jars and the dev run puts the carts mod on the classpath as a folder; needs a boot with the built carts jar in a real server mods folder, PC or a thread allowed to run the NeoForge installer; the part files parse with IV's own classes, vehicle files need IV's custom point reader), consumption units (`fuelConsumption` assumed mB per tick), driving, any client rendering.
+Driving, consumption units (`fuelConsumption` assumed mB per tick), client rendering, spawning a vehicle entity.

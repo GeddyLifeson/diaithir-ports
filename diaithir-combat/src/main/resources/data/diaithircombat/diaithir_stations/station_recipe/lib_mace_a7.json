@@ -1,0 +1,22 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 22,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a7",
+   "count": 3
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_mace",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 7
+  }
+ }
+}

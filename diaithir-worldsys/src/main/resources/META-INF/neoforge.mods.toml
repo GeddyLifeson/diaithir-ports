@@ -12,3 +12,12 @@ description = "Vein breaking, grid keys, pocket bench, item magnets, utility blo
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[mixins]]
+config = "alternate-current.mixins.json"
+
+[[mixins]]
+config = "scalablelux.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/scalablelux.at.cfg"

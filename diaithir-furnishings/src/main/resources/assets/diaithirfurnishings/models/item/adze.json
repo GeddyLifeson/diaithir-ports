@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/adze"
+  "layer0": "diaithirfurnishings:item/adze_head",
+  "layer1": "diaithirfurnishings:item/adze_handle",
+  "layer2": "diaithirfurnishings:item/adze_binding"
  }
 }

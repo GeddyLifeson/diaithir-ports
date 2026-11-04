@@ -9,6 +9,7 @@ public final class Module {
     public static final String ID = "diaithirinventoryui";
 
     public Module(IEventBus bus, ModContainer container) {
+        net.diaithir.inventoryui.mousetweaks.Feature.init(bus, container);
         net.diaithir.inventoryui.inventoryessentials.Feature.init(bus, container);
         net.diaithir.inventoryui.trashslot.Feature.init(bus, container);
     }

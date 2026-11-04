@@ -1,0 +1,41 @@
+package fr.tathan.sky_aesthetics.client.data;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.mojang.serialization.JsonOps;
+import fr.tathan.SkyAesthetics;
+import fr.tathan.sky_aesthetics.client.ConstellationRenderer;
+import fr.tathan.sky_aesthetics.client.settings.Constellation;
+import net.minecraft.resources.FileToIdConverter;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
+import net.minecraft.util.ExtraCodecs;
+import net.minecraft.util.GsonHelper;
+import net.minecraft.util.profiling.ProfilerFiller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ConstellationsData extends SimpleJsonResourceReloadListener<JsonElement> {
+
+    public static final Map<String, Constellation> CONSTELLATIONS = new HashMap<>();
+
+    public ConstellationsData() {
+        super(ExtraCodecs.JSON, FileToIdConverter.json("constellation"));
+    }
+
+    @Override
+    protected void apply(Map<Identifier, JsonElement> object, ResourceManager resourceManager, ProfilerFiller profiler) {
+        CONSTELLATIONS.clear();
+        object.forEach((key, value) -> {
+            JsonObject json = GsonHelper.convertToJsonObject(value, "constellation");
+            Constellation constellation = Constellation.CODEC.parse(JsonOps.INSTANCE, json).getOrThrow();
+            SkyAesthetics.LOG.info("{} | registered", constellation.id());
+
+            CONSTELLATIONS.putIfAbsent(constellation.id(), constellation);
+        });
+
+        ConstellationRenderer.invalidate();
+    }
+}

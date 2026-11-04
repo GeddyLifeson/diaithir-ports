@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "M",
+  "|"
+ ],
+ "key": {
+  "M": "diaithirarms:ceramic_plate",
+  "|": "#c:rods/wooden"
+ },
+ "result": {
+  "id": "diaithirarms:composite_dagger",
+  "count": 1
+ }
+}

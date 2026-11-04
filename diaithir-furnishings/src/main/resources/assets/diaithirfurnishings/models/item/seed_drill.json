@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/seed_drill"
+  "layer0": "diaithirfurnishings:item/seed_drill_head",
+  "layer1": "diaithirfurnishings:item/seed_drill_handle",
+  "layer2": "diaithirfurnishings:item/seed_drill_binding"
  }
 }

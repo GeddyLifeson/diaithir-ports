@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "stellaris:block/vertical_moon_stone_slab"
+ }
+}

@@ -122,8 +122,7 @@ def main():
     lang_p = A / "lang/en_us.json"; lang = json.load(open(lang_p))
     gates = {}; entries = []; tags = {}
     for p in ("items", "models/item", "textures/item"): (A / p).mkdir(parents=True, exist_ok=True)
-    (D / "recipe/everyday").mkdir(parents=True, exist_ok=True)
-    for f in (D / "recipe/everyday").glob("*.json"): f.unlink()
+    import shutil; shutil.rmtree(D / "recipe/everyday", ignore_errors=True)  # nothing here is crafted by recipe; the benches in diaithir-gear make it all
     for r in rows:
         iid, cat = r["id"], r["category"]; ag = age(r["earliest"], r.get("year", ""))
         tool = cat in TOOLS and cat != "measuring"

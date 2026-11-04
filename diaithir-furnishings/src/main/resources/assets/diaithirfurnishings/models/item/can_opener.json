@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/can_opener"
+  "layer0": "diaithirfurnishings:item/can_opener_head",
+  "layer1": "diaithirfurnishings:item/can_opener_handle"
  }
 }

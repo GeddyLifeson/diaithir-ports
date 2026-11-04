@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/trammel"
+  "layer0": "diaithirfurnishings:item/trammel_pot",
+  "layer1": "diaithirfurnishings:item/trammel_handle"
  }
 }

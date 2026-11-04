@@ -1,0 +1,26 @@
+{
+ "station": "station.hearth_bench",
+ "stage": "assembly",
+ "time_s": 4,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a1",
+   "count": 2
+  },
+  {
+   "item": "minecraft:string",
+   "count": 2
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_longbow",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 1
+  }
+ }
+}

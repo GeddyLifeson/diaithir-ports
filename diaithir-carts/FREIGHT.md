@@ -36,8 +36,8 @@ Everything uses NeoForge's own item and fluid handlers, so storage cables, hoppe
 Nothing here is a grid recipe. `data/diaithircarts/freight/station_recipes.csv` lists output, Age, station and inputs for the station lanes (workshop bench, cooperage, machine works, container works). The container works is the Assembly Yard tier that builds containers.
 
 ## Known gaps
-- No vehicle implements `CargoCarrier` yet; the vehicle, rail and ship threads register theirs. Tested with a stub carrier.
-- Carried loads are not drawn on the vehicle (vehicle thread).
+- Rail wagons are carriers (`RailCargo`: bay by wagon type and gauge, saved with the cart, drawn by `CargoDraw`); trailers, trucks and ship holds are for their own threads. A wagon's bay is separate from its chest-cart slots.
+- The wagon drawing is generated from the view string and has not been seen in a real client; the mixin is `require = 0`, so a mismatch hides the loads instead of crashing.
 - Tank fluid is not carried when lifting; pump it empty first. A tank container is a plain vessel block, not an ISO frame.
 - No client test: models and textures are generated but unseen.
 - Door leaves do not animate.

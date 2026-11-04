@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "alternate.current.mixin",
+	"mixins": [
+		"ExperimentalRedstoneUtilsMixin",
+		"MinecraftServerMixin",
+		"RedStoneWireBlockMixin",
+		"ServerLevelMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

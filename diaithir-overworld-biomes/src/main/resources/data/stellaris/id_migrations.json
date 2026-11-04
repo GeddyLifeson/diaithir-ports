@@ -1,0 +1,577 @@
+[
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:lunar_hanging_sign",
+  "new": "minecraft:oak_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:lunar_sign",
+  "new": "minecraft:oak_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:lunar_wall_hanging_sign",
+  "new": "minecraft:oak_wall_hanging_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:lunar_wall_sign",
+  "new": "minecraft:oak_wall_sign"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:blender",
+  "new": "minecraft:smoker"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:blender",
+  "new": "minecraft:smoker"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:cable_t1",
+  "new": "minecraft:iron_bars"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:cable_t1",
+  "new": "minecraft:iron_bars"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:pipe_t1",
+  "new": "minecraft:iron_bars"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:pipe_t1",
+  "new": "minecraft:iron_bars"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:cargo_unloader",
+  "new": "minecraft:hopper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:cargo_unloader",
+  "new": "minecraft:hopper"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:coal_generator",
+  "new": "minecraft:furnace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:coal_generator",
+  "new": "minecraft:furnace"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:diesel_generator",
+  "new": "minecraft:blast_furnace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:diesel_generator",
+  "new": "minecraft:blast_furnace"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:electrolyzer",
+  "new": "minecraft:blast_furnace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:electrolyzer",
+  "new": "minecraft:blast_furnace"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:engineering_station",
+  "new": "minecraft:smithing_table"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:engineering_station",
+  "new": "minecraft:smithing_table"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:fuel_refinery",
+  "new": "minecraft:blast_furnace"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:fuel_refinery",
+  "new": "minecraft:blast_furnace"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:gravity_manipulator",
+  "new": "minecraft:lodestone"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:gravity_manipulator",
+  "new": "minecraft:lodestone"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:laboratory",
+  "new": "minecraft:brewing_stand"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:laboratory",
+  "new": "minecraft:brewing_stand"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:power_bank_t1",
+  "new": "minecraft:iron_block"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:power_bank_t1",
+  "new": "minecraft:iron_block"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:pumpjack",
+  "new": "minecraft:piston"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:pumpjack",
+  "new": "minecraft:piston"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:solar_panel",
+  "new": "minecraft:daylight_detector"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:solar_panel",
+  "new": "minecraft:daylight_detector"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:vacuumator",
+  "new": "minecraft:hopper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:vacuumator",
+  "new": "minecraft:hopper"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:water_pump",
+  "new": "minecraft:hopper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:water_pump",
+  "new": "minecraft:hopper"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:fluid_tank_t1",
+  "new": "minecraft:cauldron"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:fluid_tank_t1",
+  "new": "minecraft:cauldron"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:space_farm",
+  "new": "minecraft:farmland"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:space_farm",
+  "new": "minecraft:farmland"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:rocket_launch_pad",
+  "new": "minecraft:iron_block"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:rocket_launch_pad",
+  "new": "minecraft:iron_block"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:antenna",
+  "new": "minecraft:lightning_rod"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:antenna",
+  "new": "minecraft:lightning_rod"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:electric_light",
+  "new": "minecraft:sea_lantern"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:electric_light",
+  "new": "minecraft:sea_lantern"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:flag",
+  "new": "minecraft:white_banner"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:flag",
+  "new": "minecraft:white_banner"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:oxygen_propagator",
+  "new": "minecraft:iron_block"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:oxygen_propagator",
+  "new": "minecraft:iron_block"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:coal_torch",
+  "new": "minecraft:torch"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:coal_torch",
+  "new": "minecraft:torch"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:wall_coal_torch",
+  "new": "minecraft:wall_torch"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:wall_coal_torch",
+  "new": "minecraft:wall_torch"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:coal_lantern",
+  "new": "minecraft:lantern"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:coal_lantern",
+  "new": "minecraft:lantern"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:blender_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:blender_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:pumpjack_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:pumpjack_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:flag_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:flag_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:rocket_launch_pad_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:rocket_launch_pad_proxy",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:oil",
+  "new": "minecraft:lava"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:oil",
+  "new": "minecraft:lava"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:diesel",
+  "new": "minecraft:lava"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:diesel",
+  "new": "minecraft:lava"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:fuel",
+  "new": "minecraft:lava"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:fuel",
+  "new": "minecraft:lava"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:hydrogen",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:hydrogen",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:oxygen",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:oxygen",
+  "new": "minecraft:air"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:astrum_liquidus",
+  "new": "minecraft:water"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:astrum_liquidus",
+  "new": "minecraft:water"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:blue_liquid",
+  "new": "minecraft:water"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:blue_liquid",
+  "new": "minecraft:water"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:fuel_block",
+  "new": "minecraft:coal_block"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:fuel_block",
+  "new": "minecraft:coal_block"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:hydrogen_block",
+  "new": "minecraft:ice"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:hydrogen_block",
+  "new": "minecraft:ice"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:oxygen_block",
+  "new": "minecraft:ice"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:oxygen_block",
+  "new": "minecraft:ice"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:earth_globe",
+  "new": "minecraft:lodestone"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:earth_globe",
+  "new": "minecraft:lodestone"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "stellaris:moon_globe",
+  "new": "minecraft:lodestone"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:moon_globe",
+  "new": "minecraft:lodestone"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:oil_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:diesel_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:fuel_bucket",
+  "new": "stellaris:fluid_cell"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:hydrogen_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:blue_liquid_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:astrum_liquidus_bucket",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:lunar_boat",
+  "new": "minecraft:oak_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:lunar_chest_boat",
+  "new": "minecraft:oak_chest_boat"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:blender",
+  "new": "minecraft:smoker"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:big_rocket_model",
+  "new": "stellaris:rocket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:small_rocket_model",
+  "new": "stellaris:rocket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:tiny_rocket_model",
+  "new": "stellaris:rocket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:creative_rocket",
+  "new": "stellaris:rocket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:creative_space_suit_helmet",
+  "new": "stellaris:space_suit_helmet"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:sd_card",
+  "new": "minecraft:paper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:tablet",
+  "new": "minecraft:compass"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:friends_list",
+  "new": "minecraft:paper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:skin_frost",
+  "new": "minecraft:paper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:skin_galaxy",
+  "new": "minecraft:paper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:skin_military",
+  "new": "minecraft:paper"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:rover",
+  "new": "minecraft:minecart"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:rover_speed_module",
+  "new": "minecraft:redstone"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:rover_tank_module",
+  "new": "minecraft:bucket"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:autopilot_module",
+  "new": "minecraft:redstone"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:cargo_module",
+  "new": "minecraft:chest"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:shield_module",
+  "new": "minecraft:shield"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "stellaris:space_station_blueprint",
+  "new": "minecraft:map"
+ }
+]

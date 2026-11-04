@@ -2,7 +2,9 @@
  "module": "diaithirtooltipfx",
  "side": "client",
  "features": [
-  "durabilitytooltip"
+  "durabilitytooltip",
+  "enchantmentdescriptions",
+  "foodeffecttooltips"
  ],
  "codex": {
   "entry": "diaithirtooltipfx.overview",

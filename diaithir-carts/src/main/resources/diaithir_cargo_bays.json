@@ -1,0 +1,119 @@
+{
+ "diaithirvehicles:benz_motorwagen": {
+  "w": 1,
+  "h": 1,
+  "l": 1,
+  "payload_kg": 100,
+  "ox": -0.5,
+  "oy": 0.6,
+  "oz": -0.8
+ },
+ "diaithirvehicles:model_t": {
+  "w": 1,
+  "h": 1,
+  "l": 1,
+  "payload_kg": 150,
+  "ox": -0.5,
+  "oy": 0.7,
+  "oz": -1.5
+ },
+ "diaithirvehicles:ford_f1": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 0.8,
+  "oz": -2.0
+ },
+ "diaithirvehicles:willys_mb": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 300,
+  "ox": -0.5,
+  "oy": 0.7,
+  "oz": -1.8
+ },
+ "diaithirvehicles:land_rover_series_i": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 450,
+  "ox": -0.5,
+  "oy": 0.8,
+  "oz": -1.9
+ },
+ "diaithirvehicles:toyota_corolla": {
+  "w": 1,
+  "h": 1,
+  "l": 1,
+  "payload_kg": 300,
+  "ox": -0.5,
+  "oy": 0.7,
+  "oz": -1.9
+ },
+ "diaithirvehicles:vw_type_2": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 800,
+  "ox": -0.5,
+  "oy": 0.8,
+  "oz": -1.4
+ },
+ "diaithirvehicles:ford_econoline_ambulance": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 500,
+  "ox": -0.5,
+  "oy": 0.8,
+  "oz": -1.9
+ },
+ "diaithirvehicles:routemaster": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 800,
+  "ox": -0.5,
+  "oy": 0.4,
+  "oz": -1.0
+ },
+ "diaithirvehicles:rolls_royce_armoured_car": {
+  "w": 1,
+  "h": 1,
+  "l": 1,
+  "payload_kg": 400,
+  "ox": -0.5,
+  "oy": 0.9,
+  "oz": -1.4
+ },
+ "diaithirvehicles:mack_type_75": {
+  "w": 2,
+  "h": 2,
+  "l": 4,
+  "payload_kg": 5000,
+  "ox": -1.0,
+  "oy": 1.0,
+  "oz": -3.2
+ },
+ "diaithirvehicles:m113": {
+  "w": 2,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 1500,
+  "ox": -1.0,
+  "oy": 0.9,
+  "oz": -1.6
+ },
+ "diaithirvehicles:holmes_wrecker": {
+  "w": 1,
+  "h": 1,
+  "l": 2,
+  "payload_kg": 2000,
+  "ox": -0.5,
+  "oy": 1.0,
+  "oz": -2.5
+ }
+}

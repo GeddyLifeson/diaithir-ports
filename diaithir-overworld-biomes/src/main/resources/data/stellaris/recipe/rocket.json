@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "N": "stellaris:rocket_nose_cone",
+  "P": "stellaris:titanium_plating_block",
+  "E": "stellaris:rocket_engine",
+  "F": "stellaris:rocket_fin"
+ },
+ "pattern": [
+  " N ",
+  "PEP",
+  "F F"
+ ],
+ "result": {
+  "id": "stellaris:rocket"
+ }
+}
