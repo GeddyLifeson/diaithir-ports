@@ -8,6 +8,8 @@ Clean-room chunk claims (stands in for FTB Chunks, all rights reserved). MIT. Wr
 - Tested headless: two fake players for claim, drop and counts, and `/claim selftest` (game master) fires break, place, use and explosion events from a stranger, the owner and a trusted player: all 8 checks pass. The map screen draws on a client only; it needs the first full-pack join.
 - Look-At shows `Claimed by <name>` for the chunk under the crosshair: Look-At has no claims code; claims sends it a provider by message, the client asks the server (`ClaimQuery`, answer `ClaimInfo`, at most every 3 s per chunk). Channels are optional so plain clients still join.
 
+## Grief log (GriefLogger replacement, stage 1)
+Package `net.diaithir.claims.log`: block break and place by players, kept in memory (20000) and appended to `world/grieflog/DATE.ndjson`; ops use `/gl inspect [N]` and `/gl rollback RADIUS MINUTES`. Clean-room (GriefLogger is Apache-2.0 but needs Knot, UILib, YamlConfig, SQLite and 54 mixin points). Not covered yet: containers, entity kills, explosions, a database store, lookups by player.
 ## Law: handcuffs and bounties (Cuffed and Bountycraft replacement)
 Package `net.diaithir.claims.law`. Handcuffs (use on a player: slowed, cannot attack, break or use things), cuff key (frees them, returns the cuffs), `/bounty place PLAYER` (item in hand goes on their head) and `/bounty list`; the killer collects the bounty. Clean-room from behaviour: Cuffed is GPL-3.0, Bountycraft is MIT but has no source we could find; no code taken, art drawn fresh.
 ## Parties (Open Parties and Claims replacement, stage 1)
