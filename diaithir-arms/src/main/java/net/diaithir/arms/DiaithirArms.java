@@ -48,6 +48,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class DiaithirArms {
     public static final String ID = "diaithirarms";
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
+    private static final DeferredRegister.Entities ENTITIES = DeferredRegister.createEntities(ID);
+    public static final net.neoforged.neoforge.registries.DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<Thrown.Shot>> THROWN =
+        ENTITIES.registerEntityType("thrown_weapon", Thrown.Shot::new, net.minecraft.world.entity.MobCategory.MISC,
+            b -> b.sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10));
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
     private static final DeferredRegister<net.minecraft.world.item.crafting.RecipeSerializer<?>> RECIPES =
             DeferredRegister.create(Registries.RECIPE_SERIALIZER, ID);
@@ -174,6 +178,13 @@ public final class DiaithirArms {
         }
         for (String id : DATA.parts()) {
             ALL.put(id, ITEMS.registerSimpleItem(id));
+        }
+        for (Thrown.Design d : Thrown.DESIGNS) {
+            ALL.put(d.id(), ITEMS.registerItem(d.id(), p -> new Thrown.ThrownItem(p, d), () -> Thrown.props(d)));
+        }
+        ENTITIES.register(bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+            ThrownClient.init(bus);
         }
         BLOCKS.register(bus);
         RECIPES.register("transmog", () -> TransmogRecipe.SERIALIZER);

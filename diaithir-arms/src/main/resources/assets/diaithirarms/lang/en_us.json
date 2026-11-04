@@ -95,5 +95,22 @@
  "item.diaithirarms.tibetan_crossbow": "Tibetan crossbow",
  "item.diaithirarms.bhutanese_bamboo_bow": "Bhutanese bamboo bow",
  "item.diaithirarms.nubian_self_bow": "Nubian self bow",
- "item.diaithirarms.cretan_short_bow": "Cretan short bow"
+ "item.diaithirarms.cretan_short_bow": "Cretan short bow",
+ "item.diaithirarms.sling": "Sling",
+ "item.diaithirarms.retiarius_net": "Retiarius net",
+ "item.diaithirarms.bolas": "Bolas",
+ "item.diaithirarms.blowgun": "Blowgun",
+ "item.diaithirarms.grenado": "Grenado (hand grenade)",
+ "item.diaithirarms.stielhandgranate": "Stielhandgranate (Model 24)",
+ "item.diaithirarms.mills_bomb": "Mills bomb (No. 36M)",
+ "item.diaithirarms.mk2_grenade": "Mk 2 grenade (\"pineapple\")",
+ "item.diaithirarms.f1_grenade": "F1 grenade",
+ "item.diaithirarms.rgd_33_grenade": "RGD-33 grenade",
+ "item.diaithirarms.m67_grenade": "M67 grenade",
+ "item.diaithirarms.molotov_cocktail": "Molotov cocktail",
+ "item.diaithirarms.satchel_charge": "Satchel charge",
+ "item.diaithirarms.bangalore_torpedo": "Bangalore torpedo",
+ "item.diaithirarms.balearic_sling": "Balearic sling",
+ "item.diaithirarms.inca_sling_huaraca": "Inca sling (huaraca)",
+ "entity.diaithirarms.thrown_weapon": "Thrown weapon"
 }

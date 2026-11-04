@@ -385,5 +385,69 @@
  "cretan_short_bow": {
   "diaithiris": null,
   "english": "Cretan short bow"
+ },
+ "sling": {
+  "diaithiris": null,
+  "english": "Sling"
+ },
+ "retiarius_net": {
+  "diaithiris": null,
+  "english": "Retiarius net"
+ },
+ "bolas": {
+  "diaithiris": null,
+  "english": "Bolas"
+ },
+ "blowgun": {
+  "diaithiris": null,
+  "english": "Blowgun"
+ },
+ "grenado": {
+  "diaithiris": null,
+  "english": "Grenado (hand grenade)"
+ },
+ "stielhandgranate": {
+  "diaithiris": null,
+  "english": "Stielhandgranate (Model 24)"
+ },
+ "mills_bomb": {
+  "diaithiris": null,
+  "english": "Mills bomb (No. 36M)"
+ },
+ "mk2_grenade": {
+  "diaithiris": null,
+  "english": "Mk 2 grenade (\"pineapple\")"
+ },
+ "f1_grenade": {
+  "diaithiris": null,
+  "english": "F1 grenade"
+ },
+ "rgd_33_grenade": {
+  "diaithiris": null,
+  "english": "RGD-33 grenade"
+ },
+ "m67_grenade": {
+  "diaithiris": null,
+  "english": "M67 grenade"
+ },
+ "molotov_cocktail": {
+  "diaithiris": null,
+  "english": "Molotov cocktail"
+ },
+ "satchel_charge": {
+  "diaithiris": null,
+  "english": "Satchel charge"
+ },
+ "bangalore_torpedo": {
+  "diaithiris": null,
+  "english": "Bangalore torpedo"
+ },
+ "balearic_sling": {
+  "diaithiris": null,
+  "english": "Balearic sling"
+ },
+ "inca_sling_huaraca": {
+  "diaithiris": null,
+  "english": "Inca sling (huaraca)"
  }
 }
