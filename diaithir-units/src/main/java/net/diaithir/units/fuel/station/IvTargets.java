@@ -26,7 +26,7 @@ final class IvTargets {
         for (Object vehicle : vehicles(level, box)) {
             try {
                 Object tank = vehicle.getClass().getField("fuelTank").get(vehicle);
-                if (tank != null) out.add(new Tank(tank));
+                if (tank != null) out.add(new Tank(tank, vehicle));
             } catch (ReflectiveOperationException | RuntimeException ex) {
                 // not a powered vehicle, or IV changed: skip it
             }
@@ -75,7 +75,22 @@ final class IvTargets {
         throw new NoSuchFieldException(name);
     }
 
-    private record Tank(Object tank) implements FuelTarget {
+    private record Tank(Object tank, Object vehicle) implements FuelTarget {
+        /** False when the vehicle has engines and none of them burns this fuel (an empty tank would otherwise take any fuel). No engines, or an IV change we cannot read: allowed. */
+        private boolean enginesTake(String ivType) {
+            try {
+                if (!(vehicle.getClass().getField("engines").get(vehicle) instanceof List<?> engines) || engines.isEmpty()) return true;
+                for (Object engine : engines) {
+                    Object def = engine.getClass().getField("definition").get(engine);
+                    Object spec = def.getClass().getField("engine").get(def);
+                    if (ivType.equals(spec.getClass().getField("fuelType").get(spec))) return true;
+                }
+                return false;
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                return true;
+            }
+        }
+
         private String current() throws ReflectiveOperationException {
             return (String) tank.getClass().getMethod("getFluid").invoke(tank);
         }
@@ -86,6 +101,7 @@ final class IvTargets {
             try {
                 String cur = current();
                 if (cur != null && !cur.isEmpty() && !cur.equals(f.ivFuelType())) return 0;
+                if ((cur == null || cur.isEmpty()) && !enginesTake(f.ivFuelType())) return 0;
                 double level = (double) tank.getClass().getMethod("getFluidLevel").invoke(tank);
                 int max = (int) tank.getClass().getMethod("getMaxLevel").invoke(tank);
                 return Math.max(0, max - level) / 1000.0;
