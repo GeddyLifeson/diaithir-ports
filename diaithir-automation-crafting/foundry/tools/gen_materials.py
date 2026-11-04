@@ -220,4 +220,33 @@ gp = os.path.join(FOUNDRY, "diaithir-data", "age_gates.json")
 allg = json.load(open(gp))
 allg["items"].update(ages)
 wr(gp, allg)
+# Codex: one entry per stage, text built only from the table's numbers (no invented lore); same shape as the worldgen codex
+CLS = {"timber": "Timber", "masonry": "Masonry", "concrete": "Concrete", "steel": "Iron and steel", "glass": "Glass", "lining": "Wall lining",
+       "roofing": "Roofing", "road": "Road surface", "insulation": "Insulation"}
+codex = []
+for name, (title, _b, station, stage, time_s, w, ings, count) in SPEC.items():
+    r = rows[name]
+    bits = ["density %g kg/m3" % r["density_kg_m3"], "compressive strength %g MPa" % r["compressive_mpa"], "tensile strength %g MPa" % r["tensile_mpa"],
+            "heat conductivity %g W/(m K)" % r["conductivity_w_mk"],
+            ("fire resistance %g min" % r["fire_min"]) if r["fire_min"] else "no fire resistance"]
+    if r["flammability"]:
+        bits.append("burns")
+    if r["road_speed"]:
+        bits.append("walking speed +%d%%" % round(r["road_speed"] * 100))
+    codex.append({"id": NS + ":" + name, "kind": "material", "name": title, "class": CLS[r["class"]], "age": r["age"],
+                  "text": CLS[r["class"]] + ", Age " + r["age"] + ": " + ", ".join(bits) + ".", "station": station,
+                  "quest": NS + ":build/" + name, "connects": ["recipes:" + NS + ":" + name] + (["tags:c:" + t for t, ids in TAGS.items() if name in ids])})
+wr(os.path.join(D, "codex", "materials.json"), codex)
+# Quests: one per stage, same shape as the worldgen quests (goal, next). Obtain the stage's item; the next quest in the class opens after it.
+quests = []
+by_class = {}
+for name in SPEC:
+    by_class.setdefault(rows[name]["class"], []).append(name)
+for cls, names in by_class.items():
+    names.sort(key=lambda n: AGE_NUM[rows[n]["age"]])
+    for i, n in enumerate(names):
+        quests.append({"id": NS + ":build/" + n, "title": "Make " + SPEC[n][0], "age": rows[n]["age"],
+                       "goal": {"type": "obtain_item", "item": NS + ":" + n},
+                       "next": NS + ":build/" + names[i + 1] if i + 1 < len(names) else None})
+wr(os.path.join(D, "quests", "materials.json"), quests)
 print("materials ok", len(built), "built stages")

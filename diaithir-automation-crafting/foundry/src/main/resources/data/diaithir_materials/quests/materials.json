@@ -1,0 +1,422 @@
+[
+  {
+    "id": "diaithir_materials:build/timber_post_beam",
+    "title": "Make Post and Beam Timber",
+    "age": "I",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:timber_post_beam"
+    },
+    "next": "diaithir_materials:build/timber_sawn"
+  },
+  {
+    "id": "diaithir_materials:build/timber_sawn",
+    "title": "Make Sawn Pegged Timber",
+    "age": "II",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:timber_sawn"
+    },
+    "next": "diaithir_materials:build/timber_engineered"
+  },
+  {
+    "id": "diaithir_materials:build/timber_engineered",
+    "title": "Make Engineered Timber",
+    "age": "VII",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:timber_engineered"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/masonry_mud_brick",
+    "title": "Make Mud Brick",
+    "age": "I",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:masonry_mud_brick"
+    },
+    "next": "diaithir_materials:build/masonry_fired_brick"
+  },
+  {
+    "id": "diaithir_materials:build/masonry_fired_brick",
+    "title": "Make Fired Brick",
+    "age": "I",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:masonry_fired_brick"
+    },
+    "next": "diaithir_materials:build/masonry_cut_stone"
+  },
+  {
+    "id": "diaithir_materials:build/masonry_cut_stone",
+    "title": "Make Cut Stone",
+    "age": "II",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:masonry_cut_stone"
+    },
+    "next": "diaithir_materials:build/masonry_block"
+  },
+  {
+    "id": "diaithir_materials:build/masonry_block",
+    "title": "Make Masonry Block",
+    "age": "IV",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:masonry_block"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/glass_blown",
+    "title": "Make Blown Glass",
+    "age": "I",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:glass_blown"
+    },
+    "next": "diaithir_materials:build/glass_sheet"
+  },
+  {
+    "id": "diaithir_materials:build/glass_sheet",
+    "title": "Make Sheet Glass",
+    "age": "III",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:glass_sheet"
+    },
+    "next": "diaithir_materials:build/glass_plate"
+  },
+  {
+    "id": "diaithir_materials:build/glass_plate",
+    "title": "Make Plate Glass",
+    "age": "V",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:glass_plate"
+    },
+    "next": "diaithir_materials:build/glass_float"
+  },
+  {
+    "id": "diaithir_materials:build/glass_float",
+    "title": "Make Float Glass",
+    "age": "VI",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:glass_float"
+    },
+    "next": "diaithir_materials:build/glass_laminated"
+  },
+  {
+    "id": "diaithir_materials:build/glass_laminated",
+    "title": "Make Laminated Glass",
+    "age": "VII",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:glass_laminated"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/lining_lime_plaster",
+    "title": "Make Lime Plaster",
+    "age": "II",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:lining_lime_plaster"
+    },
+    "next": "diaithir_materials:build/lining_gypsum_plaster"
+  },
+  {
+    "id": "diaithir_materials:build/lining_gypsum_plaster",
+    "title": "Make Gypsum Plaster",
+    "age": "IV",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:lining_gypsum_plaster"
+    },
+    "next": "diaithir_materials:build/lining_board"
+  },
+  {
+    "id": "diaithir_materials:build/lining_board",
+    "title": "Make Plasterboard",
+    "age": "V",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:lining_board"
+    },
+    "next": "diaithir_materials:build/lining_fire_board"
+  },
+  {
+    "id": "diaithir_materials:build/lining_fire_board",
+    "title": "Make Fire-Rated Board",
+    "age": "VI",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:lining_fire_board"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/roofing_thatch",
+    "title": "Make Thatch",
+    "age": "I",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:roofing_thatch"
+    },
+    "next": "diaithir_materials:build/roofing_slate"
+  },
+  {
+    "id": "diaithir_materials:build/roofing_slate",
+    "title": "Make Slate Roofing",
+    "age": "II",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:roofing_slate"
+    },
+    "next": "diaithir_materials:build/roofing_tile"
+  },
+  {
+    "id": "diaithir_materials:build/roofing_tile",
+    "title": "Make Clay Roof Tile",
+    "age": "III",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:roofing_tile"
+    },
+    "next": "diaithir_materials:build/roofing_metal_sheet"
+  },
+  {
+    "id": "diaithir_materials:build/roofing_metal_sheet",
+    "title": "Make Metal Roofing Sheet",
+    "age": "V",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:roofing_metal_sheet"
+    },
+    "next": "diaithir_materials:build/roofing_insulated_panel"
+  },
+  {
+    "id": "diaithir_materials:build/roofing_insulated_panel",
+    "title": "Make Insulated Roof Panel",
+    "age": "VII",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:roofing_insulated_panel"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/road_flagstone",
+    "title": "Make Flagstone Paving",
+    "age": "I",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:road_flagstone"
+    },
+    "next": "diaithir_materials:build/road_cobble"
+  },
+  {
+    "id": "diaithir_materials:build/road_cobble",
+    "title": "Make Cobble Road",
+    "age": "II",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:road_cobble"
+    },
+    "next": "diaithir_materials:build/road_macadam"
+  },
+  {
+    "id": "diaithir_materials:build/road_macadam",
+    "title": "Make Macadam Road",
+    "age": "IV",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:road_macadam"
+    },
+    "next": "diaithir_materials:build/road_asphalt"
+  },
+  {
+    "id": "diaithir_materials:build/road_asphalt",
+    "title": "Make Asphalt",
+    "age": "V",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:road_asphalt"
+    },
+    "next": "diaithir_materials:build/road_concrete"
+  },
+  {
+    "id": "diaithir_materials:build/road_concrete",
+    "title": "Make Concrete Road Slab",
+    "age": "VI",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:road_concrete"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/insulation_turf",
+    "title": "Make Turf Insulation",
+    "age": "I",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:insulation_turf"
+    },
+    "next": "diaithir_materials:build/insulation_rock_wool"
+  },
+  {
+    "id": "diaithir_materials:build/insulation_rock_wool",
+    "title": "Make Rock Wool",
+    "age": "IV",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:insulation_rock_wool"
+    },
+    "next": "diaithir_materials:build/insulation_glass_wool"
+  },
+  {
+    "id": "diaithir_materials:build/insulation_glass_wool",
+    "title": "Make Glass Wool",
+    "age": "V",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:insulation_glass_wool"
+    },
+    "next": "diaithir_materials:build/insulation_foam"
+  },
+  {
+    "id": "diaithir_materials:build/insulation_foam",
+    "title": "Make Foam Insulation Board",
+    "age": "VII",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:insulation_foam"
+    },
+    "next": "diaithir_materials:build/insulation_aerogel"
+  },
+  {
+    "id": "diaithir_materials:build/insulation_aerogel",
+    "title": "Make Aerogel Panel",
+    "age": "VIII",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:insulation_aerogel"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/steel_wrought_bar",
+    "title": "Make Wrought Iron Bar Stock",
+    "age": "III",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:steel_wrought_bar"
+    },
+    "next": "diaithir_materials:build/steel_rolled_iron"
+  },
+  {
+    "id": "diaithir_materials:build/steel_rolled_iron",
+    "title": "Make Rolled Iron Section",
+    "age": "IV",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:steel_rolled_iron"
+    },
+    "next": "diaithir_materials:build/steel_plate_angle"
+  },
+  {
+    "id": "diaithir_materials:build/steel_plate_angle",
+    "title": "Make Steel Plate and Angle",
+    "age": "V",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:steel_plate_angle"
+    },
+    "next": "diaithir_materials:build/steel_i_beam"
+  },
+  {
+    "id": "diaithir_materials:build/steel_i_beam",
+    "title": "Make Steel I-Beam",
+    "age": "VI",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:steel_i_beam"
+    },
+    "next": "diaithir_materials:build/steel_light_gauge"
+  },
+  {
+    "id": "diaithir_materials:build/steel_light_gauge",
+    "title": "Make Light-Gauge Steel Framing",
+    "age": "VII",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:steel_light_gauge"
+    },
+    "next": "diaithir_materials:build/steel_alloy_lattice"
+  },
+  {
+    "id": "diaithir_materials:build/steel_alloy_lattice",
+    "title": "Make Alloy Lattice Frame",
+    "age": "RODOS",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:steel_alloy_lattice"
+    },
+    "next": null
+  },
+  {
+    "id": "diaithir_materials:build/concrete_pozzolan",
+    "title": "Make Pozzolan Concrete",
+    "age": "II",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:concrete_pozzolan"
+    },
+    "next": "diaithir_materials:build/cement_powder"
+  },
+  {
+    "id": "diaithir_materials:build/cement_powder",
+    "title": "Make Cement Powder",
+    "age": "IV",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:cement_powder"
+    },
+    "next": "diaithir_materials:build/concrete_portland"
+  },
+  {
+    "id": "diaithir_materials:build/concrete_portland",
+    "title": "Make Portland Concrete",
+    "age": "V",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:concrete_portland"
+    },
+    "next": "diaithir_materials:build/concrete_reinforced"
+  },
+  {
+    "id": "diaithir_materials:build/concrete_reinforced",
+    "title": "Make Reinforced Concrete",
+    "age": "VI",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:concrete_reinforced"
+    },
+    "next": "diaithir_materials:build/concrete_precast"
+  },
+  {
+    "id": "diaithir_materials:build/concrete_precast",
+    "title": "Make Precast Concrete Slab",
+    "age": "VII",
+    "goal": {
+      "type": "obtain_item",
+      "item": "diaithir_materials:concrete_precast"
+    },
+    "next": null
+  }
+]
