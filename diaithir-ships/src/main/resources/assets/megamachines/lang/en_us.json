@@ -23,5 +23,9 @@
  "megamachines.quarry.status.head_too_soft": "Drill head too soft for this rock (%s stacks taken)",
  "megamachines.quarry.status.full": "Quarry output full: empty it (%s stacks taken)",
  "megamachines.quarry.status.done": "Quarry finished (%s stacks taken)",
- "megamachines.laser.status": "Laser drill: took %s stacks, working at depth %s"
+ "megamachines.laser.status": "Laser drill: took %s stacks, working at depth %s",
+ "block.megamachines.site_office": "Site Office",
+ "block.megamachines.depot": "Site Depot",
+ "megamachines.site.status": "%s: stage %s, %s, function %s",
+ "megamachines.site.started": "Site started: %s"
 }

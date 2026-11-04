@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.diaithir.networkcompat.packetfixer.mixins",
+  "plugin": "net.diaithir.networkcompat.packetfixer.mixins.PacketFixerMixinPlugin",
+  "compatibilityLevel": "JAVA_25",
+  "injectors": {
+    "defaultRequire": 0
+  },
+  "mixins": [
+    "ClientboundCustomPayloadPacketMixin",
+    "ClientboundCustomQueryPacketMixin",
+    "ClientboundLevelChunkPacketDataMixin",
+    "CompressionDecoderMixin",
+    "CompressionEncoderMixin",
+    "ConnectionMixin",
+    "FriendlyByteBufMixin",
+    "MinecraftServerMixin",
+    "NbtAccounterMixin",
+    "ServerCommonPacketListenerImplMixin",
+    "ServerConnectionListenerMixin",
+    "ServerLoginPacketListenerImplMixin",
+    "ServerboundCustomPayloadPacketMixin",
+    "ServerboundCustomQueryPacketMixin",
+    "VarIntMixin",
+    "VarLongMixin",
+    "Varint21FrameDecoderMixin",
+    "Varint21LengthFieldPrependerMixin"
+  ]
+}

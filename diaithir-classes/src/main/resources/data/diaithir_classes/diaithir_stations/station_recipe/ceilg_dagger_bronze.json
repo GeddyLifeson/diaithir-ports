@@ -1,0 +1,23 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "tag": "c:ingots/bronze",
+   "count": 1
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  },
+  {
+   "item": "diaithir_classes:ceilg_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_dagger_bronze",
+  "count": 1
+ }
+}

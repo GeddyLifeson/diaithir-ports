@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "immersive_melodies.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AllayEntityMixin", "MobEntityMixin", "ParrotEntityMixin", "PillagerEntityMixin", "ServerChunkManagerMixin",
+    "ServerWorldMixin"
+  ],
+  "client": [
+    "AbstractZombieModelMixin", "BipedEntityModelMixin", "ClientWorldMixin", "IllagerEntityModelMixin",
+    "LivingEntityRenderStateMixin", "LivingEntityRendererMixin",
+    "MusicManagerMixin", "MusicTrackerAccessor", "PiglinEntityModelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

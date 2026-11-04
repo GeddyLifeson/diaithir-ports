@@ -23,11 +23,18 @@ public final class Guard {
     }
 
     static boolean blocked(Entity who, LevelAccessor level, BlockPos pos) {
+        return blocked(who, level, pos, false);
+    }
+
+    static boolean blocked(Entity who, LevelAccessor level, BlockPos pos, boolean use) {
         Optional<Claim> c = claimAt(level, pos);
         if (c.isEmpty()) {
             return false;
         }
         if (who instanceof ServerPlayer p) {
+            if (use && c.get().has(Claim.PUBLIC_USE)) {
+                return false;
+            }
             if (c.get().allows(p.getUUID()) || p.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER)) {
                 return false;
             }
@@ -53,14 +60,14 @@ public final class Guard {
     @SubscribeEvent
     public void onUse(PlayerInteractEvent.RightClickBlock e) {
         Player p = e.getEntity();
-        if (!p.level().isClientSide() && blocked(p, p.level(), e.getPos())) {
+        if (!p.level().isClientSide() && blocked(p, p.level(), e.getPos(), true)) {
             e.setCanceled(true);
         }
     }
 
     /** Drops every claimed position from an explosion's block list. */
     static void strip(LevelAccessor level, java.util.List<BlockPos> blocks) {
-        blocks.removeIf(pos -> claimAt(level, pos).isPresent());
+        blocks.removeIf(pos -> claimAt(level, pos).filter(c -> !c.has(Claim.ALLOW_EXPLOSIONS)).isPresent());
     }
 
     @SubscribeEvent

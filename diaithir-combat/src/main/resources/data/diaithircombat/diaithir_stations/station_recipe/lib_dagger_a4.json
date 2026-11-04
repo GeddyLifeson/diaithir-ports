@@ -1,0 +1,22 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 10,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a4",
+   "count": 1
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_dagger",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 4
+  }
+ }
+}

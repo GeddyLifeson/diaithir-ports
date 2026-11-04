@@ -12,6 +12,11 @@ Dedicated server boot (gradle runServer, rcon on a flat-free default world):
 Not tested: a real client (rendering of icons, worn armour layers, bow and crossbow pull animations, the flat shield model in the off hand), combat feel of the spear and shield numbers, real crafting with bronze and steel ingots present.
 
 ## Haulage and construction pack (diaithirtrucks)
+- `tools/IvPackCheck.java` against Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar and gson 2.10.1: tank pack ok=13 bad=0 (control), trucks pack ok=114 bad=0 (75 vehicle defs, 39 part defs), every model and texture file present, every `defaultPart` resolves.
+- Not tested: server boot with the pack, summon of the items, driving, hitching, cargo GUI, mounted cars, client rendering.
+
+## Roster
+`/armsselftest` after the roster: ok=108 bad=0 (30 roster items checked for weapon component, durability and reach), 0 ERROR lines (2026-11-03).
 - Real boot: built jar plus Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar in the mods folder of a NeoForge 26.1.2.116 dedicated server (a throwaway gradle project with `runServer`, so IV scans the jar and not a classpath folder). IV loads the pack with 0 `MTSERROR` lines for `diaithirtrucks`. The first boot caught two real bugs the parser check missed (upper-case `interactionType` and `animationType`, and construction paints without a default sub-definition); both fixed.
 - `tools/ivboot_summon.py` over rcon: all 264 item ids (75 vehicles plus paints, engines, wheels, seat, cargo holds, tracks) resolve to real items (an unknown id gives Air, checked with a bogus id).
 - Not tested: placing and driving a vehicle, hitching, cargo GUI, mounted cars, animations (IV has no command to spawn a vehicle, so it needs a player), client rendering. Other packs in the arms jar (diaithiraircraft) log MTSERROR model parse errors; not touched here.
