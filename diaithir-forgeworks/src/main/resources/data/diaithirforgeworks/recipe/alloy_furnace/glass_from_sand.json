@@ -1,0 +1,15 @@
+{
+  "type": "diaithirforgeworks:alloy_furnace",
+  "inputs": [
+    {
+      "ingredient": "#minecraft:smelts_to_glass",
+      "count": 2
+    }
+  ],
+  "energy": 1600,
+  "time": 120,
+  "result": {
+    "id": "minecraft:glass",
+    "count": 3
+  }
+}
