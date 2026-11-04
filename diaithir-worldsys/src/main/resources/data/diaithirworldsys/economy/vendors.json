@@ -465,6 +465,10 @@
      "price": 1,
      "stock": 32
     },
+    "minecraft:pale_moss_carpet": {
+     "price": 1,
+     "stock": 32
+    },
     "minecraft:peony": {
      "price": 1,
      "stock": 32
@@ -485,11 +489,7 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:potted_cornflower": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_dandelion": {
+    "minecraft:potted_brown_mushroom": {
      "price": 1,
      "stock": 32
     }
@@ -771,19 +771,19 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:birch_chest_boat": {
+    "minecraft:bamboo_button": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:birch_door": {
+    "minecraft:bamboo_chest_raft": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:birch_fence": {
+    "minecraft:bamboo_door": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:birch_fence_gate": {
+    "minecraft:bamboo_fence": {
      "price": 1,
      "stock": 32
     }
@@ -839,10 +839,6 @@
      "stock": 32
     },
     "minecraft:cocoa": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_brown_mushroom": {
      "price": 1,
      "stock": 32
     },
@@ -920,6 +916,10 @@
     },
     "minecraft:red_mushroom_block": {
      "price": 9,
+     "stock": 4
+    },
+    "minecraft:dragon_egg": {
+     "price": 10,
      "stock": 4
     }
    }
