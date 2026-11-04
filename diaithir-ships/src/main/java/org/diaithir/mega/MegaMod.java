@@ -34,6 +34,11 @@ public final class MegaMod {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MegaCabBlockEntity>> CAB_BE = BLOCK_ENTITIES.register("cab",
             () -> new BlockEntityType<>(MegaCabBlockEntity::new, CAB.get()));
 
+    public static final DeferredBlock<DigHeadBlock> DIG_HEAD = BLOCKS.registerBlock("dig_head", DigHeadBlock::new,
+            p -> p.mapColor(MapColor.METAL).strength(5f, 12f).sound(SoundType.METAL));
+    public static final DeferredItem<BlockItem> DIG_HEAD_ITEM = ITEMS.registerSimpleBlockItem(DIG_HEAD);
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DigHeadBlockEntity>> DIG_HEAD_BE = BLOCK_ENTITIES.register("dig_head",
+            () -> new BlockEntityType<>(DigHeadBlockEntity::new, DIG_HEAD.get()));
     public static final DeferredBlock<SiteOfficeBlock> OFFICE = BLOCKS.registerBlock("site_office", SiteOfficeBlock::new,
             p -> p.mapColor(MapColor.WOOD).strength(2f, 6f).sound(SoundType.WOOD));
     public static final DeferredItem<BlockItem> OFFICE_ITEM = ITEMS.registerSimpleBlockItem(OFFICE);

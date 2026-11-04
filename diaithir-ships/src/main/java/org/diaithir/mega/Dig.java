@@ -1,4 +1,4 @@
-package net.diaithir.mega;
+package org.diaithir.mega;
 
 /**
  * Tick-sliced digging. {@link #tick} turns available power into a whole number of 1 m3 blocks per call, carrying the fraction,
@@ -15,13 +15,20 @@ public final class Dig {
         private final double initial;
         private double left;
 
-        public Deposit(double m3) { this.initial = m3; this.left = m3; }
+        public Deposit(double m3) { this(m3, m3); }
+
+        /** A partly dug deposit: {@code left} of {@code initial} m3 remain. */
+        public Deposit(double initial, double left) { this.initial = initial; this.left = Math.max(0, Math.min(initial, left)); }
+
+        public double initial() { return initial; }
 
         double take(double m3) {
             double t = Math.min(m3, left);
             left -= t;
             return t;
         }
+
+        void give(double m3) { left = Math.min(initial, left + m3); }
 
         public double left() { return left; }
         public double fraction() { return initial == 0 ? 0 : left / initial; }
@@ -41,5 +48,11 @@ public final class Dig {
         carry -= blocks;
         if (hopperFreeBlocks <= 0 || d.left() <= 0) carry = Math.min(carry, 1.0);  // stalled: do not bank unlimited work
         return blocks;
+    }
+
+    /** Undo blocks that could not be delivered: the work is kept and the deposit gets its volume back. */
+    public void refund(int blocks, Deposit d) {
+        carry += blocks;
+        d.give(blocks);
     }
 }
