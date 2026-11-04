@@ -1,4 +1,4 @@
-package net.diaithir.waypoints.serverwaypoint;
+package net.diaithir.claims.waypoints.serverwaypoint;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

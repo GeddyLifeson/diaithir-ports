@@ -1,4 +1,4 @@
-package net.diaithir.waypoints.serverwaypoint;
+package net.diaithir.claims.waypoints.serverwaypoint;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
