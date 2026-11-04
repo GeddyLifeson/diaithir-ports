@@ -38,8 +38,8 @@ public class ToolBeltLayer<S extends HumanoidRenderState, M extends HumanoidMode
     private static final Identifier TEXTURE_BELT = ToolBelt.location("textures/entity/belt.png");
     private static final Identifier TEXTURE_BELT_DYED = ToolBelt.location("textures/entity/dyed_belt.png");
 
-    private static ItemDisplayContext LEFTSIDE = Enum.valueOf(ItemDisplayContext.class, "TOOLBELT_LEFTSIDE");
-    private static ItemDisplayContext RIGHTSIDE = Enum.valueOf(ItemDisplayContext.class, "TOOLBELT_RIGHTSIDE");
+    private static ItemDisplayContext LEFTSIDE = Enum.valueOf(ItemDisplayContext.class, "DIAITHIRGEAR_TOOLBELT_LEFTSIDE");
+    private static ItemDisplayContext RIGHTSIDE = Enum.valueOf(ItemDisplayContext.class, "DIAITHIRGEAR_TOOLBELT_RIGHTSIDE");
 
     public static class RenderState
     {

@@ -22,3 +22,5 @@ With the three rosters the catalogue is 15 materials and 892 blueprints; items o
 
 ## Tool Belt
 Headless boot clean (0 errors); `summon item ... toolbelt:belt` works. Radial menu and screens compile but are client-only and untested headless.
+
+Fix 2026-11-04 (client-bot report): ItemDisplayContext enum extension added (META-INF/enumextensions.json, constants DIAITHIRGEAR_TOOLBELT_LEFTSIDE/RIGHTSIDE, registered in mods.toml); the stray blocks atlas entry was removed because the belt slot sprite is a GUI sprite found under textures/gui/sprites. Server boot clean; the client path needs the client-bot retest.
