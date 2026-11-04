@@ -197,13 +197,15 @@ public final class Ritual {
         int age = Ages.current(sl.getServer());
         Data.Profile pick = null;
         long wait = 0;
+        boolean warden = sl.getBlockState(altar).is(DiaithirBosses.WARDEN_ALTAR.get());
+        String kind = warden ? "warden_altar" : "ascendant_altar";
         boolean token = held.is(DiaithirBosses.TOKEN.get());
         for (Data.Profile p : Data.profiles().values()) {
-            if (p.summon == null || !"ascendant_altar".equals(p.summon.rite) || age < p.age || def(p.id) == null) continue;
+            if (p.summon == null || !kind.equals(p.summon.rite) || age < p.age || def(p.id) == null) continue;
             if (!p.summon.requires_kills.stream().allMatch(data::beaten)) continue;
             var trophy = DiaithirBosses.TROPHIES.get(p.id);
             boolean viaTrophy = trophy != null && held.is(trophy.get());
-            if (!viaTrophy && !(token && !data.beaten(p.id))) continue;
+            if (!viaTrophy && !((warden || token) && !data.beaten(p.id))) continue;
             long last = data.lastDefeat(p.id);
             long left = last < 0 ? 0 : (long) (p.respawn.ticks * EventHooks.respawnMul(sl)) - (sl.getGameTime() - last);
             if (left > 0) { wait = wait == 0 ? left : Math.min(wait, left); continue; }
