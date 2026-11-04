@@ -23,7 +23,7 @@ public record Claim(UUID owner, String ownerName, List<UUID> friends, boolean fo
 
     /** Owner, a per-chunk friend, or a member of the owner's team. */
     public boolean allows(UUID who) {
-        return owner.equals(who) || friends.contains(who) || Teams.sameTeam(owner, who);
+        return owner.equals(who) || friends.contains(who) || net.diaithir.claims.parties.Parties.sameParty(owner, who);
     }
 
     public boolean has(int flag) {
@@ -40,6 +40,5 @@ public record Claim(UUID owner, String ownerName, List<UUID> friends, boolean fo
 
     public Claim withFlags(int f) {
         return new Claim(owner, ownerName, friends, forced, f);
-        return owner.equals(who) || friends.contains(who) || net.diaithir.claims.parties.Parties.sameParty(owner, who);
     }
 }
