@@ -1,0 +1,237 @@
+{
+"replace": false,
+"values": [
+{
+"id": "ae2:certus_quartz_shovel",
+"required": false
+},
+{
+"id": "ae2:fluix_shovel",
+"required": false
+},
+{
+"id": "ae2:nether_quartz_shovel",
+"required": false
+},
+{
+"id": "aether_ii:arkenium_shovel",
+"required": false
+},
+{
+"id": "aether_ii:gravitite_shovel",
+"required": false
+},
+{
+"id": "aether_ii:holystone_shovel",
+"required": false
+},
+{
+"id": "aether_ii:skyroot_shovel",
+"required": false
+},
+{
+"id": "aether_ii:zanite_shovel",
+"required": false
+},
+{
+"id": "aquaculture:neptunium_shovel",
+"required": false
+},
+{
+"id": "auroral:shimmersteel_shovel",
+"required": false
+},
+{
+"id": "equivox:dm_shovel",
+"required": false
+},
+{
+"id": "equivox:rm_shovel",
+"required": false
+},
+{
+"id": "iceandfire:dragonbone_shovel",
+"required": false
+},
+{
+"id": "iceandfire:dragonsteel_fire_shovel",
+"required": false
+},
+{
+"id": "iceandfire:dragonsteel_ice_shovel",
+"required": false
+},
+{
+"id": "iceandfire:dragonsteel_lightning_shovel",
+"required": false
+},
+{
+"id": "iceandfire:silver_shovel",
+"required": false
+},
+{
+"id": "justdirethings:blazegold_shovel",
+"required": false
+},
+{
+"id": "justdirethings:celestigem_shovel",
+"required": false
+},
+{
+"id": "justdirethings:eclipsealloy_shovel",
+"required": false
+},
+{
+"id": "justdirethings:ferricore_shovel",
+"required": false
+},
+{
+"id": "mekanismtools:bronze_shovel",
+"required": false
+},
+{
+"id": "mekanismtools:lapis_lazuli_shovel",
+"required": false
+},
+{
+"id": "mekanismtools:osmium_shovel",
+"required": false
+},
+{
+"id": "mekanismtools:refined_glowstone_shovel",
+"required": false
+},
+{
+"id": "mekanismtools:refined_obsidian_shovel",
+"required": false
+},
+{
+"id": "mekanismtools:steel_shovel",
+"required": false
+},
+{
+"id": "minecraft:copper_shovel",
+"required": false
+},
+{
+"id": "minecraft:diamond_shovel",
+"required": false
+},
+{
+"id": "minecraft:golden_shovel",
+"required": false
+},
+{
+"id": "minecraft:iron_shovel",
+"required": false
+},
+{
+"id": "minecraft:netherite_shovel",
+"required": false
+},
+{
+"id": "minecraft:stone_shovel",
+"required": false
+},
+{
+"id": "minecraft:wooden_shovel",
+"required": false
+},
+{
+"id": "mysticalagriculture:awakened_supremium_shovel",
+"required": false
+},
+{
+"id": "mysticalagriculture:imperium_shovel",
+"required": false
+},
+{
+"id": "mysticalagriculture:inferium_shovel",
+"required": false
+},
+{
+"id": "mysticalagriculture:prudentium_shovel",
+"required": false
+},
+{
+"id": "mysticalagriculture:supremium_shovel",
+"required": false
+},
+{
+"id": "mysticalagriculture:tertium_shovel",
+"required": false
+},
+{
+"id": "neovitae:sentient_shovel",
+"required": false
+},
+{
+"id": "occultism:infused_shovel",
+"required": false
+},
+{
+"id": "occultism:ritual_dummy/craft_infused_shovel",
+"required": false
+},
+{
+"id": "occultism:silver_shovel",
+"required": false
+},
+{
+"id": "railcraft:steel_shovel",
+"required": false
+},
+{
+"id": "rootsclassic:living_shovel",
+"required": false
+},
+{
+"id": "sgearmetalworks:shovel_cast",
+"required": false
+},
+{
+"id": "silentgear:shovel",
+"required": false
+},
+{
+"id": "silentgear:shovel_blueprint",
+"required": false
+},
+{
+"id": "silentgear:shovel_head",
+"required": false
+},
+{
+"id": "silentgear:shovel_template",
+"required": false
+},
+{
+"id": "stellaris:titanium_shovel",
+"required": false
+},
+{
+"id": "tconstruct:excavator",
+"required": false
+},
+{
+"id": "twilightforest:ironwood_shovel",
+"required": false
+},
+{
+"id": "twilightforest:steeleaf_shovel",
+"required": false
+},
+{
+"id": "untamedwilds:bucket_spadefish",
+"required": false
+},
+{
+"id": "untamedwilds:egg_spadefish",
+"required": false
+},
+{
+"id": "untamedwilds:spadefish_spawn_egg",
+"required": false
+}
+]
+}
