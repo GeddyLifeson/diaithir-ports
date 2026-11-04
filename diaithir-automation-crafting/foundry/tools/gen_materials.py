@@ -237,4 +237,16 @@ for name, (title, _b, station, stage, time_s, w, ings, count) in SPEC.items():
                   "text": CLS[r["class"]] + ", Age " + r["age"] + ": " + ", ".join(bits) + ".", "station": station,
                   "quest": NS + ":build/" + name, "connects": ["recipes:" + NS + ":" + name] + (["tags:c:" + t for t, ids in TAGS.items() if name in ids])})
 wr(os.path.join(D, "codex", "materials.json"), codex)
+# Quests: one per stage, same shape as the worldgen quests (goal, next). Obtain the stage's item; the next quest in the class opens after it.
+quests = []
+by_class = {}
+for name in SPEC:
+    by_class.setdefault(rows[name]["class"], []).append(name)
+for cls, names in by_class.items():
+    names.sort(key=lambda n: AGE_NUM[rows[n]["age"]])
+    for i, n in enumerate(names):
+        quests.append({"id": NS + ":build/" + n, "title": "Make " + SPEC[n][0], "age": rows[n]["age"],
+                       "goal": {"type": "obtain_item", "item": NS + ":" + n},
+                       "next": NS + ":build/" + names[i + 1] if i + 1 < len(names) else None})
+wr(os.path.join(D, "quests", "materials.json"), quests)
 print("materials ok", len(built), "built stages")
