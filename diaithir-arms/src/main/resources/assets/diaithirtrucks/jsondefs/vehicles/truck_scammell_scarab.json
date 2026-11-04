@@ -59,7 +59,8 @@
    ],
    "defaultPart": "diaithirtrucks:small_wheel",
    "minValue": 0.0,
-   "maxValue": 10.0
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [

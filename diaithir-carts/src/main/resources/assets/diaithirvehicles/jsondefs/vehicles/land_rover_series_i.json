@@ -60,7 +60,8 @@
    ],
    "defaultPart": "diaithirvehicles:wheel_land_rover_series_i",
    "minValue": 0.0,
-   "maxValue": 10.0
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -73,7 +74,8 @@
    ],
    "defaultPart": "diaithirvehicles:wheel_land_rover_series_i",
    "minValue": 0.0,
-   "maxValue": 10.0
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [

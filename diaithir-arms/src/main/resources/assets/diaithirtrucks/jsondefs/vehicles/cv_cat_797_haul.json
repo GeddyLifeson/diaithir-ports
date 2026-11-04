@@ -46,7 +46,8 @@
    ],
    "defaultPart": "diaithirtrucks:giant_wheel",
    "minValue": 0.0,
-   "maxValue": 10.0
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -59,7 +60,8 @@
    ],
    "defaultPart": "diaithirtrucks:giant_wheel",
    "minValue": 0.0,
-   "maxValue": 10.0
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
