@@ -178,7 +178,9 @@
    "minYaw": -180,
    "maxYaw": 180,
    "minPitch": -8,
-   "maxPitch": 20
+   "maxPitch": 20,
+   "minValue": 0.0,
+   "maxValue": 1000.0
   }
  ],
  "collisionGroups": [
