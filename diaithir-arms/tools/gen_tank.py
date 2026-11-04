@@ -180,8 +180,8 @@ def parts(design, gun, track):
      {'pos': [0, 0.9, -2.2], 'types': ['engine_tank'], 'minValue': 0.0, 'maxValue': 10.0, 'defaultPart': f'{PK}:tank_engine'},
      *[{'pos': [side * (1.35 if design == 1 else 1.25), 0.45, z], 'types': ['ground_wheel'], 'minValue': 0.0, 'maxValue': 10.0, 'defaultPart': f'{PK}:tank_wheel'}
        for side in (-1, 1) for z in (-2.5, 0.0, 2.5)],
-     # parts index: 0 engine, 1-6 road wheels, 7 controller seat, 8 second seat, 9 gun; the controller seat is linked to the gun so Space fires it
-     {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'linkedParts': [9], 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
+    # parts slots (linkedParts counts from 1): 1 engine, 2-7 road wheels, 8 controller seat, 9 second seat, 10 gun; the controller seat is linked to the gun so Space fires it
+     {'pos': [0.0, 0.95, seat_z], 'types': ['seat'], 'isController': True, 'linkedParts': [10], 'defaultPart': f'{PK}:tank_seat', 'dismountPos': [0.0, 1.2, 3.5]},
      {'pos': [0.6, 1.2, -0.4], 'types': ['seat'], 'defaultPart': f'{PK}:tank_seat'},
      {'pos': [0.0, 1.5 if design == 1 else 1.25, -0.3], 'types': ['gun_tank'], 'minValue': 0.0, 'maxValue': 1000.0, 'defaultPart': f'{PK}:{gun}', 'minYaw': -180, 'maxYaw': 180, 'minPitch': -8, 'maxPitch': 20},
     ]
