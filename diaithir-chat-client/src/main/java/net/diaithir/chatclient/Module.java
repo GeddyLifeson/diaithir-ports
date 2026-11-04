@@ -9,6 +9,8 @@ public final class Module {
     public static final String ID = "diaithirchatclient";
 
     public Module(IEventBus bus, ModContainer container) {
+        net.diaithir.chatclient.nochatreports.Feature.init(bus, container);
+        net.diaithir.chatclient.chatheads.Feature.init(bus, container);
         net.diaithir.chatclient.longerchathistory.Feature.init(bus, container);
     }
 }

@@ -9,7 +9,10 @@ public final class DiaithirWorldSys {
     public static final String ID = "diaithirworldsys";
 
     public DiaithirWorldSys(IEventBus bus, net.neoforged.fml.ModContainer container) {
+        net.diaithir.worldsys.scalablelux.Feature.init(bus, container);
+        net.diaithir.worldsys.alternatecurrent.Feature.init(bus, container);
         net.diaithir.structurenavigation.structurecompass.Feature.init(bus, container);
+        net.diaithir.structurenavigation.structurememory.Feature.init(bus, container);
         net.diaithir.worldsys.admincommands.AdminCommandsFeature.register(bus);
         net.diaithir.worldsys.economy.EconomyFeature.register(bus);
         net.diaithir.worldsys.aircrafttuning.AircraftTuningFeature.register(bus);

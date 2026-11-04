@@ -19,7 +19,7 @@ public class VirtualEnderRegistry extends SavedData {
 
     private static final String DATA_ID = GTCEu.MOD_ID + ".virtual_entry_data";
     private static final String PUBLIC_KEY = "Public";
-    private static final String PRIVATE_KEY = "Private";
+    private static final String PRIVATE_KEY = "Private"; // pragma: allowlist secret
     private static volatile VirtualEnderRegistry data;
     private final Map<UUID, VirtualRegistryMap> VIRTUAL_REGISTRIES = new HashMap<>();
 

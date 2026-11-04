@@ -2,7 +2,9 @@
  "module": "diaithirclientrenderculling",
  "side": "client",
  "features": [
-  "entityculling"
+  "badoptimizations",
+  "entityculling",
+  "immediatelyfast"
  ],
  "codex": {
   "entry": "diaithirclientrenderculling.overview",

@@ -29,6 +29,7 @@ public final class Capitals {
     public static void init() {
         NeoForge.EVENT_BUS.addListener((RegisterCommandsEvent e) -> register(e.getDispatcher()));
         NeoForge.EVENT_BUS.addListener(Capitals::onDeath);
+        Taxes.init();
     }
 
     private static int say(CommandSourceStack s, String t) {

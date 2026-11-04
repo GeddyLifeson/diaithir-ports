@@ -88,4 +88,5 @@ for pid, (span, length, mass, seats, n, kind, fuel, col) in SPECS.items():
     manifest.append({'id': pid, 'name': r['name'], 'age': r['age'], 'year': int(r['first_flight_year']), 'source': r['source']})
 w(f'{M}/aircraft/aircraft_manifest.json', {'vehicles': manifest})
 w(f'{M}/age_gates_aircraft.json', {'_doc': 'IV item ids by Age', 'items': {f'mts:{PK}.{m["id"]}': m['age'] for m in manifest}})
+os.system(f'python3 {os.path.dirname(os.path.abspath(__file__))}/ivfix.py {A}')
 print(len(manifest), 'aircraft written')

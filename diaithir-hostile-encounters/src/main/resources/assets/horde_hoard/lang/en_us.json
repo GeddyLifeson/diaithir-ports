@@ -1,0 +1,11 @@
+{
+  "gamerule.iron_golem_regen_power.description": "The level of regeneration effect that Iron Golems recieve when there is no danger.",
+  "effect.horde_hoard.thinking": "Thinking",
+  "gamerule.horde_stacking.description": "Hordes crawl up one another",
+  "gamerule.horde_multiplying": "Horde Multiplying",
+  "gamerule.horde_multiplying.description": "Horde mobs will dig up more mobs",
+  "gamerule.horde_stacking": "Horde Stacking",
+  "gamerule.iron_golem_regen_power": "Iron Golem Regeneration Level",
+  "gamerule.horde_spawner_chance": "Horde Spawner Chance",
+  "gamerule.horde_spawner_chance.description": "1-in-N nightly chance at midnight to spawn a giant horde of zombie-tribe mobs around a random overworld player. 0 disables; 1 means every night; 20 (default) ≈ once per Minecraft month."
+}

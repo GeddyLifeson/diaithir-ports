@@ -9,13 +9,13 @@
   "tier2": {
     "age": 5,
     "items": [
-      "diaithircarts:cart_reader",
       "diaithircarts:chain_cutters",
       "diaithircarts:coupling_chain",
       "diaithircarts:station_rail",
       "diaithircarts:steel_powered_rail",
       "diaithircarts:steel_rail",
-      "diaithircarts:timetable"
+      "diaithircarts:timetable",
+      "diaithircarts:cart_reader"
     ]
   },
   "tier3": {
@@ -74,12 +74,6 @@
       "diaithircarts:destination_rail",
       "diaithircarts:cart_loader",
       "diaithircarts:locking_rail"
-    ]
-  },
-  "farm": {
-    "age": 5,
-    "items": [
-      "diaithircarts:reaper"
     ]
   },
   "autonomy": {

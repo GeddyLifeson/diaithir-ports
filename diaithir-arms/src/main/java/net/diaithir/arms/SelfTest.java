@@ -23,6 +23,37 @@ public final class SelfTest {
                 };
                 if (good) ok++; else { bad++; System.out.println("[armsselftest] BAD " + s.id()); }
             }
+            for (var e : Roster.entries()) {
+                ItemStack st = new ItemStack(DiaithirArms.all().get(e.id()).get());
+                var mods = st.get(DataComponents.ATTRIBUTE_MODIFIERS);
+                boolean reach = mods != null && mods.modifiers().stream().anyMatch(m -> m.attribute().is(net.minecraft.world.entity.ai.attributes.Attributes.ENTITY_INTERACTION_RANGE));
+                if (st.getMaxDamage() > 0 && st.has(DataComponents.WEAPON) && reach == (e.reach() > 0)) ok++; else { bad++; System.out.println("[armsselftest] BAD roster " + e.id()); }
+            }
+            {
+                boolean g1 = net.diaithir.arms.gadgets.SentryTurret.loaded(0, 2, 1) == 8 && net.diaithir.arms.gadgets.SentryTurret.loaded(30, 5, 2) == net.diaithir.arms.gadgets.SentryTurret.MAX;
+                boolean g2 = net.diaithir.arms.gadgets.MiningLaser.canCut(1.5F) && !net.diaithir.arms.gadgets.MiningLaser.canCut(50F) && !net.diaithir.arms.gadgets.MiningLaser.canCut(-1F);
+                boolean g3 = DiaithirArms.SENTRY_TURRET.isBound() && new ItemStack(DiaithirArms.LASER.get()).getMaxDamage() == 600;
+                var ts = DiaithirArms.SENTRY_TURRET.get().defaultBlockState();
+                boolean g4 = ts.getValue(net.diaithir.arms.gadgets.SentryTurret.AMMO) == 0;
+                for (boolean x : new boolean[] {g1, g2, g3, g4}) if (x) ok++; else { bad++; System.out.println("[armsselftest] BAD gadgets " + g1 + g2 + g3 + g4); }
+            }
+            {
+                var sets = net.diaithir.arms.immersive.Sets.DATA.sets();
+                boolean i1 = sets.size() == 10 && net.diaithir.arms.immersive.Sets.all().size() == 40 && net.diaithir.arms.immersive.Sets.all().values().stream().allMatch(net.neoforged.neoforge.registries.DeferredItem::isBound);
+                boolean i2 = Math.abs(net.diaithir.arms.immersive.Effects.perPiece(10F, 0.25F, 4) - 10F * 0.31640625F) < 1e-4 && Math.abs(net.diaithir.arms.immersive.Effects.berserk(4, 0.2F, 0.5F) - 1.4F) < 1e-5;
+                var z = net.minecraft.world.entity.EntityType.ZOMBIE.create(c.getSource().getLevel(), net.minecraft.world.entity.EntitySpawnReason.COMMAND);
+                var heavy = sets.stream().filter(x -> x.name().equals("heavy")).findFirst().get();
+                z.setItemSlot(net.minecraft.world.entity.EquipmentSlot.HEAD, new ItemStack(net.diaithir.arms.immersive.Sets.all().get("heavy_helmet_imm").get()));
+                z.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, new ItemStack(net.diaithir.arms.immersive.Sets.all().get("heavy_chestplate_imm").get()));
+                boolean i3 = net.diaithir.arms.immersive.Sets.count(z, heavy) == 2;
+                var hm = new ItemStack(net.diaithir.arms.immersive.Sets.all().get("heavy_helmet_imm").get()).get(DataComponents.ATTRIBUTE_MODIFIERS);
+                boolean i4 = hm != null && hm.modifiers().stream().anyMatch(m -> m.attribute().is(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR) && m.modifier().amount() == 4.0)
+                        && hm.modifiers().stream().anyMatch(m -> m.attribute().is(net.minecraft.world.entity.ai.attributes.Attributes.KNOCKBACK_RESISTANCE) && Math.abs(m.modifier().amount() - 0.5) < 1e-6)
+                        && hm.modifiers().stream().anyMatch(m -> m.attribute().is(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED));
+                ItemStack boots = new ItemStack(net.diaithir.arms.immersive.Sets.all().get("prismarine_boots_imm").get());
+                boolean i5 = boots.getMaxDamage() == 18 * 13 && boots.has(DataComponents.EQUIPPABLE);
+                for (boolean x : new boolean[] {i1, i2, i3, i4, i5}) if (x) ok++; else { bad++; System.out.println("[armsselftest] BAD immersive " + i1 + i2 + i3 + i4 + i5); }
+            }
             ItemStack helm = new ItemStack(DiaithirArms.all().get("bone_helmet").get()), look = new ItemStack(DiaithirArms.all().get("steel_helmet").get());
             ItemStack tm = TransmogRecipe.apply(helm, look);
             boolean t1 = tm.get(DataComponents.EQUIPPABLE).assetId().equals(look.get(DataComponents.EQUIPPABLE).assetId())

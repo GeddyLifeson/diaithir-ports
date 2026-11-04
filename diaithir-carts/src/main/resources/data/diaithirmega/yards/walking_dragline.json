@@ -1,0 +1,63 @@
+{
+ "id": "walking_dragline",
+ "tier": "ERECTING_SHOP",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 8,
+  "l": 16,
+  "h": 6
+ },
+ "result": "diaithirmega:walking_dragline",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 7000,
+   "ghost": "diaithirmega:ghost/walking_dragline_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 2
+    }
+   ],
+   "base_ticks": 5250,
+   "ghost": "diaithirmega:ghost/walking_dragline_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "boom",
+     "count": 1
+    }
+   ],
+   "base_ticks": 8750,
+   "ghost": "diaithirmega:ghost/walking_dragline_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 3
+    }
+   ],
+   "base_ticks": 120,
+   "ghost": "diaithirmega:ghost/walking_dragline_crew"
+  }
+ ],
+ "crane_speedup": 1.0
+}

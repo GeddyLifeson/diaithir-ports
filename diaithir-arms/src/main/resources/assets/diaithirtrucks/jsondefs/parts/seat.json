@@ -1,21 +1,50 @@
 {
- "general": {
-  "type": "seat",
-  "name": "Cab Seat",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:4",
-    "minecraft:leather:0:4"
-   ]
+  "general": {
+    "type": "seat",
+    "name": "Cab Seat",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:4",
+        "minecraft:leather:0:4"
+      ]
+    ],
+    "width": 0.9,
+    "height": 0.9,
+    "mass": 60
+  },
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Cab Seat",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "seat": {
+    "standing": false,
+    "widthScale": 1.0,
+    "heightScale": 1.0
+  },
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "click",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "width": 0.9,
+          "height": 0.9
+        }
+      ]
+    }
   ]
- },
- "definitions": [
-  {
-   "subName": "",
-   "name": "Cab Seat",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ]
 }

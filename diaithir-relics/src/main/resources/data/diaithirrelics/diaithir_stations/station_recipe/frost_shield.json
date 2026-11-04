@@ -1,0 +1,23 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "time_s": 14,
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 5
+  },
+  {
+   "item": "minecraft:blue_ice",
+   "count": 1
+  },
+  {
+   "tag": "minecraft:planks",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithirrelics:frost_shield",
+  "count": 1
+ }
+}

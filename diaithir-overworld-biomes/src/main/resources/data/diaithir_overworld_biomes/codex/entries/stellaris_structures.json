@@ -1,0 +1,15 @@
+{
+ "id": "diaithir_overworld_biomes:stellaris_structures",
+ "category": "structure",
+ "title": "codex.diaithir_overworld_biomes.stellaris_structures.title",
+ "body": "codex.diaithir_overworld_biomes.stellaris_structures.body",
+ "age": 7,
+ "icon": "stellaris:titanium_ingot",
+ "unlock": {
+  "type": "locate_structure_tag",
+  "tag": "stellaris:stellaris_structures"
+ },
+ "covers": {
+  "structures": "#stellaris:stellaris_structures"
+ }
+}

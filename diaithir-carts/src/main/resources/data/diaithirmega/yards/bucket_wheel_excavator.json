@@ -1,0 +1,63 @@
+{
+ "id": "bucket_wheel_excavator",
+ "tier": "ASSEMBLY_LINE",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 20,
+  "l": 40,
+  "h": 10
+ },
+ "result": "diaithirmega:bucket_wheel_excavator",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 23200,
+   "ghost": "diaithirmega:ghost/bucket_wheel_excavator_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 2
+    }
+   ],
+   "base_ticks": 17400,
+   "ghost": "diaithirmega:ghost/bucket_wheel_excavator_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "wheel_boom",
+     "count": 1
+    }
+   ],
+   "base_ticks": 29000,
+   "ghost": "diaithirmega:ghost/bucket_wheel_excavator_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 5
+    }
+   ],
+   "base_ticks": 200,
+   "ghost": "diaithirmega:ghost/bucket_wheel_excavator_crew"
+  }
+ ],
+ "crane_speedup": 1.0
+}

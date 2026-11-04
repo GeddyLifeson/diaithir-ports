@@ -1,19 +1,69 @@
 {
+ "seat": {
+  "standing": false,
+  "widthScale": 1.0,
+  "heightScale": 1.0
+ },
  "general": {
   "type": "seat",
   "name": "Vehicle Seat",
+  "width": 0.9,
+  "height": 0.9,
+  "mass": 60,
   "materialLists": [
    [
     "minecraft:white_wool:0:2"
    ]
   ]
  },
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0,
+      0
+     ],
+     "width": 0.9,
+     "height": 0.9
+    }
+   ]
+  }
+ ],
  "definitions": [
   {
    "subName": "",
    "name": "Vehicle Seat",
    "extraMaterialLists": [
     []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 0.9,
+     "height": 0.9
+    }
    ]
   }
  ]

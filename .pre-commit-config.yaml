@@ -10,5 +10,6 @@ repos:
         types: [text]  # skip png/ogg/jar: scanning binaries made the hook exceed pre-commit.ci's 180 s limit
         # game assets and data packs (models, recipes, tags, loot, datagen and build output), translation keys such as cave_book.secrets,
         # and name/species data lists hold no credentials; skipping them keeps the hook inside pre-commit.ci's 180 s limit
-        exclude: '(/src/(main|generated)/resources/(assets|data)/|/build/resources/|/lang/[a-z_]+\.json$|^diaithir-fauna/(names/diaithiris_names|tools/library_accepted|src/main/resources/data/diaithirfauna/butchery_species)\.json$)'
+        # vendored BuildCraft CE (3600 text files) scanned clean by hand with this same hook (88 s alone); too slow for the 180 s limit
+        exclude: '(^diaithir-routing-networks/buildcraft/|/src/(main|generated)/resources/(assets|data)/|/build/resources/|/lang/[a-z_]+\.json$|^diaithir-fauna/(names/diaithiris_names|tools/library_accepted|src/main/resources/data/diaithirfauna/butchery_species)\.json$)'
         additional_dependencies: [detect-secrets==1.5.0]

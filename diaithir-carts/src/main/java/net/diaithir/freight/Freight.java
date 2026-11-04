@@ -114,6 +114,7 @@ public final class Freight {
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         COMPONENTS.register(bus);
+        VehicleCarriers.init(bus);
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteractSpecific.class, Freight::interact);
         bus.addListener(RegisterCapabilitiesEvent.class, e -> {
             e.registerBlockEntity(Capabilities.Item.BLOCK, DOCK_BE.get(), (be, side) -> be.items());

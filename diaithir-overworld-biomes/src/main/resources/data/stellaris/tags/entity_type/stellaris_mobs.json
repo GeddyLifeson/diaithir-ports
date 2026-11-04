@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "stellaris:alien",
+  "stellaris:blue_fish",
+  "stellaris:heart_of_luna",
+  "stellaris:luna_shadow",
+  "stellaris:lunar_parasite",
+  "stellaris:parasite_affected_villager",
+  "stellaris:parasite_affected_villager_evolved",
+  "stellaris:star_crawler",
+  "stellaris:star_crawler_boss"
+ ]
+}

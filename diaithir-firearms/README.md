@@ -35,3 +35,6 @@ No underbarrel slot (the old underbarrel launchers map to the grenade launcher),
 
 ## Test
 `/firearmsselftest` (op): see TEST.md.
+
+## Ammo box (survey part 2 munitions containers, clean-room)
+`ammo_box` holds up to 512 rounds of one kind (component `box`). Use with rounds in the other hand to load; use with an empty other hand to take out a stack of 64. Guns draw from boxes in the inventory after loose rounds. Written from the behaviour of the TaCZ ammo-box addons and ModularShootAmmo's tag ideas, no code or assets taken.

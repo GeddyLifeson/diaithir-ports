@@ -1,12 +1,12 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-license = "LGPL-3.0-only"
+license = "LGPL-3.0-only AND MIT"
 
 [[mods]]
 modId = "diaithirlogistics"
 version = "${version}"
-displayName = "Diaithir Logistics Pipes"
-description = "Routed item pipes: connected pipes form a network, sink pipes take items by priority and filter, extractor pipes pull from touching inventories, speed pipes are faster. Port of the design of Not Logistics Pipes (LGPL-3.0)."
+displayName = "Diaithir Logistics (pipes and Foundry depots)"
+description = "Routed item pipes (port of the design of Not Logistics Pipes, LGPL-3.0) and Foundry courier depots with ghost placement (clean-room original, MIT)."
 
 [[dependencies.diaithirlogistics]]
 modId = "neoforge"

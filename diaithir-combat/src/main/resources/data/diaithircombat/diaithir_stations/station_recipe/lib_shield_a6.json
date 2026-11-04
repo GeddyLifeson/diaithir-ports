@@ -1,0 +1,18 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 18,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a6",
+   "count": 6
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_shield",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 6
+  }
+ }
+}

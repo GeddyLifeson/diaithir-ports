@@ -13,3 +13,21 @@ modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
 side = "BOTH"
+
+[[mixins]]
+config = "fallingleaves.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/fallingleaves.at.cfg"
+
+[[mixins]]
+config = "sky_aesthetics.mixins.json"
+
+[[mixins]]
+config = "sky_aesthetics-neoforge.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/skyaesthetics.at.cfg"
+
+[[mixins]]
+config = "diaithir_betterclouds.mixins.json"

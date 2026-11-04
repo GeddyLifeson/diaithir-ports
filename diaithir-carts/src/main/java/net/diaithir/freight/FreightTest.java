@@ -76,6 +76,19 @@ public final class FreightTest {
         CargoBay bay = seen.toBay(t20);
         check(bay.loads().size() == 3 && bay.freeCells() == 20 - 3, "bay model matches the blocks");
 
+        // a container standing in a vehicle-sized bay keeps its own loads through a save (BayData round trip)
+        CargoBay trailer = new CargoBay(4, 4, 13, 24000);
+        CargoBay.Placed boxed = trailer.restore(t20, false, 0, 0, 0, 0);
+        check(boxed != null && boxed.inside != null, "container placed on a deck");
+        if (boxed != null && boxed.inside != null) {
+            CargoBay.Placed pal = boxed.inside.restore(LoadType.byId("pallet"), false, 0, 0, 0, 0);
+            check(pal != null, "pallet placed inside the container");
+            BayData saved = BayData.CODEC.parse(com.mojang.serialization.JsonOps.INSTANCE, BayData.CODEC.encodeStart(com.mojang.serialization.JsonOps.INSTANCE, BayData.of(trailer)).getOrThrow()).getOrThrow();
+            CargoBay back = saved.toBay(4, 4, 13, 24000);
+            CargoBay.Placed b2 = back.loads().isEmpty() ? null : back.loads().get(0);
+            check(b2 != null && b2.inside != null && b2.inside.loads().size() == 1, "container keeps its pallet after a save round trip");
+        }
+
         // door
         Containers.setDoor(level, core, true);
         check(level.getBlockState(door).getValue(ContainerDoor.OPEN), "door opens");

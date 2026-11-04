@@ -1,0 +1,385 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[3]
+SCRIPT_DIR = ROOT / "scripts"
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+from source_lookup import read_materialized_java, resolve_source_path
+errors = []
+
+def read(rel):
+    p = resolve_source_path(rel)
+    if not p.is_file():
+        errors.append(f"missing {rel}")
+        return ""
+    return p.read_text(encoding="utf-8")
+
+def require(rel, *tokens):
+    text = read(rel)
+    for token in tokens:
+        if token not in text:
+            errors.append(f"{rel}: missing world/transport regression guard {token!r}")
+
+def forbid(rel, *tokens):
+    text = read(rel)
+    for token in tokens:
+        if token in text:
+            errors.append(f"{rel}: forbidden world/transport regression token {token!r}")
+
+
+def require_explicit_bounce_or_ejection(rel):
+    """A filtered/invalid route must not silently bounce into the ingress pipe.
+
+    When no route survives SideCheck, only a pipe behaviour explicitly granting
+    TryBounce may redirect the stack backwards. Otherwise eject into the world;
+    a rejected entity spawn remains owned by the flow for a later attempt.
+    """
+    source = read(rel)
+    centre = source.find("private void onItemReachCenter(TravellingItem item)")
+    no_route = source.find("if (order.isEmpty()) {", centre) if centre >= 0 else -1
+    next_step = source.find("PipeEventItem.ItemEntry entry =", no_route) if no_route >= 0 else -1
+    if centre < 0 or no_route < 0 or next_step < 0:
+        errors.append(f"{rel}: no-route routing branch is missing")
+        return
+    branch = source[no_route:next_step]
+    required_in_order = (
+        "PipeEventItem.TryBounce tryBounce = new PipeEventItem.TryBounce(",
+        "holder.fireEvent(tryBounce);",
+        "if (tryBounce.canBounce && reachCenter.from != null && pipe.isConnected(reachCenter.from)) {",
+        "order = ImmutableList.of(EnumSet.of(reachCenter.from));",
+        "} else {",
+        "if (!dropItem(item.stack, null, item.side.getOpposite(), item.speed)) holdAtCentre(item, 20);",
+        "return;",
+    )
+    position = 0
+    for token in required_in_order:
+        found = branch.find(token, position)
+        if found < 0:
+            errors.append(f"{rel}: missing ordered fallback guard {token!r}")
+            break
+        position = found + len(token)
+    if "retryConnectedPipe" in branch or "hasConnectedOutput =" in branch:
+        errors.append(f"{rel}: unconditional connected-output bounce reintroduced")
+
+
+def require_retryable_open_end(rel):
+    """Open-ended pipes eject forwards, but retain the payload if entity spawning fails."""
+    source = read(rel)
+    start = source.find("private void onItemReachEnd(TravellingItem item)")
+    open_end = source.find("if (!pipe.isConnected(item.side)) {", start) if start >= 0 else -1
+    transfer = source.find("int beforeTransferCount = excess.getCount();", open_end) if open_end >= 0 else -1
+    if open_end < 0 or transfer < 0:
+        errors.append(f"{rel}: missing open-end ejection branch before connected transfer")
+    else:
+        branch = source[open_end:transfer]
+        for guard in (
+            "if (!dropItem(excess, item.side, item.side, item.speed)) holdAtCentre(item, 20);",
+            "return;",
+        ):
+            if guard not in branch:
+                errors.append(f"{rel}: open-end ejection must preserve rejected item spawns: missing {guard!r}")
+    require(
+        rel,
+        "private boolean dropItem(ItemStack stack, Direction side, Direction motion, double speed)",
+        "if (ent.isRemoved()) return false;",
+        "if (!world.addFreshEntity(ent)) return false;",
+    )
+
+for family in ("old", "1.21.X"):
+    stale_bulk = ROOT / f"source-families/{family}/src/main/java/buildcraft/lib/inventory/AbstractInvItemTransactor.java"
+    if stale_bulk.exists():
+        errors.append(
+            f"{stale_bulk.relative_to(ROOT)}: stale family override shadows the shared bulk-insert fix; "
+            "remove it so source-shared is authoritative"
+        )
+    require(
+        f"source-families/{family}/src/main/java/buildcraft/lib/block/BlockBCBase_Neptune.java",
+        "b.canFaceVertically() && placer != null",
+        "placer.getX()", "placer.getY()", "placer.getZ()",
+    )
+    forbid(
+        f"source-families/{family}/src/main/java/buildcraft/lib/block/BlockBCBase_Neptune.java",
+        "placer.xo", "placer.yo", "placer.zo",
+    )
+    require(
+        f"source-families/{family}/src/main/java/buildcraft/robotics/ai/AIRobotBreak.java",
+        'nbt.putFloat("blockDamage", blockDamage)',
+        'nbt.getFloat("blockDamage")',
+        "progressStateKey",
+    )
+    require(
+        f"source-families/{family}/src/main/java/buildcraft/lib/crops/CropHandlerReeds.java",
+        "state.getBlock() == Blocks.SUGAR_CANE",
+        "CropHandlerPlantable.INSTANCE.harvest",
+    )
+
+require(
+    "source-shared/src/main/java/buildcraft/lib/inventory/AbstractInvItemTransactor.java",
+    "ItemStack remainder = asValid(item);",
+    "remainder = insert(i, remainder, simulate);",
+)
+
+for platform in ("forge", "neoforge"):
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/factory/tile/TilePump.java",
+        "level.hasChunkAt(offsetPos)",
+        "level.hasChunkAt(spring)",
+        "level.hasChunkAt(currentPos)",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/factory/tile/TileFloodGate.java",
+        "level.hasChunkAt(toCheck)",
+        "level.hasChunkAt(next)",
+        "level.hasChunkAt(offsetPos)",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/transport/pipe/behaviour/PipeBehaviourStripes.java",
+        'nbt.putLong("progress", progress)',
+        "progressTarget",
+        "progressStateKey",
+        "matchesProgressTarget",
+        "requiresPeriodicSave()",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/transport/tile/TilePipeHolder.java",
+        "pipe.flow.requiresPeriodicSave() || pipe.behaviour.requiresPeriodicSave()",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/transport/pipe/flow/PipeFlowFluids.java",
+        "s.forceDrain(amount)",
+        "section.incomingTotalCache = 0",
+        "trimDelayedFluidToAmount",
+        "removeDelayedFluid",
+        "Math.max(0, amount - incomingTotalCache)",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/lib/engine/TileEngineBase_BC8.java",
+        "boolean pulsedPower = isPulsedPowerReceiver(currentDirection);",
+        "descriptor.has(MjPortRole.REDSTONE_RECEIVER)",
+        "if (pulsedPower) {",
+        "if (!pulsedPower && isRedstonePowered && isActive()) {",
+        "if (!level.isClientSide) {",
+        "return Math.max(0.16 * getHeatLevel(), 0.01);",
+        "return 0.16;",
+        "private float clientPistonSpeed = Float.NaN;",
+        "clientPistonSpeed = buffer.readFloat();",
+        "buffer.writeFloat((float) getPistonSpeed());",
+        "double pistonSpeed = Float.isFinite(clientPistonSpeed)",
+        "boolean wasPumping = isPumping;",
+        "if (wasPumping) {",
+        "sendNetworkUpdate(NET_RENDER_DATA);",
+    )
+    forbid(
+        f"source-platforms/{platform}/src/main/java/buildcraft/lib/engine/TileEngineBase_BC8.java",
+        "return 0.12;",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+        "if (!pipe.isConnected(item.side)) {",
+        "if (!dropItem(excess, item.side, item.side, item.speed)) holdAtCentre(item, 20);",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/energy/BCEnergyConfig.java",
+        "return !destination.isEmpty();",
+    )
+    require(
+        f"source-platforms/{platform}/src/main/java/buildcraft/lib/crops/CropHandlerPlantable.java",
+        "BlockUtil.breakBlockAndGetDrops",
+        "actor.getGameProfile()",
+    )
+    forbid(
+        f"source-platforms/{platform}/src/main/java/buildcraft/lib/crops/CropHandlerPlantable.java",
+        "serverLevel.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())",
+    )
+    require(
+        f"source-platforms/{platform}/src/gametest/java/buildcraft/gametest/BuildCraftLogicGameTests.java",
+        "bulkItemTransactorInsertionCarriesRemainderAcrossSlots",
+        "sugarCaneAdapterHarvestsOnlyGrowthAboveTheBase",
+    )
+    require(
+        f"source-platforms/{platform}/src/gametest/java/buildcraft/transport/pipe/flow/PipeFluidPowerGameTests.java",
+        "fullForceExtractionThenRefillDoesNotGhostJamPipe",
+    )
+
+require(
+    "source-family-platforms/1.21.X/neoforge/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+    "if (!pipe.isConnected(item.side)) {",
+    "if (!dropItem(excess, item.side, item.side, item.speed)) holdAtCentre(item, 20);",
+)
+
+# The open-end path must not reverse to the pipe centre when the face is open.
+# A cancelled entity spawn is different: retain the travelling payload and retry it.
+# Validate every source variant used by the seven maintained targets.
+for rel in (
+    "source-platforms/forge/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+    "source-platforms/neoforge/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+    "source-family-platforms/1.21.X/neoforge/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+    "source-family-platforms/26.X/neoforge/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+    "source-downports/26.X/26.1.2/neoforge/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+    "source-downports/26.X/26.2/neoforge/src/main/java/buildcraft/transport/pipe/flow/PipeFlowItems.java",
+):
+    require_retryable_open_end(rel)
+    require_explicit_bounce_or_ejection(rel)
+
+# Natural oil uses an internal worldgen-only fluid whose flow is hard-bounded to five
+# block transitions from any natural source. This prevents long downhill terrain from
+# turning one oil spout into an effectively unbounded cascade.
+for rel in (
+    "version-src/1.19.2-forge/src/main/java/buildcraft/lib/fluid/BCFluid.java",
+    "version-src/1.20.1-forge/src/main/java/buildcraft/lib/fluid/BCFluid.java",
+    "source-family-platforms/1.21.X/neoforge/src/main/java/buildcraft/lib/fluid/BCFluid.java",
+    "source-downports/1.21.X/1.21.1/neoforge/src/main/java/buildcraft/lib/fluid/BCFluid.java",
+):
+    require(
+        rel,
+        "maxSourceSpreadDistance",
+        "isWithinSourceSpreadLimit",
+        "candidate.isSource() && candidate.getType().isSame(this)",
+        "distance - Math.abs(dx)",
+    )
+
+for rel in (
+    "version-src/1.19.2-forge/src/main/java/buildcraft/energy/BCEnergyFluids.java",
+    "version-src/1.20.1-forge/src/main/java/buildcraft/energy/BCEnergyFluids.java",
+    "source-platforms/neoforge/src/main/java/buildcraft/energy/BCEnergyFluids.java",
+):
+    require(
+        rel,
+        "SPOUT_OIL_SPREAD_LIMIT = 5",
+        'FLUIDS.register("spout_oil"',
+        'FLUIDS.register("spout_oil_flowing"',
+        ".bucket(OIL_BUCKET.get(0))",
+        "setMaxSourceSpreadDistance(SPOUT_OIL_SPREAD_LIMIT)",
+    )
+
+for rel in (
+    "version-src/1.19.2-forge/src/main/java/buildcraft/energy/generation/features/OilStructure.java",
+    "version-src/1.20.1-forge/src/main/java/buildcraft/energy/generation/features/OilStructure.java",
+    "source-families/1.21.X/src/main/java/buildcraft/energy/generation/features/OilStructure.java",
+):
+    require(
+        rel,
+        "SPOUT_OIL_SOURCE",
+        "worldgenOil()",
+        "canReplaceNaturalTerrain",
+        "state.getDestroySpeed(world, pos) < 0.0F",
+        "state.hasBlockEntity()",
+        "BlockTags.LEAVES",
+        "BlockTags.PLANKS",
+        'path.contains("cobble")',
+        'path.contains("prismarine")',
+        'path.contains("brick")',
+        "isNaturalTerrainPath",
+        "canClearSurfaceColumn",
+        "MAX_SURFACE_RISE_ABOVE_SPOT = 4",
+        "getGeneratorSurfaceY",
+        "Heightmap.Types.WORLD_SURFACE_WG",
+        "h > maxSurfaceY",
+    )
+    forbid(rel, "OIL_SOURCE.get(0).get().defaultFluidState()")
+
+require(
+    "source-shared/src/main/resources/assets/buildcraftenergy/blockstates/spout_oil.json",
+    "buildcraftenergy:fluids/oil/cool",
+)
+
+# Worldgen oil shares the canonical (cool) oil display name. The old
+# spout-specific block and fluid translations were deliberately deduplicated;
+# requiring them here would reject the valid canonical localization contract.
+require(
+    "source-shared/src/main/resources/assets/buildcraft/lang/en_us.json",
+    '"fluid_type.buildcraftenergy.oil": "Oil (§bCool§r)"',
+)
+forbid(
+    "source-shared/src/main/resources/assets/buildcraft/lang/en_us.json",
+    '"fluid_type.buildcraftenergy.spout_oil":',
+    '"block.buildcraftenergy.spout_oil":',
+)
+# In Minecraft 1.21.11+ the block description getter is final. The registered
+# spout block must therefore inherit the canonical oil key through properties.
+# Stonecutter excludes the overrideDescription call on older targets, where the
+# liquid block still delegates to its registered fluid type.
+require(
+    "source-platforms/neoforge/src/main/java/buildcraft/energy/BCEnergyFluids.java",
+    '.overrideDescription("fluid_type.buildcraftenergy.oil")',
+)
+
+# Double-chest automation must use the exact same 54-slot ordering as the vanilla chest menu.
+# Do not rebuild a CompoundContainer from whichever half automation touched: ChestBlock's combiner owns
+# FIRST/SECOND ordering and is already what Forge/NeoForge use for their native chest item capability.
+for rel in (
+    "source-platforms/forge/src/main/java/buildcraft/lib/misc/BlockUtil.java",
+    "source-family-platforms/1.21.X/neoforge/src/main/java/buildcraft/lib/misc/BlockUtil.java",
+    "source-downports/1.21.X/1.21.1/neoforge/src/main/java/buildcraft/lib/misc/BlockUtil.java",
+    "source-families/26.X/src/main/java/buildcraft/lib/misc/BlockUtil.java",
+    "source-family-platforms/26.X/neoforge/src/main/java/buildcraft/lib/misc/BlockUtil.java",
+):
+    require(
+        rel,
+        "return ChestBlock.getContainer(chestBlock, state, chest.getLevel(), chest.getBlockPos(), true);",
+    )
+    forbid(
+        rel,
+        "chestIsFirst ? new CompoundContainer",
+        "type == ChestType.RIGHT ? new CompoundContainer",
+    )
+
+for rel in (
+    "source-platforms/forge/src/gametest/java/buildcraft/gametest/BuildCraftPipeTransportGameTests.java",
+    "source-platforms/neoforge/src/gametest/java/buildcraft/gametest/BuildCraftPipeTransportGameTests.java",
+):
+    require(
+        rel,
+        "doubleChestInsertionStartsAtGlobalSlotZeroFromEitherHalf",
+        "right-half automation did not begin at global double-chest slot 0",
+        "left-half automation did not begin at the same global double-chest slot 0",
+    )
+
+require(
+    "source-platforms/forge/src/gametest/java/buildcraft/gametest/BuildCraftPipeTransportGameTests.java",
+    "helper.getLevel().getBlockEntity(helper.absolutePos(leftPos))",
+    "helper.getLevel().getBlockEntity(helper.absolutePos(rightPos))",
+)
+forbid(
+    "source-platforms/forge/src/gametest/java/buildcraft/gametest/BuildCraftPipeTransportGameTests.java",
+    "GameTestCompat.getBlockEntity",
+)
+
+# Verify the actual Stonecutter-selected placement path, not only both raw platform sources.
+# The 26.3 branch uses the native transactional ResourceHandler API instead of a hand.
+for target in (
+    "1.19.2-forge", "1.20.1-forge", "1.21.1-neoforge", "1.21.11-neoforge",
+    "26.1.2-neoforge", "26.2-neoforge", "26.3-neoforge",
+):
+    logical = "src/main/java/buildcraft/factory/tile/TileFloodGate.java"
+    try:
+        source = read_materialized_java(target, logical)
+    except (OSError, ValueError) as exc:
+        errors.append(f"{target}: could not materialize Flood Gate: {exc}")
+        continue
+    if "level.neighborChanged(getBlockState()," in source:
+        errors.append(f"{target}: Flood Gate still passes its BlockState to neighbour notifications")
+    if target == "26.3-neoforge":
+        if "new FactoryTankResourceHandler263(tank)" not in source:
+            errors.append(f"{target}: native transactional Flood Gate placement missing")
+    elif "FluidUtil.tryPlaceFluid(actor, level, InteractionHand.MAIN_HAND," not in source:
+        errors.append(f"{target}: Flood Gate placement must supply a valid interaction hand")
+
+for platform in ("forge", "neoforge"):
+    require(
+        f"source-platforms/{platform}/src/gametest/java/buildcraft/gametest/FloodGateGameTests.java",
+        "floodGatePlacesBucketWaterAndConsumesOneBucket",
+        "floodGatePlacesWaterFromFluidHandlerAndConsumesOneBucket",
+        "floodGateDoesNotConsumeWaterWhenOutputIsBlocked",
+        "floodGatePausesWhenPoweredAndResumesAfterUnpowering",
+        "floodGateClosedOutputDoesNotConsumeWater",
+    )
+
+if errors:
+    print("ERROR: world/transport regression validation failed")
+    for error in errors:
+        print(" -", error)
+    raise SystemExit(1)
+print("OK: world/transport regression guards are present")

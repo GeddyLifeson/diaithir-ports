@@ -1,209 +1,340 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Bobcat M-440 Skid-Steer Loader",
-  "description": "Bobcat M-440 Skid-Steer Loader (1960, US): 14 kW, 1 t. Road role: dig.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:8"
-   ],
-   [
-    "minecraft:iron_block:0:1"
-   ],
-   [
-    "minecraft:redstone:0:8"
-   ],
-   [
-    "minecraft:black_dye:0:4"
-   ]
+  "general": {
+    "type": "vehicle",
+    "name": "Bobcat M-440 Skid-Steer Loader",
+    "description": "Bobcat M-440 Skid-Steer Loader (1960, US): 14 kW, 1 t. Road role: dig.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:8"
+      ],
+      [
+        "minecraft:iron_block:0:1"
+      ],
+      [
+        "minecraft:redstone:0:8"
+      ],
+      [
+        "minecraft:black_dye:0:4"
+      ]
+    ],
+    "health": 607
+  },
+  "motorized": {
+    "emptyMass": 1200,
+    "fuelCapacity": 60,
+    "defaultFuelQty": 30,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.4,
+    "dragCoefficient": 0.8,
+    "crossSectionalArea": 9.0,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0
+  },
+  "parts": [
+    {
+      "pos": [
+        -0.7,
+        0.35,
+        0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.7,
+        0.35,
+        0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -0.7,
+        0.35,
+        -0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.7,
+        0.35,
+        -0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e150_stock",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.0,
+        1.85,
+        0.0
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "pos": [
+        -0.7,
+        0.35,
+        0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        0.7,
+        0.35,
+        0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        -0.7,
+        0.35,
+        -0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.7,
+        0.35,
+        -0.8
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:small_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e150_stock",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.0,
+        1.85,
+        0.0
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.0
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
+    }
   ],
-  "health": 607
- },
- "motorized": {
-  "emptyMass": 1200,
-  "fuelCapacity": 60,
-  "defaultFuelQty": 30,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.4,
-  "dragCoefficient": 0.8,
-  "crossSectionalArea": 9.0,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0
- },
- "parts": [
-  {
-   "pos": [
-    -0.7,
-    0.35,
-    0.8
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:small_wheel"
-  },
-  {
-   "pos": [
-    0.7,
-    0.35,
-    0.8
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:small_wheel"
-  },
-  {
-   "pos": [
-    -0.7,
-    0.35,
-    -0.8
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:small_wheel"
-  },
-  {
-   "pos": [
-    0.7,
-    0.35,
-    -0.8
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:small_wheel"
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    0.0
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirtrucks:engine_e150_stock"
-  },
-  {
-   "pos": [
-    0.0,
-    1.85,
-    0.0
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirtrucks:seat",
-   "dismountPos": [
-    -2.0,
-    0.0,
-    0.0
-   ]
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    1.975,
-    0
-   ],
-   "width": 2.2,
-   "height": 3.35
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Bobcat M-440 Skid-Steer Loader (Yellow)",
-   "modelName": "cv_bobcat_m440",
-   "textureName": "paintc",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_orange",
-   "name": "Bobcat M-440 Skid-Steer Loader (Orange)",
-   "modelName": "cv_bobcat_m440",
-   "textureName": "paintc_orange",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_white",
-   "name": "Bobcat M-440 Skid-Steer Loader (White)",
-   "modelName": "cv_bobcat_m440",
-   "textureName": "paintc_white",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {
-  "animatedObjects": [
-   {
-    "objectName": "bucket",
-    "animations": [
-     {
-      "animationType": "rotation",
-      "variable": "bucket_lift",
-      "centerPoint": [
-       0,
-       0.8,
-       0.19999999999999996
-      ],
-      "axis": [
-       -30,
-       0,
-       0
-      ],
-      "clampMin": 0.0,
-      "clampMax": 1.0,
-      "duration": 100
-     }
-    ]
-   },
-   {
-    "objectName": "arm",
-    "animations": [
-     {
-      "animationType": "rotation",
-      "variable": "bucket_lift",
-      "centerPoint": [
-       0,
-       0.8,
-       0.19999999999999996
-      ],
-      "axis": [
-       -30,
-       0,
-       0
-      ],
-      "clampMin": 0.0,
-      "clampMax": 1.0,
-      "duration": 100
-     }
-    ]
-   }
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Bobcat M-440 Skid-Steer Loader (Yellow)",
+      "modelName": "cv_bobcat_m440",
+      "textureName": "paintc",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_orange",
+      "name": "Bobcat M-440 Skid-Steer Loader (Orange)",
+      "modelName": "cv_bobcat_m440",
+      "textureName": "paintc_orange",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_white",
+      "name": "Bobcat M-440 Skid-Steer Loader (White)",
+      "modelName": "cv_bobcat_m440",
+      "textureName": "paintc_white",
+      "extraMaterialLists": [
+        []
+      ]
+    }
   ],
-  "customVariables": [
-   "bucket_lift"
+  "rendering": {
+    "animatedObjects": [
+      {
+        "objectName": "bucket",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "bucket_lift",
+            "centerPoint": [
+              0,
+              0.8,
+              0.19999999999999996
+            ],
+            "axis": [
+              -30,
+              0,
+              0
+            ],
+            "clampMin": 0.0,
+            "clampMax": 1.0,
+            "duration": 100
+          }
+        ]
+      },
+      {
+        "objectName": "arm",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "bucket_lift",
+            "centerPoint": [
+              0,
+              0.8,
+              0.19999999999999996
+            ],
+            "axis": [
+              -30,
+              0,
+              0
+            ],
+            "clampMin": 0.0,
+            "clampMax": 1.0,
+            "duration": 100
+          }
+        ]
+      }
+    ],
+    "customVariables": [
+      "bucket_lift"
+    ]
+  },
+  "car": {
+    "isFrontWheelDrive": false,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.8,
+    "isBigTruck": true
+  },
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 607,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.975,
+            0
+          ],
+          "width": 2.2,
+          "height": 3.35
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.975,
+            0
+          ],
+          "width": 2.2,
+          "height": 3.35
+        }
+      ]
+    }
   ]
- },
- "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.8,
-  "isBigTruck": true
- }
 }

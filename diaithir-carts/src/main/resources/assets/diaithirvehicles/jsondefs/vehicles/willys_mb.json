@@ -1,157 +1,402 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Willys MB",
-  "description": "Jeep (1941). Fuel: Petrol.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:17"
-   ],
-   [
-    "minecraft:redstone:0:4"
-   ]
+  "general": {
+    "type": "vehicle",
+    "name": "Willys MB",
+    "description": "Jeep (1941). Fuel: Petrol.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:17"
+      ],
+      [
+        "minecraft:redstone:0:4"
+      ]
+    ],
+    "health": 204
+  },
+  "motorized": {
+    "emptyMass": 1040.0,
+    "fuelCapacity": 57000,
+    "defaultFuelQty": 14250,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.0,
+    "dragCoefficient": 0.5,
+    "crossSectionalArea": 1.92,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0,
+    "isBigTruck": false
+  },
+  "car": {
+    "isFrontWheelDrive": false,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.5
+  },
+  "parts": [
+    {
+      "pos": [
+        0,
+        0.7,
+        0.7
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirvehicles:engine_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 100.0
+    },
+    {
+      "pos": [
+        -0.68,
+        0.38,
+        0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        0.68,
+        0.38,
+        0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        -0.68,
+        0.38,
+        -0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        0.68,
+        0.38,
+        -0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        0.2
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "dismountPos": [
+        -1.6,
+        0.5,
+        0.2
+      ]
+    },
+    {
+      "pos": [
+        0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat"
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat"
+    },
+    {
+      "pos": [
+        0,
+        0.7,
+        0.7
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirvehicles:engine_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.68,
+        0.38,
+        0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        0.68,
+        0.38,
+        0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        -0.68,
+        0.38,
+        -0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.68,
+        0.38,
+        -0.7999999999999999
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_willys_mb",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        0.2
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "dismountPos": [
+        -1.6,
+        0.5,
+        0.2
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    }
   ],
-  "health": 204
- },
- "motorized": {
-  "emptyMass": 1040.0,
-  "fuelCapacity": 57000,
-  "defaultFuelQty": 0,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.0,
-  "dragCoefficient": 0.5,
-  "crossSectionalArea": 1.92,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0,
-  "isBigTruck": false
- },
- "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.5
- },
- "parts": [
-  {
-   "pos": [
-    0,
-    0.7,
-    0.7
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirvehicles:engine_willys_mb"
-  },
-  {
-   "pos": [
-    -0.68,
-    0.38,
-    0.7999999999999999
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_willys_mb"
-  },
-  {
-   "pos": [
-    0.68,
-    0.38,
-    0.7999999999999999
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_willys_mb"
-  },
-  {
-   "pos": [
-    -0.68,
-    0.38,
-    -0.7999999999999999
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_willys_mb"
-  },
-  {
-   "pos": [
-    0.68,
-    0.38,
-    -0.7999999999999999
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_willys_mb"
-  },
-  {
-   "pos": [
-    -0.4,
-    0.9,
-    0.2
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirvehicles:vehicle_seat",
-   "dismountPos": [
-    -1.6,
-    0.5,
-    0.2
-   ]
-  },
-  {
-   "pos": [
-    0.4,
-    0.9,
-    -0.8
-   ],
-   "types": [
-    "seat"
-   ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
-  },
-  {
-   "pos": [
-    -0.4,
-    0.9,
-    -0.8
-   ],
-   "types": [
-    "seat"
-   ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    0.75,
-    0
-   ],
-   "width": 1.6,
-   "height": 1.5
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Willys MB",
-   "modelName": "willys_mb",
-   "textureName": "willys_mb",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {}
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 204,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            0.75,
+            0.7
+          ],
+          "width": 1.6,
+          "height": 1.5
+        },
+        {
+          "pos": [
+            0,
+            0.75,
+            0
+          ],
+          "width": 1.6,
+          "height": 1.5
+        },
+        {
+          "pos": [
+            0,
+            0.75,
+            -0.7
+          ],
+          "width": 1.6,
+          "height": 1.5
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            0.75,
+            0
+          ],
+          "width": 1.6,
+          "height": 1.5
+        }
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Willys MB",
+      "modelName": "willys_mb",
+      "textureName": "willys_mb",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {},
+  "instruments": [
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 78,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:speedo"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 190,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:fuel"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 302,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:tacho"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 190,
+      "hudY": 100,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:readout"
+    }
+  ]
 }

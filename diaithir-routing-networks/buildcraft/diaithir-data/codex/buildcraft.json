@@ -1,0 +1,14 @@
+{
+ "id": "diaithirbuildcraft:codex/buildcraft",
+ "name_en": "BuildCraft Community Edition",
+ "what": "Pipe-based item, fluid and power transport, engines, quarry, builders and robotics, ported from BuildCraft Community Edition 8.0.26.",
+ "connects": {
+  "energy": "MJ, bridged to FE (1 FE = 1 J target, see README)",
+  "fluids": "FluidHandler capability",
+  "items": "ItemHandler capability",
+  "tags": "c:gears/*, c:storage_blocks tanks",
+  "upgrades": "diaithirbuildcraft:machines",
+  "quest": "diaithirbuildcraft:quest/first_pipe"
+ },
+ "_note": "Text only from this README's facts; Library entry generation goes through the compute job, no invented lore."
+}

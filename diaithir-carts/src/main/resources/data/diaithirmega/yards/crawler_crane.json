@@ -1,0 +1,63 @@
+{
+ "id": "crawler_crane",
+ "tier": "ASSEMBLY_LINE",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 10,
+  "h": 6
+ },
+ "result": "diaithirmega:crawler_crane",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 5000,
+   "ghost": "diaithirmega:ghost/crawler_crane_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 2
+    }
+   ],
+   "base_ticks": 3750,
+   "ghost": "diaithirmega:ghost/crawler_crane_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "boom",
+     "count": 1
+    }
+   ],
+   "base_ticks": 6250,
+   "ghost": "diaithirmega:ghost/crawler_crane_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 2
+    }
+   ],
+   "base_ticks": 80,
+   "ghost": "diaithirmega:ghost/crawler_crane_crew"
+  }
+ ],
+ "crane_speedup": 1.0
+}

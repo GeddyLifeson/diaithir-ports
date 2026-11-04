@@ -1,222 +1,522 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Main Battle Tank Mk IIB",
-  "description": "Mk IIA with composite armour and a stronger engine.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:108"
-   ],
-   [
-    "minecraft:iron_block:0:13"
-   ],
-   [
-    "minecraft:redstone:0:16"
-   ],
-   [
-    "minecraft:gunpowder:0:8"
-   ]
-  ],
-  "health": 1300
- },
- "motorized": {
-  "emptyMass": 44000,
-  "fuelCapacity": 1500,
-  "defaultFuelQty": 600,
-  "hasSkidSteer": true,
-  "hasPermanentSkidSteer": true,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.2,
-  "dragCoefficient": 0.9,
-  "crossSectionalArea": 8.0,
-  "steeringForceFactor": 1.0,
-  "overSteer": 0.0,
-  "underSteer": 0.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0,
-  "isBigTruck": false
- },
- "car": {
-  "isFrontWheelDrive": true,
-  "isRearWheelDrive": false,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.9
- },
- "parts": [
-  {
-   "pos": [
-    0,
-    0.9,
-    -2.2
-   ],
-   "types": [
-    "engine_tank"
-   ],
-   "minValue": 0.0,
-   "maxValue": 10.0,
-   "defaultPart": "diaithirtanks:tank_engine"
+  "general": {
+    "type": "vehicle",
+    "name": "Main Battle Tank Mk IIB",
+    "description": "Mk IIA with composite armour and a stronger engine.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:108"
+      ],
+      [
+        "minecraft:iron_block:0:13"
+      ],
+      [
+        "minecraft:redstone:0:16"
+      ],
+      [
+        "minecraft:gunpowder:0:8"
+      ]
+    ],
+    "health": 1300
   },
-  {
-   "pos": [
-    -1.25,
-    0.0,
-    0.0
-   ],
-   "types": [
-    "ground_tread"
-   ],
-   "defaultPart": "diaithirtanks:tank_track2"
+  "motorized": {
+    "emptyMass": 44000,
+    "fuelCapacity": 1500000,
+    "defaultFuelQty": 600000,
+    "hasSkidSteer": true,
+    "hasPermanentSkidSteer": true,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.2,
+    "dragCoefficient": 0.9,
+    "crossSectionalArea": 8.0,
+    "steeringForceFactor": 1.0,
+    "overSteer": 0.0,
+    "underSteer": 0.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0,
+    "isBigTruck": false
   },
-  {
-   "pos": [
-    1.25,
-    0.0,
-    0.0
-   ],
-   "types": [
-    "ground_tread"
-   ],
-   "defaultPart": "diaithirtanks:tank_track2"
+  "car": {
+    "isFrontWheelDrive": true,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.9
   },
-  {
-   "pos": [
-    0.0,
-    0.95,
-    1.7
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "linkedParts": [
-    5
-   ],
-   "defaultPart": "diaithirtanks:tank_seat",
-   "dismountPos": [
-    0.0,
-    1.2,
-    3.5
-   ]
-  },
-  {
-   "pos": [
-    0.6,
-    1.2,
-    -0.4
-   ],
-   "types": [
-    "seat"
-   ],
-   "defaultPart": "diaithirtanks:tank_seat"
-  },
-  {
-   "pos": [
-    0.0,
-    1.25,
-    -0.3
-   ],
-   "types": [
-    "gun_tank"
-   ],
-   "defaultPart": "diaithirtanks:tank_gun_125",
-   "minYaw": -180,
-   "maxYaw": 180,
-   "minPitch": -8,
-   "maxPitch": 20
-  }
- ],
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "entity",
-    "vehicle",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "health": 1300,
-   "armorThickness": 300.0,
-   "collisions": [
+  "parts": [
     {
-     "pos": [
-      0,
-      1.1,
-      0.0
-     ],
-     "width": 2.6,
-     "height": 1.2
+      "pos": [
+        0,
+        0.9,
+        -2.2
+      ],
+      "types": [
+        "engine_tank"
+      ],
+      "defaultPart": "diaithirtanks:tank_engine",
+      "minValue": 0.0,
+      "maxValue": 1000.0
     },
     {
-     "pos": [
-      0,
-      1.0,
-      2.4
-     ],
-     "width": 2.6,
-     "height": 1.0
+      "pos": [
+        -1.25,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtanks:tank_track2",
+      "minValue": 0.0,
+      "maxValue": 1000.0
     },
     {
-     "pos": [
-      0,
-      1.0,
-      -2.4
-     ],
-     "width": 2.6,
-     "height": 1.0
+      "pos": [
+        1.25,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtanks:tank_track2",
+      "minValue": 0.0,
+      "maxValue": 1000.0
     },
     {
-     "pos": [
-      -1.6,
-      0.7,
-      0.0
-     ],
-     "width": 1.0,
-     "height": 1.2
+      "pos": [
+        0.0,
+        0.95,
+        1.7
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtanks:tank_seat",
+      "dismountPos": [
+        0.0,
+        1.2,
+        3.5
+      ]
     },
     {
-     "pos": [
-      1.6,
-      0.7,
-      0.0
-     ],
-     "width": 1.0,
-     "height": 1.2
+      "pos": [
+        0.6,
+        1.2,
+        -0.4
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirtanks:tank_seat"
+    },
+    {
+      "pos": [
+        0.0,
+        1.25,
+        -0.3
+      ],
+      "types": [
+        "gun_tank"
+      ],
+      "defaultPart": "diaithirtanks:tank_gun_125",
+      "minValue": 0.0,
+      "maxValue": 1000.0,
+      "minYaw": -180,
+      "maxYaw": 180,
+      "minPitch": -8,
+      "maxPitch": 20
+    },
+    {
+      "pos": [
+        0,
+        0.9,
+        -2.2
+      ],
+      "types": [
+        "engine_tank"
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "defaultPart": "diaithirtanks:tank_engine"
+    },
+    {
+      "pos": [
+        -1.25,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_tread"
+      ],
+      "defaultPart": "diaithirtanks:tank_track2"
+    },
+    {
+      "pos": [
+        1.25,
+        0.0,
+        0.0
+      ],
+      "types": [
+        "ground_tread"
+      ],
+      "defaultPart": "diaithirtanks:tank_track2"
+    },
+    {
+      "pos": [
+        0.0,
+        0.95,
+        1.7
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "linkedParts": [
+        5
+      ],
+      "defaultPart": "diaithirtanks:tank_seat",
+      "dismountPos": [
+        0.0,
+        1.2,
+        3.5
+      ]
+    },
+    {
+      "pos": [
+        0.0,
+        1.25,
+        -0.3
+      ],
+      "types": [
+        "gun_tank"
+      ],
+      "defaultPart": "diaithirtanks:tank_gun_125",
+      "minYaw": -180,
+      "maxYaw": 180,
+      "minPitch": -8,
+      "maxPitch": 20
+    },
+    {
+      "pos": [
+        -1.25,
+        0.45,
+        -2.5
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "defaultPart": "diaithirtanks:tank_wheel"
+    },
+    {
+      "pos": [
+        -1.25,
+        0.45,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "defaultPart": "diaithirtanks:tank_wheel"
+    },
+    {
+      "pos": [
+        -1.25,
+        0.45,
+        2.5
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "defaultPart": "diaithirtanks:tank_wheel"
+    },
+    {
+      "pos": [
+        1.25,
+        0.45,
+        -2.5
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "defaultPart": "diaithirtanks:tank_wheel"
+    },
+    {
+      "pos": [
+        1.25,
+        0.45,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "defaultPart": "diaithirtanks:tank_wheel"
+    },
+    {
+      "pos": [
+        1.25,
+        0.45,
+        2.5
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "defaultPart": "diaithirtanks:tank_wheel"
+    },
+    {
+      "pos": [
+        0.0,
+        0.95,
+        1.7
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "linkedParts": [
+        10
+      ],
+      "defaultPart": "diaithirtanks:tank_seat",
+      "dismountPos": [
+        0.0,
+        1.2,
+        3.5
+      ]
     }
-   ]
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Main Battle Tank Mk IIB (Forest)",
-   "modelName": "tank_mk2",
-   "textureName": "tank_mk2",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_desert",
-   "name": "Main Battle Tank Mk IIB (Desert)",
-   "modelName": "tank_mk2",
-   "textureName": "tank_mk2_desert",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_snow",
-   "name": "Main Battle Tank Mk IIB (Winter)",
-   "modelName": "tank_mk2",
-   "textureName": "tank_mk2_snow",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {}
+  ],
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 1300,
+      "armorThickness": 300.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.1,
+            0.0
+          ],
+          "width": 2.6,
+          "height": 1.2
+        },
+        {
+          "pos": [
+            0,
+            1.0,
+            2.4
+          ],
+          "width": 2.6,
+          "height": 1.0
+        },
+        {
+          "pos": [
+            0,
+            1.0,
+            -2.4
+          ],
+          "width": 2.6,
+          "height": 1.0
+        },
+        {
+          "pos": [
+            -1.6,
+            0.7,
+            0.0
+          ],
+          "width": 1.0,
+          "height": 1.2
+        },
+        {
+          "pos": [
+            1.6,
+            0.7,
+            0.0
+          ],
+          "width": 1.0,
+          "height": 1.2
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 1300,
+      "armorThickness": 300.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.1,
+            0.0
+          ],
+          "width": 2.6,
+          "height": 1.2
+        },
+        {
+          "pos": [
+            0,
+            1.0,
+            2.4
+          ],
+          "width": 2.6,
+          "height": 1.0
+        },
+        {
+          "pos": [
+            0,
+            1.0,
+            -2.4
+          ],
+          "width": 2.6,
+          "height": 1.0
+        },
+        {
+          "pos": [
+            -1.6,
+            0.7,
+            0.0
+          ],
+          "width": 1.0,
+          "height": 1.2
+        },
+        {
+          "pos": [
+            1.6,
+            0.7,
+            0.0
+          ],
+          "width": 1.0,
+          "height": 1.2
+        }
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Main Battle Tank Mk IIB (Forest)",
+      "modelName": "tank_mk2",
+      "textureName": "tank_mk2",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_desert",
+      "name": "Main Battle Tank Mk IIB (Desert)",
+      "modelName": "tank_mk2",
+      "textureName": "tank_mk2_desert",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_snow",
+      "name": "Main Battle Tank Mk IIB (Winter)",
+      "modelName": "tank_mk2",
+      "textureName": "tank_mk2_snow",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {},
+  "instruments": [
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 78,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirtanks:speedo"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 190,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirtanks:fuel"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 302,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirtanks:tacho"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 190,
+      "hudY": 100,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirtanks:readout"
+    }
+  ]
 }

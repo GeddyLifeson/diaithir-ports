@@ -1,0 +1,208 @@
+/*
+ * This class is distributed as part of the Botania Mod.
+ * Get the Source Code in github:
+ * https://github.com/Vazkii/Botania
+ *
+ * Botania is Open Source and distributed under the
+ * Botania License: http://botaniamod.net/license.php
+ */
+package vazkii.botania.api;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.DefaultedRegistry;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.UnknownNullability;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import vazkii.botania.api.attachment.DataIdBase;
+import vazkii.botania.api.block.IslandType;
+import vazkii.botania.api.brew.Brew;
+import vazkii.botania.api.capability.BlockApiNoContext;
+import vazkii.botania.api.capability.BlockApiWithContext;
+import vazkii.botania.api.capability.EntityApiNoContext;
+import vazkii.botania.api.capability.EntityApiWithContext;
+import vazkii.botania.api.capability.ItemApiNoContext;
+import vazkii.botania.api.capability.ItemApiWithContext;
+import vazkii.botania.api.configdata.ConfigDataManager;
+import vazkii.botania.api.corporea.CorporeaNodeDetector;
+import vazkii.botania.api.internal.DummyManaNetwork;
+import vazkii.botania.api.internal.ManaNetwork;
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.function.Function;
+
+public interface BotaniaAPI {
+	String MODID = "botania";
+	String GOG_MODID = "gardenofglass";
+	Logger LOGGER = LoggerFactory.getLogger(MODID);
+
+	BotaniaAPI INSTANCE = ServiceUtil.findService(BotaniaAPI.class, null);
+
+	static BotaniaAPI instance() {
+		return INSTANCE;
+	}
+
+	static Identifier botaniaRL(String path) {
+		return Identifier.fromNamespaceAndPath(MODID, path);
+	}
+
+	static Identifier gogRL(String path) {
+		return Identifier.fromNamespaceAndPath(GOG_MODID, path);
+	}
+
+	/**
+	 * @return A unique version number for this version of the API. When anything is added, this number will be
+	 *         incremented
+	 */
+	default int apiVersion() {
+		return 0;
+	}
+
+	/**
+	 * Get the registry for brews.
+	 * This should only be called after the registry is registered.
+	 * In NeoForge, that is after NewRegistryEvent. In Fabric, that is after Botania's common initializer
+	 * is loaded.
+	 * Note that this registry is neither saved nor synced, and thus its integer ID's should not be relied upon.
+	 */
+	@UnknownNullability
+	default DefaultedRegistry<Brew> getBrewRegistry() {
+		return null;
+	}
+
+	/**
+	 * Get the registry for floating flower island types.
+	 * This should only be called after the registry is registered.
+	 * In NeoForge, that is after NewRegistryEvent. In Fabric, that is after Botania's common initializer
+	 * is loaded.
+	 * Note that this registry is neither saved nor synced, and thus its integer ID's should not be relied upon.
+	 */
+	@UnknownNullability
+	default DefaultedRegistry<IslandType> getIslandTypeRegistry() {
+		return null;
+	}
+
+	default Map<Identifier, Function<DyeColor, Block>> getPaintableBlocks() {
+		return Collections.emptyMap();
+	}
+
+	default void registerPaintableBlock(Block block, Function<DyeColor, Block> transformer) {
+		registerPaintableBlock(BuiltInRegistries.BLOCK.getKey(block), transformer);
+	}
+
+	/**
+	 * Make Botania aware of how to transform between different colors of a block, for use in the paint lens.
+	 * This method can be safely called during parallel mod initialization
+	 * 
+	 * @param blockId     The block ID
+	 * @param transformer Function from color to a new block
+	 */
+	default void registerPaintableBlock(Identifier blockId, Function<DyeColor, Block> transformer) {
+
+	}
+
+	Holder<ArmorMaterial> getManasteelArmorMaterial();
+
+	Holder<ArmorMaterial> getElementiumArmorMaterial();
+
+	Holder<ArmorMaterial> getManaweaveArmorMaterial();
+
+	Holder<ArmorMaterial> getTerrasteelArmorMaterial();
+
+	ToolMaterial getManasteelItemTier();
+
+	ToolMaterial getElementiumItemTier();
+
+	ToolMaterial getTerrasteelItemTier();
+
+	default ManaNetwork getManaNetworkInstance() {
+		return DummyManaNetwork.instance;
+	}
+
+	default Container getAccessoriesInventory(Player player) {
+		return new SimpleContainer(0);
+	}
+
+	/**
+	 * Break all the blocks the given player has selected with the loki ring.
+	 * The item passed must implement {@link vazkii.botania.api.item.SequentialBreaker}.
+	 */
+	default void breakOnAllCursors(Player player, ItemStack stack, BlockPos pos, Direction side) {}
+
+	default boolean hasSolegnoliaAround(Entity e) {
+		return false;
+	}
+
+	default void sparkleFX(Level world, double x, double y, double z, float r, float g, float b, float size, int m) {}
+
+	default void registerCorporeaNodeDetector(CorporeaNodeDetector detector) {}
+
+	@UnknownNullability
+	default ConfigDataManager getConfigData() {
+		return null;
+	}
+
+	default void setConfigData(ConfigDataManager configDataManager) {}
+
+	// API lookup helper methods, used by the API IDs
+
+	@Nullable
+	default <A> A findBlockApi(BlockApiNoContext<A> id, Level level, BlockPos pos, @Nullable BlockState state,
+			@Nullable BlockEntity blockEntity) {
+		return null;
+	}
+
+	@Nullable
+	default <A, C> A findBlockApi(BlockApiWithContext<A, C> id, Level level, BlockPos pos,
+			@Nullable BlockState state, @Nullable BlockEntity blockEntity, @Nullable C context) {
+		return null;
+	}
+
+	@Nullable
+	default <A> A findItemApi(ItemApiNoContext<A> id, ItemStack stack) {
+		return null;
+	}
+
+	@Nullable
+	default <A, C> A findItemApi(ItemApiWithContext<A, C> id, ItemStack stack, @Nullable C context) {
+		return null;
+	}
+
+	@Nullable
+	default <A> A findEntityApi(EntityApiNoContext<A> id, Entity entity) {
+		return null;
+	}
+
+	@Nullable
+	default <A, C> A findEntityApi(EntityApiWithContext<A, C> id, Entity entity, @Nullable C context) {
+		return null;
+	}
+
+	// entity data attachment helper methods, used by the data IDs
+
+	@Nullable
+	default <T> T getEntityData(DataIdBase<T> id, Entity entity) {
+		return null;
+	}
+
+	default <T> void setEntityData(DataIdBase<T> id, Entity entity, T data) {}
+
+	default void removeEntityData(DataIdBase<?> id, Entity entity) {}
+}

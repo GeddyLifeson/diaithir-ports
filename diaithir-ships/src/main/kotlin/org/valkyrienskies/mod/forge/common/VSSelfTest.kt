@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Blocks
 import net.neoforged.neoforge.event.tick.ServerTickEvent
 import org.slf4j.LoggerFactory
 import org.valkyrienskies.mod.common.shipObjectWorld
+import org.valkyrienskies.mod.common.dimensionId
 import org.valkyrienskies.eureka.ship.eurekaControl
 import org.valkyrienskies.mod.common.getShipManagingPos
 import org.valkyrienskies.mod.common.getShipObjectManagingPos
@@ -257,6 +258,47 @@ object VSSelfTest {
         log.info("selftest: mixin target preload done, ok={} failed={}", ok, failed)
     }
 
+    /** Ships as cargo carriers: put and take loads through the containers API, save and reload them, and (with -Dvs.cargorot) tilt the ship for the client screenshot. */
+    private fun cargoTest(level: net.minecraft.server.level.ServerLevel) {
+        val ys = yardShips.getOrNull(1) ?: return
+        val ship = shipWorldOf(level).loadedShips.getById(ys.id) ?: return
+        val carrier = net.diaithir.ships.cargo.CargoImpl.carrierFor(level, ship) ?: run { log.info("selftest-cargo: no carrier for ship {}", ys.id); return }
+        val d = carrier.data
+        log.info("selftest-cargo: ship {} deck {}x{}x{} at ({},{},{}) maxKg={}", ys.id, d.w, d.h, d.l, d.ox, d.oy, d.oz, d.maxKg)
+        fun stack(id: String): net.minecraft.world.item.ItemStack =
+            net.minecraft.world.item.ItemStack(net.diaithir.freight.Freight.LOAD_ITEMS[id]!!.get())
+        val pallet = stack("pallet")
+        pallet.set(net.minecraft.core.component.DataComponents.CONTAINER, net.minecraft.world.item.component.ItemContainerContents.fromItems(listOf(net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.APPLE, 10))))
+        val cx = d.w / 2; val cz = d.l / 2
+        val results = ArrayList<String>()
+        results += "pallet=" + net.diaithir.freight.Carriers.put(carrier, pallet, cx, cz)
+        results += "pallet2=" + net.diaithir.freight.Carriers.put(carrier, stack("pallet"), cx, cz) // stacks on the first
+        results += "crate=" + net.diaithir.freight.Carriers.put(carrier, stack("crate"), cx + 1, cz)
+        results += "barrel=" + net.diaithir.freight.Carriers.put(carrier, stack("barrel"), cx, cz + 1)
+        results += "chest=" + net.diaithir.freight.Carriers.put(carrier, stack("chest"), cx + 1, cz + 1)
+        val box = net.minecraft.world.item.ItemStack(net.diaithir.freight.Freight.CONTAINER_ITEMS["container_20"]!!.get())
+        results += "container=" + net.diaithir.freight.Carriers.put(carrier, box, 0, 0)
+        val tooHeavy = net.diaithir.freight.LoadType.byId("crate")!!.let { t -> carrier.bay().check(t, false, 0, 3, 0, 5000.0, 8) }
+        log.info("selftest-cargo: put {} overweightCheck={} loads={} payloadKg={}", results, tooHeavy, carrier.bay().loads().size, carrier.bay().payloadKg())
+        // reload from the saved attachment: a fresh carrier must see the same loads and the apples in the pallet
+        val again = net.diaithir.ships.cargo.CargoImpl.carrierFor(level, ship)!!
+        val apples = again.bay().loads().filter { it.type.id() == "pallet" }.sumOf { p -> (p.data as? List<*>)?.sumOf { (it as net.minecraft.world.item.ItemStack).count } ?: 0 }
+        log.info("selftest-cargo: reload loads={} (was {}) apples={} savedLen={}", again.bay().loads().size, carrier.bay().loads().size, apples, d.saved.length)
+        // take the top pallet off and put it back
+        val top = net.diaithir.freight.Carriers.takeTop(again, cx, cz)
+        log.info("selftest-cargo: takeTop item={} loadsAfter={}", top.item, again.bay().loads().size)
+        net.diaithir.freight.Carriers.put(again, top, cx, cz)
+        log.info("selftest-cargo: dock source sees the ship: {}", net.diaithir.freight.Carriers.SOURCES.firstNotNullOfOrNull { f -> f.apply(level, ys.worldAABB.let { b -> net.minecraft.world.phys.AABB(b.minX(), b.minY(), b.minZ(), b.maxX(), b.maxY(), b.maxZ()) }) } != null)
+        if (System.getProperty("vs.cargorot") != null) {
+            // tilt the ship about its length and yaw it, then hold it so the client screenshot is steady
+            val q = org.joml.Quaterniond().rotateY(Math.toRadians(35.0)).rotateZ(Math.toRadians(14.0))
+            val data = org.valkyrienskies.mod.common.ValkyrienSkiesMod.vsCore.newShipTeleportData(newPos = org.joml.Vector3d(ys.transform.position.x(), ys.transform.position.y(), ys.transform.position.z()), newRot = q, newDimension = level.dimensionId)
+            org.valkyrienskies.mod.common.ValkyrienSkiesMod.vsCore.teleportShip(shipWorldOf(level) as org.valkyrienskies.core.internal.world.VsiServerShipWorld, ys as org.valkyrienskies.core.api.ships.ServerShip, data)
+            ship.isStatic = true
+            log.info("selftest-cargo: ship rotated and held static")
+        }
+    }
+
     @JvmStatic
     fun onTick(event: ServerTickEvent.Post) {
         val server = event.server
@@ -271,6 +313,7 @@ object VSSelfTest {
             for (n in intArrayOf(1, 3, 4)) yardShips.getOrNull(n)?.let { maxSpeed[n] = maxOf(maxSpeed[n] ?: 0.0, it.velocity.length()) }
             if (tick == 900) log.info("selftest-yard-thrust: max speed after thrust release {}", maxSpeed.toSortedMap())
         }
+        if (tick == 420 && yardPhase == "" && net.diaithir.ships.cargo.ShipCargoMod.apiPresent) try { cargoTest(level) } catch (t: Throwable) { log.error("selftest-cargo: failed", t) }
         when (tick) {
             2 -> preloadMixinTargets()
             20 -> {
