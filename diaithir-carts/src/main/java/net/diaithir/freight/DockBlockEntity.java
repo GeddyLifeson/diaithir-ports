@@ -115,7 +115,7 @@ public final class DockBlockEntity extends BlockEntity {
         if (v == null) return 0;
         int used = 0, n = v.getContainerSize();
         for (int i = 0; i < n; i++) if (!v.getItem(i).isEmpty()) used++;
-        return n == 0 ? 0 : 1 + (int) (14L * used / n);
+        return used == 0 ? 0 : 1 + (int) (14L * used / n);
     }
 
     @Override
