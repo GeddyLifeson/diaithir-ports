@@ -3,7 +3,7 @@ hand_axe,Hand axe,axe,worldwide,c.1.7 Mya,I,melee,https://en.wikipedia.org/wiki/
 wooden_club,Wooden club,club,worldwide,prehistoric,I,existing,https://en.wikipedia.org/wiki/Club_(weapon)
 flint_tipped_spear,Flint-tipped spear,spear,worldwide,c.400 kya,I,melee,https://en.wikipedia.org/wiki/Spear
 atlatl,Atlatl,thrown,"Americas, Eurasia",c.30 kya,I,melee,https://en.wikipedia.org/wiki/Atlatl
-sling,Sling,sling,"Mediterranean, Near East",c.10 kya,I,ranged,https://en.wikipedia.org/wiki/Sling_(weapon)
+sling,Sling,sling,"Mediterranean, Near East",c.10 kya,I,ranged-thrown,https://en.wikipedia.org/wiki/Sling_(weapon)
 self_bow,Self bow,bow,worldwide,c.10 kya,I,ranged-bow,https://en.wikipedia.org/wiki/Bow_and_arrow
 boomerang,Boomerang,thrown,Australia,c.10 kya,I,melee,https://en.wikipedia.org/wiki/Boomerang
 macuahuitl,Macuahuitl,club,Aztec,c.1300,I,melee,https://en.wikipedia.org/wiki/Macuahuitl
@@ -121,10 +121,10 @@ hwacha,Hwacha,siege,Korea,c.1409,V,siege,https://en.wikipedia.org/wiki/Hwacha
 arbalest,Arbalest (steel crossbow),crossbow,Europe,c.1400,V,ranged-bow,https://en.wikipedia.org/wiki/Arbalest
 stonebow,Stonebow (bullet crossbow),crossbow,Europe,c.1500,V,ranged-bow,https://en.wikipedia.org/wiki/Stonebow
 caltrop,Caltrop,trap,worldwide,c.300 BC,IV,later,https://en.wikipedia.org/wiki/Caltrop
-net_and_trident,Net and trident (retiarius),thrown,Rome,c.50,IV,ranged,https://en.wikipedia.org/wiki/Retiarius
+retiarius_net,Retiarius net,thrown,Rome,c.50,IV,ranged-thrown,https://en.wikipedia.org/wiki/Retiarius
 trident,Trident,spear,"Greece, Rome",c.800 BC,IV,melee,https://en.wikipedia.org/wiki/Trident
 lasso_bolas,Lasso/bolas,thrown,South America,c.1000,IV,duplicate,https://en.wikipedia.org/wiki/Bolas
-bolas,Bolas,thrown,"Patagonia, Inuit",c.1000,IV,ranged,https://en.wikipedia.org/wiki/Bolas
+bolas,Bolas,thrown,"Patagonia, Inuit",c.1000,IV,ranged-thrown,https://en.wikipedia.org/wiki/Bolas
 kpinga,Kpinga,thrown,Central Africa,c.1500,V,melee,https://en.wikipedia.org/wiki/Kpinga
 shotel,Shotel,sword,Ethiopia,c.1500,V,melee,https://en.wikipedia.org/wiki/Shotel
 takoba,Takoba,sword,Tuareg,c.1500,V,melee,https://en.wikipedia.org/wiki/Takoba
@@ -134,7 +134,7 @@ knobkerrie,Knobkerrie,club,Southern Africa,c.1700,V,melee,https://en.wikipedia.o
 ngombe_axe,Ngombe axe,axe,Central Africa,c.1700,V,melee,https://en.wikipedia.org/wiki/Ngulu
 tomahawk,Tomahawk,axe,North America,c.1600,V,melee,https://en.wikipedia.org/wiki/Tomahawk
 plains_bow,Plains bow,bow,North America,c.1700,V,ranged-bow,https://en.wikipedia.org/wiki/Plains_Indians
-blowgun,Blowgun,thrown,"Amazon, Southeast Asia",c.1000,IV,ranged,https://en.wikipedia.org/wiki/Blowgun
+blowgun,Blowgun,thrown,"Amazon, Southeast Asia",c.1000,IV,ranged-thrown,https://en.wikipedia.org/wiki/Blowgun
 tepoztopilli,Tepoztopilli,polearm,Aztec,c.1300,V,melee,https://en.wikipedia.org/wiki/Tepoztopilli
 mapuche_lance,Mapuche lance (Chilean lance),polearm,Mapuche,c.1550,V,melee,https://en.wikipedia.org/wiki/Mapuche
 maori_taiaha,Maori taiaha,polearm,Maori,c.1400,V,melee,https://en.wikipedia.org/wiki/Taiaha
@@ -182,16 +182,16 @@ chinese_jiu_li_dao,Chinese jiu-li dao (butterfly sword),sword,China,c.1800,VI,me
 chinese_dadao,Chinese Dadao,sword,China,c.1800,VI,melee,https://en.wikipedia.org/wiki/Dadao
 sansetsukon,Sansetsukon (three-section staff),flail,China,c.1000,IV,melee,https://en.wikipedia.org/wiki/Three-section_staff
 rattan_shield,Rattan shield,shield,"China, Ming",c.1500,V,n/a,https://en.wikipedia.org/wiki/Rattan_shield
-grenado,Grenado (hand grenade),thrown,Europe,c.1500,V,ranged,https://en.wikipedia.org/wiki/Grenade
-stielhandgranate,Stielhandgranate (Model 24),thrown,Germany,c.1924,VII,ranged,https://en.wikipedia.org/wiki/Stielhandgranate
-mills_bomb,Mills bomb (No. 36M),thrown,Britain,c.1915,VII,ranged,https://en.wikipedia.org/wiki/Mills_bomb
-mk_2_grenade,"Mk 2 grenade (""pineapple"")",thrown,United States,c.1918,VII,ranged,https://en.wikipedia.org/wiki/Mk_2_grenade
-f1_grenade,F1 grenade,thrown,"France, USSR",c.1915,VII,ranged,https://en.wikipedia.org/wiki/F1_grenade
-rgd_33_grenade,RGD-33 grenade,thrown,USSR,c.1933,VII,ranged,https://en.wikipedia.org/wiki/RGD-33_grenade
-m67_grenade,M67 grenade,thrown,United States,c.1968,VII,ranged,https://en.wikipedia.org/wiki/M67_grenade
-molotov_cocktail,Molotov cocktail,thrown,"Finland, USSR",c.1939,VII,ranged,https://en.wikipedia.org/wiki/Molotov_cocktail
-satchel_charge,Satchel charge,thrown,worldwide,c.1914,VII,ranged,https://en.wikipedia.org/wiki/Satchel_charge
-bangalore_torpedo,Bangalore torpedo,thrown,Britain,c.1912,VII,ranged,https://en.wikipedia.org/wiki/Bangalore_torpedo
+grenado,Grenado (hand grenade),thrown,Europe,c.1500,V,ranged-thrown,https://en.wikipedia.org/wiki/Grenade
+stielhandgranate,Stielhandgranate (Model 24),thrown,Germany,c.1924,VII,ranged-thrown,https://en.wikipedia.org/wiki/Stielhandgranate
+mills_bomb,Mills bomb (No. 36M),thrown,Britain,c.1915,VII,ranged-thrown,https://en.wikipedia.org/wiki/Mills_bomb
+mk2_grenade,"Mk 2 grenade (""pineapple"")",thrown,United States,c.1918,VII,ranged-thrown,https://en.wikipedia.org/wiki/Mk_2_grenade
+f1_grenade,F1 grenade,thrown,"France, USSR",c.1915,VII,ranged-thrown,https://en.wikipedia.org/wiki/F1_grenade
+rgd_33_grenade,RGD-33 grenade,thrown,USSR,c.1933,VII,ranged-thrown,https://en.wikipedia.org/wiki/RGD-33_grenade
+m67_grenade,M67 grenade,thrown,United States,c.1968,VII,ranged-thrown,https://en.wikipedia.org/wiki/M67_grenade
+molotov_cocktail,Molotov cocktail,thrown,"Finland, USSR",c.1939,VII,ranged-thrown,https://en.wikipedia.org/wiki/Molotov_cocktail
+satchel_charge,Satchel charge,thrown,worldwide,c.1914,VII,ranged-thrown,https://en.wikipedia.org/wiki/Satchel_charge
+bangalore_torpedo,Bangalore torpedo,thrown,Britain,c.1912,VII,ranged-thrown,https://en.wikipedia.org/wiki/Bangalore_torpedo
 claymore_mine,Claymore mine (M18A1),trap,United States,c.1960,VII,later,https://en.wikipedia.org/wiki/M18_Claymore_mine
 cranequin_crossbow,Cranequin crossbow,crossbow,Europe,c.1450,V,ranged-bow,https://en.wikipedia.org/wiki/Cranequin
 polybolos,Polybolos,siege,Ancient Greece,c.250 BC,IV,siege,https://en.wikipedia.org/wiki/Polybolos
@@ -229,9 +229,9 @@ bhutanese_bamboo_bow,Bhutanese bamboo bow,bow,Bhutan,c.1500,V,ranged-bow,https:/
 nubian_self_bow,Nubian self bow,bow,Nubia,c.1500 BC,III,ranged-bow,https://en.wikipedia.org/wiki/Medjay
 cretan_short_bow,Cretan short bow,bow,Crete,c.600 BC,IV,ranged-bow,https://en.wikipedia.org/wiki/Cretan_archers
 rhodian_slinger_bullet,Rhodian slinger bullet (glandes),sling,"Rhodes, Rome",c.400 BC,IV,duplicate,https://en.wikipedia.org/wiki/Sling_bullet
-balearic_sling,Balearic sling,sling,Balearic Islands,c.400 BC,IV,ranged,https://en.wikipedia.org/wiki/Balearic_slingers
-inca_sling,Inca sling (huaraca),sling,Inca Empire,c.1400,V,ranged,https://en.wikipedia.org/wiki/Inca_army
-inca_bolas,Inca bolas (liwi),thrown,Inca Empire,c.1400,V,ranged,https://en.wikipedia.org/wiki/Bolas
+balearic_sling,Balearic sling,sling,Balearic Islands,c.400 BC,IV,ranged-thrown,https://en.wikipedia.org/wiki/Balearic_slingers
+inca_sling_huaraca,Inca sling (huaraca),sling,Inca Empire,c.1400,V,ranged-thrown,https://en.wikipedia.org/wiki/Inca_army
+inca_bolas,Inca bolas (liwi),thrown,Inca Empire,c.1400,V,duplicate,https://en.wikipedia.org/wiki/Bolas
 inca_star_mace,Inca star mace,mace,Inca Empire,c.1400,V,melee,https://en.wikipedia.org/wiki/Inca_army
 aztec_atlatl,Aztec atlatl (atlatl dart),thrown,Aztec,c.1400,V,melee,https://en.wikipedia.org/wiki/Atlatl
 maya_obsidian_spear,Maya obsidian spear,spear,Maya,c.600,IV,melee,https://en.wikipedia.org/wiki/Maya_civilization

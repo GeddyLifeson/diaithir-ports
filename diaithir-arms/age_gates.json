@@ -100,6 +100,22 @@
   "diaithirarms:tibetan_crossbow": "IV",
   "diaithirarms:bhutanese_bamboo_bow": "V",
   "diaithirarms:nubian_self_bow": "III",
-  "diaithirarms:cretan_short_bow": "IV"
+  "diaithirarms:cretan_short_bow": "IV",
+  "diaithirarms:sling": "I",
+  "diaithirarms:retiarius_net": "IV",
+  "diaithirarms:bolas": "IV",
+  "diaithirarms:blowgun": "IV",
+  "diaithirarms:grenado": "V",
+  "diaithirarms:stielhandgranate": "VII",
+  "diaithirarms:mills_bomb": "VII",
+  "diaithirarms:mk2_grenade": "VII",
+  "diaithirarms:f1_grenade": "VII",
+  "diaithirarms:rgd_33_grenade": "VII",
+  "diaithirarms:m67_grenade": "VII",
+  "diaithirarms:molotov_cocktail": "VII",
+  "diaithirarms:satchel_charge": "VII",
+  "diaithirarms:bangalore_torpedo": "VII",
+  "diaithirarms:balearic_sling": "IV",
+  "diaithirarms:inca_sling_huaraca": "V"
  }
 }
