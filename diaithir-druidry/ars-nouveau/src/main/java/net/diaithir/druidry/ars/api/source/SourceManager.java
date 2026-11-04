@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-@EventBusSubscriber(modid = ArsNouveau.MODID)
+@EventBusSubscriber(modid = ArsNouveau.HOST)
 public class SourceManager {
     private Map<String, Set<ISpecialSourceProvider>> posMap = new ConcurrentHashMap<>();
 

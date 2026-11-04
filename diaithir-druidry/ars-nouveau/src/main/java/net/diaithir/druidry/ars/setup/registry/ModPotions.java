@@ -24,7 +24,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import static net.diaithir.druidry.ars.ArsNouveau.MODID;
 import static net.diaithir.druidry.ars.common.lib.LibPotions.*;
 
-@EventBusSubscriber(modid = MODID)
+@EventBusSubscriber(modid = net.diaithir.druidry.ars.ArsNouveau.HOST)
 public class ModPotions {
 
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, MODID);

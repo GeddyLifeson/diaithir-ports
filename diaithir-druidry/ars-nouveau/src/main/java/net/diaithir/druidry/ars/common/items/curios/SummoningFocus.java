@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-@EventBusSubscriber(modid = ArsNouveau.MODID)
+@EventBusSubscriber(modid = ArsNouveau.HOST)
 public class SummoningFocus extends ArsNouveauCurio implements ISpellModifierItem {
     public SummoningFocus() {
         super();

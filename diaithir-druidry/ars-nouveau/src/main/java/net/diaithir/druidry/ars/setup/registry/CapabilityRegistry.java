@@ -76,7 +76,7 @@ public class CapabilityRegistry {
 
 
     @SuppressWarnings("unused")
-    @EventBusSubscriber(modid = ArsNouveau.MODID)
+    @EventBusSubscriber(modid = ArsNouveau.HOST)
     public static class EventHandler {
 
         @SubscribeEvent

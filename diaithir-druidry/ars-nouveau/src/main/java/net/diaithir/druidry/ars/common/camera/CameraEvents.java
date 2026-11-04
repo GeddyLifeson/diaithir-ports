@@ -15,7 +15,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 
 // https://github.com/Geforce132/SecurityCraft/blob/fbef0c9d3f5959f09f2f0a1a351a9a86604566ed/src/main/java/net/geforcemods/securitycraft/SCEventHandler.java
-@EventBusSubscriber(modid = ArsNouveau.MODID)
+@EventBusSubscriber(modid = ArsNouveau.HOST)
 public class CameraEvents {
 
     @SubscribeEvent

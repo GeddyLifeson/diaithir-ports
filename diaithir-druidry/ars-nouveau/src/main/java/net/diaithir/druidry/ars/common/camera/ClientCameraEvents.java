@@ -13,7 +13,7 @@ import net.neoforged.neoforge.client.event.RenderHandEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 
 
-@EventBusSubscriber(modid = ArsNouveau.MODID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ArsNouveau.HOST, value = Dist.CLIENT)
 public class ClientCameraEvents {
 
     @SubscribeEvent

@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@EventBusSubscriber(modid = ArsNouveau.MODID)
+@EventBusSubscriber(modid = ArsNouveau.HOST)
 public class RedstoneSavedData extends SavedData {
     public final Map<BlockPos, Entry> SIGNAL_MAP = new HashMap<>();
 

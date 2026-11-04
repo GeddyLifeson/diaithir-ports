@@ -73,7 +73,7 @@ import net.neoforged.neoforge.items.ItemHandlerHelper;
 import java.util.*;
 
 
-@EventBusSubscriber(modid = ArsNouveau.MODID)
+@EventBusSubscriber(modid = ArsNouveau.HOST)
 public class EventHandler {
 
     /**

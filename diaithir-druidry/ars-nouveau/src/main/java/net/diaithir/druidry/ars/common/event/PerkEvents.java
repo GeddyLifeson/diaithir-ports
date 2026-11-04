@@ -28,7 +28,7 @@ import net.neoforged.neoforge.event.level.SleepFinishedTimeEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-@EventBusSubscriber(modid = ArsNouveau.MODID)
+@EventBusSubscriber(modid = ArsNouveau.HOST)
 public class PerkEvents {
 
     @SubscribeEvent

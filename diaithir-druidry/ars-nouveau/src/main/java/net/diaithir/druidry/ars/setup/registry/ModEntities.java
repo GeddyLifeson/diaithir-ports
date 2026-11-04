@@ -139,7 +139,7 @@ public class ModEntities {
                 && !Config.DIMENSION_BLACKLIST.get().contains(worldIn.getLevel().dimension().identifier().toString());
     }
 
-    @EventBusSubscriber(modid = MODID)
+    @EventBusSubscriber(modid = net.diaithir.druidry.ars.ArsNouveau.HOST)
     public static class RegistrationHandler {
 
         @SubscribeEvent
