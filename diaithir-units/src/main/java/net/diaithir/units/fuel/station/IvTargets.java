@@ -89,7 +89,7 @@ final class IvTargets {
                 double level = (double) tank.getClass().getMethod("getFluidLevel").invoke(tank);
                 int max = (int) tank.getClass().getMethod("getMaxLevel").invoke(tank);
                 return Math.max(0, max - level) / 1000.0;
-            } catch (ReflectiveOperationException ex) {
+            } catch (ReflectiveOperationException | RuntimeException ex) {
                 return 0;
             }
         }
@@ -102,7 +102,7 @@ final class IvTargets {
                 String wildcard = (String) tank.getClass().getField("WILDCARD_FLUID_MOD").get(null);
                 Method fill = tank.getClass().getMethod("fill", String.class, String.class, double.class, boolean.class);
                 return (double) fill.invoke(tank, f.ivFuelType(), wildcard, ok * 1000.0, false) / 1000.0;
-            } catch (ReflectiveOperationException ex) {
+            } catch (ReflectiveOperationException | RuntimeException ex) {
                 return 0;
             }
         }

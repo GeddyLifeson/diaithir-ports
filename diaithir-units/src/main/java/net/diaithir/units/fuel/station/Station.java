@@ -95,19 +95,19 @@ public final class Station {
                 .then(Commands.literal("toggle").executes(c -> ignition(c.getSource(), null)))
                 .then(Commands.literal("start").executes(c -> ignition(c.getSource(), true)))
                 .then(Commands.literal("stop").executes(c -> ignition(c.getSource(), false)))
-                .then(Commands.literal("watch").then(Commands.argument("seconds", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 60)).executes(c -> {
+                .then(Commands.literal("watch").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS)).then(Commands.argument("seconds", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 60)).executes(c -> {
                     watchSource = c.getSource();
                     watchLeft = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "seconds") * 20;
                     c.getSource().sendSuccess(() -> Component.literal("Watching the nearest vehicle once a second; hold W now"), false);
                     return 1;
                 })))
-                .then(Commands.literal("fire").executes(c -> fire(c.getSource(), 40)).then(Commands.argument("ticks", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 1200)).executes(c -> fire(c.getSource(), com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "ticks")))))
+                .then(Commands.literal("fire").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS)).executes(c -> fire(c.getSource(), 40)).then(Commands.argument("ticks", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 1200)).executes(c -> fire(c.getSource(), com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "ticks")))))
                 .then(Commands.literal("status").executes(c -> {
                     String st = IvControl.status(c.getSource().getLevel(), c.getSource().getPosition(), 8.0);
                     c.getSource().sendSuccess(() -> Component.literal(st == null ? "No vehicle within 8 blocks" : "Vehicle: " + st), false);
                     return st == null ? 0 : 1;
                 }))
-                .then(Commands.literal("drive").then(Commands.argument("throttle", com.mojang.brigadier.arguments.DoubleArgumentType.doubleArg(0, 1)).executes(c -> {
+                .then(Commands.literal("drive").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS)).then(Commands.argument("throttle", com.mojang.brigadier.arguments.DoubleArgumentType.doubleArg(0, 1)).executes(c -> {
                     boolean ok = IvControl.drive(c.getSource().getLevel(), c.getSource().getPosition(), 8.0, com.mojang.brigadier.arguments.DoubleArgumentType.getDouble(c, "throttle"));
                     c.getSource().sendSuccess(() -> Component.literal(ok ? "Throttle set, brakes released" : "No vehicle within 8 blocks"), false);
                     return ok ? 1 : 0;
