@@ -1,7 +1,7 @@
 {
   "station": "station.wright_bench",
   "stage": "part",
-  "time_s": 4,
+  "time_s": 8,
   "ingredients": [
     {
       "item": "minecraft:iron_ingot",

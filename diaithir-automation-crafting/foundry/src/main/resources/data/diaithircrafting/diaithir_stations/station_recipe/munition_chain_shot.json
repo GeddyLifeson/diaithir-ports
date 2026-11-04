@@ -1,7 +1,7 @@
 {
   "station": "station.wright_bench",
   "stage": "assembly",
-  "time_s": 6,
+  "time_s": 10,
   "ingredients": [
     {
       "item": "diaithircrafting:munition_chain_shot_casing",

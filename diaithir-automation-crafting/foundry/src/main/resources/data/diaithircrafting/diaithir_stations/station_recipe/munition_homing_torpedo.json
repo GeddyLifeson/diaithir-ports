@@ -1,0 +1,32 @@
+{
+  "station": "machine.assembler",
+  "stage": "assembly",
+  "time_s": 18,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_homing_torpedo_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_homing_torpedo_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_homing_torpedo_filler",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_homing_torpedo_fuze",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_homing_torpedo_motor",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_homing_torpedo",
+    "count": 1
+  },
+  "operator": true
+}

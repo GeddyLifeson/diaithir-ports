@@ -1,0 +1,29 @@
+{
+  "station": "station.steam_forge",
+  "stage": "assembly",
+  "time_s": 14,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_spin_rocket_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_spin_rocket_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_spin_rocket_fuze",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_spin_rocket_motor",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_spin_rocket",
+    "count": 1
+  },
+  "power": "steam",
+  "w": 20000.0
+}

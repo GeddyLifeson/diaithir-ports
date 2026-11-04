@@ -1,7 +1,7 @@
 {
   "station": "station.hearth_bench",
   "stage": "part",
-  "time_s": 4,
+  "time_s": 6,
   "ingredients": [
     {
       "item": "minecraft:paper",

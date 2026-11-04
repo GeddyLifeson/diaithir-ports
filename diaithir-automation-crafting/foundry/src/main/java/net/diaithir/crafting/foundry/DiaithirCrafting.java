@@ -52,12 +52,20 @@ public final class DiaithirCrafting {
         for (int i = 1; i <= 7; i++) PACKS.add(ITEMS.registerSimpleItem("foundry_research_pack_" + i));
     }
 
-    /** Munition part and round items (plans/MUNITIONS.md), ids listed in munition_items.txt by tools/gen_munitions_content.py. */
+    public static final DeferredRegister.DataComponents COMPONENTS = DeferredRegister.createDataComponents(net.minecraft.core.registries.Registries.DATA_COMPONENT_TYPE, ID);
+    public static final DeferredHolder<net.minecraft.core.component.DataComponentType<?>, net.minecraft.core.component.DataComponentType<AmmoContainer>> AMMO_CONTAINER =
+            COMPONENTS.registerComponentType("ammo_container", b -> b.persistent(AmmoContainer.CODEC));
+
+    /** Munition items (plans/MUNITIONS.md), listed in munition_items.txt by tools/gen_munitions_content.py. A line "id|class|capacity" is a container with an empty ammo_container component. */
     public static final List<DeferredItem<Item>> MUNITIONS = new ArrayList<>();
     static {
         try (var in = DiaithirCrafting.class.getResourceAsStream("/munition_items.txt")) {
-            if (in != null) new String(in.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8).lines()
-                    .filter(l -> !l.isBlank()).forEach(n -> MUNITIONS.add(ITEMS.registerSimpleItem(n.strip())));
+            if (in != null) new String(in.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8).lines().filter(l -> !l.isBlank()).forEach(l -> {
+                String[] f = l.strip().split("\\|");
+                if (f.length == 3) MUNITIONS.add(ITEMS.registerSimpleItem(f[0], () -> new Item.Properties().stacksTo(1)
+                        .component(AMMO_CONTAINER.get(), new AmmoContainer(f[1], Integer.parseInt(f[2]), 0, ""))));
+                else MUNITIONS.add(ITEMS.registerSimpleItem(f[0]));
+            });
         } catch (java.io.IOException e) {
             throw new IllegalStateException("munition_items.txt unreadable", e);
         }
@@ -66,6 +74,7 @@ public final class DiaithirCrafting {
     public DiaithirCrafting(IEventBus bus, ModContainer container) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        COMPONENTS.register(bus);
         BLOCK_ENTITIES.register(bus);
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
         bus.addListener(RegisterCapabilitiesEvent.class, e ->
