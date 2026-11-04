@@ -67541,11 +67541,6 @@ hash = "63775455b75dc742c3092e5d9e45fe9b91afd10cd292615c5321f305c5c0f795"
 metafile = true
 
 [[files]]
-file = "mods/RecurrentComplexVolts-26.1.2-0.7.3.0.pw.toml"
-hash = "955aafb70ff6bf5b769ef5aac99281d1834d0517994bcb2e0b3d8dd06423be96"
-metafile = true
-
-[[files]]
 file = "mods/ResourcefulConfig-4.0.1.pw.toml"
 hash = "a590211cf5e676b9e1f329ef369ed31a491ef9d0a41bfdaa650499fab9833d6c"
 metafile = true
@@ -67810,13 +67805,17 @@ file = "mods/diaithir-adventure-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "e008bb6cac6e6fc3bb251ff9d0e78f0e7a8ddb9018c2c4f2c0d367b36b989ec9"
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.6.jar"
-hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.7.jar"
+hash = "5aa8e687833d25faa9adc5d0a9b748b0e9badc9061de1eb01c5e30c4efd67f0f"
 
 [[files]]
 file = "mods/diaithir-audio-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "bc0c0c6c5bde89dd5dddcdb304f9e6a8516f8caec9fb726fb7454a2038b4b483"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-bosses-neoforge-26.1.2-1.0.0.jar"
+hash = "3e4cad7bc964e3e03a71952f0819b2b7c28d7b51a1fada9b438b88f69cbbcb6b"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
@@ -67825,7 +67824,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-client-suite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "6810a5c18c8780acf4ade371e5cd2408de0762a7097bc9becdf2330e1a83d0ad"
+hash = "5e6641a63c0530b1491df11a614895a54be50bbda0e32c962bb76d72bb1d6061"
 metafile = true
 
 [[files]]
@@ -67841,6 +67840,10 @@ metafile = true
 file = "mods/diaithir-entity-animation-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "4a8875e9429c18e6e21d7f5633089b9185d0c8aaaa7286cba369bf16970d4650"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-entity-animation-neoforge-26.1.2-1.0.2.jar"
+hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-entity-animation-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
@@ -67895,8 +67898,12 @@ file = "mods/diaithir-world-visuals-neoforge-26.1.2-1.0.0.jar"
 hash = "1c7f4101b4d290265c2671dca8bfb209da33db1ef089381fe425be0ef295740f"
 
 [[files]]
+file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.6.jar"
+hash = "df010dae61b362a2c4a68345c146582d1ceb0b04b0b5c9989be6b2618aa2e244"
+
+[[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "ba10d7d0eb50958a407daf8044d903ac67195ab04be3454f345becca7c5b57ec"
+hash = "6a58d15ef3fb85a8d7342c3ee9b83a36584c106fe492acbd9290a42c5c22d0e9"
 
 [[files]]
 file = "mods/easy_npc-neoforge-26.1.2-7.16.0.pw.toml"
@@ -67956,11 +67963,6 @@ metafile = true
 [[files]]
 file = "mods/ferritecore-9.0.0-neoforge.pw.toml"
 hash = "8a25454a50328d395224c968d5e4bb0f0d043acbfeb76cdccae73e0bffe9a936"
-metafile = true
-
-[[files]]
-file = "mods/forest_ruins-1.0.0_Neoforge_26.1.2.pw.toml"
-hash = "fb032363a409e876ee8db3b478dedb79eaddf1d8ea984158ea448c2c16b4cb8f"
 metafile = true
 
 [[files]]
@@ -68096,11 +68098,6 @@ metafile = true
 [[files]]
 file = "mods/lightmanscurrency-26.1-1.0.0.1-diaithir.1.jar"
 hash = "f8563e15ca71bac0a8da54a8aef4944f30671d91faaf6b19023b724c9573d1db"
-
-[[files]]
-file = "mods/lios_seafaring_dungeons-0.0.7.pw.toml"
-hash = "7e52f24eb13c38f9dc5f73064e824e0ff610091921694fe9f4a0def2ef897a6c"
-metafile = true
 
 [[files]]
 file = "mods/lithium-neoforge-0.24.7_mc26.1.2.pw.toml"
