@@ -11,3 +11,5 @@ Global Events bridge: when diaithir-worldevents is loaded, every lunar event is 
 Also ported now: enchanting table cost (event), beacon radius (one mixin), meteors (a vanilla-block crater with magma core and ore rim, no entity or art), and the moon tint. The tint follows the event colour through the fog and horizon colour, synced to clients by a small packet; the moon disc itself is not recoloured (that needs a sky-render mixin that changes every Minecraft version).
 
 Not ported: upstream meteor entity, space moss blocks and the Space Moss Bug.
+
+Blood Moon (KS) by nugrevan (Modrinth ks-blood-moon, MIT, no public source repo) is folded in from its published feature list: mob boosts, Moon Essence, creeper effects, extra phantoms. Own code, own texture. Its resource pack is not used. Undead Nights is replaced by the clean-room bundles in the same module (see the encounters package), not by anything here.

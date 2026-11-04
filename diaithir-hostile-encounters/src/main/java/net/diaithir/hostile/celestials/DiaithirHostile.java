@@ -1,5 +1,6 @@
 package net.diaithir.hostile.celestials;
 
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 
@@ -11,7 +12,14 @@ import net.neoforged.neoforge.common.NeoForge;
 public final class DiaithirHostile {
     public static final String ID = "diaithirhostile";
 
-    public DiaithirHostile() {
+    public DiaithirHostile(IEventBus bus) {
+        net.diaithir.hostile.encounters.Consolidated.load();
+        net.diaithir.hostile.encounters.ConsolidatedItems.register(bus);
+        net.diaithir.hostile.encounters.ConsolidatedBehaviour.register();
+        MoonEssence.ITEMS.register(bus);
+        bus.addListener((net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent e) -> {
+            if (e.getTabKey() == net.minecraft.world.item.CreativeModeTabs.INGREDIENTS) e.accept(MoonEssence.ITEM.get());
+        });
         NeoForge.EVENT_BUS.register(LunarEvents.class);
         NeoForge.EVENT_BUS.register(SelfTest.class);
         NeoForge.EVENT_BUS.register(WorldEventsBridge.class);

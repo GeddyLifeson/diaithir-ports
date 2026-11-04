@@ -44,6 +44,19 @@ public final class Lunar {
         public int radius = 3, min_distance = 28, max_distance = 56;
     }
 
+    /** Blood Moon (KS) style pressure: some hostile mobs are boosted and marked red, and drop Moon Essence. */
+    public static final class Boost {
+        public double chance;
+        /** Effect ids; one is picked per boosted mob. */
+        public List<String> effects = new ArrayList<>();
+        public int amplifier;
+        public double essence_chance = 0.5;
+        /** Creeper blasts also put these effects on players within 6 blocks. */
+        public List<String> creeper_effects = new ArrayList<>();
+        /** Extra phantoms kept above each player; 0 = none. */
+        public int phantoms;
+    }
+
     public static final class Event {
         public String id;
         public String color = "ffffff";
@@ -62,6 +75,7 @@ public final class Lunar {
         public double beacon_radius = 1.0, enchant_cost = 1.0;
         /** Meteors fall near players while this event is up; interval 0 = none. */
         public Meteor meteor = new Meteor();
+        public Boost boost = new Boost();
 
         public boolean schedulable() { return chance > 0 && !valid_moon_phases.isEmpty(); }
     }
