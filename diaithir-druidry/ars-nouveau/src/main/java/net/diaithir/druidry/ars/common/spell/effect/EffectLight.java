@@ -3,7 +3,6 @@ package net.diaithir.druidry.ars.common.spell.effect;
 import net.diaithir.druidry.ars.api.ANFakePlayer;
 import net.diaithir.druidry.ars.api.spell.*;
 import net.diaithir.druidry.ars.api.util.BlockUtil;
-import net.diaithir.druidry.ars.client.particle.RainbowParticleColor;
 import net.diaithir.druidry.ars.common.block.SconceBlock;
 import net.diaithir.druidry.ars.common.block.tile.LightTile;
 import net.diaithir.druidry.ars.common.block.tile.TempLightTile;
@@ -53,7 +52,7 @@ public class EffectLight extends AbstractEffect implements IPotionEffect {
             this.applyConfigPotion(living, MobEffects.GLOWING, spellStats);
             // apply custom color to the entity if sensitive and the effect is successfully applied
             if (living.hasEffect(MobEffects.GLOWING) && spellStats.isSensitive())
-                Networking.sendToNearbyClient(world, living, new PacketUpdateGlowColor(living.getId(), spellContext.getColors() instanceof RainbowParticleColor ? -1 : spellContext.getColors().getColor()));
+                Networking.sendToNearbyClient(world, living, new PacketUpdateGlowColor(living.getId(), spellContext.getColors().getColor()));
         }
         this.applyConfigPotion(living, MobEffects.NIGHT_VISION, spellStats);
     }

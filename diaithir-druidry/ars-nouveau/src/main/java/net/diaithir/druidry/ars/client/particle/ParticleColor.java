@@ -13,7 +13,8 @@ import java.util.Objects;
 /** Port stub: plain RGB colour data (0-255 per channel); no rendering code. */
 public class ParticleColor implements Cloneable {
     public static final Identifier ID = ArsNouveau.prefix("default");
-    public static final IntWrapper TO_HIGHLIGHT = new IntWrapper(255, 25, 180);
+    public static final IntWrapper TO_HIGHLIGHT = new IntWrapper(255, 50, 50);
+    public static final IntWrapper FROM_HIGHLIGHT = new IntWrapper(50, 255, 255);
 
     public static final Codec<ParticleColor> CODEC = RecordCodecBuilder.create(i -> i.group(
             Codec.INT.fieldOf("r").forGetter(ParticleColor::getRedInt),
@@ -51,6 +52,22 @@ public class ParticleColor implements Cloneable {
 
     public static ParticleColor defaultParticleColor() {
         return new ParticleColor(255, 25, 180);
+    }
+
+    public static ParticleColor makeRandomColor(int r, int g, int b, net.minecraft.util.RandomSource rand) {
+        return new ParticleColor(rand.nextInt(Math.max(1, r + 1)), rand.nextInt(Math.max(1, g + 1)), rand.nextInt(Math.max(1, b + 1)));
+    }
+
+    /** Port stub: constant colour, no animation. */
+    public ParticleColor transition(int ticks) {
+        return this;
+    }
+
+    public double euclideanDistance(ParticleColor other) {
+        double dr = getRedInt() - other.getRedInt();
+        double dg = getGreenInt() - other.getGreenInt();
+        double db = getBlueInt() - other.getBlueInt();
+        return Math.sqrt(dr * dr + dg * dg + db * db);
     }
 
     public static ParticleColor fromInt(int color) {

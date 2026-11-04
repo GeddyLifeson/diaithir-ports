@@ -216,6 +216,15 @@ public class BlockRegistry {
 
 
 
+    public static BlockRegistryWrapper<ArchwoodChest> ARCHWOOD_CHEST = registerBlockAndItem(LibBlockNames.ARCHWOOD_CHEST, ArchwoodChest::new, (reg) -> new ArchwoodChest.Item(reg.get(), defaultItemProperties()));
+    public static BlockEntityTypeRegistryWrapper<ArchwoodChestTile> ARCHWOOD_CHEST_TILE = registerTile(LibBlockNames.ARCHWOOD_CHEST, ArchwoodChestTile::new, ARCHWOOD_CHEST);
+    public static BlockRegistryWrapper<RepositoryBlock> REPOSITORY = registerBlockAndItem(LibBlockNames.REPOSITORY, RepositoryBlock::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
+    public static BlockEntityTypeRegistryWrapper<RepositoryTile> REPOSITORY_TILE = registerTile(LibBlockNames.REPOSITORY, RepositoryTile::new, REPOSITORY);
+    public static BlockRegistryWrapper<ArchfruitPod> MENDOSTEEN_POD = registerBlockAndItem(LibBlockNames.MENDOSTEEN_POD, () -> new ArchfruitPod(FLOURISHING_LOGS), (reg) -> new BlockItem(reg.get(), defaultItemProperties().food(ItemsRegistry.MENDOSTEEN_FOOD)));
+    public static BlockRegistryWrapper<ArchfruitPod> BASTION_POD = registerBlockAndItem(LibBlockNames.BASTION_POD, () -> new ArchfruitPod(VEXING_LOGS), (reg) -> new BlockItem(reg.get(), defaultItemProperties().food(ItemsRegistry.BASTION_FOOD)));
+    public static BlockRegistryWrapper<ArchfruitPod> FROSTAYA_POD = registerBlockAndItem(LibBlockNames.FROSTAYA_POD, () -> new ArchfruitPod(CASCADING_LOGS), (reg) -> new BlockItem(reg.get(), defaultItemProperties().food(ItemsRegistry.FROSTAYA_FOOD)));
+    public static BlockRegistryWrapper<ArchfruitPod> BOMBEGRANTE_POD = registerBlockAndItem(LibBlockNames.BOMBEGRANATE_POD, () -> new ArchfruitPod(BLAZING_LOGS), (reg) -> new BlockItem(reg.get(), defaultItemProperties().food(ItemsRegistry.BLASTING_FOOD)));
+
     public static void onBlocksRegistry() {
         for (String s : LibBlockNames.DECORATIVE_SOURCESTONE) {
             if (LibBlockNames.DIRECTIONAL_SOURCESTONE.contains(s)) {

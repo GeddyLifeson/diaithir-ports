@@ -6,7 +6,6 @@ import net.diaithir.druidry.ars.api.ritual.AbstractRitual;
 import net.diaithir.druidry.ars.api.util.BlockUtil;
 import net.diaithir.druidry.ars.api.util.SpellUtil;
 import net.diaithir.druidry.ars.client.particle.ParticleColor;
-import net.diaithir.druidry.ars.common.entity.EntityRitualProjectile;
 import net.diaithir.druidry.ars.common.lib.RitualLib;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
@@ -31,10 +30,6 @@ public class RitualDig extends AbstractRitual {
         super.onStart(player);
         if (tile == null)
             return;
-        EntityRitualProjectile ritualProjectile = new EntityRitualProjectile(getWorld(), getPos().above());
-        ritualProjectile.setPos(ritualProjectile.getX() + 0.5, ritualProjectile.getY(), ritualProjectile.getZ() + 0.5);
-        ritualProjectile.tilePos = getPos();
-        getWorld().addFreshEntity(ritualProjectile);
     }
 
     public boolean canBlockBeHarvested(BlockPos pos) {

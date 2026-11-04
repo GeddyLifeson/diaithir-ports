@@ -30,7 +30,7 @@ public class ClientCameraEvents {
         }
     }
 
-    public static final  Identifier[] overlays = new Identifier[]{VanillaGuiLayers.JUMP_METER, VanillaGuiLayers.EXPERIENCE_BAR, VanillaGuiLayers.EFFECTS};
+    public static final  Identifier[] overlays = new Identifier[]{VanillaGuiLayers.CONTEXTUAL_INFO_BAR, VanillaGuiLayers.EXPERIENCE_LEVEL, VanillaGuiLayers.EFFECTS};
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)

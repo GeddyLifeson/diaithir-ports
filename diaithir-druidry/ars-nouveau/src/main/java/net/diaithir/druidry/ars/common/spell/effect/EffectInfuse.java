@@ -13,7 +13,9 @@ import net.diaithir.druidry.ars.common.util.PotionUtil;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.ThrownPotion;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.AbstractThrownPotion;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownLingeringPotion;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownSplashPotion;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -51,10 +53,9 @@ public class EffectInfuse extends AbstractEffect {
             return;
         }
         Item potionItem = spellStats.getAoeMultiplier() > 0 ? Items.SPLASH_POTION : Items.LINGERING_POTION;
-        ThrownPotion potion = new ThrownPotion(world, shooter);
         ItemStack stack = new ItemStack(potionItem);
         stack.set(DataComponents.POTION_CONTENTS, potionData);
-        potion.setItem(stack);
+        AbstractThrownPotion potion = spellStats.getAoeMultiplier() > 0 ? new ThrownSplashPotion(world, shooter, stack) : new ThrownLingeringPotion(world, shooter, stack);
         potion.setPos(rayTraceResult.getLocation());
         world.addFreshEntity(potion);
     }

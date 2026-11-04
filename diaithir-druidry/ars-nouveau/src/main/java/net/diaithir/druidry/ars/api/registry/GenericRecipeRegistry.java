@@ -27,8 +27,8 @@ public class GenericRecipeRegistry<C extends RecipeInput, T extends Recipe<C>> {
 
     public void reload(RecipeManager manager) {
         RECIPES.clear();
-        var recipes = manager.getAllRecipesFor(type.get());
-        RECIPES.addAll(recipes);
+        var recipes = manager.recipeMap().byType(type.get()).stream().toList();
+        RECIPES.addAll((java.util.Collection) recipes);
     }
 
     public static List<GenericRecipeRegistry<?, ?>> REGISTRIES = new ArrayList<>();

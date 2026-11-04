@@ -13,7 +13,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
-import net.neoforged.neoforge.common.EffectCures;
 import net.neoforged.neoforge.common.NeoForge;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,10 +36,10 @@ public class EffectDispel extends AbstractEffect {
         if (rayTraceResult.getEntity() instanceof LivingEntity entity) {
             Collection<MobEffectInstance> effects = entity.getActiveEffects();
             MobEffectInstance[] array = effects.toArray(new MobEffectInstance[0]);
-            Optional<HolderSet.Named<MobEffect>> blacklist = world.registryAccess().lookupOrThrow(Registries.MOB_EFFECT).getTag(PotionEffectTags.DISPEL_DENY);
-            Optional<HolderSet.Named<MobEffect>> whitelist =  world.registryAccess().lookupOrThrow(Registries.MOB_EFFECT).getTag(PotionEffectTags.DISPEL_ALLOW);
+            Optional<HolderSet.Named<MobEffect>> blacklist = world.registryAccess().lookupOrThrow(Registries.MOB_EFFECT).get(PotionEffectTags.DISPEL_DENY);
+            Optional<HolderSet.Named<MobEffect>> whitelist =  world.registryAccess().lookupOrThrow(Registries.MOB_EFFECT).get(PotionEffectTags.DISPEL_ALLOW);
             for (MobEffectInstance e : array) {
-                if (e.getCures().contains(EffectCures.MILK)) {
+                if (true) {
                     if (blacklist.isPresent() && blacklist.get().stream().anyMatch(effect -> effect.value() == e.getEffect()))
                         continue;
                     entity.removeEffect(e.getEffect());

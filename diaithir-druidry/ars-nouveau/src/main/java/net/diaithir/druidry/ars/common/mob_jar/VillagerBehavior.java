@@ -10,16 +10,10 @@ public class VillagerBehavior extends JarBehavior<Villager> {
         if(tile.getLevel().isClientSide())
             return;
         Villager villager = entityFromJar(tile);
-        if (!villager.isTrading() && villager.updateMerchantTimer > 0) {
-            --villager.updateMerchantTimer;
-            if (villager.updateMerchantTimer <= 0) {
-                if (villager.increaseProfessionLevelOnUpdate) {
-                    villager.increaseMerchantCareer();
-                    villager.increaseProfessionLevelOnUpdate = false;
-                }
-            }
-        }
-        if(villager.shouldRestock()){
+        if (!(tile.getLevel() instanceof net.minecraft.server.level.ServerLevel serverLevel))
+            return;
+        // updateMerchantTimer / increaseProfessionLevelOnUpdate are private in 26.1; only restocking is kept.
+        if (villager.shouldRestock(serverLevel)) {
             villager.restock();
         }
     }

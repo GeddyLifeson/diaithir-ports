@@ -1,7 +1,6 @@
 package net.diaithir.druidry.ars.common.spell.effect;
 
 import net.diaithir.druidry.ars.api.spell.*;
-import net.diaithir.druidry.ars.api.util.ANExplosion;
 import net.diaithir.druidry.ars.common.lib.GlyphLib;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentAOE;
 import net.diaithir.druidry.ars.common.spell.augment.AugmentAmplify;
@@ -45,30 +44,11 @@ public class EffectExplosion extends AbstractEffect implements IDamageEffect {
         explode(world, shooter, null, null, vec.x, vec.y, vec.z, (float) intensity, false, mode, spellStats.getAmpMultiplier());
     }
 
-    public Explosion explode(Level world, @Nullable Entity e, @Nullable DamageSource source, @Nullable ExplosionDamageCalculator context,
-                             double x, double y, double z, float radius, boolean p_230546_11_, Explosion.BlockInteraction p_230546_12_, double amp) {
-        ANExplosion explosion = new ANExplosion(world, e, source, context, x, y, z, radius, p_230546_11_, p_230546_12_, amp);
-        explosion.baseDamage = DAMAGE.get();
-        explosion.ampDamageScalar = AMP_DAMAGE.get();
-        if (net.neoforged.neoforge.event.EventHooks.onExplosionStart(world, explosion)) return explosion;
-        explosion.explode();
-        explosion.finalizeExplosion(false);
-        if (p_230546_12_ == Explosion.BlockInteraction.KEEP) {
-            explosion.clearToBlow();
-        }
-
-        for (Player serverplayerentity : world.players()) {
-            if (serverplayerentity.distanceToSqr(x, y, z) < 4096.0D) {
-                ((ServerPlayer) serverplayerentity).connection.send(new ClientboundExplodePacket(x, y, z, radius, explosion.getToBlow(),
-                        explosion.getHitPlayers().get(serverplayerentity),
-                        explosion.blockInteraction,
-                        explosion.smallExplosionParticles,
-                        explosion.largeExplosionParticles,
-                        explosion.explosionSound));
-            }
-        }
-
-        return explosion;
+    public void explode(Level world, @Nullable Entity e, @Nullable DamageSource source, @Nullable ExplosionDamageCalculator context,
+                        double x, double y, double z, float radius, boolean fire, Explosion.BlockInteraction interaction, double amp) {
+        // Port: vanilla explosion (ANExplosion's custom damage scaling is dropped).
+        Level.ExplosionInteraction mode = interaction == Explosion.BlockInteraction.KEEP ? Level.ExplosionInteraction.NONE : Level.ExplosionInteraction.BLOCK;
+        world.explode(e, source, context, x, y, z, radius, fire, mode);
     }
 
     public ModConfigSpec.DoubleValue BASE;

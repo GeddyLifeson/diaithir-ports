@@ -8,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.util.Mth;
@@ -53,7 +52,7 @@ public class RepositoryTile extends RandomizableContainerBlockEntity implements 
         protected void openerCountChanged(Level p_155066_, BlockPos p_155067_, BlockState p_155068_, int p_155069_, int p_155070_) {
         }
 
-        protected boolean isOwnContainer(Player p_155060_) {
+        public boolean isOwnContainer(Player p_155060_) {
             if (p_155060_.containerMenu instanceof ChestMenu) {
                 Container container = ((ChestMenu)p_155060_.containerMenu).getContainer();
                 return container == RepositoryTile.this;
@@ -110,15 +109,22 @@ public class RepositoryTile extends RandomizableContainerBlockEntity implements 
     }
 
     @Override
-    public void startOpen(Player pPlayer) {
-        super.startOpen(pPlayer);
-        openersCounter.incrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    public void startOpen(net.minecraft.world.entity.ContainerUser user) {
+        if (!this.remove && !user.getLivingEntity().isSpectator()) {
+            openersCounter.incrementOpeners(user.getLivingEntity(), this.getLevel(), this.getBlockPos(), this.getBlockState(), user.getContainerInteractionRange());
+        }
     }
 
     @Override
-    public void stopOpen(Player pPlayer) {
-        super.stopOpen(pPlayer);
-        openersCounter.decrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    public void stopOpen(net.minecraft.world.entity.ContainerUser user) {
+        if (!this.remove && !user.getLivingEntity().isSpectator()) {
+            openersCounter.decrementOpeners(user.getLivingEntity(), this.getLevel(), this.getBlockPos(), this.getBlockState());
+        }
+    }
+
+    @Override
+    public List<net.minecraft.world.entity.ContainerUser> getEntitiesWithContainerOpen() {
+        return openersCounter.getEntitiesWithContainerOpen(this.getLevel(), this.getBlockPos());
     }
 
     protected Component getDefaultName() {
@@ -127,6 +133,14 @@ public class RepositoryTile extends RandomizableContainerBlockEntity implements 
 
     protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer) {
         return ChestMenu.sixRows(pId, pPlayer, this);
+    }
+
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        super.preRemoveSideEffects(pos, state);
+        if (level != null) {
+            net.minecraft.world.Containers.dropContents(level, pos, this);
+        }
     }
 
     @Override
@@ -155,12 +169,6 @@ public class RepositoryTile extends RandomizableContainerBlockEntity implements 
         configuration = pTag.getIntOr("configuration", 0);
     }
 
-    @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider lookupProvider) {
-        super.onDataPacket(net, pkt, lookupProvider);
-        handleUpdateTag(pkt.getTag() == null ? new CompoundTag() : pkt.getTag(), lookupProvider);
-    }
-
     public boolean updateBlock() {
         if(level == null) {
             return false;
@@ -173,9 +181,7 @@ public class RepositoryTile extends RandomizableContainerBlockEntity implements 
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
-        CompoundTag tag = super.getUpdateTag(pRegistries);
-        this.saveAdditional(tag, pRegistries);
-        return tag;
+        return this.saveWithoutMetadata(pRegistries);
     }
 
     @Override

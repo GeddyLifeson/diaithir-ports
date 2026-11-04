@@ -45,22 +45,10 @@ public class RepositoryBlock extends ModBlock implements EntityBlock {
             if (blockentity instanceof RepositoryTile tile) {
                 pPlayer.openMenu(tile);
                 pPlayer.awardStat(Stats.OPEN_CHEST);
-                PiglinAi.angerNearbyPiglins(pPlayer, true);
+                if (pLevel instanceof net.minecraft.server.level.ServerLevel sl) PiglinAi.angerNearbyPiglins(sl, pPlayer, true);
             }
 
             return InteractionResult.CONSUME;
-        }
-    }
-
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (!pState.is(pNewState.getBlock())) {
-            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-            if (blockentity instanceof Container container) {
-                Containers.dropContents(pLevel, pPos, container);
-                pLevel.updateNeighbourForOutputSignal(pPos, this);
-            }
-
-            super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
         }
     }
 

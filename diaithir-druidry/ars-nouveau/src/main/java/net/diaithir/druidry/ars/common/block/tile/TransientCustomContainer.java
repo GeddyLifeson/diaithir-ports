@@ -124,7 +124,7 @@ public class TransientCustomContainer implements CraftingContainer {
         return List.copyOf(this.items);
     }
 
-    public void fillStackedContents(StackedContents pContents) {
+    public void fillStackedContents(net.minecraft.world.entity.player.StackedItemContents pContents) {
         for(ItemStack itemstack : this.items) {
             pContents.accountSimpleStack(itemstack);
         }

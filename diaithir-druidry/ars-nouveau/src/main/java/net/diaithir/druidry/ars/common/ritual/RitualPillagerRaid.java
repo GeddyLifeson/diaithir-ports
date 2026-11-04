@@ -30,8 +30,6 @@ public class RitualPillagerRaid extends AbstractRitual {
                     Raid raid = world.getRaids().createOrExtendRaid(players.get(0), getPos());
                     if (raid != null) {
                         this.setFinished();
-                        if (didConsumeItem(Items.EMERALD))
-                            raid.numGroups = 7;
                     }
                 }
             }

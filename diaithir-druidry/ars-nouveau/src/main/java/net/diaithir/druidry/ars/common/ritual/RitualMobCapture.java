@@ -7,7 +7,6 @@ import net.diaithir.druidry.ars.common.advancement.ANCriteriaTriggers;
 import net.diaithir.druidry.ars.common.block.MobJar;
 import net.diaithir.druidry.ars.common.block.tile.MobJarTile;
 import net.diaithir.druidry.ars.common.entity.EntityFlyingItem;
-import net.diaithir.druidry.ars.common.entity.Starbuncle;
 import net.diaithir.druidry.ars.common.lib.EntityTags;
 import net.diaithir.druidry.ars.common.lib.RitualLib;
 import net.minecraft.core.BlockPos;
@@ -49,11 +48,11 @@ public class RitualMobCapture extends AbstractRitual {
                     for(Entity e : level.getEntities((Entity)null, new AABB(tile.getBlockPos()).inflate(5), this::canJar)){
                         if(e instanceof Mob mob && ((Mob) e).isLeashed() && e.shouldBeSaved()){
                             if(mob.isLeashed()){
-                                mob.dropLeash(true, true);
+                                mob.dropLeash();
                             }
                         }
                         if (e instanceof Raider raider && raider.hasActiveRaid()) {
-                            raider.getCurrentRaid().removeFromRaid(raider, false);
+                            raider.getCurrentRaid().removeFromRaid((ServerLevel) level, raider, false);
                         }
                         if(tile.setEntityData(e)){
                             e.remove(Entity.RemovalReason.UNLOADED_TO_CHUNK);
@@ -61,9 +60,6 @@ public class RitualMobCapture extends AbstractRitual {
                             level.addFreshEntity(followProjectile);
                             ParticleUtil.spawnPoof((ServerLevel) level, e.getOnPos().above());
                             didWorkOnce = true;
-                            if(e instanceof Starbuncle starbuncle){
-                                ANCriteriaTriggers.rewardNearbyPlayers(ANCriteriaTriggers.SHRUNK_STARBY.get(), (ServerLevel) level, starbuncle.blockPosition(), 10);
-                            }
                             if(e instanceof LightningBolt bolt){
                                 ANCriteriaTriggers.rewardNearbyPlayers(ANCriteriaTriggers.CAUGHT_LIGHTNING.get(), (ServerLevel) level, bolt.blockPosition(), 10);
                             }

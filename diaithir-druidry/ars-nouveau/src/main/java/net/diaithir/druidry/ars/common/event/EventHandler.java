@@ -24,7 +24,6 @@ import net.diaithir.druidry.ars.common.network.PacketJoinedServer;
 import net.diaithir.druidry.ars.common.network.PotionSyncPacket;
 import net.diaithir.druidry.ars.common.perk.JumpHeightPerk;
 import net.diaithir.druidry.ars.common.spell.effect.EffectGlide;
-import net.diaithir.druidry.ars.common.spell.effect.EffectWololo;
 import net.diaithir.druidry.ars.setup.config.Config;
 import net.diaithir.druidry.ars.setup.registry.*;
 import net.diaithir.druidry.ars.setup.reward.Rewards;
@@ -83,12 +82,9 @@ public class EventHandler {
      */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void serverStartedReload(net.neoforged.neoforge.event.server.ServerStartedEvent event) {
-        EffectWololo.recipeCache = new FixedStack<>(EffectWololo.MAX_RECIPE_CACHE);
         var recipes = event.getServer().getRecipeManager();
         GenericRecipeRegistry.reloadAll(recipes);
-        CasterTomeRegistry.reloadTomeData(recipes, event.getServer().getLevel(Level.OVERWORLD));
         BuddingConversionRegistry.reloadBuddingConversionRecipes(recipes);
-        ScryRitualRegistry.reloadScryRitualRecipes(recipes);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
@@ -143,7 +139,6 @@ public class EventHandler {
         String book_tag = "an_book_";
         if (!tag.getBooleanOr(book_tag, false) && Config.SPAWN_BOOK.get()) {
             Player entity = e.getEntity();
-            ItemHandlerHelper.giveItemToPlayer(entity, new ItemStack(ItemsRegistry.WORN_NOTEBOOK));
             tag.putBoolean(book_tag, true);
             e.getEntity().getPersistentData().put(Player.PERSISTED_NBT_TAG, tag);
         }

@@ -55,19 +55,6 @@ public class LightManager {
         register(ModEntities.ORBIT_SPELL.get(), (p -> 15));
         register(ModEntities.LINGER_SPELL.get(), (p -> 15));
         register(ModEntities.WALL_SPELL.get(), (p -> 15));
-        register(ModEntities.STARBUNCLE_TYPE.get(), (p -> {
-            if (p.level().getBrightness(LightLayer.BLOCK, p.blockPosition()) < 6) {
-                return 10;
-            }
-            return 0;
-        }));
-
-        register(ModEntities.ENTITY_FAMILIAR_STARBUNCLE.get(), (p -> {
-            if (p.level().getBrightness(LightLayer.BLOCK, p.blockPosition()) < 6) {
-                return 10;
-            }
-            return 0;
-        }));
         register(EntityType.ENDERMAN, (enderMan -> {
 
             if (enderMan.getCarriedBlock() != null) {

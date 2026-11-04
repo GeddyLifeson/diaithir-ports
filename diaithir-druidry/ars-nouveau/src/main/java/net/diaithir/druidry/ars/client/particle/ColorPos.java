@@ -17,6 +17,14 @@ public class ColorPos {
         return new ColorPos(pos, color);
     }
 
+    public static ColorPos centered(BlockPos pos) {
+        return new ColorPos(pos, ParticleColor.TO_HIGHLIGHT);
+    }
+
+    public static ColorPos centeredAbove(BlockPos pos) {
+        return new ColorPos(pos.above(), ParticleColor.TO_HIGHLIGHT);
+    }
+
     public CompoundTag toTag() {
         CompoundTag tag = new CompoundTag();
         tag.putLong("pos", pos.asLong());

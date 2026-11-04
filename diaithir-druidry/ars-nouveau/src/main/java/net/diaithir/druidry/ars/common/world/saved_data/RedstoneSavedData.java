@@ -2,9 +2,10 @@ package net.diaithir.druidry.ars.common.world.saved_data;
 
 import net.diaithir.druidry.ars.ArsNouveau;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.world.level.saveddata.SavedDataType;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -24,19 +25,13 @@ public class RedstoneSavedData extends SavedData {
 
     }
 
-    public static SavedData.Factory<RedstoneSavedData> factory() {
-        return new SavedData.Factory<>(RedstoneSavedData::new, RedstoneSavedData::load, null);
-    }
-
-    public static RedstoneSavedData load(CompoundTag tag, HolderLookup.Provider p_323806_){
+    public static final Codec<RedstoneSavedData> CODEC = Entry.CODEC.listOf().xmap(list -> {
         RedstoneSavedData data = new RedstoneSavedData();
-        ListTag signalList = tag.getList("SignalList", 10);
-        for(int i = 0; i < signalList.size(); i++){
-            var signal = new Entry(signalList.getCompound(i));
-            data.SIGNAL_MAP.put(signal.pos, signal);
-        }
+        for (Entry e : list) data.SIGNAL_MAP.put(e.pos, e);
         return data;
-    }
+    }, data -> new ArrayList<>(data.SIGNAL_MAP.values()));
+
+    public static final SavedDataType<RedstoneSavedData> TYPE = new SavedDataType<>(ArsNouveau.prefix("an_redstone_signals"), RedstoneSavedData::new, CODEC);
 
     public void tick(ServerLevel serverLevel){
         List<BlockPos> toRemove = new ArrayList<>();
@@ -59,22 +54,18 @@ public class RedstoneSavedData extends SavedData {
         return true;
     }
 
-    @Override
-    public CompoundTag save(CompoundTag pCompoundTag, HolderLookup.Provider pRegistries) {
-        ListTag signalList = new ListTag();
-        for(var signal : SIGNAL_MAP.values()){
-            signalList.add(signal.save(new CompoundTag()));
-        }
-        pCompoundTag.put("SignalList", signalList);
-        return pCompoundTag;
-    }
-
     public static RedstoneSavedData from(ServerLevel level){
         return level.getDataStorage()
-                .computeIfAbsent(factory(), "an_redstone_signals" );
+                .computeIfAbsent(TYPE);
     }
 
     public static class Entry{
+        public static final Codec<Entry> CODEC = RecordCodecBuilder.create(i -> i.group(
+                BlockPos.CODEC.fieldOf("pos").forGetter(e -> e.pos),
+                Codec.INT.fieldOf("power").forGetter(e -> e.power),
+                Codec.INT.fieldOf("ticks").forGetter(e -> e.ticks)
+        ).apply(i, Entry::new));
+
         public BlockPos pos;
         public int power;
         public int ticks;

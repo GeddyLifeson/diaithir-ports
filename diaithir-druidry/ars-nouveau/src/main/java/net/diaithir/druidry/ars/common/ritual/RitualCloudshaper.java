@@ -24,22 +24,31 @@ public class RitualCloudshaper extends AbstractRitual {
             if (getProgress() >= 18) {
                 ServerLevel world = (ServerLevel) getWorld();
                 if (!isStorm() && !isRain()) {
-                    world.setWeatherParameters(RAIN_DELAY.sample(world.getRandom()), 0, false, false);
+                    setWeather(world, RAIN_DELAY.sample(world.getRandom()), 0, false, false);
                     setFinished();
                 }
                 if (isStorm()) {
-                    world.setWeatherParameters(0, THUNDER_DURATION.sample(world.getRandom()), true, true);
+                    setWeather(world, 0, THUNDER_DURATION.sample(world.getRandom()), true, true);
                     setFinished();
                 }
 
                 if (isRain()) {
-                    world.setWeatherParameters(0, RAIN_DURATION.sample(world.getRandom()), true, false);
+                    setWeather(world, 0, RAIN_DURATION.sample(world.getRandom()), true, false);
                     setFinished();
                 }
 
             }
         }
 
+    }
+
+    private static void setWeather(ServerLevel world, int clear, int duration, boolean raining, boolean thundering) {
+        var data = world.getWeatherData();
+        data.setClearWeatherTime(clear);
+        data.setRainTime(duration);
+        data.setThunderTime(duration);
+        data.setRaining(raining);
+        data.setThundering(thundering);
     }
 
     public boolean isStorm() {

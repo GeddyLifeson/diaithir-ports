@@ -127,6 +127,33 @@ public class ItemsRegistry {
     public static final ItemRegistryWrapper<HangingSignItem> ARCHWOOD_HANGING_SIGN = register(LibBlockNames.ARCHWOOD_HANGING_SIGN, () -> new HangingSignItem(BlockRegistry.ARCHWOOD_HANGING_SIGN.get(), BlockRegistry.ARCHWOOD_HANGING_WALL_SIGN.get(), defaultItemProperties().stacksTo(16)));
     public static final ItemRegistryWrapper<ArchwoodBoatItem> ARCHWOOD_BOAT = register(LibItemNames.ARCHWOOD_BOAT, () -> new ArchwoodBoatItem(defaultItemProperties().stacksTo(1)));
 
+    public static final ItemRegistryWrapper<ExperienceGem> EXPERIENCE_GEM = register(LibItemNames.EXP_GEM, () -> {
+        ExperienceGem gem = new ExperienceGem() {
+            @Override
+            public int getValue() {
+                return 3;
+            }
+        };
+        gem.withTooltip(Component.translatable("ars_nouveau.tooltip.exp_gem"));
+        return gem;
+    });
+    public static final ItemRegistryWrapper<ExperienceGem> GREATER_EXPERIENCE_GEM = register(LibItemNames.GREATER_EXP_GEM, () -> {
+        ExperienceGem gem = new ExperienceGem() {
+            @Override
+            public int getValue() {
+                return 12;
+            }
+        };
+        gem.withTooltip(Component.translatable("ars_nouveau.tooltip.exp_gem"));
+        return gem;
+    });
+    public static final ItemRegistryWrapper<JarOfLight> JAR_OF_LIGHT = register(LibItemNames.JAR_OF_LIGHT, JarOfLight::new);
+    public static final ItemRegistryWrapper<WarpScroll> WARP_SCROLL = register(LibItemNames.WARP_SCROLL, WarpScroll::new);
+    public static final ItemRegistryWrapper<EnchantersShield> ENCHANTERS_SHIELD = register(LibItemNames.ENCHANTERS_SHIELD, EnchantersShield::new);
+    public static final ItemRegistryWrapper<CasterTome> CASTER_TOME = register(LibItemNames.CASTER_TOME, CasterTome::new);
+    public static final ItemRegistryWrapper<ManipulationEssence> MANIPULATION_ESSENCE = register(LibItemNames.MANIPULATION_ESSENCE, ManipulationEssence::new);
+    public static final ItemRegistryWrapper<StableWarpScroll> STABLE_WARP_SCROLL = register(LibItemNames.STABLE_WARP_SCROLL, () -> new StableWarpScroll(defaultItemProperties().stacksTo(1)));
+
     public static <T extends Item> ItemRegistryWrapper<T> register(String name, Supplier<T> item) {
         return new ItemRegistryWrapper<>(ITEMS.register(name, () -> {
             CURRENT_ID = ResourceKey.create(Registries.ITEM, prefix(name));
