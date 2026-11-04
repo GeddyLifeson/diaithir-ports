@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:copper_block",
+    "S": "minecraft:wheat_seeds",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    " W ",
+    "SCS",
+    " W "
+  ],
+  "result": {
+    "id": "agritechevolved:ym_mk1"
+  }
+}

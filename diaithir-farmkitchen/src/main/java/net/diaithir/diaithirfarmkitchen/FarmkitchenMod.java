@@ -17,7 +17,10 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.minecraft.world.item.BlockItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 @Mod(FarmkitchenMod.ID)
@@ -108,6 +111,11 @@ public final class FarmkitchenMod {
         ITEMS.registerSimpleBlockItem(spice);
     }
 
+    public static final DeferredBlock<Reaper> REAPER = BLOCKS.registerBlock("reaper", Reaper::new,
+            () -> BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.METAL).strength(3F, 6F)
+                    .sound(net.minecraft.world.level.block.SoundType.METAL).requiresCorrectToolForDrops());
+    public static final DeferredItem<BlockItem> REAPER_ITEM = ITEMS.registerSimpleBlockItem(REAPER);
+
     private static void registerCaps(RegisterCapabilitiesEvent event) {
         event.registerBlockEntity(Capabilities.Item.BLOCK, STORAGE_BE.get(),
                 (be, side) -> net.neoforged.neoforge.transfer.item.VanillaContainerWrapper.of(be));
@@ -118,5 +126,7 @@ public final class FarmkitchenMod {
         ITEMS.register(bus);
         BE_TYPES.register(bus);
         bus.addListener(FarmkitchenMod::registerCaps);
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class,
+                e -> FarmkitchenCommands.register(e.getDispatcher()));
     }
 }
