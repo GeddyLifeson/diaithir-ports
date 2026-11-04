@@ -19,3 +19,8 @@ Not tested: a real player or client (held gun firing real hitscan bullets, heads
 Not tested: a real client (rendering of tinted layers, overlay text), a real Age scoreboard, firearms reading `diaithirgear.damage_mul` in the full pack, benches with hoppers.
 
 With the three rosters the catalogue is 15 materials and 892 blueprints; items of other mods are hidden here until their module loads (checked: load, no data errors).
+
+## Folded survey items (cloud, headless)
+Survey part 2 folds: item magnets (CC0), repair kits (MIT), anvil repair (LGPL-2.1 package `fold.lgpl`). See `NOTICE-FOLDS.md`.
+`/foldselftest` on a dedicated NeoForge 26.1.2.116 server with only this mod (gradle runServer, rcon, fresh world, `/forceload add 0 0 16 16` first so the test spot is entity ticking): magnet radii 4 and 8 m, a 4 m pull takes the near item and orb and leaves the far item and a 1-tick-old item, the 8 m pull takes the far item; copper kit pool 300 and netherite 5000, transfer moves damage point for point and stops at the pool; a damaged anvil becomes chipped then plain with iron ingots, a plain anvil passes, chance 0 fails but spends the ingot. `/gearselftest` still ok=71 bad=0. Boot has no ERROR lines from diaithirgear and all new recipes, advancement and item models load.
+Not tested: a real client (item textures, tooltips), the sneak/hand flow of a repair kit by a real player, Age gate by scoreboard, magnets held in a real inventory over ticks (the pull function is tested, the tick hook is three lines).

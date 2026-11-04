@@ -1,0 +1,8 @@
+{
+    "blocks": "apothic_enchanting:infused_seashelf",
+    "stats": {
+        "arcana": 5.0,
+        "eterna": 5.0,
+        "maxEterna": 60.0
+    }
+}

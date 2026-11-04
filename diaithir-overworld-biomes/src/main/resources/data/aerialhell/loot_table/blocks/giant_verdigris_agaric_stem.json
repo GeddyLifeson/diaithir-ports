@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "aerialhell:blocks/giant_verdigris_agaric_stem",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aerialhell:giant_verdigris_agaric_stem"
+    }
+   ]
+  }
+ ]
+}

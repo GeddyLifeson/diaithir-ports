@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/halter"
+  "layer0": "diaithirfurnishings:item/halter_head",
+  "layer1": "diaithirfurnishings:item/halter_handle",
+  "layer2": "diaithirfurnishings:item/halter_binding"
  }
 }

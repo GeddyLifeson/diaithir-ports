@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": ["diaithirrouting:extractor_module", "minecraft:redstone_block"],
+  "result": { "id": "diaithirrouting:energy_module", "count": 1 }
+}

@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/hand_axe"
+  "layer0": "diaithirfurnishings:item/hand_axe_head",
+  "layer1": "diaithirfurnishings:item/hand_axe_handle",
+  "layer2": "diaithirfurnishings:item/hand_axe_binding"
  }
 }

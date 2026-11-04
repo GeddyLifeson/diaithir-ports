@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "littlestructure:end_checkpoint",
+      "weight": 1
+    },
+    {
+      "structure": "littlestructure:chorus_garden",
+      "weight": 2
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 45,
+    "separation": 25,
+    "spread_type": "linear",
+    "salt": 1337
+  }
+}

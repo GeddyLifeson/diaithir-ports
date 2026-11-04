@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aerialhell:golden_nether_bricks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "aerialhell:golden_nether_bricks_slab",
+  "count": 6
+ }
+}

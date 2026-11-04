@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirtrees"
+version = "${version}"
+displayName = "Diaithir Trees"
+description = "A forest of real tree species: logs, wood, stripped logs, planks, leaves and growable saplings for each. Clean-room; no code or art taken from other tree mods."
+
+[[dependencies.diaithirtrees]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

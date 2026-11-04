@@ -8,7 +8,8 @@ import net.neoforged.fml.common.Mod;
 public final class DiaithirWorldSys {
     public static final String ID = "diaithirworldsys";
 
-    public DiaithirWorldSys(IEventBus bus) {
+    public DiaithirWorldSys(IEventBus bus, net.neoforged.fml.ModContainer container) {
+        net.diaithir.structurenavigation.structurecompass.Feature.init(bus, container);
         net.diaithir.worldsys.admincommands.AdminCommandsFeature.register(bus);
         net.diaithir.worldsys.economy.EconomyFeature.register(bus);
         net.diaithir.worldsys.aircrafttuning.AircraftTuningFeature.register(bus);
@@ -35,5 +36,8 @@ public final class DiaithirWorldSys {
         net.diaithir.worldsys.stationsticks.StationsticksFeature.register(bus);
         net.diaithir.worldsys.jewelrypowers.JewelrypowersFeature.register(bus);
         net.diaithir.worldsys.villagercare3.Villagercare3Feature.register(bus);
+        net.diaithir.worldsys.caravans.CaravansFeature.register(bus);
+        net.diaithir.worldsys.moreprofessions.MoreProfessionsFeature.register(bus);
+        net.diaithir.worldsys.chapters.ChaptersFeature.register(bus);
     }
 }

@@ -1,0 +1,35 @@
+{
+  "station": "station.smeltery",
+  "stage": "assembly",
+  "time_s": 12,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_early_guided_rocket_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_early_guided_rocket_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_early_guided_rocket_filler",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_early_guided_rocket_fuze",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_early_guided_rocket_motor",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_early_guided_rocket_guidance",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_early_guided_rocket",
+    "count": 1
+  }
+}

@@ -30,6 +30,33 @@ public final class SelfTest {
     }
 
     static void register(CommandDispatcher<CommandSourceStack> d) {
+        var gm = (java.util.function.Predicate<CommandSourceStack>) s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER);
+        // /animplay <clip>: sends any clip (e.g. gun.pistol.fire) to yourself and everyone watching; for render tests
+        d.register(Commands.literal("animplay").requires(gm)
+                .then(Commands.argument("clip", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(c -> {
+                    var p = c.getSource().getPlayerOrException();
+                    String clip = com.mojang.brigadier.arguments.StringArgumentType.getString(c, "clip");
+                    Anim.play(p, clip);
+                    c.getSource().sendSuccess(() -> Component.literal("animplay " + clip), false);
+                    return 1;
+                })));
+        // /animgun <action>: the action (fire, reload, inspect, dry, unjam) on the held gun, or a pistol when the hand holds no gun
+        d.register(Commands.literal("animgun").requires(gm)
+                .then(Commands.argument("action", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(c -> {
+                    var p = c.getSource().getPlayerOrException();
+                    String act = com.mojang.brigadier.arguments.StringArgumentType.getString(c, "action");
+                    Kind k = Kind.of(p.getMainHandItem());
+                    String clip = k != null && k.gun() ? k.clip(p.getMainHandItem().getItem(), act) : "gun.pistol." + act;
+                    Anim.play(p, clip);
+                    c.getSource().sendSuccess(() -> Component.literal("animgun " + clip), false);
+                    return 1;
+                })));
+        d.register(Commands.literal("animplay").requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
+                .then(Commands.argument("player", net.minecraft.commands.arguments.EntityArgument.player())
+                        .then(Commands.argument("clip", com.mojang.brigadier.arguments.StringArgumentType.greedyString()).executes(c -> {
+                            Anim.play(net.minecraft.commands.arguments.EntityArgument.getPlayer(c, "player"), com.mojang.brigadier.arguments.StringArgumentType.getString(c, "clip"));
+                            return 1;
+                        }))));
         d.register(Commands.literal("animselftest")
                 .requires(s -> s.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
                 .executes(c -> {
@@ -69,12 +96,18 @@ public final class SelfTest {
             for (var n : e.getValue().getAsJsonArray()) { clips++; check(all.containsKey(prefix + "." + n.getAsString()), "clip " + prefix + "." + n.getAsString()); }
         }
         // every gun action the server can ask for exists for every gun class
-        for (String c : Kind.GUNS) for (String a : List.of("hold", "aim", "fire", "reload", "dry", "inspect", "draw", "sprint")) check(all.containsKey("gun." + c + "." + a), "gun." + c + "." + a);
+        for (String c : Kind.GUNS) for (String a : List.of("hold", "aim", "fire", "reload", "dry", "inspect", "draw", "sprint", "unjam")) check(all.containsKey("gun." + c + "." + a), "gun." + c + "." + a);
         // reload clip of an own gun is exactly as long as the server reload (guns.json ticks)
         Animation rl = all.get("gun.carbine.reload");
         float len = rl == null ? -1 : rl.length();
         System.out.println("[animselftest] carbine reload length value " + len + " (server reload 56 ticks = 2.8 s)");
         check(Math.abs(len - 2.8f) < 0.05f || Math.abs(len - 56f) < 1f, "carbine reload length matches the server reload");
+        for (String c : List.of("turret", "driver", "mounted_gun", "cannon")) check(all.containsKey("seat." + c), "seat." + c);
+        check(all.containsKey("cannon.load") && all.containsKey("cannon.fire"), "cannon clips");
+        // projectile look by entity id
+        check(ProjectileFx.look("fire_dragon_charge") == net.minecraft.core.particles.ParticleTypes.FLAME, "look fire");
+        check(ProjectileFx.look("hydra_arrow") == net.minecraft.core.particles.ParticleTypes.CRIT, "look default");
+        check(ProjectileFx.look("frost_bolt") == net.minecraft.core.particles.ParticleTypes.SNOWFLAKE, "look frost");
         // tags
         for (var s : Map.of("minecraft:iron_sword", "sword", "minecraft:iron_axe", "axe", "minecraft:iron_pickaxe", "pickaxe", "minecraft:bow", "bow", "minecraft:crossbow", "crossbow",
                 "minecraft:shield", "shield", "minecraft:iron_shovel", "shovel", "minecraft:iron_hoe", "hoe", "minecraft:shears", "shears").entrySet()) {
@@ -90,6 +123,7 @@ public final class SelfTest {
             if (k != null) check(k.clip(it.get(), "reload").startsWith("gun." + s.getKey().substring(s.getKey().indexOf(':') + 1)), "own reload clip for " + s.getKey());
         }
         body(all);
+        skin();
         System.out.println("[animselftest] clips sent since boot: " + Anim.calls());
         System.out.println("[animselftest] clips checked " + clips + ", loaded " + all.size());
         LOG.forEach(System.out::println);
@@ -126,6 +160,23 @@ public final class SelfTest {
             check(s.getValue().equals(k), s.getKey() + " body kind -> " + k);
         }
         System.out.println("[animselftest] body clips checked " + b.size());
+    }
+
+    /** 3D skin layers: voxel counts and winding (the comparison with vanilla's own cube runs on the client, SkinLayers.verify). */
+    private static void skin() {
+        var hat = new SkinVoxels.Box(-4, -8, -4, 8, 8, 8, 32, 0, 1.0F);
+        var full = SkinVoxels.build(hat, (x, y) -> 255);
+        check(full.size() == 384 + 192, "opaque hat quads " + full.size() + " (want 576)");
+        check(SkinVoxels.build(hat, (x, y) -> 0).isEmpty(), "transparent hat has no quads");
+        var one = SkinVoxels.build(hat, (x, y) -> x == 43 && y == 11 ? 255 : 0);   // a single interior texel of the north face
+        check(one.size() == 5, "single texel -> 1 outer + 4 walls, got " + one.size());
+        check(SkinVoxels.build(hat, (x, y) -> x == 43 && y == 11 ? 127 : 255).size() == 579, "interior texel alpha 127 is a hole: -1 outer, +4 walls");
+        check(SkinVoxels.build(hat, (x, y) -> x == 43 && y == 11 ? 128 : 255).size() == 576, "alpha 128 is opaque");
+        int wrong = 0;
+        for (var q : full) if (SkinVoxels.winding(q) != 1) wrong++;
+        check(wrong == 0, "all voxel quads wound like vanilla (" + wrong + " wrong)");
+        for (boolean slim : new boolean[]{false, true}) check(SkinVoxels.boxes(slim).size() == 6, "skin boxes " + slim);
+        System.out.println("[animselftest] skin voxels checked, opaque hat quads " + full.size());
     }
 
     private SelfTest() {}
