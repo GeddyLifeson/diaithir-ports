@@ -7,6 +7,16 @@ public final class ArsGlyphs {
     private ArsGlyphs() {
     }
 
+    /** Imbuement chamber recipe types and the rituals whose classes are in the port. */
+    public static void registerRecipeTypesAndRituals() {
+        var api = net.diaithir.druidry.ars.api.ArsNouveauAPI.getInstance();
+        api.registerScryer(net.diaithir.druidry.ars.api.scrying.SingleBlockScryer.INSTANCE);
+        api.registerScryer(net.diaithir.druidry.ars.api.scrying.CompoundScryer.INSTANCE);
+        api.registerScryer(net.diaithir.druidry.ars.api.scrying.TagScryer.INSTANCE);
+        net.diaithir.druidry.ars.api.registry.ImbuementRecipeRegistry.INSTANCE.addRecipeType(net.diaithir.druidry.ars.setup.registry.RecipeRegistry.IMBUEMENT_TYPE);
+        net.diaithir.druidry.ars.api.registry.RitualRegistry.registerRitual(new net.diaithir.druidry.ars.common.ritual.RitualScrying());
+    }
+
     public static void register() {
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.method.MethodPantomime.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.method.MethodProjectile.INSTANCE);
@@ -68,6 +78,7 @@ public final class ArsGlyphs {
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectOrbit.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectPhantomBlock.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectPickup.INSTANCE);
+        GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectPrestidigitation.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectPlaceBlock.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectPull.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectRedstone.INSTANCE);
@@ -83,5 +94,6 @@ public final class ArsGlyphs {
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectWall.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectWindshear.INSTANCE);
         GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectWither.INSTANCE);
+        GlyphRegistry.registerSpell(net.diaithir.druidry.ars.common.spell.effect.EffectWololo.INSTANCE);
     }
 }

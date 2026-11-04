@@ -13,6 +13,23 @@ import java.util.Objects;
 /** Port stub: plain RGB colour data (0-255 per channel); no rendering code. */
 public class ParticleColor implements Cloneable {
     public static final Identifier ID = ArsNouveau.prefix("default");
+    public static final ParticleColor DEFAULT = new ParticleColor(255, 25, 180);
+    public static final ParticleColor WHITE = new ParticleColor(255, 255, 255);
+    public static final ParticleColor RED = new ParticleColor(255, 50, 50);
+    public static final ParticleColor GREEN = new ParticleColor(50, 255, 50);
+    public static final ParticleColor BLUE = new ParticleColor(50, 50, 255);
+    public static final ParticleColor YELLOW = new ParticleColor(255, 255, 0);
+    public static final ParticleColor PURPLE = new ParticleColor(255, 50, 255);
+    public static final ParticleColor CYAN = new ParticleColor(50, 255, 255);
+    public static final ParticleColor ORANGE = new ParticleColor(255, 128, 0);
+    public static final ParticleColor MAGENTA = new ParticleColor(255, 0, 255);
+    public static final ParticleColor LIGHT_BLUE = new ParticleColor(173, 216, 230);
+    public static final ParticleColor LIME = new ParticleColor(0, 255, 0);
+    public static final ParticleColor PINK = new ParticleColor(255, 192, 203);
+    public static final ParticleColor GRAY = new ParticleColor(128, 128, 128);
+    public static final ParticleColor LIGHT_GRAY = new ParticleColor(211, 211, 211);
+    public static final ParticleColor BROWN = new ParticleColor(125, 42, 42);
+    public static final ParticleColor BLACK = new ParticleColor(0, 0, 0);
     public static final IntWrapper TO_HIGHLIGHT = new IntWrapper(255, 50, 50);
     public static final IntWrapper FROM_HIGHLIGHT = new IntWrapper(50, 255, 255);
 

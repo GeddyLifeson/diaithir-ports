@@ -37,6 +37,7 @@ public class ArsNouveau {
 
     public ArsNouveau(IEventBus bus, ModContainer container) {
         ArsGlyphs.register();
+        ArsGlyphs.registerRecipeTypesAndRituals();
         BlockRegistry.onBlocksRegistry();
         BlockRegistry.onBlockItemsRegistry();
         BlockRegistry.BLOCKS.register(bus);

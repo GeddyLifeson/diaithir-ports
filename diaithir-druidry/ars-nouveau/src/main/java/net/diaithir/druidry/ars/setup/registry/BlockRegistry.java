@@ -129,6 +129,10 @@ public class BlockRegistry {
     public static BlockEntityTypeRegistryWrapper<PortalTile> PORTAL_TILE_TYPE = registerTile(LibBlockNames.PORTAL, PortalTile::new, PORTAL_BLOCK);
     public static BlockRegistryWrapper<RelaySplitter> RELAY_SPLITTER = registerBlockAndItem(LibBlockNames.RELAY_SPLITTER, RelaySplitter::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
     public static BlockEntityTypeRegistryWrapper<RelaySplitterTile> RELAY_SPLITTER_TILE = registerTile(LibBlockNames.RELAY_SPLITTER, RelaySplitterTile::new, RELAY_SPLITTER);
+    public static BlockRegistryWrapper<ImbuementBlock> IMBUEMENT_BLOCK = registerBlockAndItem(LibBlockNames.IMBUEMENT_CHAMBER, ImbuementBlock::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
+    public static BlockEntityTypeRegistryWrapper<ImbuementTile> IMBUEMENT_TILE = registerTile(LibBlockNames.IMBUEMENT_CHAMBER, ImbuementTile::new, IMBUEMENT_BLOCK);
+    public static BlockRegistryWrapper<ScryersOculus> SCRYERS_OCULUS = registerBlockAndItem(LibBlockNames.SCRYERS_OCULUS, ScryersOculus::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
+    public static BlockEntityTypeRegistryWrapper<ScryersOculusTile> SCRYERS_OCULUS_TILE = registerTile(LibBlockNames.SCRYERS_OCULUS, ScryersOculusTile::new, SCRYERS_OCULUS);
     public static BlockRegistryWrapper<ArcaneCore> ARCANE_CORE_BLOCK = registerBlockAndItem(LibBlockNames.ARCANE_CORE, ArcaneCore::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
     public static BlockEntityTypeRegistryWrapper<ArcaneCoreTile> ARCANE_CORE_TILE = registerTile(LibBlockNames.ARCANE_CORE, ArcaneCoreTile::new, ARCANE_CORE_BLOCK);
     public static BlockRegistryWrapper<EnchantedSpellTurret> ENCHANTED_SPELL_TURRET = registerBlockAndItem(LibBlockNames.ENCHANTED_SPELL_TURRET, EnchantedSpellTurret::new, (reg) -> new RendererBlockItem(reg, defaultItemProperties()));
