@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "B": "minecraft:beehive",
+        "H": "minecraft:honeycomb",
+        "K": "#c:bookshelves",
+        "O": "minecraft:honey_block"
+    },
+    "pattern": [
+        "HBH",
+        "OKO",
+        "HBH"
+    ],
+    "result": {
+        "id": "apothic_enchanting:beeshelf"
+    }
+}

@@ -1,5 +1,7 @@
 package net.diaithir.storagenet;
 
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.minecraft.core.Direction;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
@@ -61,6 +63,18 @@ final class StorageSelfTest {
             ItemResource cobble = ItemResource.of(Items.COBBLESTONE), diamond = ItemResource.of(Items.DIAMOND), iron = ItemResource.of(Items.IRON_INGOT);
             if (net.count(cobble) != 64) fails.add("cobble count " + net.count(cobble));
             if (net.contents().getOrDefault(iron, 0L) != 10) fails.add("iron count in contents");
+
+            // the controller shows the whole network as a read-only item handler (what circuit readers use)
+            var view = level.getCapability(Capabilities.Item.BLOCK, at, Direction.UP);
+            if (view == null) fails.add("controller exposes no item view");
+            else {
+                long cobbles = 0, irons = 0;
+                for (int i = 0; i < view.size(); i++) {
+                    if (view.getResource(i).equals(cobble)) cobbles += view.getAmountAsLong(i);
+                    if (view.getResource(i).equals(iron)) irons += view.getAmountAsLong(i);
+                }
+                if (cobbles != 64 || irons != 10) fails.add("controller view says cobble " + cobbles + " iron " + irons);
+            }
 
             // insert and extract through the network
             ItemStack rest = net.insertStack(new ItemStack(Items.DIAMOND, 100));

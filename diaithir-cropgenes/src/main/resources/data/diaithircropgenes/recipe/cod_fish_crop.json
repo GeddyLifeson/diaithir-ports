@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:cod"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithircropgenes:cod_fish_crop",
+  "count": 1
+ }
+}

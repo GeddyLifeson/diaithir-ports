@@ -440,6 +440,21 @@ def ratite_like(P):
     P.setdefault('wl', 3); P.setdefault('foot', 5)
     return biped_bird(P)
 
+def humanoid(P):
+    """Upright two-legged, two-armed figure (people, ghosts, golems, ape-men)."""
+    g = lambda k, d=0: P.get(k, d)
+    bw, bh, bd, ll, lt = g('bw', 8), g('bh', 12), g('bd', 4), g('ll', 12), g('lt', 4)
+    m = M(); by = 24 - ll - bh / 2
+    m.add('body', None, (0, by, 0), (0, 0, 0), (bw, bh, bd), (-bw / 2, -bh / 2, -bd / 2))
+    limb(m, 'leg', 'body', (bw / 4, bh / 2 - 1, 0), lt, ll + 1, 2, 0, g('foot', 0))
+    limb(m, 'arm', 'body', (bw / 2 + g('at', 4) / 2, -bh / 2 + 2, 0), g('at', 4), g('al', 12), 2, 0, 0)
+    hs = g('hs', 8)
+    m.add('neck', 'body', (0, -bh / 2, 0), (0, 0, 0), (hs * .4, 1, hs * .4), (-hs * .2, -1, -hs * .2))
+    m.add('head', 'neck', (0, -1, 0), (0, 0, 0), (hs, hs, hs), (-hs / 2, -hs, -hs / 2))
+    m.add('jaw', 'head', (0, -1, -hs / 2 + 1), (0, 0, 0), (hs * .6, 1.5, hs * .4), (-hs * .3, 0, -hs * .4))
+    if g('ear', 0): m.pair('ear', 'head', (hs / 2, -hs * .6, 0), (0, 0, .2), (1, g('ear'), 2), (0, -g('ear'), -1))
+    return m
+
 PLANS = {}
 def plan(name, fn, **P): PLANS[name] = (fn, P)
 
@@ -463,6 +478,12 @@ plan('sloth_tree', quad, bl=13, bw=7, bh=7, ll=7, lt=2.2, nl=1.5, hs=5, hl=5, sl
 plan('pinniped', pinniped)
 plan('dolphin', cetacean, bl=26, bw=8, bh=9, hl=7, beak=4, fin=6, dorsal=5, lift=6)
 plan('bat', flyer, bl=4, bw=3, bh=3, hs=3, hl=3.5, wl=14, ww=6, ear=3, ll=2, lift=6)
+# --- added for Library creatures with no earlier shape ---
+plan('ursine', quad, bl=22, bw=12, bh=12, ll=8, lt=5, nl=2, hs=8, hl=11, sl=4, snw=.55, snh=.5, tl=2, tt=2, tseg=1, ear=2.2, nup=.2, hump=3, neckdrop=1.5)
+plan('cervid', quad, bl=17, bw=6, bh=8, ll=15, lt=1.8, nl=8, hs=4.5, hl=9, sl=4, snw=.5, snh=.5, tl=3, tt=2, tseg=1, ear=3.5, horn=7, hornt=1.2, hornrot=-.2, nup=.6, neckdrop=2)
+plan('felid', quad, bl=17, bw=6, bh=6.5, ll=7, lt=2.4, nl=2, hs=5.5, hl=6.5, sl=1.8, snw=.6, snh=.45, tl=18, tt=2.2, tseg=3, ear=2.2, nup=.4, neckdrop=1.5, tailrot=.6)
+plan('canid', quad, bl=18, bw=6, bh=7, ll=10, lt=2.2, nl=3, hs=5, hl=9, sl=4, snw=.5, snh=.45, tl=12, tt=2.6, tseg=2, ear=3, nup=.5, neckdrop=2, tuft=2)
+plan('humanoid', humanoid)
 # --- birds ---
 plan('ratite', ratite_like, bl=14, bw=10, bh=10, nl=12, ll=14, hs=4, beak=3, wl=2, tl=3)
 plan('raptor', biped_bird, bl=10, bw=6, bh=6, ll=5, lt=1.4, nl=2, hs=4, beak=3, beakdown=.3, wl=10, ww=6, tl=6, pitch=.5, foot=3.5)
@@ -542,8 +563,8 @@ def extents(m):
 WATER = set('fish_fusiform fish_deep fish_flat ray eel syngnathid fish_primitive dolphin archaic_whale ichthyosaur plesiosaur mosasaur placoderm cephalopod jellyfish ammonite trilobite eurypterid starfish'.split())
 FLY = set('bat pterosaur insect_flying raptor waterfowl wader songbird corvid owl parrot seabird pigeon'.split())
 SOUND = {  # vanilla sound family per plan; the runtime falls back to generic hurt/death when an event is missing
- 'cat': 'mustelid owl', 'fox': 'viverrid', 'pig': 'rodent_large tapir marsupial_stout monotreme', 'rabbit': 'rodent_small lagomorph insectivore',
- 'polar_bear': 'primate_ape', 'panda': 'primate_monkey primate_small sloth_tree', 'llama': 'giraffid', 'sheep': 'macropod', 'armadillo': 'armadillo',
+ 'cat': 'mustelid owl felid', 'fox': 'viverrid', 'pig': 'rodent_large tapir marsupial_stout monotreme', 'rabbit': 'rodent_small lagomorph insectivore',
+ 'polar_bear': 'primate_ape ursine', 'villager': 'humanoid', 'wolf': 'canid', 'panda': 'primate_monkey primate_small sloth_tree', 'llama': 'giraffid', 'sheep': 'macropod cervid', 'armadillo': 'armadillo',
  'dolphin': 'pinniped dolphin archaic_whale', 'bat': 'bat pterosaur', 'chicken': 'ratite galliform terror_bird penguin waterfowl wader seabird pigeon songbird corvid parrot raptor',
  'turtle': 'crocodilian lizard sea_turtle', 'frog': 'frog', 'cod': 'fish_fusiform fish_deep fish_flat ray eel syngnathid fish_primitive placoderm jellyfish ammonite starfish trilobite',
  'squid': 'cephalopod', 'spider': 'insect_flying beetle scorpion crab eurypterid giant_arthropod', 'ravager': 'theropod dromaeosaur', 'horse': 'hadrosaur ornithopod_small stegosaur ceratopsian',

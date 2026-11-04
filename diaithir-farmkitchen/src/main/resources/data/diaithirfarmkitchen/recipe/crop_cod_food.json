@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:cod"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithirfarmkitchen:crop_cod_food",
+  "count": 1
+ }
+}

@@ -22,6 +22,10 @@ import kotlin.math.floor
 class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYardBlocks.SLIPWAY_BE.get(), pos, state) {
     var yardId: String = ""
     var build: BuildState? = null
+    /** Hull cells this yard actually placed; only these go into the ship (an existing block in a hull cell is left alone). */
+    private val placedBlocks = HashMap<BlockPos, String>()
+    /** Saved data kept verbatim while the carts API is absent, so it survives until the API is back. */
+    private var rawSaved: Triple<Map<String, String>, Int, Int>? = null
     val footprint: YardDef.Footprint get() = def?.footprint() ?: YardDef.Footprint(5, 10, 5)
     var lastStats: Stats? = null
     var lastShipId: Long = -1
@@ -32,9 +36,11 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     val def: YardDef? get() = YardRegistry.yard(yardId).orElse(null)
 
     fun chooseYard(id: String): Boolean {
+        if (rawSaved != null) return false // a retained unresolved build is only dropped by discardSaved()
         val d = YardRegistry.yard(id).orElse(null) ?: return false
         yardId = id
-        build = BuildState.start(d); log.clear(); setChanged(); return true
+        rawSaved = null
+        build = BuildState.start(d); log.clear(); placedBlocks.clear(); setChanged(); return true
     }
 
     private fun inStage(stage: Int) = log.filter { it.first == stage }.map { it.second }
@@ -51,8 +57,20 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         return st.slots().all { freeSlots(it.kind()) <= 0 }
     }
 
+    val holdsSavedBuild: Boolean get() = rawSaved != null
+
+    /** Explicit player action: drops a retained build whose yard or parts are not loaded. */
+    fun discardSaved() {
+        rawSaved = null; build = null; log.clear(); placedBlocks.clear(); yardId = ""; setChanged()
+    }
+
     /** Empty-hand use: picks a yard type when idle, launches when complete, else reports status. */
     fun onUse(sneak: Boolean): String {
+        if (rawSaved != null) {
+            if (!sneak) return "This slipway holds a saved build whose yard or parts are not loaded. Sneak-use with an empty hand to discard it."
+            discardSaved()
+            return "Saved build discarded."
+        }
         val b = build
         if (b == null || (sneak && b.stageIndex() == 0 && log.isEmpty())) {
             val ids = YardData.yardIds()
@@ -134,10 +152,10 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     private fun put(lvl: ServerLevel, c: Cell) {
         val pos = worldPos(c)
         val cur = lvl.getBlockState(pos)
-        if (!cur.isAir && cur.block !is LiquidBlock) return
+        if (!cur.isAir && cur.block !is LiquidBlock) { if (placedBlocks[pos] == null) logger.warn("vs_yard: hull cell {} obstructed by {}", pos, BuiltInRegistries.BLOCK.getKey(cur.block)); return }
         val blk = BuiltInRegistries.BLOCK.getValue(Identifier.parse(c.block))
         if (blk === Blocks.AIR) return
-        lvl.setBlock(pos, blk.defaultBlockState(), 3)
+        if (lvl.setBlock(pos, blk.defaultBlockState(), 3)) { placedBlocks[pos.immutable()] = c.block; setChanged() }
     }
 
     private fun allCells(): List<Cell> {
@@ -150,10 +168,22 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         return out
     }
 
+    /** True while the block at [pos] is still the one this yard placed there (a replaced block is not ours to move into the ship). */
+    private fun isPlaced(lvl: net.minecraft.world.level.Level, pos: BlockPos): Boolean {
+        val id = placedBlocks[pos] ?: return false
+        return BuiltInRegistries.BLOCK.getKey(lvl.getBlockState(pos).block).toString() == id
+    }
+
+    /** Hull cells that are not placed: obstructed by another block, replaced after placing, or not laid yet. */
+    fun missingCells(): List<BlockPos> {
+        val lvl = level ?: return emptyList()
+        return allCells().filter { BuiltInRegistries.BLOCK.getValue(Identifier.parse(it.block)) !== Blocks.AIR }.map { worldPos(it) }.filter { !isPlaced(lvl, it) }
+    }
+
     /** The finished hull's blocks that exist in the world, for rollout. */
     fun hullBlocks(): Set<BlockPos> {
         val lvl = level ?: return emptySet()
-        return allCells().map { worldPos(it) }.filter { val s = lvl.getBlockState(it); !s.isAir && s.block !is LiquidBlock }.toSet()
+        return allCells().map { worldPos(it) }.filter { isPlaced(lvl, it) }.filter { val s = lvl.getBlockState(it); !s.isAir && s.block !is LiquidBlock }.toSet()
     }
 
     /** Roll out through the registered RolloutHook (ShipAssembler -> VS2 ship). Returns the ship id. */
@@ -161,6 +191,8 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         val b = build ?: return null
         val lvl = level as? ServerLevel ?: return null
         if (!b.complete()) return null
+        syncBlocks() // lays cells whose obstruction was cleared after completion
+        missingCells().let { if (it.isNotEmpty()) { logger.warn("vs_yard: launch refused, {} hull cell(s) not placed (obstructed or replaced), first at {}", it.size, it.first()); return null } }
         siteCheck()?.let { logger.warn("vs_yard: launching despite site check: {}", it) }
         val ship = YardRegistry.finish(yardId, lvl, worldPosition, b) as? org.valkyrienskies.core.api.ships.ServerShip ?: return null
         lastStats = b.stats(); lastShipId = ship.id
@@ -170,7 +202,9 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
 
     override fun saveAdditional(output: ValueOutput) {
         super.saveAdditional(output)
+        rawSaved?.let { r -> r.first.forEach { (k, v) -> output.putString(k, v) }; output.putInt("Stage", r.second); output.putInt("Ticks", r.third); return } // carts API absent: write back what was loaded
         output.putString("Yard", yardId)
+        output.putString("Placed", placedBlocks.entries.joinToString(";") { "${it.key.x},${it.key.y},${it.key.z},${it.value}" })
         val b = build ?: return
         output.putInt("Stage", b.stageIndex()); output.putInt("Ticks", b.progressTicks())
         output.putString("Log", log.joinToString(",") { "${it.first}:${it.second.item()}" })
@@ -178,14 +212,27 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
 
     override fun loadAdditional(input: ValueInput) {
         super.loadAdditional(input)
+        if (!ShipYardMod.apiPresent) {
+            rawSaved = Triple(listOf("Yard", "Placed", "Log").associateWith { input.getStringOr(it, "") }, input.getIntOr("Stage", 0), input.getIntOr("Ticks", 0))
+            return
+        }
+        rawSaved = null
         yardId = input.getStringOr("Yard", "")
+        placedBlocks.clear()
+        input.getStringOr("Placed", "").split(";").forEach { e ->
+            val p = e.split(",", limit = 4)
+            if (p.size == 4) { val x = p[0].toIntOrNull(); val y = p[1].toIntOrNull(); val z = p[2].toIntOrNull(); if (x != null && y != null && z != null) placedBlocks[BlockPos(x, y, z)] = p[3] }
+        }
+        val retain = { rawSaved = Triple(listOf("Yard", "Placed", "Log").associateWith { input.getStringOr(it, "") }, input.getIntOr("Stage", 0), input.getIntOr("Ticks", 0)); build = null }
         val d = def
-        if (d == null) { build = null; return }
+        if (d == null) { retain(); return } // yard definition unavailable: keep the saved fields so the next save does not drop progress
         val stage = input.getIntOr("Stage", 0)
-        val parts = input.getStringOr("Log", "").split(",").filter { it.isNotEmpty() }.mapNotNull { e ->
+        val entries = input.getStringOr("Log", "").split(",").filter { it.isNotEmpty() }
+        val parts = entries.mapNotNull { e ->
             val (st, item) = e.split(":", limit = 2).let { Pair(it[0].toInt(), it[1]) }
             YardRegistry.part(item).orElse(null)?.let { Pair(st, it) }
         }
+        if (parts.size != entries.size) { retain(); return } // a saved part is unresolved: hold the build (no work, no launch) and keep the raw data until it resolves on a later load
         log.clear(); log.addAll(parts)
         val b = BuildState.restore(d, stage, input.getIntOr("Ticks", 0), parts.filter { it.first < stage }.map { it.second }, parts.filter { it.first >= stage }.map { it.second })
         build = b

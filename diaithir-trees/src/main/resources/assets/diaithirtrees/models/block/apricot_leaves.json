@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/leaves",
+ "textures": {
+  "all": "diaithirtrees:block/apricot_leaves"
+ }
+}

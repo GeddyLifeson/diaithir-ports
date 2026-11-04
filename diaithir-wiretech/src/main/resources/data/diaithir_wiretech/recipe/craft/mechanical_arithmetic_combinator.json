@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "#minecraft:planks",
+    "K": "minecraft:copper_ingot",
+    "N": "minecraft:iron_nugget",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    "PKP",
+    "NSN",
+    "PPP"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:mechanical_arithmetic_combinator",
+    "count": 1
+  }
+}

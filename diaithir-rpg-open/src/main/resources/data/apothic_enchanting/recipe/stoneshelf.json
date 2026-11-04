@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "B": "minecraft:book",
+        "P": "minecraft:polished_andesite"
+    },
+    "pattern": [
+        "PPP",
+        "BBB",
+        "PPP"
+    ],
+    "result": {
+        "id": "apothic_enchanting:stoneshelf"
+    }
+}

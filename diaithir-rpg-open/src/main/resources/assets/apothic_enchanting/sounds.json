@@ -1,0 +1,29 @@
+{
+	"music_disc.eterna": {
+		"subtitle": "subtitle.apothic_enchanting.music_disc.eterna",
+		"sounds": [
+            {
+                "name": "apothic_enchanting:music/eterna",
+                "stream": true
+            }
+        ]
+	},
+    "music_disc.quanta": {
+		"subtitle": "subtitle.apothic_enchanting.music_disc.quanta",
+		"sounds": [
+            {
+                "name": "apothic_enchanting:music/quanta",
+                "stream": true
+            }
+        ]
+	},
+    "music_disc.arcana": {
+		"subtitle": "subtitle.apothic_enchanting.music_disc.arcana",
+		"sounds": [
+            {
+                "name": "apothic_enchanting:music/arcana",
+                "stream": true
+            }
+        ]
+	}
+}

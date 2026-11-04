@@ -1,0 +1,129 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:beretta_m12",
+"required": false
+},
+{
+"id": "diaithirfirearms:beretta_m38",
+"required": false
+},
+{
+"id": "diaithirfirearms:carl_gustaf_m45",
+"required": false
+},
+{
+"id": "diaithirfirearms:cz_scorpion_evo3",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_p90",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_mp7",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_ump",
+"required": false
+},
+{
+"id": "diaithirfirearms:kriss_vector",
+"required": false
+},
+{
+"id": "diaithirfirearms:m3_grease_gun",
+"required": false
+},
+{
+"id": "diaithirfirearms:mac10",
+"required": false
+},
+{
+"id": "diaithirfirearms:mas_38",
+"required": false
+},
+{
+"id": "diaithirfirearms:mat_49",
+"required": false
+},
+{
+"id": "diaithirfirearms:mp18",
+"required": false
+},
+{
+"id": "diaithirfirearms:mp40",
+"required": false
+},
+{
+"id": "diaithirfirearms:mp5",
+"required": false
+},
+{
+"id": "diaithirfirearms:owen_gun",
+"required": false
+},
+{
+"id": "diaithirfirearms:pm63",
+"required": false
+},
+{
+"id": "diaithirfirearms:pp19_bizon",
+"required": false
+},
+{
+"id": "diaithirfirearms:pps43",
+"required": false
+},
+{
+"id": "diaithirfirearms:ppsh41",
+"required": false
+},
+{
+"id": "diaithirfirearms:sig_mpx",
+"required": false
+},
+{
+"id": "diaithirfirearms:smg_compact",
+"required": false
+},
+{
+"id": "diaithirfirearms:sten_mk2",
+"required": false
+},
+{
+"id": "diaithirfirearms:sterling_smg",
+"required": false
+},
+{
+"id": "diaithirfirearms:steyr_tmp",
+"required": false
+},
+{
+"id": "diaithirfirearms:suomi_kp31",
+"required": false
+},
+{
+"id": "diaithirfirearms:thompson_m1928",
+"required": false
+},
+{
+"id": "diaithirfirearms:uzi",
+"required": false
+},
+{
+"id": "diaithirfirearms:vz61_skorpion",
+"required": false
+},
+{
+"id": "pointblank:smg_muzzlebrake",
+"required": false
+},
+{
+"id": "pointblank:smg_suppressor",
+"required": false
+}
+]
+}

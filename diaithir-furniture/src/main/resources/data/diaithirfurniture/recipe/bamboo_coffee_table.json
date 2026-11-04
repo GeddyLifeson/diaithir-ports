@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:bamboo_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "PPP",
+  "S S"
+ ],
+ "result": {
+  "id": "diaithirfurniture:bamboo_coffee_table",
+  "count": 1
+ }
+}

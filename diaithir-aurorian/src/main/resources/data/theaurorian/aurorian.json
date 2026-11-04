@@ -96,19 +96,19 @@
    "repair": "theaurorian:umbra_ingot",
    "age": "IV"
   },
-  "cerulean": {
-   "name": "cerulean",
-   "durability": 20,
-   "boots": 3,
-   "legs": 6,
-   "chest": 5,
-   "helmet": 3,
-   "enchant": 20,
-   "sound": "diamond",
+  "aurorian_steel": {
+   "name": "aurorian_steel",
+   "durability": 33,
+   "boots": 4,
+   "legs": 7,
+   "chest": 8,
+   "helmet": 4,
+   "enchant": 10,
+   "sound": "netherite",
    "toughness": 1.0,
-   "knockback": 0.0,
-   "repair": "theaurorian:cerulean_ingot",
-   "age": "II"
+   "knockback": 0.1,
+   "repair": "theaurorian:aurorian_steel_ingot",
+   "age": "III"
   },
   "knight": {
    "name": "knight",
@@ -138,19 +138,19 @@
    "repair": "theaurorian:spectral_silk",
    "age": "III"
   },
-  "aurorian_steel": {
-   "name": "aurorian_steel",
-   "durability": 33,
-   "boots": 4,
-   "legs": 7,
-   "chest": 8,
-   "helmet": 4,
-   "enchant": 10,
-   "sound": "netherite",
+  "cerulean": {
+   "name": "cerulean",
+   "durability": 20,
+   "boots": 3,
+   "legs": 6,
+   "chest": 5,
+   "helmet": 3,
+   "enchant": 20,
+   "sound": "diamond",
    "toughness": 1.0,
-   "knockback": 0.1,
-   "repair": "theaurorian:aurorian_steel_ingot",
-   "age": "III"
+   "knockback": 0.0,
+   "repair": "theaurorian:cerulean_ingot",
+   "age": "II"
   }
  },
  "items": [
@@ -988,6 +988,12 @@
    "kind": "log",
    "copy": "minecraft:spruce_log",
    "burn": 300
+  },
+  {
+   "id": "silentwood_sapling",
+   "kind": "sapling",
+   "copy": "minecraft:spruce_sapling",
+   "burn": 100
   },
   {
    "id": "silentwood_slab",

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:orange_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:orange_planks",
+  "count": 4
+ }
+}

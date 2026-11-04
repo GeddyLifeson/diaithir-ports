@@ -1,0 +1,26 @@
+{
+ "station": "station.steam_forge",
+ "stage": "part",
+ "time_s": 20,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 6
+  },
+  {
+   "item": "minecraft:piston",
+   "count": 1
+  },
+  {
+   "item": "minecraft:iron_chain",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:cyl_stephenson_m",
+  "count": 1
+ },
+ "power": "steam",
+ "w": 20000
+}

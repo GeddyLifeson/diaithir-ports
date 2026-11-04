@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/echoing_sculkshelf" },
+            { "model": "apothic_enchanting:block/echoing_sculkshelf_2" },
+            { "model": "apothic_enchanting:block/echoing_sculkshelf_3" }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Mack Type 75 pumper Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 0.9,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Mack Type 75 pumper Wheel",
+   "modelName": "wheel_mack_type_75",
+   "textureName": "wheel_mack_type_75",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "station": "station.smeltery",
+  "stage": "part",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "minecraft:gravel",
+      "count": 4
+    },
+    {
+      "tag": "minecraft:coals",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:road_macadam",
+    "count": 4
+  }
+}

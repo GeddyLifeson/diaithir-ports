@@ -1,0 +1,15 @@
+{
+  "station": "station.wright_bench",
+  "stage": "part",
+  "time_s": 8,
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder",
+      "count": 2
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_chain_shot_charge",
+    "count": 1
+  }
+}
