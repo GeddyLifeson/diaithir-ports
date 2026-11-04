@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:ipe_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:ipe_planks",
+  "count": 4
+ }
+}

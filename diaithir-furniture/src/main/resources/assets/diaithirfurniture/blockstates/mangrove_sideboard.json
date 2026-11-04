@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfurniture:block/mangrove_sideboard"
+  },
+  "facing=east": {
+   "model": "diaithirfurniture:block/mangrove_sideboard",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfurniture:block/mangrove_sideboard",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfurniture:block/mangrove_sideboard",
+   "y": 270
+  }
+ }
+}

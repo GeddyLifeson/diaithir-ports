@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirtrees:block/western_hemlock_sapling"
+ }
+}
