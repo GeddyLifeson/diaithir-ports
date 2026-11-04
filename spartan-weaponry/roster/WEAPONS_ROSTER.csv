@@ -4,7 +4,7 @@ wooden_club,Wooden club,club,worldwide,prehistoric,I,existing,https://en.wikiped
 flint_tipped_spear,Flint-tipped spear,spear,worldwide,c.400 kya,I,melee,https://en.wikipedia.org/wiki/Spear
 atlatl,Atlatl,thrown,"Americas, Eurasia",c.30 kya,I,melee,https://en.wikipedia.org/wiki/Atlatl
 sling,Sling,sling,"Mediterranean, Near East",c.10 kya,I,ranged,https://en.wikipedia.org/wiki/Sling_(weapon)
-self_bow,Self bow,bow,worldwide,c.10 kya,I,ranged,https://en.wikipedia.org/wiki/Bow_and_arrow
+self_bow,Self bow,bow,worldwide,c.10 kya,I,ranged-bow,https://en.wikipedia.org/wiki/Bow_and_arrow
 boomerang,Boomerang,thrown,Australia,c.10 kya,I,melee,https://en.wikipedia.org/wiki/Boomerang
 macuahuitl,Macuahuitl,club,Aztec,c.1300,I,melee,https://en.wikipedia.org/wiki/Macuahuitl
 mace_head,Mace-head (pear mace),mace,Predynastic Egypt,c.4000 BC,II,melee,https://en.wikipedia.org/wiki/Mace_(weapon)
@@ -12,7 +12,7 @@ khopesh,Khopesh,sword,"Egypt, Canaan",c.2500 BC,III,melee,https://en.wikipedia.o
 sickle_sword,Sickle sword,sword,Mesopotamia,c.2500 BC,III,melee,https://en.wikipedia.org/wiki/Sickle_sword
 copper_battleaxe,Copper battleaxe,axe,Bronze Age Eurasia,c.3000 BC,II,existing,https://en.wikipedia.org/wiki/Battle_axe
 bronze_dagger,Bronze dagger (Ötzi type),dagger,Europe,c.3300 BC,II,existing,https://en.wikipedia.org/wiki/Dagger
-composite_bow,Composite bow,bow,Eurasian steppe,c.2000 BC,III,ranged,https://en.wikipedia.org/wiki/Composite_bow
+composite_bow,Composite bow,bow,Eurasian steppe,c.2000 BC,III,existing,https://en.wikipedia.org/wiki/Composite_bow
 hittite_chariot_spear,Hittite chariot spear,spear,Hittite Empire,c.1500 BC,III,melee,https://en.wikipedia.org/wiki/Hittites
 sagaris,Sagaris,axe,"Scythia, Persia",c.700 BC,III,melee,https://en.wikipedia.org/wiki/Sagaris
 dory,Dory,spear,Ancient Greece,c.1000 BC,IV,melee,https://en.wikipedia.org/wiki/Dory_(spear)
@@ -28,10 +28,10 @@ plumbata,Plumbata,thrown,Rome,c.300 AD,IV,melee,https://en.wikipedia.org/wiki/Pl
 scorpio,Scorpio,siege,Rome,c.50 BC,IV,siege,https://en.wikipedia.org/wiki/Scorpio_(weapon)
 ballista,Ballista,siege,"Greece, Rome",c.400 BC,IV,siege,https://en.wikipedia.org/wiki/Ballista
 onager,Onager,siege,Rome,c.300 AD,IV,siege,https://en.wikipedia.org/wiki/Onager_(siege_weapon)
-gastraphetes,Gastraphetes,crossbow,Ancient Greece,c.400 BC,IV,ranged,https://en.wikipedia.org/wiki/Gastraphetes
+gastraphetes,Gastraphetes,crossbow,Ancient Greece,c.400 BC,IV,ranged-bow,https://en.wikipedia.org/wiki/Gastraphetes
 battering_ram,Battering ram,siege,"Assyria, worldwide",c.2000 BC,III,siege,https://en.wikipedia.org/wiki/Battering_ram
 siege_tower,Siege tower,siege,"Assyria, worldwide",c.800 BC,IV,siege,https://en.wikipedia.org/wiki/Siege_tower
-chinese_crossbow,Chinese crossbow (Qin repeating prototype),crossbow,China,c.400 BC,IV,ranged,https://en.wikipedia.org/wiki/Crossbow
+chinese_crossbow,Chinese crossbow (Qin repeating prototype),crossbow,China,c.400 BC,IV,duplicate,https://en.wikipedia.org/wiki/Crossbow
 zhanmadao,Zhanmadao,sword,China,c.600,IV,melee,https://en.wikipedia.org/wiki/Zhanmadao
 jian,Jian,sword,China,c.700 BC,IV,melee,https://en.wikipedia.org/wiki/Jian
 dao,Dao (Chinese saber),sword,China,c.200 BC,IV,melee,https://en.wikipedia.org/wiki/Dao_(sword)
@@ -39,8 +39,8 @@ ji,Ji (halberd),polearm,China,c.1000 BC,IV,melee,https://en.wikipedia.org/wiki/J
 guandao,Guandao,polearm,China,c.200,IV,melee,https://en.wikipedia.org/wiki/Guan_dao
 qiang,Qiang (Chinese spear),spear,China,c.500 BC,IV,melee,https://en.wikipedia.org/wiki/Qiang_(spear)
 dagger_axe,Dagger-axe (ge),polearm,China,c.1500 BC,III,melee,https://en.wikipedia.org/wiki/Dagger-axe
-repeating_crossbow,Repeating crossbow (Zhuge nu),crossbow,China,c.200 BC,IV,ranged,https://en.wikipedia.org/wiki/Repeating_crossbow
-yumi,Yumi,bow,Japan,c.300,IV,ranged,https://en.wikipedia.org/wiki/Yumi
+repeating_crossbow,Repeating crossbow (Zhuge nu),crossbow,China,c.200 BC,IV,ranged-bow,https://en.wikipedia.org/wiki/Repeating_crossbow
+yumi,Yumi,bow,Japan,c.300,IV,ranged-bow,https://en.wikipedia.org/wiki/Yumi
 katana,Katana,sword,Japan,c.1400,V,melee,https://en.wikipedia.org/wiki/Katana
 tachi,Tachi,sword,Japan,c.900,IV,melee,https://en.wikipedia.org/wiki/Tachi
 wakizashi,Wakizashi,sword,Japan,c.1400,V,melee,https://en.wikipedia.org/wiki/Wakizashi
@@ -65,7 +65,7 @@ yatagan,Yatagan,sword,Ottoman,c.1500,V,melee,https://en.wikipedia.org/wiki/Yatag
 sabre,Sabre (hussar),sword,"Hungary, Europe",c.1500,V,melee,https://en.wikipedia.org/wiki/Sabre
 shashka,Shashka,sword,"Caucasus, Cossacks",c.1800,VI,melee,https://en.wikipedia.org/wiki/Shashka
 byzantine_kontarion,Byzantine kontarion,spear,Byzantium,c.500,IV,melee,https://en.wikipedia.org/wiki/Kontarion
-longbow,Longbow (English),bow,"England, Wales",c.1300,V,ranged,https://en.wikipedia.org/wiki/English_longbow
+longbow,Longbow (English),bow,"England, Wales",c.1300,V,ranged-bow,https://en.wikipedia.org/wiki/English_longbow
 arming_sword,Arming sword,sword,Medieval Europe,c.1000,IV,melee,https://en.wikipedia.org/wiki/Arming_sword
 viking_sword,Viking sword (Ulfberht),sword,Norse,c.800,IV,melee,https://en.wikipedia.org/wiki/Ulfberht_swords
 seax,Seax,dagger,"Germanic, Anglo-Saxon",c.500,IV,melee,https://en.wikipedia.org/wiki/Seax
@@ -118,12 +118,12 @@ springald,Springald,siege,Medieval Europe,c.1200,V,siege,https://en.wikipedia.or
 bombard,Bombard,siege,Europe,c.1380,V,siege,https://en.wikipedia.org/wiki/Bombard_(weapon)
 greek_fire_siphon,Greek fire siphon,siege,Byzantium,c.670,IV,siege,https://en.wikipedia.org/wiki/Greek_fire
 hwacha,Hwacha,siege,Korea,c.1409,V,siege,https://en.wikipedia.org/wiki/Hwacha
-arbalest,Arbalest (steel crossbow),crossbow,Europe,c.1400,V,ranged,https://en.wikipedia.org/wiki/Arbalest
-stonebow,Stonebow (bullet crossbow),crossbow,Europe,c.1500,V,ranged,https://en.wikipedia.org/wiki/Stonebow
+arbalest,Arbalest (steel crossbow),crossbow,Europe,c.1400,V,ranged-bow,https://en.wikipedia.org/wiki/Arbalest
+stonebow,Stonebow (bullet crossbow),crossbow,Europe,c.1500,V,ranged-bow,https://en.wikipedia.org/wiki/Stonebow
 caltrop,Caltrop,trap,worldwide,c.300 BC,IV,later,https://en.wikipedia.org/wiki/Caltrop
 net_and_trident,Net and trident (retiarius),thrown,Rome,c.50,IV,ranged,https://en.wikipedia.org/wiki/Retiarius
 trident,Trident,spear,"Greece, Rome",c.800 BC,IV,melee,https://en.wikipedia.org/wiki/Trident
-lasso_bolas,Lasso/bolas,thrown,South America,c.1000,IV,ranged,https://en.wikipedia.org/wiki/Bolas
+lasso_bolas,Lasso/bolas,thrown,South America,c.1000,IV,duplicate,https://en.wikipedia.org/wiki/Bolas
 bolas,Bolas,thrown,"Patagonia, Inuit",c.1000,IV,ranged,https://en.wikipedia.org/wiki/Bolas
 kpinga,Kpinga,thrown,Central Africa,c.1500,V,melee,https://en.wikipedia.org/wiki/Kpinga
 shotel,Shotel,sword,Ethiopia,c.1500,V,melee,https://en.wikipedia.org/wiki/Shotel
@@ -133,7 +133,7 @@ assegai,Assegai,spear,Southern Africa,c.1700,V,melee,https://en.wikipedia.org/wi
 knobkerrie,Knobkerrie,club,Southern Africa,c.1700,V,melee,https://en.wikipedia.org/wiki/Knobkerrie
 ngombe_axe,Ngombe axe,axe,Central Africa,c.1700,V,melee,https://en.wikipedia.org/wiki/Ngulu
 tomahawk,Tomahawk,axe,North America,c.1600,V,melee,https://en.wikipedia.org/wiki/Tomahawk
-plains_bow,Plains bow,bow,North America,c.1700,V,ranged,https://en.wikipedia.org/wiki/Plains_Indians
+plains_bow,Plains bow,bow,North America,c.1700,V,ranged-bow,https://en.wikipedia.org/wiki/Plains_Indians
 blowgun,Blowgun,thrown,"Amazon, Southeast Asia",c.1000,IV,ranged,https://en.wikipedia.org/wiki/Blowgun
 tepoztopilli,Tepoztopilli,polearm,Aztec,c.1300,V,melee,https://en.wikipedia.org/wiki/Tepoztopilli
 mapuche_lance,Mapuche lance (Chilean lance),polearm,Mapuche,c.1550,V,melee,https://en.wikipedia.org/wiki/Mapuche
@@ -175,7 +175,7 @@ badik,Badik,dagger,Indonesia,c.1500,V,melee,https://en.wikipedia.org/wiki/Badik
 golok,Golok,sword,Indonesia,c.1500,V,melee,https://en.wikipedia.org/wiki/Golok
 jambiya,Jambiya,dagger,Arabia,c.1300,V,melee,https://en.wikipedia.org/wiki/Jambiya
 kard,Kard,dagger,Persia,c.1500,V,melee,https://en.wikipedia.org/wiki/Kard_(knife)
-korean_horn_bow,Korean horn bow (gakgung),bow,Korea,c.300,IV,ranged,https://en.wikipedia.org/wiki/Gakgung
+korean_horn_bow,Korean horn bow (gakgung),bow,Korea,c.300,IV,ranged-bow,https://en.wikipedia.org/wiki/Gakgung
 hwando,Hwando (Korean sword),sword,Korea,c.1500,V,melee,https://en.wikipedia.org/wiki/Hwando
 woldo,Woldo,polearm,Korea,c.1500,V,melee,https://en.wikipedia.org/wiki/Woldo
 chinese_jiu_li_dao,Chinese jiu-li dao (butterfly sword),sword,China,c.1800,VI,melee,https://en.wikipedia.org/wiki/Butterfly_sword
@@ -193,7 +193,7 @@ molotov_cocktail,Molotov cocktail,thrown,"Finland, USSR",c.1939,VII,ranged,https
 satchel_charge,Satchel charge,thrown,worldwide,c.1914,VII,ranged,https://en.wikipedia.org/wiki/Satchel_charge
 bangalore_torpedo,Bangalore torpedo,thrown,Britain,c.1912,VII,ranged,https://en.wikipedia.org/wiki/Bangalore_torpedo
 claymore_mine,Claymore mine (M18A1),trap,United States,c.1960,VII,later,https://en.wikipedia.org/wiki/M18_Claymore_mine
-cranequin_crossbow,Cranequin crossbow,crossbow,Europe,c.1450,V,ranged,https://en.wikipedia.org/wiki/Cranequin
+cranequin_crossbow,Cranequin crossbow,crossbow,Europe,c.1450,V,ranged-bow,https://en.wikipedia.org/wiki/Cranequin
 polybolos,Polybolos,siege,Ancient Greece,c.250 BC,IV,siege,https://en.wikipedia.org/wiki/Polybolos
 cheiroballistra,Cheiroballistra,siege,Rome,c.100,IV,siege,https://en.wikipedia.org/wiki/Cheiroballistra
 helepolis,Helepolis,siege,Macedon,c.305 BC,IV,siege,https://en.wikipedia.org/wiki/Helepolis
@@ -223,12 +223,12 @@ brass_knuckles,Brass knuckles,club,worldwide,c.1850,VI,melee,https://en.wikipedi
 baton,Baton (police/military),club,worldwide,c.1800,VI,melee,https://en.wikipedia.org/wiki/Baton_(law_enforcement)
 shillelagh,Shillelagh,club,Ireland,c.1700,VI,melee,https://en.wikipedia.org/wiki/Shillelagh
 sap,Sap (blackjack),club,worldwide,c.1800,VI,melee,https://en.wikipedia.org/wiki/Blackjack_(weapon)
-hungarian_magyar_bow,Hungarian Magyar bow,bow,Hungary,c.900,IV,ranged,https://en.wikipedia.org/wiki/Hungarian_invasions_of_Europe
-tibetan_crossbow,Tibetan crossbow,crossbow,Tibet,c.700,IV,ranged,https://en.wikipedia.org/wiki/Crossbow
-bhutanese_bamboo_bow,Bhutanese bamboo bow,bow,Bhutan,c.1500,V,ranged,https://en.wikipedia.org/wiki/Archery_in_Bhutan
-nubian_self_bow,Nubian self bow,bow,Nubia,c.1500 BC,III,ranged,https://en.wikipedia.org/wiki/Medjay
-cretan_short_bow,Cretan short bow,bow,Crete,c.600 BC,IV,ranged,https://en.wikipedia.org/wiki/Cretan_archers
-rhodian_slinger_bullet,Rhodian slinger bullet (glandes),sling,"Rhodes, Rome",c.400 BC,IV,ranged,https://en.wikipedia.org/wiki/Sling_bullet
+hungarian_magyar_bow,Hungarian Magyar bow,bow,Hungary,c.900,IV,ranged-bow,https://en.wikipedia.org/wiki/Hungarian_invasions_of_Europe
+tibetan_crossbow,Tibetan crossbow,crossbow,Tibet,c.700,IV,ranged-bow,https://en.wikipedia.org/wiki/Crossbow
+bhutanese_bamboo_bow,Bhutanese bamboo bow,bow,Bhutan,c.1500,V,ranged-bow,https://en.wikipedia.org/wiki/Archery_in_Bhutan
+nubian_self_bow,Nubian self bow,bow,Nubia,c.1500 BC,III,ranged-bow,https://en.wikipedia.org/wiki/Medjay
+cretan_short_bow,Cretan short bow,bow,Crete,c.600 BC,IV,ranged-bow,https://en.wikipedia.org/wiki/Cretan_archers
+rhodian_slinger_bullet,Rhodian slinger bullet (glandes),sling,"Rhodes, Rome",c.400 BC,IV,duplicate,https://en.wikipedia.org/wiki/Sling_bullet
 balearic_sling,Balearic sling,sling,Balearic Islands,c.400 BC,IV,ranged,https://en.wikipedia.org/wiki/Balearic_slingers
 inca_sling,Inca sling (huaraca),sling,Inca Empire,c.1400,V,ranged,https://en.wikipedia.org/wiki/Inca_army
 inca_bolas,Inca bolas (liwi),thrown,Inca Empire,c.1400,V,ranged,https://en.wikipedia.org/wiki/Bolas

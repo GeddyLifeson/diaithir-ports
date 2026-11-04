@@ -21,6 +21,12 @@ import org.jspecify.annotations.Nullable;
 final class ReservoirBlock extends Block implements EntityBlock {
     ReservoirBlock(Properties props) { super(props); }
 
+        @Override protected boolean hasAnalogOutputSignal(BlockState state) { return true; }
+
+    @Override protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, net.minecraft.core.Direction dir) {
+        return level.getBlockEntity(pos) instanceof ReservoirEntity be ? be.signal() : 0;
+    }
+
     @Override public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new ReservoirEntity(pos, state); }
 
     @Override

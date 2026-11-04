@@ -180,7 +180,12 @@
     "diaithir_stations:foundry_reclaimer": "VII",
     "diaithir_stations:foundry_fabricator": "VIII",
     "diaithir_stations:foundry_cast_basin": "IV",
-    "diaithir_stations:foundry_boiler": "V"
+    "diaithir_stations:foundry_boiler": "V",
+    "diaithir_materials:concrete_pozzolan": "II",
+    "diaithir_materials:cement_powder": "IV",
+    "diaithir_materials:concrete_portland": "V",
+    "diaithir_materials:concrete_reinforced": "VI",
+    "diaithir_materials:concrete_precast": "VII"
   },
   "_note": "Same Ages as data/diaithircrafting/age_gate.json, taken from plans/progression/graph.json."
 }

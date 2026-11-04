@@ -27,5 +27,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    // fuel carriers (Fuels, Engine, FuelStore) come from diaithir-units; substituted from the sibling folder
+    implementation 'net.diaithir:diaithir-units:1.0.0'
+}
+
 
 

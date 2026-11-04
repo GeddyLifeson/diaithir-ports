@@ -23,3 +23,21 @@ description = "Station framework: data-driven station recipes (part, assembly, p
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[mods]]
+modId = "diaithir_materials"
+version = "${version}"
+displayName = "Diaithir Building Materials"
+description = "Building materials by Age from one shared property table (density, strength, fire, blast, heat conductance): the concrete line so far. Our own clean-room design."
+
+[[dependencies.diaithir_materials]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithir_materials]]
+modId = "diaithir_stations"
+type = "required"
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"

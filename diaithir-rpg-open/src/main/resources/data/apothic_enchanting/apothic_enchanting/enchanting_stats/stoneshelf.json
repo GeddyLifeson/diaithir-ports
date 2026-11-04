@@ -1,0 +1,8 @@
+{
+    "blocks": "apothic_enchanting:stoneshelf",
+    "stats": {
+        "arcana": -7.5,
+        "eterna": -3.0,
+        "maxEterna": 0.0
+    }
+}

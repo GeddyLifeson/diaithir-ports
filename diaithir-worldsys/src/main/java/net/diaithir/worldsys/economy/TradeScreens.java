@@ -59,6 +59,7 @@ final class TradeScreens {
             List<EconOffers.Cost> costs = o.dir().equals("buy") ? o.cost() : List.of(new EconOffers.Cost(o.id(), o.n()));
             if (!costs.stream().allMatch(c -> has(c.item())) || !has(o.dir().equals("buy") ? o.id() : o.result().item())) continue; // an unregistered id would trade as air
             ItemStack result = o.dir().equals("buy") ? new ItemStack(item(o.id()), o.n()) : new ItemStack(item(o.result().item()), (int) Math.round(o.result().count()));
+            if (result.isEmpty() || costs.stream().anyMatch(c -> item(c.item()) == net.minecraft.world.item.Items.AIR)) continue; // goods from a mod that is not loaded would break the offers packet
             offers.add(new MerchantOffer(cost(costs.get(0)), costs.size() > 1 ? Optional.of(cost(costs.get(1))) : Optional.empty(), result, 0, 8, 0, 0f, 0));
             kept.add(o);
         }

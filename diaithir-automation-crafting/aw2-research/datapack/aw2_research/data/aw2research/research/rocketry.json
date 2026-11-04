@@ -1,0 +1,29 @@
+{
+  "title": "Rocketry",
+  "description": "Ancient Warfare 2 research: rocketry.",
+  "prerequisites": [
+    "aw2research:theory_of_gravity"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:gunpowder",
+            "count": {
+              "min": 12
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:gunpowder"
+    }
+  }
+}

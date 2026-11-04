@@ -70,7 +70,12 @@ public final class DiaithirArms {
     private static Data load() {
         try (Reader r = new InputStreamReader(DiaithirArms.class.getResourceAsStream("/data/" + ID + "/arms.json"))) {
             Type t = new TypeToken<Data>() {}.getType();
-            return new Gson().fromJson(r, t);
+            Data d = new Gson().fromJson(r, t);
+            List<Spec> items = new java.util.ArrayList<>(d.items());
+            try (Reader h = new InputStreamReader(DiaithirArms.class.getResourceAsStream("/data/" + ID + "/historical_arms.json"))) {
+                items.addAll(new Gson().fromJson(h, new TypeToken<List<Spec>>() {}.getType()));
+            }
+            return new Data(d.armor(), d.tools(), items, d.parts());
         } catch (Exception e) {
             throw new IllegalStateException("arms.json missing", e);
         }

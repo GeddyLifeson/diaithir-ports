@@ -19,3 +19,9 @@ Second mod in the same jar, package `net.diaithir.stations`. Crafting grid only 
 - Use: use with items to load (sneak: one), empty hand to start the first satisfied recipe, sneak empty hand to take the contents back. The result drops on top when the job ends.
 - The kitchen counter here is the framework station. The graph also names `diaithirfarmkitchen:kitchen_counter` (built, crafts from nearby chests); the two need reconciling.
 - Test: `diaithir_stations selftest`.
+
+## Building materials (diaithir_materials)
+Third mod in the same jar, package `net.diaithir.materials`, plan in Global-Repo `plans/BUILDING_MATERIALS.md`. `data/diaithir_materials/materials.json` is the one shared property table for the nine classes (timber, masonry, concrete, steel, glass, lining, roofing, road, insulation): density, compressive and tensile MPa, conductivity W/(m K), fire minutes, block hardness and resistance, Age, and `built`. `Materials` reads it; built blocks take their strength from it.
+- Built so far: the concrete line. Pozzolan (II, hearth bench), cement powder (IV, smeltery), Portland (V, steam forge, 20 kW), reinforced (VI, assembler, iron bars inside), precast slab (VII, assembler, steel strap). Tags `c:concrete` and `c:cement`.
+- Next stages (steel sections, glass, roads, lining, roofing, insulation) are rows with `built: false`; set it when a stage is added. Fire, climate and span checks that read the table are not wired yet.
+- Regenerate art, recipes, lang, tags and Age gates with `python3 -I tools/gen_assets.py` (it runs `tools/gen_materials.py`). Test: `diaithir_materials selftest`.

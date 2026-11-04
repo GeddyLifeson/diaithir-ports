@@ -35,8 +35,27 @@ public final class CartLogic {
     /** The cap for a cart: vanilla's, or the rail's if it is one of ours and faster. Called from the mixin. */
     public static double cap(AbstractMinecart cart, double vanilla) {
         BlockState state = cart.level().getBlockState(cart.getCurrentBlockPosOrRailBelow());
-        if (state.getBlock() instanceof RailSpeed r) return Math.max(vanilla, r.maxSpeed() * (cart.isInWater() ? 0.5 : 1.0));
-        return vanilla;
+        if (!(state.getBlock() instanceof RailSpeed r)) return vanilla;
+        Gauge own = GaugeData.of(cart);
+        if (!Gauge.runs(own, r.gauge())) return 0;   // wrong gauge: the vehicle cannot move on this track
+        double cap = Math.max(vanilla, r.maxSpeed() * (cart.isInWater() ? 0.5 : 1.0));
+        if (own != Gauge.ANY && curved(state)) cap *= Math.min(own.curveSpeed, r.gauge().curveSpeed);
+        return cap;
+    }
+
+    private static RailShape shape(BlockState state) {
+        return state.getBlock() instanceof net.minecraft.world.level.block.BaseRailBlock b ? state.getValue(b.getShapeProperty()) : null;
+    }
+
+    private static boolean curved(BlockState state) {
+        RailShape s = shape(state);
+        return s != null && s != RailShape.NORTH_SOUTH && s != RailShape.EAST_WEST && !s.isSlope();
+    }
+
+    /** Slots of a freight cart that take cargo: the vehicle's gauge payload share of the container (narrow 40 %), at least one. */
+    public static int slotLimit(AbstractMinecart cart) {
+        int size = cart instanceof net.minecraft.world.entity.vehicle.minecart.AbstractMinecartContainer c ? c.getContainerSize() : 0;
+        return Math.max(1, (int) Math.floor(size * GaugeData.of(cart).payload));
     }
 
     public static void forget(UUID cart) {
@@ -55,8 +74,18 @@ public final class CartLogic {
 
     public static void tick(AbstractMinecart cart, ServerLevel level) {
         Coupling.pull(cart, level);
+        MagicFuel.tick(cart);
         BlockPos pos = cart.getCurrentBlockPosOrRailBelow();
         BlockState state = level.getBlockState(pos);
+        Gauge own = GaugeData.of(cart);
+        if (own != Gauge.ANY) {
+            RailShape sh = shape(state);
+            if (sh != null && sh.isSlope()) {   // grades: narrow keeps its speed, standard loses it
+                Vec3 v = cart.getDeltaMovement();
+                double keep = state.getBlock() instanceof RailSpeed rs ? Math.min(own.gradeKeep, rs.gauge().gradeKeep) : own.gradeKeep;
+                cart.setDeltaMovement(v.x * keep, v.y, v.z * keep);
+            }
+        }
         if (state.getBlock() instanceof StationRail) {
             station(cart, level, pos, state);
             return;

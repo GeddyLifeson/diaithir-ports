@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/hellshelf" },
+            { "model": "apothic_enchanting:block/hellshelf_2" },
+            { "model": "apothic_enchanting:block/hellshelf_3" }
+        ]
+    }
+}
