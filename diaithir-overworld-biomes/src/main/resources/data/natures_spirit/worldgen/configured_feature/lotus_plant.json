@@ -1,0 +1,23 @@
+{
+  "type": "natures_spirit:leveled_random_patch_feature",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "natures_spirit:lotus_plant_feature",
+        "config": {}
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 20,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
+}

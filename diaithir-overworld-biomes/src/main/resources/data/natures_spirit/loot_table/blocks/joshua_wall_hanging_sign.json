@@ -1,1 +1,0 @@
-{"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "natures_spirit:joshua_wall_hanging_sign"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}], "random_sequence": "natures_spirit:blocks/joshua_wall_hanging_sign"}

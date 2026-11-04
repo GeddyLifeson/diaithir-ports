@@ -86,6 +86,20 @@ public class NSRegistryHelper {
     return ip();
   }
 
+  /** Blocks and items are constructed lazily inside the RegisterEvent (26.1 forbids constructing them while registries are frozen). */
+  public static final Map<String, Block> PENDING_BLOCKS = new LinkedHashMap<>();
+  public static final Map<String, Item> PENDING_ITEMS = new LinkedHashMap<>();
+
+  public static void flushBlocks(net.neoforged.neoforge.registries.RegisterEvent event) {
+    NatureSpirit.LOGGER.info("NS_BLOCK_IDS {}", String.join(" ", PENDING_BLOCKS.keySet()));
+    PENDING_BLOCKS.forEach((n, b) -> event.register(Registries.BLOCK, Identifier.fromNamespaceAndPath(NatureSpirit.MOD_ID, n), () -> b));
+  }
+
+  public static void flushItems(net.neoforged.neoforge.registries.RegisterEvent event) {
+    NatureSpirit.LOGGER.info("NS_ITEM_IDS {}", String.join(" ", PENDING_ITEMS.keySet()));
+    PENDING_ITEMS.forEach((n, i) -> event.register(Registries.ITEM, Identifier.fromNamespaceAndPath(NatureSpirit.MOD_ID, n), () -> i));
+  }
+
   public static void init(IEventBus modBus) {
     BLOCKS.register(modBus);
     ITEMS.register(modBus);
@@ -125,7 +139,7 @@ public class NSRegistryHelper {
 
   private static Block registerBlockInternal(String name, Block block) {
     // Blocks are constructed by callers; register the instance directly.
-    BLOCKS.register(name, () -> block);
+    PENDING_BLOCKS.put(name, block);
     return block;
   }
 
@@ -189,13 +203,13 @@ public class NSRegistryHelper {
   }
 
   public static Item registerItemWithoutTab(String name, Item item) {
-    ITEMS.register(name, () -> item);
+    PENDING_ITEMS.put(name, item);
     NatureSpiritItemHashMap.put(name, item);
     return item;
   }
 
   public static Item registerItem(String name, Item item) {
-    ITEMS.register(name, () -> item);
+    PENDING_ITEMS.put(name, item);
     if (NatureSpirit.CONFIG.creative_tab) {
       TAB_ENTRIES.computeIfAbsent(NSItemGroups.NS_ITEM_GROUP, k -> new ArrayList<>()).add(new TabEntry(null, () -> item));
     }

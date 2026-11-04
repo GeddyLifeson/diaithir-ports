@@ -274,23 +274,23 @@ public class StoneSet {
   }
 
   private Block createBasic(String name, Block template) {
-    return createBlockWithItem(name, new Block(NSRegistryHelper.bpCopy(template).destroyTime(hardness).mapColor(getMapColor())));
+    return createBlockWithItem(NSRegistryHelper.name(name), new Block(NSRegistryHelper.bpCopy(template).destroyTime(hardness).mapColor(getMapColor())));
   }
 
   private Block createRotatable(String name, Block template) {
-    return createBlockWithItem(name, new RotatedPillarBlock(NSRegistryHelper.bpCopy(template).destroyTime(hardness).mapColor(getMapColor())));
+    return createBlockWithItem(NSRegistryHelper.name(name), new RotatedPillarBlock(NSRegistryHelper.bpCopy(template).destroyTime(hardness).mapColor(getMapColor())));
   }
 
   private Block createStairs(String name, Block template) {
-    return createBlockWithItem(name + "_stairs", new StairBlock(template.defaultBlockState(), NSRegistryHelper.bpCopy(template)));
+    return createBlockWithItem(NSRegistryHelper.name(name + "_stairs"), new StairBlock(template.defaultBlockState(), NSRegistryHelper.bpCopy(template)));
   }
 
   private Block createSlab(String name, Block template) {
-    return createBlockWithItem(name + "_slab", new SlabBlock(NSRegistryHelper.bpCopy(template)));
+    return createBlockWithItem(NSRegistryHelper.name(name + "_slab"), new SlabBlock(NSRegistryHelper.bpCopy(template)));
   }
 
   private Block createWall(String name, Block template) {
-    return createBlockWithItem(name + "_wall", new WallBlock(NSRegistryHelper.bpCopy(template).forceSolidOn()));
+    return createBlockWithItem(NSRegistryHelper.name(name + "_wall"), new WallBlock(NSRegistryHelper.bpCopy(template).forceSolidOn()));
   }
 
   public boolean hasTiles() {

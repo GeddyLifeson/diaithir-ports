@@ -1,1 +1,33 @@
-{"replace": false, "values": ["biomesoplenty:cherry_leaves", "biomesoplenty:dead_leaves", "biomesoplenty:empyreal_leaves", "biomesoplenty:fir_leaves", "biomesoplenty:flowering_oak_leaves", "biomesoplenty:hellbark_leaves", "biomesoplenty:jacaranda_leaves", "biomesoplenty:magic_leaves", "biomesoplenty:mahogany_leaves", "biomesoplenty:maple_leaves", "biomesoplenty:null_leaves", "biomesoplenty:origin_oak_leaves", "biomesoplenty:palm_leaves", "biomesoplenty:pine_leaves", "biomesoplenty:pink_cherry_leaves", "biomesoplenty:redwood_leaves", "biomesoplenty:umbran_leaves", "biomesoplenty:white_cherry_leaves", "biomesoplenty:willow_leaves", "natures_spirit:aspen_leaves", "natures_spirit:blue_wisteria_leaves", "natures_spirit:maple_leaves", "natures_spirit:orange_maple_leaves", "natures_spirit:pink_wisteria_leaves", "natures_spirit:purple_wisteria_leaves", "natures_spirit:red_maple_leaves", "natures_spirit:white_wisteria_leaves", "natures_spirit:wisteria_leaves", "natures_spirit:yellow_maple_leaves"]}
+{
+  "replace": false,
+  "values": [
+    "biomesoplenty:cherry_leaves",
+    "biomesoplenty:dead_leaves",
+    "biomesoplenty:empyreal_leaves",
+    "biomesoplenty:fir_leaves",
+    "biomesoplenty:flowering_oak_leaves",
+    "biomesoplenty:hellbark_leaves",
+    "biomesoplenty:jacaranda_leaves",
+    "biomesoplenty:magic_leaves",
+    "biomesoplenty:mahogany_leaves",
+    "biomesoplenty:maple_leaves",
+    "biomesoplenty:null_leaves",
+    "biomesoplenty:origin_oak_leaves",
+    "biomesoplenty:palm_leaves",
+    "biomesoplenty:pine_leaves",
+    "biomesoplenty:pink_cherry_leaves",
+    "biomesoplenty:redwood_leaves",
+    "biomesoplenty:umbran_leaves",
+    "biomesoplenty:white_cherry_leaves",
+    "biomesoplenty:willow_leaves",
+    "natures_spirit:aspen_leaves",
+    "natures_spirit:blue_wisteria_leaves",
+    "natures_spirit:orange_maple_leaves",
+    "natures_spirit:pink_wisteria_leaves",
+    "natures_spirit:purple_wisteria_leaves",
+    "natures_spirit:red_maple_leaves",
+    "natures_spirit:white_wisteria_leaves",
+    "natures_spirit:wisteria_leaves",
+    "natures_spirit:yellow_maple_leaves"
+  ]
+}

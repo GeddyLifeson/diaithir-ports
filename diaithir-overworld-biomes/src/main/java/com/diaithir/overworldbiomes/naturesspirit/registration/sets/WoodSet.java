@@ -794,38 +794,38 @@ public class WoodSet {
   }
 
   private Block createLog() {
-    return createBlockWithItem(getLogName(), logBlock());
+    return createBlockWithItem(NSRegistryHelper.name(getLogName()), logBlock());
   }
 
   private Block createStrippedLog() {
-    return createBlockWithItem("stripped_" + getLogName(), logBlock());
+    return createBlockWithItem(NSRegistryHelper.name("stripped_" + getLogName()), logBlock());
   }
 
   private Block createBundle() {
-    return createBlockWithItem(getName() + "_bundle", logBlock());
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_bundle"), logBlock());
   }
 
   private Block createStrippedBundle() {
-    return createBlockWithItem("stripped_" + getName() + "_bundle", logBlock());
+    return createBlockWithItem(NSRegistryHelper.name("stripped_" + getName() + "_bundle"), logBlock());
   }
 
   private Block createJoshuaLog() {
-    return createBlockWithItem(getLogName(), new BranchingTrunkBlock(
+    return createBlockWithItem(NSRegistryHelper.name(getLogName()), new BranchingTrunkBlock(
         NSRegistryHelper.bp().ignitedByLava().mapColor(MapColor.COLOR_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD)));
   }
 
   private Block createStrippedJoshuaLog() {
-    return createBlockWithItem("stripped_" + getLogName(), new BranchingTrunkBlock(
+    return createBlockWithItem(NSRegistryHelper.name("stripped_" + getLogName()), new BranchingTrunkBlock(
         NSRegistryHelper.bp().ignitedByLava().mapColor(MapColor.COLOR_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD)));
   }
 
   private Block createWood() {
-    return createBlockWithItem(getWoodName(), new RotatedPillarBlock(
+    return createBlockWithItem(NSRegistryHelper.name(getWoodName()), new RotatedPillarBlock(
         NSRegistryHelper.bp().mapColor(sideColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
   }
 
   private Block createStrippedWood() {
-    return createBlockWithItem("stripped_" + getWoodName(), new RotatedPillarBlock(
+    return createBlockWithItem(NSRegistryHelper.name("stripped_" + getWoodName()), new RotatedPillarBlock(
         NSRegistryHelper.bp().mapColor(topColor).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
   }
 
@@ -838,35 +838,35 @@ public class WoodSet {
   }
 
   private Block createLeaves() {
-    return finishLeaves(getName(), createBlockWithItem(getName() + "_leaves", new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, leavesProps())));
+    return finishLeaves(getName(), createBlockWithItem(NSRegistryHelper.name(getName() + "_leaves"), new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, leavesProps())));
   }
 
   private Block createLeaves(String prefix) {
-    return finishLeaves(prefix + getName(), createBlockWithItem(prefix + getName() + "_leaves", new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, leavesProps())));
+    return finishLeaves(prefix + getName(), createBlockWithItem(NSRegistryHelper.name(prefix + getName() + "_leaves"), new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, leavesProps())));
   }
 
   private Block createFrostableLeaves() {
-    return finishLeaves(getName(), createBlockWithItem(getName() + "_leaves", new ProjectileLeavesBlock(leavesProps(), frostyLeaves)));
+    return finishLeaves(getName(), createBlockWithItem(NSRegistryHelper.name(getName() + "_leaves"), new ProjectileLeavesBlock(leavesProps(), frostyLeaves)));
   }
 
   private Block createFrostableLeaves(String prefix) {
-    return finishLeaves(prefix + getName(), createBlockWithItem(prefix + getName() + "_leaves", new ProjectileLeavesBlock(leavesProps(), frostyLeaves)));
+    return finishLeaves(prefix + getName(), createBlockWithItem(NSRegistryHelper.name(prefix + getName() + "_leaves"), new ProjectileLeavesBlock(leavesProps(), frostyLeaves)));
   }
 
   private Block createParticleLeaves(java.util.function.Supplier<? extends ParticleOptions> particle, int chance) {
-    return finishLeaves(getName(), createBlockWithItem(getName() + "_leaves", new ParticleLeavesBlock(leavesProps(), particle, chance)));
+    return finishLeaves(getName(), createBlockWithItem(NSRegistryHelper.name(getName() + "_leaves"), new ParticleLeavesBlock(leavesProps(), particle, chance)));
   }
 
   private Block createParticleLeaves(String prefix, java.util.function.Supplier<? extends ParticleOptions> particle, int chance) {
-    return finishLeaves(prefix + getName(), createBlockWithItem(prefix + getName() + "_leaves", new ParticleLeavesBlock(leavesProps(), particle, chance)));
+    return finishLeaves(prefix + getName(), createBlockWithItem(NSRegistryHelper.name(prefix + getName() + "_leaves"), new ParticleLeavesBlock(leavesProps(), particle, chance)));
   }
 
   private Block createVinesLeavesBlock(Block vinesPlantBlock, Block vinesTipBlock) {
-    return finishLeaves(getName(), createBlockWithItem(getName() + "_leaves", new VinesLeavesBlock(leavesProps(), vinesPlantBlock, vinesTipBlock)));
+    return finishLeaves(getName(), createBlockWithItem(NSRegistryHelper.name(getName() + "_leaves"), new VinesLeavesBlock(leavesProps(), vinesPlantBlock, vinesTipBlock)));
   }
 
   private Block createVinesLeavesBlock(String prefix, Block vinesPlantBlock, Block vinesTipBlock) {
-    return finishLeaves(prefix + getName(), createBlockWithItem(prefix + getName() + "_leaves", new VinesLeavesBlock(leavesProps(), vinesPlantBlock, vinesTipBlock)));
+    return finishLeaves(prefix + getName(), createBlockWithItem(NSRegistryHelper.name(prefix + getName() + "_leaves"), new VinesLeavesBlock(leavesProps(), vinesPlantBlock, vinesTipBlock)));
   }
 
   private static BlockBehaviour.Properties vineProps() {
@@ -874,14 +874,14 @@ public class WoodSet {
   }
 
   private Block createVines(Supplier<Block> vinesPlantBlock) {
-    Block vinesBlock = createBlockWithItem(getName() + "_vines", new DownwardVineBlock(vineProps(), vinesPlantBlock));
+    Block vinesBlock = createBlockWithItem(NSRegistryHelper.name(getName() + "_vines"), new DownwardVineBlock(vineProps(), vinesPlantBlock));
     RENDER_LAYERS.put(getName() + "_vines", vinesBlock);
     addCompostable(vinesBlock, 0.3F);
     return vinesBlock;
   }
 
   private Block createVines(String prefix, Supplier<Block> vinesPlantBlock) {
-    Block vinesBlock = createBlockWithItem(prefix + getName() + "_vines", new DownwardVineBlock(vineProps(), vinesPlantBlock));
+    Block vinesBlock = createBlockWithItem(NSRegistryHelper.name(prefix + getName() + "_vines"), new DownwardVineBlock(vineProps(), vinesPlantBlock));
     RENDER_LAYERS.put(prefix + getName() + "_vines", vinesBlock);
     addCompostable(vinesBlock, 0.3F);
     return vinesBlock;
@@ -906,55 +906,55 @@ public class WoodSet {
   }
 
   private Block createPlanks() {
-    return createBlockWithItem(getName() + "_planks", new Block(plankProps()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_planks"), new Block(plankProps()));
   }
 
   private Block createStairs() {
-    return createBlockWithItem(getName() + "_stairs", new StairBlock(getBase().defaultBlockState(), plankProps()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_stairs"), new StairBlock(getBase().defaultBlockState(), plankProps()));
   }
 
   private Block createSlab() {
-    return createBlockWithItem(getName() + "_slab", new SlabBlock(plankProps()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_slab"), new SlabBlock(plankProps()));
   }
 
   private Block createMosaic() {
-    return createBlockWithItem(getName() + "_mosaic", new Block(plankProps()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_mosaic"), new Block(plankProps()));
   }
 
   private Block createMosaicStairs() {
-    return createBlockWithItem(getName() + "_mosaic_stairs", new StairBlock(getBase().defaultBlockState(), plankProps()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_mosaic_stairs"), new StairBlock(getBase().defaultBlockState(), plankProps()));
   }
 
   private Block createMosaicSlab() {
-    return createBlockWithItem(getName() + "_mosaic_slab", new SlabBlock(plankProps()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_mosaic_slab"), new SlabBlock(plankProps()));
   }
 
   private Block createFence() {
-    return createBlockWithItem(getName() + "_fence", new FenceBlock(plankProps()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_fence"), new FenceBlock(plankProps()));
   }
 
   private Block createFenceGate() {
-    return createBlockWithItem(getName() + "_fence_gate", new FenceGateBlock(getWoodType(),
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_fence_gate"), new FenceGateBlock(getWoodType(),
         NSRegistryHelper.bp().mapColor(getBase().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).ignitedByLava()));
   }
 
   private Block createPressurePlate() {
-    return createBlockWithItem(getName() + "_pressure_plate", new PressurePlateBlock(getBlockSetType(),
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_pressure_plate"), new PressurePlateBlock(getBlockSetType(),
         NSRegistryHelper.bp().mapColor(this.getBase().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollision().strength(0.5F).ignitedByLava()
             .pushReaction(PushReaction.DESTROY)));
   }
 
   private Block createButton() {
-    return createBlockWithItem(getName() + "_button",
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_button"),
         new ButtonBlock(getBlockSetType(), 30, NSRegistryHelper.bp().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY)));
   }
 
   private Block createDoor() {
-    return createBlockWithItem(getName() + "_door", new DoorBlock(getBlockSetType(), plankProps().noOcclusion()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_door"), new DoorBlock(getBlockSetType(), plankProps().noOcclusion()));
   }
 
   private Block createTrapDoor() {
-    return createBlockWithItem(getName() + "_trapdoor", new TrapDoorBlock(getBlockSetType(), plankProps().noOcclusion()));
+    return createBlockWithItem(NSRegistryHelper.name(getName() + "_trapdoor"), new TrapDoorBlock(getBlockSetType(), plankProps().noOcclusion()));
   }
 
   private Block createSign() {
@@ -982,7 +982,7 @@ public class WoodSet {
 
   private Block saplingBlock(String prefix, boolean sandy) {
     BlockBehaviour.Properties props = NSRegistryHelper.bpCopy(Blocks.SPRUCE_SAPLING);
-    Block block = createBlockWithItem(prefix + getName() + "_sapling",
+    Block block = createBlockWithItem(NSRegistryHelper.name(prefix + getName() + "_sapling"),
         sandy ? new SandySaplingBlock(grower(), props) : new net.minecraft.world.level.block.SaplingBlock(grower(), props));
     addCompostable(block, 0.3F);
     RENDER_LAYERS.put(prefix + getName() + "_sapling", block);
@@ -1017,11 +1017,11 @@ public class WoodSet {
   }
 
   private Item createSignItem() {
-    return createItem(getName() + "_sign", new SignItem(sign, wallSign, NSRegistryHelper.ip().stacksTo(16)));
+    return createItem(NSRegistryHelper.name(getName() + "_sign"), new SignItem(sign, wallSign, NSRegistryHelper.ip().stacksTo(16)));
   }
 
   private Item createHangingSignItem() {
-    return createItem(getName() + "_hanging_sign", new HangingSignItem(hangingSign, hangingWallSign, NSRegistryHelper.ip().stacksTo(16)));
+    return createItem(NSRegistryHelper.name(getName() + "_hanging_sign"), new HangingSignItem(hangingSign, hangingWallSign, NSRegistryHelper.ip().stacksTo(16)));
   }
 
   private BlockSetType createBlockSetType() {
