@@ -1,0 +1,1 @@
+{"variants": {"facing=down": {"model": "megamachines:block/dig_head"}, "facing=up": {"model": "megamachines:block/dig_head"}, "facing=north": {"model": "megamachines:block/dig_head"}, "facing=south": {"model": "megamachines:block/dig_head"}, "facing=east": {"model": "megamachines:block/dig_head"}, "facing=west": {"model": "megamachines:block/dig_head"}}}
