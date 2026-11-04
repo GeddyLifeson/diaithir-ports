@@ -1306,5 +1306,189 @@
     "c:ammo/missile/future"
    ]
   }
+ ],
+ "containers": [
+  {
+   "id": "magazine_pistol",
+   "kind": "magazine",
+   "class": "pistol",
+   "capacity": 15,
+   "age": "kingdom",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/magazine",
+    "diaithircrafting:ammo_class/pistol"
+   ]
+  },
+  {
+   "id": "magazine_smg",
+   "kind": "magazine",
+   "class": "smg",
+   "capacity": 30,
+   "age": "dubhan",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/magazine",
+    "diaithircrafting:ammo_class/smg"
+   ]
+  },
+  {
+   "id": "magazine_rifle",
+   "kind": "magazine",
+   "class": "rifle",
+   "capacity": 30,
+   "age": "dubhan",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/magazine",
+    "diaithircrafting:ammo_class/rifle"
+   ]
+  },
+  {
+   "id": "magazine_sniper",
+   "kind": "magazine",
+   "class": "sniper",
+   "capacity": 5,
+   "age": "dubhan",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/magazine",
+    "diaithircrafting:ammo_class/sniper"
+   ]
+  },
+  {
+   "id": "magazine_lmg_box",
+   "kind": "magazine",
+   "class": "lmg",
+   "capacity": 100,
+   "age": "dubhan",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/magazine",
+    "diaithircrafting:ammo_class/lmg"
+   ]
+  },
+  {
+   "id": "drum_smg",
+   "kind": "drum",
+   "class": "smg",
+   "capacity": 70,
+   "age": "dubhan",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/drum",
+    "diaithircrafting:ammo_class/smg"
+   ]
+  },
+  {
+   "id": "drum_lmg",
+   "kind": "drum",
+   "class": "lmg",
+   "capacity": 150,
+   "age": "dubhan",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/drum",
+    "diaithircrafting:ammo_class/lmg"
+   ]
+  },
+  {
+   "id": "clip_rifle",
+   "kind": "clip",
+   "class": "rifle",
+   "capacity": 5,
+   "age": "kingdom",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/clip",
+    "diaithircrafting:ammo_class/rifle"
+   ]
+  },
+  {
+   "id": "speedloader_pistol",
+   "kind": "speedloader",
+   "class": "pistol",
+   "capacity": 6,
+   "age": "kingdom",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/speedloader",
+    "diaithircrafting:ammo_class/pistol"
+   ]
+  },
+  {
+   "id": "belt_lmg",
+   "kind": "belt",
+   "class": "lmg",
+   "capacity": 200,
+   "age": "dubhan",
+   "station": "casting_bay",
+   "link": "link_lmg",
+   "tags": [
+    "c:ammo_container/belt",
+    "diaithircrafting:ammo_class/lmg"
+   ]
+  },
+  {
+   "id": "cartridge_musket",
+   "kind": "cartridge",
+   "class": "musket",
+   "capacity": 1,
+   "age": "sundering",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/cartridge",
+    "diaithircrafting:ammo_class/musket"
+   ]
+  },
+  {
+   "id": "cell_energy",
+   "kind": "cell",
+   "class": "energy",
+   "capacity": 20,
+   "age": "future",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/cell",
+    "diaithircrafting:ammo_class/energy"
+   ]
+  },
+  {
+   "id": "ammo_box_small",
+   "kind": "box",
+   "class": "any",
+   "capacity": 40,
+   "age": "strangers",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/box",
+    "diaithircrafting:ammo_class/any"
+   ]
+  },
+  {
+   "id": "ammo_box_large",
+   "kind": "box",
+   "class": "any",
+   "capacity": 200,
+   "age": "kingdom",
+   "station": "casting_bay",
+   "link": null,
+   "tags": [
+    "c:ammo_container/box",
+    "diaithircrafting:ammo_class/any"
+   ]
+  }
  ]
 }
