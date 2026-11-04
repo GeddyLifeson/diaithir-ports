@@ -32,6 +32,7 @@ public class FaunaRenderer extends MobRenderer<FaunaMob, FaunaState, PlanModel> 
     public void extractRenderState(FaunaMob mob, FaunaState state, float partial) {
         super.extractRenderState(mob, state, partial);
         state.species = mob.species();
+        state.swing = mob.getAttackAnim(partial);
         state.flying = plan.fly() && !mob.onGround();
     }
 
