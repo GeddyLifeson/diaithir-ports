@@ -1,6 +1,16 @@
 {
  "replace": false,
  "values": [
+  "aerialhell:arsonist_shovel",
+  "aerialhell:azurite_shovel",
+  "aerialhell:lunatic_shovel",
+  "aerialhell:magma_cube_shovel",
+  "aerialhell:magmatic_gel_shovel",
+  "aerialhell:obsidian_shovel",
+  "aerialhell:ruby_shovel",
+  "aerialhell:sky_wood_shovel",
+  "aerialhell:stellar_stone_shovel",
+  "aerialhell:volucite_shovel",
   "aether_ii:arkenium_shovel",
   "aether_ii:gravitite_shovel",
   "aether_ii:holystone_shovel",

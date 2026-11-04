@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "pattern": [ "BGB", "G G", "BGB" ], "key": { "B": "diaithirfoundry:foundry_bricks", "G": "minecraft:glass" }, "result": { "id": "diaithirfoundry:foundry_tank" } }

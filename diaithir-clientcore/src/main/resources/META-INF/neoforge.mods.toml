@@ -13,3 +13,6 @@ modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
 side = "BOTH"
+
+[[mixins]]
+config = "diaithir_audio_soundphysics.mixins.json"

@@ -31,6 +31,13 @@ public final class DiaithirClaims {
 
     public DiaithirClaims(IEventBus bus) {
         ATTACH.register(bus);
+        net.diaithir.claims.structures.StructureGuard.init();
+        net.diaithir.claims.log.GriefLog.init();
+        net.diaithir.claims.law.Law.init(bus);
+        net.diaithir.claims.parties.Parties.init();
+        net.diaithir.claims.capitals.Capitals.init();
+        net.diaithir.claims.permissions.Gate.init(bus);
+        net.diaithir.claims.graves.Graves.init(bus);
         new net.diaithir.claims.waypoints.DiaithirWaypoints(bus);
         new net.diaithir.claims.compass.DiaithirCompass(bus);
         new net.diaithir.claims.ultimine.DiaithirUltimine(bus);

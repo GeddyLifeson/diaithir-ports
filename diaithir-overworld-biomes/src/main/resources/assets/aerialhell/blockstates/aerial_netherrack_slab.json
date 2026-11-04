@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aerialhell:block/aerial_netherrack_slab"
+    },
+    "type=double": {
+      "model": "aerialhell:block/aerial_netherrack"
+    },
+    "type=top": {
+      "model": "aerialhell:block/aerial_netherrack_slab_top"
+    }
+  }
+}

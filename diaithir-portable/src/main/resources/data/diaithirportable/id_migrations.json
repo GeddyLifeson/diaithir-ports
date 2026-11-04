@@ -1,0 +1,182 @@
+[
+ {
+  "registry": "minecraft:item",
+  "old": "deepnull:deep_null",
+  "new": "diaithirportable:deep_null"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "deepnull:deepnull",
+  "new": "diaithirportable:deep_null"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:backpack",
+  "new": "diaithirportable:wood_backpack"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:crafting_upgrade",
+  "new": "diaithirportable:crafting_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:diamond_backpack",
+  "new": "diaithirportable:diamond_backpack"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:feeding_upgrade",
+  "new": "diaithirportable:feeding_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:gold_backpack",
+  "new": "diaithirportable:gold_backpack"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:iron_backpack",
+  "new": "diaithirportable:iron_backpack"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:jukebox_upgrade",
+  "new": "diaithirportable:jukebox_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:magnet_upgrade",
+  "new": "diaithirportable:magnet_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:netherite_backpack",
+  "new": "diaithirportable:netherite_backpack"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:pickup_upgrade",
+  "new": "diaithirportable:pickup_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:smelting_upgrade",
+  "new": "diaithirportable:smelting_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:stack_upgrade_tier_1",
+  "new": "diaithirportable:stack_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedbackpacks:void_upgrade",
+  "new": "diaithirportable:void_upgrade"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:barrel",
+  "new": "diaithirportable:wood_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:barrel",
+  "new": "diaithirportable:wood_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:chest",
+  "new": "diaithirportable:wood_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:chest",
+  "new": "diaithirportable:wood_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:diamond_barrel",
+  "new": "diaithirportable:diamond_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:diamond_barrel",
+  "new": "diaithirportable:diamond_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:diamond_chest",
+  "new": "diaithirportable:diamond_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:diamond_chest",
+  "new": "diaithirportable:diamond_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:gold_barrel",
+  "new": "diaithirportable:gold_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:gold_barrel",
+  "new": "diaithirportable:gold_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:gold_chest",
+  "new": "diaithirportable:gold_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:gold_chest",
+  "new": "diaithirportable:gold_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:iron_barrel",
+  "new": "diaithirportable:iron_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:iron_barrel",
+  "new": "diaithirportable:iron_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:iron_chest",
+  "new": "diaithirportable:iron_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:iron_chest",
+  "new": "diaithirportable:iron_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:netherite_barrel",
+  "new": "diaithirportable:netherite_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:netherite_barrel",
+  "new": "diaithirportable:netherite_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorage:netherite_chest",
+  "new": "diaithirportable:netherite_storage"
+ },
+ {
+  "registry": "minecraft:block",
+  "old": "sophisticatedstorage:netherite_chest",
+  "new": "diaithirportable:netherite_storage"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "sophisticatedstorageinmotion:storage_in_motion",
+  "new": "diaithirportable:wood_backpack"
+ }
+]

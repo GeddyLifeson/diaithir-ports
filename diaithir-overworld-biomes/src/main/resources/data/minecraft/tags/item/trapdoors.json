@@ -1,6 +1,16 @@
 {
  "replace": false,
  "values": [
+  "aerialhell:aerial_tree_trapdoor",
+  "aerialhell:copper_pine_trapdoor",
+  "aerialhell:ghost_boat_trapdoor",
+  "aerialhell:golden_beech_trapdoor",
+  "aerialhell:gray_shroom_trapdoor",
+  "aerialhell:lapis_robinia_trapdoor",
+  "aerialhell:ruby_trapdoor",
+  "aerialhell:shadow_pine_trapdoor",
+  "aerialhell:sky_cactus_fiber_trapdoor",
+  "aerialhell:stellar_jungle_tree_trapdoor",
   "aether_ii:amberoot_trapdoor",
   "aether_ii:arkenium_trapdoor",
   "aether_ii:greatroot_trapdoor",

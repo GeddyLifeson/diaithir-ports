@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aerialhell:stellar_cobblestone"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "aerialhell:stellar_cobblestone_slab",
+  "count": 6
+ }
+}

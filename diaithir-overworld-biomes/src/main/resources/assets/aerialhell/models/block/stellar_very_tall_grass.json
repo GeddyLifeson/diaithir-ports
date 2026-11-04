@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "aerialhell:block/stellar_very_tall_grass"
+ }
+}

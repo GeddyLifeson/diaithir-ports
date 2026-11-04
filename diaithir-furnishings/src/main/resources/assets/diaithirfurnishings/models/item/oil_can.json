@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/oil_can"
+  "layer0": "diaithirfurnishings:item/oil_can_head",
+  "layer1": "diaithirfurnishings:item/oil_can_handle",
+  "layer2": "diaithirfurnishings:item/oil_can_binding"
  }
 }

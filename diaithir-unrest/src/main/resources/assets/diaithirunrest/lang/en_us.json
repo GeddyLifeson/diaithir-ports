@@ -1,0 +1,6 @@
+{
+  "block.diaithirunrest.meter": "Unrest Meter",
+  "block.diaithirunrest.nest": "Hive Nest",
+  "diaithirunrest.meter": "Unrest here %s (north %s, east %s, south %s, west %s)",
+  "diaithirunrest.nest": "Nest tier %s, stored %s, absorbed in all %s"
+}

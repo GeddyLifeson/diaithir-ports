@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "aerialhell:stellar_stone_bricks_tower",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 25,
+  "separation": 8,
+  "salt": 62463
+ }
+}

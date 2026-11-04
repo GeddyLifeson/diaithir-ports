@@ -11,6 +11,9 @@ Round 2 of the clean-room plan (`/mnt/project-files/plans/CLEAN_ROOM_ROUND2.md`)
 | stellaris | Stellaris 2.0.10 | CC-BY-NC-SA-4.0: share-alike and non-commercial cannot be folded, so rewritten (round 2, 11-03) | 2 (Moon, Earth orbit) | 105 | 82 + 15 gear | 6 | VII |
 
 Not rewritten, because the licence is open (handed to consolidation to fold): Aerial Hell (CC-BY-NC-SA-4.0), Regions Unexplored (MIT), BCLib (MIT), Kotlin for Forge (LGPL-2.1). Libraries GlitchCore (ARR), Cristel Lib (NC-ND), CodxLib (NC-ND) and Valhelsia Core (custom) can be dropped once nothing else in the pack depends on them; none of the four realms needs them.
+| aerialhell | Aerial Hell | CC-BY-NC-SA-4.0 (open, but ShareAlike would bind this module, so rewritten instead of folded) | 1 | 511 + 82 migrated | 116 | 14 | IV (proposed) |
+
+Not rewritten, because the licence is open (handed to consolidation to fold): Stellaris (CC-BY-NC-SA-4.0), Regions Unexplored (MIT), BCLib (MIT), Kotlin for Forge (LGPL-2.1). Libraries GlitchCore (ARR), Cristel Lib (NC-ND), CodxLib (NC-ND) and Valhelsia Core (custom) can be dropped once nothing else in the pack depends on them; none of the four realms needs them.
 
 ## What is in this slice
 - `tools/realms_gen.py <realm> --client-jar <minecraft client jar>` regenerates everything from `tools/realms/<realm>.{json,blocks.txt,items.txt,biomes.txt}`.
@@ -47,6 +50,8 @@ Clean-room: only registry ids were read from the 2.0.10 jar (blockstate, item, b
 - Art: generated 64 px textures (realm_art), recoloured vanilla creature models, as for the other realms.
 - Headless test (NeoForge 26.1.2.116, whole module, all five realms loaded): boots with no new errors, 2192 recipes load, Moon and orbit generate chunks, `locate` finds structures and biomes, creatures summon, `/stellaris selftest` 12/12 PASS (air rules with a fake player, launch to terra, moon and orbit). Not tested: a real client (rendering, the damage message, gravity feel), natural spawning, structure contents.
 - Fixed on the way: `RealmMobs` hooked attribute and renderer events only on the first realm's bus and read shared maps from parallel mod construction threads; with five realms this crashed boot (NPE). Each realm now wires its own creatures on its own bus and the maps are concurrent.
+## Aerial Hell (round 2, 11-03 evening)
+Added as the fifth realm with the same generator (`tools/realms/aerial_hell.*`, ids read from the 0.7.8 NeoForge 26.1.2 jar, no code, art or data copied). Portal: volucite_shard on stellar_portal_frame_block. 50 creatures (shurikens and projectiles left out; they migrate with the item ids), 15 structures, 14 biomes. Age IV is a proposal, not in canon. Slices 4-7 output (mobs, structures, gear, art) come from the generator and are stand-ins like the other realms.
 ## Slice 8: loot, gear abilities, sizes
 - Every structure template now holds chests with a per-structure loot table (`<modid>:chests/<structure>`: realm gear, ingots/crystals, vanilla staples; towers and shrines are richer and enchanted).
 - Gear abilities (RealmGear): weapon hits apply an effect picked from the material name (frost slows, ember ignites, rot poisons, honey heals the wielder, cloud lifts, default weakness). A full armour set of one material gives short Resistance when hit and slows the attacker.

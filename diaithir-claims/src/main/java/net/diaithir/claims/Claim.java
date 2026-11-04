@@ -40,5 +40,6 @@ public record Claim(UUID owner, String ownerName, List<UUID> friends, boolean fo
 
     public Claim withFlags(int f) {
         return new Claim(owner, ownerName, friends, forced, f);
+        return owner.equals(who) || friends.contains(who) || net.diaithir.claims.parties.Parties.sameParty(owner, who);
     }
 }

@@ -1,17 +1,27 @@
 {
- "replace": false,
- "values": [
-  "stellaris:titanium_sword",
-  "the_backwoods:faded_sword",
-  "the_backwoods:heartwood_rotten_sword",
-  "the_backwoods:lignum_caro_sword",
-  "the_backwoods:petrified_rotten_sword",
-  "the_backwoods:recovered_faded_sword",
-  "the_backwoods:rotten_sword",
-  "the_bumblezone:stinger_spear",
-  "undergarden:cloggrum_spear",
-  "undergarden:forgotten_spear",
-  "undergarden:froststeel_spear",
-  "undergarden:utherium_spear"
- ]
+  "replace": false,
+  "values": [
+    "stellaris:titanium_sword",
+    "the_backwoods:faded_sword",
+    "the_backwoods:heartwood_rotten_sword",
+    "the_backwoods:lignum_caro_sword",
+    "the_backwoods:petrified_rotten_sword",
+    "the_backwoods:recovered_faded_sword",
+    "the_backwoods:rotten_sword",
+    "the_bumblezone:stinger_spear",
+    "undergarden:cloggrum_spear",
+    "undergarden:forgotten_spear",
+    "undergarden:froststeel_spear",
+    "undergarden:utherium_spear",
+    "aerialhell:arsonist_spear",
+    "aerialhell:azurite_spear",
+    "aerialhell:health_boost_spear",
+    "aerialhell:lunatic_spear",
+    "aerialhell:magmatic_gel_spear",
+    "aerialhell:obsidian_spear",
+    "aerialhell:ruby_spear",
+    "aerialhell:sky_wood_spear",
+    "aerialhell:stellar_stone_spear",
+    "aerialhell:volucite_spear"
+  ]
 }

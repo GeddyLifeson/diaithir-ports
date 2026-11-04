@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["IEI", "EBE", "IEI"],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "E": "minecraft:ender_pearl",
+    "B": "minecraft:bucket"
+  },
+  "result": { "id": "diaithirlinkedstorage:linked_tank", "count": 1 }
+}

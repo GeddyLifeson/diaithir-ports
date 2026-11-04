@@ -1,6 +1,14 @@
 {
  "replace": false,
  "values": [
+  "aerialhell:arsonist_boots",
+  "aerialhell:azurite_boots",
+  "aerialhell:lunatic_boots",
+  "aerialhell:magmatic_gel_boots",
+  "aerialhell:obsidian_boots",
+  "aerialhell:ruby_boots",
+  "aerialhell:shadow_boots",
+  "aerialhell:volucite_boots",
   "aether_ii:arkenium_boots",
   "aether_ii:beast_pelt_boots",
   "aether_ii:burrukai_plate_boots",

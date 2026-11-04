@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
+  "#c:ingots/arsonist",
   "#c:ingots/cloggrum",
   "#c:ingots/desh",
   "#c:ingots/faded_copper",
