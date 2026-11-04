@@ -1,10 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = "keybinds.txt"
-hash = "7c94295f04a1c53ff70d245e6d61ae68ffe9d85882bb9f9bd98a0801171c7732"
-
-[[files]]
 file = "config/DistantHorizons.toml"
 hash = "0816bc78d59db401dd3c18ab03b3a39728fbab9b2a982efabf11b5736da6e348"
 
@@ -136,6 +132,10 @@ metafile = true
 file = "diaithir/ui_ages/viii.pw.toml"
 hash = "7db0582b3a27ffcfb580e549ed10daf2f3e6b5f4706f5cd9c6d8e0edbcdf089b"
 metafile = true
+
+[[files]]
+file = "keybinds.txt"
+hash = "7c94295f04a1c53ff70d245e6d61ae68ffe9d85882bb9f9bd98a0801171c7732"
 
 [[files]]
 file = "kubejs/assets/backrooms/lang/en_us.json"
@@ -67846,11 +67846,6 @@ file = "mods/diaithir-entity-animation-neoforge-26.1.2-1.0.2.jar"
 hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
-file = "mods/diaithir-entity-animation-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "e3240cdcf1b244579f2867ef448023c5ced144e9fcd19345785e92571d708526"
-metafile = true
-
-[[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
 
@@ -67871,7 +67866,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-platform-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "cabe0e7b09155065768fcad0cc458887d021113d8ca0ec784b1e3457564395a8"
+hash = "cf696312d7fdcac60c80ba8c643f274ba2d046659f1ece3800ff78256cb753e9"
 
 [[files]]
 file = "mods/diaithir-power-suite-neoforge-26.1.2-1.0.0.jar"
