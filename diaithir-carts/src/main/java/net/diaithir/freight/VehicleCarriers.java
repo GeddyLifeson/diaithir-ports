@@ -107,8 +107,7 @@ public final class VehicleCarriers {
     private static String keyOf(Object vehicle) {
         try {
             Object def = vehicle.getClass().getField("definition").get(vehicle);
-            Object general = def.getClass().getField("general").get(def);
-            return general.getClass().getField("packID").get(general) + ":" + general.getClass().getField("systemName").get(general);
+            return def.getClass().getField("packID").get(def) + ":" + def.getClass().getField("systemName").get(def);
         } catch (ReflectiveOperationException | RuntimeException ex) {
             return "unreadable " + ex.getClass().getSimpleName();
         }
@@ -198,8 +197,7 @@ public final class VehicleCarriers {
     private static @Nullable Spec specOf(Object vehicle) {
         try {
             Object def = vehicle.getClass().getField("definition").get(vehicle);
-            Object general = def.getClass().getField("general").get(def);
-            return SPECS.get(general.getClass().getField("packID").get(general) + ":" + general.getClass().getField("systemName").get(general));
+            return SPECS.get(def.getClass().getField("packID").get(def) + ":" + def.getClass().getField("systemName").get(def));
         } catch (ReflectiveOperationException | RuntimeException ex) {
             return null;
         }
