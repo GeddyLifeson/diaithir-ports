@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "aerialhell:blocks/chiseled_smoky_quartz_block",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "aerialhell:chiseled_smoky_quartz_block"
+    }
+   ]
+  }
+ ]
+}

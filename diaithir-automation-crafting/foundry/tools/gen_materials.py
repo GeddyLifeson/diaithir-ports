@@ -71,6 +71,7 @@ SPEC = {
 }
 built = [r for r in rows.values() if r["built"]]
 assert {r["id"] for r in built} == set(SPEC), ({r["id"] for r in built} ^ set(SPEC))
+STATION_NAME = {HB: "hearth bench", WB: "wright bench", SM: "smeltery", SF: "steam forge", AS: "assembler", FB: "fabricator"}
 TAGS = {"stone/cut": ["masonry_cut_stone"], "timber/beam": ["timber_sawn"], "beams/steel": ["steel_i_beam"], "glass_blocks": [i for i in SPEC if i.startswith("glass_")],
         "wallboard": [i for i in SPEC if i.startswith("lining_")], "roofing": [i for i in SPEC if i.startswith("roofing_")],
         "road_surface": [i for i in SPEC if i.startswith("road_")], "insulation": [i for i in SPEC if i.startswith("insulation_")],
@@ -220,4 +221,37 @@ gp = os.path.join(FOUNDRY, "diaithir-data", "age_gates.json")
 allg = json.load(open(gp))
 allg["items"].update(ages)
 wr(gp, allg)
+# Codex: one entry per stage, text built only from the table's numbers (no invented lore); same shape as the worldgen codex
+CLS = {"timber": "Timber", "masonry": "Masonry", "concrete": "Concrete", "steel": "Iron and steel", "glass": "Glass", "lining": "Wall lining",
+       "roofing": "Roofing", "road": "Road surface", "insulation": "Insulation"}
+codex = []
+for name, (title, _b, station, stage, time_s, w, ings, count) in SPEC.items():
+    r = rows[name]
+    bits = ["density %g kg/m3" % r["density_kg_m3"], "compressive strength %g MPa" % r["compressive_mpa"], "tensile strength %g MPa" % r["tensile_mpa"],
+            "heat conductivity %g W/(m K)" % r["conductivity_w_mk"],
+            ("fire resistance %g min" % r["fire_min"]) if r["fire_min"] else "no fire resistance"]
+    if r["flammability"]:
+        bits.append("burns")
+    if r["road_speed"]:
+        bits.append("walking speed +%d%%" % round(r["road_speed"] * 100))
+    codex.append({"id": NS + ":" + name, "kind": "material", "name": title, "class": CLS[r["class"]], "age": r["age"],
+                  "text": CLS[r["class"]] + ", Age " + r["age"] + ": " + ", ".join(bits) + ".", "station": station,
+                  "quest": "mat_" + name, "connects": ["recipes:" + NS + ":" + name] + (["tags:c:" + t for t, ids in TAGS.items() if name in ids])})
+wr(os.path.join(D, "codex", "materials.json"), codex)
+# Quests for the DiaithirRPG quest journal (QuestDefs): data/diaithir_ages/codex/journal/<file>.json, one file per Age because the file carries the Age,
+# group "side" (optional systems are quests), one single-step quest per stage. Goal "obtain:1 <bare item id>": the engine compares bare paths, not namespaced ids.
+JOURNAL = os.path.join(ROOT, "data", "diaithir_ages", "codex", "journal")
+os.makedirs(JOURNAL, exist_ok=True)
+for old in os.listdir(JOURNAL):
+    if old.startswith("diaithir_materials_"):
+        os.remove(os.path.join(JOURNAL, old))
+for age in AGE_NUM:
+    names_in_age = [n for n in SPEC if rows[n]["age"] == age]
+    if not names_in_age:
+        continue
+    wr(os.path.join(JOURNAL, "diaithir_materials_%s.json" % age.lower()), {
+        "age": age,
+        "names": {"mat_" + n: "Make " + SPEC[n][0] for n in names_in_age},
+        "side": [{"id": "mat_" + n, "title_key": "mat_" + n, "goal": "obtain:1 " + n,
+                  "text": "Make %s at the %s." % (SPEC[n][0], STATION_NAME[SPEC[n][2]])} for n in names_in_age]})
 print("materials ok", len(built), "built stages")

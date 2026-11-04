@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "net.diaithir.audio.soundphysics.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"SoundEngineMixin",
+		"SoundEngineAccessor",
+		"ChannelAccessor",
+		"ChannelHandleAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

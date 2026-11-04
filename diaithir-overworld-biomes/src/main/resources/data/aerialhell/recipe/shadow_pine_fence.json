@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "aerialhell:shadow_pine_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "#S#",
+  "#S#"
+ ],
+ "result": {
+  "id": "aerialhell:shadow_pine_fence",
+  "count": 3
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "tier1": {
+    "age": 6,
+    "items": [
+      "diaithirlinkedstorage:linked_cell",
+      "diaithirlinkedstorage:linked_chest",
+      "diaithirlinkedstorage:linked_tank"
+    ]
+  }
+}

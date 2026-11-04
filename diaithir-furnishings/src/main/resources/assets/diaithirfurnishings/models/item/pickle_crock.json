@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/pickle_crock"
+  "layer0": "diaithirfurnishings:item/pickle_crock_head",
+  "layer1": "diaithirfurnishings:item/pickle_crock_handle",
+  "layer2": "diaithirfurnishings:item/pickle_crock_binding"
  }
 }

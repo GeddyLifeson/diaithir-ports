@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/soup_spoon"
+  "layer0": "diaithirfurnishings:item/soup_spoon_head",
+  "layer1": "diaithirfurnishings:item/soup_spoon_handle"
  }
 }

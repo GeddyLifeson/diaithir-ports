@@ -1,0 +1,385 @@
+{
+ "_doc": "Simple Planes upgrade catalogue folded into diaithir-arms/aircraft. Derived from Simple Planes 5.3.9 (przemykomo, LGPL-3.0-only, commit 3b1617cbdd6a88c645f9af6fb1ebad6714fbc798); see NOTICE. SI units: W, J, L, s.",
+ "airframes": {
+  "light": {
+   "fuel_cost_per_tick": 3
+  },
+  "large": {
+   "fuel_cost_per_tick": 6
+  },
+  "cargo": {
+   "fuel_cost_per_tick": 10
+  },
+  "helicopter": {
+   "fuel_cost_per_tick": 6
+  }
+ },
+ "upgrades": [
+  {
+   "id": "seats",
+   "kind": "crew",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Adds passenger seats (light: 1 extra; large and helicopter: up to 3 extra).",
+   "source": "SeatsUpgrade",
+   "ingredients": {
+    "shaped": [
+     "CCC",
+     "SPS"
+    ],
+    "C": "#minecraft:planks",
+    "S": "#c:slimeballs",
+    "P": "minecraft:phantom_membrane"
+   }
+  },
+  {
+   "id": "floaty_bedding",
+   "kind": "hull",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Plane floats on water: +0.04 blocks/tick^2 lift while the hull is in water, so it takes off from a lake (0.8 m/s^2).",
+   "source": "FloatingUpgrade",
+   "ingredients": {
+    "shaped": [
+     "III",
+     "CSC",
+     "III"
+    ],
+    "I": "#c:ingots/iron",
+    "C": "#minecraft:wool",
+    "S": "#c:slimeballs"
+   }
+  },
+  {
+   "id": "armor",
+   "kind": "defence",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Armour plating: incoming damage x (1 - 0.04 x armour value of the fitted armour item).",
+   "source": "ArmorUpgrade",
+   "ingredients": {
+    "shaped": [
+     "ii",
+     "bib",
+     "ibi"
+    ],
+    "i": "#c:ingots/iron",
+    "b": "#c:storage_blocks/iron"
+   }
+  },
+  {
+   "id": "shooter",
+   "kind": "weapon",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Fires arrows, fire charges or firework rockets from the nose (one item per shot, inventory slot of 1 stack).",
+   "source": "ShooterUpgrade",
+   "ingredients": {
+    "shapeless": [
+     "minecraft:dispenser",
+     "minecraft:flint_and_steel"
+    ]
+   },
+   "hook": "diaithir-firearms: replace the three vanilla projectiles with mounted-gun ammunition when that mount exists"
+  },
+  {
+   "id": "healing",
+   "kind": "repair",
+   "age": "VII",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "One-shot repair kit: restores 1 hit point in flight, 2 on the ground, up to 2x max health; consumed on use.",
+   "source": "HealingUpgrade",
+   "ingredients": {
+    "shaped": [
+     "i i",
+     " E ",
+     " i "
+    ],
+    "i": "#c:ingots/iron",
+    "E": "minecraft:golden_apple"
+   },
+   "consumable": true
+  },
+  {
+   "id": "folding",
+   "kind": "hull",
+   "age": "VII",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Folds the wings so the plane fits a hangar bay or a ship deck.",
+   "source": "FoldingUpgrade",
+   "ingredients": {
+    "shaped": [
+     " s ",
+     "pdp",
+     " s "
+    ],
+    "s": "minecraft:shulker_shell",
+    "d": "#c:gems/diamond",
+    "p": "minecraft:piston"
+   },
+   "hook": "diaithir-ships Keelwright deck parts and the hangar yard read the folded footprint"
+  },
+  {
+   "id": "furnace_engine",
+   "kind": "engine",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Burns any furnace fuel in slot 1. Burn ticks drain at the airframe fuel cost per tick, so one coal (1600 ticks) lasts 26 s on a light plane and 13 s on a helicopter.",
+   "source": "FurnaceEngineUpgrade",
+   "ingredients": {
+    "shaped": [
+     "iRi",
+     "YBY",
+     "LLL"
+    ],
+    "i": "#c:ingots/iron",
+    "R": "propeller",
+    "Y": "#c:dusts/redstone",
+    "B": "minecraft:blast_furnace",
+    "L": "minecraft:light_weighted_pressure_plate"
+   },
+   "engine": true,
+   "fuel_cost_per_tick": {
+    "light": 3,
+    "large": 6,
+    "cargo": 10,
+    "helicopter": 6
+   }
+  },
+  {
+   "id": "liquid_engine",
+   "kind": "engine",
+   "age": "VII",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Burns liquid fuel from a 4000 L internal tank (fuel values per litre come from the plane_liquid_fuels data folder); fills from buckets and fluid-item containers.",
+   "source": "LiquidEngineUpgrade",
+   "ingredients": {
+    "shaped": [
+     "iOi",
+     "BLB",
+     "HcH"
+    ],
+    "i": "#c:ingots/iron",
+    "O": "propeller",
+    "B": "minecraft:bucket",
+    "L": "minecraft:blast_furnace",
+    "H": "minecraft:heavy_weighted_pressure_plate",
+    "c": "#c:ingots/copper"
+   },
+   "engine": true,
+   "tank_litres": 4000,
+   "hook": "shared fuel API (avgas, diesel): map plane_liquid_fuels to the cars-thread fuel tags"
+  },
+  {
+   "id": "electric_engine",
+   "kind": "engine",
+   "age": "VII",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "1.5 MJ battery; draws 12 J per tick of fuel cost while throttled: 720 W light, 1440 W large, 2400 W cargo, 1440 W helicopter.",
+   "source": "ElectricEngineUpgrade",
+   "ingredients": {
+    "shaped": [
+     "###",
+     "/G/",
+     "R#R"
+    ],
+    "#": "#c:ingots/copper",
+    "/": "#c:rods/blaze",
+    "G": "propeller",
+    "R": "#c:storage_blocks/redstone"
+   },
+   "engine": true,
+   "capacity_joules": 1500000,
+   "draw_watts": {
+    "light": 720,
+    "large": 1440,
+    "cargo": 2400,
+    "helicopter": 1440
+   },
+   "hook": "SI energy capability via diaithir-units Units/Fmt; charging station block charges at any rate the grid offers"
+  },
+  {
+   "id": "solar_panel",
+   "kind": "power",
+   "age": "VII",
+   "frames": [
+    "light",
+    "large",
+    "cargo"
+   ],
+   "effect": "Trickle charge for the electric engine in daylight with sky access: up to 100 W on a light plane, 200 W on a large or cargo plane, scaled by sun and cut by rain and thunder. Helicopters cannot fit it.",
+   "source": "SolarPanelUpgrade",
+   "ingredients": {
+    "shaped": [
+     "GGG",
+     "QDQ",
+     "WWW"
+    ],
+    "G": "#c:glass_blocks/colorless",
+    "Q": "#c:gems/quartz",
+    "D": "minecraft:daylight_detector",
+    "W": "#c:gems/lapis"
+   },
+   "peak_watts": {
+    "light": 100,
+    "large": 200,
+    "cargo": 200
+   },
+   "requires": "electric_engine"
+  },
+  {
+   "id": "booster",
+   "kind": "engine",
+   "age": "VII",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Raises the throttle ceiling from 5 to 10 steps for short bursts.",
+   "source": "BoosterUpgrade",
+   "ingredients": {
+    "shaped": [
+     "II",
+     "FF",
+     "II"
+    ],
+    "I": "#c:ingots/iron",
+    "F": "minecraft:flint_and_steel"
+   },
+   "throttle_steps": 10
+  },
+  {
+   "id": "banner",
+   "kind": "cosmetic",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Mounts a banner on the tail.",
+   "source": "BannerUpgrade",
+   "ingredients": {
+    "shapeless": [
+     "#minecraft:banners"
+    ]
+   }
+  },
+  {
+   "id": "payload",
+   "kind": "cargo",
+   "age": "VI",
+   "frames": [
+    "cargo",
+    "large"
+   ],
+   "effect": "Carries one payload crate that can be dropped over a target; allowed payloads come from the plane_payload data folder.",
+   "source": "PayloadUpgrade",
+   "ingredients": {}
+  },
+  {
+   "id": "chest",
+   "kind": "cargo",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Adds a chest inventory.",
+   "source": "ChestUpgrade",
+   "ingredients": {
+    "shapeless": [
+     "#c:chests/wooden"
+    ]
+   }
+  },
+  {
+   "id": "supply_crate",
+   "kind": "cargo",
+   "age": "VI",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "A barrel on a parachute that can be released from the air.",
+   "source": "SupplyCrateUpgrade",
+   "ingredients": {
+    "shapeless": [
+     "minecraft:barrel",
+     "parachute"
+    ]
+   },
+   "hook": "Ad Astra cargo-rocket fold: same crate/parachute drop reused for planetary drops (survey p1)"
+  },
+  {
+   "id": "jukebox",
+   "kind": "cosmetic",
+   "age": "VII",
+   "frames": [
+    "light",
+    "large",
+    "cargo",
+    "helicopter"
+   ],
+   "effect": "Plays a disc for everyone in range while flying.",
+   "source": "JukeboxUpgrade",
+   "ingredients": {
+    "shapeless": [
+     "minecraft:jukebox"
+    ]
+   }
+  }
+ ]
+}

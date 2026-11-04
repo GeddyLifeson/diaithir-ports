@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/potters_wheel"
+  "layer0": "diaithirfurnishings:item/potters_wheel_head",
+  "layer1": "diaithirfurnishings:item/potters_wheel_handle",
+  "layer2": "diaithirfurnishings:item/potters_wheel_binding"
  }
 }

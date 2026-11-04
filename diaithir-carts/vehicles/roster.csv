@@ -12,6 +12,7 @@ model_t,ground,travel,sedan,Ford Model T,1908,VI,petrol_engine,petrol,5,540,15,,
 rolls_royce_armoured_car,ground,military,armoured car,Rolls-Royce Armoured Car,1914,VI,petrol_engine,petrol,3,,56,,,armcar,pack,med,Wikipedia: Rolls-Royce Armoured Car
 holmes_wrecker,ground,utility,tow truck,Holmes wrecker (Ernest Holmes),1916,VI,petrol_engine,petrol,2,,,,,wrecker,pack,med,Wikipedia: Tow truck
 mack_type_75,ground,utility,fire truck,Mack Type 75 pumper,1935,VI,petrol_engine,petrol,4,,,,,firetruck,pack,low,Wikipedia: Mack Trucks (year approximate; verify)
+fordson_f,ground,utility,farm tractor,Fordson Model F,1917,VI,petrol_engine,petrol,1,,15,,,tractor,pack,med,Wikipedia: Fordson (20 hp; mass and tank are body defaults)
 willys_mb,ground,military,jeep,Willys MB,1941,VI,petrol_engine,petrol,3,1040,44,,57,jeep,pack,high,Wikipedia: Willys MB
 ford_f1,ground,utility,pickup,Ford F-1,1948,VII,petrol_engine,petrol,3,,75,,,pickup,pack,high,Wikipedia: Ford F-Series (first generation)
 land_rover_series_i,ground,travel,off-roader,Land Rover Series I,1948,VII,petrol_engine,petrol,4,,37,,45,jeep,pack,high,Wikipedia: Land Rover Series

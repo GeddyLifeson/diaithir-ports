@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/earth_oven"
+  "layer0": "diaithirfurnishings:item/earth_oven_pot",
+  "layer1": "diaithirfurnishings:item/earth_oven_handle"
  }
 }

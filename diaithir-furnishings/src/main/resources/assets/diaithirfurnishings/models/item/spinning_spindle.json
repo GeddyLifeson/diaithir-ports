@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/spinning_spindle"
+  "layer0": "diaithirfurnishings:item/spinning_spindle_head",
+  "layer1": "diaithirfurnishings:item/spinning_spindle_handle",
+  "layer2": "diaithirfurnishings:item/spinning_spindle_binding"
  }
 }

@@ -8,8 +8,9 @@ Round 2 of the clean-room plan (`/mnt/project-files/plans/CLEAN_ROOM_ROUND2.md`)
 | the_backwoods | Backwoods | All Rights Reserved | 8 | 57 | 65 | 26 | IV |
 | the_bumblezone | The Bumblezone | All Rights Reserved | 1 | 99 | 64 | 9 | II |
 | aether_ii | The Aether II | Custom licence, source repo not readable | 1 | 529 | 173 | 16 | III (canon, dimension-placements) |
+| aerialhell | Aerial Hell | CC-BY-NC-SA-4.0 (open, but ShareAlike would bind this module, so rewritten instead of folded) | 1 | 511 + 82 migrated | 116 | 14 | IV (proposed) |
 
-Not rewritten, because the licence is open (handed to consolidation to fold): Aerial Hell (CC-BY-NC-SA-4.0), Stellaris (CC-BY-NC-SA-4.0), Regions Unexplored (MIT), BCLib (MIT), Kotlin for Forge (LGPL-2.1). Libraries GlitchCore (ARR), Cristel Lib (NC-ND), CodxLib (NC-ND) and Valhelsia Core (custom) can be dropped once nothing else in the pack depends on them; none of the four realms needs them.
+Not rewritten, because the licence is open (handed to consolidation to fold): Stellaris (CC-BY-NC-SA-4.0), Regions Unexplored (MIT), BCLib (MIT), Kotlin for Forge (LGPL-2.1). Libraries GlitchCore (ARR), Cristel Lib (NC-ND), CodxLib (NC-ND) and Valhelsia Core (custom) can be dropped once nothing else in the pack depends on them; none of the four realms needs them.
 
 ## What is in this slice
 - `tools/realms_gen.py <realm> --client-jar <minecraft client jar>` regenerates everything from `tools/realms/<realm>.{json,blocks.txt,items.txt,biomes.txt}`.
@@ -38,6 +39,8 @@ Boss rituals, per-creature models and abilities, loot rooms and chests in struct
 ## Slice 7: generated art
 All realm blocks and simple items now use generated 64 px textures (tools/realm_art.py, procedural, own design; stairs/slabs/etc. share their parent's look; logs and turf get _top variants; leaves/glass/portals alpha; plants are cross sprites; ores have colored spots). No vanilla stand-in textures remain. Per-creature models and hand-painted art are still open.
 
+## Aerial Hell (round 2, 11-03 evening)
+Added as the fifth realm with the same generator (`tools/realms/aerial_hell.*`, ids read from the 0.7.8 NeoForge 26.1.2 jar, no code, art or data copied). Portal: volucite_shard on stellar_portal_frame_block. 50 creatures (shurikens and projectiles left out; they migrate with the item ids), 15 structures, 14 biomes. Age IV is a proposal, not in canon. Slices 4-7 output (mobs, structures, gear, art) come from the generator and are stand-ins like the other realms.
 ## Slice 8: loot, gear abilities, sizes
 - Every structure template now holds chests with a per-structure loot table (`<modid>:chests/<structure>`: realm gear, ingots/crystals, vanilla staples; towers and shrines are richer and enchanted).
 - Gear abilities (RealmGear): weapon hits apply an effect picked from the material name (frost slows, ember ignites, rot poisons, honey heals the wielder, cloud lifts, default weakness). A full armour set of one material gives short Resistance when hit and slows the attacker.

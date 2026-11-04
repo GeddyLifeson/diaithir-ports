@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "I",
+  "S",
+  "L"
+ ],
+ "key": {
+  "I": "theaurorian:crystal",
+  "S": "#c:rods/wooden",
+  "L": "theaurorian:silentwood_leaves"
+ },
+ "result": {
+  "id": "theaurorian:crystal_arrow",
+  "count": 6
+ }
+}

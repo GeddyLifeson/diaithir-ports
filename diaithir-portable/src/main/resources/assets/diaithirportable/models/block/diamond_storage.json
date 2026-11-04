@@ -1,0 +1,1 @@
+{ "parent": "minecraft:block/cube_all", "textures": { "all": "diaithirportable:block/diamond_storage" } }

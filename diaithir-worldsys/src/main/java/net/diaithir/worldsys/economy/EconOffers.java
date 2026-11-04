@@ -134,12 +134,17 @@ public final class EconOffers {
         return out;
     }
 
-    /** JS: x = (seed * 2654435761 + n * 40503) >>> 0; return x ^ (x >>> 13) (the xor result is a signed 32-bit int). */
+    /** JS: x = (seed * 2654435761 + n * 40503) >>> 0, then the murmur3 finalizer (xor-shift 16, imul 0x85ebca6b, xor-shift 13, imul 0xc2b2ae35, xor-shift 16), as a signed 32-bit int.
+     *  The old x ^ (x >>> 13) left the high bits following n, so a long list only ever offered its first ~26 entries. */
     static int hash(double seed, int n) {
         double v = seed * 2654435761.0 + n * 40503.0;
         double m = v % 4294967296.0;
         if (m < 0) m += 4294967296.0;
         int x = (int) (long) m;
-        return x ^ (x >>> 13);
+        x ^= x >>> 16;
+        x *= 0x85ebca6b;
+        x ^= x >>> 13;
+        x *= 0xc2b2ae35;
+        return x ^ (x >>> 16);
     }
 }
