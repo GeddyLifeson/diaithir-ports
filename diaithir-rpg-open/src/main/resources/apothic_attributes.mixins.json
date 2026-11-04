@@ -1,0 +1,20 @@
+{
+    "required": true,
+    "package": "dev.shadowsoffire.apothic_attributes.mixin",
+    "compatibilityLevel": "JAVA_25",
+    "refmap": "apothic_attributes.refmap.json",
+    "maxShiftBy": 5,
+    "mixins": [
+        "CombatRulesMixin",
+        "EntityMixin",
+        "LivingEntityMixin",
+        "NearestAttackableTargetGoalMixin",
+        "PlayerMixin",
+        "ThrownTridentMixin"
+    ],
+    "client": [
+        "client.AbstractContainerScreenMixin"
+    ],
+    "minVersion": "0.8",
+    "maxShiftBy": 5
+}

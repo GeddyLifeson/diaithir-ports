@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "L": "diaithirtrees:water_wonder_log"
+ },
+ "pattern": [
+  "LL",
+  "LL"
+ ],
+ "result": {
+  "id": "diaithirtrees:water_wonder_wood",
+  "count": 3
+ }
+}

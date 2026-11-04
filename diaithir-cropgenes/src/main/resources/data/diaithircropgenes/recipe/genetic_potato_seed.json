@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:potato"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithircropgenes:genetic_potato_seed",
+  "count": 1
+ }
+}

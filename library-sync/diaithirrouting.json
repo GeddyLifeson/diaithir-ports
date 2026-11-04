@@ -1,0 +1,17 @@
+[
+ {
+  "id": "diaithirrouting:foundry_barrel",
+  "name": "Day Barrel",
+  "text": "Day Barrel. Holds one kind of item, up to 64 stacks. Use an item on it to store it, use it empty-handed to take a stack (sneak: one item). Pipes and inserters fill it from the top and sides and empty it from the bottom. Contents spill when it is broken. Ported from the Factorization barrel idea (MIT)."
+ },
+ {
+  "id": "diaithirrouting:foundry_sieve",
+  "name": "Sieve",
+  "text": "Sieve. Place it against an inventory and it shows only the items that pass its filter to everything else that touches it, both in and out. Sneak-use with an item adds it to the filter, sneak-use empty-handed clears it. Four pairs: two items of one mod in a pair match that whole mod. A redstone signal inverts it. Ported from the Factorization sieve idea (MIT)."
+ },
+ {
+  "id": "diaithirrouting:foundry_router",
+  "name": "Sorting Router",
+  "text": "Sorting Router. Whatever is pushed into one face leaves by the others. An item goes to the faces whose filter matches it, else to faces with no filter; a face with a filter that does not match never gets it. Sneak-use a face with an item to add it to that face's filter, sneak-use empty-handed to clear it. Feeds splitters and lanes."
+ }
+]

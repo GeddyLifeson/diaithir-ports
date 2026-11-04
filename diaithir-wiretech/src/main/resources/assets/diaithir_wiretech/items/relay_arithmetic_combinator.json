@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "diaithir_wiretech:block/relay_arithmetic_combinator"
+  }
+}

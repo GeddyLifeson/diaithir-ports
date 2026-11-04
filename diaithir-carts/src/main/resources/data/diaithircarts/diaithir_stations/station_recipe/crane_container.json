@@ -1,0 +1,24 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 40,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 47
+  },
+  {
+   "item": "minecraft:iron_chain",
+   "count": 8
+  },
+  {
+   "item": "minecraft:redstone",
+   "count": 16
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:crane_container",
+  "count": 1
+ }
+}

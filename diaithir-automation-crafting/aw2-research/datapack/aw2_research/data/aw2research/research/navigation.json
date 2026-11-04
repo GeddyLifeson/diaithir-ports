@@ -1,0 +1,30 @@
+{
+  "title": "Navigation",
+  "description": "Ancient Warfare 2 research: navigation.",
+  "prerequisites": [
+    "aw2research:theory_of_gravity",
+    "aw2research:seafaring"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:compass",
+            "count": {
+              "min": 1
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:compass"
+    }
+  }
+}

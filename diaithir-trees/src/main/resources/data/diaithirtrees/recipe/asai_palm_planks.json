@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:asai_palm_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:asai_palm_planks",
+  "count": 4
+ }
+}

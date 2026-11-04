@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_glass_pane_post",
+ "textures": {
+  "pane": "diaithircropgenes:block/iron_plate_pane",
+  "edge": "diaithircropgenes:block/iron_plate_pane"
+ }
+}
