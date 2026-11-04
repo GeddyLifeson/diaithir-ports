@@ -108,5 +108,65 @@
     "id": "diaithircarts:cart_reader",
     "name": "Cart Reader",
     "text": "Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2; 13 means stop 11 or any later stop), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V."
+  },
+  {
+    "id": "diaithircarts:freight_chest",
+    "name": "Chest (freight)",
+    "text": "Chest for freight. Holds 27 stacks. Break it and the items stay inside the item you get. Age I."
+  },
+  {
+    "id": "diaithircarts:freight_pallet",
+    "name": "Pallet",
+    "text": "Pallet load. Holds 18 stacks and carries up to 1.5 t. Stacks two or three high inside a container. Age II."
+  },
+  {
+    "id": "diaithircarts:freight_barrel",
+    "name": "Barrel",
+    "text": "Barrel. Holds 18 stacks and carries up to 300 kg. Age II."
+  },
+  {
+    "id": "diaithircarts:freight_crate",
+    "name": "Crate",
+    "text": "Crate. Holds 54 stacks and carries up to 1.2 t. Age II."
+  },
+  {
+    "id": "diaithircarts:container_20",
+    "name": "Shipping container, 20 ft",
+    "text": "Shipping container, 20 ft. A walkable box with a 2 by 2 by 5 block interior, rated 28 t. Set it down with the item; swing the door at the far end by using it; lift it back into one item, cargo and all, with a cargo hook or a crane. Age VI."
+  },
+  {
+    "id": "diaithircarts:container_40",
+    "name": "Shipping container, 40 ft",
+    "text": "Shipping container, 40 ft. Interior 2 by 2 by 11 blocks, rated 26.7 t. Age VI."
+  },
+  {
+    "id": "diaithircarts:reefer_20",
+    "name": "Reefer container, 20 ft",
+    "text": "Reefer container, 20 ft. A container with a refrigeration unit at the closed end, drawing 4 kW. Interior 2 by 2 by 4. Age VI."
+  },
+  {
+    "id": "diaithircarts:reefer_40",
+    "name": "Reefer container, 40 ft",
+    "text": "Reefer container, 40 ft. Interior 2 by 2 by 10, refrigeration unit at the closed end, 4 kW. Age VI."
+  },
+  {
+    "id": "diaithircarts:tank_20",
+    "name": "Tank container, 20 ft",
+    "text": "Tank container, 20 ft. Holds 26,000 litres of fluid in an ISO frame. Pump it empty before lifting. Age VI."
+  },
+  {
+    "id": "diaithircarts:cargo_hook",
+    "name": "Cargo hook",
+    "text": "Cargo hook. Use it on a container wall or door to lift the whole box into one item, up to 35 t. Age VI."
+  },
+  {
+    "id": "diaithircarts:loading_dock",
+    "name": "Loading dock",
+    "text": "Loading dock. Faces a container up to three blocks ahead and offers its cargo to storage network cables, hoppers, pipes and depot workers. The comparator reads how full the container is. Age V."
+  },
+  {
+    "id": "diaithircarts:rift_dock",
+    "name": "Rift dock",
+    "text": "Rift dock. Serves the container at its partner, the other rift dock on the same channel in any dimension. Bare hand cycles the channel. Age VIII."
   }
 ]

@@ -35,6 +35,9 @@ final class CartCommands {
                 .then(Commands.literal("reapertest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
                     String err = Reaper.test(c.getSource().getLevel(), BlockPos.containing(c.getSource().getPosition()));
                     c.getSource().sendSuccess(() -> Component.literal(err == null ? "Reaper test PASS" : "Reaper test FAIL: " + err), false);
+                .then(Commands.literal("freighttest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
+                    String err = net.diaithir.freight.FreightTest.run(c.getSource().getServer());
+                    c.getSource().sendSuccess(() -> Component.literal(err == null ? "Freight test PASS" : "Freight test FAIL: " + err), false);
                     return err == null ? 1 : 0;
                 }))
                 .then(Commands.literal("roadtest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> {
