@@ -1,0 +1,12 @@
+name = "hydrofarm-neoforge-0.2.10"
+filename = "hydrofarm-neoforge-0.2.10.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/84rSDPyg/versions/BHNNGcqr/hydrofarm-neoforge-0.2.10.jar"
+hash-format = "sha256"
+hash = "4af18d5adaa9c0129265fd7b395cc6ed11871b90e6dc871cc98ab7d0f98a84a7"
+
+[update.modrinth]
+mod-id = "84rSDPyg"
+version = "BHNNGcqr"

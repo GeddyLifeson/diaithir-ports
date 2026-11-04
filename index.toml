@@ -28289,3 +28289,13 @@ metafile = true
 file = "resourcepacks/diaithir-ui.pw.toml"
 hash = "43747115519debb6b55d3a27ff0cde0f56e21d7c030092b859a2c590b7caeae0"
 metafile = true
+
+[[files]]
+file = "mods/travelersbackpack-neoforge-26.1.2-11.2.9.pw.toml"
+hash = "0b3f177862ce081cd074ec92ef9fbdd7b8322abc72e260e575c45c2fc0b19f56"
+metafile = true
+
+[[files]]
+file = "mods/hydrofarm-neoforge-0.2.10.pw.toml"
+hash = "f0b7a80ab3c3365519a277b58abe2c3633ca3b2986b162e5239a39c85bc46650"
+metafile = true
