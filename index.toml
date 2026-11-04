@@ -67610,11 +67610,11 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-content-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "9bc9089cd04f13fd7143c85fc61e4c4e9b7992f60f5da8a414d238e642f13503"
+hash = "a3027f921e0b7ebc727c5d108f98192a83b6a555c3d5806a1426e326fc48f76e"
 
 [[files]]
 file = "mods/diaithir-content-ext2-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "a2bfa1c876a9bf98482809361d1f19ccfb7fedd22dbed000ccd59e3eb3210584"
+hash = "0b7ab2cd1cfa81a7c0c9b0fc83707e0083a9c2459080823b1e4a354dcfd2cccf"
 
 [[files]]
 file = "mods/diaithir-content-suite-neoforge-26.1.2-1.0.0.jar"
@@ -67679,7 +67679,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-tech-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "5d9a27a1099cc01ba5dd924e48c11714855721e6bde7dad531e3df22652b7c2f"
+hash = "fc6f1ae44064b3ef85fabcb9255e85494fe92496cad84e937dc30997e125e297"
 
 [[files]]
 file = "mods/diaithir-world-suite-neoforge-26.1.2-1.0.0.jar"
@@ -67787,6 +67787,11 @@ file = "mods/kubejs-neoforge-26.1.2-8.0.6-diaithir.1.jar"
 hash = "10a5e30ffc6a3dff85230aab3ecccdf62118513f96f50b35055943a64acbc511"
 
 [[files]]
+file = "mods/kubeui-0.4.0.pw.toml"
+hash = "93ab50c6e3ad2369acffb1ba927b491e5ebdd9ac2fe8b6e94c5ac0dab38accde"
+metafile = true
+
+[[files]]
 file = "mods/lightmanscurrency-26.1-1.0.0.1-diaithir.1.jar"
 hash = "f8563e15ca71bac0a8da54a8aef4944f30671d91faaf6b19023b724c9573d1db"
 
@@ -67802,6 +67807,16 @@ hash = "b1972e17b44614bd6a75db99fb3ea2a5aa96b004be376a5ca65adb0a15f5aa83"
 [[files]]
 file = "mods/mots-structures-1.8.pw.toml"
 hash = "4431fa57cd911f5ec295299728a4972942a208e4b9efaedb73eda5698246580f"
+metafile = true
+
+[[files]]
+file = "mods/neoorigins-2.2.30_26.1.pw.toml"
+hash = "fe6c9d5b271819c4c1a28f4d863c21540b33f430c30050dbfe2dcb0af00d212e"
+metafile = true
+
+[[files]]
+file = "mods/neovitae-26.1.2-1.1.38.pw.toml"
+hash = "8c7ec650111a1da9053a1fb68703809955623c0eca5fe88cbd4f4420cd415553"
 metafile = true
 
 [[files]]
