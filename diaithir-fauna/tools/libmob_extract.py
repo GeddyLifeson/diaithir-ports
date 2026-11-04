@@ -14,7 +14,7 @@ for p in plans:
     desc.append(p if m['cls'] == 'land' else f"{p}[{m['cls']}]")
 SYSTEM = ("You sort fictional creatures onto a fixed set of body plans for a game. Use ONLY what the entry says; if it does not say, use the default.\n"
  "Body plans (use the bare name, e.g. frog; [fly] and [water] mark flyers and swimmers, land is the default): " + ', '.join(desc) + ".\n"
- "For each numbered entry return an object: i (the number), plan (exactly one body plan name above, the closest in body shape and movement; no bear, deer, cat, dog or ghost plan exists, so pick the nearest shape; a flying creature gets a [fly] plan, a swimming one a [water] plan), "
+ "For each numbered entry return an object: i (the number), plan (exactly one body plan name above, the closest in body shape and movement; ursine is bears, cervid deer and antelope, felid cats, canid dogs and wolves, humanoid people, ghosts and golems; otherwise pick the nearest shape; a flying creature gets a [fly] plan, a swimming one a [water] plan), "
  "size (tiny <1 kg, small 1-20 kg, medium 20-200 kg, large 200-2000 kg, huge 2-20 t, colossal >20 t; default medium), "
  "diet (herb, carn, omni, pisc, insect, none; default omni), "
  "temper (passive, wary, hostile; hostile only if the text says it attacks, hunts people, or is monstrous; default wary), "
