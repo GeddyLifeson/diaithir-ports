@@ -13,3 +13,12 @@ modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
 side = "BOTH"
+
+[[mixins]]
+config = "entity_texture_features.mixins.json"
+
+[[mixins]]
+config = "entity_model_features.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/entityfeatures.at.cfg"

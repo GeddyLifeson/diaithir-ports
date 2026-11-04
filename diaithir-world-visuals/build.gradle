@@ -8,6 +8,10 @@ base.archivesName = 'diaithir-world-visuals-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
+    accessTransformers {
+        from "src/main/resources/META-INF/skyaesthetics.at.cfg"
+        from "src/main/resources/META-INF/fallingleaves.at.cfg"
+    }
     version = project.neo_version
     runs {
         server {
