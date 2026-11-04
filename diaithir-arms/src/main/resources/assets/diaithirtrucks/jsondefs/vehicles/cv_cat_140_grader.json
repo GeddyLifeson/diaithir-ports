@@ -1,209 +1,342 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Caterpillar 140 Motor Grader",
-  "description": "Caterpillar 140 Motor Grader (1961, US): 180 kW, 17 t. Road role: grade.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:42"
-   ],
-   [
-    "minecraft:iron_block:0:4"
-   ],
-   [
-    "minecraft:redstone:0:8"
-   ],
-   [
-    "minecraft:black_dye:0:4"
-   ]
-  ],
-  "health": 690
- },
- "motorized": {
-  "emptyMass": 17000,
-  "fuelCapacity": 432,
-  "defaultFuelQty": 216,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.4,
-  "dragCoefficient": 0.8,
-  "crossSectionalArea": 9.0,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0
- },
- "parts": [
-  {
-   "pos": [
-    -0.9,
-    0.7,
-    3.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:heavy_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
+  "general": {
+    "type": "vehicle",
+    "name": "Caterpillar 140 Motor Grader",
+    "description": "Caterpillar 140 Motor Grader (1961, US): 180 kW, 17 t. Road role: grade.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:42"
+      ],
+      [
+        "minecraft:iron_block:0:4"
+      ],
+      [
+        "minecraft:redstone:0:8"
+      ],
+      [
+        "minecraft:black_dye:0:4"
+      ]
+    ],
+    "health": 690
   },
-  {
-   "pos": [
-    0.9,
-    0.7,
-    3.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:heavy_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
+  "motorized": {
+    "emptyMass": 17000,
+    "fuelCapacity": 432,
+    "defaultFuelQty": 216,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.4,
+    "dragCoefficient": 0.8,
+    "crossSectionalArea": 9.0,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0
   },
-  {
-   "pos": [
-    -0.9,
-    0.7,
-    -1.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:heavy_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    0.9,
-    0.7,
-    -1.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:heavy_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    -0.9,
-    0.7,
-    -2.3
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:heavy_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    0.9,
-    0.7,
-    -2.3
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:heavy_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    0.0
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirtrucks:engine_e250_stock",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    0.0,
-    2.2,
-    0.3500000000000001
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirtrucks:seat",
-   "dismountPos": [
-    -2.0,
-    0.0,
-    0.3500000000000001
-   ]
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Caterpillar 140 Motor Grader (Yellow)",
-   "modelName": "cv_cat_140_grader",
-   "textureName": "paintc",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_orange",
-   "name": "Caterpillar 140 Motor Grader (Orange)",
-   "modelName": "cv_cat_140_grader",
-   "textureName": "paintc_orange",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_white",
-   "name": "Caterpillar 140 Motor Grader (White)",
-   "modelName": "cv_cat_140_grader",
-   "textureName": "paintc_white",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {},
- "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.8,
-  "isBigTruck": true
- },
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "vehicle",
-    "entity",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "health": 690,
-   "armorThickness": 3.0,
-   "collisions": [
+  "parts": [
     {
-     "pos": [
-      0,
-      2.15,
-      0
-     ],
-     "width": 2.6,
-     "height": 3.7
+      "pos": [
+        -0.9,
+        0.7,
+        3.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.9,
+        0.7,
+        3.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -0.9,
+        0.7,
+        -1.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.9,
+        0.7,
+        -1.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -0.9,
+        0.7,
+        -2.3
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.9,
+        0.7,
+        -2.3
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e250_stock",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.0,
+        2.2,
+        0.3500000000000001
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.3500000000000001
+      ]
+    },
+    {
+      "pos": [
+        -0.9,
+        0.7,
+        3.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        0.9,
+        0.7,
+        3.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        -0.9,
+        0.7,
+        -1.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.9,
+        0.7,
+        -1.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.9,
+        0.7,
+        -2.3
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.9,
+        0.7,
+        -2.3
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:heavy_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e250_stock",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.0,
+        2.2,
+        0.3500000000000001
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.3500000000000001
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
     }
-   ]
-  }
- ]
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Caterpillar 140 Motor Grader (Yellow)",
+      "modelName": "cv_cat_140_grader",
+      "textureName": "paintc",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_orange",
+      "name": "Caterpillar 140 Motor Grader (Orange)",
+      "modelName": "cv_cat_140_grader",
+      "textureName": "paintc_orange",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_white",
+      "name": "Caterpillar 140 Motor Grader (White)",
+      "modelName": "cv_cat_140_grader",
+      "textureName": "paintc_white",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {},
+  "car": {
+    "isFrontWheelDrive": false,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.8,
+    "isBigTruck": true
+  },
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 690,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            2.15,
+            0
+          ],
+          "width": 2.6,
+          "height": 3.7
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            2.15,
+            0
+          ],
+          "width": 2.6,
+          "height": 3.7
+        }
+      ]
+    }
+  ]
 }

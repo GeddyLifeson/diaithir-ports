@@ -1,1 +1,1 @@
-{"parent": "minecraft:item/generated", "textures": {"layer0": "minecraft:item/minecart"}}
+{"parent": "minecraft:item/generated", "textures": {"layer0": "diaithircarts:item/unit_mtr_hyundai_rotem_emu"}}

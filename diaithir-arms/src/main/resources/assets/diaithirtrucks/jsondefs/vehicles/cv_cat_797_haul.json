@@ -1,248 +1,394 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Caterpillar 797 Haul Truck",
-  "description": "Caterpillar 797 Haul Truck (1999, US): 2983 kW, 360 t. Road role: haul.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:900"
-   ],
-   [
-    "minecraft:iron_block:0:90"
-   ],
-   [
-    "minecraft:redstone:0:8"
-   ],
-   [
-    "minecraft:black_dye:0:4"
-   ]
-  ],
-  "health": 2091
- },
- "motorized": {
-  "emptyMass": 360000,
-  "fuelCapacity": 3000,
-  "defaultFuelQty": 1500,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.4,
-  "dragCoefficient": 0.8,
-  "crossSectionalArea": 9.0,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0
- },
- "parts": [
-  {
-   "pos": [
-    -2.0,
-    1.8,
-    4.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:giant_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    2.0,
-    1.8,
-    4.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:giant_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    -2.0,
-    1.8,
-    -2.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:giant_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    2.0,
-    1.8,
-    -2.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:giant_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    -2.0,
-    1.8,
-    -3.9
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:giant_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    2.0,
-    1.8,
-    -3.9
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:giant_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    0.0
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirtrucks:engine_e3000_stock",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    0.0,
-    3.3,
-    0.050000000000000044
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirtrucks:seat",
-   "dismountPos": [
-    -2.0,
-    0.0,
-    0.050000000000000044
-   ]
-  },
-  {
-   "pos": [
-    0,
-    5.0,
-    -1.0
-   ],
-   "types": [
-    "interactable_crate"
-   ],
-   "defaultPart": "diaithirtrucks:crate_l"
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Caterpillar 797 Haul Truck (Yellow)",
-   "modelName": "cv_cat_797_haul",
-   "textureName": "paintc",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_orange",
-   "name": "Caterpillar 797 Haul Truck (Orange)",
-   "modelName": "cv_cat_797_haul",
-   "textureName": "paintc_orange",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_white",
-   "name": "Caterpillar 797 Haul Truck (White)",
-   "modelName": "cv_cat_797_haul",
-   "textureName": "paintc_white",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {
-  "animatedObjects": [
-   {
-    "objectName": "bed",
-    "animations": [
-     {
-      "animationType": "rotation",
-      "variable": "dump_tilt",
-      "centerPoint": [
-       0,
-       3.3,
-       -4.3
+  "general": {
+    "type": "vehicle",
+    "name": "Caterpillar 797 Haul Truck",
+    "description": "Caterpillar 797 Haul Truck (1999, US): 2983 kW, 360 t. Road role: haul.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:900"
       ],
-      "axis": [
-       -40,
-       0,
-       0
+      [
+        "minecraft:iron_block:0:90"
       ],
-      "clampMin": 0.0,
-      "clampMax": 1.0,
-      "duration": 100
-     }
-    ]
-   }
-  ],
-  "customVariables": [
-   "dump_tilt"
-  ]
- },
- "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.8,
-  "isBigTruck": true
- },
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "vehicle",
-    "entity",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "health": 2091,
-   "armorThickness": 3.0,
-   "collisions": [
+      [
+        "minecraft:redstone:0:8"
+      ],
+      [
+        "minecraft:black_dye:0:4"
+      ]
+    ],
+    "health": 2091
+  },
+  "motorized": {
+    "emptyMass": 360000,
+    "fuelCapacity": 3000,
+    "defaultFuelQty": 1500,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.4,
+    "dragCoefficient": 0.8,
+    "crossSectionalArea": 9.0,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0
+  },
+  "parts": [
     {
-     "pos": [
-      0,
-      3.8,
-      0
-     ],
-     "width": 4.8,
-     "height": 7.0
+      "pos": [
+        -2.0,
+        1.8,
+        4.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        2.0,
+        1.8,
+        4.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -2.0,
+        1.8,
+        -2.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        2.0,
+        1.8,
+        -2.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -2.0,
+        1.8,
+        -3.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        2.0,
+        1.8,
+        -3.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e3000_stock",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.0,
+        3.3,
+        0.050000000000000044
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.050000000000000044
+      ]
+    },
+    {
+      "pos": [
+        0,
+        5.0,
+        -1.0
+      ],
+      "types": [
+        "interactable_crate"
+      ],
+      "defaultPart": "diaithirtrucks:crate_l"
+    },
+    {
+      "pos": [
+        -2.0,
+        1.8,
+        4.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        2.0,
+        1.8,
+        4.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        -2.0,
+        1.8,
+        -2.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        2.0,
+        1.8,
+        -2.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -2.0,
+        1.8,
+        -3.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        2.0,
+        1.8,
+        -3.9
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:giant_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.0
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirtrucks:engine_e3000_stock",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.0,
+        3.3,
+        0.050000000000000044
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirtrucks:seat",
+      "dismountPos": [
+        -2.0,
+        0.0,
+        0.050000000000000044
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0,
+        5.0,
+        -1.0
+      ],
+      "types": [
+        "interactable_crate"
+      ],
+      "defaultPart": "diaithirtrucks:crate_l",
+      "minValue": 0.0,
+      "maxValue": 10.0
     }
-   ]
-  }
- ]
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Caterpillar 797 Haul Truck (Yellow)",
+      "modelName": "cv_cat_797_haul",
+      "textureName": "paintc",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_orange",
+      "name": "Caterpillar 797 Haul Truck (Orange)",
+      "modelName": "cv_cat_797_haul",
+      "textureName": "paintc_orange",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_white",
+      "name": "Caterpillar 797 Haul Truck (White)",
+      "modelName": "cv_cat_797_haul",
+      "textureName": "paintc_white",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {
+    "animatedObjects": [
+      {
+        "objectName": "bed",
+        "animations": [
+          {
+            "animationType": "rotation",
+            "variable": "dump_tilt",
+            "centerPoint": [
+              0,
+              3.3,
+              -4.3
+            ],
+            "axis": [
+              -40,
+              0,
+              0
+            ],
+            "clampMin": 0.0,
+            "clampMax": 1.0,
+            "duration": 100
+          }
+        ]
+      }
+    ],
+    "customVariables": [
+      "dump_tilt"
+    ]
+  },
+  "car": {
+    "isFrontWheelDrive": false,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.8,
+    "isBigTruck": true
+  },
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 2091,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            3.8,
+            0
+          ],
+          "width": 4.8,
+          "height": 7.0
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            3.8,
+            0
+          ],
+          "width": 4.8,
+          "height": 7.0
+        }
+      ]
+    }
+  ]
 }

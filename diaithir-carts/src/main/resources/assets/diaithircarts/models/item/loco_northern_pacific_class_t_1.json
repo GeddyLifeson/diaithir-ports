@@ -1,1 +1,1 @@
-{"parent": "minecraft:item/generated", "textures": {"layer0": "minecraft:item/minecart"}}
+{"parent": "minecraft:item/generated", "textures": {"layer0": "diaithircarts:item/loco_northern_pacific_class_t_1"}}

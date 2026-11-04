@@ -1,139 +1,186 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Fresno Scraper",
-  "description": "Fresno Scraper (1883, US): drawn work vehicle, 400 kg. Road role: grade.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:8"
-   ],
-   [
-    "minecraft:iron_block:0:1"
-   ],
-   [
-    "minecraft:redstone:0:8"
-   ],
-   [
-    "minecraft:black_dye:0:4"
-   ]
+  "general": {
+    "type": "vehicle",
+    "name": "Fresno Scraper",
+    "description": "Fresno Scraper (1883, US): drawn work vehicle, 400 kg. Road role: grade.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:8"
+      ],
+      [
+        "minecraft:iron_block:0:1"
+      ],
+      [
+        "minecraft:redstone:0:8"
+      ],
+      [
+        "minecraft:black_dye:0:4"
+      ]
+    ],
+    "health": 300
+  },
+  "motorized": {
+    "emptyMass": 400,
+    "fuelCapacity": 0,
+    "defaultFuelQty": 0,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.4,
+    "dragCoefficient": 0.8,
+    "crossSectionalArea": 9.0,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0,
+    "isTrailer": true
+  },
+  "parts": [
+    {
+      "pos": [
+        -0.8,
+        0.5,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        0.8,
+        0.5,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 1000.0
+    },
+    {
+      "pos": [
+        -0.8,
+        0.5,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.8,
+        0.5,
+        0.0
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirtrucks:truck_wheel",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    }
   ],
-  "health": 300
- },
- "motorized": {
-  "emptyMass": 400,
-  "fuelCapacity": 0,
-  "defaultFuelQty": 0,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.4,
-  "dragCoefficient": 0.8,
-  "crossSectionalArea": 9.0,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0,
-  "isTrailer": true
- },
- "parts": [
-  {
-   "pos": [
-    -0.8,
-    0.5,
-    0.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:truck_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  },
-  {
-   "pos": [
-    0.8,
-    0.5,
-    0.0
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirtrucks:truck_wheel",
-   "minValue": 0.0,
-   "maxValue": 1000.0
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Fresno Scraper (Yellow)",
-   "modelName": "cv_fresno_scraper",
-   "textureName": "paintc",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_orange",
-   "name": "Fresno Scraper (Orange)",
-   "modelName": "cv_fresno_scraper",
-   "textureName": "paintc_orange",
-   "extraMaterialLists": [
-    []
-   ]
-  },
-  {
-   "subName": "_white",
-   "name": "Fresno Scraper (White)",
-   "modelName": "cv_fresno_scraper",
-   "textureName": "paintc_white",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {},
- "connectionGroups": [
-  {
-   "groupName": "drawbar",
-   "canInitiateConnections": false,
-   "isHookup": true,
-   "connections": [
+  "definitions": [
     {
-     "type": "drawbar",
-     "pos": [
-      0,
-      0.8,
-      2.6
-     ],
-     "distance": 2.0
-    }
-   ]
-  }
- ],
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "vehicle",
-    "entity",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "health": 300,
-   "armorThickness": 3.0,
-   "collisions": [
+      "subName": "",
+      "name": "Fresno Scraper (Yellow)",
+      "modelName": "cv_fresno_scraper",
+      "textureName": "paintc",
+      "extraMaterialLists": [
+        []
+      ]
+    },
     {
-     "pos": [
-      0,
-      1.0,
-      0
-     ],
-     "width": 1.8,
-     "height": 1.4
+      "subName": "_orange",
+      "name": "Fresno Scraper (Orange)",
+      "modelName": "cv_fresno_scraper",
+      "textureName": "paintc_orange",
+      "extraMaterialLists": [
+        []
+      ]
+    },
+    {
+      "subName": "_white",
+      "name": "Fresno Scraper (White)",
+      "modelName": "cv_fresno_scraper",
+      "textureName": "paintc_white",
+      "extraMaterialLists": [
+        []
+      ]
     }
-   ]
-  }
- ]
+  ],
+  "rendering": {},
+  "connectionGroups": [
+    {
+      "groupName": "drawbar",
+      "canInitiateConnections": false,
+      "isHookup": true,
+      "connections": [
+        {
+          "type": "drawbar",
+          "pos": [
+            0,
+            0.8,
+            2.6
+          ],
+          "distance": 2.0
+        }
+      ]
+    }
+  ],
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 300,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.0,
+            0
+          ],
+          "width": 1.8,
+          "height": 1.4
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.0,
+            0
+          ],
+          "width": 1.8,
+          "height": 1.4
+        }
+      ]
+    }
+  ]
 }

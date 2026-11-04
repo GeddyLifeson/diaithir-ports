@@ -1,0 +1,9 @@
+alien
+blue_fish
+heart_of_luna
+luna_shadow
+lunar_parasite
+parasite_affected_villager
+parasite_affected_villager_evolved
+star_crawler
+star_crawler_boss

@@ -1,0 +1,75 @@
+{
+ "id": "autonomous_haul_fleet",
+ "tier": "AUTOMATED",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 10,
+  "h": 6
+ },
+ "result": "diaithirmega:autonomous_haul_fleet",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 4000,
+   "ghost": "diaithirmega:ghost/autonomous_haul_fleet_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 1
+    }
+   ],
+   "base_ticks": 3000,
+   "ghost": "diaithirmega:ghost/autonomous_haul_fleet_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "hold",
+     "count": 1
+    }
+   ],
+   "base_ticks": 5000,
+   "ghost": "diaithirmega:ghost/autonomous_haul_fleet_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 1
+    }
+   ],
+   "base_ticks": 40,
+   "ghost": "diaithirmega:ghost/autonomous_haul_fleet_crew"
+  },
+  {
+   "id": "autonomy",
+   "order": 5,
+   "slots": [
+    {
+     "kind": "autonomy_module",
+     "count": 1
+    }
+   ],
+   "base_ticks": 100,
+   "ghost": "diaithirmega:ghost/autonomous_haul_fleet_autonomy"
+  }
+ ],
+ "crane_speedup": 1.0
+}

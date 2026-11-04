@@ -68,8 +68,7 @@
   }
  ],
  "parts": [
-  "tank_track",
-  "tank_track2",
+  "tank_wheel",
   "tank_engine",
   "tank_seat",
   "tank_gun_105",

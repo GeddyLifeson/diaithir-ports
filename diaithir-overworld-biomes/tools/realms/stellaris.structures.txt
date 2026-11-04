@@ -1,0 +1,14 @@
+earth_operation_base
+earth_satellite
+lunar_outpost
+meteor
+moon_destroyed_spaceship
+moon_destroyed_village
+moon_dungeon
+moon_first_landing
+moon_launchpad
+moon_space_base
+moon_sphere
+moon_village
+novite
+small_moon_dungeon
