@@ -534,6 +534,7 @@ def main():
         ov = m.pop("overrides", [])
         if ov:
             entries = [dict(threshold=o["predicate"]["charge"], model=dict(type="minecraft:model", model=o["model"])) for o in ov if "charge" in o["predicate"]]
+            entries[-1]["threshold"] = 0.95  # final frame only once the 19-tick beam charge is reached
             first = [o for o in ov if "charge" not in o["predicate"]][0]
             (idir / "crystalline_sword.json").write_text(json.dumps(dict(model=dict(type="minecraft:condition", property="minecraft:using_item",
                 on_false=dict(type="minecraft:model", model=f"{NS}:item/crystalline_sword"),
@@ -563,8 +564,8 @@ def main():
         lang.setdefault(f"item.{NS}.{n}_spawn_egg", title + " Spawn Egg")
     # upstream's Mirror of Guidance has no text for six of its twelve nodes; these are ours (clean-room, from what this port implements)
     mir = {
-        "crafting": ("Crafting", "Silentwood makes a crafting table and a chest. A scrapper breaks tools and armour back into parts: put a crystal in the top slot and the item below it. A crystal block placed above the scrapper makes it four times faster. The moonlight forge upgrades gear at night under open sky; the higher it stands, the faster it works. Chimneys on top of an Aurorian furnace speed it up."),
-        "ore_cerulean": ("Cerulean Ore", "Cerulean ore generates underground in the Aurorian. Smelt it into cerulean ingots for cerulean tools, armour and arrows."),
+        "crafting": ("Crafting", "Silentwood makes a crafting table and a chest. A scrapper breaks tools and armour back into parts: put a crystal in the first slot and the item to scrap in the second. A crystal block placed above the scrapper makes it four times faster. The moonlight forge upgrades gear at night under open sky; the higher it stands, the faster it works. Chimneys on top of an Aurorian furnace make its fuel burn longer."),
+        "ore_cerulean": ("Cerulean Ore", "Cerulean ore generates underground in the Aurorian. Smelt it into cerulean ingots for cerulean armour, the cerulean shield and arrows."),
         "ore_moonstone": ("Moonstone Ore", "Moonstone ore generates underground. Moonstone tools last longer: half of the hits cost no durability, but during the day each hit costs one extra point."),
         "ore_geode": ("Geodes", "Geodes are crystal lumps buried in the stone. Crystals from them power a scrapper."),
         "umbra": ("Umbra", "Umbra gear is heavy. The greatsword slows you but gives resistance while held, and the chestplate hits back at attackers while you sneak."),
