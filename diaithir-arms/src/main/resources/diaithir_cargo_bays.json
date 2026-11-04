@@ -194,7 +194,7 @@
   "l": 2,
   "payload_kg": 500,
   "ox": -0.5,
-  "oy": 1.1,
+  "oy": 2.4,
   "oz": -2.8
  },
  "diaithirtanks:tank_mk1a": {
@@ -203,7 +203,7 @@
   "l": 2,
   "payload_kg": 500,
   "ox": -0.5,
-  "oy": 1.1,
+  "oy": 2.4,
   "oz": -2.8
  },
  "diaithirtanks:tank_mk1b": {
@@ -212,7 +212,7 @@
   "l": 2,
   "payload_kg": 500,
   "ox": -0.5,
-  "oy": 1.1,
+  "oy": 2.4,
   "oz": -2.8
  },
  "diaithirtanks:tank_mk2": {
@@ -221,7 +221,7 @@
   "l": 2,
   "payload_kg": 500,
   "ox": -0.5,
-  "oy": 1.1,
+  "oy": 2.4,
   "oz": -2.8
  },
  "diaithirtanks:tank_mk2a": {
@@ -230,7 +230,7 @@
   "l": 2,
   "payload_kg": 500,
   "ox": -0.5,
-  "oy": 1.1,
+  "oy": 2.4,
   "oz": -2.8
  },
  "diaithirtanks:tank_mk2b": {
@@ -239,7 +239,7 @@
   "l": 2,
   "payload_kg": 500,
   "ox": -0.5,
-  "oy": 1.1,
+  "oy": 2.4,
   "oz": -2.8
  }
 }

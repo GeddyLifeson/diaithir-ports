@@ -52,7 +52,7 @@ for c in man['construction']:
     elif c['kind'] == 'dumpcart':
         trucks[c['id']] = bay(1, 1, 1, 600, 0.9)
 
-tanks = {t: bay(1, 1, 2, 500, 1.1, -1.8) for t in (v['id'] if isinstance(v, dict) else v for v in json.load(open(root / 'diaithir-arms/tank_manifest.json'))['vehicles'])}
+tanks = {t: bay(1, 1, 2, 500, 2.4, -1.8) for t in (v['id'] if isinstance(v, dict) else v for v in json.load(open(root / 'diaithir-arms/tank_manifest.json'))['vehicles'])}
 
 (root / 'diaithir-carts/src/main/resources/diaithir_cargo_bays.json').write_text(json.dumps({f'diaithirvehicles:{k}': v for k, v in carts.items()}, indent=1) + '\n')
 arms = {f'diaithirtrucks:{k}': v for k, v in trucks.items()}
