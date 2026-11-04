@@ -1,0 +1,39 @@
+{
+    "name": "Gemas",
+    "icon": "apotheosis:gem",
+    "category": "apotheosis:adventure/gems",
+    "flag": "apotheosis:adventure",
+    "sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Uma $(9)Gema$() é um cristal de força condensada.$(p)Quando encaixada em um item com afixo, ela concede um bônus poderoso.$(p)As Gemas podem fornecer bônus diferentes conforme o item e podem ser aprimoradas."
+        },
+        {
+            "title": "Pureza",
+            "type": "patchouli:text",
+            "text": "Cada gema possui uma Pureza, que varia de $(#808080)Rachada$() a $(6)Perfeita$().$(p)A pureza determina sozinha a força da gema, e gemas de pureza maior são mais caras de aprimorar.$(p)Uma Gema $(6)Perfeita$() não pode mais ser aprimorada."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Obtenção de gemas",
+            "text": "Gemas podem ser encontradas em baús e, raramente, ao matar criaturas. As chances de obtenção são maiores para jogadores reais, mas máquinas e outras fontes de automação ainda têm uma chance muito pequena de gerar Gemas.$(p)Invasores Apóticos têm uma chance maior de derrubá-las."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Encaixe de gemas",
+            "text": "Para encaixar uma gema em um item, combine os dois em uma Bancada de Ferraria.$(p)Cada gema indica em quais itens pode ser encaixada.$(p)Algumas gemas são $(#C73912)Únicas$(), o que significa que apenas uma cópia da mesma gema pode ser encaixada em cada item."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Remoção de gemas",
+            "text": "Remover gemas de um item costumava ser um processo difícil, mas alguns alquimistas engenhosos descobriram como fazê-lo.$(p)As anotações deles estão detalhadas na próxima página."
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "apotheosis:sigil_of_withdrawal",
+            "title": "Sigilo de retirada",
+            "text": "Combine um item com gemas encaixadas e um $(9)Sigilo de Retirada$() em uma Bancada de Ferraria para removê-las. O item e todas as gemas serão devolvidos."
+        }
+    ]
+}

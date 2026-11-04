@@ -1,0 +1,13 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "minecraft:echo_shard",
+    "requirements": {
+        "arcana": 50.0,
+        "eterna": 70.0,
+        "quanta": 50.0
+    },
+    "result": {
+        "count": 4,
+        "id": "minecraft:echo_shard"
+    }
+}

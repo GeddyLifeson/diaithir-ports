@@ -22,6 +22,8 @@ The five key-hole blocks work from code (`GateKeyholeBlock`): the matching key, 
 - Upgrade rules for the furnace, scrapper and forge in `data/theaurorian/upgrades/targets/` (#117 data rules). No unit-bearing quantities exist in this module, so UNITS.md needs nothing beyond showing times in seconds.
 - Scripts: `tools/port.py` = S6880, `tools/rcon.py` = S6881 (claimed with Global-Repo `claim_id.py`; catalogue rows still to be added there).
 
+- Silentwood sapling grows the silentwood tree (tested with random ticks, 13-log trunk).
+
 ## Not ported yet (listed, not registered)
-Silentwood sapling and tree growth, bow and the cerulean and crystal arrows, crystalline sword beam, mirror of guidance, sickles, the umbra pickaxe selection mode, the crystalline pickaxe ore treasure, and upstream's custom machine screens. Upstream itself marks the darkstone and moon temple dungeons, dungeon mobs, farming and the portal as unfinished.
+Bow and the cerulean and crystal arrows, crystalline sword beam, mirror of guidance, sickles, the umbra pickaxe selection mode, the crystalline pickaxe ore treasure, and upstream's custom machine screens. Upstream itself marks the darkstone and moon temple dungeons, dungeon mobs, farming and the portal as unfinished.
 Quests in `codex/aurorian_quests.json` carry `live: false` for the dungeon and boss steps until the keeper boss exists. The plan is to attach the dungeon bosses through `diaithir-bosses` profiles once the mobs are ported. Plants (tall grass, lavender) were not seen in the test area and need a look in a client. Diaithiris names, the other 129 language names and Codex prose are follow-ups. No client test yet (icons, armour layers, sky).

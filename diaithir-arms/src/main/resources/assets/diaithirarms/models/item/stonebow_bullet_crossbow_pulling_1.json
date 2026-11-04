@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/crossbow",
+ "textures": {
+  "layer0": "diaithirarms:item/stonebow_bullet_crossbow_pulling_1"
+ }
+}

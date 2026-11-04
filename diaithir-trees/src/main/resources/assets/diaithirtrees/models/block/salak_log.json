@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirtrees:block/salak_log_top",
+  "side": "diaithirtrees:block/salak_log"
+ }
+}

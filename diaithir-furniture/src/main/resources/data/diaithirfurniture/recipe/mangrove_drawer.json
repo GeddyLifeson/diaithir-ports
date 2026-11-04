@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:mangrove_planks",
+  "C": "minecraft:chest"
+ },
+ "pattern": [
+  "PPP",
+  "C C",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:mangrove_drawer",
+  "count": 1
+ }
+}

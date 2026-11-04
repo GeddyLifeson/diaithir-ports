@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft:block/spruce_paving"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft:block/spruce_paving_top"
+  },
+  "type=double": {
+   "model": "minecraft:block/spruce_planks"
+  }
+ }
+}

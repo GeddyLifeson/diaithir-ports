@@ -1,0 +1,15 @@
+{
+  "station": "station.smeltery",
+  "stage": "part",
+  "time_s": 10,
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_early_guided_rocket_filler",
+    "count": 1
+  }
+}

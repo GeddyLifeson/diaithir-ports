@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:tinted_glass"
+ },
+ "pattern": [
+  "BB",
+  "BB"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft2:tinted_glass_panel",
+  "count": 4
+ }
+}

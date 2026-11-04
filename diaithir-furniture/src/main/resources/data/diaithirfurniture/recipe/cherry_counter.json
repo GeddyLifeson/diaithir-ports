@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:cherry_planks"
+ },
+ "pattern": [
+  "PPP",
+  "P P",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:cherry_counter",
+  "count": 1
+ }
+}

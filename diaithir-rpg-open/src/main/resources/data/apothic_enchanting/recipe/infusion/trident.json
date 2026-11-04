@@ -1,0 +1,17 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "apothic_enchanting:inert_trident",
+    "max_requirements": {
+        "arcana": -1.0,
+        "eterna": -1.0,
+        "quanta": 50.0
+    },
+    "requirements": {
+        "arcana": 35.0,
+        "eterna": 40.0,
+        "quanta": 20.0
+    },
+    "result": {
+        "id": "minecraft:trident"
+    }
+}

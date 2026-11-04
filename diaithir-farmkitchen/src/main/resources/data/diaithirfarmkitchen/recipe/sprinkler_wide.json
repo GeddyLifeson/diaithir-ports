@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:iron_bars"
+ },
+ "pattern": [
+  "BB",
+  "BB"
+ ],
+ "result": {
+  "id": "diaithirfarmkitchen:sprinkler_wide",
+  "count": 4
+ }
+}
