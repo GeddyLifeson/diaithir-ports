@@ -21,7 +21,7 @@ object ShipYardMod {
         if (blocks.isEmpty()) null else {
             val ship = ShipAssembler.assembleToShipFull(level, blocks).ship
             // apply the summed part mass to the VS2 ship's inertia (block masses are replaced by the part masses)
-            if (stats.massKg() > 0) applyMass(ship, stats.massKg())
+            if (stats.massKg() > 0) applyMass(level, ship, stats.massKg())
             // apply the summed part stats to the new VS2 ship
             val c = YardShipControl()
             c.yardId = be.yardId; c.statMassKg = stats.massKg(); c.powerW = stats.powerW(); c.thrustN = stats.thrustN(); c.buoyancyN = stats.buoyancyN()
@@ -31,14 +31,31 @@ object ShipYardMod {
         }
     } }
 
-    /** Sets the ship's total mass to [target] kg by adding the difference at its centre of mass (ShipInertiaDataImpl.onSetBlock via reflection). */
-    fun applyMass(ship: org.valkyrienskies.core.api.ships.ServerShip, target: Double) {
+    /**
+     * Sets the ship's total mass to [target] kg by scaling every block's mass by the same factor (ShipInertiaDataImpl.onSetBlock via
+     * reflection), so the centre of mass stays where the hull's blocks put it. Any rounding remainder goes in at the centre of mass.
+     */
+    fun applyMass(level: net.minecraft.server.level.ServerLevel, ship: org.valkyrienskies.core.api.ships.ServerShip, target: Double) {
         try {
             val inertia = ship.inertiaData
-            val delta = target - inertia.shipMass
-            val com = inertia.centerOfMassInShip
+            val before = inertia.shipMass
+            if (before <= 0.0) return
+            val ratio = target / before
             val m = inertia.javaClass.getMethod("onSetBlock", Int::class.java, Int::class.java, Int::class.java, Double::class.java, Double::class.java)
-            m.invoke(inertia, Math.floor(com.x()).toInt(), Math.floor(com.y()).toInt(), Math.floor(com.z()).toInt(), if (delta < 0) -delta else 0.0, if (delta > 0) delta else 0.0)
+            val bb = ship.shipAABB ?: return
+            val pos = net.minecraft.core.BlockPos.MutableBlockPos()
+            for (x in bb.minX()..bb.maxX()) for (y in bb.minY()..bb.maxY()) for (z in bb.minZ()..bb.maxZ()) {
+                val state = level.getBlockState(pos.set(x, y, z))
+                if (state.isAir) continue
+                val mass = org.valkyrienskies.mod.common.BlockStateInfo.get(state)?.first ?: continue
+                m.invoke(inertia, x, y, z, mass, mass * ratio)
+            }
+            val rest = target - inertia.shipMass
+            if (Math.abs(rest) > 1e-6) {
+                val com = inertia.centerOfMassInShip
+                m.invoke(inertia, Math.floor(com.x()).toInt(), Math.floor(com.y()).toInt(), Math.floor(com.z()).toInt(), if (rest < 0) -rest else 0.0, if (rest > 0) rest else 0.0)
+            }
+            org.slf4j.LoggerFactory.getLogger("vs_yard").info("applyMass: {} -> {} com={}", before, inertia.shipMass, inertia.centerOfMassInShip)
         } catch (e: Throwable) { org.slf4j.LoggerFactory.getLogger("vs_yard").warn("cannot apply part mass: {}", e.toString()) }
     }
 

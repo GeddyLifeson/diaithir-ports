@@ -111,6 +111,14 @@ public abstract class MixinLevelRendererShips implements LevelRendererDuck {
         }
     }
 
+    @Inject(method = "compileSections", at = @At("HEAD"))
+    private void vs$drainShipChunks(final net.minecraft.client.Camera camera, final CallbackInfo ci) {
+        final var mgr = org.valkyrienskies.mod.common.assembly.SeamlessChunksManager.get();
+        if (mgr != null) {
+            mgr.drainDeferredBatch();
+        }
+    }
+
     @Inject(method = "compileSections", at = @At("TAIL"))
     private void vs$compileShipSections(final net.minecraft.client.Camera camera, final CallbackInfo ci) {
         vs$collect(true);
