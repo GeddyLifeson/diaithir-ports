@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""(S-id pending) Fold the MIT mods Agritech: Evolved and Hydrofarm into this module as extra mods of the same jar: their Java and resources are copied in
+"""(S6954) Fold the MIT mods Agritech: Evolved and Hydrofarm into this module as extra mods of the same jar: their Java and resources are copied in
 unchanged (own packages and namespaces, so nothing collides), their neoforge.mods.toml entries are appended to ours, and their LICENSE files go to THIRD_PARTY/.
 Datagen classes and the Fabric loader are left out. Usage: python3 -I tools/fold_third_party.py <AgritechEvolved checkout> <hydrofarm checkout>"""
 import os, re, shutil, subprocess, sys
