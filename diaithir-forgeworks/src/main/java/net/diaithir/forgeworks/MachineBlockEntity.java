@@ -224,17 +224,23 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
         return s.getItem() instanceof AugmentItem ai && ai.augment == a ? Math.min(s.getCount(), Config.MAX_AUGMENTS.get()) : 0;
     }
 
+    /** Effects from the shared upgrade system (modules and beacons); identity when none are fitted. */
+    private net.diaithir.upgrades.Effects upgrades() {
+        return net.diaithir.upgrades.Upgrades.host(this).map(net.diaithir.upgrades.UpgradeHost::effects)
+                .orElse(net.diaithir.upgrades.Effects.NONE);
+    }
+
     public double speed() {
-        return Config.tierSpeed(tier) * (1.0 + Config.SPEED_PER_AUGMENT.get() * augments(Augment.SPEED));
+        return Config.tierSpeed(tier) * (1.0 + Config.SPEED_PER_AUGMENT.get() * augments(Augment.SPEED)) * upgrades().speedMultiplier();
     }
 
     public double energyPerJob(MachineRecipe r) {
         double saving = Math.max(0.25, 1.0 - Config.SAVING_PER_AUGMENT.get() * augments(Augment.EFFICIENCY));
-        return r.energy * saving * (1.0 + Config.SPEED_ENERGY_PENALTY.get() * augments(Augment.SPEED));
+        return r.energy * saving * (1.0 + Config.SPEED_ENERGY_PENALTY.get() * augments(Augment.SPEED)) * upgrades().consumptionMultiplier();
     }
 
     public float bonusChance(MachineRecipe r) {
-        return (float) Math.min(1.0, r.bonusChance * (1.0 + Config.CHANCE_PER_AUGMENT.get() * augments(Augment.CHANCE)));
+        return (float) Math.min(1.0, r.bonusChance * (1.0 + Config.CHANCE_PER_AUGMENT.get() * augments(Augment.CHANCE)) * upgrades().outputMultiplier());
     }
 
     // ---- ticking -------------------------------------------------------------------------------------------------------------------
