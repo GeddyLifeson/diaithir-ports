@@ -1,0 +1,85 @@
+{
+ "_doc": "Fluid thruster fuels, folded from Create: Propulsion data/createpropulsion/thruster_fuels (MIT, commit c74591d). Upstream ships one file per source mod; the same fuel from several mods (diesel from Create Diesel Generators, Immersive Petroleum and TFMG; gasoline; biodiesel, ethanol and plant oil from CDG and Immersive Engineering) merges into one row keyed by the shared c: fluid tag. thrust_mult scales fluid_thruster thrust, burn_mult scales its fuel_per_tick.",
+ "fuels": [
+  {
+   "tag": "c:diesel",
+   "thrust_mult": 1.1,
+   "burn_mult": 0.85,
+   "upstream": [
+    "createdieselgenerators:diesel",
+    "immersivepetroleum:diesel",
+    "immersivepetroleum:diesel_sulfur",
+    "tfmg:diesel"
+   ]
+  },
+  {
+   "tag": "c:gasoline",
+   "thrust_mult": 1.2,
+   "burn_mult": 0.9,
+   "upstream": [
+    "createdieselgenerators:gasoline",
+    "immersivepetroleum:gasoline",
+    "tfmg:gasoline"
+   ]
+  },
+  {
+   "tag": "c:biodiesel",
+   "thrust_mult": 1.0,
+   "burn_mult": 0.95,
+   "upstream": [
+    "createdieselgenerators:biodiesel",
+    "immersiveengineering:biodiesel"
+   ]
+  },
+  {
+   "tag": "c:ethanol",
+   "thrust_mult": 0.95,
+   "burn_mult": 1.0,
+   "upstream": [
+    "createdieselgenerators:ethanol",
+    "immersiveengineering:ethanol"
+   ]
+  },
+  {
+   "tag": "c:plantoil",
+   "thrust_mult": 0.9,
+   "burn_mult": 1.1,
+   "upstream": [
+    "createdieselgenerators:plant_oil",
+    "immersiveengineering:plant_oil"
+   ]
+  },
+  {
+   "tag": "c:kerosene",
+   "thrust_mult": 1.05,
+   "burn_mult": 0.9,
+   "upstream": [
+    "tfmg:kerosene"
+   ]
+  },
+  {
+   "tag": "c:naphtha",
+   "thrust_mult": 0.95,
+   "burn_mult": 0.85,
+   "upstream": [
+    "tfmg:naphtha"
+   ]
+  },
+  {
+   "tag": "c:turpentine",
+   "thrust_mult": 1.0,
+   "burn_mult": 1.0,
+   "upstream": [
+    "createpropulsion:turpentine"
+   ]
+  },
+  {
+   "tag": "c:hydrogen",
+   "thrust_mult": 1.2,
+   "burn_mult": 1.0,
+   "upstream": [
+    "mekanism:hydrogen"
+   ]
+  }
+ ]
+}

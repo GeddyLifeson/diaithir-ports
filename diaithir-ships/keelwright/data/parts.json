@@ -158,6 +158,69 @@
    "station": "spaceyard"
   },
   {
+   "id": "ducted_propeller",
+   "kind": "drive",
+   "age": 5,
+   "classes": [
+    "sea",
+    "air"
+   ],
+   "mass": 16,
+   "hp": 70,
+   "thrust": 60,
+   "power": 5,
+   "station": "drydock",
+   "note": "Shaft-driven blades; needs free space in front (upstream Create: Propulsion propeller, MIT). Thrust falls to 0.5x of its in-air value in water for wooden blades; modelled by the class rule, not per part."
+  },
+  {
+   "id": "fluid_thruster",
+   "kind": "drive",
+   "age": 7,
+   "classes": [
+    "air",
+    "space"
+   ],
+   "mass": 36,
+   "hp": 130,
+   "thrust": 160,
+   "power": 0,
+   "fuel_per_tick": 0.04,
+   "station": "drydock",
+   "fuel_table": "thruster_fuels",
+   "note": "Liquid-fuel thruster: same peak thrust as the ion drive but burns fuel from the fuel table instead of drawing power (upstream: thruster and ion thruster share BASE_MAX_THRUST 600 kN)."
+  },
+  {
+   "id": "magnetic_clamp",
+   "kind": "dock",
+   "age": 6,
+   "classes": [
+    "sea",
+    "air",
+    "space"
+   ],
+   "mass": 10,
+   "hp": 60,
+   "power": 2,
+   "range": 32,
+   "station": "drydock",
+   "note": "Redstone-controlled polarity magnet: pulls or pushes against another clamp within 32 m (upstream range 32 blocks). Used for docking and cargo transfer."
+  },
+  {
+   "id": "gyro_wheel",
+   "kind": "attitude",
+   "age": 7,
+   "classes": [
+    "air",
+    "space"
+   ],
+   "mass": 22,
+   "hp": 80,
+   "power": 3,
+   "torque": 30,
+   "station": "drydock",
+   "note": "Reaction wheel: turns the hull without thrust, torque follows the redstone input (upstream Reaction Wheel)."
+  },
+  {
    "id": "heartcore_s",
    "kind": "power",
    "age": 6,

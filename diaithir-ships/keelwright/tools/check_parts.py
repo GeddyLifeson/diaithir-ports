@@ -2,7 +2,7 @@
 """Validate the part catalog and print per-class balance (usage: check_parts.py [parts.json])."""
 import json, sys, pathlib
 
-KINDS = {"hull", "control", "drive", "power", "storage", "link", "weapon", "shield", "crew", "life", "lift"}
+KINDS = {"hull", "control", "drive", "power", "storage", "link", "weapon", "shield", "crew", "life", "lift", "dock", "attitude"}
 path = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else pathlib.Path(__file__).parent.parent / "data" / "parts.json")
 cat = json.loads(path.read_text())
 classes = cat["hull_classes"]
@@ -18,6 +18,17 @@ for p in cat["parts"]:
         if c not in classes: errors.append(f"{pid}: unknown class {c}")
     if p["kind"] == "drive" and p.get("thrust", 0) <= 0: errors.append(f"{pid}: drive needs thrust")
     if p["kind"] == "weapon" and p.get("damage", 0) <= 0: errors.append(f"{pid}: weapon needs damage")
+    if p["kind"] == "dock" and p.get("range", 0) <= 0: errors.append(f"{pid}: dock needs range")
+    if p["kind"] == "attitude" and p.get("torque", 0) <= 0: errors.append(f"{pid}: attitude part needs torque")
+    if "fuel_table" in p and not p.get("fuel_per_tick"): errors.append(f"{pid}: fuel_table without fuel_per_tick")
+
+fuels = json.loads((path.parent / "thruster_fuels.json").read_text())["fuels"]
+tags = [f["tag"] for f in fuels]
+if len(tags) != len(set(tags)): errors.append("duplicate fuel tag")
+for f in fuels:
+    if not f["tag"].startswith("c:") or not f["upstream"] or not (0.5 <= f["thrust_mult"] <= 1.5 and 0.5 <= f["burn_mult"] <= 1.5):
+        errors.append(f"fuel {f['tag']}: bad tag, upstream list or multiplier")
+print(f"{len(fuels)} fuels merged from {sum(len(f['upstream']) for f in fuels)} upstream ids")
 
 def thrust_per_mass(parts):
     m = sum(p["mass"] for p in parts)
