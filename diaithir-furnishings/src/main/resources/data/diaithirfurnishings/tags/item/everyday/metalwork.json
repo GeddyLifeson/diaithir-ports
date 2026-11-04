@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:punch",
+  "diaithirfurnishings:hacksaw",
+  "diaithirfurnishings:file",
+  "diaithirfurnishings:tongs",
+  "diaithirfurnishings:anvil",
+  "diaithirfurnishings:swage",
+  "diaithirfurnishings:bellows",
+  "diaithirfurnishings:pliers",
+  "diaithirfurnishings:rivet",
+  "diaithirfurnishings:crucible",
+  "diaithirfurnishings:ingot_mold",
+  "diaithirfurnishings:ladle_foundry",
+  "diaithirfurnishings:swage_hammer",
+  "diaithirfurnishings:trip_hammer",
+  "diaithirfurnishings:wire_drawplate",
+  "diaithirfurnishings:jewelers_saw"
+ ]
+}

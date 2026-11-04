@@ -60,12 +60,12 @@ public final class Species {
         loadLibrary();
     }
 
-    /** Row: id, name, plan, tier, kg, scale, diet, flags, element. */
+    /** Row: id, name, plan, tier, kg, scale, diet, flags, element[, habitat bitmask]. */
     private Species(String[] c, int index) {
         this.index = index;
         id = c[0]; title = c[1]; name = c[1]; plan = c[2]; tier = Integer.parseInt(c[3]);
         kg = Float.parseFloat(c[4]); scale = Float.parseFloat(c[5]); diet = c[6]; flags = Integer.parseInt(c[7]); element = c[8];
-        hab = 0; ext = Integer.MAX_VALUE; fossil = false; rock = ""; form = ""; per = ""; dna = 0; maFrom = 0; maTo = 0; boxes = new float[0][];
+        hab = c.length > 9 ? Integer.parseInt(c[9]) : 0; ext = Integer.MAX_VALUE; fossil = false; rock = ""; form = ""; per = ""; dna = 0; maFrom = 0; maTo = 0; boxes = new float[0][];
     }
 
     private static void loadLibrary() {

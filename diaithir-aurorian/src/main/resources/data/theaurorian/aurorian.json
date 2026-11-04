@@ -82,6 +82,34 @@
   }
  },
  "armor": {
+  "umbra": {
+   "name": "umbra",
+   "durability": 20,
+   "boots": 4,
+   "legs": 6,
+   "chest": 6,
+   "helmet": 4,
+   "enchant": 20,
+   "sound": "diamond",
+   "toughness": 0.0,
+   "knockback": 0.2,
+   "repair": "theaurorian:umbra_ingot",
+   "age": "IV"
+  },
+  "aurorian_steel": {
+   "name": "aurorian_steel",
+   "durability": 33,
+   "boots": 4,
+   "legs": 7,
+   "chest": 8,
+   "helmet": 4,
+   "enchant": 10,
+   "sound": "netherite",
+   "toughness": 1.0,
+   "knockback": 0.1,
+   "repair": "theaurorian:aurorian_steel_ingot",
+   "age": "III"
+  },
   "knight": {
    "name": "knight",
    "durability": 20,
@@ -96,18 +124,18 @@
    "repair": null,
    "age": "II"
   },
-  "aurorian_steel": {
-   "name": "aurorian_steel",
-   "durability": 33,
+  "spectral": {
+   "name": "spectral",
+   "durability": 20,
    "boots": 4,
-   "legs": 7,
-   "chest": 8,
+   "legs": 6,
+   "chest": 6,
    "helmet": 4,
-   "enchant": 10,
-   "sound": "netherite",
-   "toughness": 1.0,
-   "knockback": 0.1,
-   "repair": "theaurorian:aurorian_steel_ingot",
+   "enchant": 25,
+   "sound": "leather",
+   "toughness": 0.0,
+   "knockback": 0.0,
+   "repair": "theaurorian:spectral_silk",
    "age": "III"
   },
   "cerulean": {
@@ -349,6 +377,14 @@
    "nutrition": 0,
    "saturation": 0.0,
    "fast": true
+  },
+  {
+   "id": "strange_meat",
+   "kind": "food",
+   "nutrition": 8,
+   "saturation": 14.4,
+   "fast": false,
+   "durability": 10
   },
   {
    "id": "aurorian_steel_hoe",
@@ -593,6 +629,34 @@
    "slot": "leggings"
   },
   {
+   "id": "spectral_boots",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "boots"
+  },
+  {
+   "id": "spectral_chestplate",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "chestplate"
+  },
+  {
+   "id": "spectral_helmet",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "helmet"
+  },
+  {
+   "id": "spectral_leggings",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "leggings"
+  },
+  {
    "id": "aurorianite_axe",
    "rarity": "rare",
    "kind": "axe",
@@ -625,6 +689,27 @@
    "speed": -3.0
   },
   {
+   "id": "living_divining_rod",
+   "rarity": "rare",
+   "kind": "item",
+   "durability": 100
+  },
+  {
+   "id": "umbra_chestplate",
+   "rarity": "rare",
+   "kind": "armor",
+   "mat": "umbra",
+   "slot": "chestplate"
+  },
+  {
+   "id": "umbra_greatsword",
+   "rarity": "rare",
+   "kind": "sword",
+   "mat": "umbra",
+   "damage": 7.0,
+   "speed": -3.75
+  },
+  {
    "id": "umbra_pickaxe",
    "rarity": "rare",
    "kind": "pickaxe",
@@ -640,6 +725,12 @@
    "durability": 1000
   },
   {
+   "id": "absorption_orb",
+   "rarity": "rare",
+   "kind": "item",
+   "durability": 250
+  },
+  {
    "id": "crystalline_pickaxe",
    "rarity": "rare",
    "kind": "pickaxe",
@@ -653,6 +744,31 @@
    "kind": "shield",
    "mat": "crystalline",
    "durability": 1000
+  },
+  {
+   "id": "amulet_of_chroma",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "emerald_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "keepers_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "ruby_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "sapphire_amulet",
+   "rarity": "epic",
+   "kind": "item"
   }
  ],
  "blocks": [
@@ -874,6 +990,12 @@
    "burn": 300
   },
   {
+   "id": "silentwood_sapling",
+   "kind": "sapling",
+   "copy": "minecraft:spruce_sapling",
+   "burn": 100
+  },
+  {
    "id": "silentwood_slab",
    "kind": "slab",
    "copy": "theaurorian:silentwood_planks",
@@ -941,6 +1063,63 @@
    "id": "geode",
    "kind": "full",
    "copy": "minecraft:iron_ore"
+  },
+  {
+   "id": "aurorian_furnace",
+   "kind": "furnace",
+   "copy": "minecraft:furnace"
+  },
+  {
+   "id": "boss_spawner",
+   "kind": "boss_spawner",
+   "copy": "minecraft:spawner"
+  },
+  {
+   "id": "moonlight_forge",
+   "kind": "moonlight_forge",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "scrapper",
+   "kind": "scrapper",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "silentwood_chest",
+   "kind": "chest",
+   "copy": "minecraft:chest"
+  },
+  {
+   "id": "silentwood_crafting_table",
+   "kind": "crafting_table",
+   "copy": "minecraft:crafting_table"
+  },
+  {
+   "id": "aurorian_portal",
+   "kind": "portal",
+   "copy": "minecraft:nether_portal"
+  },
+  {
+   "id": "aurorian_portal_frame",
+   "kind": "portal_frame",
+   "copy": "theaurorian:aurorian_cobblestone"
+  },
+  {
+   "id": "chimney",
+   "kind": "chimney",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "crystal",
+   "kind": "full",
+   "copy": "minecraft:stone",
+   "light": 15
+  },
+  {
+   "id": "fog_wall",
+   "kind": "fog_wall",
+   "copy": "theaurorian:runestone",
+   "light": 10
   },
   {
    "id": "moon_gem",

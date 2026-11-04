@@ -1,0 +1,12 @@
+{
+    "type": "apothic_enchanting:infusion",
+    "input": "apothic_enchanting:flimsy_ender_lead",
+    "requirements": {
+        "arcana": 40.0,
+        "eterna": 45.0,
+        "quanta": 25.0
+    },
+    "result": {
+        "id": "apothic_enchanting:ender_lead"
+    }
+}

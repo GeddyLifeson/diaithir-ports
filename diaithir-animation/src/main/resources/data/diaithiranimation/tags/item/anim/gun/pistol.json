@@ -1,0 +1,189 @@
+{
+"replace": false,
+"values": [
+{
+"id": "diaithirfirearms:beretta_1934",
+"required": false
+},
+{
+"id": "diaithirfirearms:beretta_92",
+"required": false
+},
+{
+"id": "diaithirfirearms:colt_1903",
+"required": false
+},
+{
+"id": "diaithirfirearms:colt_dragoon",
+"required": false
+},
+{
+"id": "diaithirfirearms:colt_m1911",
+"required": false
+},
+{
+"id": "diaithirfirearms:colt_navy_1851",
+"required": false
+},
+{
+"id": "diaithirfirearms:colt_python",
+"required": false
+},
+{
+"id": "diaithirfirearms:colt_saa",
+"required": false
+},
+{
+"id": "diaithirfirearms:cz_75",
+"required": false
+},
+{
+"id": "diaithirfirearms:desert_eagle",
+"required": false
+},
+{
+"id": "diaithirfirearms:enfield_no2",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_browning_hi_power",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_five_seven",
+"required": false
+},
+{
+"id": "diaithirfirearms:fn_m1900",
+"required": false
+},
+{
+"id": "diaithirfirearms:glock_17",
+"required": false
+},
+{
+"id": "diaithirfirearms:glock_g22",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_p7",
+"required": false
+},
+{
+"id": "diaithirfirearms:hk_usp",
+"required": false
+},
+{
+"id": "diaithirfirearms:lahti_l35",
+"required": false
+},
+{
+"id": "diaithirfirearms:lebel_1892_revolver",
+"required": false
+},
+{
+"id": "diaithirfirearms:luger_p08",
+"required": false
+},
+{
+"id": "diaithirfirearms:magnum",
+"required": false
+},
+{
+"id": "diaithirfirearms:makarov_pm",
+"required": false
+},
+{
+"id": "diaithirfirearms:mauser_c96",
+"required": false
+},
+{
+"id": "diaithirfirearms:nagant_m1895",
+"required": false
+},
+{
+"id": "diaithirfirearms:radom_vis35",
+"required": false
+},
+{
+"id": "diaithirfirearms:remington_1858",
+"required": false
+},
+{
+"id": "diaithirfirearms:sidearm_heavy",
+"required": false
+},
+{
+"id": "diaithirfirearms:sidearm_light",
+"required": false
+},
+{
+"id": "diaithirfirearms:sig_p220",
+"required": false
+},
+{
+"id": "diaithirfirearms:sig_p226",
+"required": false
+},
+{
+"id": "diaithirfirearms:sig_p320",
+"required": false
+},
+{
+"id": "diaithirfirearms:smith_wesson_model10",
+"required": false
+},
+{
+"id": "diaithirfirearms:springfield_xd",
+"required": false
+},
+{
+"id": "diaithirfirearms:stechkin_aps",
+"required": false
+},
+{
+"id": "diaithirfirearms:steyr_m1912",
+"required": false
+},
+{
+"id": "diaithirfirearms:sw_model29",
+"required": false
+},
+{
+"id": "diaithirfirearms:sw_mp",
+"required": false
+},
+{
+"id": "diaithirfirearms:tokarev_tt33",
+"required": false
+},
+{
+"id": "diaithirfirearms:type14_nambu",
+"required": false
+},
+{
+"id": "diaithirfirearms:walther_p38",
+"required": false
+},
+{
+"id": "diaithirfirearms:walther_p99",
+"required": false
+},
+{
+"id": "diaithirfirearms:walther_ppk",
+"required": false
+},
+{
+"id": "diaithirfirearms:webley_mk6",
+"required": false
+},
+{
+"id": "diaithirfirearms:wheellock_pistol",
+"required": false
+},
+{
+"id": "diaithirfirearms:yarygin_pya",
+"required": false
+}
+]
+}

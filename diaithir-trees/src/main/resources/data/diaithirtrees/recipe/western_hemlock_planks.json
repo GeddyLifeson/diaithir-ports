@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:western_hemlock_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:western_hemlock_planks",
+  "count": 4
+ }
+}

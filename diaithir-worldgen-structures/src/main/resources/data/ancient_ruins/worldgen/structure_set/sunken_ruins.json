@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "ancient_ruins:sunken_ruins",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 690112,
+    "spacing": 20,
+    "separation": 8
+  }
+}

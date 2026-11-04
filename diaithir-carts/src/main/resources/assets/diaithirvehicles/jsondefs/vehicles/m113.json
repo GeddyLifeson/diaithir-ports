@@ -1,0 +1,203 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "M113A1",
+  "description": "Armoured personnel carrier (1964). Fuel: Diesel.",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:183"
+   ],
+   [
+    "minecraft:redstone:0:4"
+   ]
+  ],
+  "health": 1200
+ },
+ "motorized": {
+  "emptyMass": 11000.0,
+  "fuelCapacity": 360000,
+  "defaultFuelQty": 0,
+  "hasRunningLights": true,
+  "hasHeadlights": true,
+  "axleRatio": 3.6,
+  "brakingFactor": 1.0,
+  "dragCoefficient": 0.5,
+  "crossSectionalArea": 4.97,
+  "steeringForceFactor": 1.0,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0,
+  "hasSkidSteer": true,
+  "hasPermanentSkidSteer": true,
+  "isBigTruck": false
+ },
+ "car": {
+  "isFrontWheelDrive": false,
+  "isRearWheelDrive": false,
+  "axleRatio": 3.6,
+  "dragCoefficient": 0.5
+ },
+ "parts": [
+  {
+   "pos": [
+    0,
+    0.7,
+    1.4500000000000002
+   ],
+   "types": [
+    "engine_car"
+   ],
+   "defaultPart": "diaithirvehicles:engine_m113"
+  },
+  {
+   "pos": [
+    -1.05,
+    0,
+    0
+   ],
+   "types": [
+    "ground_tread"
+   ],
+   "defaultPart": "diaithirvehicles:track_apc"
+  },
+  {
+   "pos": [
+    1.05,
+    0,
+    0
+   ],
+   "types": [
+    "ground_tread"
+   ],
+   "defaultPart": "diaithirvehicles:track_apc"
+  },
+  {
+   "pos": [
+    -0.4,
+    0.9,
+    0.2
+   ],
+   "types": [
+    "seat"
+   ],
+   "isController": true,
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "dismountPos": [
+    -2.1500000000000004,
+    0.5,
+    0.2
+   ]
+  },
+  {
+   "pos": [
+    0.4,
+    0.9,
+    -0.8
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  },
+  {
+   "pos": [
+    -0.4,
+    0.9,
+    -0.8
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  },
+  {
+   "pos": [
+    0.4,
+    0.9,
+    -1.6
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  },
+  {
+   "pos": [
+    -0.4,
+    0.9,
+    -1.6
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  },
+  {
+   "pos": [
+    0.4,
+    0.9,
+    -2.4000000000000004
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  },
+  {
+   "pos": [
+    -0.4,
+    0.9,
+    -2.4000000000000004
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  },
+  {
+   "pos": [
+    0.4,
+    0.9,
+    -3.2
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  },
+  {
+   "pos": [
+    -0.4,
+    0.9,
+    -3.2
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "diaithirvehicles:vehicle_seat"
+  }
+ ],
+ "collision": [
+  {
+   "pos": [
+    0,
+    1.15,
+    0
+   ],
+   "width": 2.7,
+   "height": 2.3
+  }
+ ],
+ "definitions": [
+  {
+   "subName": "",
+   "name": "M113A1",
+   "modelName": "m113",
+   "textureName": "m113",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "rendering": {}
+}

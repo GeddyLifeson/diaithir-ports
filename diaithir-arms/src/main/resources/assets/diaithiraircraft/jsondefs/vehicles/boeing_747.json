@@ -1,0 +1,120 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Boeing 747",
+  "description": "airliner, USA, 1969. Source: https://en.wikipedia.org/wiki/Boeing_747",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:1483"
+   ]
+  ],
+  "health": 17800
+ },
+ "motorized": {
+  "isAircraft": true,
+  "emptyMass": 178000,
+  "fuelCapacity": 200000,
+  "defaultFuelQty": 50000,
+  "wingSpan": 59.6,
+  "wingArea": 505.6,
+  "tailDistance": 31.8,
+  "aileronArea": 8.9,
+  "elevatorArea": 7.2,
+  "rudderArea": 3.6,
+  "dragCoefficient": 0.05,
+  "crossSectionalArea": 34.1,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    -19.668000000000003,
+    0.8,
+    14.14
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:boeing_747_engine"
+  },
+  {
+   "pos": [
+    -6.556,
+    0.8,
+    14.14
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:boeing_747_engine"
+  },
+  {
+   "pos": [
+    6.556,
+    0.8,
+    14.14
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:boeing_747_engine"
+  },
+  {
+   "pos": [
+    19.668000000000003,
+    0.8,
+    14.14
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:boeing_747_engine"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -3.535
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -4.335
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -3.535
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -4.335
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  }
+ ]
+}

@@ -24,11 +24,13 @@ public final class DiaithirGear {
         container.registerConfig(ModConfig.Type.COMMON, GearConfig.SPEC);
         Parity.load();
         Sets.load();
+        net.diaithir.gear.workshop.Workshop.init(bus);
+        net.diaithir.gear.fold.Folds.init(bus);
         NeoForge.EVENT_BUS.register(this);
     }
 
     @SubscribeEvent
-    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); }
+    public void commands(RegisterCommandsEvent e) { SelfTest.register(e.getDispatcher()); net.diaithir.gear.workshop.WorkshopTest.register(e.getDispatcher()); net.diaithir.gear.fold.FoldTest.register(e.getDispatcher()); }
 
     @SubscribeEvent
     public void incoming(LivingIncomingDamageEvent e) {

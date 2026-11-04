@@ -1,0 +1,8 @@
+{
+ "input": "theaurorian:moonstone_axe",
+ "output": {
+  "id": "theaurorian:aurorianite_axe",
+  "count": 1
+ },
+ "catalyst": "theaurorian:aurorianite_ingot"
+}

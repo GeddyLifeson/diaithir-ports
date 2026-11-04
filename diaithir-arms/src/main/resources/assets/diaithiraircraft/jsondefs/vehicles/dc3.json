@@ -1,0 +1,98 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Douglas DC-3",
+  "description": "airliner, USA, 1935. Source: https://en.wikipedia.org/wiki/Douglas_DC-3",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:69"
+   ]
+  ],
+  "health": 830
+ },
+ "motorized": {
+  "isAircraft": true,
+  "emptyMass": 8300,
+  "fuelCapacity": 3100,
+  "defaultFuelQty": 775,
+  "wingSpan": 29.0,
+  "wingArea": 68.6,
+  "tailDistance": 8.9,
+  "aileronArea": 4.3,
+  "elevatorArea": 3.5,
+  "rudderArea": 1.7,
+  "dragCoefficient": 0.05,
+  "crossSectionalArea": 4.6,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    -3.19,
+    0.8,
+    3.94
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:dc3_engine"
+  },
+  {
+   "pos": [
+    3.19,
+    0.8,
+    3.94
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:dc3_engine"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -0.985
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -1.7850000000000001
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -0.985
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -1.7850000000000001
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  }
+ ]
+}

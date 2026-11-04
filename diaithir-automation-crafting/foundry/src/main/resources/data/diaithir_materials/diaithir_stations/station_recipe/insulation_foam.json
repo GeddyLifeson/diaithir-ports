@@ -1,0 +1,19 @@
+{
+  "station": "machine.assembler",
+  "stage": "assembly",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "minecraft:slime_ball",
+      "count": 2
+    },
+    {
+      "item": "minecraft:blaze_powder",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:insulation_foam",
+    "count": 4
+  }
+}

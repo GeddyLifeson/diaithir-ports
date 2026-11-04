@@ -273,6 +273,18 @@
    "age": "IV",
    "items": [
     {
+     "id": "theaurorian:umbra_chestplate",
+     "name": "Umbra Chestplate",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "theaurorian:umbra_greatsword",
+     "name": "Umbra Greatsword",
+     "age": "IV",
+     "text": ""
+    },
+    {
      "id": "theaurorian:umbra_pickaxe",
      "name": "Umbra Pickaxe",
      "age": "IV",
