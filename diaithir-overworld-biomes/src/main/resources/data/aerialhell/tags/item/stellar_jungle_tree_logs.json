@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:stellar_jungle_tree_log",
+  "aerialhell:stellar_jungle_tree_wood",
+  "aerialhell:stripped_stellar_jungle_tree_log",
+  "aerialhell:stripped_stellar_jungle_tree_wood"
+ ]
+}

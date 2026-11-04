@@ -1,0 +1,25 @@
+{
+ "title": "Get Crafty",
+ "category": "early",
+ "objectives": [
+  {
+   "type": "craft",
+   "target": "minecraft:crafting_table",
+   "amount": 1
+  }
+ ],
+ "rewards": [
+  {
+   "type": "item",
+   "value": "minecraft:stone_pickaxe",
+   "amount": 1
+  },
+  {
+   "type": "points",
+   "amount": 1
+  }
+ ],
+ "requires": [
+  "first_wood"
+ ]
+}

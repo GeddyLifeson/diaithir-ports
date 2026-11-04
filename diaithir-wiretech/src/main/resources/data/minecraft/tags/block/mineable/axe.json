@@ -1,6 +1,14 @@
 {
   "values": [
     "diaithir_wiretech:windmill",
-    "diaithir_wiretech:water_wheel"
+    "diaithir_wiretech:water_wheel",
+    "diaithir_wiretech:mechanical_constant_combinator",
+    "diaithir_wiretech:mechanical_arithmetic_combinator",
+    "diaithir_wiretech:mechanical_decider_combinator",
+    "diaithir_wiretech:mechanical_selector_combinator",
+    "diaithir_wiretech:mechanical_circuit_reader",
+    "diaithir_wiretech:mechanical_circuit_gate",
+    "diaithir_wiretech:mechanical_circuit_lamp",
+    "diaithir_wiretech:mechanical_circuit_speaker"
   ]
 }

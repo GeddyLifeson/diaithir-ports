@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "A": "minecraft:anvil",
+        "B": "minecraft:book"
+    },
+    "pattern": [
+        "BBB",
+        "BAB",
+        "BBB"
+    ],
+    "result": {
+        "count": 8,
+        "id": "apothic_enchanting:scrap_tome"
+    }
+}

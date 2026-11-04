@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft:block/cherry_paving"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft:block/cherry_paving_top"
+  },
+  "type=double": {
+   "model": "minecraft:block/cherry_planks"
+  }
+ }
+}

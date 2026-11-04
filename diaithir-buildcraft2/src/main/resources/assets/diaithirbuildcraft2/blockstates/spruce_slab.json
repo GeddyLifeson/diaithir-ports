@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft2:block/spruce_slab"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft2:block/spruce_slab_top"
+  },
+  "type=double": {
+   "model": "diaithirbuildcraft2:block/spruce_slab_full"
+  }
+ }
+}

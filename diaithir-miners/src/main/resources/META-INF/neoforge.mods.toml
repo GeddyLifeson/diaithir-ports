@@ -13,3 +13,17 @@ description = "Factorio-style ore patches with a finite count per block, plus bu
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[mods]]
+modId = "oredetector"
+version = "${version}"
+displayName = "Ore Detector (folded)"
+authors = "Pinter Gabor (MIT), folded by Diaithir"
+description = "Coal, iron, gold, diamond and void detectors: use one on a block and it bangs, then echoes how far the nearest matching ore is. Folded from pintergabor/oredetector (MIT), mixins replaced by a server tick queue."
+
+[[dependencies.oredetector]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"

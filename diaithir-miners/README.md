@@ -19,3 +19,6 @@ Factorio-style ore patches and miners for NeoForge 26.1.2. Part of the `diaithir
 Test limits: the Diaithir Age I preset needs Regions Unexplored and Biomes O' Plenty, which are not in this dev server, so the test used the plain Earth preset with empty stand-in biomes for the missing mods. The power source was a direct capability insert, not a generator mod. Not yet checked: how the textures look on a client.
 
 **Ids.** Block and item ids are now `diaithirminers:*`. `data/diaithirminers/id_migration.json` lists the old ids; neither source was in the pack so no world holds them.
+
+## Ore Detector (folded, MIT)
+Package `net.diaithir.miners.oredetector`, mod id `oredetector` (second mod in the jar). Source: pintergabor/oredetector branch `neo+mc26.1.2`, MIT (`LICENSE-OreDetector`). Coal, iron, gold, diamond and void detectors; use on a block, hear the echo delay for the nearest ore. Changes: both upstream mixins removed (the per-player delayed action is a server-tick queue; the recipe-toggle mixin and data generators dropped, generated data kept). Test 2026-11-03: compile OK, server boot `Done`, `summon item` of oredetector:iron_detector works. Not tested: a real scan with a player.

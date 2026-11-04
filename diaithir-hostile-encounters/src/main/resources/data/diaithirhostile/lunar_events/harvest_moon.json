@@ -1,0 +1,22 @@
+{
+  "color": "99833b",
+  "chat_color": "yellow",
+  "chance": 0.1,
+  "min_nights_between": 4,
+  "valid_moon_phases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "super_moon": false,
+  "rise": "diaithirhostile.rise.harvest_moon",
+  "set": "diaithirhostile.set.harvest_moon",
+  "quest": "diaithirhostile:lunar/harvest_moon",
+  "drop_tag": "diaithirhostile:harvest_moon_crops",
+  "drop_multiplier": 2.0
+}

@@ -1,0 +1,19 @@
+{
+  "station": "machine.assembler",
+  "stage": "assembly",
+  "time_s": 8,
+  "ingredients": [
+    {
+      "item": "diaithir_materials:glass_float",
+      "count": 2
+    },
+    {
+      "item": "minecraft:slime_ball",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:glass_laminated",
+    "count": 2
+  }
+}

@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "ingredient": "vs_tournament:basic_fuel_powder",
-  "result": "vs_tournament:basic_fuel_paste",
+  "result": {"id": "vs_tournament:basic_fuel_paste"},
   "experience": 0.05,
   "cooking_time": 180
 }

@@ -154,7 +154,123 @@
    ]
   }
  ],
- "rendering": {},
+ "rendering": {
+  "animatedObjects": [
+   {
+    "objectName": "floor",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "dump_tilt",
+      "centerPoint": [
+       0,
+       1.15,
+       -4.5
+      ],
+      "axis": [
+       -35,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   },
+   {
+    "objectName": "side-1",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "dump_tilt",
+      "centerPoint": [
+       0,
+       1.15,
+       -4.5
+      ],
+      "axis": [
+       -35,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   },
+   {
+    "objectName": "side1",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "dump_tilt",
+      "centerPoint": [
+       0,
+       1.15,
+       -4.5
+      ],
+      "axis": [
+       -35,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   },
+   {
+    "objectName": "front",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "dump_tilt",
+      "centerPoint": [
+       0,
+       1.15,
+       -4.5
+      ],
+      "axis": [
+       -35,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   },
+   {
+    "objectName": "tail",
+    "animations": [
+     {
+      "animationType": "rotation",
+      "variable": "dump_tilt",
+      "centerPoint": [
+       0,
+       1.15,
+       -4.5
+      ],
+      "axis": [
+       -35,
+       0,
+       0
+      ],
+      "clampMin": 0.0,
+      "clampMax": 1.0,
+      "duration": 100
+     }
+    ]
+   }
+  ],
+  "customVariables": [
+   "dump_tilt"
+  ]
+ },
  "connectionGroups": [
   {
    "groupName": "kingpin",
