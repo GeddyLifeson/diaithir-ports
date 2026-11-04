@@ -245,13 +245,13 @@ mb, bs = f"{R}/assets/{NS}/models/block", f"{R}/assets/{NS}/blockstates"
 os.makedirs(mb, exist_ok=True); os.makedirs(bs, exist_ok=True)
 for i, n in ids:
     if i in blocks:
-        top = "minecraft:block/iron_block" if i.startswith("rail_") else "minecraft:block/dark_oak_planks" if i.startswith("crane_") and i in ("crane_treadwheel", "crane_shear_legs", "crane_a_frame") else "minecraft:block/smooth_stone"
+        top = f"{NS}:block/{i}"
         json.dump({"parent": "minecraft:block/cube_all", "textures": {"all": top}}, open(f"{mb}/{i}.json", "w"))
         json.dump({"variants": {"": {"model": f"{NS}:block/{i}"}}}, open(f"{bs}/{i}.json", "w"))
         json.dump({"model": {"type": "minecraft:model", "model": f"{NS}:block/{i}"}}, open(f"{ii}/{i}.json", "w"))
         lang[f"block.{NS}.{i}"] = n
         continue
-    tex = "minecraft:item/minecart" if i in {v["id"] for v in items} else "minecraft:item/iron_ingot"
+    tex = f"{NS}:item/{i}"
     json.dump({"parent": "minecraft:item/generated", "textures": {"layer0": tex}}, open(f"{mi}/{i}.json", "w"))
     json.dump({"model": {"type": "minecraft:model", "model": f"{NS}:item/{i}"}}, open(f"{ii}/{i}.json", "w"))
     lang[f"item.{NS}.{i}"] = n

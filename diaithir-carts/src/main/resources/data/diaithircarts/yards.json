@@ -7111,7 +7111,7 @@
      "id": "power",
      "slots": [
       {
-       "kind": "motor_a_m",
+       "kind": "motor_e_m",
        "count": 1
       },
       {
@@ -290016,7 +290016,7 @@
    "age": 6,
    "category": "loco_electric",
    "mass_kg": 60000,
-   "rated": 185000,
+   "rated": 11840000,
    "gauge": "standard",
    "crew": 1,
    "engine": "electric_motor"
