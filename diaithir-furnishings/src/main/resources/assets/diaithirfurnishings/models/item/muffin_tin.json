@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/muffin_tin"
+  "layer0": "diaithirfurnishings:item/muffin_tin_pot",
+  "layer1": "diaithirfurnishings:item/muffin_tin_handle"
  }
 }

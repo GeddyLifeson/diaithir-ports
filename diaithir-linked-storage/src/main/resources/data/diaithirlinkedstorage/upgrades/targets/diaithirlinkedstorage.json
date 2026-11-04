@@ -1,0 +1,17 @@
+{
+  "priority": 0,
+  "targets": [
+    "diaithirlinkedstorage:*"
+  ],
+  "slots": 3,
+  "kinds": [
+    "speed",
+    "efficiency",
+    "capacity"
+  ],
+  "max_quality": "epic",
+  "base": {
+    "power_w": 20,
+    "job_s": 1
+  }
+}

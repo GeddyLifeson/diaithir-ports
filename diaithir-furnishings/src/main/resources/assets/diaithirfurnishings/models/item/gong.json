@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/gong"
+  "layer0": "diaithirfurnishings:item/gong_head",
+  "layer1": "diaithirfurnishings:item/gong_handle",
+  "layer2": "diaithirfurnishings:item/gong_binding"
  }
 }

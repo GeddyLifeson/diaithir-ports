@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "pattern": [" T ","IRI"," P "], "key": { "T": "minecraft:crafting_table", "I": "minecraft:iron_ingot", "R": "minecraft:redstone", "P": "minecraft:paper" }, "result": { "id": "diaithirportable:crafting_upgrade" } }

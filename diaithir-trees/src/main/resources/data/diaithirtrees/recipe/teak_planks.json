@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:teak_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:teak_planks",
+  "count": 4
+ }
+}

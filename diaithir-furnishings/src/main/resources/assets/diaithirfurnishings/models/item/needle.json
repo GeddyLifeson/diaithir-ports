@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/needle"
+  "layer0": "diaithirfurnishings:item/needle_head",
+  "layer1": "diaithirfurnishings:item/needle_handle",
+  "layer2": "diaithirfurnishings:item/needle_binding"
  }
 }

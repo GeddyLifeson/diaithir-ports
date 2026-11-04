@@ -1,0 +1,20 @@
+{
+ "station": "station.wright_bench",
+ "stage": "part",
+ "time_s": 20,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 3
+  },
+  {
+   "item": "minecraft:oak_planks",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:axle_lead_light_m",
+  "count": 1
+ }
+}

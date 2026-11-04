@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": { "all": "diaithirpipes:block/energy_pipe", "particle": "diaithirpipes:block/energy_pipe" },
+  "elements": [
+    { "from": [4, 4, 4], "to": [12, 12, 12],
+      "faces": {
+        "down": { "texture": "#all" }, "up": { "texture": "#all" },
+        "north": { "texture": "#all" }, "south": { "texture": "#all" },
+        "west": { "texture": "#all" }, "east": { "texture": "#all" }
+      } }
+  ]
+}

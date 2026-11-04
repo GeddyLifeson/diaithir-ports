@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:sycamore_fig_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:sycamore_fig_planks",
+  "count": 4
+ }
+}

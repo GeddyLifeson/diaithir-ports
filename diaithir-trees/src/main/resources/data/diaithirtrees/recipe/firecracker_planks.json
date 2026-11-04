@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:firecracker_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:firecracker_planks",
+  "count": 4
+ }
+}

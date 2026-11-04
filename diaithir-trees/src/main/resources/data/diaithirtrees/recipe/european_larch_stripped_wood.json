@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "L": "diaithirtrees:european_larch_stripped_log"
+ },
+ "pattern": [
+  "LL",
+  "LL"
+ ],
+ "result": {
+  "id": "diaithirtrees:european_larch_stripped_wood",
+  "count": 3
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithircropgenes:block/stone_facade_slab_full"
+ }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "diaithircrafting:item/munition_heat_seeker_filler"
+  }
+}

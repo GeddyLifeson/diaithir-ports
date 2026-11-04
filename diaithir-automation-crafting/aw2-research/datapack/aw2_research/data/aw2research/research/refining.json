@@ -1,0 +1,29 @@
+{
+  "title": "Refining",
+  "description": "Ancient Warfare 2 research: refining.",
+  "prerequisites": [
+    "aw2research:chemistry"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_ingot",
+            "count": {
+              "min": 12
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:iron_ingot"
+    }
+  }
+}

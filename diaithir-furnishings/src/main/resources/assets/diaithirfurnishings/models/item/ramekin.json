@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/ramekin"
+  "layer0": "diaithirfurnishings:item/ramekin_pot",
+  "layer1": "diaithirfurnishings:item/ramekin_handle"
  }
 }

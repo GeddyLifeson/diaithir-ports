@@ -1,0 +1,232 @@
+[
+ {
+  "id": "oak_planks_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "spruce_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "birch_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "stone_wall",
+  "kind": "wall",
+  "light": 0
+ },
+ {
+  "id": "dark_oak_fence",
+  "kind": "fence",
+  "light": 0
+ },
+ {
+  "id": "glass_pane_clear",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "tinted_glass_panel",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "copper_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "iron_block_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "deepslate_bricks_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "sandstone_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "blackstone_wall",
+  "kind": "wall",
+  "light": 0
+ },
+ {
+  "id": "quartz_block_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "cherry_planks_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "mangrove_fence",
+  "kind": "fence",
+  "light": 0
+ },
+ {
+  "id": "bamboo_pane",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "crimson_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "warped_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "andesite_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "granite_wall",
+  "kind": "wall",
+  "light": 0
+ },
+ {
+  "id": "red_sandstone_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "prismarine_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "gold_block_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "netherite_block_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "lantern_glass_cage",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "glowstone_lamp",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "sea_lantern_panel",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "shroomlight_block",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "redstone_lamp_block",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "candle_lamp_pale",
+  "kind": "cube",
+  "light": 12
+ },
+ {
+  "id": "copper_bulb_lamp",
+  "kind": "cube",
+  "light": 15
+ },
+ {
+  "id": "oak_trapdoor_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "mosaic_glass_pane",
+  "kind": "pane",
+  "light": 0
+ },
+ {
+  "id": "blue_stained_glass_block",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "oak_log_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "stripped_birch_log_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "bamboo_block_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "cobblestone_stairs",
+  "kind": "stairs",
+  "light": 0
+ },
+ {
+  "id": "stone_brick_wall",
+  "kind": "wall",
+  "light": 0
+ },
+ {
+  "id": "tuff_slab",
+  "kind": "slab",
+  "light": 0
+ },
+ {
+  "id": "calcite_cube",
+  "kind": "cube",
+  "light": 0
+ },
+ {
+  "id": "wheat_bundle_item",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "bread_slice_item",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "cod_fillet_item",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "apple_pie_item",
+  "kind": "item",
+  "light": 0
+ },
+ {
+  "id": "beetroot_salad_item",
+  "kind": "item",
+  "light": 0
+ }
+]

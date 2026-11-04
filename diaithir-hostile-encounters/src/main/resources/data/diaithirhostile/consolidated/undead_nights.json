@@ -1,0 +1,625 @@
+{
+ "slug": "diaithir-nights",
+ "items": [
+  {
+   "id": "diaithirnights:rally_horn",
+   "kind": "relic",
+   "name_en": "Adharc Comhairle (Rally Horn)",
+   "attrs": {
+    "cooldown_s": 1200,
+    "cooldown_ticks": 24000,
+    "calls_early_siege": true,
+    "max_stack": 1,
+    "durability_uses": 0
+   },
+   "recipe": [
+    "c:ingots/bronze",
+    "c:ingots/bronze",
+    "c:leathers",
+    "c:bones",
+    "minecraft:goat_horn"
+   ],
+   "age": "III"
+  },
+  {
+   "id": "diaithirnights:ward_banner",
+   "kind": "block",
+   "name_en": "Meirge Dhaingin (Ward Banner)",
+   "attrs": {
+    "decoy_radius_m": 16,
+    "slow_damage_per_s": 1.0,
+    "siege_mob_dps_while_in_radius": 1.0,
+    "hardness": 1.5,
+    "block_entity": true
+   },
+   "recipe": [
+    "c:ingots/iron",
+    "c:ingots/iron",
+    "c:string",
+    "c:rods/wooden",
+    "minecraft:white_banner"
+   ],
+   "age": "II"
+  },
+  {
+   "id": "diaithirnights:ember_brazier",
+   "kind": "block",
+   "name_en": "Breochaire Dhearg (Ember Brazier)",
+   "attrs": {
+    "suppression_radius_m": 8,
+    "light_level": 15,
+    "fuel_burn_s": 600,
+    "fuel_energy_J": 8000000,
+    "hardness": 3.0,
+    "block_entity": true
+   },
+   "recipe": [
+    "c:ingots/iron",
+    "c:ingots/iron",
+    "c:ingots/iron",
+    "c:coal",
+    "c:rods/wooden"
+   ],
+   "age": "II"
+  },
+  {
+   "id": "diaithirnights:siege_trophy",
+   "kind": "relic",
+   "name_en": "Trofa\u00ed Sl\u00e9igh (Siege Trophy)",
+   "attrs": {
+    "drops_from": "diaithirnights:ardfhear_elite",
+    "feeds_relic_hook": "diaithir_relics:chests/age_*",
+    "mass_kg": 1.2,
+    "max_stack": 16
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "diaithirnights:horde_compass",
+   "kind": "relic",
+   "name_en": "Comp\u00e1s Sluaigh (Horde Compass)",
+   "attrs": {
+    "points_to": "nearest_active_wave_centre",
+    "range_m": 128,
+    "durability_uses": 256
+   },
+   "recipe": [
+    "c:ingots/copper",
+    "c:ingots/copper",
+    "c:dusts/redstone",
+    "c:gems/amethyst"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "diaithirnights:dusk_toll",
+   "kind": "spell",
+   "name_en": "Cling na R\u00e9imse (Dusk Toll)",
+   "attrs": {
+    "effect": "reveals siege mobs within 48 m for 10 s via glow",
+    "mana": 30,
+    "cooldown_s": 60,
+    "range_m": 48,
+    "duration_s": 10
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "diaithirnights:ember_ward_rune",
+   "kind": "rune",
+   "name_en": "R\u00fan Breochaire (Ember Ward Rune)",
+   "attrs": {
+    "socket": "diaithir_classes:ring",
+    "effect": "siege mobs within 6 m deal 15% less damage to wearer",
+    "radius_m": 6,
+    "damage_reduction": 0.15
+   },
+   "recipe": [
+    "c:gems/amethyst",
+    "c:dusts/glowstone",
+    "c:ingots/bronze"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "diaithirnights:wallbreaker_bane",
+   "kind": "enchant",
+   "name_en": "D\u00edbirt Balla (Wallbreaker Bane)",
+   "attrs": {
+    "applies_to": "weapon",
+    "levels": 3,
+    "extra_damage_per_level_vs_siege": 1.5,
+    "break_timer_ticks_added_per_level": 10,
+    "anvil_cost": 4
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "diaithirnights:lantern_of_dawn",
+   "kind": "relic",
+   "name_en": "Laind\u00e9ar Breacadh (Lantern of Dawn)",
+   "attrs": {
+    "effect": "holder in offhand: undead within 10 m ignite at dawn 2 s sooner, light 15",
+    "radius_m": 10,
+    "durability_uses": 600,
+    "mass_kg": 0.8
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:glass_blocks",
+    "c:dusts/glowstone",
+    "c:rods/blaze"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "diaithirnights:siege_breaker_axe",
+   "kind": "weapon",
+   "name_en": "Tua Briste L\u00e9igh (Siege Breaker Axe)",
+   "attrs": {
+    "attack_damage": 8.0,
+    "attack_speed": -3.0,
+    "bonus_vs_siege_mobs": 0.2,
+    "durability": 900,
+    "mass_kg": 2.1
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:ingots/steel",
+    "c:ingots/steel",
+    "c:rods/wooden",
+    "c:rods/wooden"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "diaithirnights:ward_banner_greater",
+   "kind": "block",
+   "name_en": "Meirge Mh\u00f3r Dhaingin (Greater Ward Banner)",
+   "attrs": {
+    "decoy_radius_m": 24,
+    "slow_damage_per_s": 2.0,
+    "hardness": 3.0,
+    "block_entity": true
+   },
+   "recipe": [
+    "diaithirnights:ward_banner",
+    "c:ingots/steel",
+    "c:ingots/steel",
+    "c:gems/amethyst"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "diaithirnights:warden_of_nights_set",
+   "kind": "armor",
+   "name_en": "Arml\u00f3n Chosant\u00f3ra O\u00edche (Night Warden Armour)",
+   "attrs": {
+    "set_bonus": "+0.05 knockback_resistance during siege events",
+    "defense": [
+     2,
+     6,
+     7,
+     3
+    ],
+    "toughness": 1.0,
+    "durability_multiplier": 24,
+    "pieces": 4
+   },
+   "recipe": [
+    "c:ingots/steel",
+    "c:leathers",
+    "c:dusts/glowstone"
+   ],
+   "age": "V"
+  },
+  {
+   "id": "diaithirnights:tithe_of_dawn",
+   "kind": "relic",
+   "name_en": "C\u00e1in Breacadh (Tithe of Dawn)",
+   "attrs": {
+    "effect": "no-death clear grants one extra loot roll",
+    "consumed_on_use": true,
+    "max_stack": 4
+   },
+   "recipe": [
+    "c:gems/emerald",
+    "c:ingots/gold",
+    "c:dusts/glowstone"
+   ],
+   "age": "IV"
+  },
+  {
+   "id": "diaithirnights:horde_mob_zombie_t1",
+   "kind": "event",
+   "name_en": "Marbh Cogaidh (Siege Marbh, tier 1)",
+   "attrs": {
+    "role": "grunt",
+    "age_band": "I-III",
+    "health_hp": 20,
+    "health_bonus_per_age": 0.1,
+    "damage_bonus_per_age": 0.05,
+    "speed_m_per_s": 3.9,
+    "daylight_immune_during_siege": true,
+    "roster_source": "diaithir-arms"
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "diaithirnights:horde_mob_brute",
+   "kind": "event",
+   "name_en": "Marbh Garbh (Siege Brute)",
+   "attrs": {
+    "role": "breaker",
+    "age_band": "III-V",
+    "health_hp": 40,
+    "block_break_ticks": 40,
+    "break_bonus_vs_wood": 0.5,
+    "speed_m_per_s": 3.1,
+    "roster_source": "diaithir-arms"
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "diaithirnights:horde_mob_runner",
+   "kind": "event",
+   "name_en": "Marbh Luath (Siege Runner)",
+   "attrs": {
+    "role": "flanker",
+    "age_band": "IV-VII",
+    "health_hp": 16,
+    "speed_m_per_s": 5.6,
+    "roster_source": "diaithir-arms"
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "diaithirnights:ardfhear_elite",
+   "kind": "event",
+   "name_en": "Ardfhear na hO\u00edche (Night Elite)",
+   "attrs": {
+    "role": "elite",
+    "spawn": "final wave only, max 1",
+    "health_hp": 120,
+    "armor": 8,
+    "drops": "diaithirnights:siege_trophy",
+    "boss_bar": true,
+    "roster_source": "diaithir-arms"
+   },
+   "recipe": null,
+   "age": "IV"
+  },
+  {
+   "id": "diaithirnights:siege_warden",
+   "kind": "skill",
+   "name_en": "Cosant\u00f3ir L\u00e9igh (Siege Warden skill)",
+   "attrs": {
+    "effect": "+10% damage vs siege mobs per skill level",
+    "levels": 5,
+    "requires_age": "III"
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "diaithirnights:wave_reader",
+   "kind": "skill",
+   "name_en": "L\u00e9itheoir Tonn (Wave Reader skill)",
+   "attrs": {
+    "effect": "boss-bar shows next wave size and elite flag",
+    "levels": 1,
+    "requires_age": "II"
+   },
+   "recipe": null,
+   "age": "II"
+  },
+  {
+   "id": "diaithirnights:no_death_clear",
+   "kind": "skill",
+   "name_en": "Glanadh gan B\u00e1s (Deathless Clear)",
+   "attrs": {
+    "effect": "unlocks bonus loot roll tracking",
+    "levels": 1,
+    "requires_age": "II"
+   },
+   "recipe": null,
+   "age": "II"
+  }
+ ],
+ "events": [
+  {
+   "id": "diaithirnights:night_siege",
+   "trigger": "world_night_counter % cadence_nights == 0 (default 7) in an enabled dimension; dusk at tick 13000",
+   "effect": "Sky darkens, bell cue and title line play, 3 to 5 waves spawn in a 24-40 m ring around players until dawn at tick 23000 or final wave cleared"
+  },
+  {
+   "id": "diaithirnights:wave_spawn",
+   "trigger": "previous wave cleared or dusk start",
+   "effect": "Spawn count = min(60 alive, 8 + 4*(wave-1) + 2*(extra_players_in_range)); mobs picked from the diaithir-arms Age roster; ring 24-40 m from target, at least 12 m from other players, ignoring light-level rules"
+  },
+  {
+   "id": "diaithirnights:final_wave_elite",
+   "trigger": "final wave begins",
+   "effect": "Spawns one Night Elite (max 1); title line announces it; siege_trophy drops on death"
+  },
+  {
+   "id": "diaithirnights:horde_pathing",
+   "trigger": "siege mob spawned",
+   "effect": "Pathfinds to nearest player or claimed base marker; Ward Banner within 16 m overrides target as a decoy"
+  },
+  {
+   "id": "diaithirnights:block_breaking",
+   "trigger": "siege mob blocked on path by a non-blacklisted soft block",
+   "effect": "Per-hit timer 40 ticks scaled by block hardness; blocks in tag diaithirnights:siege_immune (stone and above) are never broken"
+  },
+  {
+   "id": "diaithirnights:dawn_cleanup",
+   "trigger": "world time reaches tick 23000 or siege cleared",
+   "effect": "Siege mobs despawn or ignite; daylight immunity ends; boss bar removed"
+  },
+  {
+   "id": "diaithirnights:wave_reward",
+   "trigger": "wave cleared",
+   "effect": "Roll data loot table diaithirnights:rewards/wave_age_<n>; no-death clear adds a bonus roll"
+  },
+  {
+   "id": "diaithirnights:rally_horn_use",
+   "trigger": "player uses Rally Horn",
+   "effect": "Starts a siege at next tick if none active; 24000-tick cooldown applied; blocked in disabled dimensions"
+  },
+  {
+   "id": "diaithirnights:brazier_suppression",
+   "trigger": "siege spawn attempt within 8 m of a lit Ember Brazier",
+   "effect": "Spawn cancelled and retried elsewhere in the ring"
+  },
+  {
+   "id": "diaithirnights:age_scaling",
+   "trigger": "mob spawned during siege",
+   "effect": "Reads scoreboard age (1-9); health +10% per Age, damage +5% per Age; wave size scaled by speedPerAge-style config key"
+  }
+ ],
+ "skills": [
+  {
+   "id": "diaithirnights:siege_warden",
+   "tree": "combat",
+   "levels": 5
+  },
+  {
+   "id": "diaithirnights:wave_reader",
+   "tree": "survival",
+   "levels": 1
+  },
+  {
+   "id": "diaithirnights:no_death_clear",
+   "tree": "survival",
+   "levels": 1
+  }
+ ],
+ "id_migration": {},
+ "c_tags": {
+  "c:ingots/bronze": [
+   "diaithirarms:ingot_bronze"
+  ],
+  "c:ingots/steel": [
+   "diaithirarms:ingot_steel"
+  ],
+  "c:ingots/iron": [
+   "minecraft:iron_ingot"
+  ],
+  "c:ingots/gold": [
+   "minecraft:gold_ingot"
+  ],
+  "c:ingots/copper": [
+   "minecraft:copper_ingot"
+  ],
+  "c:gems/amethyst": [
+   "minecraft:amethyst_shard"
+  ],
+  "c:gems/emerald": [
+   "minecraft:emerald"
+  ],
+  "c:dusts/redstone": [
+   "minecraft:redstone"
+  ],
+  "c:dusts/glowstone": [
+   "minecraft:glowstone_dust"
+  ],
+  "c:rods/wooden": [
+   "minecraft:stick"
+  ],
+  "c:rods/blaze": [
+   "minecraft:blaze_rod"
+  ],
+  "c:bones": [
+   "minecraft:bone"
+  ],
+  "c:leathers": [
+   "minecraft:leather"
+  ],
+  "c:strings": [
+   "minecraft:string"
+  ],
+  "c:glass_blocks": [
+   "minecraft:glass"
+  ],
+  "c:coal": [
+   "minecraft:coal",
+   "minecraft:charcoal"
+  ],
+  "diaithirnights:siege_immune": [
+   "#minecraft:base_stone_overworld",
+   "minecraft:obsidian",
+   "minecraft:deepslate",
+   "#c:ores"
+  ],
+  "diaithirnights:siege_breakable": [
+   "#minecraft:planks",
+   "#minecraft:logs",
+   "minecraft:dirt",
+   "minecraft:glass",
+   "minecraft:gravel"
+  ],
+  "diaithirnights:siege_mobs": [
+   "diaithirnights:horde_mob_zombie_t1",
+   "diaithirnights:horde_mob_brute",
+   "diaithirnights:horde_mob_runner",
+   "diaithirnights:ardfhear_elite"
+  ],
+  "diaithirnights:disabled_dimensions": [
+   "minecraft:the_nether",
+   "minecraft:the_end"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "diaithirnights:rally_horn",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:ingots/bronze",
+    "c:leathers",
+    "c:bones"
+   ]
+  },
+  {
+   "id": "diaithirnights:ember_brazier",
+   "inputs_as_c_tags": [
+    "c:ingots/iron",
+    "c:ingots/iron",
+    "c:ingots/iron",
+    "c:coal",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "diaithirnights:siege_breaker_axe",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "diaithirnights:lantern_of_dawn",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:glass_blocks",
+    "c:dusts/glowstone",
+    "c:rods/blaze"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "diaithirnights:ember_brazier",
+   "kind": "item",
+   "units_SI": "fuel slot 1 stack of up to 64 kg-class fuel items; burn 8000000 J per fuel unit over 600 s (13333 W)"
+  },
+  {
+   "block": "diaithirnights:ward_banner",
+   "kind": "energy",
+   "units_SI": "passive 0 W; optional upgrade draw 50 W to extend decoy radius 16 m to 20 m"
+  },
+  {
+   "block": "diaithirnights:ward_banner_greater",
+   "kind": "energy",
+   "units_SI": "passive 0 W; optional upgrade draw 100 W to extend decoy radius 24 m to 30 m"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "diaithirnights:upgrade_ember_ward",
+   "target": "diaithir_classes:ring",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithirnights:upgrade_wallbreaker",
+   "target": "diaithirnights:siege_breaker_axe",
+   "slots": 2,
+   "kinds": [
+    "enchant",
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithirnights:upgrade_banner",
+   "target": "diaithirnights:ward_banner",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  }
+ ],
+ "global_events": [
+  {
+   "id": "diaithirnights:ge_siege_started",
+   "subscribes_to": "diaithir_global_events:night_siege_start",
+   "effect": "Broadcast title line and bell cue; other modules may spawn ambient fog or pause hostile-ambient events"
+  },
+  {
+   "id": "diaithirnights:ge_siege_cleared",
+   "subscribes_to": "diaithir_global_events:night_siege_cleared",
+   "effect": "Grants wave-clear loot and notifies diaithir-relics to roll siege_trophy relic drop hook"
+  },
+  {
+   "id": "diaithirnights:ge_age_change",
+   "subscribes_to": "diaithir_global_events:player_age_changed",
+   "effect": "Recompute wave roster tier and scaling for the player"
+  },
+  {
+   "id": "diaithirnights:ge_dimension_disable",
+   "subscribes_to": "diaithir_global_events:dimension_event_toggle",
+   "effect": "Respect per-dimension enable list and cancel active sieges when disabled"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "diaithirnights:night_sieges",
+   "connects_to": [
+    "diaithir_arms:ages",
+    "diaithir_relics:trophies",
+    "diaithir_combat:mobs"
+   ]
+  },
+  {
+   "entry": "diaithirnights:ward_banner",
+   "connects_to": [
+    "diaithir_classes:ogham_runes",
+    "diaithir_arms:banners"
+   ]
+  },
+  {
+   "entry": "diaithirnights:ember_brazier",
+   "connects_to": [
+    "diaithir_arms:fuel",
+    "diaithir_core:light"
+   ]
+  },
+  {
+   "entry": "diaithirnights:siege_elite",
+   "connects_to": [
+    "diaithir_relics:siege_trophy",
+    "diaithir_arms:mob_roster"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "diaithirnights:first_dawn",
+  "intro": "A bell tolls at dusk. Hold the line until the sun clears the hills.",
+  "links_to": [
+   "diaithir_arms:age_ii_gate",
+   "diaithir_relics:trophy_hall"
+  ]
+ },
+ "java_notes": "Java required: server-tick siege scheduler (cadence, dusk/dawn at ticks 13000/23000), wave spawner with ring placement and 60-alive cap, target and timed block-breaking Goals, ServerBossEvent progress, Ward Banner and Ember Brazier block entities, horn use cooldown, daylight-burn immunity, config diaithirnights-common.toml, /nightsselftest command."
+}

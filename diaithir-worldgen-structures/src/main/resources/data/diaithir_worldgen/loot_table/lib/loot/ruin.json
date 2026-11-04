@@ -84,20 +84,6 @@
      ]
     }
    ]
-  },
-  {
-   "rolls": {
-    "type": "minecraft:uniform",
-    "min": 0,
-    "max": 1
-   },
-   "entries": [
-    {
-     "type": "minecraft:loot_table",
-     "value": "diaithircombat:gear/ruin",
-     "weight": 1
-    }
-   ]
   }
  ]
 }

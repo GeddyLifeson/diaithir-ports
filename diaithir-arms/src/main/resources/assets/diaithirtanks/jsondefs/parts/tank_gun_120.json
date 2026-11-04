@@ -2,6 +2,9 @@
  "general": {
   "type": "gun_tank",
   "name": "Tank Gun 120 mm",
+  "width": 0.8,
+  "height": 0.8,
+  "mass": 1500,
   "materialLists": [
    [
     "minecraft:iron_block:0:8"
@@ -27,7 +30,21 @@
   "yawSpeed": 0.6,
   "pitchSpeed": 0.5,
   "isSemiAuto": true,
-  "autoReload": true
+  "autoReload": true,
+  "preloadedBullet": "diaithirtanks:tank_shell_ap",
+  "muzzleGroups": [
+   {
+    "muzzles": [
+     {
+      "pos": [
+       0,
+       0,
+       3.0
+      ]
+     }
+    ]
+   }
+  ]
  },
  "definitions": [
   {
@@ -37,6 +54,27 @@
    "textureName": "tank_gun_main",
    "extraMaterialLists": [
     []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 0.8,
+     "height": 0.8
+    }
    ]
   }
  ]

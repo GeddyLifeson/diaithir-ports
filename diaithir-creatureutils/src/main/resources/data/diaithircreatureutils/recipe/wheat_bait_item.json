@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:wheat"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithircreatureutils:wheat_bait_item",
+  "count": 1
+ }
+}

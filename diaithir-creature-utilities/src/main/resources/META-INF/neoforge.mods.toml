@@ -6,8 +6,8 @@ license = "GPL-3.0-only"
 modId = "diaithircreatureutilities"
 version = "${version}"
 displayName = "Diaithir Creature Utilities"
-authors = "Diaithir; Fishing Crates by tsuniko"
-description = "Fishing crates: wooden, iron and golden crates that turn up while fishing and hold a spread of loot when broken. Ported from Fishing Crates by tsuniko (GPL-3.0); our own art."
+authors = "Diaithir; Fishing Crates by tsuniko; Guard Villagers Fabric by mrsterner"
+description = "Fishing crates: wooden, iron and golden crates that turn up while fishing and hold a spread of loot when broken. Ported from Fishing Crates by tsuniko (GPL-3.0); our own art. Also village guards: sneak-use a sword on an adult villager (behaviour from Guard Villagers Fabric by mrsterner, CC0, rewritten for 26.1.2)."
 
 [[dependencies.diaithircreatureutilities]]
 modId = "neoforge"

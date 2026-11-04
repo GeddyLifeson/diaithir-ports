@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "/": "minecraft:stick",
+    "@": "minecraft:string",
+    "B": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    " BB",
+    "@BB",
+    "/@ "
+  ],
+  "result": {
+    "id": "oredetector:focused_gold_detector"
+  }
+}

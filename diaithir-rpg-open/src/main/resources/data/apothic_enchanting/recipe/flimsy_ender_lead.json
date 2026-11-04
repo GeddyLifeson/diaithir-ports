@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "ingredients": [
+        "#c:ender_pearls",
+        "minecraft:lead",
+        "minecraft:gold_ingot"
+    ],
+    "result": {
+        "id": "apothic_enchanting:flimsy_ender_lead"
+    }
+}

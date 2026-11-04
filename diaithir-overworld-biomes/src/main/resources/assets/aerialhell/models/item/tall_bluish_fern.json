@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "aerialhell:block/tall_bluish_fern"
+ }
+}

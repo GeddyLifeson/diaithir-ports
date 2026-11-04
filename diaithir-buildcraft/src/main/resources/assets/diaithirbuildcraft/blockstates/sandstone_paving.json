@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft:block/sandstone_paving"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft:block/sandstone_paving_top"
+  },
+  "type=double": {
+   "model": "minecraft:block/sandstone"
+  }
+ }
+}

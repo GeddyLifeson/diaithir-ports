@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:alder_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:alder_planks",
+  "count": 4
+ }
+}

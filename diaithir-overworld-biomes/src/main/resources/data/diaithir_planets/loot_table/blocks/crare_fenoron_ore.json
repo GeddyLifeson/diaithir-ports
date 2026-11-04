@@ -1,0 +1,20 @@
+{
+"type": "minecraft:block",
+"random_sequence": "diaithir_planets:blocks/crare_fenoron_ore",
+"pools": [
+{
+"rolls": 1.0,
+"conditions": [
+{
+"condition": "minecraft:survives_explosion"
+}
+],
+"entries": [
+{
+"type": "minecraft:item",
+"name": "diaithir_planets:crare_fenoron_ore"
+}
+]
+}
+]
+}

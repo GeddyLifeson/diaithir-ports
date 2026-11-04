@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:elderberry_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:elderberry_planks",
+  "count": 4
+ }
+}

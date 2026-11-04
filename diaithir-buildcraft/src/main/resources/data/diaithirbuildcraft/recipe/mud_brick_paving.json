@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:mud_bricks"
+ },
+ "pattern": [
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:mud_brick_paving",
+  "count": 6
+ }
+}

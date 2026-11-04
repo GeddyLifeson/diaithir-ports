@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/stylus"
+  "layer0": "diaithirfurnishings:item/stylus_head",
+  "layer1": "diaithirfurnishings:item/stylus_handle",
+  "layer2": "diaithirfurnishings:item/stylus_binding"
  }
 }
