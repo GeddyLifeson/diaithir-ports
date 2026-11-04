@@ -1,0 +1,77 @@
+[
+ {
+  "id": "self_bow",
+  "kind": "bow",
+  "age": "I"
+ },
+ {
+  "id": "gastraphetes",
+  "kind": "crossbow",
+  "age": "IV"
+ },
+ {
+  "id": "repeating_crossbow_zhuge_nu",
+  "kind": "crossbow",
+  "age": "IV"
+ },
+ {
+  "id": "yumi",
+  "kind": "bow",
+  "age": "IV"
+ },
+ {
+  "id": "longbow_english",
+  "kind": "bow",
+  "age": "V"
+ },
+ {
+  "id": "arbalest_steel_crossbow",
+  "kind": "crossbow",
+  "age": "V"
+ },
+ {
+  "id": "stonebow_bullet_crossbow",
+  "kind": "crossbow",
+  "age": "V"
+ },
+ {
+  "id": "plains_bow",
+  "kind": "bow",
+  "age": "V"
+ },
+ {
+  "id": "korean_horn_bow_gakgung",
+  "kind": "bow",
+  "age": "IV"
+ },
+ {
+  "id": "cranequin_crossbow",
+  "kind": "crossbow",
+  "age": "V"
+ },
+ {
+  "id": "hungarian_magyar_bow",
+  "kind": "bow",
+  "age": "IV"
+ },
+ {
+  "id": "tibetan_crossbow",
+  "kind": "crossbow",
+  "age": "IV"
+ },
+ {
+  "id": "bhutanese_bamboo_bow",
+  "kind": "bow",
+  "age": "V"
+ },
+ {
+  "id": "nubian_self_bow",
+  "kind": "bow",
+  "age": "III"
+ },
+ {
+  "id": "cretan_short_bow",
+  "kind": "bow",
+  "age": "IV"
+ }
+]

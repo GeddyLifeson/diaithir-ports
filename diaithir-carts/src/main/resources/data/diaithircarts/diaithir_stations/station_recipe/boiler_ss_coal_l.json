@@ -1,0 +1,30 @@
+{
+ "station": "station.steam_forge",
+ "stage": "part",
+ "time_s": 35,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 64
+  },
+  {
+   "item": "minecraft:copper_ingot",
+   "count": 64
+  },
+  {
+   "item": "minecraft:furnace",
+   "count": 7
+  },
+  {
+   "item": "minecraft:bucket",
+   "count": 7
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:boiler_ss_coal_l",
+  "count": 1
+ },
+ "power": "steam",
+ "w": 20000
+}

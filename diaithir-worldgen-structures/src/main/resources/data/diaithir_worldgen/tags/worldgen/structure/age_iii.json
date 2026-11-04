@@ -81,6 +81,27 @@
   "diaithir_worldgen:void_monolith_spire",
   "diaithir_worldgen:void_obelisk_site",
   "diaithir_worldgen:warden_gate_end",
-  "diaithir_worldgen:weathered_waystation"
+  "diaithir_worldgen:weathered_waystation",
+  "diaithir_worldgen:nether_blackstone_hut",
+  "diaithir_worldgen:nether_blade_monument",
+  "diaithir_worldgen:nether_bone_dune_skull",
+  "diaithir_worldgen:nether_boneyard",
+  "diaithir_worldgen:nether_brick_ring",
+  "diaithir_worldgen:nether_broken_gate",
+  "diaithir_worldgen:nether_crimson_grove_hall",
+  "diaithir_worldgen:nether_crimson_smithy",
+  "diaithir_worldgen:nether_grand_arena",
+  "diaithir_worldgen:nether_lava_well",
+  "diaithir_worldgen:nether_magma_pool",
+  "diaithir_worldgen:nether_pillar_court",
+  "diaithir_worldgen:nether_skull_colossus",
+  "diaithir_worldgen:nether_soul_pyre",
+  "diaithir_worldgen:nether_span_bridge",
+  "diaithir_worldgen:nether_wall_maze",
+  "diaithir_worldgen:nether_warped_cottage",
+  "diaithir_worldgen:nether_warped_dome",
+  "diaithir_worldgen:nether_warped_grove_hall",
+  "diaithir_worldgen:nether_wart_terrace",
+  "diaithir_worldgen:nether_wyrm_arena"
  ]
 }

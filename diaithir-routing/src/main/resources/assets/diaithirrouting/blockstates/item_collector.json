@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down": { "model": "diaithirrouting:block/item_collector" },
+    "facing=up": { "model": "diaithirrouting:block/item_collector", "x": 180 },
+    "facing=north": { "model": "diaithirrouting:block/item_collector", "x": 90 },
+    "facing=south": { "model": "diaithirrouting:block/item_collector", "x": 90, "y": 180 },
+    "facing=west": { "model": "diaithirrouting:block/item_collector", "x": 90, "y": 270 },
+    "facing=east": { "model": "diaithirrouting:block/item_collector", "x": 90, "y": 90 }
+  }
+}

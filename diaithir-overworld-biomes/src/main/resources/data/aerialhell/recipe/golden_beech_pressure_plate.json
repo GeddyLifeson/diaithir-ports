@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "#": "aerialhell:golden_beech_planks"
+ },
+ "pattern": [
+  "##"
+ ],
+ "result": {
+  "id": "aerialhell:golden_beech_pressure_plate"
+ }
+}

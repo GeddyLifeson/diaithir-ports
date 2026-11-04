@@ -1,0 +1,11 @@
+[
+  {
+    "id": "diaithirfilters/first",
+    "name": "Write a filter",
+    "text": "Make a filter that passes iron tools and blocks damaged ones.",
+    "age": 5,
+    "links": [
+      "diaithirstoragenet/first"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+ {
+  "registry": "minecraft:item",
+  "old": "ftbfiltersystem:filter",
+  "new": "diaithirfilters:filter"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "ftbfiltersystem:filter_card",
+  "new": "diaithirfilters:filter_card"
+ },
+ {
+  "registry": "minecraft:item",
+  "old": "ftbfiltersystem:smart_filter",
+  "new": "diaithirfilters:filter"
+ }
+]

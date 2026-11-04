@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithircarts:block/loading_dock"
+  },
+  "facing=east": {
+   "model": "diaithircarts:block/loading_dock",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithircarts:block/loading_dock",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithircarts:block/loading_dock",
+   "y": 270
+  }
+ }
+}

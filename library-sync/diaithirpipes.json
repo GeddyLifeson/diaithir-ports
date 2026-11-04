@@ -1,0 +1,57 @@
+[
+ {
+  "id": "diaithirpipes:connector",
+  "name": "Pipe Connector",
+  "text": "connector. Age 5."
+ },
+ {
+  "id": "diaithirpipes:energy_pipe_advanced",
+  "name": "Advanced Energy Pipe",
+  "text": "Advanced Energy Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:energy_pipe_basic",
+  "name": "Basic Energy Pipe",
+  "text": "Basic Energy Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:energy_pipe_improved",
+  "name": "Improved Energy Pipe",
+  "text": "Improved Energy Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:fluid_pipe_advanced",
+  "name": "Advanced Fluid Pipe",
+  "text": "Advanced Fluid Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:fluid_pipe_basic",
+  "name": "Basic Fluid Pipe",
+  "text": "Basic Fluid Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:fluid_pipe_improved",
+  "name": "Improved Fluid Pipe",
+  "text": "Improved Fluid Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:item_pipe_advanced",
+  "name": "Advanced Item Pipe",
+  "text": "Advanced Item Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:item_pipe_basic",
+  "name": "Basic Item Pipe",
+  "text": "Basic Item Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:item_pipe_improved",
+  "name": "Improved Item Pipe",
+  "text": "Improved Item Pipe. Age 5."
+ },
+ {
+  "id": "diaithirpipes:wrench",
+  "name": "Pipe Wrench",
+  "text": "wrench. Age 5."
+ }
+]

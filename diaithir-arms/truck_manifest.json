@@ -13,7 +13,8 @@
    "gvw_kg": 4500,
    "fuel_l": 60,
    "age": "VI",
-   "wiki": "Scammell_Scarab"
+   "wiki": "Scammell_Scarab",
+   "fuel": "petrol"
   },
   {
    "id": "truck_diamond_t_980",
@@ -28,7 +29,8 @@
    "gvw_kg": 18000,
    "fuel_l": 240,
    "age": "VI",
-   "wiki": "Diamond_T_980/981"
+   "wiki": "Diamond_T_980/981",
+   "fuel": "petrol"
   },
   {
    "id": "truck_foden_s21",
@@ -43,7 +45,8 @@
    "gvw_kg": 24000,
    "fuel_l": 288,
    "age": "VII",
-   "wiki": "Foden_Trucks"
+   "wiki": "Foden_Trucks",
+   "fuel": "diesel"
   },
   {
    "id": "truck_mack_b61",
@@ -58,7 +61,8 @@
    "gvw_kg": 30000,
    "fuel_l": 360,
    "age": "VII",
-   "wiki": "Mack_B_series"
+   "wiki": "Mack_B_series",
+   "fuel": "diesel"
   },
   {
    "id": "truck_kenworth_w900",
@@ -73,7 +77,8 @@
    "gvw_kg": 36000,
    "fuel_l": 888,
    "age": "VII",
-   "wiki": "Kenworth_W900"
+   "wiki": "Kenworth_W900",
+   "fuel": "diesel"
   },
   {
    "id": "truck_volvo_f88",
@@ -88,7 +93,8 @@
    "gvw_kg": 38000,
    "fuel_l": 624,
    "age": "VII",
-   "wiki": "Volvo_F88"
+   "wiki": "Volvo_F88",
+   "fuel": "diesel"
   },
   {
    "id": "truck_maz_504",
@@ -103,7 +109,8 @@
    "gvw_kg": 30000,
    "fuel_l": 420,
    "age": "VII",
-   "wiki": "MAZ-504"
+   "wiki": "MAZ-504",
+   "fuel": "diesel"
   },
   {
    "id": "truck_mack_r600",
@@ -118,7 +125,8 @@
    "gvw_kg": 36000,
    "fuel_l": 600,
    "age": "VII",
-   "wiki": "Mack_R_series"
+   "wiki": "Mack_R_series",
+   "fuel": "diesel"
   },
   {
    "id": "truck_peterbilt_359",
@@ -133,7 +141,8 @@
    "gvw_kg": 36000,
    "fuel_l": 720,
    "age": "VII",
-   "wiki": "Peterbilt_359"
+   "wiki": "Peterbilt_359",
+   "fuel": "diesel"
   },
   {
    "id": "truck_intl_transtar",
@@ -148,7 +157,8 @@
    "gvw_kg": 36000,
    "fuel_l": 600,
    "age": "VII",
-   "wiki": "International_Transtar"
+   "wiki": "International_Transtar",
+   "fuel": "diesel"
   },
   {
    "id": "truck_mb_ng",
@@ -163,7 +173,8 @@
    "gvw_kg": 38000,
    "fuel_l": 576,
    "age": "VII",
-   "wiki": "Mercedes-Benz_NG"
+   "wiki": "Mercedes-Benz_NG",
+   "fuel": "diesel"
   },
   {
    "id": "truck_kenworth_k100",
@@ -178,7 +189,8 @@
    "gvw_kg": 36000,
    "fuel_l": 720,
    "age": "VII",
-   "wiki": "Kenworth"
+   "wiki": "Kenworth",
+   "fuel": "diesel"
   },
   {
    "id": "truck_kamaz_5320",
@@ -193,7 +205,8 @@
    "gvw_kg": 22000,
    "fuel_l": 369,
    "age": "VII",
-   "wiki": "KAMAZ"
+   "wiki": "KAMAZ",
+   "fuel": "diesel"
   },
   {
    "id": "truck_mack_superliner",
@@ -208,7 +221,8 @@
    "gvw_kg": 36000,
    "fuel_l": 768,
    "age": "VII",
-   "wiki": "Mack_Super-Liner"
+   "wiki": "Mack_Super-Liner",
+   "fuel": "diesel"
   },
   {
    "id": "truck_tatra_815",
@@ -223,7 +237,8 @@
    "gvw_kg": 40000,
    "fuel_l": 504,
    "age": "VII",
-   "wiki": "Tatra_815"
+   "wiki": "Tatra_815",
+   "fuel": "diesel"
   },
   {
    "id": "truck_sinotruk_howo",
@@ -238,7 +253,8 @@
    "gvw_kg": 40000,
    "fuel_l": 696,
    "age": "VII",
-   "wiki": "Sinotruk"
+   "wiki": "Sinotruk",
+   "fuel": "diesel"
   },
   {
    "id": "truck_scania_143",
@@ -253,7 +269,8 @@
    "gvw_kg": 40000,
    "fuel_l": 792,
    "age": "VII",
-   "wiki": "Scania_3-series"
+   "wiki": "Scania_3-series",
+   "fuel": "diesel"
   },
   {
    "id": "truck_peterbilt_379",
@@ -268,7 +285,8 @@
    "gvw_kg": 36000,
    "fuel_l": 804,
    "age": "VII",
-   "wiki": "Peterbilt_379"
+   "wiki": "Peterbilt_379",
+   "fuel": "diesel"
   },
   {
    "id": "truck_freightliner_fld120",
@@ -283,7 +301,8 @@
    "gvw_kg": 36000,
    "fuel_l": 804,
    "age": "VII",
-   "wiki": "Freightliner_Trucks"
+   "wiki": "Freightliner_Trucks",
+   "fuel": "diesel"
   },
   {
    "id": "truck_renault_magnum",
@@ -298,7 +317,8 @@
    "gvw_kg": 40000,
    "fuel_l": 816,
    "age": "VII",
-   "wiki": "Renault_Magnum"
+   "wiki": "Renault_Magnum",
+   "fuel": "diesel"
   },
   {
    "id": "truck_volvo_fh",
@@ -313,7 +333,8 @@
    "gvw_kg": 40000,
    "fuel_l": 816,
    "age": "VII",
-   "wiki": "Volvo_FH"
+   "wiki": "Volvo_FH",
+   "fuel": "diesel"
   },
   {
    "id": "truck_isuzu_giga",
@@ -328,7 +349,8 @@
    "gvw_kg": 25000,
    "fuel_l": 624,
    "age": "VII",
-   "wiki": "Isuzu_Giga"
+   "wiki": "Isuzu_Giga",
+   "fuel": "diesel"
   },
   {
    "id": "truck_mercedes_actros",
@@ -343,7 +365,8 @@
    "gvw_kg": 40000,
    "fuel_l": 696,
    "age": "VII",
-   "wiki": "Mercedes-Benz_Actros"
+   "wiki": "Mercedes-Benz_Actros",
+   "fuel": "diesel"
   },
   {
    "id": "truck_fuso_super_great",
@@ -358,7 +381,8 @@
    "gvw_kg": 25000,
    "fuel_l": 672,
    "age": "VII",
-   "wiki": "Mitsubishi_Fuso_Super_Great"
+   "wiki": "Mitsubishi_Fuso_Super_Great",
+   "fuel": "diesel"
   },
   {
    "id": "truck_volvo_vnl",
@@ -373,7 +397,8 @@
    "gvw_kg": 36000,
    "fuel_l": 804,
    "age": "VII",
-   "wiki": "Volvo_VN"
+   "wiki": "Volvo_VN",
+   "fuel": "diesel"
   },
   {
    "id": "truck_daf_xf",
@@ -388,7 +413,8 @@
    "gvw_kg": 40000,
    "fuel_l": 816,
    "age": "VII",
-   "wiki": "DAF_XF"
+   "wiki": "DAF_XF",
+   "fuel": "diesel"
   },
   {
    "id": "truck_iveco_stralis",
@@ -403,7 +429,8 @@
    "gvw_kg": 40000,
    "fuel_l": 744,
    "age": "VII",
-   "wiki": "Iveco_Stralis"
+   "wiki": "Iveco_Stralis",
+   "fuel": "diesel"
   },
   {
    "id": "truck_freightliner_cascadia",
@@ -418,7 +445,8 @@
    "gvw_kg": 36000,
    "fuel_l": 804,
    "age": "VII",
-   "wiki": "Freightliner_Cascadia"
+   "wiki": "Freightliner_Cascadia",
+   "fuel": "diesel"
   },
   {
    "id": "truck_man_tgx",
@@ -433,7 +461,8 @@
    "gvw_kg": 40000,
    "fuel_l": 840,
    "age": "VII",
-   "wiki": "MAN_TGX"
+   "wiki": "MAN_TGX",
+   "fuel": "diesel"
   },
   {
    "id": "truck_tata_prima",
@@ -448,7 +477,8 @@
    "gvw_kg": 40000,
    "fuel_l": 552,
    "age": "VII",
-   "wiki": "Tata_Prima"
+   "wiki": "Tata_Prima",
+   "fuel": "diesel"
   },
   {
    "id": "truck_western_star_4900",
@@ -463,7 +493,8 @@
    "gvw_kg": 36000,
    "fuel_l": 888,
    "age": "VII",
-   "wiki": "Western_Star_Trucks"
+   "wiki": "Western_Star_Trucks",
+   "fuel": "diesel"
   },
   {
    "id": "truck_kenworth_t680",
@@ -478,7 +509,8 @@
    "gvw_kg": 36000,
    "fuel_l": 804,
    "age": "VII",
-   "wiki": "Kenworth_T680"
+   "wiki": "Kenworth_T680",
+   "fuel": "diesel"
   },
   {
    "id": "truck_ox_team",
@@ -493,7 +525,8 @@
    "gvw_kg": 3000,
    "fuel_l": 60,
    "age": "III",
-   "wiki": "Ox"
+   "wiki": "Ox",
+   "fuel": "hay"
   },
   {
    "id": "truck_horse_team",
@@ -508,7 +541,8 @@
    "gvw_kg": 5000,
    "fuel_l": 60,
    "age": "IV",
-   "wiki": "Draft_horse"
+   "wiki": "Draft_horse",
+   "fuel": "hay"
   },
   {
    "id": "truck_steam_traction",
@@ -523,7 +557,8 @@
    "gvw_kg": 25000,
    "fuel_l": 72,
    "age": "VI",
-   "wiki": "Traction_engine"
+   "wiki": "Traction_engine",
+   "fuel": "coal"
   },
   {
    "id": "truck_steam_wagon",
@@ -538,7 +573,8 @@
    "gvw_kg": 12000,
    "fuel_l": 96,
    "age": "VI",
-   "wiki": "Steam_wagon"
+   "wiki": "Steam_wagon",
+   "fuel": "coal"
   }
  ],
  "trailers": [
@@ -856,7 +892,8 @@
    "fuel_l": 72,
    "road_role": "compact",
    "age": "VI",
-   "wiki": "Road_roller"
+   "wiki": "Road_roller",
+   "fuel": "diesel"
   },
   {
    "id": "cv_transit_mixer",
@@ -870,7 +907,8 @@
    "fuel_l": 528,
    "road_role": "mix",
    "age": "VI",
-   "wiki": "Concrete_mixer"
+   "wiki": "Concrete_mixer",
+   "fuel": "diesel"
   },
   {
    "id": "cv_d9_dozer",
@@ -884,7 +922,8 @@
    "fuel_l": 840,
    "road_role": "grade",
    "age": "VII",
-   "wiki": "Caterpillar_D9"
+   "wiki": "Caterpillar_D9",
+   "fuel": "diesel"
   },
   {
    "id": "cv_jcb_3cx",
@@ -898,7 +937,8 @@
    "fuel_l": 132,
    "road_role": "dig",
    "age": "VII",
-   "wiki": "Backhoe_loader"
+   "wiki": "Backhoe_loader",
+   "fuel": "diesel"
   },
   {
    "id": "cv_cat_140_grader",
@@ -912,7 +952,8 @@
    "fuel_l": 432,
    "road_role": "grade",
    "age": "VII",
-   "wiki": "Motor_grader"
+   "wiki": "Motor_grader",
+   "fuel": "diesel"
   },
   {
    "id": "cv_cat_966_loader",
@@ -926,7 +967,8 @@
    "fuel_l": 360,
    "road_role": "haul",
    "age": "VII",
-   "wiki": "Loader_(equipment)"
+   "wiki": "Loader_(equipment)",
+   "fuel": "diesel"
   },
   {
    "id": "cv_barber_greene_paver",
@@ -940,7 +982,8 @@
    "fuel_l": 264,
    "road_role": "pave",
    "age": "VI",
-   "wiki": "Paver_(vehicle)"
+   "wiki": "Paver_(vehicle)",
+   "fuel": "diesel"
   },
   {
    "id": "cv_bomag_roller",
@@ -954,7 +997,8 @@
    "fuel_l": 240,
    "road_role": "compact",
    "age": "VII",
-   "wiki": "Road_roller"
+   "wiki": "Road_roller",
+   "fuel": "diesel"
   },
   {
    "id": "cv_bobcat_m440",
@@ -968,7 +1012,8 @@
    "fuel_l": 60,
    "road_role": "dig",
    "age": "VII",
-   "wiki": "Skid-steer_loader"
+   "wiki": "Skid-steer_loader",
+   "fuel": "diesel"
   },
   {
    "id": "cv_cat_320_excavator",
@@ -982,7 +1027,8 @@
    "fuel_l": 264,
    "road_role": "dig",
    "age": "VII",
-   "wiki": "Excavator"
+   "wiki": "Excavator",
+   "fuel": "diesel"
   },
   {
    "id": "cv_wirtgen_miller",
@@ -996,7 +1042,8 @@
    "fuel_l": 960,
    "road_role": "mill",
    "age": "VII",
-   "wiki": "Cold_planer"
+   "wiki": "Cold_planer",
+   "fuel": "diesel"
   },
   {
    "id": "cv_putzmeister_pump",
@@ -1010,7 +1057,8 @@
    "fuel_l": 720,
    "road_role": "mix",
    "age": "VII",
-   "wiki": "Concrete_pump"
+   "wiki": "Concrete_pump",
+   "fuel": "diesel"
   },
   {
    "id": "cv_cat_797_haul",
@@ -1024,7 +1072,8 @@
    "fuel_l": 3000,
    "road_role": "haul",
    "age": "VII",
-   "wiki": "Caterpillar_797"
+   "wiki": "Caterpillar_797",
+   "fuel": "diesel"
   },
   {
    "id": "cv_hand_roller",
@@ -1038,7 +1087,8 @@
    "fuel_l": 0,
    "road_role": "compact",
    "age": "II",
-   "wiki": "Road_roller"
+   "wiki": "Road_roller",
+   "fuel": ""
   },
   {
    "id": "cv_horse_roller",
@@ -1052,7 +1102,8 @@
    "fuel_l": 0,
    "road_role": "compact",
    "age": "IV",
-   "wiki": "Road_roller"
+   "wiki": "Road_roller",
+   "fuel": ""
   },
   {
    "id": "cv_dump_cart",
@@ -1066,7 +1117,8 @@
    "fuel_l": 0,
    "road_role": "haul",
    "age": "IV",
-   "wiki": "Dump_truck"
+   "wiki": "Dump_truck",
+   "fuel": ""
   },
   {
    "id": "cv_fresno_scraper",
@@ -1080,7 +1132,8 @@
    "fuel_l": 0,
    "road_role": "grade",
    "age": "VI",
-   "wiki": "Scraper_(excavation)"
+   "wiki": "Scraper_(excavation)",
+   "fuel": ""
   },
   {
    "id": "cv_horse_grader",
@@ -1094,7 +1147,8 @@
    "fuel_l": 0,
    "road_role": "grade",
    "age": "VI",
-   "wiki": "Grader"
+   "wiki": "Grader",
+   "fuel": ""
   },
   {
    "id": "cv_steam_shovel",
@@ -1108,7 +1162,8 @@
    "fuel_l": 72,
    "road_role": "dig",
    "age": "V",
-   "wiki": "Steam_shovel"
+   "wiki": "Steam_shovel",
+   "fuel": "coal"
   }
  ],
  "engines": [

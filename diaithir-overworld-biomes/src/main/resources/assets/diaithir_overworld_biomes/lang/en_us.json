@@ -85,6 +85,15 @@
  "biome.diaithir_overworld_biomes.wintry_origin_valley": "Wintry Origin Valley",
  "biome.diaithir_overworld_biomes.withered_abyss": "Withered Abyss",
  "biome.diaithir_overworld_biomes.woodland": "Woodland",
+ "biome.diaithir_overworld_biomes.thornwake": "Thornwake",
+ "codex.diaithir_overworld_biomes.thornwake.title": "Thornwake",
+ "codex.diaithir_overworld_biomes.thornwake.body": "A wood grown in the wake of something that did not stop growing. Thorn and berry choke the ground, and old stones stand under the briars where an Ascendant rite was once kept. Tier I rites wake here.",
+ "biome.diaithir_overworld_biomes.cinderfen": "Cinderfen",
+ "codex.diaithir_overworld_biomes.cinderfen.title": "Cinderfen",
+ "codex.diaithir_overworld_biomes.cinderfen.body": "A wetland that burns without flame: black water, soul-soil, and magma under the mud. Slagiron is smelted from what the fen gives up. Tier II rites wake here.",
+ "biome.diaithir_overworld_biomes.unwound": "The Unwound",
+ "codex.diaithir_overworld_biomes.unwound.title": "The Unwound",
+ "codex.diaithir_overworld_biomes.unwound.body": "Ground where the Ages' clock has run down: pale, still, and wrong underfoot. Few trees, no weather. The last rites wake here, and The Last Wheel with them. Tier III rites wake here.",
  "codex.diaithir_overworld_biomes.undergarden.title": "The Undergarden",
  "codex.diaithir_overworld_biomes.undergarden.body": "The Undergarden: replacement realm with the same ids as the original mod; 216 blocks, 20 biomes.",
  "codex.diaithir_overworld_biomes.the_backwoods.title": "The Backwoods",
@@ -108,5 +117,11 @@
  "codex.diaithir_overworld_biomes.the_bumblezone_structures.title": "The Bumblezone structures",
  "codex.diaithir_overworld_biomes.the_bumblezone_structures.body": "33 ruins, towers and shrines: Ancient Hoops, Ancient Shrine, Battle Cubes, Bee House, Bumbling Beepartments, Candle Parkour, Cannon Range, Cell Maze, Cherry Veteran Tree, Dance Floor, Gazebuzz Cluster, Goliath Honey Fountain, Hanging Garden, Hive Temple, Honey Cave Room, Honey Fountain, Honey Slime Ranch, Honitel, Ice Monolith, Mite Fortress, Overgrown Flower, Phantasm Aviary, Pirate Ship, Pollinated Stream, Sempiternal Sanctum Blue, Sempiternal Sanctum Green, Sempiternal Sanctum Purple, Sempiternal Sanctum Red, Sempiternal Sanctum White, Sempiternal Sanctum Yellow, Stinger Spear Shrine, Subway, Throne Pillar.",
  "codex.diaithir_overworld_biomes.aether_ii_structures.title": "The Aether II structures",
- "codex.diaithir_overworld_biomes.aether_ii_structures.body": "18 ruins, towers and shrines: Ancient Henge, Animal Den, Brexallen Ruins, Camp Arctic, Camp Highfields, Camp Magnetic, Infected Guardian Tree, Irradiated Bunker Remnants, Irradiated Settlement Remnants, Outpost, Sentry Ruins, Undercloud Mineshaft, Veradexian Aqueduct, Veradexian Library Arctic, Veradexian Library Temperate, Veradexian Ruins Arctic, Veradexian Ruins Temperate, Watchtower."
+ "codex.diaithir_overworld_biomes.aether_ii_structures.body": "18 ruins, towers and shrines: Ancient Henge, Animal Den, Brexallen Ruins, Camp Arctic, Camp Highfields, Camp Magnetic, Infected Guardian Tree, Irradiated Bunker Remnants, Irradiated Settlement Remnants, Outpost, Sentry Ruins, Undercloud Mineshaft, Veradexian Aqueduct, Veradexian Library Arctic, Veradexian Library Temperate, Veradexian Ruins Arctic, Veradexian Ruins Temperate, Watchtower.",
+ "codex.diaithir_overworld_biomes.aerialhell.title": "Aerial Hell",
+ "codex.diaithir_overworld_biomes.aerialhell.body": "Aerial Hell: replacement realm with the same ids as the original mod; 511 blocks, 14 biomes.",
+ "codex.diaithir_overworld_biomes.aerialhell_bestiary.title": "Aerial Hell bestiary",
+ "codex.diaithir_overworld_biomes.aerialhell_bestiary.body": "50 creatures: Aerial Tree Mimic, Chained God, Copper Pine Mimic, Cortinarius Cow, Crystal Caterpillar, Crystal Golem, Crystal Slime, Crystal Spider, Electro Spirit, Evil Cow, Fat Phantom, Fire Spirit, Flying Jellyfish, Forest Caterpillar, Ghost Slime Ninja Pirate, Ghost Slime Pirate, Gliding Turtle, Golden Beech Mimic, Hell Spider, Ice Spirit, Kodama, Lilith, Lunatic Priest, Mud Cycle Mage, Mud Golem, Mud Soldier, Mud Spectral Cycle Mage, Mud Spectral Golem, Mud Spectral Soldier, Mummy, Sandy Sheep, Shadow Automaton, Shadow Flying Skull, Shadow Pine Mimic, Shadow Spider, Shadow Troll, Shroomboom, Sky Cactus Fiber Mimic, Slime Ninja Pirate, Slime Pirate, Stellar Boar, Stellar Chicken, Stellar Ent, Stellar Stone Automaton, Torn Spirit, Venomous Snake, Verdigris Zombie, Volucite Golem, Volucite Warden, Worm.",
+ "codex.diaithir_overworld_biomes.aerialhell_structures.title": "Aerial Hell structures",
+ "codex.diaithir_overworld_biomes.aerialhell_structures.body": "15 ruins, towers and shrines: Cloud Abandonned Portal, Copper Pine Cottage, Floating Boat, Golden Nether Prison, Ground Abandonned Portal, Lapis Robinia Hut, Lunatic Temple, Mud Dungeon, Overworld Abandonned Portal, Shadow Catacombs, Shadow Pine Tower, Slippery Sand Ocean Abandonned Structure, Stellar Stone Bricks Tower, Upside Down Pyramid, Volucite Castle."
 }

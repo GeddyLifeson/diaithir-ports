@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "#": "aerialhell:stellar_cobblestone"
+ },
+ "pattern": [
+  "##"
+ ],
+ "result": {
+  "id": "aerialhell:stellar_cobblestone_pressure_plate"
+ }
+}

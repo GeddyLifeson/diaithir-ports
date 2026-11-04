@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "diaithirtrees:block/alder_log"
+  },
+  "axis=z": {
+   "model": "diaithirtrees:block/alder_log_horizontal",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "diaithirtrees:block/alder_log_horizontal",
+   "x": 90,
+   "y": 90
+  }
+ }
+}

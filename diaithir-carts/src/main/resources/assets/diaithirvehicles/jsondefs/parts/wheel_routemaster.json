@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "AEC Routemaster Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 1.0,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "AEC Routemaster Wheel",
+   "modelName": "wheel_routemaster",
+   "textureName": "wheel_routemaster",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

@@ -1,6 +1,9 @@
 {
  "values": [
-  "#c:is_desert",
+  {
+   "id": "#c:is_desert",
+   "required": false
+  },
   "#minecraft:is_badlands"
  ]
 }

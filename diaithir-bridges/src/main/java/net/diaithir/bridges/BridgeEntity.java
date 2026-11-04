@@ -59,6 +59,9 @@ public final class BridgeEntity extends BlockEntity implements WorldlyContainer 
 
     EnergyHandler energy() { return energy; }
 
+    /** Comparator level from the energy buffer (signal port). */
+    int signal() { return Ports.level((double) energy.getAmountAsInt() / Math.max(1, energy.getCapacityAsInt())); }
+
     /** FE a stack of fuel is worth per item, or empty when it is not a magic reagent. */
     static OptionalInt fuelValue(ItemStack s) {
         if (s.isEmpty() || !s.is(FUEL)) return OptionalInt.empty();
