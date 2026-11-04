@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.diaithir.hudoverlays.leavebars.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "client.GuiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
