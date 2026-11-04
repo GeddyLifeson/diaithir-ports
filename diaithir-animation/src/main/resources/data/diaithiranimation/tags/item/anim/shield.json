@@ -1,0 +1,233 @@
+{
+"replace": false,
+"values": [
+{
+"id": "aether_ii:arkenium_shield",
+"required": false
+},
+{
+"id": "aether_ii:burrukai_plate_shield",
+"required": false
+},
+{
+"id": "aether_ii:gravitite_shield",
+"required": false
+},
+{
+"id": "aether_ii:shield_fern",
+"required": false
+},
+{
+"id": "aether_ii:skyroot_shield",
+"required": false
+},
+{
+"id": "aether_ii:zanite_shield",
+"required": false
+},
+{
+"id": "diaithirarms:bone_shield",
+"required": false
+},
+{
+"id": "diaithirarms:bronze_shield",
+"required": false
+},
+{
+"id": "diaithirarms:composite_shield",
+"required": false
+},
+{
+"id": "diaithirarms:copper_shield",
+"required": false
+},
+{
+"id": "diaithirarms:future_shield",
+"required": false
+},
+{
+"id": "diaithirarms:mail_shield",
+"required": false
+},
+{
+"id": "diaithirarms:rodos_shield",
+"required": false
+},
+{
+"id": "diaithirarms:steel_shield",
+"required": false
+},
+{
+"id": "diaithirarms:tempered_shield",
+"required": false
+},
+{
+"id": "diaithirrelics:boar_shield",
+"required": false
+},
+{
+"id": "diaithirrelics:boar_shield/age",
+"required": false
+},
+{
+"id": "diaithirrelics:boar_shield/passive",
+"required": false
+},
+{
+"id": "diaithirrelics:frost_shield",
+"required": false
+},
+{
+"id": "diaithirrelics:frost_shield/age",
+"required": false
+},
+{
+"id": "diaithirrelics:frost_shield/passive",
+"required": false
+},
+{
+"id": "diaithirrelics:light_shield",
+"required": false
+},
+{
+"id": "diaithirrelics:light_shield/age",
+"required": false
+},
+{
+"id": "diaithirrelics:light_shield/passive",
+"required": false
+},
+{
+"id": "mekanism:module_radiation_shielding_unit",
+"required": false
+},
+{
+"id": "mekanismtools:bronze_shield",
+"required": false
+},
+{
+"id": "mekanismtools:lapis_lazuli_shield",
+"required": false
+},
+{
+"id": "mekanismtools:osmium_shield",
+"required": false
+},
+{
+"id": "mekanismtools:refined_glowstone_shield",
+"required": false
+},
+{
+"id": "mekanismtools:refined_obsidian_shield",
+"required": false
+},
+{
+"id": "mekanismtools:steel_shield",
+"required": false
+},
+{
+"id": "minecraft:shield",
+"required": false
+},
+{
+"id": "paladins:diamond_kite_shield",
+"required": false
+},
+{
+"id": "paladins:golden_kite_shield",
+"required": false
+},
+{
+"id": "paladins:iron_kite_shield",
+"required": false
+},
+{
+"id": "paladins:netherite_kite_shield",
+"required": false
+},
+{
+"id": "pneumaticcraft:radiation_shielding_upgrade",
+"required": false
+},
+{
+"id": "rftoolsbuilder:blue_shield_template_block",
+"required": false
+},
+{
+"id": "rftoolsbuilder:green_shield_template_block",
+"required": false
+},
+{
+"id": "rftoolsbuilder:red_shield_template_block",
+"required": false
+},
+{
+"id": "rftoolsbuilder:shield_block1",
+"required": false
+},
+{
+"id": "rftoolsbuilder:shield_block2",
+"required": false
+},
+{
+"id": "rftoolsbuilder:shield_block3",
+"required": false
+},
+{
+"id": "rftoolsbuilder:shield_block4",
+"required": false
+},
+{
+"id": "rftoolsbuilder:yellow_shield_template_block",
+"required": false
+},
+{
+"id": "sgearmetalworks:shield_cast",
+"required": false
+},
+{
+"id": "silentgear:shield",
+"required": false
+},
+{
+"id": "silentgear:shield_blueprint",
+"required": false
+},
+{
+"id": "silentgear:shield_plate",
+"required": false
+},
+{
+"id": "silentgear:shield_template",
+"required": false
+},
+{
+"id": "stellaris:shield_module",
+"required": false
+},
+{
+"id": "tconstruct:battlesign",
+"required": false
+},
+{
+"id": "tconstruct:plate_shield",
+"required": false
+},
+{
+"id": "tconstruct:shield_core",
+"required": false
+},
+{
+"id": "tconstruct:travelers_shield",
+"required": false
+},
+{
+"id": "twilightforest:knightmetal_shield",
+"required": false
+},
+{
+"id": "twilightforest:stronghold_shield",
+"required": false
+}
+]
+}

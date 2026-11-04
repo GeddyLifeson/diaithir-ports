@@ -1,0 +1,18 @@
+{
+  "item": "vs_yard:arcane_motor",
+  "kind": "thruster",
+  "mass_kg": 900,
+  "hp": 40,
+  "power_w": 120000,
+  "thrust_n": 7000,
+  "buoyancy_n": 0,
+  "capacity_l": 0,
+  "crew_slots": 0,
+  "block": "vs_eureka:engine",
+  "extra": {
+    "anchor_x": 0,
+    "anchor_y": 1,
+    "anchor_row": 0.25
+  },
+  "min_age": 6
+}
