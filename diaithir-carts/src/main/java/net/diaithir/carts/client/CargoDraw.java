@@ -22,6 +22,9 @@ import java.util.List;
 public final class CargoDraw {
     private CargoDraw() {}
 
+    /** Pieces by the cart render state they were worked out for. NeoForge wipes a state's render data (setRenderData) after the name tag event, which runs before the cart is drawn, so the pieces are kept here, weakly, instead. Render thread only. */
+    public static final java.util.Map<Object, List<Piece>> PIECES = new java.util.WeakHashMap<>();
+
     /** One load to draw: its resolved model, where it starts and how big it is, in blocks, in the cart's frame. */
     public record Piece(BlockModelRenderState model, float x, float y, float z, float sx, float sy, float sz) {}
 

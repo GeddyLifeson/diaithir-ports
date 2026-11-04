@@ -22,7 +22,6 @@ import java.util.List;
 /** Draws a wagon's cargo with the cart (client only): the loads are worked out when the render state is filled and drawn in the cart's own frame. */
 @Mixin(AbstractMinecartRenderer.class)
 abstract class MinecartCargoRenderMixin {
-    private static final ContextKey<List<CargoDraw.Piece>> DIAITHIR_CARGO = new ContextKey<>(Identifier.fromNamespaceAndPath("diaithircarts", "cargo"));
 
     @Shadow
     @org.spongepowered.asm.mixin.Final
@@ -32,17 +31,18 @@ abstract class MinecartCargoRenderMixin {
     private void diaithircarts$extractCargo(AbstractMinecart cart, MinecartRenderState state, float partial, CallbackInfo ci) {
         String view = cart.getData(RailCargo.VIEW);
         if (view.isEmpty()) {
-            state.setRenderData(DIAITHIR_CARGO, List.of());
+            CargoDraw.PIECES.remove(state);
             return;
         }
-        state.setRenderData(DIAITHIR_CARGO, CargoDraw.pieces(view, !state.isNewRender, this.blockModelResolver));
+        List<CargoDraw.Piece> pcs = CargoDraw.pieces(view, !state.isNewRender, this.blockModelResolver);
+        CargoDraw.PIECES.put(state, pcs);
     }
 
     // just before the cart model is flipped upright: the pose is in the frame the display block is drawn in
     @Inject(method = "submit(Lnet/minecraft/client/renderer/entity/state/MinecartRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V",
             at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;scale(FFF)V", ordinal = 1), require = 0)
     private void diaithircarts$submitCargo(MinecartRenderState state, PoseStack pose, SubmitNodeCollector collector, CameraRenderState camera, CallbackInfo ci) {
-        List<CargoDraw.Piece> pieces = state.getRenderData(DIAITHIR_CARGO);
+        List<CargoDraw.Piece> pieces = CargoDraw.PIECES.get(state);
         if (pieces != null && !pieces.isEmpty()) CargoDraw.submit(pieces, pose, collector, state.lightCoords, state.outlineColor);
     }
 }
