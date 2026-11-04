@@ -12,7 +12,7 @@ public final class MaterialBlock extends Block {
     private final int flammability;
 
     public MaterialBlock(Properties properties, Materials.Row row) {
-        super(properties);
+        super(row.flammability() > 0 ? properties.ignitedByLava() : properties);
         this.fireSpread = row.fireSpread();
         this.flammability = row.flammability();
     }
