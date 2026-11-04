@@ -4,8 +4,8 @@
  "name_en": "Steel Marshal",
  "age": 5,
  "own": {
-  "kind": "illager",
-  "scale": 1.55,
+  "kind": "look_tall",
+  "scale": 1.42,
   "hp": 650,
   "damage": 15,
   "armor": 12,
@@ -245,5 +245,6 @@
  },
  "mythic": false,
  "entity": "diaithirbosses:steel_marshal",
- "creature_id": null
+ "creature_id": null,
+ "look": true
 }

@@ -1,0 +1,42 @@
+{
+ "name": "diaithir_worldgen:lib/orierlae/settlement/2/cellaustium",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/orierlae/ar_orierlae_e5_assay_001389",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/orierlae/ar_orierlae_e5_assay_002857",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/orierlae/ar_orierlae_e5_assay_003418",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/orierlae/ar_orierlae_e6_assay_001440",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

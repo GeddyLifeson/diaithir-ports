@@ -1,0 +1,87 @@
+{
+ "name": "diaithir_worldgen:lib/lyarae/settlement/0/nueralys",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e1_places_006952",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e4_places_006934",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e6_places_003768",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e6_places_003806",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e6_places_003890",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e6_places_003903",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e6_places_003938",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e6_places_003941",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyarae/ki_lyarae_e6_places_003957",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

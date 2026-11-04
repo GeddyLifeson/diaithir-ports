@@ -1,0 +1,33 @@
+{
+ "name": "diaithir_worldgen:lib/tarnornath/settlement/0/saurnus",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/tarnornath/gr_tarnornath_e2_assay_007759",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/tarnornath/gr_tarnornath_e6_places_000033",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/tarnornath/gr_tarnornath_e7_places_000155",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

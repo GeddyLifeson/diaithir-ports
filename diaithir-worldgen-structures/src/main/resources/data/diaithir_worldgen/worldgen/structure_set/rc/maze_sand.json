@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:rc/maze_sand",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 34,
+  "separation": 12,
+  "salt": 151113622
+ }
+}

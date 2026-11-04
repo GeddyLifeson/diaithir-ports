@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/stove_cast_iron_head",
+  "layer1": "diaithirfurnishings:item/stove_cast_iron_handle",
+  "layer2": "diaithirfurnishings:item/stove_cast_iron_binding"
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "rules": [
+  {
+   "id": "diaithircombat:bow_class_spell_socket",
+   "target": "diaithir_arms:bow_*",
+   "slots": 1,
+   "kinds": [
+    "rune",
+    "relic"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithircombat:quiver_relic_socket",
+   "target": "diaithir_classes:fastening_net_quiver",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "diaithircombat:fian_weapon_runes",
+   "target": "diaithircombat:weapons/*",
+   "slots": 2,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithircombat:fian_two_hand_runes",
+   "target": "diaithircombat:two_handed",
+   "slots": 3,
+   "kinds": [
+    "rune",
+    "enchant"
+   ],
+   "max_quality": 4
+  },
+  {
+   "id": "diaithircombat:fian_dagger_runes",
+   "target": "diaithircombat:weapons/dagger",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "diaithircombat:fian_charm_relics",
+   "target": "diaithircombat:relic",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "diaithircombat:fian_forge_quality",
+   "target": "diaithircombat:weapons/*",
+   "slots": 1,
+   "kinds": [
+    "quench",
+    "temper"
+   ],
+   "max_quality": 5
+  },
+  {
+   "id": "diaithircombat:roll_gear_sockets",
+   "target": "diaithir_combat:roll_gear",
+   "slots": 2,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithircombat:roll_armor_sockets",
+   "target": "diaithir_classes:fian|ceilg|sleagh|cleirech armor boots and leggings",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "diaithircombat:roll_enchant_cap",
+   "target": "diaithircombat:feet|legs",
+   "slots": 2,
+   "kinds": [
+    "enchant"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithircombat:lance_socket_runes",
+   "target": "diaithircombat:weapons/lance",
+   "slots": 2,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithircombat:lance_enchant_slots",
+   "target": "diaithircombat:weapons/lance",
+   "slots": 2,
+   "kinds": [
+    "enchant"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "diaithircombat:lance_pennon_attach",
+   "target": "diaithircombat:weapons/lance",
+   "slots": 1,
+   "kinds": [
+    "relic"
+   ],
+   "max_quality": 1
+  },
+  {
+   "id": "diaithircombat:crit_weapon_sockets",
+   "target": "#diaithircombat:crit_weapons",
+   "slots": 2,
+   "kinds": [
+    "rune_cruinn",
+    "rune_ainnis"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithircombat:crit_trinket_sockets",
+   "target": "#diaithircombat:crit_trinkets",
+   "slots": 2,
+   "kinds": [
+    "rune_cruinn",
+    "rune_ainnis"
+   ],
+   "max_quality": 2
+  },
+  {
+   "id": "diaithircombat:crit_cap_guard",
+   "target": "diaithircombat:any_item_with_crit_modifiers",
+   "slots": 0,
+   "kinds": [],
+   "max_quality": 1
+  },
+  {
+   "id": "diaithircombat:diaithir_skills:keystone_synergy_socket",
+   "target": "diaithir_classes:ogham_socket_ring",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithircombat:diaithir_skills:class_charm_link",
+   "target": "diaithir_classes:cleirech_charm",
+   "slots": 2,
+   "kinds": [
+    "rune",
+    "gem"
+   ],
+   "max_quality": 4
+  }
+ ]
+}

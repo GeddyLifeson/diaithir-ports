@@ -32,6 +32,7 @@
   {
    "id": "spartanweaponry:studded_club",
    "required": false
-  }
+  },
+  "diaithircombat:lib_mace"
  ]
 }

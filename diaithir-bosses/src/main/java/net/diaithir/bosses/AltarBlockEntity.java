@@ -39,6 +39,7 @@ public class AltarBlockEntity extends BlockEntity {
 
     public void activate(Player player) {
         if (!(level instanceof ServerLevel sl)) return;
+        if (boss.isEmpty()) pickPlanetBoss(sl);
         Data.Profile p = Data.byId(boss);
         if (p == null) return;
         Component why = refusal(sl, p);
@@ -48,6 +49,24 @@ public class AltarBlockEntity extends BlockEntity {
         }
         Mob m = DiaithirBosses.spawn(sl, p, net.minecraft.world.phys.Vec3.atBottomCenterOf(worldPosition.above(2)), worldPosition);
         if (m != null) player.sendSystemMessage(Component.translatable("boss.diaithirbosses.woken"));
+    }
+
+    /**
+     * A lair altar (generated empty in a planet dimension) takes one of that planet's bosses, fixed by its position: only those the
+     * world's Age has reached when any have, so the first wake is never a refusal.
+     */
+    private void pickPlanetBoss(ServerLevel sl) {
+        String dim = sl.dimension().identifier().toString();
+        if (!dim.startsWith("diaithir_planets:")) return;
+        String planet = dim.substring("diaithir_planets:".length());
+        java.util.List<Data.Profile> all = Data.planetBosses().values().stream().filter(b -> planet.equals(b.planet))
+            .sorted(java.util.Comparator.comparingInt((Data.Profile b) -> b.age).thenComparing(b -> b.id)).toList();
+        int age = Ages.current(sl.getServer());
+        java.util.List<Data.Profile> open = all.stream().filter(b -> b.age <= age).toList();
+        if (!open.isEmpty()) all = open;
+        if (all.isEmpty()) return;
+        boss = all.get(Math.floorMod(Long.hashCode(worldPosition.asLong() * 0x9E3779B97F4A7C15L), all.size())).id;
+        setChanged();
     }
 
     public void defeated(long time) {

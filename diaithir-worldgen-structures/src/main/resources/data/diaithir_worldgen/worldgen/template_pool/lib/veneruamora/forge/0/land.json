@@ -1,0 +1,33 @@
+{
+ "name": "diaithir_worldgen:lib/veneruamora/forge/0/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/veneruamora/ar_veneruamora_e2_assay_001015",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/veneruamora/ar_veneruamora_e2_assay_001522",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/veneruamora/ar_veneruamora_e2_assay_002756",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "name": "diaithir_worldgen:lib/silena/garden/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silena/ar_silena_e6_places_001648",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silena/ar_silena_e6_places_001887",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silena/ar_silena_e6_places_002186",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silena/ar_silena_e6_places_003085",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

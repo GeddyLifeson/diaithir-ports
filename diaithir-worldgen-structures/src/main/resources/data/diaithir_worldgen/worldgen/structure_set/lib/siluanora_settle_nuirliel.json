@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_0_nuirliel",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_1_nuirliel",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/settlement_2_nuirliel",
+   "weight": 13
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 181938327
+ }
+}

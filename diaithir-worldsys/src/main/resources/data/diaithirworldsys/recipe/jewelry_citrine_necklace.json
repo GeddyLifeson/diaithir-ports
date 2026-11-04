@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "SIS",
+  "S S",
+  " G "
+ ],
+ "key": {
+  "S": "#c:strings",
+  "I": "#c:ingots/gold",
+  "G": "#c:gems/citrine"
+ },
+ "result": {
+  "id": "diaithirworldsys:jewelry_citrine_necklace",
+  "count": 1
+ }
+}

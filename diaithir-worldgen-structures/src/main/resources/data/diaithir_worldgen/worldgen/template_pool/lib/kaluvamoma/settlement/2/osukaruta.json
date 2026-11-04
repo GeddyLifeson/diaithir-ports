@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/kaluvamoma/settlement/2/osukaruta",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kaluvamoma/ki_kaluvamoma_e5_assay_001281",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kaluvamoma/ki_kaluvamoma_e6_assay_001330",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

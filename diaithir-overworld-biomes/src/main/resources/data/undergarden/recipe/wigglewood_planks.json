@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#undergarden:wigglewood_logs"
+ ],
+ "result": {
+  "id": "undergarden:wigglewood_planks",
+  "count": 4
+ }
+}

@@ -1,5 +1,9 @@
 {
   "block.diaithirlogistics.foundry_depot": "Courier Depot",
   "block.diaithirlogistics.foundry_ghost": "Ghost Block",
-  "item.diaithirlogistics.foundry_plan_wand": "Plan Wand"
+  "item.diaithirlogistics.foundry_plan_wand": "Plan Wand",
+  "block.diaithirlogistics.pipe": "Vethrin",
+  "block.diaithirlogistics.sink_pipe": "Dolvareth",
+  "block.diaithirlogistics.extractor_pipe": "Quelmurak",
+  "block.diaithirlogistics.speed_pipe": "Ashkirel"
 }

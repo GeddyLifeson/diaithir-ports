@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_1_crustarnon",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/bronurneld/settlement_2_crustarnon",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 98520882
+ }
+}

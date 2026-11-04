@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": "minecraft:dirt"
+  },
+  "pattern": [
+    "DD",
+    "DD"
+  ],
+  "result": {
+    "id": "diaithircarts:dirt_track",
+    "count": 4
+  },
+  "category": "building"
+}

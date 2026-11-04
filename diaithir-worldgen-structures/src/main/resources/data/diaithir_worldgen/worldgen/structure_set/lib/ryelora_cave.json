@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/delve_0_cave",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/delve_1_cave",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/delve_2_cave",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryelora/delve_3_cave",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 246906658
+ }
+}

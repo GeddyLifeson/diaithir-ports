@@ -1,0 +1,21 @@
+{
+ "id": "diaithir_overworld_biomes:aether_ii_descent",
+ "codex_link": "diaithir_overworld_biomes:aether_ii",
+ "age": 3,
+ "age_gate": "diaithir:age/3",
+ "title": "Descent: The Aether II",
+ "description": "Enter The Aether II and mine its first ore.",
+ "tasks": [
+  {
+   "type": "dimension",
+   "dimension": "aether_ii:aether_holy_isles"
+  }
+ ],
+ "rewards": [
+  {
+   "type": "energy",
+   "amount_j": 100
+  }
+ ],
+ "next": []
+}

@@ -1,0 +1,179 @@
+{
+ "sky": {
+  "sky": "#7a5cb8",
+  "fog": "#c9b8e6",
+  "cloud": "#e0d4ffb0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6ea8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.vesathora.E3.places.000075",
+   "archetype": "forest",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#7fb069",
+   "foliage": "#8fd14f",
+   "water": "#4a8fb8",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesathora.E2.places.000053",
+   "archetype": "plains",
+   "temp": 0.3,
+   "humid": 0.0,
+   "grass": "#a8c46a",
+   "foliage": "#b5d17a",
+   "water": "#4a7fa8",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesathora.E4.places.000094",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#b08a5a",
+   "foliage": "#a0784a",
+   "water": "#5a7f9a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesathora.E7.places.000083",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.3,
+   "grass": "#9fd49a",
+   "foliage": "#f0b8d8",
+   "water": "#6aa8d0",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesathora.E5.places.000060",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.2,
+   "grass": "#8aa878",
+   "foliage": "#7a9868",
+   "water": "#4f7fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesathora.E6.places.000020",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.8,
+   "grass": "#7a6aa0",
+   "foliage": "#9a7ac0",
+   "water": "#6a5aa8",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.vesathora.E6.places.000023",
+   "archetype": "frozen_peaks",
+   "temp": -0.8,
+   "humid": -0.4,
+   "grass": "#8a9aa8",
+   "foliage": "#9aaabb",
+   "water": "#7aa0c0",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.vesathora.E4.places.000111",
+   "archetype": "eroded_badlands",
+   "temp": 0.6,
+   "humid": -0.3,
+   "grass": "#a07a6a",
+   "foliage": "#906a5a",
+   "water": "#4a6a8a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.vesathora.E6.places.000018",
+   "archetype": "swamp",
+   "temp": 0.5,
+   "humid": 0.9,
+   "grass": "#6a8a6a",
+   "foliage": "#5a7a5a",
+   "water": "#4a6a6a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Ash-hazed violet skies over a world of mourning groves, sundered badlands and frozen crystal peaks, with cherry and mushroom groves glowing like sanctuaries among the wreckage.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.035
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "glow",
+    "probability": 0.015
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.vesathora.E4.events.000078",
+  "why": "Sundering tides and shard-storms over fractured seas; grey, storm-lit skies",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 3
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 3.0,
+   "copper": 2.0,
+   "gold": 1.0,
+   "redstone": 1.0,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.vesathora.E6.places.000023",
+  "grounded": true
+ }
+}

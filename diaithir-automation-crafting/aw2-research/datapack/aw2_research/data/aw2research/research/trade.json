@@ -1,0 +1,30 @@
+{
+  "title": "Trade",
+  "description": "Ancient Warfare 2 research: trade.",
+  "prerequisites": [
+    "aw2research:fishing",
+    "aw2research:command"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:gold_ingot",
+            "count": {
+              "min": 8
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:gold_ingot"
+    }
+  }
+}

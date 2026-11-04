@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "L": "diaithirtrees:douglas_fir_log"
+ },
+ "pattern": [
+  "LL",
+  "LL"
+ ],
+ "result": {
+  "id": "diaithirtrees:douglas_fir_wood",
+  "count": 3
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/orestanum/settlement/0/valialarum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/orestanum/my_orestanum_e7_places_000160",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

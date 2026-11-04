@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "aerialhell:magmatic_gel",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "##",
+  "#S",
+  " S"
+ ],
+ "result": {
+  "id": "aerialhell:magmatic_gel_axe"
+ }
+}

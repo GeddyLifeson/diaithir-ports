@@ -14,3 +14,6 @@ Server: NeoForge 26.1.2.116, Java 25, mods spell_engine 1.10.9, spell_power 1.6.
 
 Not tested (needs a client or player): combat effect of spells and passives, set bonus application, Curios rune attributes on a worn ring, haste/crit attribute scaling, rendering.
 Library and lore text come from compute jobs classes_library and classes_lore; the *_retry jobs hold rows that failed the check and must be run, then merge.py re-run.
+
+## Skill trees
+`/skilltreeselftest`: ok=8 bad=0 (data shape, no class, parent rule, cost, refund on reset and on class change). Booted standalone with the three mandatory dependencies temporarily made optional (spell_engine, spell_power and diaithirarms are not on a bare server); the `/classesselftest` failures in that run come from the missing spell engine, not from the trees. Attribute application on a live player is not exercised headless.

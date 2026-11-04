@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:finger_lime_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:finger_lime_planks",
+  "count": 4
+ }
+}

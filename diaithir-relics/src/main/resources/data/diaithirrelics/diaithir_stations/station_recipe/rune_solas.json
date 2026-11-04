@@ -1,0 +1,12 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "aurora_shard x1 | c:dusts/redstone",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:rune_solas",
+ "time_s": 5
+}

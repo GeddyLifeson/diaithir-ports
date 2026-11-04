@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#undergarden:grongle_logs"
+ ],
+ "result": {
+  "id": "undergarden:grongle_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/siliorlora/settlement/0/silanniola",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/siliorlora/ar_siliorlora_e5_places_000240",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

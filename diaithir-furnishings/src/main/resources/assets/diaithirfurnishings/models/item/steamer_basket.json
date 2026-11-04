@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/steamer_basket_pot",
+  "layer1": "diaithirfurnishings:item/steamer_basket_handle"
+ }
+}

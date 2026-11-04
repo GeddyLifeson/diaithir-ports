@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:soul_tree_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:soul_tree_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,9 @@
+entry_id	name	tier	era	biome_entry
+MY.silia.E1.places.000036	Mastanum	1	E1	MY.silia.E5.places.000279
+MY.silia.E1.places.000248	Ciallauria	2	E1	MY.silia.E7.places.000285
+MY.silia.E5.places.000239	Xaethora	1	E5	MY.silia.E1.places.000248
+MY.silia.E5.places.000277	Shezasha	3	E5	MY.silia.E5.places.000279
+MY.silia.E5.places.000279	Tharnon	3	E5	MY.silia.E7.places.000261
+MY.silia.E7.places.000261	Merasaroma	2	E7	MY.silia.E6.places.000035
+MY.silia.E7.places.000285	Garkaithar	3	E7	MY.silia.E3.places.000291
+MY.silia.E7.places.000308	Isezora	4	E7	MY.silia.E7.places.000261

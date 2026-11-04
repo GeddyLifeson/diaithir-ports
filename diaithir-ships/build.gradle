@@ -8,22 +8,35 @@ version = project.mod_version
 base.archivesName = 'diaithir-ships-neoforge-26.1.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
+sourceSets {
+    // net.diaithir.yards from PR #186 (diaithir-carts), compile-only copy: not packaged, provided at runtime by the carts mod
+    // compile-only sources of the shared APIs, taken straight from their modules (not packaged: at runtime the classes come from the diaithir-carts and diaithir-units mods)
+    yardsApi {
+        java { srcDir '../diaithir-carts/src/main/java'; srcDir '../diaithir-units/src/main/java'; include 'net/diaithir/yards/**', 'net/diaithir/units/fuel/**' }
+        resources { srcDir '../diaithir-units/src/main/resources'; include 'data/diaithirunits/fuels.csv' }
+    }
+    main { compileClasspath += yardsApi.output; runtimeClasspath += yardsApi.output }
+}
+
 neoForge {
+    accessTransformers.from(file("src/main/resources/META-INF/accesstransformer.cfg"))
     version = project.neo_version
-    runs { client { client(); gameDirectory = file('run-client'); programArguments.addAll('--username','Dev','--quickPlayMultiplayer','127.0.0.1:25565') ; jvmArguments.add('-Dmixin.debug.verify=true') }; server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
-    mods { valkyrienskies { sourceSet(sourceSets.main) } }
+    runs { client { client(); gameDirectory = file('run-client'); programArguments.addAll('--username','Dev','--width','800','--height','500','--quickPlayMultiplayer','127.0.0.1:25565') ; jvmArguments.add('-Dmixin.debug.verify=true') }; server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dvs.yardphase=' + (System.getenv('YARDPHASE') ?: ''),'-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
+    mods { valkyrienskies { sourceSet(sourceSets.main); sourceSet(sourceSets.yardsApi) } }
 }
 
 repositories {
     mavenCentral()
     maven { url = 'https://maven.valkyrienskies.org/' }
     maven { url = 'https://jitpack.io' }
+    maven { url = 'https://maven.vxcc.dev/libs' }
     maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }
 }
 
 dependencies {
     ['api', 'internal', 'util'].each { implementation "org.valkyrienskies.core:${it}:${vs_core_version}" }
     runtimeOnly "org.valkyrienskies.core:impl:${vs_core_version}"
+    implementation 'me.alex_s168:blitz:0.25'
 }
 
 // Bundled runtime libs that Minecraft/NeoForge do not provide (jar-in-jar, ranged so Kotlin for Forge etc. can coexist).
@@ -37,6 +50,9 @@ jj('org.yaml:snakeyaml', '[1.33,)', '1.33')
 jj('com.github.Rubydesic:jackson-kotlin-dsl', '[1.2.0,)', '1.2.0')
 jj('com.networknt:json-schema-validator', '[1.0.71,)', '1.0.71')
 jj('com.ethlo.time:itu', '[1.7.0,)', '1.7.0')
+jj('me.alex_s168:blitz', '[0.25,)', '0.25')
+jj('org.jetbrains.kotlinx:kotlinx-io-core-jvm', '[0.3.1,)', '0.3.1')
+jj('org.jetbrains.kotlinx:kotlinx-io-bytestring-jvm', '[0.3.1,)', '0.3.1')
 jj('org.joml:joml-primitives', '[1.10.0,)', '1.10.0')
 
 // vs-core (api/impl/internal/util, Apache-2.0) is shaded straight into the mod jar.
@@ -45,7 +61,7 @@ dependencies { vsCore('javax.inject:javax.inject:1'); ['api','internal','util','
 tasks.named('jar') {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from({ configurations.vsCore.collect { zipTree(it) } }) { exclude 'META-INF/MANIFEST.MF', 'META-INF/*.SF', 'META-INF/*.RSA', 'META-INF/*.DSA', 'META-INF/maven/**', 'META-INF/LICENSE*' }
-    from('NOTICE') ; from('LICENSE-vs-core-Apache-2.0') ; from('LICENSE') ; from('LICENSE-Eureka-Apache-2.0'); from('NOTICE-Eureka')
+    from('NOTICE') ; from('LICENSE-vs-core-Apache-2.0') ; from('LICENSE') ; from('LICENSE-Eureka-Apache-2.0'); from('NOTICE-Eureka'); from('LICENSE-Tournament-Apache-2.0'); from('NOTICE-Tournament'); from('LICENSE-Archimedes-MIT'); from('NOTICE-Archimedes')
 }
 
 kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25 } }

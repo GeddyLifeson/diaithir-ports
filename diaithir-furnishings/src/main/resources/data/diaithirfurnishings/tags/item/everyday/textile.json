@@ -1,0 +1,27 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:spinning_spindle",
+  "diaithirfurnishings:distaff",
+  "diaithirfurnishings:spinning_wheel",
+  "diaithirfurnishings:wool_comb",
+  "diaithirfurnishings:carding_paddle",
+  "diaithirfurnishings:niddy_noddy",
+  "diaithirfurnishings:warp_weighted_loom",
+  "diaithirfurnishings:backstrap_loom",
+  "diaithirfurnishings:shuttle",
+  "diaithirfurnishings:flying_shuttle",
+  "diaithirfurnishings:spinning_jenny",
+  "diaithirfurnishings:needle",
+  "diaithirfurnishings:bone_needle",
+  "diaithirfurnishings:thimble",
+  "diaithirfurnishings:sewing_machine",
+  "diaithirfurnishings:scissors",
+  "diaithirfurnishings:knitting_needles",
+  "diaithirfurnishings:crochet_hook",
+  "diaithirfurnishings:embroidery_hoop",
+  "diaithirfurnishings:tatting_shuttle",
+  "diaithirfurnishings:dye_vat",
+  "diaithirfurnishings:fulling_mallet"
+ ]
+}

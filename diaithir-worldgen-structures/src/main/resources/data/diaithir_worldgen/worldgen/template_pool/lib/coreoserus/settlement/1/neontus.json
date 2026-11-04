@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/coreoserus/settlement/1/neontus",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/coreoserus/ki_coreoserus_e3_assay_000220",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

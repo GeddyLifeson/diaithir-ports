@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirtrees:block/great_sallow_stripped_log_top",
+  "side": "diaithirtrees:block/great_sallow_stripped_log"
+ }
+}

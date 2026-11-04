@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:lialintor_amirnanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lialintor_ceornes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lialintor_ceostia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lialintor_corisus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lialintor_tonium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lialintor_vaustia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lialintor_vestes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:lialintor_vorus",
+   "required": false
+  }
+ ]
+}

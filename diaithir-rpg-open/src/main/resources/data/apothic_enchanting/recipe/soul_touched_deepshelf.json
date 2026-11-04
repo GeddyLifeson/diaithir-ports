@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "C": "minecraft:sculk",
+        "D": "apothic_enchanting:deepshelf",
+        "S": "minecraft:soul_lantern"
+    },
+    "pattern": [
+        " S ",
+        " D ",
+        "CCC"
+    ],
+    "result": {
+        "id": "apothic_enchanting:soul_touched_deepshelf"
+    }
+}

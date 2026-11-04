@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "aether_ii:undershale"
+ },
+ "pattern": [
+  "###",
+  "###"
+ ],
+ "result": {
+  "id": "aether_ii:undershale_wall",
+  "count": 6
+ }
+}

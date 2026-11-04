@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/raclette_grill_pot",
+  "layer1": "diaithirfurnishings:item/raclette_grill_handle"
+ }
+}

@@ -1,0 +1,1 @@
+{"id":"diaithir_overworld_biomes:rusted_plate_upgrade","from":"diaithir_overworld_biomes:rusted_plate","to":"diaithir_overworld_biomes:drip_pipe_block","age":1,"cost_j":100,"consumes":[{"tag":"c:ingots/iron","count":1}]}

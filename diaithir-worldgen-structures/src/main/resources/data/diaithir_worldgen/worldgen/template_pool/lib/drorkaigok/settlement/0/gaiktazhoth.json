@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/drorkaigok/settlement/0/gaiktazhoth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drorkaigok/ma_drorkaigok_e6_places_000519",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/drorkaigok/ma_drorkaigok_e6_places_000550",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

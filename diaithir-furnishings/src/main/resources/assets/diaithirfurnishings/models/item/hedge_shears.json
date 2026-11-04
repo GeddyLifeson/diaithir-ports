@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/hedge_shears_head",
+  "layer1": "diaithirfurnishings:item/hedge_shears_handle",
+  "layer2": "diaithirfurnishings:item/hedge_shears_binding"
+ }
+}

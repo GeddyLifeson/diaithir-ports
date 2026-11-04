@@ -3,14 +3,13 @@ package org.valkyrienskies.mod.mixin.client.world;
 import net.minecraft.client.multiplayer.ClientChunkCache;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
-import org.spongepowered.asm.mixin.injection.Coerce;
 
 @Mixin(ClientChunkCache.class)
 public interface ClientChunkCacheAccessor {
     /**
-     * {@code ClientChunkCache.Storage} is private, so the return type is coerced to Object.
+     * Mixin matches accessor descriptors exactly (no coercion for fields), so the real
+     * (access-widened) {@code ClientChunkCache.Storage} type must be returned.
      */
     @Accessor("storage")
-    @Coerce
-    Object vs$getStorage();
+    ClientChunkCache.Storage vs$getStorage();
 }

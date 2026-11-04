@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#c:raw_materials/core_fragment",
+    "minecraft:paper",
+    "minecraft:nether_star"
+  ],
+  "result": {
+    "id": "diaithircrafting:foundry_research_pack_6",
+    "count": 1
+  },
+  "category": "misc"
+}

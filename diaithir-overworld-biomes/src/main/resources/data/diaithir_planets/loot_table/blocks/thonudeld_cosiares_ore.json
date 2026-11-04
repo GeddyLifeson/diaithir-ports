@@ -1,0 +1,20 @@
+{
+"type": "minecraft:block",
+"random_sequence": "diaithir_planets:blocks/thonudeld_cosiares_ore",
+"pools": [
+{
+"rolls": 1.0,
+"conditions": [
+{
+"condition": "minecraft:survives_explosion"
+}
+],
+"entries": [
+{
+"type": "minecraft:item",
+"name": "diaithir_planets:thonudeld_cosiares_ore"
+}
+]
+}
+]
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_0_coriles",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_1_coriles",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_2_coriles",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/osyuseth/settlement_3_coriles",
+   "weight": 13
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 215034741
+ }
+}

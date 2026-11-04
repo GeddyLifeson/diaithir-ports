@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_0_lyamiel",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_1_lyamiel",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_2_lyamiel",
+   "weight": 37
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 74558555
+ }
+}

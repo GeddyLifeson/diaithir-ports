@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:krarnaizhok_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krarnaizhok_grottoes",
+   "required": false
+  }
+ ]
+}

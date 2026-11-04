@@ -1,0 +1,160 @@
+{
+ "sky": {
+  "sky": "#8a6fb0",
+  "fog": "#c9b8d8",
+  "cloud": "#e6ffffff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a7fa8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "KI.oriinnys.E6.places.000097",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": 0.2,
+   "grass": "#8fa6b8",
+   "foliage": "#a9bccc",
+   "water": "#7fb0d8",
+   "precip": "snow"
+  },
+  {
+   "entry": "KI.oriinnys.E6.places.000099",
+   "archetype": "swamp",
+   "temp": -0.2,
+   "humid": 0.9,
+   "grass": "#6e8f7a",
+   "foliage": "#5f8070",
+   "water": "#6fa3b8",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.oriinnys.E6.places.000089",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#5fa07a",
+   "foliage": "#4f8f68",
+   "water": "#3f9a8a",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.oriinnys.E1.places.000147",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#b8854a",
+   "foliage": "#a87040",
+   "water": "#c08a50",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.oriinnys.E4.places.000157",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#7a6a6a",
+   "foliage": "#6a5a5a",
+   "water": "#8a7a7a",
+   "precip": "none"
+  },
+  {
+   "entry": "KI.oriinnys.E5.places.000144",
+   "archetype": "plains",
+   "temp": 0.2,
+   "humid": -0.1,
+   "grass": "#9ab070",
+   "foliage": "#8aa060",
+   "water": "#6f9ab0",
+   "precip": "rain"
+  },
+  {
+   "entry": "KI.oriinnys.E6.places.000091",
+   "archetype": "windswept_hills",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#8a9a88",
+   "foliage": "#7a8a78",
+   "water": "#7090b0",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A dusk-violet world of drifting glass archipelagos, scarred Sundering badlands and tidal memory-swamps under a sky of ash and star-light.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   },
+   {
+    "type": "firefly",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#d9c27a",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "dry",
+  "storms": "calm",
+  "why_entry": "KI.oriinnys.E6.places.000097",
+  "why": "Glass archipelagos under dim gold haze, mild and luminous, not stormy",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "moss_carpet",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "azure_bluet",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 0.8,
+   "iron": 0.6,
+   "copper": 0.5,
+   "gold": 0.4,
+   "redstone": 0.5,
+   "lapis": 0.7,
+   "diamond": 0.8
+  },
+  "why_entry": "KI.oriinnys.E6.places.000097",
+  "grounded": false
+ }
+}

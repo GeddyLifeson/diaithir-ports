@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/alaimeinora/settlement/2/tarnanock",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/alaimeinora/ar_alaimeinora_e5_assay_000609",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/alaimeinora/ar_alaimeinora_e5_assay_002368",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

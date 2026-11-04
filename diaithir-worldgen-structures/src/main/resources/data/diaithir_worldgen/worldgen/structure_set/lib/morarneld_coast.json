@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/morarneld/harbor_2_coast",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 62191097
+ }
+}

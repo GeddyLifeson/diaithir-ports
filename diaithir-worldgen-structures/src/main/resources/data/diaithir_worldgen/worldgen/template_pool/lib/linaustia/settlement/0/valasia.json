@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/linaustia/settlement/0/valasia",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/linaustia/my_linaustia_e7_places_000065",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

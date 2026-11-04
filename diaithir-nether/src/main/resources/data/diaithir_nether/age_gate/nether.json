@@ -1,0 +1,1 @@
+{"age":5,"tags":["diaithir_nether:age/5"],"upgrade_rule":{"input":"diaithir_nether:ember_shard","cost_j":100,"unit":"J"},"global_event_hook":"com.diaithir.nether.nether.NetherIntegration$BiomeEnteredEvent"}

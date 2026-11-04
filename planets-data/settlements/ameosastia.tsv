@@ -1,0 +1,39 @@
+entry_id	name	tier	era	biome_entry
+MY.ameosastia.E1.assay.001539	Tallum	1	E1	MY.ameosastia.E2.assay.004976
+MY.ameosastia.E1.assay.005540	Coriantus	1	E1	MY.ameosastia.E3.assay.005366
+MY.ameosastia.E2.assay.001372	Linausium	2	E2	MY.ameosastia.E3.assay.005366
+MY.ameosastia.E2.assay.002856	Telauneosus	2	E2	MY.ameosastia.E1.assay.004940
+MY.ameosastia.E2.assay.004607	Serintor Niasales	2	E2	MY.ameosastia.E1.assay.004940
+MY.ameosastia.E2.places.000321	Vontiasum	3	E2	MY.ameosastia.E1.assay.004940
+MY.ameosastia.E3.assay.001115	Sarillor	3	E3	MY.ameosastia.E3.assay.004494
+MY.ameosastia.E3.assay.001439	Leostaurnum	3	E3	MY.ameosastia.E3.assay.002498
+MY.ameosastia.E3.assay.001751	Maustarnia	3	E3	MY.ameosastia.E3.assay.005366
+MY.ameosastia.E3.assay.003643	Tiasostanum	3	E3	MY.ameosastia.E2.assay.003105
+MY.ameosastia.E3.assay.004291	Leres	3	E3	MY.ameosastia.E3.assay.002498
+MY.ameosastia.E3.assay.004426	Sauranum	3	E3	MY.ameosastia.E3.assay.005366
+MY.ameosastia.E3.assay.004494	Tileornia	3	E3	MY.ameosastia.E3.assay.002498
+MY.ameosastia.E3.assay.004631	Nauleosia	3	E3	MY.ameosastia.E3.assay.002498
+MY.ameosastia.E3.assay.004664	Teones Sollaurnus	3	E3	MY.ameosastia.E3.assay.004494
+MY.ameosastia.E3.assay.004827	Miriastus	3	E3	MY.ameosastia.E3.assay.002498
+MY.ameosastia.E3.assay.004860	Tisialia	3	E3	MY.ameosastia.E2.assay.003105
+MY.ameosastia.E3.assay.005229	Voralia	3	E3	MY.ameosastia.E1.assay.002534
+MY.ameosastia.E4.assay.000387	Roserium	4	E4	MY.ameosastia.E2.assay.003105
+MY.ameosastia.E4.assay.001293	Carnes	4	E4	MY.ameosastia.E2.assay.004976
+MY.ameosastia.E4.assay.003266	Vinolum	4	E4	MY.ameosastia.E3.assay.005366
+MY.ameosastia.E4.assay.003295	Mollor	4	E4	MY.ameosastia.E2.assay.004976
+MY.ameosastia.E4.assay.004569	Orasolor	4	E4	MY.ameosastia.E2.assay.004976
+MY.ameosastia.E4.assay.004706	Nesum	4	E4	MY.ameosastia.E2.assay.003105
+MY.ameosastia.E4.assay.005217	Amelliaror	4	E4	MY.ameosastia.E2.assay.003105
+MY.ameosastia.E5.assay.002953	Amernus	5	E5	MY.ameosastia.E1.assay.004940
+MY.ameosastia.E5.assay.003090	Centor	5	E5	MY.ameosastia.E1.assay.004940
+MY.ameosastia.E5.assay.004816	Telus Vontestanum	5	E5	MY.ameosastia.E1.assay.002534
+MY.ameosastia.E5.assay.005105	Castialanum	5	E5	MY.ameosastia.E3.assay.005366
+MY.ameosastia.E5.assay.005225	Orestum	5	E5	MY.ameosastia.E3.assay.002498
+MY.ameosastia.E5.assay.005255	Raunelum	5	E5	MY.ameosastia.E3.assay.004494
+MY.ameosastia.E5.assay.005261	Teornenus	5	E5	MY.ameosastia.E1.assay.002534
+MY.ameosastia.E5.assay.005679	Tollum Teriastanum	5	E5	MY.ameosastia.E1.assay.004940
+MY.ameosastia.E5.assay.005836	Torum	5	E5	MY.ameosastia.E1.assay.002534
+MY.ameosastia.E5.places.000331	Orernus	3	E5	MY.ameosastia.E1.assay.002534
+MY.ameosastia.E6.assay.004449	Siarnes	6	E6	MY.ameosastia.E3.assay.002498
+MY.ameosastia.E6.assay.005386	Celontanum	6	E6	MY.ameosastia.E3.assay.005366
+MY.ameosastia.E7.places.000314	Gouktoth	2	E7	MY.ameosastia.E2.assay.004976

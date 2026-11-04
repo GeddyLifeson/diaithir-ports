@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/theivsis/settlement/0/veseitheth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/theivsis/st_theivsis_e6_places_000067",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

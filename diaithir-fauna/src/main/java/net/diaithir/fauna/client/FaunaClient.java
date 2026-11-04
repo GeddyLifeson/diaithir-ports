@@ -18,6 +18,7 @@ public final class FaunaClient {
 
     @SubscribeEvent
     static void renderers(EntityRenderersEvent.RegisterRenderers e) {
+        e.registerEntityRenderer(net.minecraft.world.entity.EntityType.BEE, SpeciesBeeRenderer::new);
         FaunaMod.TYPES.forEach((n, t) -> e.registerEntityRenderer(t.get(), ctx -> new FaunaRenderer(ctx, Plan.ALL.get(n))));
     }
 }

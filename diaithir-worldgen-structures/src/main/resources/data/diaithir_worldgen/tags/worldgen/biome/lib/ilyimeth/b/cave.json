@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ilyimeth_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyimeth_grottoes",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/butcher_block_head",
+  "layer1": "diaithirfurnishings:item/butcher_block_handle"
+ }
+}

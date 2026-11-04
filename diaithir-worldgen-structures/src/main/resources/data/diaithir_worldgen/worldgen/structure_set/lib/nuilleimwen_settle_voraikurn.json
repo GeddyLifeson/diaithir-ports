@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_0_voraikurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_1_voraikurn",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/nuilleimwen/settlement_2_voraikurn",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 152150894
+ }
+}

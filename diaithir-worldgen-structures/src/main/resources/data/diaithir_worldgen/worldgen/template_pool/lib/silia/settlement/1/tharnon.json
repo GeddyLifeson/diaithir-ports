@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/silia/settlement/1/tharnon",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silia/my_silia_e5_places_000277",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

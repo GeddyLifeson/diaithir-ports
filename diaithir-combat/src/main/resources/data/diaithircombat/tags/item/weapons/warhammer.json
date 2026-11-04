@@ -47,6 +47,7 @@
   {
    "id": "spartanweaponry:steel_battle_hammer",
    "required": false
-  }
+  },
+  "diaithircombat:lib_warhammer"
  ]
 }

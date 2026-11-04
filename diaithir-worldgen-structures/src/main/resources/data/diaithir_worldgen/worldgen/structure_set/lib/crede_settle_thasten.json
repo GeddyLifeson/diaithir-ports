@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_0_thasten",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_1_thasten",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crede/settlement_2_thasten",
+   "weight": 10
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 176141558
+ }
+}

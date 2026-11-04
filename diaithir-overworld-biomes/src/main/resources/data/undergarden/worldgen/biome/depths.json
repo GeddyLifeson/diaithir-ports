@@ -1,0 +1,80 @@
+{
+ "attributes": {
+  "minecraft:visual/fog_color": "#161b24",
+  "minecraft:visual/sky_color": "#0b0f18"
+ },
+ "carvers": [],
+ "downfall": 0.4,
+ "effects": {
+  "water_color": "#2c5a6e"
+ },
+ "features": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+   "undergarden:patch_amorous_bristle",
+   "undergarden:patch_blisterberry_bush",
+   "undergarden:patch_boomgourd",
+   "undergarden:patch_utherium_growth"
+  ],
+  []
+ ],
+ "has_precipitation": false,
+ "spawn_costs": {},
+ "spawners": {
+  "ambient": [],
+  "axolotls": [],
+  "creature": [
+   {
+    "type": "minecraft:strider",
+    "maxCount": 2,
+    "minCount": 1,
+    "weight": 60
+   }
+  ],
+  "misc": [],
+  "monster": [
+   {
+    "type": "minecraft:ghast",
+    "maxCount": 4,
+    "minCount": 4,
+    "weight": 50
+   },
+   {
+    "type": "minecraft:zombified_piglin",
+    "maxCount": 4,
+    "minCount": 4,
+    "weight": 100
+   },
+   {
+    "type": "minecraft:magma_cube",
+    "maxCount": 4,
+    "minCount": 4,
+    "weight": 2
+   },
+   {
+    "type": "minecraft:enderman",
+    "maxCount": 4,
+    "minCount": 4,
+    "weight": 1
+   },
+   {
+    "type": "minecraft:piglin",
+    "maxCount": 4,
+    "minCount": 4,
+    "weight": 15
+   }
+  ],
+  "underground_water_creature": [],
+  "water_ambient": [],
+  "water_creature": []
+ },
+ "temperature": 0.5
+}

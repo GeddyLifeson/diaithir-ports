@@ -1,0 +1,24 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "item": "diaithirrelics:wither_char_splinter",
+   "count": 1
+  },
+  {
+   "item": "diaithirrelics:essence_of_the_grave",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/netherite",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/diamond",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:essence_of_ruin",
+ "time_s": 20
+}

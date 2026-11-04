@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:tarnedonath_crenar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnedonath_dranostock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnedonath_fenadestar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnedonath_kelasten",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnedonath_kelonock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnedonath_moranolde",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnedonath_peleste",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tarnedonath_thurdock",
+   "required": false
+  }
+ ]
+}

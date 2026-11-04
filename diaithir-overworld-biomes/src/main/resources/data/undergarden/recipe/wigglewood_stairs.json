@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "undergarden:wigglewood_planks"
+ },
+ "pattern": [
+  "#  ",
+  "## ",
+  "###"
+ ],
+ "result": {
+  "id": "undergarden:wigglewood_stairs",
+  "count": 4
+ }
+}

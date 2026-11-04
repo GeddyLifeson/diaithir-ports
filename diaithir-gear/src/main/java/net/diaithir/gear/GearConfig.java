@@ -6,7 +6,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public final class GearConfig {
     public static final ModConfigSpec SPEC;
     public static final ModConfigSpec.BooleanValue PARITY_ON, SETS_ON, IGNORE_AGE;
-    public static final ModConfigSpec.DoubleValue PARITY_STRENGTH;
+    public static final ModConfigSpec.DoubleValue PARITY_STRENGTH, ANVIL_REPAIR_CHANCE;
     public static final ModConfigSpec.IntValue DEFAULT_AGE;
     public static final ModConfigSpec.ConfigValue<String> AGE_OBJECTIVE;
 
@@ -21,6 +21,8 @@ public final class GearConfig {
         b.pop().push("age");
         AGE_OBJECTIVE = b.comment("Scoreboard objective holding the player's Age (1 to 9).").define("objective", "age");
         DEFAULT_AGE = b.comment("Age used when the objective is missing or unset.").defineInRange("defaultAge", 1, 1, 9);
+        b.pop().push("anvil");
+        ANVIL_REPAIR_CHANCE = b.comment("Chance that an iron ingot repairs a chipped or damaged anvil one step (1 = always).").defineInRange("repairChance", 1.0, 0.0, 1.0);
         b.pop();
         SPEC = b.build();
     }

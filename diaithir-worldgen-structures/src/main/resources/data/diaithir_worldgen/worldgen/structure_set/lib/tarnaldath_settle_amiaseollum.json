@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_0_amiaseollum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnaldath/settlement_2_amiaseollum",
+   "weight": 10
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 11301977
+ }
+}

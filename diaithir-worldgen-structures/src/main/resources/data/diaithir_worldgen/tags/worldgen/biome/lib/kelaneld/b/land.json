@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:kelaneld_brestadath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelaneld_elionora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelaneld_ilyameireth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelaneld_kuzhurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelaneld_osulamoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelaneld_shastith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelaneld_ukamalraeno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelaneld_venerae",
+   "required": false
+  }
+ ]
+}

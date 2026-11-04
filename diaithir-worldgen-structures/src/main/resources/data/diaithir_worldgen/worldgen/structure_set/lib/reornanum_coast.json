@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/harbor_0_coast",
+   "weight": 18
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/harbor_1_coast",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/harbor_2_coast",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reornanum/harbor_3_coast",
+   "weight": 11
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 21505717
+ }
+}

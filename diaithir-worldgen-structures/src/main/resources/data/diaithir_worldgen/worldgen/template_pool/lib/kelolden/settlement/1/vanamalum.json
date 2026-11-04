@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kelolden/settlement/1/vanamalum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kelolden/gr_kelolden_e4_places_000081",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

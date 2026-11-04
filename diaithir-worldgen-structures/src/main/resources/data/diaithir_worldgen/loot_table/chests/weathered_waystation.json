@@ -1,0 +1,149 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 4,
+    "max": 7
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:bread",
+     "weight": 10,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 5
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:baked_potato",
+     "weight": 8,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:cooked_chicken",
+     "weight": 6,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 3
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:dried_kelp",
+     "weight": 8,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 3,
+        "max": 8
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:map",
+     "weight": 6,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:paper",
+     "weight": 9,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 6
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:compass",
+     "weight": 4,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 1
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:glass_pane",
+     "weight": 5,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:string",
+     "weight": 6,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 5
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:dusts/gold_stoir",
+   "count": 1
+  },
+  {
+   "tag": "c:gems/quartz",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/bronze",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:rune_cruinn",
+ "time_s": 5
+}

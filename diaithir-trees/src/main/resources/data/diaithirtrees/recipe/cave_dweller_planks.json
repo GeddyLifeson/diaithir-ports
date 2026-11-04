@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:cave_dweller_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:cave_dweller_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kraizhoth/settlement/2/any",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kraizhoth/ma_kraizhoth_e1_places_001004",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

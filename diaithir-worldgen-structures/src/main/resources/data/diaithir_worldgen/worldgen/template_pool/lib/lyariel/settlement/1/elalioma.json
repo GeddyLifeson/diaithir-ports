@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/lyariel/settlement/1/elalioma",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyariel/ar_lyariel_e1_places_000321",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

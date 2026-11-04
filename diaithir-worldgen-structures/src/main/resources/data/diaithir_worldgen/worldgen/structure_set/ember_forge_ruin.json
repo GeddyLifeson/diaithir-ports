@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:ember_forge_ruin",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 18,
+  "separation": 6,
+  "salt": 1266478
+ }
+}

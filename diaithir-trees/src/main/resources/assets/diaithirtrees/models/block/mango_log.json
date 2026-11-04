@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirtrees:block/mango_log_top",
+  "side": "diaithirtrees:block/mango_log"
+ }
+}

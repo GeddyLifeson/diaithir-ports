@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "undergarden:wigglewood_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "#S#",
+  "#S#"
+ ],
+ "result": {
+  "id": "undergarden:wigglewood_fence",
+  "count": 3
+ }
+}

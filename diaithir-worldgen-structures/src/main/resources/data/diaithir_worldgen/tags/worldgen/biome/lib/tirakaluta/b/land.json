@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:tirakaluta_merakarala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tirakaluta_milles",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tirakaluta_osusanari",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tirakaluta_syethith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tirakaluta_thalden",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tirakaluta_ukatalari",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tirakaluta_ukataruta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:tirakaluta_vanasamum",
+   "required": false
+  }
+ ]
+}

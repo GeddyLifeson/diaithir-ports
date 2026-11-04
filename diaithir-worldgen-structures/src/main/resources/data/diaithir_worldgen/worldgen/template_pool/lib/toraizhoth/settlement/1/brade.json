@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/toraizhoth/settlement/1/brade",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/toraizhoth/gr_toraizhoth_e3_places_000209",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/toraizhoth/gr_toraizhoth_e5_places_000241",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

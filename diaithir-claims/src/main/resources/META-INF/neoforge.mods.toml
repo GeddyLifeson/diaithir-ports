@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirclaims"
+version = "${version}"
+displayName = "Diaithir Claims"
+description = "Claim the chunk you stand in: others cannot break, build, open or blow it up unless you trust them. Clean-room; written from how chunk-claim mods behave, no code taken."
+
+[[dependencies.diaithirclaims]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:sestia_coralia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:sestia_dranudath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:sestia_meravaala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:sestia_nornium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:sestia_oreolones",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:sestia_sornes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:sestia_thagornak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:sestia_valeontia",
+   "required": false
+  }
+ ]
+}

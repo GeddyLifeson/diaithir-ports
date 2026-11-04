@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ccc",
+    "nnn",
+    "   "
+  ],
+  "key": {
+    "c": "#minecraft:wool_carpets",
+    "n": "minecraft:iron_nugget"
+  },
+  "result": {
+    "id": "valkyrienskies:test_flap",
+    "count": 3
+  }
+}

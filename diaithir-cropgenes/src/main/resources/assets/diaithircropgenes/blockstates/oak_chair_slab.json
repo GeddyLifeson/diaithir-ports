@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithircropgenes:block/oak_chair_slab"
+  },
+  "type=top": {
+   "model": "diaithircropgenes:block/oak_chair_slab_top"
+  },
+  "type=double": {
+   "model": "diaithircropgenes:block/oak_chair_slab_full"
+  }
+ }
+}

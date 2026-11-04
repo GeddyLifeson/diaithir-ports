@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:crurnon_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crurnon_grottoes",
+   "required": false
+  }
+ ]
+}

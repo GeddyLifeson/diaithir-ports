@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_0_venuariel",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryerlae/settlement_1_venuariel",
+   "weight": 12
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 108710059
+ }
+}

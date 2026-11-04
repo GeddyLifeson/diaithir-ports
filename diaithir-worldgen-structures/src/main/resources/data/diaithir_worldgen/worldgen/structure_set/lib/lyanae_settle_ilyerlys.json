@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_0_ilyerlys",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_1_ilyerlys",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyanae/settlement_2_ilyerlys",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 263930624
+ }
+}

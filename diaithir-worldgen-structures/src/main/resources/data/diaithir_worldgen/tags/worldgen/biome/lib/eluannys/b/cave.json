@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:eluannys_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eluannys_grottoes",
+   "required": false
+  }
+ ]
+}

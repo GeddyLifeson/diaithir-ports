@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirfirearms:gunmetal_nugget",
+  "minecraft:gunpowder",
+  "minecraft:gunpowder"
+ ],
+ "result": {
+  "id": "diaithirfirearms:ammo_12_7x108_nsv",
+  "count": 8
+ }
+}
