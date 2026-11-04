@@ -303,7 +303,8 @@ public class MinecoloniesAdvancedPathNavigate extends AbstractAdvancedPathNaviga
 
     @Override
     protected PathFinder createPathFinder(final int p_179679_1_) {
-        return null;
+        // Vanilla's PathNavigation constructor needs a non-null finder in 26.1; the advanced navigator runs its own path jobs and never uses it.
+        return new PathFinder(new net.minecraft.world.level.pathfinder.WalkNodeEvaluator(), p_179679_1_);
     }
 
     @Override

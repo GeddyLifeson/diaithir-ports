@@ -1,5 +1,6 @@
 package net.diaithir.druidry.ars.common.entity;
 
+import net.diaithir.druidry.ars.setup.registry.DataSerializers;
 import net.diaithir.druidry.ars.ArsNouveau;
 import net.diaithir.druidry.ars.api.client.ITooltipProvider;
 import net.diaithir.druidry.ars.api.client.IVariantColorProvider;
@@ -77,7 +78,6 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -104,23 +104,7 @@ public class Starbuncle extends PathfinderMob implements GeoEntity, IDecoratable
         NONE
     }
 
-    private static EntityDataSerializer<CompoundTag> createCompoundTagSerializer() {
-        EntityDataSerializer<CompoundTag> serializer = new EntityDataSerializer<CompoundTag>() {
-            @Override
-            public StreamCodec<? super RegistryFriendlyByteBuf, CompoundTag> codec() {
-                return ByteBufCodecs.COMPOUND_TAG;
-            }
-
-            @Override
-            public CompoundTag copy(CompoundTag value) {
-                return value.copy();
-            }
-        };
-        EntityDataSerializers.registerSerializer(serializer);
-        return serializer;
-    }
-
-    private static final EntityDataSerializer<CompoundTag> COMPOUND_TAG_SERIALIZER = createCompoundTagSerializer();
+    private static final EntityDataSerializer<CompoundTag> COMPOUND_TAG_SERIALIZER = DataSerializers.COMPOUND_TAG.get();
 
     public EntityDebugger debugger = new EntityDebugger(this);
     public StarbuncleGoalState goalState = StarbuncleGoalState.NONE;
@@ -428,7 +412,6 @@ public class Starbuncle extends PathfinderMob implements GeoEntity, IDecoratable
         this.dynamicBehavior.pickUpItem(itemEntity);
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void setRecordPlayingNearby(@NotNull BlockPos pos, boolean hasSound) {
         super.setRecordPlayingNearby(pos, hasSound);

@@ -38,4 +38,18 @@ public class DataSerializers {
                     net.minecraft.network.codec.ByteBufCodecs.optional(net.minecraft.core.UUIDUtil.STREAM_CODEC)
             )
     );
+
+    public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<net.minecraft.nbt.CompoundTag>> COMPOUND_TAG = DS.register("compound_tag",
+            () -> new EntityDataSerializer<net.minecraft.nbt.CompoundTag>() {
+                @Override
+                public StreamCodec<? super net.minecraft.network.RegistryFriendlyByteBuf, net.minecraft.nbt.CompoundTag> codec() {
+                    return net.minecraft.network.codec.ByteBufCodecs.COMPOUND_TAG;
+                }
+
+                @Override
+                public net.minecraft.nbt.CompoundTag copy(net.minecraft.nbt.CompoundTag value) {
+                    return value.copy();
+                }
+            }
+    );
 }

@@ -6,9 +6,6 @@ import net.diaithir.druidry.ars.client.particle.ParticleUtil;
 import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
 import net.diaithir.druidry.ars.setup.registry.ModEntities;
 import net.minecraft.util.Util;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.PlayerInfo;
-import net.minecraft.client.resources.DefaultPlayerSkin;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -35,15 +32,12 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.scores.PlayerTeam;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
 public class EntityDummy extends PathfinderMob implements ISummon {
-    @OnlyIn(Dist.CLIENT)
-    private PlayerInfo playerInfo;
 
     public int ticksLeft;
     private static final EntityDataAccessor<Optional<UUID>> OWNER_UUID = SynchedEntityData.defineId(EntityDummy.class, DataSerializers.OPTIONAL_UUID.get());
@@ -121,17 +115,7 @@ public class EntityDummy extends PathfinderMob implements ISummon {
     }
 
     public Identifier getSkinTextureLocation() {
-        PlayerInfo networkplayerinfo = this.getPlayerInfo();
-        return networkplayerinfo == null ? DefaultPlayerSkin.getDefaultTexture() : networkplayerinfo.getSkin().body().texturePath();
-    }
-
-    @Nullable
-    @OnlyIn(Dist.CLIENT)
-    protected PlayerInfo getPlayerInfo() {
-        if (this.playerInfo == null) {
-            this.playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(getOwnerUUID());
-        }
-        return this.playerInfo;
+        return net.diaithir.druidry.ars.client.DummyClientSkin.texture(getOwnerUUID());
     }
 
     public Component getName() {
@@ -197,11 +181,8 @@ public class EntityDummy extends PathfinderMob implements ISummon {
         this.getEntityData().set(OWNER_UUID, Optional.ofNullable(uuid));
     }
 
-    @OnlyIn(Dist.CLIENT)
     public boolean isSlim() {
-        if (this.playerInfo != null) {
-            return playerInfo.getSkin().model() == net.minecraft.world.entity.player.PlayerModelType.SLIM;
-        }else return false;
+        return net.diaithir.druidry.ars.client.DummyClientSkin.isSlim(getOwnerUUID());
     }
 
 }

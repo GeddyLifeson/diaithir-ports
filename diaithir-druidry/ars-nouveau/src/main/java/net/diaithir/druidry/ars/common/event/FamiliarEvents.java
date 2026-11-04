@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-@EventBusSubscriber(modid = ArsNouveau.MODID)
+@EventBusSubscriber(modid = ArsNouveau.HOST)
 public class FamiliarEvents {
 
     public static List<FamiliarEntity> getFamiliars(Predicate<FamiliarEntity> predicate) {

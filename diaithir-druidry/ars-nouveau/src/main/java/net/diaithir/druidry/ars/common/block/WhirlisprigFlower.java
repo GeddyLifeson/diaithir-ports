@@ -41,7 +41,7 @@ public class WhirlisprigFlower extends SummonBlock implements SimpleWaterloggedB
     }
 
     public WhirlisprigFlower() {
-        this(Block.Properties.of().sound(SoundType.SPORE_BLOSSOM).noOcclusion().strength(2.0f, 6.0f).mapColor(MapColor.PLANT));
+        this(net.diaithir.druidry.ars.setup.registry.BlockRegistry.of().sound(SoundType.SPORE_BLOSSOM).noOcclusion().strength(2.0f, 6.0f).mapColor(MapColor.PLANT));
     }
 
     VoxelShape shape = Stream.of(

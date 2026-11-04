@@ -4,7 +4,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 public interface ICosmeticItem {
 
@@ -40,7 +39,6 @@ public interface ICosmeticItem {
      * (with slider or forge separate prospective) to make the item scale/translations not influence how
      * the items look in inventory and when it's dropped.
      */
-    @OnlyIn(Dist.CLIENT)
     default ItemDisplayContext getTransformType() {
         return ItemDisplayContext.GROUND;
     }

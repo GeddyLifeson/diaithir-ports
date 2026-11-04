@@ -37,6 +37,10 @@ public class ArsNouveau {
 
     public ArsNouveau(IEventBus bus, ModContainer container) {
         ArsGlyphs.register();
+        ArsMobs.registerGlyphs();
+        ArsMobs.registerRitualsAndFamiliars();
+        bus.addListener(net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent.class, e -> e.enqueueWork(ArsMobs::registerJarBehaviors));
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStoppingEvent.class, net.diaithir.druidry.ars.common.entity.pathfinding.FMLEventHandler::onServerStopped);
         BlockRegistry.onBlocksRegistry();
         BlockRegistry.onBlockItemsRegistry();
         BlockRegistry.BLOCKS.register(bus);
@@ -66,6 +70,7 @@ public class ArsNouveau {
 
         if (Boolean.getBoolean("ars.selftest")) {
             NeoForge.EVENT_BUS.addListener(ServerStartedEvent.class, ArsSelfTest::run);
+            NeoForge.EVENT_BUS.addListener(ServerStartedEvent.class, ArsMobsSelfTest::run);
         }
     }
 

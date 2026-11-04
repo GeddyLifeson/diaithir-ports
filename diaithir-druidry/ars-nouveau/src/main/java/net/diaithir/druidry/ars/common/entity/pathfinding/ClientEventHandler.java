@@ -9,7 +9,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
@@ -18,7 +17,6 @@ import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 /**
  * Used to handle client events.
  */
-@OnlyIn(Dist.CLIENT)
 public class ClientEventHandler {
     @SubscribeEvent
     public static void clientPlayerLogin(ClientPlayerNetworkEvent.LoggingIn e) {

@@ -5,7 +5,6 @@ import net.diaithir.druidry.ars.common.util.Log;
 import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.concurrent.*;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 /**
  * Static class the handles all the Pathfinding.
@@ -74,7 +73,6 @@ public final class Pathfinding {
      * @param frame       entity movement weight.
      * @param matrixStack the matrix stack to apply to.
      */
-    @OnlyIn(Dist.CLIENT)
     public static void debugDraw(final double frame, final PoseStack matrixStack) {
 //        if (AbstractPathJob.lastDebugNodesNotVisited == null) {
 //            return;
@@ -130,7 +128,6 @@ public final class Pathfinding {
 //        matrixStack.popPose();
     }
 
-    @OnlyIn(Dist.CLIENT)
     private static void debugDrawNode(final ModNode n, final float r, final float g, final float b, final PoseStack matrixStack) {
 //        matrixStack.pushPose();
 //        matrixStack.translate((double) n.pos.getX() + 0.375, (double) n.pos.getY() + 0.375, (double) n.pos.getZ() + 0.375);
@@ -203,7 +200,6 @@ public final class Pathfinding {
 //        matrixStack.popPose();
     }
 
-    @OnlyIn(Dist.CLIENT)
     private static void renderDebugText(final ModNode n, final PoseStack matrixStack) {
 //        final String s1 = String.format("F: %.3f [%d]", n.getCost(), n.getCounterAdded());
 //        final String s2 = String.format("G: %.3f [%d]", n.getScore(), n.getCounterVisited());
