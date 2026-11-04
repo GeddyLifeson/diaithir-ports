@@ -1,6 +1,11 @@
 package net.diaithir.vehicles;
 
 import net.diaithir.units.fuel.FuelStore;
+import net.diaithir.vehicles.tracks.ChassisItem;
+import net.diaithir.vehicles.tracks.TrackedChassis;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -25,17 +30,25 @@ public final class DiaithirVehicles {
     public static final String ID = "diaithirvehicles";
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, ID);
     public static final DeferredRegister.DataComponents COMPONENTS = DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, ID);
 
     public static final DeferredItem<JerryCan> JERRY_CAN = ITEMS.registerItem("jerry_can", JerryCan::new, p -> p.stacksTo(1));
+    public static final DeferredItem<ChassisItem> TRACKED_CHASSIS_ITEM = ITEMS.registerItem("tracked_chassis", ChassisItem::new, p -> p.stacksTo(1));
+    public static final DeferredHolder<EntityType<?>, EntityType<TrackedChassis>> TRACKED_CHASSIS = ENTITIES.register("tracked_chassis", id -> EntityType.Builder
+            .<TrackedChassis>of(TrackedChassis::new, MobCategory.MISC).sized(3.0F, 1.6F).clientTrackingRange(10).updateInterval(2).build(ResourceKey.create(Registries.ENTITY_TYPE, id)));
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<CanContent>> CAN_CONTENT = COMPONENTS.registerComponentType("fuel",
             b -> b.persistent(CanContent.CODEC));
 
     public DiaithirVehicles(IEventBus bus) {
         ITEMS.register(bus);
         COMPONENTS.register(bus);
+        ENTITIES.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) e.accept(JERRY_CAN.get());
+            if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+                e.accept(JERRY_CAN.get());
+                e.accept(TRACKED_CHASSIS_ITEM.get());
+            }
         });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> VehicleCommands.register(e.getDispatcher()));
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirVehicles::refuelVehicle);

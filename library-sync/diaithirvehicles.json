@@ -3,5 +3,10 @@
   "id": "diaithirvehicles:jerry_can",
   "name": "Jerry Can",
   "text": "Holds 20 L of one fuel. Use on a tank to pour in, sneak-use to draw out, right-click a vehicle to refuel it. Age V."
+ },
+ {
+  "id": "diaithirvehicles:tracked_chassis",
+  "name": "Tracked Chassis",
+  "text": "A 12 tonne light tank hull on two tracks, 36 km/h top speed, 300 kW diesel from its own 600 L tank. Sit in it: W and S drive, A and D steer, and standing still it pivots on the spot. Climbs a full block. Age VI."
  }
 ]

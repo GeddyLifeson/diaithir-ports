@@ -4,5 +4,11 @@
     "items": [
       "diaithirvehicles:jerry_can"
     ]
+  },
+  "tier2": {
+    "age": 6,
+    "items": [
+      "diaithirvehicles:tracked_chassis"
+    ]
   }
 }
