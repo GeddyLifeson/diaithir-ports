@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
-/** FE-powered machine family with augments. Clean-room: written from public descriptions of the idea only. */
+/** FE-powered machine family with shared module slots. Clean-room: written from public descriptions of the idea only. */
 @Mod(DiaithirForgeworks.ID)
 public final class DiaithirForgeworks {
     public static final String ID = "diaithirforgeworks";
@@ -27,7 +27,6 @@ public final class DiaithirForgeworks {
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) Machines.ALL_BLOCK_ITEMS.forEach(i -> e.accept(i.get()));
             if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-                Machines.AUGMENTS.forEach(i -> e.accept(i.get()));
                 Machines.MATERIALS.forEach(i -> e.accept(i.get()));
             }
         });
