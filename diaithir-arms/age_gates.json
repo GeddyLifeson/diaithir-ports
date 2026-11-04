@@ -85,6 +85,21 @@
   "diaithirarms:tempered_ingot": "VI",
   "diaithirarms:rodos_alloy_ingot": "RODOS",
   "diaithirarms:star_lattice": "RODOS",
-  "diaithirarms:transmog_table": "III"
+  "diaithirarms:transmog_table": "III",
+  "diaithirarms:self_bow": "I",
+  "diaithirarms:gastraphetes": "IV",
+  "diaithirarms:repeating_crossbow_zhuge_nu": "IV",
+  "diaithirarms:yumi": "IV",
+  "diaithirarms:longbow_english": "V",
+  "diaithirarms:arbalest_steel_crossbow": "V",
+  "diaithirarms:stonebow_bullet_crossbow": "V",
+  "diaithirarms:plains_bow": "V",
+  "diaithirarms:korean_horn_bow_gakgung": "IV",
+  "diaithirarms:cranequin_crossbow": "V",
+  "diaithirarms:hungarian_magyar_bow": "IV",
+  "diaithirarms:tibetan_crossbow": "IV",
+  "diaithirarms:bhutanese_bamboo_bow": "V",
+  "diaithirarms:nubian_self_bow": "III",
+  "diaithirarms:cretan_short_bow": "IV"
  }
 }

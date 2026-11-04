@@ -325,5 +325,65 @@
  },
  "transmog_table": {
   "english": "Transmog Table"
+ },
+ "self_bow": {
+  "diaithiris": null,
+  "english": "Self bow"
+ },
+ "gastraphetes": {
+  "diaithiris": null,
+  "english": "Gastraphetes"
+ },
+ "repeating_crossbow_zhuge_nu": {
+  "diaithiris": null,
+  "english": "Repeating crossbow (Zhuge nu)"
+ },
+ "yumi": {
+  "diaithiris": null,
+  "english": "Yumi"
+ },
+ "longbow_english": {
+  "diaithiris": null,
+  "english": "Longbow (English)"
+ },
+ "arbalest_steel_crossbow": {
+  "diaithiris": null,
+  "english": "Arbalest (steel crossbow)"
+ },
+ "stonebow_bullet_crossbow": {
+  "diaithiris": null,
+  "english": "Stonebow (bullet crossbow)"
+ },
+ "plains_bow": {
+  "diaithiris": null,
+  "english": "Plains bow"
+ },
+ "korean_horn_bow_gakgung": {
+  "diaithiris": null,
+  "english": "Korean horn bow (gakgung)"
+ },
+ "cranequin_crossbow": {
+  "diaithiris": null,
+  "english": "Cranequin crossbow"
+ },
+ "hungarian_magyar_bow": {
+  "diaithiris": null,
+  "english": "Hungarian Magyar bow"
+ },
+ "tibetan_crossbow": {
+  "diaithiris": null,
+  "english": "Tibetan crossbow"
+ },
+ "bhutanese_bamboo_bow": {
+  "diaithiris": null,
+  "english": "Bhutanese bamboo bow"
+ },
+ "nubian_self_bow": {
+  "diaithiris": null,
+  "english": "Nubian self bow"
+ },
+ "cretan_short_bow": {
+  "diaithiris": null,
+  "english": "Cretan short bow"
  }
 }
