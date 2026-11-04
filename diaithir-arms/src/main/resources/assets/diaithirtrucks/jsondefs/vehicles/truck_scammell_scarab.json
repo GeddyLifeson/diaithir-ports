@@ -44,7 +44,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirtrucks:engine_e150_stock"
+   "defaultPart": "diaithirtrucks:engine_e150_stock",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -55,7 +57,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:small_wheel"
+   "defaultPart": "diaithirtrucks:small_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -66,7 +70,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:small_wheel"
+   "defaultPart": "diaithirtrucks:small_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -77,7 +83,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:small_wheel"
+   "defaultPart": "diaithirtrucks:small_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -94,7 +102,9 @@
     -1.8,
     0.0,
     1.264
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "collision": [

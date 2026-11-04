@@ -47,7 +47,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirvehicles:engine_m113"
+   "defaultPart": "diaithirvehicles:engine_m113",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -58,7 +60,9 @@
    "types": [
     "ground_tread"
    ],
-   "defaultPart": "diaithirvehicles:track_apc"
+   "defaultPart": "diaithirvehicles:track_apc",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -69,7 +73,9 @@
    "types": [
     "ground_tread"
    ],
-   "defaultPart": "diaithirvehicles:track_apc"
+   "defaultPart": "diaithirvehicles:track_apc",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -86,7 +92,9 @@
     -2.1500000000000004,
     0.5,
     0.2
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -97,7 +105,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -108,7 +118,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -119,7 +131,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -130,7 +144,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -141,7 +157,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -152,7 +170,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -163,7 +183,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -174,7 +196,9 @@
    "types": [
     "seat"
    ],
-   "defaultPart": "diaithirvehicles:vehicle_seat"
+   "defaultPart": "diaithirvehicles:vehicle_seat",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "collision": [

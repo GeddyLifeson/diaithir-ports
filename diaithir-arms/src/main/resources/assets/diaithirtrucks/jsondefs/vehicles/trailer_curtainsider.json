@@ -45,7 +45,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -56,7 +58,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -67,7 +71,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -78,7 +84,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -89,7 +97,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -100,7 +110,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -111,7 +123,9 @@
    "types": [
     "interactable_crate"
    ],
-   "defaultPart": "diaithirtrucks:crate_l"
+   "defaultPart": "diaithirtrucks:crate_l",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "collision": [

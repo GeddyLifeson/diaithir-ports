@@ -46,7 +46,9 @@
    "types": [
     "ground_tread"
    ],
-   "defaultPart": "diaithirtrucks:cv_track"
+   "defaultPart": "diaithirtrucks:cv_track",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -57,7 +59,9 @@
    "types": [
     "ground_tread"
    ],
-   "defaultPart": "diaithirtrucks:cv_track"
+   "defaultPart": "diaithirtrucks:cv_track",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -68,7 +72,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirtrucks:engine_e450_stock"
+   "defaultPart": "diaithirtrucks:engine_e450_stock",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -85,7 +91,9 @@
     -2.0,
     0.0,
     0.2
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "collision": [
