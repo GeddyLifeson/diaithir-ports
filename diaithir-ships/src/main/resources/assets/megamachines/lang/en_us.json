@@ -1,0 +1,8 @@
+{
+ "block.megamachines.cab": "Mega Cab",
+ "megamachines.cab.module_fitted": "Autonomy module fitted",
+ "megamachines.cab.module_refused": "This machine cannot take an autonomy module, or already has one",
+ "megamachines.cab.status.uncrewed": "%s: no crew, will not run",
+ "megamachines.cab.status.crewed": "%s: crewed",
+ "megamachines.cab.status.autonomous": "%s: autonomous"
+}

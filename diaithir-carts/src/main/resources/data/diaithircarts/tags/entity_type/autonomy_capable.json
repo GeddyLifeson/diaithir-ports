@@ -5,6 +5,22 @@
   "minecraft:chest_minecart",
   "minecraft:hopper_minecart",
   "minecraft:furnace_minecart",
-  "minecraft:tnt_minecart"
+  "minecraft:tnt_minecart",
+  {
+   "id": "diaithirmega:autonomous_wheel_excavator",
+   "required": false
+  },
+  {
+   "id": "diaithirmega:autonomous_haul_fleet",
+   "required": false
+  },
+  {
+   "id": "diaithirmega:mountain_strip_miner",
+   "required": false
+  },
+  {
+   "id": "diaithirmega:terraform_builder",
+   "required": false
+  }
  ]
 }
