@@ -106,7 +106,7 @@ Downloads from the author's Modrinth CDN (sha256 in its `.pw.toml`). Licence rea
 |---|---|---|---|
 | YUNG's Better Caves | 26.1.2-NeoForge-4.1.2 | LGPL-3.0 | https://github.com/yungnickyoung/YUNGs-Better-Caves |
 
-The scaled carver `kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json` is our own data file that overrides the mod's default carver for Tellus' deep columns.
+Better Caves runs on its own default carver (the mod's bundled better_cave.json); the earlier scaled override (bottom_y -2014) was removed because it broke carving in the -64 overworld.
 
 Looked at and not added in update 2: LambDynamicLights 4.11.2 (Lambda License: binaries may be shared only with the original authors' written approval), Terralith (Stardust Labs licence; Tellus owns terrain), Server-Side Horror (MIT, but it burns builds, strikes players with lightning and fakes player joins), DarkFear and Ender Zoology (MIT/CC0, not needed), Power Armor (CC-BY-NC-ND), Gamingbarn's Guns and Zombies (CC-BY-NC-ND), Friends and Foes (CC-BY-NC-ND). Details in REPORT.md.
 
