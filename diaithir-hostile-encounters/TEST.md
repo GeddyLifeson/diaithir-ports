@@ -1,0 +1,3 @@
+# Test results (survey part 2 folds)
+Cloud, NeoForge 26.1.2.116 dedicated server, only this mod, fresh world (gradle runServer, rcon). Boots with no ERROR lines: the raid enum extension (`DIAITHIRHOSTILE_*`), access transformer, game-rule registration and mob effect all load. `summon` works for all five raiders (`raided:inquisitor`, `incinerator`, `savager`, `necromancer`, `electromancer`); the four Horde Hoard game rules exist with their defaults (stacking true, spawner chance 20, golem regen 4); `/lunar forecast` still works.
+Not tested: a full raid wave with the new raiders, horde behaviour over a night, client rendering of the raider models.

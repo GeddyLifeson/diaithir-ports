@@ -1,0 +1,63 @@
+{
+ "id": "treadwheel_crane",
+ "tier": "WORKSHOP",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 10,
+  "h": 6
+ },
+ "result": "diaithirmega:treadwheel_crane",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 1000,
+   "ghost": "diaithirmega:ghost/treadwheel_crane_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 1
+    }
+   ],
+   "base_ticks": 750,
+   "ghost": "diaithirmega:ghost/treadwheel_crane_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "boom",
+     "count": 1
+    }
+   ],
+   "base_ticks": 1250,
+   "ghost": "diaithirmega:ghost/treadwheel_crane_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 4
+    }
+   ],
+   "base_ticks": 160,
+   "ghost": "diaithirmega:ghost/treadwheel_crane_crew"
+  }
+ ],
+ "crane_speedup": 1.0
+}

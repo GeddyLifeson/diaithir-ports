@@ -9,11 +9,11 @@ man = json.load(open(f'{M}/tank_manifest.json'))
 ID = lambda x: f'mts:diaithirtanks.{x}'
 CLS = {'tank_mk1': 'carbadchatha tràth', 'tank_mk1a': 'carbadchatha trom', 'tank_mk1b': 'carbadchatha trom làidir',
        'tank_mk2': 'carbadchatha cruinn', 'tank_mk2a': 'carbadchatha cruinn trom', 'tank_mk2b': 'carbadchatha cruinn làidir',
-       'tank_track': 'lorg iarainn', 'tank_track2': 'lorg chaol', 'tank_engine': 'cridheiarainn', 'tank_seat': 'suidheachan',
+       'tank_wheel': 'lorg iarainn', 'tank_engine': 'cridheiarainn', 'tank_seat': 'suidheachan',
        'tank_gun_105': 'gunnamòr beag', 'tank_gun_120': 'gunnamòr', 'tank_gun_125': 'gunnamòr làidir',
        'tank_shell_ap': 'slige sàthaidh', 'tank_shell_he': 'slige spreadhaidh'}
 CAMO = {'': ('Forest', 'na coille'), '_desert': ('Desert', 'an fhàsaich'), '_snow': ('Winter', 'an t-sneachda')}
-EN = {'tank_track': 'Tank Track', 'tank_track2': 'Tank Track (narrow)', 'tank_engine': 'Tank Diesel Engine', 'tank_seat': 'Tank Crew Seat',
+EN = {'tank_wheel': 'Tank Road Wheel', 'tank_engine': 'Tank Diesel Engine', 'tank_seat': 'Tank Crew Seat',
       'tank_gun_105': 'Tank Gun 105 mm', 'tank_gun_120': 'Tank Gun 120 mm', 'tank_gun_125': 'Tank Gun 125 mm (autoloader)',
       'tank_shell_ap': 'Armour-Piercing Tank Shell', 'tank_shell_he': 'High-Explosive Tank Shell'}
 names, ages, lib = {}, {}, [['Carbadchatha', 'concept', 7, 'armour', 'Tracked armour of the later Ages: heavy battle-chariots of iron, two designs in three marks and three paints. A driver sits in the hull, the commander and gunner under the turret; the gun turns all the way round.']]

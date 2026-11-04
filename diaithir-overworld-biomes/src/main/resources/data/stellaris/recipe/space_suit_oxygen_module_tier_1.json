@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "stellaris:titanium_ingot",
+  "G": "minecraft:glass",
+  "F": "stellaris:fluid_cell"
+ },
+ "pattern": [
+  "#G#",
+  "GFG",
+  "#G#"
+ ],
+ "result": {
+  "id": "stellaris:space_suit_oxygen_module_tier_1"
+ }
+}

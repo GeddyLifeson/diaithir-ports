@@ -2,8 +2,9 @@
  "module": "diaithirentityanimation",
  "side": "client",
  "features": [
-  "skinlayers3d",
-  "notenoughanimations"
+  "emfetf",
+  "notenoughanimations",
+  "skinlayers3d"
  ],
  "codex": {
   "entry": "diaithirentityanimation.overview",

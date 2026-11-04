@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "P": "minecraft:piston",
+    "B": "minecraft:bucket"
+  },
+  "pattern": [
+    "I",
+    "P",
+    "B"
+  ],
+  "result": {
+    "id": "diaithirunits:hand_pump",
+    "count": 1
+  },
+  "category": "misc"
+}

@@ -71,14 +71,6 @@
   "diaithiris": "karbadchata kroind làidiri aun t-sniechda",
   "english": "Main Battle Tank Mk IIB (Winter)"
  },
- "mts:diaithirtanks.tank_track": {
-  "diaithiris": "lourg iaruind",
-  "english": "Tank Track"
- },
- "mts:diaithirtanks.tank_track2": {
-  "diaithiris": "lourg chael",
-  "english": "Tank Track (narrow)"
- },
  "mts:diaithirtanks.tank_engine": {
   "diaithiris": "krideiaruind",
   "english": "Tank Diesel Engine"
@@ -106,5 +98,9 @@
  "mts:diaithirtanks.tank_shell_he": {
   "diaithiris": "sligi spriedaid",
   "english": "High-Explosive Tank Shell"
+ },
+ "mts:diaithirtanks.tank_wheel": {
+  "diaithiris": "lourg iaruind",
+  "english": "Tank Road Wheel"
  }
 }

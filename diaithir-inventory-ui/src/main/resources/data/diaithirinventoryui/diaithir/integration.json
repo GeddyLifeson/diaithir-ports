@@ -3,6 +3,7 @@
  "side": "client",
  "features": [
   "inventoryessentials",
+  "mousetweaks",
   "trashslot"
  ],
  "codex": {

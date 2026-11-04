@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "P": "minecraft:piston",
+    "B": "minecraft:bucket"
+  },
+  "pattern": [
+    "III",
+    "PBP",
+    "III"
+  ],
+  "result": {
+    "id": "diaithirunits:loading_rack",
+    "count": 1
+  },
+  "category": "misc"
+}

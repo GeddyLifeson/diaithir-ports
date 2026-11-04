@@ -1,0 +1,18 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 10,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a4",
+   "count": 5
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_head",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 4
+  }
+ }
+}

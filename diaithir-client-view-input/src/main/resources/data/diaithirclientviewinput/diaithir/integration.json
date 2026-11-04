@@ -2,7 +2,9 @@
  "module": "diaithirclientviewinput",
  "side": "client",
  "features": [
-  "firstpersonmodel"
+  "firstpersonmodel",
+  "guiscaler",
+  "zoomify"
  ],
  "codex": {
   "entry": "diaithirclientviewinput.overview",

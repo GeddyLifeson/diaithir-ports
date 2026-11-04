@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": "stellaris:titanium_plating_block"
+ },
+ "pattern": [
+  "#  ",
+  "## ",
+  "###"
+ ],
+ "result": {
+  "id": "stellaris:titanium_plating_stairs",
+  "count": 4
+ }
+}
