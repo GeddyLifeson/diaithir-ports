@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Holmes wrecker (Ernest Holmes) Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 0.8,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Holmes wrecker (Ernest Holmes) Wheel",
+   "modelName": "wheel_holmes_wrecker",
+   "textureName": "wheel_holmes_wrecker",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

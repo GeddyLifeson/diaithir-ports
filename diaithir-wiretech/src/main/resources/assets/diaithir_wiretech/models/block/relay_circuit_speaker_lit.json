@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "diaithir_wiretech:block/circuit_relay_top",
+    "up": "diaithir_wiretech:block/circuit_relay_top",
+    "east": "diaithir_wiretech:block/circuit_relay_side",
+    "west": "diaithir_wiretech:block/circuit_relay_side",
+    "south": "diaithir_wiretech:block/circuit_relay_circuit_speaker_back",
+    "particle": "diaithir_wiretech:block/circuit_relay_side",
+    "north": "diaithir_wiretech:block/circuit_relay_circuit_speaker_front_lit"
+  }
+}
