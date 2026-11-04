@@ -1,0 +1,15 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "part",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "minecraft:blaze_powder",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_greek_fire_pot_filler",
+    "count": 1
+  }
+}

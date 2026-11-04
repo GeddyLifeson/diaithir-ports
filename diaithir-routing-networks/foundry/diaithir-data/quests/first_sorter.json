@@ -1,0 +1,10 @@
+{
+ "id": "diaithirrouting:quest/first_sorter",
+ "title": "Sort a mixed chest",
+ "steps": [
+  "Craft a Sorting Router and place a chest on three of its faces",
+  "Sneak-use two faces with different items to set their filters",
+  "Push a mixed stack into the router from a fourth face"
+ ],
+ "next": "diaithirbuildcraft:quest/first_pipe"
+}

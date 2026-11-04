@@ -140,7 +140,7 @@ public final class PlanetGate {
 
     private static void tick(MinecraftServer s) {
         for (ServerLevel l : s.forgeGetWorldMap().values())
-            if (l.dimension().identifier().getNamespace().equals(NS)) PlanetWeather.tick(l);
+            if (l.dimension().identifier().getNamespace().equals(NS)) { PlanetWeather.tick(l); if (tick % 40 == 0) PlanetHazards.tick(l); }
         if (++tick % CHECK_EVERY != 0) return;
         for (ServerLevel lvl : List.copyOf(s.forgeGetWorldMap().values())) {
             ResourceKey<Level> k = lvl.dimension();

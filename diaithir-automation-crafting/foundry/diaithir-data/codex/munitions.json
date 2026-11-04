@@ -1,0 +1,12 @@
+{
+  "id": "diaithircrafting:codex/munitions",
+  "name_en": "Munitions",
+  "what": "Shot, shells, rockets, bombs, torpedoes and missiles for ships, aircraft, trains and tanks, plus the magazines, drums, belts and boxes that carry them. Each part is cast or made at a station, then a round is assembled in one step. Older stages stay craftable.",
+  "connects": {
+    "stations": "hearth bench to fabricator, one per Age",
+    "tags": "c:ammo/<line>, c:ammo_container/<kind>",
+    "component": "diaithircrafting:ammo_container {class, capacity, count, round}",
+    "plan": "plans/MUNITIONS.md",
+    "quest": "diaithircrafting:quest/first_munition"
+  }
+}

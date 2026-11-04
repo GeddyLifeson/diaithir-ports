@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:oak_planks"
+ },
+ "pattern": [
+  "PPP",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:oak_shutter",
+  "count": 3
+ }
+}

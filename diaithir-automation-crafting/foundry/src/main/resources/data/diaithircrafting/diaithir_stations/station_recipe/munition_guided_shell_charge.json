@@ -1,0 +1,16 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 16,
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone_dust",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_guided_shell_charge",
+    "count": 1
+  },
+  "operator": true
+}

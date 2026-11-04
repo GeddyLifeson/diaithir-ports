@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:pecan_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:pecan_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,7 @@
+{
+"parent": "minecraft:block/cube_column_horizontal",
+"textures": {
+"end": "diaithir_planets:block/corialor_elinaemwen_log_top",
+"side": "diaithir_planets:block/corialor_elinaemwen_log"
+}
+}

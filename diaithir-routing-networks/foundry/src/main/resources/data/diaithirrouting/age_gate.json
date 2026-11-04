@@ -1,0 +1,10 @@
+{
+  "tier1": {
+    "age": 5,
+    "items": [
+      "diaithirrouting:foundry_barrel",
+      "diaithirrouting:foundry_sieve",
+      "diaithirrouting:foundry_router"
+    ]
+  }
+}

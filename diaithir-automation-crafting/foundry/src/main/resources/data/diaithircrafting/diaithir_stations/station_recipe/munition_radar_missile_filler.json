@@ -1,0 +1,16 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 16,
+  "ingredients": [
+    {
+      "item": "minecraft:tnt",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_radar_missile_filler",
+    "count": 1
+  },
+  "operator": true
+}

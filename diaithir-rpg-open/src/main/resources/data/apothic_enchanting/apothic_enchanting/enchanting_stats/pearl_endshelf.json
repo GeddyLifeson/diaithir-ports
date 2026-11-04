@@ -1,0 +1,9 @@
+{
+    "blocks": "apothic_enchanting:pearl_endshelf",
+    "stats": {
+        "arcana": 7.5,
+        "eterna": 10.0,
+        "maxEterna": 90.0,
+        "quanta": 7.5
+    }
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithircropgenes:item/genetic_carrot_seed"
+ }
+}

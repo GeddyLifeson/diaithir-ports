@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "diaithirtrees:block/rubber_tree_wood"
+  },
+  "axis=z": {
+   "model": "diaithirtrees:block/rubber_tree_wood",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "diaithirtrees:block/rubber_tree_wood",
+   "x": 90,
+   "y": 90
+  }
+ }
+}

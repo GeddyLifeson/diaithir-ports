@@ -1,0 +1,15 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "part",
+  "time_s": 4,
+  "ingredients": [
+    {
+      "item": "minecraft:coal",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_pitch_arrow_filler",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Fishing",
+  "description": "Ancient Warfare 2 research: fishing.",
+  "prerequisites": [
+    "aw2research:agriculture"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:fish",
+            "count": {
+              "min": 5
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:fish"
+    }
+  }
+}

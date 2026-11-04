@@ -1,0 +1,29 @@
+{
+  "title": "Chemistry",
+  "description": "Ancient Warfare 2 research: chemistry.",
+  "prerequisites": [
+    "aw2research:mining"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:redstone",
+            "count": {
+              "min": 32
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:redstone"
+    }
+  }
+}
