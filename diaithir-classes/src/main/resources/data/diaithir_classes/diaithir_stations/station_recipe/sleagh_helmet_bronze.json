@@ -1,0 +1,19 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "item": "diaithirarms:bronze_helmet",
+   "count": 1
+  },
+  {
+   "item": "diaithir_classes:sleagh_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:sleagh_helmet_bronze",
+  "count": 1
+ }
+}

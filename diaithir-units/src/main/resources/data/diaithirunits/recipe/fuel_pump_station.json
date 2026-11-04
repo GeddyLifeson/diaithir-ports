@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "P": "minecraft:piston",
+    "B": "minecraft:bucket"
+  },
+  "pattern": [
+    "III",
+    "IPI",
+    "IBI"
+  ],
+  "result": {
+    "id": "diaithirunits:fuel_pump_station",
+    "count": 1
+  },
+  "category": "misc"
+}

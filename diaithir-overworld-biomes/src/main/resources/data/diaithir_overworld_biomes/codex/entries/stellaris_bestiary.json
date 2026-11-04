@@ -1,0 +1,15 @@
+{
+ "id": "diaithir_overworld_biomes:stellaris_bestiary",
+ "category": "bestiary",
+ "title": "codex.diaithir_overworld_biomes.stellaris_bestiary.title",
+ "body": "codex.diaithir_overworld_biomes.stellaris_bestiary.body",
+ "age": 7,
+ "icon": "stellaris:alien_spawn_egg",
+ "unlock": {
+  "type": "kill_entity_tag",
+  "tag": "stellaris:stellaris_mobs"
+ },
+ "covers": {
+  "entities": "#stellaris:stellaris_mobs"
+ }
+}

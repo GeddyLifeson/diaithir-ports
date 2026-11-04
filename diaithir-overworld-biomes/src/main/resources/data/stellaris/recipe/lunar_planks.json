@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#stellaris:lunar_logs"
+ ],
+ "result": {
+  "id": "stellaris:lunar_planks",
+  "count": 4
+ }
+}

@@ -59,6 +59,7 @@ public final class WorkshopTest {
         check(Catalog.blueprints().size() >= 25, "blueprints loaded " + Catalog.blueprints().size());
         check(Catalog.forStation(Workshop.SMITHY).size() >= 5, "smithy has blueprints (vanilla bases)");
         check(Catalog.blueprints().values().stream().allMatch(b -> !b.slots().isEmpty()), "every blueprint has slots");
+        check(Catalog.blueprints().containsKey("ha_yumi") && Catalog.blueprints().get("ha_yumi").station().equals(Workshop.WORKSHOP), "historical bows are on the workshop bench");
         // maths: better materials, better stats; lighter handle swings faster; honing helps
         Craft.Stats bone = sword("bone", "wood"), iron = sword("iron", "wood"), steel = sword("steel", "wood"), star = sword("star_lattice", "wood");
         check(bone.damage() < iron.damage() && iron.damage() < steel.damage() && steel.damage() < star.damage(), "damage rises with material: " + bone.damage() + " " + iron.damage() + " " + steel.damage() + " " + star.damage());

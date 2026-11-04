@@ -1,0 +1,23 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "item": "minecraft:flint",
+   "count": 1
+  },
+  {
+   "item": "minecraft:acacia_log",
+   "count": 1
+  },
+  {
+   "item": "minecraft:gold_nugget",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:rune_tinne",
+  "count": 2
+ }
+}

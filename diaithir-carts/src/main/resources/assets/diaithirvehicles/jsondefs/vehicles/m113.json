@@ -16,7 +16,7 @@
  "motorized": {
   "emptyMass": 11000.0,
   "fuelCapacity": 360000,
-  "defaultFuelQty": 0,
+  "defaultFuelQty": 180000,
   "hasRunningLights": true,
   "hasHeadlights": true,
   "axleRatio": 3.6,
@@ -32,8 +32,8 @@
   "isBigTruck": false
  },
  "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": false,
+  "isFrontWheelDrive": true,
+  "isRearWheelDrive": true,
   "axleRatio": 3.6,
   "dragCoefficient": 0.5
  },
@@ -54,26 +54,78 @@
   {
    "pos": [
     -1.05,
-    0,
-    0
+    0.35,
+    -1.6
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:track_apc",
+   "defaultPart": "diaithirvehicles:wheel_apc",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    -1.05,
+    0.35,
+    0.0
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    -1.05,
+    0.35,
+    1.6
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc",
    "minValue": 0.0,
    "maxValue": 10.0
   },
   {
    "pos": [
     1.05,
-    0,
-    0
+    0.35,
+    -1.6
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirvehicles:track_apc",
+   "defaultPart": "diaithirvehicles:wheel_apc",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    1.05,
+    0.35,
+    0.0
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc",
+   "minValue": 0.0,
+   "maxValue": 10.0
+  },
+  {
+   "pos": [
+    1.05,
+    0.35,
+    1.6
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "defaultPart": "diaithirvehicles:wheel_apc",
    "minValue": 0.0,
    "maxValue": 10.0
   },
@@ -213,6 +265,76 @@
   }
  ],
  "rendering": {},
+ "instruments": [
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 78,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:speedo"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:fuel"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 302,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:tacho"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 100,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirvehicles:readout"
+  }
+ ],
  "collisionGroups": [
   {
    "collisionTypes": [

@@ -1,0 +1,48 @@
+{
+ "general": {
+  "name": "Speed readout",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:1"
+   ]
+  ]
+ },
+ "textureName": "instruments.png",
+ "components": [
+  {
+   "xCenter": 0,
+   "yCenter": 0,
+   "scale": 1.0,
+   "textureXCenter": 448,
+   "textureYCenter": 64,
+   "textureWidth": 128,
+   "textureHeight": 128
+  },
+  {
+   "xCenter": 0,
+   "yCenter": 0,
+   "scale": 1.0,
+   "textObject": {
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "variableName": "velocity",
+    "variableFactor": 3.6,
+    "variableOffset": 0.0,
+    "variableFormat": "%.0f km/h",
+    "defaultText": "",
+    "maxLength": 9,
+    "color": "#FFFFFF",
+    "renderPosition": 1
+   }
+  }
+ ]
+}

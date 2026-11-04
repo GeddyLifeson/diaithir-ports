@@ -40,7 +40,7 @@ public final class DiaithirWaypoints {
             net.neoforged.fml.InterModComms.sendTo("diaithirlookat", "block/" + ID + ":waypoint_stone", () ->
                 (java.util.function.BiFunction<net.minecraft.world.level.Level, net.minecraft.core.BlockPos, java.util.List<String>>)
                     (level, pos) -> java.util.List.of(Names.of(pos)))));
-        net.diaithir.waypoints.serverwaypoint.ServerWaypointFeature.register();
+        net.diaithir.claims.waypoints.serverwaypoint.ServerWaypointFeature.register();
         NeoForge.EVENT_BUS.addListener((RegisterCommandsEvent e) -> Travel.commands(e.getDispatcher()));
     }
 }

@@ -1,0 +1,5 @@
+{
+  "disconnect.nochatreports.client": "This server does not have No Chat Reports and you have configured it to require itself on server.",
+  "gui.nochatreports.secure_chat": "This option cannot work with No Chat Reports, since there are no signatures to verify.",
+  "chat.nochatreports.disabled.signing_requested": "The server refused to deliver an unsigned message. Chat signing has been enabled for this session; re-send your message."
+}

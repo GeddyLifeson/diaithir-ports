@@ -1,0 +1,63 @@
+{
+ "id": "haul_truck",
+ "tier": "ASSEMBLY_LINE",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 5,
+  "l": 10,
+  "h": 6
+ },
+ "result": "diaithirmega:haul_truck",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 4000,
+   "ghost": "diaithirmega:ghost/haul_truck_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 1
+    }
+   ],
+   "base_ticks": 3000,
+   "ghost": "diaithirmega:ghost/haul_truck_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "hold",
+     "count": 1
+    }
+   ],
+   "base_ticks": 5000,
+   "ghost": "diaithirmega:ghost/haul_truck_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 1
+    }
+   ],
+   "base_ticks": 40,
+   "ghost": "diaithirmega:ghost/haul_truck_crew"
+  }
+ ],
+ "crane_speedup": 1.0
+}

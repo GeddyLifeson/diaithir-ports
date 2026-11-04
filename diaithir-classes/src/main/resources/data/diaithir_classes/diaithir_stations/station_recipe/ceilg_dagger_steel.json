@@ -1,0 +1,23 @@
+{
+ "station": "station.steam_forge",
+ "stage": "assembly",
+ "time_s": 14,
+ "ingredients": [
+  {
+   "tag": "c:ingots/steel",
+   "count": 2
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  },
+  {
+   "item": "diaithir_classes:ceilg_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_dagger_steel",
+  "count": 1
+ }
+}

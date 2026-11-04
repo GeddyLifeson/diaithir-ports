@@ -74,7 +74,8 @@ public final class Engine {
     public static int ammoCount(ServerPlayer p, Defs.Gun g) {
         Item a = ammoItem(g); int n = 0;
         var inv = p.getInventory();
-        for (int i = 0; i < inv.getContainerSize(); i++) { ItemStack s = inv.getItem(i); if (s.is(a)) n += s.getCount(); }
+        String path = g.ammo();
+        for (int i = 0; i < inv.getContainerSize(); i++) { ItemStack s = inv.getItem(i); if (s.is(a)) n += s.getCount(); else if (s.getItem() instanceof AmmoBox) n += AmmoBox.count(s, path); }
         return n;
     }
 
@@ -89,6 +90,10 @@ public final class Engine {
             ItemStack s = inv.getItem(i);
             if (!s.is(a)) continue;
             int t = Math.min(s.getCount(), want - got); s.shrink(t); got += t;
+        }
+        for (int i = 0; i < inv.getContainerSize() && got < want; i++) {
+            ItemStack s = inv.getItem(i);
+            if (s.getItem() instanceof AmmoBox) got += AmmoBox.take(s, g.ammo(), want - got);
         }
         return got;
     }
