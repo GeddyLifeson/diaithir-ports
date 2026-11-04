@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "megamachines:block/gantry_shaft"}, "facing=east": {"model": "megamachines:block/gantry_shaft"}, "facing=south": {"model": "megamachines:block/gantry_shaft"}, "facing=west": {"model": "megamachines:block/gantry_shaft"}, "facing=up": {"model": "megamachines:block/gantry_shaft"}, "facing=down": {"model": "megamachines:block/gantry_shaft"}}}

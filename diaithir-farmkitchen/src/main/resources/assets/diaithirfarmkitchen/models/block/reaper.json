@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/orientable",
+ "textures": {
+  "front": "diaithirfarmkitchen:block/reaper_front",
+  "side": "diaithirfarmkitchen:block/reaper_side",
+  "top": "diaithirfarmkitchen:block/reaper_top"
+ }
+}

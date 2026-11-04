@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "M M",
+  "MMM",
+  "MMM"
+ ],
+ "key": {
+  "M": "minecraft:gold_ingot"
+ },
+ "result": {
+  "id": "diaithirarms:divine_chestplate_imm",
+  "count": 1
+ }
+}

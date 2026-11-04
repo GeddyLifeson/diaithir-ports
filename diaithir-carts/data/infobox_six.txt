@@ -1,0 +1,32 @@
+== Adler (locomotive) ==
+| powertype = Steam
+| builddate = 1835 (original)
+| totalproduction = 2 (+1 replica)
+| poweroutput =
+
+== Pennsylvania Railroad class GG1 ==
+| powertype = Electric
+| builddate = 1934 – 1943
+| totalproduction = 139
+| poweroutput = ''Continuous:'' {{convert|4620|hp|kW|lk=on|abbr=on}}<br>''Short duration:'' {{convert|8500|hp|kW|lk=on|abbr=on}} @ {{convert|65|mph|km/h|abbr=on}}
+
+== TGV ==
+| start_year       = {{start date and age|1981}}
+(no power field in the TGV infobox)
+
+== 0 Series Shinkansen ==
+| service = 1 October 1964 – 14 December 2008 ({{age in years and days|1964|10|1|2008|12|14}})
+| numberbuilt = 3,216 vehicles (201 sets){{clarify|date=June 2021}}
+| poweroutput = {{cvt|11840|kW}} on a 16-car set<ref name="Semmens1997" />
+
+== Union Pacific Big Boy ==
+| powertype = Steam
+| builddate = 1941 and 1944
+| totalproduction = 25
+| poweroutput = {{convert|6290-7000|hp|abbr=on}} @ {{convert|41|mph|abbr=on}} (drawbar)
+
+== EMD GP38 ==
+| powertype        = [[Diesel-electric]]
+| builddate        = January 1966 – December 1971
+| poweroutput      = {{convert|2000|hp|MW|2|abbr=on}}
+| totalproduction  = 706

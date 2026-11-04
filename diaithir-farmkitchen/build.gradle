@@ -25,9 +25,15 @@ processResources {
 
 repositories {
     mavenCentral()
+    maven { url = "https://maven.blamejared.com/" }
+    maven { url = "https://modmaven.dev" }
+    maven { url = "https://api.modrinth.com/maven"; content { includeGroup "maven.modrinth" } }
 }
 
 dependencies {
+    // Folded Agritech: Evolved and Hydrofarm only touch JEI and Jade through optional compat classes, so these are compile-only.
+    compileOnly "mezz.jei:jei-26.1.2-neoforge-api:29.53.0.115"
+    compileOnly "maven.modrinth:jade:26.1.12+neoforge"
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'com.google.code.gson:gson:2.11.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'

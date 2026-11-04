@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond_block",
+    "E": "minecraft:emerald_block",
+    "N": "minecraft:netherite_ingot",
+    "S": "agritechevolved:sm_mk2"
+  },
+  "pattern": [
+    "ENE",
+    "DSD",
+    "ENE"
+  ],
+  "result": {
+    "id": "agritechevolved:sm_mk3"
+  }
+}

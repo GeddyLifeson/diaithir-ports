@@ -49,6 +49,7 @@ object VSForgeNetworking {
             ::handleServerFragment,
             ::handleClientFragment,
         )
+        net.diaithir.ships.cargo.ShipCargoMod.registerPayload(registrar)
     }
 
     fun handleClient(

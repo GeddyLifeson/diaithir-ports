@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "agritechevolved:block/silo"
+    },
+    "powered=true": {
+      "model": "agritechevolved:block/silo_on"
+    }
+  }
+}
