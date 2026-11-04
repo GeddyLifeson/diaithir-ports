@@ -52,7 +52,6 @@ public final class VehicleCarriers {
     /** Tag on every display this class makes, so strays left in a save can be cleared. */
     static final String TAG = "diaithir_cargo";
 
-    private static EntityType<?> ivType;
     private static Field entityField;
     private static Method setBlockState, setTransformation, setPosRot;
     private static int tick;
@@ -63,9 +62,16 @@ public final class VehicleCarriers {
         ATTACHMENTS.register(bus);
         bus.addListener(RegisterCapabilitiesEvent.class, e -> {
             loadSpecs();
-            EntityType<?> t = ivType();
-            if (t != null && !SPECS.isEmpty()) e.registerEntity(Freight.CARRIER, t, (entity, ctx) -> of(entity));
-            org.slf4j.LoggerFactory.getLogger("diaithir-freight").info("Vehicle cargo bays: {} vehicle types, Immersive Vehicles {}", SPECS.size(), t == null ? "not present" : "found");
+            int types = 0;
+            if (!SPECS.isEmpty()) {
+                // IV registers more than one entity type for its builders; offer the capability on each of its types and let of() pick out the vehicles
+                for (var en : net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.entrySet()) {
+                    if (!en.getKey().identifier().getNamespace().equals("mts")) continue;
+                    e.registerEntity(Freight.CARRIER, en.getValue(), (entity, ctx) -> of(entity));
+                    types++;
+                }
+            }
+            org.slf4j.LoggerFactory.getLogger("diaithir-freight").info("Vehicle cargo bays: {} vehicle types, offered on {} Immersive Vehicles entity types", SPECS.size(), types);
         });
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> serverTick(e));
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> e.getDispatcher().register(
@@ -79,22 +85,38 @@ public final class VehicleCarriers {
 
     /** The nearest cargo-capable vehicle within 8 blocks of the command source. */
     private static @Nullable VehicleCarrier nearest(net.minecraft.commands.CommandSourceStack src) {
-        EntityType<?> t = ivType();
-        if (t == null) return null;
         Vec3 at = src.getPosition();
         VehicleCarrier best = null;
         double bestD = Double.MAX_VALUE;
-        for (Entity en : src.getLevel().getEntities((Entity) null, new net.minecraft.world.phys.AABB(at, at).inflate(8), x -> x.getType() == t)) {
+        int seen = 0, vehicles = 0;
+        lastProbe = "";
+        for (Entity en : src.getLevel().getEntities((Entity) null, new net.minecraft.world.phys.AABB(at, at).inflate(8), VehicleCarriers::isIv)) {
+            seen++;
+            Object v = vehicleOf(en);
+            if (v != null) { vehicles++; lastProbe = " (last vehicle key " + keyOf(v) + ")"; }
             if (!(of(en) instanceof VehicleCarrier c)) continue;
             double d = en.distanceToSqr(at);
             if (d < bestD) { best = c; bestD = d; }
         }
+        if (best == null) lastProbe = " [IV entities " + seen + ", vehicles " + vehicles + ", bay specs loaded " + SPECS.size() + "]" + lastProbe;
         return best;
+    }
+
+    private static String lastProbe = "";
+
+    private static String keyOf(Object vehicle) {
+        try {
+            Object def = vehicle.getClass().getField("definition").get(vehicle);
+            Object general = def.getClass().getField("general").get(def);
+            return general.getClass().getField("packID").get(general) + ":" + general.getClass().getField("systemName").get(general);
+        } catch (ReflectiveOperationException | RuntimeException ex) {
+            return "unreadable " + ex.getClass().getSimpleName();
+        }
     }
 
     private static int status(net.minecraft.commands.CommandSourceStack src) {
         VehicleCarrier c = nearest(src);
-        if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks")); return 0; }
+        if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks" + lastProbe)); return 0; }
         StringBuilder sb = new StringBuilder(String.format("Bay %dx%dx%d cells, %d free, payload %.0f of %.0f kg, displays %d; loads:", c.spec.w, c.spec.h, c.spec.l, c.bay.freeCells(), c.bay.payloadKg(), c.bay.maxPayloadKg, c.displays.size()));
         for (CargoBay.Placed p : c.bay.loads()) sb.append(' ').append(p.type.id()).append('@').append(p.x).append(',').append(p.y).append(',').append(p.z);
         String line = sb.toString();
@@ -104,7 +126,7 @@ public final class VehicleCarriers {
 
     private static int clear(net.minecraft.commands.CommandSourceStack src) {
         VehicleCarrier c = nearest(src);
-        if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks")); return 0; }
+        if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks" + lastProbe)); return 0; }
         for (CargoBay.Placed p : c.bay.loads()) c.bay.take(p);
         c.changed();
         src.sendSuccess(() -> net.minecraft.network.chat.Component.literal("Bay emptied"), false);
@@ -114,7 +136,7 @@ public final class VehicleCarriers {
     /** Test aid: puts one load of the given type on the first column that accepts it. */
     private static int load(net.minecraft.commands.CommandSourceStack src, String type) {
         VehicleCarrier c = nearest(src);
-        if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks")); return 0; }
+        if (c == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("No vehicle with a cargo bay within 8 blocks" + lastProbe)); return 0; }
         var item = Freight.LOAD_ITEMS.get(type) != null ? Freight.LOAD_ITEMS.get(type) : Freight.CONTAINER_ITEMS.get(type);
         if (item == null) { src.sendFailure(net.minecraft.network.chat.Component.literal("Unknown load type: " + type)); return 0; }
         CargoBay.Result last = CargoBay.Result.OUT_OF_BAY;
@@ -150,16 +172,8 @@ public final class VehicleCarriers {
         }
     }
 
-    private static @Nullable EntityType<?> ivType() {
-        if (ivType == null) {
-            try {
-                Object holder = Class.forName(BUILDER).getField("E_TYPE2").get(null);
-                ivType = (EntityType<?>) holder.getClass().getMethod("get").invoke(holder);
-            } catch (ReflectiveOperationException | RuntimeException ex) {
-                return null;
-            }
-        }
-        return ivType;
+    static boolean isIv(Entity e) {
+        return e.getClass().getName().equals(BUILDER);
     }
 
     // ---- the carrier ----
@@ -347,10 +361,10 @@ public final class VehicleCarriers {
             if (c.entity.isRemoved()) { c.discardDisplays(); CARRIERS.remove(c.entity); continue; }
             c.syncDisplays();
         }
-        if (++tick % 20 != 0 || ivType() == null) return;
+        if (++tick % 20 != 0) return;
         for (ServerLevel level : e.getServer().getAllLevels()) {
             for (Entity en : level.getAllEntities()) {
-                if (en.getType() == ivType && !CARRIERS.containsKey(en) && en.hasData(BAY_DATA) && !en.getData(BAY_DATA).loads().isEmpty()) of(en);
+                if (isIv(en) && !CARRIERS.containsKey(en) && en.hasData(BAY_DATA) && !en.getData(BAY_DATA).loads().isEmpty()) of(en);
                 else if (en instanceof Display.BlockDisplay bd && bd.entityTags().contains(TAG) && !isTracked(bd)) bd.discard();
             }
         }
