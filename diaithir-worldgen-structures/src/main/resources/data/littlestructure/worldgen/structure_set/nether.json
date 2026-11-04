@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "littlestructure:nether_ruin",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 20,
+    "separation": 8,
+    "spread_type": "linear",
+    "salt": 433276
+  }
+}

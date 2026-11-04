@@ -1,0 +1,28 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 35,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 64
+  },
+  {
+   "item": "minecraft:piston",
+   "count": 38
+  },
+  {
+   "item": "minecraft:redstone",
+   "count": 64
+  },
+  {
+   "item": "minecraft:bucket",
+   "count": 7
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:engine_sacmmgo_c_l",
+  "count": 1
+ }
+}

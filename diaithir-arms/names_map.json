@@ -325,5 +325,237 @@
  },
  "transmog_table": {
   "english": "Transmog Table"
+ },
+ "self_bow": {
+  "diaithiris": null,
+  "english": "Self bow"
+ },
+ "gastraphetes": {
+  "diaithiris": null,
+  "english": "Gastraphetes"
+ },
+ "repeating_crossbow_zhuge_nu": {
+  "diaithiris": null,
+  "english": "Repeating crossbow (Zhuge nu)"
+ },
+ "yumi": {
+  "diaithiris": null,
+  "english": "Yumi"
+ },
+ "longbow_english": {
+  "diaithiris": null,
+  "english": "Longbow (English)"
+ },
+ "arbalest_steel_crossbow": {
+  "diaithiris": null,
+  "english": "Arbalest (steel crossbow)"
+ },
+ "stonebow_bullet_crossbow": {
+  "diaithiris": null,
+  "english": "Stonebow (bullet crossbow)"
+ },
+ "plains_bow": {
+  "diaithiris": null,
+  "english": "Plains bow"
+ },
+ "korean_horn_bow_gakgung": {
+  "diaithiris": null,
+  "english": "Korean horn bow (gakgung)"
+ },
+ "cranequin_crossbow": {
+  "diaithiris": null,
+  "english": "Cranequin crossbow"
+ },
+ "hungarian_magyar_bow": {
+  "diaithiris": null,
+  "english": "Hungarian Magyar bow"
+ },
+ "tibetan_crossbow": {
+  "diaithiris": null,
+  "english": "Tibetan crossbow"
+ },
+ "bhutanese_bamboo_bow": {
+  "diaithiris": null,
+  "english": "Bhutanese bamboo bow"
+ },
+ "nubian_self_bow": {
+  "diaithiris": null,
+  "english": "Nubian self bow"
+ },
+ "cretan_short_bow": {
+  "diaithiris": null,
+  "english": "Cretan short bow"
+ },
+ "sling": {
+  "diaithiris": null,
+  "english": "Sling"
+ },
+ "retiarius_net": {
+  "diaithiris": null,
+  "english": "Retiarius net"
+ },
+ "bolas": {
+  "diaithiris": null,
+  "english": "Bolas"
+ },
+ "blowgun": {
+  "diaithiris": null,
+  "english": "Blowgun"
+ },
+ "grenado": {
+  "diaithiris": null,
+  "english": "Grenado (hand grenade)"
+ },
+ "stielhandgranate": {
+  "diaithiris": null,
+  "english": "Stielhandgranate (Model 24)"
+ },
+ "mills_bomb": {
+  "diaithiris": null,
+  "english": "Mills bomb (No. 36M)"
+ },
+ "mk2_grenade": {
+  "diaithiris": null,
+  "english": "Mk 2 grenade (\"pineapple\")"
+ },
+ "f1_grenade": {
+  "diaithiris": null,
+  "english": "F1 grenade"
+ },
+ "rgd_33_grenade": {
+  "diaithiris": null,
+  "english": "RGD-33 grenade"
+ },
+ "m67_grenade": {
+  "diaithiris": null,
+  "english": "M67 grenade"
+ },
+ "molotov_cocktail": {
+  "diaithiris": null,
+  "english": "Molotov cocktail"
+ },
+ "satchel_charge": {
+  "diaithiris": null,
+  "english": "Satchel charge"
+ },
+ "bangalore_torpedo": {
+  "diaithiris": null,
+  "english": "Bangalore torpedo"
+ },
+ "balearic_sling": {
+  "diaithiris": null,
+  "english": "Balearic sling"
+ },
+ "inca_sling_huaraca": {
+  "diaithiris": null,
+  "english": "Inca sling (huaraca)"
+ },
+ "scorpio": {
+  "diaithiris": null,
+  "english": "Scorpio"
+ },
+ "ballista": {
+  "diaithiris": null,
+  "english": "Ballista"
+ },
+ "onager": {
+  "diaithiris": null,
+  "english": "Onager"
+ },
+ "battering_ram": {
+  "diaithiris": null,
+  "english": "Battering ram"
+ },
+ "trebuchet": {
+  "diaithiris": null,
+  "english": "Trebuchet"
+ },
+ "springald": {
+  "diaithiris": null,
+  "english": "Springald"
+ },
+ "bombard": {
+  "diaithiris": null,
+  "english": "Bombard"
+ },
+ "greek_fire_siphon": {
+  "diaithiris": null,
+  "english": "Greek fire siphon"
+ },
+ "hwacha": {
+  "diaithiris": null,
+  "english": "Hwacha"
+ },
+ "polybolos": {
+  "diaithiris": null,
+  "english": "Polybolos"
+ },
+ "cheiroballistra": {
+  "diaithiris": null,
+  "english": "Cheiroballistra"
+ },
+ "mons_meg": {
+  "diaithiris": null,
+  "english": "Great bombard (Mons Meg)"
+ },
+ "dardanelles_gun": {
+  "diaithiris": null,
+  "english": "Dardanelles Gun"
+ },
+ "culverin": {
+  "diaithiris": null,
+  "english": "Culverin"
+ },
+ "swivel_gun": {
+  "diaithiris": null,
+  "english": "Swivel gun"
+ },
+ "carronade": {
+  "diaithiris": null,
+  "english": "Carronade"
+ },
+ "napoleon_12_pounder": {
+  "diaithiris": null,
+  "english": "Napoleon 12-pounder"
+ },
+ "gribeauval_12_pounder": {
+  "diaithiris": null,
+  "english": "Gribeauval 12-pounder"
+ },
+ "armstrong_gun": {
+  "diaithiris": null,
+  "english": "Armstrong breech-loading gun"
+ },
+ "flak_36": {
+  "diaithiris": null,
+  "english": "Krupp 8.8 cm FlaK 36"
+ },
+ "qf_25_pounder": {
+  "diaithiris": null,
+  "english": "Ordnance QF 25-pounder"
+ },
+ "m101_howitzer": {
+  "diaithiris": null,
+  "english": "M101 105 mm howitzer"
+ },
+ "m777_howitzer": {
+  "diaithiris": null,
+  "english": "M777 howitzer"
+ },
+ "stokes_mortar": {
+  "diaithiris": null,
+  "english": "Mortar (Stokes)"
+ },
+ "katyusha_bm_13": {
+  "diaithiris": null,
+  "english": "Katyusha BM-13"
+ },
+ "paris_gun": {
+  "diaithiris": null,
+  "english": "Paris Gun"
+ },
+ "schwerer_gustav": {
+  "diaithiris": null,
+  "english": "Schwerer Gustav"
  }
 }

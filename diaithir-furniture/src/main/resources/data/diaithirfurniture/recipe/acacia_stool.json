@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:acacia_planks",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "PPP",
+  "S S"
+ ],
+ "result": {
+  "id": "diaithirfurniture:acacia_stool",
+  "count": 2
+ }
+}

@@ -40,6 +40,12 @@ final class ConverterBlock extends Block implements EntityBlock {
         return defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
     }
 
+        @Override protected boolean hasAnalogOutputSignal(BlockState state) { return true; }
+
+    @Override protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, net.minecraft.core.Direction dir) {
+        return level.getBlockEntity(pos) instanceof ConverterEntity be ? be.signal() : 0;
+    }
+
     @Override public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new ConverterEntity(pos, state); }
 
     @Override

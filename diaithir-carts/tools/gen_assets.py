@@ -24,6 +24,8 @@ PAL = {
     "bronze": {"rail": [(150, 88, 40), (196, 120, 60), (226, 150, 80)], "sleeper": [(70, 66, 62), (58, 55, 52)], "bolt": (230, 200, 140), "mid": (196, 120, 60), "on": (255, 170, 60)},
     "steel": {"rail": [(120, 130, 142), (170, 180, 192), (205, 214, 224)], "sleeper": [(50, 54, 60), (40, 44, 50)], "bolt": (110, 150, 210), "mid": (60, 110, 170), "on": (90, 190, 255)},
     "fast": {"rail": [(160, 168, 178), (225, 230, 236), (250, 252, 255)], "sleeper": [(36, 38, 42), (28, 30, 34)], "bolt": (210, 60, 50), "mid": (210, 50, 40), "on": (255, 90, 70)},
+    "narrow": {"rail": [(110, 96, 84), (150, 130, 112), (184, 160, 136)], "sleeper": [(92, 66, 44), (78, 56, 38)], "bolt": (200, 170, 120), "mid": (150, 130, 112), "on": (255, 190, 90)},
+    "dual": {"rail": [(120, 130, 142), (170, 180, 192), (205, 214, 224)], "sleeper": [(60, 52, 44), (48, 42, 36)], "bolt": (230, 200, 140), "mid": (150, 130, 112), "on": (255, 190, 90)},
 }
 
 
@@ -196,6 +198,10 @@ NAMES = {
     "steel_powered_rail": ("Sorvaleth", "Steel powered rail. A stronger boost than bronze, same stop when unpowered. Caps at 0.9 blocks per tick. Age V."),
     "fast_rail": ("Zephrakund", "High-speed rail. Carts ride it up to 1.2 blocks per tick, three times vanilla speed. Keep curves gentle. Age VI."),
     "fast_powered_rail": ("Zephravoss", "High-speed powered rail. The strongest boost, caps at 1.2 blocks per tick. Age VI."),
+    "narrow_rail": ("Narrow-Gauge Rail", "Narrow-gauge rail (3 ft). Cheap and light: it takes tight curves and steep grades, so it suits mountains and mines, but carts cap at 0.5 blocks per tick and narrow vehicles carry about 40% of the payload and are limited in weight. Does not connect with standard gauge. Age III."),
+    "narrow_powered_rail": ("Narrow-Gauge Powered Rail", "Narrow-gauge powered rail. Boosts a narrow-gauge vehicle when powered, stops it when not. Caps at 0.5 blocks per tick. Age III."),
+    "dual_rail": ("Dual-Gauge Rail", "Three rails laid so both gauges run on one track. Narrow and standard vehicles both pass, at the narrow cap of 0.5 blocks per tick and with the standard gauge's wide curves. Use it at yards and transfer stations. Age V."),
+    "dual_powered_rail": ("Dual-Gauge Powered Rail", "Dual-gauge powered rail. Boosts vehicles of either gauge when powered. Age V."),
     "station_rail": ("Haldurmek", "Station rail. Stops a cart that rolls onto it and holds it until the rail is powered, or until its timer ends. Use it bare-handed to cycle the timer: signal only, 2, 5, 15 or 60 seconds. A coupled follower follows its leader instead. Age V."),
     "coupling_chain": ("Quelvarith", "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."),
     "chain_cutters": ("Snithrekel", "Chain cutters. Sneak and use on a cart to cut its link and get the chain back. Age V."),
@@ -210,8 +216,8 @@ with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as 
     f.write("\n")
 
 with open(os.path.join(D, "age_gate.json"), "w") as f:
-    json.dump({"tier1": {"age": 3, "items": [f"{NS}:bronze_rail", f"{NS}:bronze_powered_rail"]},
-               "tier2": {"age": 5, "items": [f"{NS}:steel_rail", f"{NS}:steel_powered_rail", f"{NS}:station_rail", f"{NS}:coupling_chain", f"{NS}:chain_cutters"]},
+    json.dump({"tier1": {"age": 3, "items": [f"{NS}:bronze_rail", f"{NS}:bronze_powered_rail", f"{NS}:narrow_rail", f"{NS}:narrow_powered_rail"]},
+               "tier2": {"age": 5, "items": [f"{NS}:steel_rail", f"{NS}:steel_powered_rail", f"{NS}:dual_rail", f"{NS}:dual_powered_rail", f"{NS}:station_rail", f"{NS}:coupling_chain", f"{NS}:chain_cutters"]},
                "tier3": {"age": 6, "items": [f"{NS}:fast_rail", f"{NS}:fast_powered_rail"]}}, f, indent=2)
     f.write("\n")
 
@@ -237,6 +243,8 @@ def shaped(name, pattern, key, count=1):
 shaped("bronze_rail", ["C C", "CSC", "C C"], {"C": "minecraft:copper_ingot", "S": "minecraft:stick"}, 16)
 shaped("steel_rail", ["RRR", "RIR", "RRR"], {"R": f"{NS}:bronze_rail", "I": "minecraft:iron_ingot"}, 8)
 shaped("fast_rail", ["RRR", "RDR", "RRR"], {"R": f"{NS}:steel_rail", "D": "minecraft:diamond"}, 8)
+shaped("narrow_rail", ["C C", " S ", "CCC"], {"C": "minecraft:copper_ingot", "S": "minecraft:stick"}, 24)
+recipe("dual_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_rail", f"{NS}:narrow_rail", "minecraft:iron_nugget"]}, 2)
 for t in PAL:
     shaped(f"{t}_powered_rail", ["G G", "GTG", " R "], {"G": "minecraft:gold_ingot", "T": f"{NS}:{t}_rail", "R": "minecraft:redstone"}, 2)
 recipe("station_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_powered_rail", "minecraft:clock"]})

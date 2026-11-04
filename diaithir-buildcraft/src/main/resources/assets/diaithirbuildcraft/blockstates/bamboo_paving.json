@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft:block/bamboo_paving"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft:block/bamboo_paving_top"
+  },
+  "type=double": {
+   "model": "minecraft:block/bamboo_planks"
+  }
+ }
+}

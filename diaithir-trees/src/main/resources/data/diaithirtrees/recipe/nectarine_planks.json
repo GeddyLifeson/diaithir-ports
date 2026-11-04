@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:nectarine_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:nectarine_planks",
+  "count": 4
+ }
+}

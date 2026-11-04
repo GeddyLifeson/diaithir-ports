@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "C": "minecraft:sculk_catalyst",
+        "E": "apothic_enchanting:echoing_deepshelf",
+        "S": "minecraft:sculk",
+        "W": "apothic_enchanting:warden_tendril"
+    },
+    "pattern": [
+        " W ",
+        "SES",
+        "SCS"
+    ],
+    "result": {
+        "id": "apothic_enchanting:echoing_sculkshelf"
+    }
+}

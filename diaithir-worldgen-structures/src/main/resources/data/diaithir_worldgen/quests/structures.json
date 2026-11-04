@@ -1968,5 +1968,335 @@
    "structure": "diaithir_worldgen:weathered_waystation"
   },
   "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_altar_shrine",
+  "title": "Find Nether Altar Shrine",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_altar_shrine"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_blackstone_hut",
+  "title": "Find Nether Blackstone Hut",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_blackstone_hut"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_blackstone_ring",
+  "title": "Find Nether Blackstone Ring",
+  "age": "VII",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_blackstone_ring"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_blade_monument",
+  "title": "Find Nether Blade Monument",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_blade_monument"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_bone_dune_skull",
+  "title": "Find Nether Bone Dune Skull",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_bone_dune_skull"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_boneyard",
+  "title": "Find Nether Boneyard",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_boneyard"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_brick_bastion",
+  "title": "Find Nether Brick Bastion",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_brick_bastion"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_brick_manor",
+  "title": "Find Nether Brick Manor",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_brick_manor"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_brick_ring",
+  "title": "Find Nether Brick Ring",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_brick_ring"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_broken_gate",
+  "title": "Find Nether Broken Gate",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_broken_gate"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_citadel",
+  "title": "Find Nether Citadel",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_citadel"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_copper_spire",
+  "title": "Find Nether Copper Spire",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_copper_spire"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_crimson_grove_hall",
+  "title": "Find Nether Crimson Grove Hall",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_crimson_grove_hall"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_crimson_smithy",
+  "title": "Find Nether Crimson Smithy",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_crimson_smithy"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_grand_arena",
+  "title": "Find Nether Grand Arena",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_grand_arena"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_lava_well",
+  "title": "Find Nether Lava Well",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_lava_well"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_magma_pool",
+  "title": "Find Nether Magma Pool",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_magma_pool"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_micro_blackstone",
+  "title": "Find Nether Micro Blackstone",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_micro_blackstone"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_micro_brick",
+  "title": "Find Nether Micro Brick",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_micro_brick"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_overgrowth_ruin",
+  "title": "Find Nether Overgrowth Ruin",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_overgrowth_ruin"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_pillar_court",
+  "title": "Find Nether Pillar Court",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_pillar_court"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_rail_depot",
+  "title": "Find Nether Rail Depot",
+  "age": "I",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_rail_depot"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_skull_colossus",
+  "title": "Find Nether Skull Colossus",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_skull_colossus"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_soul_pyre",
+  "title": "Find Nether Soul Pyre",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_soul_pyre"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_span_bridge",
+  "title": "Find Nether Span Bridge",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_span_bridge"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_wall_maze",
+  "title": "Find Nether Wall Maze",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_wall_maze"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_warped_cottage",
+  "title": "Find Nether Warped Cottage",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_warped_cottage"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_warped_dome",
+  "title": "Find Nether Warped Dome",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_warped_dome"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_warped_grove_hall",
+  "title": "Find Nether Warped Grove Hall",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_warped_grove_hall"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_warped_tarn",
+  "title": "Find Nether Warped Tarn",
+  "age": "II",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_warped_tarn"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_wart_terrace",
+  "title": "Find Nether Wart Terrace",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_wart_terrace"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_watch_tower",
+  "title": "Find Nether Watch Tower",
+  "age": "IV",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_watch_tower"
+  },
+  "next": null
+ },
+ {
+  "id": "diaithir_worldgen:find/nether_wyrm_arena",
+  "title": "Find Nether Wyrm Arena",
+  "age": "III",
+  "goal": {
+   "type": "locate_structure",
+   "structure": "diaithir_worldgen:nether_wyrm_arena"
+  },
+  "next": null
  }
 ]
