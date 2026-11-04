@@ -67658,8 +67658,9 @@ file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
 hash = "123c12803fa3cce0201092cdcda81d73ef177cc5f2996c86948383fa5d5caa08"
 
 [[files]]
-file = "mods/diaithir-server-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "4532a9d679c86403a62d5fafcf15c88b934125fede31a0e5b1d22cc228024dd6"
+file = "mods/diaithir-server-ext-suite-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "4c700c10aac32f978f5d12e60018d3c3d0ed07c29fcab9dd439f7a11cd56e610"
+metafile = true
 
 [[files]]
 file = "mods/diaithir-tech-ext-suite-neoforge-26.1.2-1.0.0.jar"
