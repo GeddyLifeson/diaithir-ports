@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "diaithircarts:block/cart_loader_top",
+    "front": "diaithircarts:block/cart_loader_front_in",
+    "side": "diaithircarts:block/cart_loader_side"
+  }
+}

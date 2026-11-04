@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,unload=false": {
+      "model": "diaithircarts:block/cart_loader_load"
+    },
+    "facing=north,unload=true": {
+      "model": "diaithircarts:block/cart_loader_unload"
+    },
+    "facing=east,unload=false": {
+      "model": "diaithircarts:block/cart_loader_load",
+      "y": 90
+    },
+    "facing=east,unload=true": {
+      "model": "diaithircarts:block/cart_loader_unload",
+      "y": 90
+    },
+    "facing=south,unload=false": {
+      "model": "diaithircarts:block/cart_loader_load",
+      "y": 180
+    },
+    "facing=south,unload=true": {
+      "model": "diaithircarts:block/cart_loader_unload",
+      "y": 180
+    },
+    "facing=west,unload=false": {
+      "model": "diaithircarts:block/cart_loader_load",
+      "y": 270
+    },
+    "facing=west,unload=true": {
+      "model": "diaithircarts:block/cart_loader_unload",
+      "y": 270
+    }
+  }
+}
