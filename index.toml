@@ -67598,18 +67598,8 @@ file = "mods/diaithir-bosses-neoforge-26.1.2-1.0.0.jar"
 hash = "3e4cad7bc964e3e03a71952f0819b2b7c28d7b51a1fada9b438b88f69cbbcb6b"
 
 [[files]]
-file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "e0c4162d1a3280b86e14b6c65aabdee4d5a1dbb5c3e5304ab35ba591eafaa2fa"
-metafile = true
-
-[[files]]
-file = "mods/diaithir-client-ext-suite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "4f374cdc672bdc4b847b13046f51c62fcab95d3fa4b6dcba204dc82124c12c78"
-metafile = true
-
-[[files]]
 file = "mods/diaithir-client-suite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "3f9f851ed499ec5765edacb88519870e09a5783237d6748e0c229da7698dafe4"
+hash = "978d70a7064a453ca38fba8695e5a45574213392b838696e7193ab9a84689afe"
 metafile = true
 
 [[files]]
@@ -67634,22 +67624,12 @@ hash = "2be6757f11fee031263f59db61f27ced0e6ea50345be43594af8f031aa9c2087"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-entity-animation-client-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "4a8875e9429c18e6e21d7f5633089b9185d0c8aaaa7286cba369bf16970d4650"
-metafile = true
-
-[[files]]
 file = "mods/diaithir-entity-animation-neoforge-26.1.2-1.0.2.jar"
 hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
 hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
-
-[[files]]
-file = "mods/diaithir-inventory-ui-rewrite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "233e5a0dfa528f2ffcd3246859e236dcd0896f476aec2d454b0116fc92d64137"
-metafile = true
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -67666,11 +67646,11 @@ hash = "ab391fb6f4332268fbb27ab334bb4a8ba49843faae9cd81987db61f64c6227f5"
 
 [[files]]
 file = "mods/diaithir-realms-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "4fc988eb8d7cb821375d657fa862ee2676541a5bd50a480b22ce1339962ce734"
+hash = "8b7b913438863622265e772734d0c9d4eae769f300158fa84d1ad59ce85bd456"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "a4d671b6b3bd275acef3bcb2b00d22a3c93cfbf456716c7b47d4416ae9d01493"
+hash = "9348d49e6faaf9d402823d1948c4825a58fee5be813642fcf9a418fd62277059"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
@@ -67683,7 +67663,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-tech-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "fc6f1ae44064b3ef85fabcb9255e85494fe92496cad84e937dc30997e125e297"
+hash = "3dcd126e1cca11550a6a64daf73b8de90b599fb2a58ab1512fde4d92d0ce455b"
 
 [[files]]
 file = "mods/diaithir-world-suite-neoforge-26.1.2-1.0.0.jar"
@@ -67908,11 +67888,6 @@ metafile = true
 [[files]]
 file = "mods/the_bumblezone-7.18.4_26.1.2-neoforge.pw.toml"
 hash = "96adf55a3652b757dc1bff3cefba73415f35100d709d5364678ab99421af55f0"
-metafile = true
-
-[[files]]
-file = "mods/titanium-26.1.2-4.0.12.pw.toml"
-hash = "bf69be1e57fb8ad8d512a1415d47d0d03a8699e12fe735dabf8adec0b9acc518"
 metafile = true
 
 [[files]]
