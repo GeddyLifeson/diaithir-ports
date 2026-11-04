@@ -4,5 +4,9 @@
  "megamachines.cab.module_refused": "This machine cannot take an autonomy module, or already has one",
  "megamachines.cab.status.uncrewed": "%s: no crew, will not run",
  "megamachines.cab.status.crewed": "%s: crewed",
- "megamachines.cab.status.autonomous": "%s: autonomous"
+ "megamachines.cab.status.autonomous": "%s: autonomous",
+ "block.megamachines.site_office": "Site Office",
+ "block.megamachines.depot": "Site Depot",
+ "megamachines.site.status": "%s: stage %s, %s, function %s",
+ "megamachines.site.started": "Site started: %s"
 }
