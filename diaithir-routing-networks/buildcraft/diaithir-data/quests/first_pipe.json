@@ -1,0 +1,9 @@
+{
+ "id": "diaithirbuildcraft:quest/first_pipe",
+ "title": "Lay your first pipe",
+ "steps": [
+  "Craft a stone engine and a wooden pipe",
+  "Move items from a chest to a chest"
+ ],
+ "next": "diaithirbuildcraft:quest/first_quarry"
+}

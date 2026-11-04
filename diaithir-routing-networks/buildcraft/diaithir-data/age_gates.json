@@ -1,0 +1,19 @@
+{
+ "namespaces": {
+  "buildcraftcore": "IV",
+  "buildcrafttransport": "IV",
+  "buildcraftenergy": "IV",
+  "buildcraftfactory": "IV",
+  "buildcraftbuilders": "IV",
+  "buildcraftsilicon": "VI",
+  "buildcraftrobotics": "VI",
+  "buildcraftlib": "IV"
+ },
+ "items": {
+  "buildcraftenergy:engine_stone": "IV",
+  "buildcraftenergy:engine_iron": "V",
+  "buildcraftbuilders:quarry": "V",
+  "buildcraftsilicon:assembly_table": "VI"
+ },
+ "_note": "Draft Ages for Marlon/tech-tree thread to confirm; rows are Age numerals as in tech_ages.json."
+}
