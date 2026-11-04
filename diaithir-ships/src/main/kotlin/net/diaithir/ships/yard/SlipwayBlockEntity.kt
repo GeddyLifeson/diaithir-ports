@@ -38,6 +38,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     fun chooseYard(id: String): Boolean {
         val d = YardRegistry.yard(id).orElse(null) ?: return false
         yardId = id
+        rawSaved = null
         build = BuildState.start(d); log.clear(); placedBlocks.clear(); setChanged(); return true
     }
 
@@ -209,13 +210,16 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
             val p = e.split(",", limit = 4)
             if (p.size == 4) { val x = p[0].toIntOrNull(); val y = p[1].toIntOrNull(); val z = p[2].toIntOrNull(); if (x != null && y != null && z != null) placedBlocks[BlockPos(x, y, z)] = p[3] }
         }
+        val retain = { rawSaved = Triple(listOf("Yard", "Placed", "Log").associateWith { input.getStringOr(it, "") }, input.getIntOr("Stage", 0), input.getIntOr("Ticks", 0)); build = null }
         val d = def
-        if (d == null) { build = null; return }
+        if (d == null) { retain(); return } // yard definition unavailable: keep the saved fields so the next save does not drop progress
         val stage = input.getIntOr("Stage", 0)
-        val parts = input.getStringOr("Log", "").split(",").filter { it.isNotEmpty() }.mapNotNull { e ->
+        val entries = input.getStringOr("Log", "").split(",").filter { it.isNotEmpty() }
+        val parts = entries.mapNotNull { e ->
             val (st, item) = e.split(":", limit = 2).let { Pair(it[0].toInt(), it[1]) }
             YardRegistry.part(item).orElse(null)?.let { Pair(st, it) }
         }
+        if (parts.size != entries.size) { retain(); return } // a saved part is unresolved: hold the build (no work, no launch) and keep the raw data until it resolves on a later load
         log.clear(); log.addAll(parts)
         val b = BuildState.restore(d, stage, input.getIntOr("Ticks", 0), parts.filter { it.first < stage }.map { it.second }, parts.filter { it.first >= stage }.map { it.second })
         build = b
