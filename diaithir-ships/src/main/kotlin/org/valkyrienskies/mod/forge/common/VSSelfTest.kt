@@ -128,13 +128,31 @@ object VSSelfTest {
         yardRun(level, "sloop_drydock", 100)
         yardPool(level, 10)
         yardRun(level, "motor_launch_heavy_water", 10)
+        yardObstruction(level)
         yardPool(level, -20)
         yardRun(level, "motor_launch_slipway_water", -20, "arcane_motor")
         yardShip = yardShips.getOrNull(0); yardShip2 = yardShips.getOrNull(1)
     }
 
     private val yardShips = ArrayList<ServerShip>()
+    private val restSum = HashMap<Int, Double>()
+    private val maxSpeed = HashMap<Int, Double>()
     private var yardSaveBe: net.diaithir.ships.yard.SlipwayBlockEntity? = null
+
+    /** A replaced hull block must not be moved into the ship, and launch is refused while a hull cell is missing. */
+    private fun yardObstruction(level: net.minecraft.server.level.ServerLevel) {
+        val ctrl = BlockPos(-60, 122, 40)
+        for (x in -66..-54) for (z in 38..58) level.setBlock(BlockPos(x, 121, z), Blocks.STONE.defaultBlockState(), 3)
+        level.setBlock(ctrl, net.diaithir.ships.yard.ShipYardBlocks.SLIPWAY.get().defaultBlockState(), 3)
+        val be = level.getBlockEntity(ctrl) as net.diaithir.ships.yard.SlipwayBlockEntity
+        be.chooseYard("vs_yard:motor_launch_slipway_water")
+        level.setBlock(ctrl.offset(3, 0, 0), net.diaithir.ships.yard.ShipYardBlocks.STEAM_CRANE.get().defaultBlockState(), 3)
+        installAll(level, be, 99)
+        val hull = be.hullBlocks()
+        val victim = hull.first { level.getBlockState(it).block == Blocks.OAK_PLANKS }
+        level.setBlock(victim, Blocks.DIRT.defaultBlockState(), 3)
+        log.info("selftest-yard-obstruct: hull {} -> {} after replacing one block, missing={}, launch={}", hull.size, be.hullBlocks().size, be.missingCells().size, be.launch())
+    }
 
     private fun yardRun(level: net.minecraft.server.level.ServerLevel, yardName: String, ox: Int, prefer: String? = null) {
         val ctrl = BlockPos(ox, 122, 40)
@@ -238,6 +256,15 @@ object VSSelfTest {
         val server = event.server
         val tick = server.tickCount
         val level = server.getLevel(Level.OVERWORLD) ?: return
+        // hulls at rest (sloop, motor, heavy motor; thrust and anchors are anchors released at 300, thrust at 700): mean |vy| over ticks 601..700 must be near zero
+        if (yardPhase == "" && tick in 601..700) {
+            for (n in intArrayOf(0, 1, 3)) yardShips.getOrNull(n)?.let { restSum[n] = (restSum[n] ?: 0.0) + Math.abs(it.velocity.y()) }
+            if (tick == 700) for ((n, sum) in restSum.toSortedMap()) log.info("selftest-yard-rest: ship{} mean|vy|={} -> {}", n, sum / 100.0, if (sum / 100.0 < 0.05) "PASS" else "FAIL")
+        }
+        if (yardPhase == "" && tick in 701..900) {
+            for (n in intArrayOf(1, 3, 4)) yardShips.getOrNull(n)?.let { maxSpeed[n] = maxOf(maxSpeed[n] ?: 0.0, it.velocity.length()) }
+            if (tick == 900) log.info("selftest-yard-thrust: max speed after thrust release {}", maxSpeed.toSortedMap())
+        }
         when (tick) {
             2 -> preloadMixinTargets()
             20 -> {
@@ -283,7 +310,7 @@ object VSSelfTest {
             }
             in 251..299 -> if (tick % 6 == 0) log.info("selftest-yard-ab: tick={} light(3010kg) speed={} z={} | heavy(6010kg) speed={} z={}", tick,
                 yardShips.getOrNull(1)?.velocity?.length(), yardShips.getOrNull(1)?.transform?.position?.z(), yardShips.getOrNull(3)?.velocity?.length(), yardShips.getOrNull(3)?.transform?.position?.z())
-            in 150..400 -> if (tick % 50 == 0) { if (tick == 250) yardShip?.let { y -> (shipWorldOf(level).loadedShips.getById(y.id))?.eurekaControl()?.anchorsActive = 0 }; if (tick == 250) yardShips.getOrNull(4)?.let { a -> shipWorldOf(level).loadedShips.getById(a.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.let { it2 -> log.info("selftest-yard: arcane engine={} accepts mana={} diesel={} addMana={} addDiesel={} stored={}", it2.engineId, net.diaithir.ships.yard.ArcaneFuel.accepts(it2.engineId, "mana"), net.diaithir.ships.yard.ArcaneFuel.accepts(it2.engineId, "diesel"), it2.addFuel("mana", 2_000_000.0), it2.addFuel("diesel", 5.0), it2.fuelStored) } }; if (tick == 250) listOf(yardShip2, yardShips.getOrNull(3), yardShips.getOrNull(4)).forEach { it?.let { s -> shipWorldOf(level).loadedShips.getById(s.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.manualThrottle = 1.0 } }; for ((n, ys) in listOf(yardShip, yardShip2, yardShips.getOrNull(2), yardShips.getOrNull(3), yardShips.getOrNull(4)).withIndex()) ys?.let { log.info("selftest-yard: ship{} tick={} static={} pos={} vel={} ctl={}", n, tick, it.isStatic, it.transform.position, it.velocity, shipWorldOf(level).loadedShips.getById(it.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.let { c -> "buoyApplied=" + c.lastBuoyancyApplied + " thrustApplied=" + c.lastThrustApplied + " cover=" + c.cover + " aabbY=" + it.worldAABB.minY() + ".." + it.worldAABB.maxY() + " waterAtCentre=" + level.getFluidState(BlockPos(70, 120, 46)).isEmpty + " overlap=" + c.lastOverlap + " physMass=" + c.physMass + " physSpeed=" + c.physSpeed + " physStatic=" + c.physStatic + " engine=" + c.engineId + " fuel=" + c.fuelStored }) } ; tournamentShip?.let { t -> log.info("selftest-tournament: tick={} ship y={} {}", tick, t.transform.position.y(), shipWorldOf(level).loadedShips.getById(t.id)?.let { l -> org.valkyrienskies.tournament.ship.TournamentShips.getOrCreate(l).debugCounts() }) } ; eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } }
+            in 150..900 -> if (tick % 50 == 0) { if (tick == 300) yardShip?.let { y -> (shipWorldOf(level).loadedShips.getById(y.id))?.eurekaControl()?.anchorsActive = 0 }; if (tick == 700) yardShips.getOrNull(4)?.let { a -> shipWorldOf(level).loadedShips.getById(a.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.let { it2 -> log.info("selftest-yard: arcane engine={} accepts mana={} diesel={} addMana={} addDiesel={} stored={}", it2.engineId, net.diaithir.ships.yard.ArcaneFuel.accepts(it2.engineId, "mana"), net.diaithir.ships.yard.ArcaneFuel.accepts(it2.engineId, "diesel"), it2.addFuel("mana", 2_000_000.0), it2.addFuel("diesel", 5.0), it2.fuelStored) } }; if (tick == 700) listOf(yardShip2, yardShips.getOrNull(3), yardShips.getOrNull(4)).forEach { it?.let { s -> shipWorldOf(level).loadedShips.getById(s.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.manualThrottle = 1.0 } }; for ((n, ys) in listOf(yardShip, yardShip2, yardShips.getOrNull(2), yardShips.getOrNull(3), yardShips.getOrNull(4)).withIndex()) ys?.let { log.info("selftest-yard: ship{} tick={} static={} pos={} vel={} ctl={}", n, tick, it.isStatic, it.transform.position, it.velocity, shipWorldOf(level).loadedShips.getById(it.id)?.getAttachment(net.diaithir.ships.yard.YardShipControl::class.java)?.let { c -> "buoyApplied=" + c.lastBuoyancyApplied + " thrustApplied=" + c.lastThrustApplied + " cover=" + c.cover + " aabbY=" + it.worldAABB.minY() + ".." + it.worldAABB.maxY() + " waterAtCentre=" + level.getFluidState(BlockPos(70, 120, 46)).isEmpty + " overlap=" + c.lastOverlap + " physMass=" + c.physMass + " physSpeed=" + c.physSpeed + " physStatic=" + c.physStatic + " engine=" + c.engineId + " fuel=" + c.fuelStored }) } ; tournamentShip?.let { t -> log.info("selftest-tournament: tick={} ship y={} {}", tick, t.transform.position.y(), shipWorldOf(level).loadedShips.getById(t.id)?.let { l -> org.valkyrienskies.tournament.ship.TournamentShips.getOrCreate(l).debugCounts() }) } ; eurekaShip?.let { log.info("selftest-eureka: tick={} ship y={} vel={}", tick, it.transform.position.y(), it.velocity) } }
             in 140..400 -> if (tick % 40 == 0) ship?.let {
                 log.info("selftest: tick={} ship y={} (start {}) vel={} all={} loaded={} static={} mass={} chunkLoaded={} block={}", tick, it.transform.position.y(), startY, it.velocity, shipWorldOf(level).allShips.size, shipWorldOf(level).loadedShips.size, it.isStatic, it.inertiaData.mass, level.chunkSource.getChunkNow(it.chunkClaim.getCenterBlockCoordinates(level.yRange).x shr 4, it.chunkClaim.getCenterBlockCoordinates(level.yRange).z shr 4) != null, level.getBlockState(it.chunkClaim.getCenterBlockCoordinates(level.yRange).let { c -> net.minecraft.core.BlockPos(c.x, c.y, c.z) }))
             }

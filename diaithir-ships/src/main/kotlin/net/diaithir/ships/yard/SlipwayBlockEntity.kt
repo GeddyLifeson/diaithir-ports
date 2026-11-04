@@ -23,7 +23,9 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     var yardId: String = ""
     var build: BuildState? = null
     /** Hull cells this yard actually placed; only these go into the ship (an existing block in a hull cell is left alone). */
-    private val placedBlocks = HashSet<BlockPos>()
+    private val placedBlocks = HashMap<BlockPos, String>()
+    /** Saved data kept verbatim while the carts API is absent, so it survives until the API is back. */
+    private var rawSaved: Triple<Map<String, String>, Int, Int>? = null
     val footprint: YardDef.Footprint get() = def?.footprint() ?: YardDef.Footprint(5, 10, 5)
     var lastStats: Stats? = null
     var lastShipId: Long = -1
@@ -136,10 +138,10 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     private fun put(lvl: ServerLevel, c: Cell) {
         val pos = worldPos(c)
         val cur = lvl.getBlockState(pos)
-        if (!cur.isAir && cur.block !is LiquidBlock) return
+        if (!cur.isAir && cur.block !is LiquidBlock) { if (placedBlocks[pos] == null) logger.warn("vs_yard: hull cell {} obstructed by {}", pos, BuiltInRegistries.BLOCK.getKey(cur.block)); return }
         val blk = BuiltInRegistries.BLOCK.getValue(Identifier.parse(c.block))
         if (blk === Blocks.AIR) return
-        if (lvl.setBlock(pos, blk.defaultBlockState(), 3)) { placedBlocks.add(pos.immutable()); setChanged() }
+        if (lvl.setBlock(pos, blk.defaultBlockState(), 3)) { placedBlocks[pos.immutable()] = c.block; setChanged() }
     }
 
     private fun allCells(): List<Cell> {
@@ -152,10 +154,22 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         return out
     }
 
+    /** True while the block at [pos] is still the one this yard placed there (a replaced block is not ours to move into the ship). */
+    private fun isPlaced(lvl: net.minecraft.world.level.Level, pos: BlockPos): Boolean {
+        val id = placedBlocks[pos] ?: return false
+        return BuiltInRegistries.BLOCK.getKey(lvl.getBlockState(pos).block).toString() == id
+    }
+
+    /** Hull cells that are not placed: obstructed by another block, replaced after placing, or not laid yet. */
+    fun missingCells(): List<BlockPos> {
+        val lvl = level ?: return emptyList()
+        return allCells().filter { BuiltInRegistries.BLOCK.getValue(Identifier.parse(it.block)) !== Blocks.AIR }.map { worldPos(it) }.filter { !isPlaced(lvl, it) }
+    }
+
     /** The finished hull's blocks that exist in the world, for rollout. */
     fun hullBlocks(): Set<BlockPos> {
         val lvl = level ?: return emptySet()
-        return allCells().map { worldPos(it) }.filter { it in placedBlocks }.filter { val s = lvl.getBlockState(it); !s.isAir && s.block !is LiquidBlock }.toSet()
+        return allCells().map { worldPos(it) }.filter { isPlaced(lvl, it) }.filter { val s = lvl.getBlockState(it); !s.isAir && s.block !is LiquidBlock }.toSet()
     }
 
     /** Roll out through the registered RolloutHook (ShipAssembler -> VS2 ship). Returns the ship id. */
@@ -163,6 +177,8 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         val b = build ?: return null
         val lvl = level as? ServerLevel ?: return null
         if (!b.complete()) return null
+        syncBlocks() // lays cells whose obstruction was cleared after completion
+        missingCells().let { if (it.isNotEmpty()) { logger.warn("vs_yard: launch refused, {} hull cell(s) not placed (obstructed or replaced), first at {}", it.size, it.first()); return null } }
         siteCheck()?.let { logger.warn("vs_yard: launching despite site check: {}", it) }
         val ship = YardRegistry.finish(yardId, lvl, worldPosition, b) as? org.valkyrienskies.core.api.ships.ServerShip ?: return null
         lastStats = b.stats(); lastShipId = ship.id
@@ -172,8 +188,9 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
 
     override fun saveAdditional(output: ValueOutput) {
         super.saveAdditional(output)
+        rawSaved?.let { r -> r.first.forEach { (k, v) -> output.putString(k, v) }; output.putInt("Stage", r.second); output.putInt("Ticks", r.third); return } // carts API absent: write back what was loaded
         output.putString("Yard", yardId)
-        output.putString("Placed", placedBlocks.joinToString(";") { "${it.x},${it.y},${it.z}" })
+        output.putString("Placed", placedBlocks.entries.joinToString(";") { "${it.key.x},${it.key.y},${it.key.z},${it.value}" })
         val b = build ?: return
         output.putInt("Stage", b.stageIndex()); output.putInt("Ticks", b.progressTicks())
         output.putString("Log", log.joinToString(",") { "${it.first}:${it.second.item()}" })
@@ -181,11 +198,16 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
 
     override fun loadAdditional(input: ValueInput) {
         super.loadAdditional(input)
+        if (!ShipYardMod.apiPresent) {
+            rawSaved = Triple(listOf("Yard", "Placed", "Log").associateWith { input.getStringOr(it, "") }, input.getIntOr("Stage", 0), input.getIntOr("Ticks", 0))
+            return
+        }
+        rawSaved = null
         yardId = input.getStringOr("Yard", "")
         placedBlocks.clear()
         input.getStringOr("Placed", "").split(";").forEach { e ->
-            val p = e.split(",")
-            if (p.size == 3) { val x = p[0].toIntOrNull(); val y = p[1].toIntOrNull(); val z = p[2].toIntOrNull(); if (x != null && y != null && z != null) placedBlocks.add(BlockPos(x, y, z)) }
+            val p = e.split(",", limit = 4)
+            if (p.size == 4) { val x = p[0].toIntOrNull(); val y = p[1].toIntOrNull(); val z = p[2].toIntOrNull(); if (x != null && y != null && z != null) placedBlocks[BlockPos(x, y, z)] = p[3] }
         }
         val d = def
         if (d == null) { build = null; return }

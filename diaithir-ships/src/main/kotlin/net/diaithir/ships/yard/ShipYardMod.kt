@@ -68,11 +68,15 @@ object ShipYardMod {
             val bb = ship.worldAABB
             val cx = Math.floor((bb.minX() + bb.maxX()) / 2).toInt(); val cz = Math.floor((bb.minZ() + bb.maxZ()) / 2).toInt()
             val y0 = Math.floor(bb.minY()).toInt(); val y1 = Math.ceil(bb.maxY()).toInt()
-            var wet = 0
             // no loaded chunk under the ship: keep the last measured cover instead of treating the sample as dry
             if (level.hasChunkAt(net.minecraft.core.BlockPos(cx, y0, cz))) {
-                for (y in y0 until y1) if (!level.getFluidState(net.minecraft.core.BlockPos(cx, y, cz)).isEmpty) wet++
-                c.cover = if (y1 > y0) wet.toDouble() / (y1 - y0) else 0.0
+                // continuous draft: the water surface (top wet block plus its fluid height) against the hull's height, so the lift changes smoothly with depth
+                var surface = Double.NEGATIVE_INFINITY
+                for (y in y1 downTo y0) {
+                    val bp = net.minecraft.core.BlockPos(cx, y, cz); val fs = level.getFluidState(bp)
+                    if (!fs.isEmpty) { surface = y + fs.getHeight(level, bp).toDouble(); break }
+                }
+                c.cover = if (surface == Double.NEGATIVE_INFINITY || bb.maxY() <= bb.minY()) 0.0 else ((surface - bb.minY()) / (bb.maxY() - bb.minY())).coerceIn(0.0, 1.0)
             }
             c.throttle = ship.getAttachment(org.valkyrienskies.mod.api.SeatedControllingPlayer::class.java)?.forwardImpulse?.toDouble()?.coerceIn(0.0, 1.0) ?: 0.0
             if (c.engineId.isNotEmpty() && c.fuelStored > 0.0) {

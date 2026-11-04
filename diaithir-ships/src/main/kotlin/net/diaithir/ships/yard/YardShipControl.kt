@@ -49,13 +49,17 @@ class YardShipControl : ShipPhysicsListener {
         val cover = this.cover.coerceIn(0.0, 1.0)
         lastOverlap = physShip.liquidOverlap; physMass = physShip.mass; physSpeed = physShip.velocity.length(); physStatic = physShip.isStatic
         lastBuoyancyApplied = buoyancyN * cover
-        if (lastBuoyancyApplied > 0) physShip.applyInvariantForce(Vector3d(0.0, lastBuoyancyApplied, 0.0))
+        // the draft-proportional lift is a spring; damp the vertical motion in water (about critical for a hull this size) so the ship settles
+        val damping = if (cover > 0.0) -physShip.velocity.y() * physShip.mass * WATER_DAMPING else 0.0
+        if (lastBuoyancyApplied > 0 || damping != 0.0) physShip.applyInvariantForce(Vector3d(0.0, lastBuoyancyApplied + damping, 0.0))
         val t = if (engineId.isNotEmpty() && fuelStored <= 0.0) 0.0 else maxOf(throttle, manualThrottle).coerceIn(0.0, 1.0)
         lastThrustApplied = thrustN * t
         if (lastThrustApplied > 0) physShip.applyInvariantForce(physShip.transform.shipToWorld.transformDirection(Vector3d(0.0, 0.0, lastThrustApplied), Vector3d()))
     }
 
     companion object {
+        /** Vertical damping rate in water (1/s). */
+        const val WATER_DAMPING = 2.0
         @JvmField val pending = java.util.concurrent.ConcurrentHashMap<Long, YardShipControl>()
     }
 }
