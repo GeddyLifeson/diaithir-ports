@@ -44,6 +44,7 @@ class SlipwayControllerBlock(props: Properties) : BaseEntityBlock(props) {
     override fun useItemOn(stack: ItemStack, state: BlockState, level: Level, pos: BlockPos, player: Player,
                            hand: InteractionHand, hit: BlockHitResult): InteractionResult {
         if (level !is ServerLevel) return InteractionResult.SUCCESS
+        if (!ShipYardMod.apiPresent) return InteractionResult.CONSUME
         // TRY_WITH_EMPTY_HAND (not PASS) so the click still reaches useWithoutItem (yard select, launch)
         val be = level.getBlockEntity(pos) as? SlipwayBlockEntity ?: return InteractionResult.TRY_WITH_EMPTY_HAND
         val part = YardRegistry.part(BuiltInRegistries.ITEM.getKey(stack.item).toString()).orElse(null) ?: return InteractionResult.TRY_WITH_EMPTY_HAND
@@ -56,6 +57,7 @@ class SlipwayControllerBlock(props: Properties) : BaseEntityBlock(props) {
 
     override fun useWithoutItem(state: BlockState, level: Level, pos: BlockPos, player: Player, hit: BlockHitResult): InteractionResult {
         if (level !is ServerLevel) return InteractionResult.SUCCESS
+        if (!ShipYardMod.apiPresent) return InteractionResult.CONSUME
         val be = level.getBlockEntity(pos) as? SlipwayBlockEntity ?: return InteractionResult.PASS
         player.sendSystemMessage(Component.literal(be.onUse(player.isShiftKeyDown)))
         return InteractionResult.CONSUME

@@ -22,6 +22,8 @@ import kotlin.math.floor
 class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYardBlocks.SLIPWAY_BE.get(), pos, state) {
     var yardId: String = ""
     var build: BuildState? = null
+    /** Hull cells this yard actually placed; only these go into the ship (an existing block in a hull cell is left alone). */
+    private val placedBlocks = HashSet<BlockPos>()
     val footprint: YardDef.Footprint get() = def?.footprint() ?: YardDef.Footprint(5, 10, 5)
     var lastStats: Stats? = null
     var lastShipId: Long = -1
@@ -34,7 +36,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     fun chooseYard(id: String): Boolean {
         val d = YardRegistry.yard(id).orElse(null) ?: return false
         yardId = id
-        build = BuildState.start(d); log.clear(); setChanged(); return true
+        build = BuildState.start(d); log.clear(); placedBlocks.clear(); setChanged(); return true
     }
 
     private fun inStage(stage: Int) = log.filter { it.first == stage }.map { it.second }
@@ -137,7 +139,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
         if (!cur.isAir && cur.block !is LiquidBlock) return
         val blk = BuiltInRegistries.BLOCK.getValue(Identifier.parse(c.block))
         if (blk === Blocks.AIR) return
-        lvl.setBlock(pos, blk.defaultBlockState(), 3)
+        if (lvl.setBlock(pos, blk.defaultBlockState(), 3)) { placedBlocks.add(pos.immutable()); setChanged() }
     }
 
     private fun allCells(): List<Cell> {
@@ -153,7 +155,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     /** The finished hull's blocks that exist in the world, for rollout. */
     fun hullBlocks(): Set<BlockPos> {
         val lvl = level ?: return emptySet()
-        return allCells().map { worldPos(it) }.filter { val s = lvl.getBlockState(it); !s.isAir && s.block !is LiquidBlock }.toSet()
+        return allCells().map { worldPos(it) }.filter { it in placedBlocks }.filter { val s = lvl.getBlockState(it); !s.isAir && s.block !is LiquidBlock }.toSet()
     }
 
     /** Roll out through the registered RolloutHook (ShipAssembler -> VS2 ship). Returns the ship id. */
@@ -171,6 +173,7 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     override fun saveAdditional(output: ValueOutput) {
         super.saveAdditional(output)
         output.putString("Yard", yardId)
+        output.putString("Placed", placedBlocks.joinToString(";") { "${it.x},${it.y},${it.z}" })
         val b = build ?: return
         output.putInt("Stage", b.stageIndex()); output.putInt("Ticks", b.progressTicks())
         output.putString("Log", log.joinToString(",") { "${it.first}:${it.second.item()}" })
@@ -179,6 +182,11 @@ class SlipwayBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(ShipYar
     override fun loadAdditional(input: ValueInput) {
         super.loadAdditional(input)
         yardId = input.getStringOr("Yard", "")
+        placedBlocks.clear()
+        input.getStringOr("Placed", "").split(";").forEach { e ->
+            val p = e.split(",")
+            if (p.size == 3) { val x = p[0].toIntOrNull(); val y = p[1].toIntOrNull(); val z = p[2].toIntOrNull(); if (x != null && y != null && z != null) placedBlocks.add(BlockPos(x, y, z)) }
+        }
         val d = def
         if (d == null) { build = null; return }
         val stage = input.getIntOr("Stage", 0)
