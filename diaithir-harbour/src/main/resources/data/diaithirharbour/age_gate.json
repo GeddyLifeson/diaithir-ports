@@ -3,7 +3,8 @@
     "age": 3,
     "items": [
       "diaithirharbour:mooring_bollard",
-      "diaithirharbour:harbour_office"
+      "diaithirharbour:harbour_office",
+      "diaithirharbour:cargo_crate"
     ]
   }
 }

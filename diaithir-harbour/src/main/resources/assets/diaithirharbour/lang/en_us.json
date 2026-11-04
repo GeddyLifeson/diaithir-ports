@@ -1,4 +1,5 @@
 {
   "block.diaithirharbour.mooring_bollard": "Cleatvarn",
-  "block.diaithirharbour.harbour_office": "Quaymorrek"
+  "block.diaithirharbour.harbour_office": "Quaymorrek",
+  "item.diaithirharbour.cargo_crate": "Holdvarn"
 }
