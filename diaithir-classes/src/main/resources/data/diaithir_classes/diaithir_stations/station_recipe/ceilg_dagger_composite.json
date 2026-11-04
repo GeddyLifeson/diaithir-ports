@@ -1,0 +1,23 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 22,
+ "ingredients": [
+  {
+   "item": "diaithirarms:ceramic_plate",
+   "count": 3
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  },
+  {
+   "item": "diaithir_classes:ceilg_emblem",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:ceilg_dagger_composite",
+  "count": 1
+ }
+}

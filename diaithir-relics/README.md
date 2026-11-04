@@ -8,3 +8,7 @@ MIT. Clean-room replacement for the all-rights-reserved unique-gear mods (Simply
 - Sources: 12 are crafted (a tier metal and a catalyst), 14 come from structure chests through `neoforge:add_table` loot modifiers (`data/diaithirrelics/loot_modifiers`, tables `chests/age_*`; vanilla chests and DungeonCrawl). Nemesis trophy hook: point a drop at `diaithirrelics:chests/age_iii` ... `age_vii`.
 - Ages: `age_gates.json`. Names: `names_map.json` (Diaithiris from the lexicon). Handbook: `codex/relics_handbook.json`. Library: `library/relics_mechanics.json` (numbers); the lore lines come from the batch job `compute/jobs/relics_lore`, merged into `library-sync/relics.json`, and `tools/lore.json` feeds tooltips on the next `tools/gen.py` run.
 - `/relicsselftest` grants and triggers every power with a fake player; see TEST.md.
+
+
+## Crafting stations
+Grid recipes are gone: every gear recipe is an Age station recipe in `data/<ns>/diaithir_stations/station_recipe/` (hearth bench I-II, wright bench III-IV, steam forge V, assembler VI-VII, fabricator VIII+; framework in diaithir-automation-crafting/foundry). After `tools/gen.py` rewrites grid recipes, run `python3 -I ../diaithir-automation-crafting/foundry/tools/recipes_to_stations.py .` from this folder.

@@ -1,0 +1,22 @@
+{
+ "station": "station.fabricator",
+ "stage": "assembly",
+ "time_s": 26,
+ "ingredients": [
+  {
+   "tag": "diaithircombat:gear_material/a9",
+   "count": 3
+  },
+  {
+   "item": "minecraft:stick",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircombat:lib_axe",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 9
+  }
+ }
+}

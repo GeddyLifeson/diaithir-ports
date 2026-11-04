@@ -8,3 +8,7 @@ Clean-room class kits for the Diaithir pack. Replaces the all-rights-reserved Pa
 - Ogham runes (11, craftable) are pressed into rings and charms (Curios `ring`/`charm` slots, 1 to 3 sockets) by right-clicking the rune onto the ring in an inventory. Rune effects are data in `classes.json` (attribute, amount, operation).
 - `tools/gen.py` writes all JSON, `tools/textures.py` makes textures from vanilla sprites, `tools/validate.py` checks spell keys against the Spell Engine API, `/classesselftest` checks the loaded game.
 - Required: spell_engine, spell_power, diaithirarms. Optional: curios (rune attributes), ranged_weapon_api (ranged damage attribute).
+
+
+## Crafting stations
+Grid recipes are gone: every gear recipe is an Age station recipe in `data/<ns>/diaithir_stations/station_recipe/` (hearth bench I-II, wright bench III-IV, steam forge V, assembler VI-VII, fabricator VIII+; framework in diaithir-automation-crafting/foundry). After `tools/gen.py` rewrites grid recipes, run `python3 -I ../diaithir-automation-crafting/foundry/tools/recipes_to_stations.py .` from this folder.
