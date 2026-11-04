@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "B": "minecraft:book",
+        "C": "minecraft:cracked_deepslate_tiles"
+    },
+    "pattern": [
+        "CCC",
+        "BBB",
+        "CCC"
+    ],
+    "result": {
+        "id": "apothic_enchanting:dormant_deepshelf"
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "station": "machine.assembler",
+  "stage": "assembly",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "diaithir_materials:roofing_metal_sheet",
+      "count": 2
+    },
+    {
+      "item": "diaithir_materials:insulation_foam",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:roofing_insulated_panel",
+    "count": 2
+  }
+}

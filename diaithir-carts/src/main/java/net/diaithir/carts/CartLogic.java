@@ -35,8 +35,27 @@ public final class CartLogic {
     /** The cap for a cart: vanilla's, or the rail's if it is one of ours and faster. Called from the mixin. */
     public static double cap(AbstractMinecart cart, double vanilla) {
         BlockState state = cart.level().getBlockState(cart.getCurrentBlockPosOrRailBelow());
-        if (state.getBlock() instanceof RailSpeed r) return Math.max(vanilla, r.maxSpeed() * (cart.isInWater() ? 0.5 : 1.0));
-        return vanilla;
+        if (!(state.getBlock() instanceof RailSpeed r)) return vanilla;
+        Gauge own = GaugeData.of(cart);
+        if (!Gauge.runs(own, r.gauge())) return 0;   // wrong gauge: the vehicle cannot move on this track
+        double cap = Math.max(vanilla, r.maxSpeed() * (cart.isInWater() ? 0.5 : 1.0));
+        if (own != Gauge.ANY && curved(state)) cap *= Math.min(own.curveSpeed, r.gauge().curveSpeed);
+        return cap;
+    }
+
+    private static RailShape shape(BlockState state) {
+        return state.getBlock() instanceof net.minecraft.world.level.block.BaseRailBlock b ? state.getValue(b.getShapeProperty()) : null;
+    }
+
+    private static boolean curved(BlockState state) {
+        RailShape s = shape(state);
+        return s != null && s != RailShape.NORTH_SOUTH && s != RailShape.EAST_WEST && !s.isSlope();
+    }
+
+    /** Slots of a freight cart that take cargo: the vehicle's gauge payload share of the container (narrow 40 %), at least one. */
+    public static int slotLimit(AbstractMinecart cart) {
+        int size = cart instanceof net.minecraft.world.entity.vehicle.minecart.AbstractMinecartContainer c ? c.getContainerSize() : 0;
+        return Math.max(1, (int) Math.floor(size * GaugeData.of(cart).payload));
     }
 
     public static void forget(UUID cart) {
@@ -55,8 +74,18 @@ public final class CartLogic {
 
     public static void tick(AbstractMinecart cart, ServerLevel level) {
         Coupling.pull(cart, level);
+        MagicFuel.tick(cart);
         BlockPos pos = cart.getCurrentBlockPosOrRailBelow();
         BlockState state = level.getBlockState(pos);
+        Gauge own = GaugeData.of(cart);
+        if (own != Gauge.ANY) {
+            RailShape sh = shape(state);
+            if (sh != null && sh.isSlope()) {   // grades: narrow keeps its speed, standard loses it
+                Vec3 v = cart.getDeltaMovement();
+                double keep = state.getBlock() instanceof RailSpeed rs ? Math.min(own.gradeKeep, rs.gauge().gradeKeep) : own.gradeKeep;
+                cart.setDeltaMovement(v.x * keep, v.y, v.z * keep);
+            }
+        }
         if (state.getBlock() instanceof StationRail) {
             station(cart, level, pos, state);
             return;
@@ -109,7 +138,9 @@ public final class CartLogic {
 
     private static void station(AbstractMinecart cart, ServerLevel level, BlockPos pos, BlockState state) {
         if (Coupling.hasLeader(cart)) return; // a coupled follower goes where its leader goes
-        boolean powered = state.getValue(PoweredRailBlock.POWERED);
+        Schedule sch = Schedule.get(cart);
+        boolean crewed = Autonomy.mayRun(cart);
+        boolean powered = state.getValue(PoweredRailBlock.POWERED) && (sch == null || crewed);
         Hold h = HOLDS.get(cart.getUUID());
         if (h != null && !h.at.equals(pos)) {
             HOLDS.remove(cart.getUUID());
@@ -117,7 +148,9 @@ public final class CartLogic {
         }
         Vec3 d = cart.getDeltaMovement();
         double sp = d.horizontalDistance();
+        boolean target = sch != null && sch.target().equals(pos);
         if (powered) {
+            if (target) Schedule.set(cart, sch.advance());
             if (h != null) {
                 if (sp < 0.03) cart.setDeltaMovement(h.dir.x * 0.2, d.y, h.dir.z * 0.2);
                 HOLDS.remove(cart.getUUID());
@@ -131,11 +164,18 @@ public final class CartLogic {
             HOLDS.put(cart.getUUID(), h);
         }
         if (h.passing) return;
+        if (sch != null && crewed && !target) {   // a scheduled, crewed cart does not stop at stations that are not its next stop
+            h.passing = true;
+            if (sp < 0.03) cart.setDeltaMovement(h.dir.x * 0.3, d.y, h.dir.z * 0.3);
+            return;
+        }
         if (sp < 0.03) {
             cart.setDeltaMovement(0, d.y, 0);
+            if (sch != null && !crewed) return;   // no crew: wait here until someone climbs aboard (or the Age brings autonomy)
             h.waited++;
             int seconds = StationRail.SECONDS[state.getValue(StationRail.DELAY)];
             if (seconds > 0 && h.waited >= seconds * 20) {
+                if (target) Schedule.set(cart, sch.advance());
                 h.passing = true;
                 cart.setDeltaMovement(h.dir.x * 0.3, d.y, h.dir.z * 0.3);
             }

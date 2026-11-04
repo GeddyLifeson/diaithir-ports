@@ -1,0 +1,28 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 15,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 12
+  },
+  {
+   "item": "minecraft:piston",
+   "count": 3
+  },
+  {
+   "item": "minecraft:redstone",
+   "count": 4
+  },
+  {
+   "item": "minecraft:bucket",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:engine_cumminshbi_a_s",
+  "count": 1
+ }
+}
