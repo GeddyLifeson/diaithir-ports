@@ -239,7 +239,11 @@ object VSSelfTest {
                 val player = object : net.minecraft.server.level.ServerPlayer(server, level, cookie.gameProfile(), cookie.clientInformation()) {
                     override fun gameMode() = net.minecraft.world.level.GameType.CREATIVE
                 }
-                val connection = net.minecraft.network.Connection(net.minecraft.network.protocol.PacketFlow.SERVERBOUND)
+                // EmbeddedChannel is not thread-safe, and VS sends packets from both the server and physics threads: sharing one made
+                // the physics thread spin forever in ChannelOutboundBuffer.addFlush. The mock player has no reader anyway, so drop its packets.
+                val connection = object : net.minecraft.network.Connection(net.minecraft.network.protocol.PacketFlow.SERVERBOUND) {
+                    override fun send(packet: net.minecraft.network.protocol.Packet<*>, listener: io.netty.channel.ChannelFutureListener?, flush: Boolean) {}
+                }
                 io.netty.channel.embedded.EmbeddedChannel(connection)
                 net.neoforged.neoforge.network.registration.ChannelAttributes.getOrCreateAdHocChannels(connection).add(VSPacket.VS_PACKET_RL)
                 server.playerList.placeNewPlayer(connection, player, cookie)
