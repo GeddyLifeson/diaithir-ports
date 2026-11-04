@@ -67462,6 +67462,16 @@ hash = "63775455b75dc742c3092e5d9e45fe9b91afd10cd292615c5321f305c5c0f795"
 metafile = true
 
 [[files]]
+file = "mods/ResourcefulConfig-4.0.1.pw.toml"
+hash = "a590211cf5e676b9e1f329ef369ed31a491ef9d0a41bfdaa650499fab9833d6c"
+metafile = true
+
+[[files]]
+file = "mods/ResourcefulLib-4.0.1.pw.toml"
+hash = "76bd2eb43d3faaac3b7530e8c5f6e3476fabaa0e0026c626983eaabfe6a1819b"
+metafile = true
+
+[[files]]
 file = "mods/ScalableCatsForce-NeoForge-6.1.1-mc26.1.2-3.9.0-all.pw.toml"
 hash = "1ec2662393d02accef5651d9cd6f37e8cff31714a40a0bd31d70aef0195726c7"
 metafile = true
@@ -67506,6 +67516,11 @@ metafile = true
 [[files]]
 file = "mods/appliedenergistics2-26.1.13-beta.pw.toml"
 hash = "c253c72322204d8ec44078b404cc8b5ae007a65f6d50f11d13e56293b30e4b39"
+metafile = true
+
+[[files]]
+file = "mods/athena-4.7.3.pw.toml"
+hash = "4f6b93ca71351ae1d4ea1b38f3b6ff2ef1efdafbc145de670bb6f55fb25bbdd0"
 metafile = true
 
 [[files]]
@@ -67607,7 +67622,7 @@ hash = "414efc9393cdcb46bc410c2e0b1227ac1a091353c884e30d9ebbc6125d1dcb5c"
 
 [[files]]
 file = "mods/diaithir-core-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "acbd5d5ffcdb6d288a9f0dbaa760e18e2c70b9bd8431f88f88bc45556e22619e"
+hash = "de333f44dc11fd41290c6d8ef28132cc357e3bbd1365334655a5317b29f906e3"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
@@ -67898,6 +67913,11 @@ metafile = true
 [[files]]
 file = "mods/voicechat-neoforge-2.6.26_26.1.2.pw.toml"
 hash = "670082da4d3f90716db38ebbff55422bd6267ebd04c40df59efd3d5750900bc3"
+metafile = true
+
+[[files]]
+file = "mods/yet_another_config_lib_v3-3.9.7_26.1-neoforge.pw.toml"
+hash = "97dbe61e58ddadd88691e5faed0f993d82dd36383265e2fc30d1eaae2b705258"
 metafile = true
 
 [[files]]
