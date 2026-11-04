@@ -1,13 +1,13 @@
 package net.diaithir.travel.laser;
 
+import net.diaithir.travel.laser.blocks.BridgeSourceBlock;
+import net.diaithir.travel.laser.blocks.FenceSourceBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.dispenser.OptionalDispenseItemBehavior;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.*;
@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-import static net.diaithir.travel.laser.Constants.*;
 import static net.diaithir.travel.laser.blocks.BridgeSourceBlock.COLOR;
 
 public class CommonClass {
@@ -27,12 +26,14 @@ public class CommonClass {
                 BlockPos blockPos = blockSource.pos().relative(direction);
                 BlockState blockState = serverLevel.getBlockState(blockPos);
                 Block block = blockState.getBlock();
-                if(block.equals(BuiltInRegistries.BLOCK.get(Identifier.fromNamespaceAndPath(MOD_ID, BRIDGE_SOURCE_BLOCK_NAME))) ||
-                        block.equals(BuiltInRegistries.BLOCK.get(Identifier.fromNamespaceAndPath(MOD_ID, FENCE_SOURCE_BLOCK_NAME)))){
-                    //Item item = stack.getItem();
+                if (block instanceof BridgeSourceBlock || block instanceof FenceSourceBlock) {
                     int col = stack.get(DataComponents.DYE).getId();
-                    //int col = ((DyeItem) item).getDyeColor().getId();
-                    serverLevel.setBlock(blockPos, blockState.setValue(COLOR, col), 2);
+                    BlockState newState = blockState.setValue(COLOR, col);
+                    serverLevel.setBlock(blockPos, newState, 3);
+                    // recolour the existing beam straight away, as hand-dyeing does
+                    int power = serverLevel.getBestNeighborSignal(blockPos);
+                    if (block instanceof BridgeSourceBlock bridge) bridge.generateBridge(serverLevel, power, blockPos, newState);
+                    else ((FenceSourceBlock) block).generateBridge(serverLevel, power, blockPos, newState);
                     stack.shrink(1);
                     serverLevel.gameEvent((Entity)null, GameEvent.BLOCK_CHANGE, blockPos);
                     this.setSuccess(true);

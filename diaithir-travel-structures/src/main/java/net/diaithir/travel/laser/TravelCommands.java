@@ -47,7 +47,8 @@ final class TravelCommands {
         if (full != max - 1) fails.append(" full power gave ").append(full).append(" lasers, expected ").append(max - 1).append(';');
         block.generateBridge(level, 7, src, s);
         int half = lasers(level, src, max + 2);
-        if (half != 6) fails.append(" power 7 gave ").append(half).append(" lasers, expected 6;");
+        int expectedHalf = (int) ((float) max / 15 * 7) - 1;
+        if (half != expectedHalf) fails.append(" power 7 gave ").append(half).append(" lasers, expected ").append(expectedHalf).append(';');
         block.generateBridge(level, 0, src, s);
         level.setBlock(src.above(3), Blocks.STONE.defaultBlockState(), 3);
         block.generateBridge(level, 15, src, s);
