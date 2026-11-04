@@ -109,7 +109,9 @@ public final class CartLogic {
 
     private static void station(AbstractMinecart cart, ServerLevel level, BlockPos pos, BlockState state) {
         if (Coupling.hasLeader(cart)) return; // a coupled follower goes where its leader goes
-        boolean powered = state.getValue(PoweredRailBlock.POWERED);
+        Schedule sch = Schedule.get(cart);
+        boolean crewed = Autonomy.mayRun(cart);
+        boolean powered = state.getValue(PoweredRailBlock.POWERED) && (sch == null || crewed);
         Hold h = HOLDS.get(cart.getUUID());
         if (h != null && !h.at.equals(pos)) {
             HOLDS.remove(cart.getUUID());
@@ -117,7 +119,9 @@ public final class CartLogic {
         }
         Vec3 d = cart.getDeltaMovement();
         double sp = d.horizontalDistance();
+        boolean target = sch != null && sch.target().equals(pos);
         if (powered) {
+            if (target) Schedule.set(cart, sch.advance());
             if (h != null) {
                 if (sp < 0.03) cart.setDeltaMovement(h.dir.x * 0.2, d.y, h.dir.z * 0.2);
                 HOLDS.remove(cart.getUUID());
@@ -131,11 +135,18 @@ public final class CartLogic {
             HOLDS.put(cart.getUUID(), h);
         }
         if (h.passing) return;
+        if (sch != null && crewed && !target) {   // a scheduled, crewed cart does not stop at stations that are not its next stop
+            h.passing = true;
+            if (sp < 0.03) cart.setDeltaMovement(h.dir.x * 0.3, d.y, h.dir.z * 0.3);
+            return;
+        }
         if (sp < 0.03) {
             cart.setDeltaMovement(0, d.y, 0);
+            if (sch != null && !crewed) return;   // no crew: wait here until someone climbs aboard (or the Age brings autonomy)
             h.waited++;
             int seconds = StationRail.SECONDS[state.getValue(StationRail.DELAY)];
             if (seconds > 0 && h.waited >= seconds * 20) {
+                if (target) Schedule.set(cart, sch.advance());
                 h.passing = true;
                 cart.setDeltaMovement(h.dir.x * 0.3, d.y, h.dir.z * 0.3);
             }

@@ -18,6 +18,22 @@
     "diaithir_wiretech:sheetmetal_steel",
     "diaithir_wiretech:sheetmetal_electrum",
     "diaithir_wiretech:iron_scaffolding",
-    "diaithir_wiretech:steel_scaffolding"
+    "diaithir_wiretech:steel_scaffolding",
+    "diaithir_wiretech:relay_constant_combinator",
+    "diaithir_wiretech:relay_arithmetic_combinator",
+    "diaithir_wiretech:relay_decider_combinator",
+    "diaithir_wiretech:relay_selector_combinator",
+    "diaithir_wiretech:relay_circuit_reader",
+    "diaithir_wiretech:relay_circuit_gate",
+    "diaithir_wiretech:relay_circuit_lamp",
+    "diaithir_wiretech:relay_circuit_speaker",
+    "diaithir_wiretech:electronic_constant_combinator",
+    "diaithir_wiretech:electronic_arithmetic_combinator",
+    "diaithir_wiretech:electronic_decider_combinator",
+    "diaithir_wiretech:electronic_selector_combinator",
+    "diaithir_wiretech:electronic_circuit_reader",
+    "diaithir_wiretech:electronic_circuit_gate",
+    "diaithir_wiretech:electronic_circuit_lamp",
+    "diaithir_wiretech:electronic_circuit_speaker"
   ]
 }

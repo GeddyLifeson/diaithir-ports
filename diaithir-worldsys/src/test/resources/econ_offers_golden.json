@@ -1398,11 +1398,11 @@
  ],
  "names": [
   "absinthe",
+  "acorn_berry_ferment",
+  "adaptogen_hard_seltzer",
   "advocaat",
   "aged_cachaca",
-  "albarino",
-  "alpine_herbal_liqueur",
-  "amaretto"
+  "albarino"
  ],
  "drinkFactor": [
   [
@@ -1431,6 +1431,66 @@
   ],
   [
    "absinthe",
+   0,
+   12,
+   1
+  ],
+  [
+   "acorn_berry_ferment",
+   0,
+   0,
+   1
+  ],
+  [
+   "acorn_berry_ferment",
+   3,
+   0,
+   1
+  ],
+  [
+   "acorn_berry_ferment",
+   6,
+   6,
+   1.4142135623730951
+  ],
+  [
+   "acorn_berry_ferment",
+   1.5,
+   20,
+   0.7071067811865476
+  ],
+  [
+   "acorn_berry_ferment",
+   0,
+   12,
+   1
+  ],
+  [
+   "adaptogen_hard_seltzer",
+   0,
+   0,
+   1
+  ],
+  [
+   "adaptogen_hard_seltzer",
+   4.5,
+   0,
+   1
+  ],
+  [
+   "adaptogen_hard_seltzer",
+   9,
+   6,
+   1.4142135623730951
+  ],
+  [
+   "adaptogen_hard_seltzer",
+   2.25,
+   20,
+   0.7071067811865476
+  ],
+  [
+   "adaptogen_hard_seltzer",
    0,
    12,
    1
@@ -1521,6 +1581,36 @@
   ],
   [
    "albarino",
+   0,
+   12,
+   1
+  ],
+  [
+   "algae_spirit",
+   0,
+   0,
+   1
+  ],
+  [
+   "algae_spirit",
+   39,
+   0,
+   1
+  ],
+  [
+   "algae_spirit",
+   78,
+   6,
+   1.4142135623730951
+  ],
+  [
+   "algae_spirit",
+   19.5,
+   20,
+   0.7071067811865476
+  ],
+  [
+   "algae_spirit",
    0,
    12,
    1
@@ -1674,96 +1764,6 @@
    0,
    12,
    1
-  ],
-  [
-   "american_blended_whiskey",
-   0,
-   0,
-   1
-  ],
-  [
-   "american_blended_whiskey",
-   40,
-   0,
-   1
-  ],
-  [
-   "american_blended_whiskey",
-   80,
-   6,
-   2.121320343559643
-  ],
-  [
-   "american_blended_whiskey",
-   20,
-   20,
-   1.0606601717798214
-  ],
-  [
-   "american_blended_whiskey",
-   0,
-   12,
-   1.5
-  ],
-  [
-   "american_blonde_ale",
-   0,
-   0,
-   1
-  ],
-  [
-   "american_blonde_ale",
-   4.8,
-   0,
-   1
-  ],
-  [
-   "american_blonde_ale",
-   9.6,
-   6,
-   1.4142135623730951
-  ],
-  [
-   "american_blonde_ale",
-   2.4,
-   20,
-   0.7071067811865476
-  ],
-  [
-   "american_blonde_ale",
-   0,
-   12,
-   1
-  ],
-  [
-   "american_brandy",
-   0,
-   0,
-   1
-  ],
-  [
-   "american_brandy",
-   40,
-   0,
-   1
-  ],
-  [
-   "american_brandy",
-   80,
-   6,
-   2.121320343559643
-  ],
-  [
-   "american_brandy",
-   20,
-   20,
-   1.0606601717798214
-  ],
-  [
-   "american_brandy",
-   0,
-   12,
-   1.5
   ]
  ],
  "notDrink": 1,

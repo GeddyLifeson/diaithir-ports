@@ -110,6 +110,9 @@ for i in range(1, 8):
     wr(os.path.join(A, "items", n + ".json"), {"model": {"type": "minecraft:model", "model": f"{NS}:item/{n}"}})
     wr(os.path.join(A, "models", "item", n + ".json"), {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{n}"}})
     lang[f"item.{NS}.{n}"] = f"Research Pack {i}"
+sys.path.insert(0, HERE)
+import gen_munitions_content
+MUNI_AGES = gen_munitions_content.build(D, A, wr, lang)
 wr(os.path.join(A, "lang", "en_us.json"), lang)
 
 # Recipes: stand-in ingredients per the progression graph needs; boss drops replace the echo shard, nether star and dragon breath later
@@ -152,6 +155,7 @@ g = json.load(open(GRAPH))
 nodes = {n["id"]: n for n in g["nodes"]}
 AGE_NUM = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "RODOS": 9}
 items_age = {NS + ":foundry_operator_seat": nodes["tech.operator"]["age"]}
+items_age.update(MUNI_AGES)
 for i in range(1, 8):
     items_age[f"{NS}:foundry_research_pack_{i}"] = nodes[f"research.pack_{i}"]["age"]
 by_age = {}

@@ -35,5 +35,8 @@
  "item.diaithircarts.reefer_20": "Reefer container, 20 ft",
  "item.diaithircarts.reefer_40": "Reefer container, 40 ft",
  "item.diaithircarts.tank_20": "Tank container, 20 ft",
- "item.diaithircarts.cargo_hook": "Cargo hook"
+ "item.diaithircarts.cargo_hook": "Cargo hook",
+ "item.diaithircarts.timetable": "Timetable",
+ "item.diaithircarts.autonomy_module": "Autonomy Module",
+ "block.diaithircarts.cart_reader": "Cart Reader"
 }

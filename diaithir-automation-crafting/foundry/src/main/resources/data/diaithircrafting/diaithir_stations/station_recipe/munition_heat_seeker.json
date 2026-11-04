@@ -1,0 +1,35 @@
+{
+  "station": "machine.assembler",
+  "stage": "assembly",
+  "time_s": 16,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_heat_seeker_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_heat_seeker_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_heat_seeker_filler",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_heat_seeker_fuze",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_heat_seeker_motor",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_heat_seeker_guidance",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_heat_seeker",
+    "count": 1
+  }
+}

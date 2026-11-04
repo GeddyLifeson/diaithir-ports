@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CDC",
+    "N N"
+  ],
+  "key": {
+    "C": "minecraft:copper_block",
+    "D": "minecraft:diamond",
+    "N": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "id": "vs_yard:gantry_crane",
+    "count": 1
+  }
+}
