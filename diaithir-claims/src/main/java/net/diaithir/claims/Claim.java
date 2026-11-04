@@ -14,6 +14,6 @@ public record Claim(UUID owner, String ownerName, List<UUID> friends) {
         UUIDUtil.CODEC.listOf().fieldOf("friends").forGetter(Claim::friends)).apply(i, Claim::new));
 
     public boolean allows(UUID who) {
-        return owner.equals(who) || friends.contains(who);
+        return owner.equals(who) || friends.contains(who) || net.diaithir.claims.parties.Parties.sameParty(owner, who);
     }
 }
