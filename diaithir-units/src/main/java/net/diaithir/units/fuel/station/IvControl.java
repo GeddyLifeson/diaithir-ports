@@ -47,14 +47,19 @@ final class IvControl {
 
     /** Pulls the trigger of every gun on the nearest vehicle for one tick (server-side equivalent of IV's fire key). Returns gun count, -1 when no vehicle. */
     static int trigger(Level level, Vec3 at, double reach, boolean first) {
+        return trigger(level, at, reach, first, true);
+    }
+
+    /** Sets (hold=true) or releases (hold=false) the trigger of every gun on the nearest vehicle. */
+    static int trigger(Level level, Vec3 at, double reach, boolean first, boolean hold) {
         Object v = nearest(level, at, reach);
         if (v == null) return -1;
         int n = 0;
         try {
             for (Object part : (List<?>) v.getClass().getField("allParts").get(v)) {
                 if (!part.getClass().getSimpleName().equals("PartGun")) continue;
-                part.getClass().getField("playerHoldingTrigger").setBoolean(part, true);
-                part.getClass().getField("playerPressedTrigger").setBoolean(part, first);
+                part.getClass().getField("playerHoldingTrigger").setBoolean(part, hold);
+                part.getClass().getField("playerPressedTrigger").setBoolean(part, hold && first);
                 n++;
             }
         } catch (ReflectiveOperationException | RuntimeException ex) {

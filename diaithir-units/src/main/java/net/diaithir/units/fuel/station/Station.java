@@ -83,6 +83,7 @@ public final class Station {
             if (fireLeft > 0 && fireSource != null) {
                 var pos = fireSource.getEntity() != null ? fireSource.getEntity().position() : fireSource.getPosition();
                 IvControl.trigger(fireSource.getLevel(), pos, 8.0, fireLeft-- == fireTotal);
+                if (fireLeft == 0) IvControl.trigger(fireSource.getLevel(), pos, 8.0, false, false);
             }
             if (watchLeft > 0 && --watchLeft % 20 == 0 && watchSource != null) {
                 var pos = watchSource.getEntity() != null ? watchSource.getEntity().position() : watchSource.getPosition();
@@ -143,7 +144,7 @@ public final class Station {
         var pos = src.getEntity() != null ? src.getEntity().position() : src.getPosition();
         int n = IvControl.trigger(src.getLevel(), pos, 8.0, true);
         if (n <= 0) { src.sendFailure(Component.literal(n < 0 ? "No vehicle within 8 blocks" : "That vehicle has no gun")); return 0; }
-        fireSource = src; fireTotal = ticks; fireLeft = ticks - 1; shotWatch = ticks + 100;
+        fireSource = src; fireTotal = ticks; fireLeft = ticks; shotWatch = ticks + 100;
         src.sendSuccess(() -> Component.literal("Trigger held on " + n + " gun(s) for " + ticks + " ticks"), false);
         return 1;
     }
