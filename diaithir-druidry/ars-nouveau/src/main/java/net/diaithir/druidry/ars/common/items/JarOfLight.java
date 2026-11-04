@@ -1,0 +1,94 @@
+package net.diaithir.druidry.ars.common.items;
+
+import net.diaithir.druidry.ars.api.util.BlockUtil;
+import net.diaithir.druidry.ars.common.block.LightBlock;
+import net.diaithir.druidry.ars.common.items.data.LightJarData;
+import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
+import net.diaithir.druidry.ars.setup.registry.DataComponentRegistry;
+import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+
+import java.util.Optional;
+
+public class JarOfLight extends ModItem {
+
+    public JarOfLight() {
+        super(ItemsRegistry.defaultItemProperties().component(DataComponentRegistry.LIGHT_JAR, new LightJarData()));
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel worldIn, Entity entityIn, @org.jetbrains.annotations.Nullable net.minecraft.world.entity.EquipmentSlot slot) {
+        super.inventoryTick(stack, worldIn, entityIn, slot);
+
+        LightJarData data = stack.get(DataComponentRegistry.LIGHT_JAR);
+        if (data == null || !data.enabled() || data.pos().isEmpty()) {
+            return;
+        }
+        BlockPos lightLocation = data.pos().get();
+        BlockState state = worldIn.getBlockState(lightLocation);
+        // The previous light block was destroyed.
+        if (!(state.getBlock() instanceof LightBlock)) {
+            stack.set(DataComponentRegistry.LIGHT_JAR, new LightJarData(Optional.empty(), true));
+        }
+
+        if (BlockUtil.distanceFrom(lightLocation, entityIn.blockPosition()) > 7) {
+            Direction opposite = entityIn.getDirection().getOpposite();
+            BlockPos preferredLightPos = entityIn.blockPosition().relative(opposite, 1);
+            if (worldIn.getBlockState(lightLocation).getBlock() instanceof LightBlock) {
+                worldIn.setBlockAndUpdate(lightLocation, Blocks.AIR.defaultBlockState());
+            }
+            if (!placeLight(worldIn, preferredLightPos)) {
+                placeLight(worldIn, preferredLightPos.above(2));
+                stack.set(DataComponentRegistry.LIGHT_JAR, new LightJarData(preferredLightPos.above(2), true));
+            }else {
+                stack.set(DataComponentRegistry.LIGHT_JAR, new LightJarData(preferredLightPos, true));
+            }
+        }
+
+    }
+
+    @Override
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
+        ItemStack itemstack = playerIn.getItemInHand(handIn);
+        if (worldIn.isClientSide())
+            return InteractionResult.SUCCESS;
+
+        LightJarData tag = itemstack.get(DataComponentRegistry.LIGHT_JAR);
+        if (tag.pos().isPresent()) {
+            removeLight(worldIn, tag);
+            itemstack.set(DataComponentRegistry.LIGHT_JAR, new LightJarData(Optional.empty(), false));
+            return InteractionResult.SUCCESS;
+        }
+        // No light exists. Place a new one.
+        placeLight(worldIn, playerIn.blockPosition());
+        itemstack.set(DataComponentRegistry.LIGHT_JAR, new LightJarData(playerIn.blockPosition(), true));
+        return InteractionResult.SUCCESS;
+    }
+
+    public boolean placeLight(Level world, BlockPos pos) {
+        if (world.getBlockState(pos).isAir()) {
+            world.setBlockAndUpdate(pos, BlockRegistry.LIGHT_BLOCK.get().defaultBlockState());
+            return true;
+        }
+        return false;
+    }
+
+    public void removeLight(Level world, LightJarData lightJarData) {
+        if(lightJarData.pos().isEmpty()){
+            return;
+        }
+        BlockPos pos = lightJarData.pos().get();
+        if (world.getBlockState(pos).getBlock() instanceof LightBlock)
+            world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+    }
+}

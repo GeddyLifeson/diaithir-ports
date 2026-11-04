@@ -1,0 +1,29 @@
+package net.diaithir.druidry.ars.common.world.tree;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProviderType;
+
+public class SupplierBlockStateProvider extends AbstractSupplierBlockStateProvider {
+    public SupplierBlockStateProvider(String path) {
+        this(ArsNouveau.prefix(path));
+    }
+
+    public SupplierBlockStateProvider(Identifier path) {
+        super(path);
+    }
+
+    public static final MapCodec<SupplierBlockStateProvider> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+                    Codec.STRING.fieldOf("key").forGetter(d -> d.key.getPath()))
+            .apply(instance, SupplierBlockStateProvider::new));
+
+    @Override
+    protected BlockStateProviderType<?> type() {
+        return BlockRegistry.stateProviderType.value();
+    }
+
+}

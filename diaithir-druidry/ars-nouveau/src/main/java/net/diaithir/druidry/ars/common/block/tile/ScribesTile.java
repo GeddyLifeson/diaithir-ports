@@ -1,0 +1,386 @@
+package net.diaithir.druidry.ars.common.block.tile;
+
+import net.diaithir.druidry.ars.api.client.ITooltipProvider;
+import net.diaithir.druidry.ars.api.item.IWandable;
+import net.diaithir.druidry.ars.common.block.ITickable;
+import net.diaithir.druidry.ars.common.block.ScribesBlock;
+import net.diaithir.druidry.ars.common.block.ThreePartBlock;
+import net.diaithir.druidry.ars.common.crafting.recipes.GlyphRecipe;
+import net.diaithir.druidry.ars.common.entity.EntityFlyingItem;
+import net.diaithir.druidry.ars.common.util.PortUtil;
+import net.diaithir.druidry.ars.setup.registry.BlockRegistry;
+import net.diaithir.druidry.ars.setup.registry.RecipeRegistry;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.transaction.Transaction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Container;
+import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeInput;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class ScribesTile extends ModdedTile implements ITickable, Container, ITooltipProvider, IAnimationListener, IWandable, RecipeInput {
+    private ItemStack stack = ItemStack.EMPTY;
+    boolean synced;
+    public List<ItemStack> consumedStacks = new ArrayList<>();
+    public RecipeHolder<GlyphRecipe> recipe;
+    Identifier recipeID; // Cached for after load
+    public boolean crafting;
+    public int craftingTicks;
+    public boolean autoYoink = true;
+
+    public ScribesTile(BlockPos pos, BlockState state) {
+        super(BlockRegistry.SCRIBES_TABLE_TILE, pos, state);
+    }
+
+    @Override
+    public void tick() {
+        if (getBlockState().getValue(ScribesBlock.PART) != ThreePartBlock.HEAD)
+            return;
+        if (!level.isClientSide() && !synced) {
+            updateBlock();
+            synced = true;
+        }
+        if (craftingTicks > 0)
+            craftingTicks--;
+
+        if (recipeID != null && recipeID.equals(Identifier.withDefaultNamespace(""))) {
+            recipe = null; // Used on client to remove recipe since for some forsaken reason world is missing during load.
+        }
+
+        if (recipeID != null && !recipeID.toString().isEmpty() && (recipe == null || !recipe.id().identifier().equals(recipeID)) && level instanceof ServerLevel serverLevel) {
+            // Recipes only exist on the server in 26.1; the client keeps recipe == null.
+            recipe = serverLevel.recipeAccess().byKey(ResourceKey.create(Registries.RECIPE, recipeID))
+                    .filter(h -> h.value() instanceof GlyphRecipe)
+                    .map(h -> (RecipeHolder<GlyphRecipe>) h)
+                    .orElse(null);
+            setChanged();
+        }
+        if (!level.isClientSide() && level.getGameTime() % 5 == 0 && recipe != null) {
+            boolean foundStack = false;
+            List<ItemEntity> nearbyItems = level.getEntitiesOfClass(ItemEntity.class, new AABB(getBlockPos()).inflate(2));
+            for (ItemEntity e : nearbyItems) {
+                if (canConsumeItemstack(e.getItem())) {
+                    ItemStack copyStack = e.getItem().copy();
+                    copyStack.setCount(1);
+                    consumedStacks.add(copyStack);
+                    e.getItem().shrink(1);
+                    updateBlock();
+                    foundStack = true;
+                    break;
+                }
+            }
+            if (!foundStack && level.getGameTime() % 20 == 0 && autoYoink) {
+                takeNearby();
+            }
+
+            if (getRemainingRequired().isEmpty() && !crafting) {
+                crafting = true;
+                craftingTicks = 120;
+                updateBlock();
+            }
+        }
+        if (level.isClientSide() && craftingTicks == 0 && crafting) {
+            crafting = false;
+            setChanged();
+        }
+        if (!level.isClientSide() && crafting && craftingTicks == 0 && recipe != null) {
+            level.addFreshEntity(new ItemEntity(level, getX() + 0.5, getY() + 1.1, getZ() + 0.5, recipe.value().output.copy()));
+            recipe = null;
+            recipeID = Identifier.withDefaultNamespace("");
+            crafting = false;
+            consumedStacks = new ArrayList<>();
+            updateBlock();
+        }
+    }
+
+    public void takeNearby() {
+        for (BlockPos bPos : BlockPos.betweenClosed(worldPosition.north(6).east(6).below(2), worldPosition.south(6).west(6).above(2))) {
+            ResourceHandler<ItemResource> handler = level.getCapability(Capabilities.Item.BLOCK, bPos, null);
+            if (handler != null) {
+                for (int i = 0; i < handler.size(); i++) {
+                    ItemResource resource = handler.getResource(i);
+                    if (resource.isEmpty() || handler.getAmountAsInt(i) <= 0) continue;
+                    ItemStack stack = resource.toStack(1);
+                    if (canConsumeItemstack(stack)) {
+                        int extracted;
+                        try (Transaction transaction = Transaction.openRoot()) {
+                            extracted = handler.extract(i, resource, 1, transaction);
+                            if (extracted > 0) transaction.commit();
+                        }
+                        if (extracted <= 0) continue;
+                        ItemStack stack1 = resource.toStack(1);
+                        consumedStacks.add(stack1);
+                        EntityFlyingItem flyingItem = new EntityFlyingItem(level, bPos, getBlockPos());
+                        flyingItem.setStack(stack1);
+                        level.addFreshEntity(flyingItem);
+                        updateBlock();
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    public boolean consumeStack(ItemStack stack) {
+        if (!canConsumeItemstack(stack))
+            return false;
+        ItemStack copyStack = stack.split(1);
+        consumedStacks.add(copyStack);
+        updateBlock();
+        return true;
+    }
+
+    public void refundConsumed() {
+        for (ItemStack i : consumedStacks) {
+            ItemEntity entity = new ItemEntity(level, getX(), getY(), getZ(), i);
+            level.addFreshEntity(entity);
+            consumedStacks = new ArrayList<>();
+        }
+        if (recipe != null) {
+            int exp = recipe.value().getExp();
+            if (level instanceof ServerLevel serverLevel)
+                ExperienceOrb.award(serverLevel, new Vec3(getX(), getY(), getZ()), exp);
+        }
+        recipe = null;
+        recipeID = null;
+        craftingTicks = 0;
+        crafting = false;
+        updateBlock();
+    }
+
+    public void setRecipe(RecipeHolder<GlyphRecipe> recipe, Player player) {
+        if (ScribesTile.getTotalPlayerExperience(player) < recipe.value().exp && !player.isCreative()) {
+            PortUtil.sendMessage(player, Component.translatable("ars_nouveau.not_enough_exp").withStyle(ChatFormatting.GOLD));
+            return;
+        } else if (!player.isCreative()) {
+            player.giveExperiencePoints(-recipe.value().exp);
+        }
+        ScribesTile tile = getLogicTile();
+        if (tile == null)
+            return;
+        tile.refundConsumed();
+        tile.recipe = recipe;
+        tile.recipeID = recipe.id().identifier();
+        PortUtil.sendMessage(player, Component.translatable("ars_nouveau.scribes_table.started_crafting").withStyle(ChatFormatting.GOLD));
+        tile.updateBlock();
+    }
+
+    public static int getTotalPlayerExperience(Player player) {
+        return (int) (getExperienceForLevel(player.experienceLevel) + player.experienceProgress * player.getXpNeededForNextLevel());
+    }
+
+    public static int getLevelsFromExp(int exp) {
+        if (exp <= 352) {
+            return (int) (Math.sqrt(exp + 9) - 3);
+        } else if (exp <= 1507) {
+            return (int) (8.1 + Math.sqrt(0.4 * (exp - 195.975)));
+        }
+        return (int) (18.056 + Math.sqrt(0.222 * (exp - 752.986)));
+    }
+
+    public static int getExperienceForLevel(int level) {
+        if (level == 0)
+            return 0;
+        if (level > 0 && level < 17)
+            return (int) (Math.pow(level, 2) + 6 * level);
+        else if (level > 16 && level < 32)
+            return (int) (2.5 * Math.pow(level, 2) - 40.5 * level + 360);
+        else
+            return (int) (4.5 * Math.pow(level, 2) - 162.5 * level + 2220);
+    }
+
+    public @Nullable ScribesTile getLogicTile() {
+        ScribesTile tile = this;
+        if (!isMasterTile()) {
+            BlockEntity tileEntity = level.getBlockEntity(getBlockPos().relative(ScribesBlock.getConnectedDirection(getBlockState())));
+            tile = tileEntity instanceof ScribesTile ? (ScribesTile) tileEntity : null;
+        }
+        return tile;
+    }
+
+    public boolean isMasterTile() {
+        return getBlockState().getValue(ScribesBlock.PART) == ThreePartBlock.HEAD;
+    }
+
+    public boolean canConsumeItemstack(ItemStack stack) {
+        if (recipe == null)
+            return false;
+        return getRemainingRequired().stream().anyMatch(i -> i.test(stack));
+    }
+
+    public List<Ingredient> getRemainingRequired() {
+        if (consumedStacks.isEmpty())
+            return recipe.value().inputs;
+        List<Ingredient> unaccountedIngredients = new ArrayList<>();
+        List<ItemStack> remainingItems = new ArrayList<>();
+        for (ItemStack stack : consumedStacks) {
+            remainingItems.add(stack.copy());
+        }
+        for (Ingredient ingred : recipe.value().inputs) {
+            ItemStack matchingStack = null;
+
+            for (ItemStack item : remainingItems) {
+                if (ingred.test(item)) {
+                    matchingStack = item;
+                    break;
+                }
+            }
+            if (matchingStack != null) {
+                remainingItems.remove(matchingStack);
+            } else {
+                unaccountedIngredients.add(ingred);
+            }
+        }
+        return unaccountedIngredients;
+    }
+
+    @Override
+    public void onWanded(Player playerEntity) {
+        if (!this.isMasterTile()) {
+            ScribesTile tile = getLogicTile();
+            if (tile != null) {
+                tile.onWanded(playerEntity);
+            }
+            return;
+        }
+        autoYoink = !autoYoink;
+        updateBlock();
+    }
+
+    @Override
+    protected void loadAdditional(@NotNull ValueInput input) {
+        super.loadAdditional(input);
+        stack = input.read("itemStack", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
+        input.getString("recipe").ifPresent(r -> recipeID = Identifier.tryParse(r));
+        this.consumedStacks = new ArrayList<>(input.read("consumed", ItemStack.OPTIONAL_CODEC.listOf()).orElse(List.of()));
+        this.craftingTicks = input.getIntOr("craftingTicks", 0);
+        this.crafting = input.getBooleanOr("crafting", false);
+        this.autoYoink = input.getBooleanOr("autoYoink", true);
+    }
+
+    @Override
+    public void saveAdditional(@NotNull ValueOutput output) {
+        super.saveAdditional(output);
+        if (!stack.isEmpty()) {
+            output.store("itemStack", ItemStack.OPTIONAL_CODEC, stack);
+        }
+        if (recipe != null) {
+            output.putString("recipe", recipe.id().identifier().toString());
+        } else {
+            output.putString("recipe", "");
+        }
+        output.store("consumed", ItemStack.OPTIONAL_CODEC.listOf(), consumedStacks.stream().filter(i -> !i.isEmpty()).toList());
+        output.putInt("craftingTicks", craftingTicks);
+        output.putBoolean("crafting", crafting);
+        output.putBoolean("autoYoink", autoYoink);
+    }
+
+    /** Glyph-crafting animation (GeckoLib) was removed in the 26.1 port. */
+    @Override
+    public void startAnimation(int arg) {
+    }
+
+    @Override
+    public int getContainerSize() {
+        return 1;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return stack == null || this.stack.isEmpty();
+    }
+
+    @Override
+    public @NotNull ItemStack getItem(int pIndex) {
+        return stack;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public @NotNull ItemStack removeItem(int pIndex, int pCount) {
+        ItemStack removed = stack.copy().split(pCount);
+        stack.shrink(pCount);
+        updateBlock();
+        return removed;
+    }
+
+    @Override
+    public @NotNull ItemStack removeItemNoUpdate(int pIndex) {
+        ItemStack stack = this.stack.copy();
+        this.stack = ItemStack.EMPTY;
+        updateBlock();
+        return stack;
+    }
+
+    @Override
+    public void setItem(int pIndex, @NotNull ItemStack pStack) {
+        this.stack = pStack;
+        setChanged();
+    }
+
+    @Override
+    public boolean stillValid(@NotNull Player pPlayer) {
+        return true;
+    }
+
+    @Override
+    public void clearContent() {
+        this.stack = ItemStack.EMPTY;
+        updateBlock();
+    }
+
+    @Override
+    public void getTooltip(List<Component> tooltip) {
+        if (!isMasterTile()) {
+            ScribesTile tile = getLogicTile();
+            if (tile == null)
+                return;
+            tile.getTooltip(tooltip);
+            return;
+        }
+        if (recipe != null) {
+            tooltip.add(Component.translatable("ars_nouveau.crafting", recipe.value().output.getHoverName()));
+            tooltip.add(Component.translatable("ars_nouveau.scribes_table.throw_items").withStyle(ChatFormatting.GOLD));
+        }
+        if (!autoYoink) {
+            tooltip.add(Component.translatable("ars_nouveau.scribes_table.auto_take_disabled").withStyle(ChatFormatting.GOLD));
+        }
+    }
+
+    public ItemStack getStack() {
+        return stack;
+    }
+
+    public void setStack(ItemStack stack) {
+        this.stack = stack;
+        updateBlock();
+    }
+}

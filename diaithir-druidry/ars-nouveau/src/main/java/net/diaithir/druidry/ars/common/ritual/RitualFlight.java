@@ -1,0 +1,67 @@
+package net.diaithir.druidry.ars.common.ritual;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.api.ritual.RangeEffectRitual;
+import net.diaithir.druidry.ars.common.lib.RitualLib;
+import net.diaithir.druidry.ars.common.network.Networking;
+import net.diaithir.druidry.ars.common.network.PacketUpdateFlight;
+import net.diaithir.druidry.ars.setup.registry.ModPotions;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffect;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
+
+public class RitualFlight extends RangeEffectRitual {
+    @Override
+    public Holder<MobEffect> getEffect() {
+        return ModPotions.FLIGHT_EFFECT;
+    }
+
+    @Override
+    public int getDuration() {
+        return 60 * 20;
+    }
+
+    @Override
+    public int getRange() {
+        return 60;
+    }
+
+    @Override
+    public int getSourceCost() {
+        return 200;
+    }
+
+    @Override
+    public Identifier getRegistryName() {
+        return ArsNouveau.prefix( RitualLib.FLIGHT);
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Grants nearby players the Flight effect when they jump, allowing them to creatively fly for a short time. If the player is nearby, this ritual will refresh their flight buff. Each time this ritual grants or refreshes flight, it will expend source from nearby jars.";
+    }
+
+    @Override
+    public String getLangName() {
+        return "Flight";
+    }
+
+    @Override
+    public boolean applyEffect(ServerPlayer player) {
+        boolean wasFlying = player.getAbilities().flying;
+        boolean applied = super.applyEffect(player);
+        if (applied) {
+            Networking.sendToPlayerClient(new PacketUpdateFlight(true, wasFlying), player);
+        }
+        return applied;
+    }
+
+    public boolean onJumpEvent(LivingEvent.LivingJumpEvent event) {
+        if (event.getEntity() instanceof ServerPlayer serverPlayer && !serverPlayer.hasEffect(getEffect())) {
+            return attemptRefresh(serverPlayer);
+        }
+        return false;
+    }
+}

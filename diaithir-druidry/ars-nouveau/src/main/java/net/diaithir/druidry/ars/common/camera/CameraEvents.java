@@ -1,0 +1,62 @@
+package net.diaithir.druidry.ars.common.camera;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.api.camera.ICameraMountable;
+import net.diaithir.druidry.ars.common.entity.ScryerCamera;
+import net.diaithir.druidry.ars.common.util.CameraUtil;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
+
+// https://github.com/Geforce132/SecurityCraft/blob/fbef0c9d3f5959f09f2f0a1a351a9a86604566ed/src/main/java/net/geforcemods/securitycraft/SCEventHandler.java
+@EventBusSubscriber(modid = ArsNouveau.HOST)
+public class CameraEvents {
+
+    @SubscribeEvent
+    public static void onPlayerLoggedOut(PlayerLoggedOutEvent event) {
+        ServerPlayer player = (ServerPlayer) event.getEntity();
+
+        if (player.getCamera() instanceof ScryerCamera cam) {
+            if (player.level().getBlockEntity(cam.blockPosition()) instanceof ICameraMountable camBe)
+                camBe.stopViewing();
+
+            cam.discard();
+        }
+    }
+
+    @SubscribeEvent
+    public static void onDamageTaken(LivingDamageEvent.Pre event) {
+        LivingEntity entity = event.getEntity();
+        Level level = entity.level();
+
+        if (!level.isClientSide() && entity instanceof ServerPlayer player && CameraUtil.isPlayerMountedOnCamera(entity))
+            ((ScryerCamera) player.getCamera()).stopViewing(player);
+    }
+
+    @SubscribeEvent
+    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        if (CameraUtil.isPlayerMountedOnCamera(event.getEntity())) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLeftClickBlock(LeftClickBlock event) {
+        if (CameraUtil.isPlayerMountedOnCamera(event.getEntity())) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
+        if (CameraUtil.isPlayerMountedOnCamera(event.getEntity()))
+            event.setCanceled(true);
+    }
+
+}

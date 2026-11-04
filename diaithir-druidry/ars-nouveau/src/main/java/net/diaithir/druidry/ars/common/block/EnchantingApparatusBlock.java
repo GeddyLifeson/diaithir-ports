@@ -1,0 +1,114 @@
+package net.diaithir.druidry.ars.common.block;
+
+import net.diaithir.druidry.ars.api.util.SourceUtil;
+import net.diaithir.druidry.ars.client.particle.ColorPos;
+import net.diaithir.druidry.ars.common.block.tile.ArcanePedestalTile;
+import net.diaithir.druidry.ars.common.block.tile.EnchantingApparatusTile;
+import net.diaithir.druidry.ars.common.crafting.recipes.IEnchantingRecipe;
+import net.diaithir.druidry.ars.common.network.HighlightAreaPacket;
+import net.diaithir.druidry.ars.common.network.Networking;
+import net.diaithir.druidry.ars.common.util.PortUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EnchantingApparatusBlock extends TickableModBlock {
+
+    public EnchantingApparatusBlock() {
+        this(TickableModBlock.defaultProperties().noOcclusion());
+    }
+
+    public EnchantingApparatusBlock(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new EnchantingApparatusTile(pos, state);
+    }
+
+    @Override
+    public InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+
+        if (world.isClientSide() || handIn != InteractionHand.MAIN_HAND || !(world.getBlockEntity(pos) instanceof EnchantingApparatusTile tile))
+            return InteractionResult.SUCCESS;
+        if (tile.isCrafting)
+            return InteractionResult.SUCCESS;
+
+
+        if (!(world.getBlockState(pos.below()).getBlock() instanceof ArcaneCore)) {
+            PortUtil.sendMessage(player, Component.translatable("alert.core"));
+            return InteractionResult.SUCCESS;
+        }
+        if (tile.getStack() == null || tile.getStack().isEmpty()) {
+            IEnchantingRecipe recipe = tile.getRecipe(player.getMainHandItem(), player);
+            if (recipe == null) {
+                List<ColorPos> colorPos = new ArrayList<>();
+                for(BlockPos pedPos : tile.pedestalList()){
+                    if(world.getBlockEntity(pedPos) instanceof ArcanePedestalTile pedestalTile){
+                        colorPos.add(ColorPos.centeredAbove(pedPos));
+                    }
+                }
+                Networking.sendToNearbyClient(world, tile.getBlockPos(), new HighlightAreaPacket(colorPos, 60));
+                PortUtil.sendMessage(player, Component.translatable("ars_nouveau.apparatus.norecipe"));
+            } else if (recipe.consumesSource() && !SourceUtil.hasSourceNearby(tile.getBlockPos(), tile.getLevel(), 10, recipe.sourceCost())) {
+                PortUtil.sendMessage(player, Component.translatable("ars_nouveau.apparatus.nomana"));
+            } else {
+                if (tile.attemptCraft(player.getMainHandItem(), player)) {
+                    tile.setStack(player.getInventory().removeItem(player.getInventory().getSelectedSlot(), 1));
+                }
+            }
+        } else {
+            ItemEntity item = new ItemEntity(world, player.getX(), player.getY(), player.getZ(), tile.getStack());
+            world.addFreshEntity(item);
+            tile.setStack(ItemStack.EMPTY);
+            if (tile.attemptCraft(player.getMainHandItem(), player)) {
+                tile.setStack(player.getInventory().removeItem(player.getInventory().getSelectedSlot(), 1));
+            }
+        }
+
+        world.sendBlockUpdated(pos, state, state, 2);
+        return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+        return Block.box(1D, 1.0D, 1.0D, 15, 16, 15);
+    }
+
+    @Override
+    public BlockState playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
+        super.playerWillDestroy(worldIn, pos, state, player);
+        if (worldIn.getBlockEntity(pos) instanceof EnchantingApparatusTile tile && tile.getStack() != null) {
+            worldIn.addFreshEntity(new ItemEntity(worldIn, pos.getX(), pos.getY(), pos.getZ(), tile.getStack()));
+        }
+        return state;
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState p_149645_1_) {
+        return RenderShape.MODEL;
+    }
+
+    @Override
+    public boolean isPathfindable(BlockState pState, PathComputationType pType) {
+        return false;
+    }
+}

@@ -1,4 +1,6 @@
-license = "MIT"
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT; the Ars Nouveau code port inside is LGPL-3.0 (LICENSE-Ars)"
 
 [[mods]]
 modId = "diaithir_druidry"
@@ -22,4 +24,11 @@ modId = "spell_power"
 type = "required"
 versionRange = "[1.6,)"
 ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithir_druidry]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
 side = "BOTH"

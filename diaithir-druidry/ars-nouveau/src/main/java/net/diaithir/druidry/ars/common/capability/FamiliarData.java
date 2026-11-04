@@ -1,0 +1,41 @@
+package net.diaithir.druidry.ars.common.capability;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.api.familiar.AbstractFamiliarHolder;
+import net.diaithir.druidry.ars.api.familiar.IFamiliar;
+import net.diaithir.druidry.ars.api.registry.FamiliarRegistry;
+import net.diaithir.druidry.ars.common.lib.LibEntityNames;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.Level;
+
+
+public class FamiliarData {
+    public static final String ENTITY_TAG = "entityTag";
+    public static final String FAMILIAR_ID = "familiarID";
+    public AbstractFamiliarHolder familiarHolder;
+    public CompoundTag entityTag;
+
+    public FamiliarData(Identifier entityID) {
+        this.familiarHolder = FamiliarRegistry.getFamiliarHolderMap().get(entityID);
+        this.entityTag = new CompoundTag();
+    }
+
+    public FamiliarData(CompoundTag tag) {
+        this.entityTag = tag.contains(ENTITY_TAG) ? tag.getCompoundOrEmpty(ENTITY_TAG) : new CompoundTag();
+        this.familiarHolder = FamiliarRegistry.getFamiliarHolderMap().getOrDefault(Identifier.tryParse(tag.getStringOr(FAMILIAR_ID, "")),
+                FamiliarRegistry.getFamiliarHolderMap().get(ArsNouveau.prefix(LibEntityNames.FAMILIAR_WIXIE)));
+    }
+
+    public CompoundTag toTag() {
+        CompoundTag tag = new CompoundTag();
+        tag.putString(FAMILIAR_ID, familiarHolder.getRegistryName().toString());
+        tag.put(ENTITY_TAG, entityTag);
+        return tag;
+    }
+
+    public IFamiliar getEntity(Level level) {
+        IFamiliar familiar = familiarHolder.getSummonEntity(level, entityTag);
+        return familiar;
+    }
+}

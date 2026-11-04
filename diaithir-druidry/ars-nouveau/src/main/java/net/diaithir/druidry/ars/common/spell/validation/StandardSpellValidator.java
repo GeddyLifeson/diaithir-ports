@@ -1,0 +1,73 @@
+package net.diaithir.druidry.ars.common.spell.validation;
+
+import net.diaithir.druidry.ars.api.spell.AbstractSpellPart;
+import net.diaithir.druidry.ars.api.spell.ISpellValidator;
+import net.diaithir.druidry.ars.api.spell.SpellValidationError;
+import net.diaithir.druidry.ars.setup.config.ServerConfig;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Primary class containing the logic to decide if a spell's recipe is <em>valid</em>.
+ * <p>
+ * That is to say if it contains all the required elements to be cast, and that it does not violate any configured
+ * limits to spell construction such as limits on the number of times a given glyph may appear.
+ * <p>
+ * Instances of this class should be obtained from {@link net.diaithir.druidry.ars.api.ArsNouveauAPI}.
+ */
+public class StandardSpellValidator implements ISpellValidator {
+    // Validators are static and immutable. It's safe to eagerly construct these and pull them in when a validator is requested.
+    private static final ISpellValidator MAX_ONE_CAST_METHOD = new MaxOneCastMethodSpellValidator();
+    private static final ISpellValidator NON_EMPTY_SPELL = new NonEmptySpellValidator();
+    private static final ISpellValidator REQUIRE_CAST_METHOD_START = new StartingCastMethodSpellValidator();
+    private static final ISpellValidator GLYPH_OCCURRENCES_POLICY = new GlyphOccurrencesPolicyValidator();
+    private static final ISpellValidator EFFECT_AUGMENTATION_POLICY = new ActionAugmentationPolicyValidator();
+    private static final ISpellValidator AUGMENT_COMPATIBILITY = new AugmentCompatibilityValidator();
+    private static final ISpellValidator INVALID_COMBINATION_POLICY = new InvalidCombinationValidator();
+
+    public final ISpellValidator combinedValidator;
+
+    /**
+     * Creates a standard spell recipe validator that enforces all standard rules.
+     *
+     * @param enforceCastTimeValidations if <code>true</code>, the spell must be valid for casting, which enables
+     *                                   validations for having exactly one cast method as the first glyph. Pass
+     *                                   <code>false</code>, when validating for spell crafting.
+     */
+    public StandardSpellValidator(boolean enforceCastTimeValidations) {
+        List<ISpellValidator> validators = new LinkedList<>();
+
+        // Unconditional validators
+        validators.add(MAX_ONE_CAST_METHOD);
+
+        // Validators only applicable at crafting time
+        if (!enforceCastTimeValidations) {
+            // Not enforcing this at cast time so we don't break existing spells with ineffective augments
+            validators.add(AUGMENT_COMPATIBILITY);
+            validators.add(EFFECT_AUGMENTATION_POLICY);
+            validators.add(GLYPH_OCCURRENCES_POLICY);
+            validators.add(INVALID_COMBINATION_POLICY);
+        }
+
+        // Validators only applicable at casting time
+        if (enforceCastTimeValidations) {
+            validators.add(NON_EMPTY_SPELL);
+            validators.add(REQUIRE_CAST_METHOD_START);
+            if (ServerConfig.ENFORCE_AUGMENT_CAP_ON_CAST.get()) {
+                validators.add(EFFECT_AUGMENTATION_POLICY);
+            }
+            if (ServerConfig.ENFORCE_GLYPH_LIMIT_ON_CAST.get()) {
+                validators.add(GLYPH_OCCURRENCES_POLICY);
+            }
+        }
+
+        // Combine them all together.
+        this.combinedValidator = new CombinedSpellValidator(validators);
+    }
+
+    @Override
+    public List<SpellValidationError> validate(List<AbstractSpellPart> spellRecipe) {
+        return combinedValidator.validate(spellRecipe);
+    }
+}

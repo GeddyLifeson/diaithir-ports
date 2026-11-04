@@ -1,0 +1,178 @@
+package net.diaithir.druidry.ars.common.block;
+
+import net.diaithir.druidry.ars.api.registry.SpellCasterRegistry;
+import net.diaithir.druidry.ars.api.spell.AbstractSpellPart;
+import net.diaithir.druidry.ars.api.spell.IFilter;
+import net.diaithir.druidry.ars.api.spell.Spell;
+import net.diaithir.druidry.ars.common.block.tile.RuneTile;
+import net.diaithir.druidry.ars.common.items.RunicChalk;
+import net.diaithir.druidry.ars.common.items.SpellParchment;
+import net.diaithir.druidry.ars.common.spell.method.MethodTouch;
+import net.diaithir.druidry.ars.common.util.PortUtil;
+import net.diaithir.druidry.ars.common.util.VoxelShapeUtils;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySelector;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import javax.annotation.Nullable;
+import java.util.List;
+
+@SuppressWarnings("deprecation")
+public class RuneBlock extends TickableModBlock {
+
+    public static VoxelShape shape = Block.box(0.0D, 0.0D, 0.0D, 16D, 0.5D, 16D);
+
+    public RuneBlock() {
+        this(defaultProperties().noCollision().noOcclusion().strength(0f, 0f));
+        registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(FLOOR, true));
+    }
+
+    public RuneBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(BlockStateProperties.FACING, context.getClickedFace());
+    }
+
+    @Override
+    public InteractionResult useItemOn(ItemStack stack, BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+
+        if (worldIn.getBlockEntity(pos) instanceof RuneTile runeTile) {
+
+            if (!worldIn.isClientSide() && stack.getItem() instanceof RunicChalk) {
+                if (runeTile.isTemporary) {
+                    runeTile.isTemporary = false;
+                    PortUtil.sendMessage(player, Component.translatable("ars_nouveau.rune.setperm"));
+                    return InteractionResult.SUCCESS;
+                }
+            }
+            if (!(stack.getItem() instanceof SpellParchment) || worldIn.isClientSide())
+                return InteractionResult.SUCCESS;
+            Spell spell = SpellCasterRegistry.from(stack).getSpell();
+            if (spell.isEmpty())
+                return InteractionResult.SUCCESS;
+
+            if (!(spell.get(0) instanceof MethodTouch)) {
+                PortUtil.sendMessage(player, Component.translatable("ars_nouveau.rune.touch"));
+                return InteractionResult.SUCCESS;
+            }
+            runeTile.setSpell(spell);
+            PortUtil.sendMessage(player, Component.translatable("ars_nouveau.spell_set"));
+        }
+        return super.useItemOn(stack, state, worldIn, pos, player, handIn, hit);
+    }
+
+
+    @Override
+    public BlockState rotate(BlockState state, Rotation rot) {
+        return state.setValue(BlockStateProperties.FACING, rot.rotate(state.getValue(BlockStateProperties.FACING)));
+    }
+
+    @Override
+    public BlockState mirror(BlockState state, Mirror mirrorIn) {
+        return state.rotate(mirrorIn.getRotation(state.getValue(BlockStateProperties.FACING)));
+    }
+    @Override
+    public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, RandomSource rand) {
+        super.tick(state, worldIn, pos, rand);
+
+        if (worldIn.getBlockEntity(pos) instanceof RuneTile rune && rune.touchedEntity != null) {
+            rune.castSpell(rune.touchedEntity);
+            rune.touchedEntity = null;
+        }
+    }
+
+    @Override
+    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean flag) {
+        super.entityInside(state, worldIn, pos, entityIn, effectApplier, flag);
+        List<Entity> entities = worldIn.getEntitiesOfClass(Entity.class, getShape(state, worldIn, pos, CollisionContext.empty()).bounds().move(pos), EntitySelector.NO_SPECTATORS.and((p_289691_) -> {
+            return !p_289691_.isIgnoringBlockTriggers();
+        }));
+        if (!entities.isEmpty() && worldIn.getBlockEntity(pos) instanceof RuneTile rune) {
+            if (rune.spell != null) {
+                for (AbstractSpellPart part : rune.spell.recipe()) {
+                    if ( part instanceof IFilter filter) {
+                        if (!filter.shouldResolveOnEntity(new net.minecraft.world.phys.EntityHitResult(entityIn), worldIn)) {
+                            return;
+                        }
+                    } else break;
+                }
+            }
+            rune.touchedEntity = entities.get(0);
+            worldIn.scheduleTick(pos, this, 1);
+        }
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block blockIn, net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
+        super.neighborChanged(state, world, pos, blockIn, fromPos, isMoving);
+        if (!world.isClientSide() && world.getBlockEntity(pos) instanceof RuneTile runeTile) {
+            runeTile.disabled = world.hasNeighborSignal(pos);
+        }
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+        Direction facing = state.getValue(BlockStateProperties.FACING);
+        switch(facing){
+            case EAST:
+                return VoxelShapeUtils.rotate(shape, Direction.WEST);
+            case NORTH:
+                return VoxelShapeUtils.rotateX(shape, 270);
+            case DOWN:
+                return VoxelShapeUtils.rotate(shape, Direction.UP);
+            case WEST:
+                return VoxelShapeUtils.rotate(shape, Direction.EAST);
+            case SOUTH:
+                return VoxelShapeUtils.rotateX(shape, 90);
+        }
+        return shape;
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(POWERED).add(FACING).add(FLOOR);
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState p_149645_1_) {
+        return RenderShape.MODEL;
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new RuneTile(pos, state);
+    }
+
+    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+    public static final BooleanProperty FLOOR = BooleanProperty.create("floor");
+    public static final EnumProperty<net.minecraft.core.Direction> FACING = BlockStateProperties.FACING;
+}

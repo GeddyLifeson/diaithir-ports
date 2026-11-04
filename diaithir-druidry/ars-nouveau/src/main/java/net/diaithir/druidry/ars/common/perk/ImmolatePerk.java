@@ -1,0 +1,46 @@
+package net.diaithir.druidry.ars.common.perk;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.api.event.SpellCastEvent;
+import net.diaithir.druidry.ars.api.perk.IEffectResolvePerk;
+import net.diaithir.druidry.ars.api.perk.Perk;
+import net.diaithir.druidry.ars.api.perk.PerkInstance;
+import net.diaithir.druidry.ars.api.util.PerkUtil;
+import net.diaithir.druidry.ars.setup.registry.ModPotions;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
+
+public class ImmolatePerk extends Perk implements IEffectResolvePerk {
+    public static final ImmolatePerk INSTANCE = new ImmolatePerk(ArsNouveau.prefix( "thread_immolation"));
+
+    public ImmolatePerk(Identifier key) {
+        super(key);
+    }
+
+    @Override
+    public void onSpellCast(SpellCastEvent spellCastEvent, PerkInstance perkInstance) {
+        LivingEntity caster = spellCastEvent.context.getUnwrappedCaster();
+        int level = PerkUtil.countForPerk(INSTANCE, caster);
+
+        if(caster.isOnFire()){
+            caster.extinguishFire();
+            caster.addEffect(new MobEffectInstance(ModPotions.IMMOLATE_EFFECT, 20 * 5, level - 1));
+        }
+        if(caster.level().getBlockState(caster.blockPosition()).is(BlockTags.FIRE)){
+            caster.level().removeBlock(caster.blockPosition(), false);
+            caster.addEffect(new MobEffectInstance(ModPotions.IMMOLATE_EFFECT, 20 * 5, level - 1));
+        }
+    }
+
+    @Override
+    public String getLangName() {
+        return "Immolation";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "If the user is on fire or standing in fire, the fire will be extinguished when the user casts a spell and will be granted the Immolation potion effect. Fire spells will deal additional damage and last longer for each level of Immolation.";
+    }
+}

@@ -1,0 +1,29 @@
+{
+ "_doc": "Tech node gate for the Ars Nouveau port (DiaithirRPG #264 node magic.glyphs, Age VI). Everything in the listed namespaces is locked until the node is researched; age_gates.json gives the same items Age VI as the fallback when no tech tree is loaded. Not a Spell Engine file.",
+ "node": "magic.glyphs",
+ "age": "VI",
+ "namespaces": [
+  "ars_nouveau"
+ ],
+ "items": [
+  "ars_nouveau:novice_spell_book",
+  "ars_nouveau:apprentice_spell_book",
+  "ars_nouveau:archmage_spell_book",
+  "ars_nouveau:creative_spell_book",
+  "ars_nouveau:blank_glyph",
+  "ars_nouveau:spell_parchment",
+  "ars_nouveau:caster_tome",
+  "ars_nouveau:scribes_table"
+ ],
+ "item_prefixes": [
+  "ars_nouveau:glyph_"
+ ],
+ "school": {
+  "id": "glyph",
+  "name": "Lietirrùan",
+  "spell_tag": "diaithir_druidry:glyph",
+  "spell_book": "diaithir_druidry:spell_book/glyph",
+  "power": "spell_power:arcane",
+  "note": "Casting an Ars Nouveau glyph spell counts as the glyph school for caster XP and school unlock; the eight rune spells (diaithir_druidry:rune_*) are the Spell Engine side of the same school."
+ }
+}

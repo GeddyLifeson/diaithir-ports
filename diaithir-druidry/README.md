@@ -48,6 +48,10 @@ python3 -I tools/validate.py       # static checks
 python3 build.py 0.1.0             # build/diaithir_druidry-0.1.0.jar
 ```
 
+## Source as energy (Ars Nouveau port)
+
+1 Source = 1000 J = 1000 FE (1 FE = 1 J), the pack rate for magic (mana is 100 J, so Source is ten mana; `ars_nouveau:source_gem` 10 kJ, source gem block 90 kJ in `magic_fuel.csv`, `source` in `fuels.csv`). Source jars and arcane relays expose their stored Source as the NeoForge energy capability, so a jar of N Source reports N * 1000 FE. It is extract-only (nothing makes Source from FE) and takes whole Source only; the creative jar is not exposed. Everything in the `ars_nouveau` namespace is Age VI and tied to tech node `magic.glyphs` (`age_gates.json`, `tech_gates.json`).
+
 ## Limits
 
 * No new Spell Power attributes (Java only). A later small Java module can register `druid`, `ovate`, ... as real schools and the spell JSON only needs its `school` changed.

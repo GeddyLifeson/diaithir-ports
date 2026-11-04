@@ -1,0 +1,36 @@
+package net.diaithir.druidry.ars.common.perk;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.api.perk.Perk;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
+import org.jetbrains.annotations.NotNull;
+
+public class KnockbackResistPerk extends Perk {
+
+    public static final KnockbackResistPerk INSTANCE = new KnockbackResistPerk(ArsNouveau.prefix("thread_amethyst_golem"));
+
+    public KnockbackResistPerk(Identifier key) {
+        super(key);
+    }
+
+
+    @Override
+    public @NotNull ItemAttributeModifiers applyAttributeModifiers(ItemAttributeModifiers modifiers, ItemStack stack, int slotValue, EquipmentSlotGroup equipmentSlotGroup) {
+        return modifiers.withModifierAdded(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(INSTANCE.getRegistryName(), .15 * slotValue, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
+    }
+
+    @Override
+    public String getLangName() {
+        return "The Amethyst Golem";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Grants 15%% knockback resistance per level.";
+    }
+}
