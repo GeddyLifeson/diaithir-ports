@@ -2,7 +2,7 @@
 # S6927
 """Spawn-to-Gate pipeline (headless, cloud only).
 Stages: install (packwiz server side) -> neoforge -> boot -> drive (fake-player progression walk, Gate link + rite) -> report.
-Usage: spawn_to_gate.py [--branch claude/pack-v1-3-wave6] [--work /tmp/s2g] [--stage install|boot|drive|all] [--xmx 6G] [--keep]
+Usage: spawn_to_gate.py [--branch claude/pack-v1-3-wave6 | --pack-url URL] [--work /tmp/s2g] [--stage install|boot|drive|all] [--xmx 6G] [--keep]
 Writes WORK/report/breakpoints.json and breakpoints.md; exit 0 only if every step passed. Re-run after fixes; --keep reuses the install.
 Needs: JDK25 (source /mnt/project-files/tools/warm_cache.sh), /tmp/pw/{bootstrap,installer}.jar (packwiz releases),
 harness srvup.sh/cmd.sh from /mnt/project-files/tools/harness."""
@@ -31,7 +31,7 @@ def install(a, W):
     srv.mkdir(parents=True, exist_ok=True)
     if not (srv / "mods").is_dir() or not a.keep:
         shutil.copy2("/tmp/pw/installer.jar", srv / "packwiz-installer.jar")
-        r = sh(["java", "-jar", "/tmp/pw/bootstrap.jar", "--bootstrap-no-update", "-g", "-s", "server", RAW.format(a.branch)], cwd=srv)
+        r = sh(["java", "-jar", "/tmp/pw/bootstrap.jar", "--bootstrap-no-update", "-g", "-s", "server", (a.pack_url or RAW.format(a.branch))], cwd=srv)
         (W / "install.log").write_text(r.stdout + r.stderr)
         if r.returncode:
             return "packwiz install failed (see install.log)"
@@ -96,7 +96,7 @@ def run(a):
                 bp("boot", "error line at boot", l)
     if a.stage in ("drive", "all"):
         pos = newlines(log, 0)[1]
-        for name, cmd, ok, wait in STEPS:
+        for name, cmd, ok, wait in [x for x in STEPS if not a.steps or x[0] in a.steps.split(",")]:
             subprocess.run(["bash", f"{H}/cmd.sh", str(log), cmd])
             t0, seen = time.time(), ""
             while time.time() - t0 < wait:
@@ -132,9 +132,11 @@ def finish(out, W):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--branch", default="claude/pack-v1-3-wave6")
+    p.add_argument("--pack-url", default="", help="full pack.toml URL (e.g. the light pack); overrides --branch")
     p.add_argument("--work", default="/tmp/s2g")
     p.add_argument("--stage", default="all")
     p.add_argument("--xmx", default="6G")
+    p.add_argument("--steps", default="", help="comma list of step names to run (default all)")
     p.add_argument("--keep", action="store_true")
     p.add_argument("--rpg", default="/home/user/diaithirrpg", help="DiaithirRPG checkout with content/datapack")
     p.add_argument("--overlay", default="", help="dir of jars built from unmerged PRs, copied over the installed mods")
