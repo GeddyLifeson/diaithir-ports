@@ -40,5 +40,50 @@
       "diaithir_wiretech:efficiency_augment",
       "diaithir_wiretech:chance_augment"
     ]
+  },
+  "circuit_mechanical": {
+    "age": 3,
+    "items": [
+      "diaithir_wiretech:mechanical_constant_combinator",
+      "diaithir_wiretech:mechanical_arithmetic_combinator",
+      "diaithir_wiretech:mechanical_decider_combinator",
+      "diaithir_wiretech:mechanical_selector_combinator",
+      "diaithir_wiretech:mechanical_circuit_reader",
+      "diaithir_wiretech:mechanical_circuit_gate",
+      "diaithir_wiretech:mechanical_circuit_lamp",
+      "diaithir_wiretech:mechanical_circuit_speaker",
+      "diaithir_wiretech:mechanical_red_circuit_wire",
+      "diaithir_wiretech:mechanical_green_circuit_wire"
+    ]
+  },
+  "circuit_relay": {
+    "age": 4,
+    "items": [
+      "diaithir_wiretech:relay_constant_combinator",
+      "diaithir_wiretech:relay_arithmetic_combinator",
+      "diaithir_wiretech:relay_decider_combinator",
+      "diaithir_wiretech:relay_selector_combinator",
+      "diaithir_wiretech:relay_circuit_reader",
+      "diaithir_wiretech:relay_circuit_gate",
+      "diaithir_wiretech:relay_circuit_lamp",
+      "diaithir_wiretech:relay_circuit_speaker",
+      "diaithir_wiretech:relay_red_circuit_wire",
+      "diaithir_wiretech:relay_green_circuit_wire"
+    ]
+  },
+  "circuit_electronic": {
+    "age": 6,
+    "items": [
+      "diaithir_wiretech:electronic_constant_combinator",
+      "diaithir_wiretech:electronic_arithmetic_combinator",
+      "diaithir_wiretech:electronic_decider_combinator",
+      "diaithir_wiretech:electronic_selector_combinator",
+      "diaithir_wiretech:electronic_circuit_reader",
+      "diaithir_wiretech:electronic_circuit_gate",
+      "diaithir_wiretech:electronic_circuit_lamp",
+      "diaithir_wiretech:electronic_circuit_speaker",
+      "diaithir_wiretech:electronic_red_circuit_wire",
+      "diaithir_wiretech:electronic_green_circuit_wire"
+    ]
   }
 }

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirtrees:block/date_palm_stripped_log"
+ }
+}

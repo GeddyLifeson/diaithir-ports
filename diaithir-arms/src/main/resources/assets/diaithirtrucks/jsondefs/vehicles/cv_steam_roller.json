@@ -77,28 +77,28 @@
  ],
  "definitions": [
   {
-   "subName": "_c",
+   "subName": "",
    "name": "Aveling and Porter Road Roller (Yellow)",
    "modelName": "cv_steam_roller",
-   "textureName": "paint_c",
+   "textureName": "paintc",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_orange",
+   "subName": "_orange",
    "name": "Aveling and Porter Road Roller (Orange)",
    "modelName": "cv_steam_roller",
-   "textureName": "paint_c_orange",
+   "textureName": "paintc_orange",
    "extraMaterialLists": [
     []
    ]
   },
   {
-   "subName": "_c_white",
+   "subName": "_white",
    "name": "Aveling and Porter Road Roller (White)",
    "modelName": "cv_steam_roller",
-   "textureName": "paint_c_white",
+   "textureName": "paintc_white",
    "extraMaterialLists": [
     []
    ]

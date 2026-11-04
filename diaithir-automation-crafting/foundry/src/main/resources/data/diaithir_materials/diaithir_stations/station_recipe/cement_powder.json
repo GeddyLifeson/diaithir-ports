@@ -1,0 +1,19 @@
+{
+  "station": "station.smeltery",
+  "stage": "part",
+  "time_s": 8,
+  "ingredients": [
+    {
+      "item": "minecraft:clay_ball",
+      "count": 2
+    },
+    {
+      "item": "minecraft:calcite",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:cement_powder",
+    "count": 2
+  }
+}

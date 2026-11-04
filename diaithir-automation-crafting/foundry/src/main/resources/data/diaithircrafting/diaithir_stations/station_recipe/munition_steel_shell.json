@@ -1,0 +1,29 @@
+{
+  "station": "station.steam_forge",
+  "stage": "assembly",
+  "time_s": 14,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_steel_shell_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_steel_shell_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_steel_shell_filler",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_steel_shell_fuze",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_steel_shell",
+    "count": 1
+  },
+  "power": "steam",
+  "w": 20000.0
+}

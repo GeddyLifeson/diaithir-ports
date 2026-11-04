@@ -47,3 +47,8 @@ Clean-room: only registry ids were read from the 2.0.10 jar (blockstate, item, b
 - Art: generated 64 px textures (realm_art), recoloured vanilla creature models, as for the other realms.
 - Headless test (NeoForge 26.1.2.116, whole module, all five realms loaded): boots with no new errors, 2192 recipes load, Moon and orbit generate chunks, `locate` finds structures and biomes, creatures summon, `/stellaris selftest` 12/12 PASS (air rules with a fake player, launch to terra, moon and orbit). Not tested: a real client (rendering, the damage message, gravity feel), natural spawning, structure contents.
 - Fixed on the way: `RealmMobs` hooked attribute and renderer events only on the first realm's bus and read shared maps from parallel mod construction threads; with five realms this crashed boot (NPE). Each realm now wires its own creatures on its own bus and the maps are concurrent.
+## Slice 8: loot, gear abilities, sizes
+- Every structure template now holds chests with a per-structure loot table (`<modid>:chests/<structure>`: realm gear, ingots/crystals, vanilla staples; towers and shrines are richer and enchanted).
+- Gear abilities (RealmGear): weapon hits apply an effect picked from the material name (frost slows, ember ignites, rot poisons, honey heals the wielder, cloud lifts, default weakness). A full armour set of one material gives short Resistance when hit and slows the attacker.
+- Per-creature size: scale comes from the creature's id hash (0.8-1.4 monsters, 0.7-1.2 passive, 1.5-2.2 bosses). Hand-modelled bodies are still open.
+- Boss rituals: bosses are tagged `<modid>:bosses` for the diaithir-bosses lane; the rites thread owns the ritual itself.

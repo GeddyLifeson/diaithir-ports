@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:jungle_planks"
+ },
+ "pattern": [
+  "PPP",
+  "P P",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:jungle_counter",
+  "count": 1
+ }
+}

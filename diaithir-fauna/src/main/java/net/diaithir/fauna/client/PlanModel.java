@@ -66,12 +66,16 @@ public class PlanModel extends EntityModel<FaunaState> {
         super.setupAnim(s);
         float pos = s.walkAnimationPos, speed = Math.min(1f, s.walkAnimationSpeed * 2f), t = s.ageInTicks;
         boolean swim = plan.water();
+        float atk = s.swing > 0 ? Mth.sin(s.swing * Mth.PI) : 0f;
+        float die = Math.min(1f, s.deathTime / 20f);
         for (var e : parts.entrySet()) {
             String n = e.getKey();
             ModelPart p = e.getValue();
             if (n.equals("head")) {
                 p.yRot += s.yRot * Mth.DEG_TO_RAD * 0.7f;
                 p.xRot += s.xRot * Mth.DEG_TO_RAD * 0.7f;
+                p.xRot += (s.hasRedOverlay ? -0.35f : 0f) - atk * 0.7f + die * 0.5f;
+                p.xRot += Mth.sin(t * 0.06f) * 0.03f * (1f - speed);
             } else if (LIMB.matcher(n).matches() && !subLimb.contains(n) && !swim && !s.flying) {
                 // leg_l, leg_1_r, leg_f_2_l, arm_1_l ...: only the first segment of a limb swings, diagonal gait
                 Matcher m = LIMB.matcher(n);
@@ -83,9 +87,16 @@ public class PlanModel extends EntityModel<FaunaState> {
                 boolean front = arm || (fb != null ? fb.equals("f") : idx % 2 == 0);
                 float phase = (right == front) ? 0 : Mth.PI;
                 p.xRot += Mth.cos(pos * 0.6662f + phase) * 1.1f * speed;
+                if (front) p.xRot -= atk * 1.2f;
+                p.zRot += (right ? 1 : -1) * die * 0.8f;
             } else if (n.startsWith("wing") && plan.fly()) {
                 float w = s.flying ? Mth.sin(t * 1.1f) * 0.9f : 0.05f;
                 p.zRot += n.endsWith("_r") ? -w : w;
+            } else if (n.equals("body")) {
+                p.yScale += Mth.sin(t * 0.08f) * 0.015f;
+                p.xRot += atk * 0.12f;
+                p.zRot += s.hasRedOverlay ? Mth.sin(t * 2f) * 0.06f : 0f;
+                p.zRot += die * 1.4f;
             } else if (n.startsWith("tail_") || n.startsWith("fin_dorsal")) {
                 int i = n.length() > 5 && Character.isDigit(n.charAt(5)) ? n.charAt(5) - '0' : 0;
                 float amp = swim ? 0.35f * (0.3f + speed) : 0.06f + 0.15f * speed;

@@ -1,0 +1,19 @@
+{
+  "station": "station.fabricator",
+  "stage": "assembly",
+  "time_s": 10,
+  "ingredients": [
+    {
+      "item": "diaithir_materials:insulation_glass_wool",
+      "count": 2
+    },
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:insulation_aerogel",
+    "count": 2
+  }
+}
