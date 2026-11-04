@@ -100,8 +100,9 @@ final class IvTargets {
             if (ok <= 0) return 0;
             try {
                 String wildcard = (String) tank.getClass().getField("WILDCARD_FLUID_MOD").get(null);
+                // doFill: false only simulates in IV (the level changes when it is true)
                 Method fill = tank.getClass().getMethod("fill", String.class, String.class, double.class, boolean.class);
-                return (double) fill.invoke(tank, f.ivFuelType(), wildcard, ok * 1000.0, false) / 1000.0;
+                return (double) fill.invoke(tank, f.ivFuelType(), wildcard, ok * 1000.0, true) / 1000.0;
             } catch (ReflectiveOperationException | RuntimeException ex) {
                 return 0;
             }
