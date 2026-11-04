@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "minecraft:dark_oak_planks",
+  "l": "minecraft:potion"
+ },
+ "pattern": [
+  " m ",
+  "mlm",
+  " m "
+ ],
+ "result": {
+  "id": "goety:weathering_dark_oak_planks",
+  "count": 4
+ }
+}

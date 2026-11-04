@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/vesizathith/settlement/1/osevsora",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/vesizathith/st_vesizathith_e7_places_002352",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

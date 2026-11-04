@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:coarse_dirt",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "fluid": "minecraft:water",
+  "amount": 81000
+ },
+ "result": {
+  "id": "minecraft:dirt"
+ }
+}

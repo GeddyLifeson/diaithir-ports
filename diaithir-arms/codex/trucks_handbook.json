@@ -1,0 +1,480 @@
+{
+ "id": "diaithirtrucks:handbook",
+ "title": "Karbaid luichda",
+ "chapters": [
+  {
+   "tier": "tractor",
+   "name": "karbad tarruing",
+   "age": "VI",
+   "text": "Semi tractor units, one per design. Hook a trailer to the fifth wheel.",
+   "items": [
+    {
+     "id": "mts:diaithirtrucks.truck_scammell_scarab",
+     "name": "karbad tarruing Skambeld Skarab",
+     "age": "VI",
+     "text": "Scammell Scarab"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_diamond_t_980",
+     "name": "karbad tarruing Diamund T 980",
+     "age": "VI",
+     "text": "Diamond T 980"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_foden_s21",
+     "name": "karbad tarruing Fouden S21 Mikkey Mousi",
+     "age": "VII",
+     "text": "Foden S21 Mickey Mouse"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_mack_b61",
+     "name": "karbad tarruing Makk B-Sieries",
+     "age": "VII",
+     "text": "Mack B-Series"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_kenworth_w900",
+     "name": "karbad tarruing Kienwurd W900",
+     "age": "VII",
+     "text": "Kenworth W900"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_volvo_f88",
+     "name": "karbad tarruing Voulvo F88",
+     "age": "VII",
+     "text": "Volvo F88"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_maz_504",
+     "name": "karbad tarruing MAUZ-504",
+     "age": "VII",
+     "text": "MAZ-504"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_mack_r600",
+     "name": "karbad tarruing Makk R-Sieries",
+     "age": "VII",
+     "text": "Mack R-Series"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_peterbilt_359",
+     "name": "karbad tarruing Pieterbilt 359",
+     "age": "VII",
+     "text": "Peterbilt 359"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_intl_transtar",
+     "name": "karbad tarruing Internationul Transtur",
+     "age": "VII",
+     "text": "International Transtar"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_mb_ng",
+     "name": "karbad tarruing Mierkedes-Bienz NGU",
+     "age": "VII",
+     "text": "Mercedes-Benz NG"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_kenworth_k100",
+     "name": "karbad tarruing Kienwurd K100",
+     "age": "VII",
+     "text": "Kenworth K100"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_kamaz_5320",
+     "name": "karbad tarruing KAUMAZ",
+     "age": "VII",
+     "text": "KAMAZ"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_mack_superliner",
+     "name": "karbad tarruing Makk Suiper-Liener",
+     "age": "VII",
+     "text": "Mack Super-Liner"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_tatra_815",
+     "name": "karbad tarruing Tautra 815",
+     "age": "VII",
+     "text": "Tatra 815"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_sinotruk_howo",
+     "name": "karbad tarruing Sienotruk Houwo",
+     "age": "VII",
+     "text": "Sinotruk Howo"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_scania_143",
+     "name": "karbad tarruing Skania 143",
+     "age": "VII",
+     "text": "Scania 143"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_peterbilt_379",
+     "name": "karbad tarruing Pieterbilt 379",
+     "age": "VII",
+     "text": "Peterbilt 379"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_freightliner_fld120",
+     "name": "karbad tarruing Freigtliner FLDU120",
+     "age": "VII",
+     "text": "Freightliner FLD120"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_renault_magnum",
+     "name": "karbad tarruing Rienault Maugnum",
+     "age": "VII",
+     "text": "Renault Magnum"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_volvo_fh",
+     "name": "karbad tarruing Voulvo FHU",
+     "age": "VII",
+     "text": "Volvo FH"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_isuzu_giga",
+     "name": "karbad tarruing Iesuzu Giega",
+     "age": "VII",
+     "text": "Isuzu Giga"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_mercedes_actros",
+     "name": "karbad tarruing Mierkedes-Bienz Aktros",
+     "age": "VII",
+     "text": "Mercedes-Benz Actros"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_fuso_super_great",
+     "name": "karbad tarruing Mitsubisi Fuiso Suiper Griet",
+     "age": "VII",
+     "text": "Mitsubishi Fuso Super Great"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_volvo_vnl",
+     "name": "karbad tarruing Voulvo VNU",
+     "age": "VII",
+     "text": "Volvo VN"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_daf_xf",
+     "name": "karbad tarruing DAUF XFU",
+     "age": "VII",
+     "text": "DAF XF"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_iveco_stralis",
+     "name": "karbad tarruing Iveko Straulis",
+     "age": "VII",
+     "text": "Iveco Stralis"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_freightliner_cascadia",
+     "name": "karbad tarruing Freigtliner Kaskadia",
+     "age": "VII",
+     "text": "Freightliner Cascadia"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_man_tgx",
+     "name": "karbad tarruing MAUN TGXU",
+     "age": "VII",
+     "text": "MAN TGX"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_tata_prima",
+     "name": "karbad tarruing Tauta Priema",
+     "age": "VII",
+     "text": "Tata Prima"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_western_star_4900",
+     "name": "karbad tarruing Wiestern Staur 4900",
+     "age": "VII",
+     "text": "Western Star 4900"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_kenworth_t680",
+     "name": "karbad tarruing Kienwurd T680",
+     "age": "VII",
+     "text": "Kenworth T680"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_ox_team",
+     "name": "karbad tarruing Oux Tiem aund Liember",
+     "age": "III",
+     "text": "Ox Team and Limber"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_horse_team",
+     "name": "karbad tarruing Horsi Tiem aund Liember",
+     "age": "IV",
+     "text": "Horse Team and Limber"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_steam_traction",
+     "name": "karbad tarruing Stiem Traktion Iengini",
+     "age": "VI",
+     "text": "Steam Traction Engine"
+    },
+    {
+     "id": "mts:diaithirtrucks.truck_steam_wagon",
+     "name": "karbad tarruing Sientinel Stiem Waggun",
+     "age": "VI",
+     "text": "Sentinel Steam Waggon"
+    }
+   ]
+  },
+  {
+   "tier": "trailer",
+   "name": "karbad luichda",
+   "age": "VI",
+   "text": "Box, flatbed, tank, reefer, lowboy, car carrier, log and heavy-haul trailers with real cargo space.",
+   "items": [
+    {
+     "id": "mts:diaithirtrucks.trailer_dry_van",
+     "name": "karbad luichda Dryu Vaun Traileri",
+     "age": "VI",
+     "text": "Dry Van Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_flatbed",
+     "name": "karbad luichda Flautbed Traileri",
+     "age": "VI",
+     "text": "Flatbed Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_container_chassis",
+     "name": "karbad luichda Kontuiner Chaussis",
+     "age": "VII",
+     "text": "Container Chassis"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_tanker",
+     "name": "karbad luichda Taunk Traileri",
+     "age": "VI",
+     "text": "Tank Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_reefer",
+     "name": "karbad luichda Riefrigerated Traileri",
+     "age": "VI",
+     "text": "Refrigerated Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_lowboy",
+     "name": "karbad luichda Louwboy Traileri",
+     "age": "VI",
+     "text": "Lowboy Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_car_carrier",
+     "name": "karbad luichda Kar Karrier Traileri",
+     "age": "VII",
+     "text": "Car Carrier Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_log_trailer",
+     "name": "karbad luichda Loug Traileri",
+     "age": "VI",
+     "text": "Log Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_curtainsider",
+     "name": "karbad luichda Kurtuinsider Traileri",
+     "age": "VII",
+     "text": "Curtainsider Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_dump_trailer",
+     "name": "karbad luichda Duimp Traileri",
+     "age": "VI",
+     "text": "Dump Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_livestock",
+     "name": "karbad luichda Livestokk Traileri",
+     "age": "VI",
+     "text": "Livestock Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_step_deck",
+     "name": "karbad luichda Stiep-Diekk Traileri",
+     "age": "VI",
+     "text": "Step-Deck Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_modular_heavy",
+     "name": "karbad luichda Modulur Hievy-Haulu Traileri",
+     "age": "VII",
+     "text": "Modular Heavy-Haul Trailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_tank_transporter",
+     "name": "karbad luichda Hievy Ieqoipment Transpurter Siemitruiler",
+     "age": "VII",
+     "text": "Heavy Equipment Transporter Semitrailer"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_handcart",
+     "name": "karbad luichda Handkurt",
+     "age": "II",
+     "text": "Handcart"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_cart",
+     "name": "karbad luichda Twou-Wheeledi Kart",
+     "age": "II",
+     "text": "Two-Wheeled Cart"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_oxcart",
+     "name": "karbad luichda Oux Kart",
+     "age": "III",
+     "text": "Ox Cart"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_wagon",
+     "name": "karbad luichda Fouru-Wheeledi Wagun",
+     "age": "IV",
+     "text": "Four-Wheeled Wagon"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_conestoga",
+     "name": "karbad luichda Konestoga Freigt Wagun",
+     "age": "V",
+     "text": "Conestoga Freight Wagon"
+    },
+    {
+     "id": "mts:diaithirtrucks.trailer_dray",
+     "name": "karbad luichda Drauy",
+     "age": "IV",
+     "text": "Dray"
+    }
+   ]
+  },
+  {
+   "tier": "construction",
+   "name": "karbad oibri",
+   "age": "VI",
+   "text": "Rollers, mixers, pavers, graders and diggers for building roads.",
+   "items": [
+    {
+     "id": "mts:diaithirtrucks.cv_steam_roller",
+     "name": "karbad oibri Auveling aund Pourter Roadu Rolder",
+     "age": "VI",
+     "text": "Aveling and Porter Road Roller"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_transit_mixer",
+     "name": "karbad oibri Konkreti Traunsit Miexer",
+     "age": "VI",
+     "text": "Concrete Transit Mixer"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_d9_dozer",
+     "name": "karbad oibri Katerpildur D9 Bulddozer",
+     "age": "VII",
+     "text": "Caterpillar D9 Bulldozer"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_jcb_3cx",
+     "name": "karbad oibri JKB 3KX Bakkhoe Loaderi",
+     "age": "VII",
+     "text": "JCB 3CX Backhoe Loader"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_cat_140_grader",
+     "name": "karbad oibri Katerpildur 140 Motur Grauder",
+     "age": "VII",
+     "text": "Caterpillar 140 Motor Grader"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_cat_966_loader",
+     "name": "karbad oibri Katerpildur 966 Wheeli Loaderi",
+     "age": "VII",
+     "text": "Caterpillar 966 Wheel Loader"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_barber_greene_paver",
+     "name": "karbad oibri Asphult Pauver",
+     "age": "VI",
+     "text": "Asphalt Paver"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_bomag_roller",
+     "name": "karbad oibri Vibratury Roadu Rolder",
+     "age": "VII",
+     "text": "Vibratory Road Roller"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_bobcat_m440",
+     "name": "karbad oibri Bobkat M-440 Skied-Steeri Loaderi",
+     "age": "VII",
+     "text": "Bobcat M-440 Skid-Steer Loader"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_cat_320_excavator",
+     "name": "karbad oibri Katerpildur 320 Iexkavatur",
+     "age": "VII",
+     "text": "Caterpillar 320 Excavator"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_wirtgen_miller",
+     "name": "karbad oibri Roadu Milding Machini",
+     "age": "VII",
+     "text": "Road Milling Machine"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_putzmeister_pump",
+     "name": "karbad oibri Konkreti Puimp Trukk",
+     "age": "VII",
+     "text": "Concrete Pump Truck"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_cat_797_haul",
+     "name": "karbad oibri Katerpildur 797 Haulu Trukk",
+     "age": "VII",
+     "text": "Caterpillar 797 Haul Truck"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_hand_roller",
+     "name": "karbad oibri Haund-Hauledi Stoni Rolder",
+     "age": "II",
+     "text": "Hand-Hauled Stone Roller"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_horse_roller",
+     "name": "karbad oibri Horsi-Drauwn Rolder",
+     "age": "IV",
+     "text": "Horse-Drawn Roller"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_dump_cart",
+     "name": "karbad oibri Tiep Kart",
+     "age": "IV",
+     "text": "Tip Cart"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_fresno_scraper",
+     "name": "karbad oibri Friesno Skraper",
+     "age": "VI",
+     "text": "Fresno Scraper"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_horse_grader",
+     "name": "karbad oibri Horsi-Drauwn Roadu Grauder",
+     "age": "VI",
+     "text": "Horse-Drawn Road Grader"
+    },
+    {
+     "id": "mts:diaithirtrucks.cv_steam_shovel",
+     "name": "karbad oibri Stiem Shouvel",
+     "age": "V",
+     "text": "Steam Shovel"
+    }
+   ]
+  }
+ ]
+}

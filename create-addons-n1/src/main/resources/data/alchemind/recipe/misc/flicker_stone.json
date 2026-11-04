@@ -1,0 +1,12 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:glow_ink_sac",
+  "minecraft:coal"
+ ],
+ "results": [
+  {
+   "id": "alchemind:flicker_stone"
+  }
+ ]
+}

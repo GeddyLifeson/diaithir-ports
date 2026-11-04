@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget",
+  "theaurorian:aurorian_steel_nugget"
+ ],
+ "result": {
+  "id": "theaurorian:aurorian_steel_ingot",
+  "count": 1
+ }
+}

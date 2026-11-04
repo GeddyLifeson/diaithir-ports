@@ -1,0 +1,149 @@
+entry_id	name	tier	era	biome_entry
+ST.shizasha.E1.assay.001615	Orellistum	1	E1	ST.shizasha.E6.places.000016
+ST.shizasha.E1.assay.002657	Sereollanum Santiania	1	E1	ST.shizasha.E6.places.000016
+ST.shizasha.E3.assay.002281	Seraunor	3	E3	ST.shizasha.E6.places.000018
+ST.shizasha.E3.assay.002676	Valeontium	3	E3	ST.shizasha.E6.places.000080
+ST.shizasha.E3.assay.003767	Coraloria	3	E3	ST.shizasha.E4.places.000060
+ST.shizasha.E3.places.000180	Isizasha	1	E3	ST.shizasha.E6.places.000016
+ST.shizasha.E3.places.000200	Koggouzhun	2	E3	ST.shizasha.E6.places.000023
+ST.shizasha.E3.places.000202	Ryamae	2	E3	ST.shizasha.E6.places.000018
+ST.shizasha.E3.places.000203	Thasiathis	2	E3	ST.shizasha.E6.places.000088
+ST.shizasha.E3.places.000204	Syistora	2	E3	ST.shizasha.E6.places.000080
+ST.shizasha.E3.places.000228	Siastith	3	E3	ST.shizasha.E6.places.000016
+ST.shizasha.E3.places.000246	Rinorium	4	E3	ST.shizasha.E6.places.000016
+ST.shizasha.E4.assay.001349	Tialia	4	E4	ST.shizasha.E6.places.000088
+ST.shizasha.E4.assay.001488	Amentor	4	E4	ST.shizasha.E6.places.000016
+ST.shizasha.E4.assay.001976	Vareollum	4	E4	ST.shizasha.E6.places.000079
+ST.shizasha.E4.assay.002360	Corentanum	4	E4	ST.shizasha.E6.places.000018
+ST.shizasha.E4.assay.002475	Nalesum	4	E4	ST.shizasha.E6.places.000079
+ST.shizasha.E4.assay.003011	Millanium	4	E4	ST.shizasha.E6.places.000080
+ST.shizasha.E4.assay.003022	Rasia Narnaurium	4	E4	ST.shizasha.E6.places.000079
+ST.shizasha.E4.assay.003214	Valosus	4	E4	ST.shizasha.E6.places.000023
+ST.shizasha.E4.assay.003634	Orasia	4	E4	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.000311	Norum	5	E5	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.000437	Tenor	5	E5	ST.shizasha.E4.places.000060
+ST.shizasha.E5.assay.000516	Seraullor	5	E5	ST.shizasha.E6.places.000023
+ST.shizasha.E5.assay.000518	Mauliares	5	E5	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.000664	Lorilia	5	E5	ST.shizasha.E6.places.000018
+ST.shizasha.E5.assay.000768	Tesia	5	E5	ST.shizasha.E6.places.000079
+ST.shizasha.E5.assay.000916	Orolerium	5	E5	ST.shizasha.E6.places.000023
+ST.shizasha.E5.assay.001220	Ameonilor	5	E5	ST.shizasha.E6.places.000088
+ST.shizasha.E5.assay.001396	Taurneollia	5	E5	ST.shizasha.E6.places.000088
+ST.shizasha.E5.assay.001415	Celus	5	E5	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.001430	Vesteonium	5	E5	ST.shizasha.E6.places.000079
+ST.shizasha.E5.assay.001577	Ceornes	5	E5	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.002215	Ceontaulles	5	E5	ST.shizasha.E6.places.000080
+ST.shizasha.E5.assay.002392	Orerum Nauses	5	E5	ST.shizasha.E4.places.000060
+ST.shizasha.E5.assay.002435	Miallium	5	E5	ST.shizasha.E4.places.000060
+ST.shizasha.E5.assay.002569	Niraulia	5	E5	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.002692	Lasanum	5	E5	ST.shizasha.E6.places.000018
+ST.shizasha.E5.assay.002713	Vinornium	5	E5	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.002960	Vaunus	5	E5	ST.shizasha.E6.places.000088
+ST.shizasha.E5.assay.002968	Amiareornia	5	E5	ST.shizasha.E6.places.000080
+ST.shizasha.E5.assay.003061	Valostus Amasia	5	E5	ST.shizasha.E6.places.000080
+ST.shizasha.E5.assay.003104	Orianestia	5	E5	ST.shizasha.E4.places.000060
+ST.shizasha.E5.assay.003160	Telisernor	5	E5	ST.shizasha.E4.places.000060
+ST.shizasha.E5.assay.003415	Oresarium	5	E5	ST.shizasha.E6.places.000016
+ST.shizasha.E5.assay.003524	Sallia	5	E5	ST.shizasha.E4.places.000060
+ST.shizasha.E5.assay.003866	Raules Amianontium	5	E5	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.000264	Nisantia	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.000369	Velliarium	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.000434	Callauranum	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.000435	Niseontus	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.000510	Restanum	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.000543	Sernanum	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.000632	Rarnes	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.000675	Terum	6	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.assay.000850	Sollum	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.000983	Serarus	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.001022	Viares	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.001027	Serirelum	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.001060	Ceonus	6	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.assay.001119	Miasor	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.001154	Leror	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.001163	Oriarnes	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.001194	Telilanum Tarirnia	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.001270	Valinolia	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.001328	Lenum Telinteosum	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.001412	Amiarastium	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.001501	Cintaulum	6	E6	ST.shizasha.E6.places.000018
+ST.shizasha.E6.assay.001505	Launes Tesanum	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.001542	Raulium	6	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.assay.001568	Ceoraulor	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.001570	Meollum	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.001578	Vintausor	6	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.assay.001604	Serantum	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.001652	Siarnauntia	6	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.assay.001708	Reornanum Sereontinum	6	E6	ST.shizasha.E6.places.000018
+ST.shizasha.E6.assay.001727	Carnium	6	E6	ST.shizasha.E6.places.000018
+ST.shizasha.E6.assay.001759	Ceontum	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.001767	Rianor	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.001911	Caustum	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.001912	Narnor	6	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.assay.001942	Valianoles	6	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.assay.001995	Oreosarium	6	E6	ST.shizasha.E6.places.000018
+ST.shizasha.E6.assay.002000	Miarnus	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.002003	Rianes Tentum	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.002037	Nestianium	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.002094	Amaulleoria	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.002120	Orallanum	6	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.assay.002133	Maullianes	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.002201	Neostor Cestus	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.002232	Oraurnus	6	E6	ST.shizasha.E6.places.000018
+ST.shizasha.E6.assay.002254	Coreonium	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.002256	Amaunium	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.002286	Viantaullum	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.002365	Lenanum	6	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.assay.002374	Torus Orillerus	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.002399	Mollum	6	E6	ST.shizasha.E6.places.000018
+ST.shizasha.E6.assay.002450	Miasales	6	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.assay.002492	Corillia	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.002554	Seolor	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.002597	Riastus	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.002617	Rarnes Tentoria	6	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.assay.002705	Rintus	6	E6	ST.shizasha.E6.places.000018
+ST.shizasha.E6.assay.002745	Tialesor	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.002789	Ameontia	6	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.assay.002843	Teostia	6	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.assay.002893	Telonia	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.002927	Miallausia	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.002942	Siranum	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.003053	Teliasium	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.003205	Ameostor	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.003303	Vestia Listus	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.003336	Vosanum Tarneoria	6	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.assay.003525	Callus	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.assay.003569	Ceollia	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.003601	Valontasor	6	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.assay.003702	Serelaunia	6	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.assay.003710	Nillor Ceostoles	6	E6	ST.shizasha.E6.places.000088
+ST.shizasha.E6.assay.003809	Valesores	6	E6	ST.shizasha.E6.places.000016
+ST.shizasha.E6.places.000005	Thiastasha	7	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.places.000012	Xaivsasha	3	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.places.000016	Thivsora	2	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.places.000035	Theizyss	7	E6	ST.shizasha.E6.places.000080
+ST.shizasha.E6.places.000055	Xaeziastis	2	E6	ST.shizasha.E6.places.000023
+ST.shizasha.E6.places.000069	Xaishis	7	E6	ST.shizasha.E6.places.000079
+ST.shizasha.E6.places.000083	Thyustora	7	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E6.places.000087	Thisseth	5	E6	ST.shizasha.E4.places.000060
+ST.shizasha.E7.assay.000415	Raules	7	E7	ST.shizasha.E6.places.000088
+ST.shizasha.E7.assay.000969	Ceoria	7	E7	ST.shizasha.E4.places.000060
+ST.shizasha.E7.assay.001104	Seranteorum	7	E7	ST.shizasha.E6.places.000023
+ST.shizasha.E7.assay.001486	Amantestia	7	E7	ST.shizasha.E6.places.000088
+ST.shizasha.E7.assay.001709	Amanesanum	7	E7	ST.shizasha.E6.places.000088
+ST.shizasha.E7.assay.001756	Coriasirum	7	E7	ST.shizasha.E4.places.000060
+ST.shizasha.E7.assay.001861	Rirneoses	7	E7	ST.shizasha.E6.places.000018
+ST.shizasha.E7.assay.001963	Corareolles	7	E7	ST.shizasha.E6.places.000080
+ST.shizasha.E7.assay.002297	Sistanum Toseornanum	7	E7	ST.shizasha.E6.places.000023
+ST.shizasha.E7.assay.002373	Sentialor	7	E7	ST.shizasha.E6.places.000080
+ST.shizasha.E7.assay.002500	Malaustor	7	E7	ST.shizasha.E6.places.000079
+ST.shizasha.E7.assay.002787	Vauntisanum	7	E7	ST.shizasha.E6.places.000023
+ST.shizasha.E7.assay.002938	Valastia	7	E7	ST.shizasha.E6.places.000018
+ST.shizasha.E7.assay.002974	Amiarus	7	E7	ST.shizasha.E6.places.000023
+ST.shizasha.E7.assay.003362	Tiasternor	7	E7	ST.shizasha.E6.places.000088
+ST.shizasha.E7.assay.003369	Vollauntum	7	E7	ST.shizasha.E6.places.000088
+ST.shizasha.E7.assay.003389	Tastiarus	7	E7	ST.shizasha.E6.places.000016
+ST.shizasha.E7.assay.003402	Ameollanum	7	E7	ST.shizasha.E6.places.000080
+ST.shizasha.E7.assay.003604	Varnor	7	E7	ST.shizasha.E6.places.000080
+ST.shizasha.E7.assay.003759	Leonires	7	E7	ST.shizasha.E6.places.000080
+ST.shizasha.E7.places.000215	Marum	2	E7	ST.shizasha.E6.places.000018

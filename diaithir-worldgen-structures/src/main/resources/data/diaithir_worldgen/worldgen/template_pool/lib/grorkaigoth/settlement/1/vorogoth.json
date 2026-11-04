@@ -1,0 +1,24 @@
+{
+ "name": "diaithir_worldgen:lib/grorkaigoth/settlement/1/vorogoth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/grorkaigoth/ki_grorkaigoth_e7_places_000343",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/grorkaigoth/ki_grorkaigoth_e7_places_000345",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/0.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/1.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/2.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/ruler.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/warrior.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/priest.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/0.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/1.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/2.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/ruler.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/warrior.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/priest.png",
+    "profession": "diaithircompat:early_archaic_eastern_north_america",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

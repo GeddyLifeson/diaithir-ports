@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/male/0.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/male/1.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/male/2.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/male/ruler.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/male/warrior.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/male/priest.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/female/0.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/female/1.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/female/2.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/female/ruler.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/female/warrior.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/final_epigravettian/female/priest.png",
+    "profession": "diaithircompat:final_epigravettian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

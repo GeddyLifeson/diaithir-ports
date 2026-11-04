@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:mas62_workbench"
+ ],
+ "result": {
+  "id": "createloveandwar:forgotten_gunsmith_parts",
+  "count": 3
+ },
+ "show_notification": true
+}

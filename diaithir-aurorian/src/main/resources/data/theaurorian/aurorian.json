@@ -1,0 +1,1172 @@
+{
+ "tools": {
+  "aurorianite": {
+   "level": 3,
+   "durability": 500,
+   "speed": 8.0,
+   "bonus": 3.0,
+   "enchant": 20,
+   "repair": "theaurorian:aurorianite_ingot",
+   "incorrect": "diamond",
+   "age": "IV"
+  },
+  "aurorian_steel": {
+   "level": 3,
+   "durability": 1500,
+   "speed": 8.5,
+   "bonus": 3.5,
+   "enchant": 10,
+   "repair": "theaurorian:aurorian_steel_ingot",
+   "incorrect": "diamond",
+   "age": "III"
+  },
+  "aurorian_stone": {
+   "level": 1,
+   "durability": 131,
+   "speed": 4.5,
+   "bonus": 1.5,
+   "enchant": 14,
+   "repair": "theaurorian:aurorian_cobblestone",
+   "incorrect": "stone",
+   "age": "I"
+  },
+  "cerulean": {
+   "level": 2,
+   "durability": 150,
+   "speed": 7.0,
+   "bonus": 2.5,
+   "enchant": 20,
+   "repair": "theaurorian:cerulean_ingot",
+   "incorrect": "iron",
+   "age": "II"
+  },
+  "crystalline": {
+   "level": 3,
+   "durability": 500,
+   "speed": 8.0,
+   "bonus": 3.0,
+   "enchant": 20,
+   "repair": "theaurorian:crystalline_ingot",
+   "incorrect": "diamond",
+   "age": "IV"
+  },
+  "moonstone": {
+   "level": 2,
+   "durability": 300,
+   "speed": 7.0,
+   "bonus": 2.5,
+   "enchant": 14,
+   "repair": "theaurorian:moonstone_ingot",
+   "incorrect": "iron",
+   "age": "II"
+  },
+  "silentwood": {
+   "level": 0,
+   "durability": 59,
+   "speed": 3.0,
+   "bonus": 0.0,
+   "enchant": 20,
+   "repair": "theaurorian:silentwood_planks",
+   "incorrect": "wood",
+   "age": "I"
+  },
+  "umbra": {
+   "level": 3,
+   "durability": 500,
+   "speed": 8.0,
+   "bonus": 3.0,
+   "enchant": 20,
+   "repair": "theaurorian:umbra_ingot",
+   "incorrect": "diamond",
+   "age": "IV"
+  }
+ },
+ "armor": {
+  "knight": {
+   "name": "knight",
+   "durability": 20,
+   "boots": 3,
+   "legs": 6,
+   "chest": 5,
+   "helmet": 3,
+   "enchant": 5,
+   "sound": "iron",
+   "toughness": 0.0,
+   "knockback": 0.0,
+   "repair": null,
+   "age": "II"
+  },
+  "aurorian_steel": {
+   "name": "aurorian_steel",
+   "durability": 33,
+   "boots": 4,
+   "legs": 7,
+   "chest": 8,
+   "helmet": 4,
+   "enchant": 10,
+   "sound": "netherite",
+   "toughness": 1.0,
+   "knockback": 0.1,
+   "repair": "theaurorian:aurorian_steel_ingot",
+   "age": "III"
+  },
+  "umbra": {
+   "name": "umbra",
+   "durability": 20,
+   "boots": 4,
+   "legs": 6,
+   "chest": 6,
+   "helmet": 4,
+   "enchant": 20,
+   "sound": "diamond",
+   "toughness": 0.0,
+   "knockback": 0.2,
+   "repair": "theaurorian:umbra_ingot",
+   "age": "IV"
+  },
+  "spectral": {
+   "name": "spectral",
+   "durability": 20,
+   "boots": 4,
+   "legs": 6,
+   "chest": 6,
+   "helmet": 4,
+   "enchant": 25,
+   "sound": "leather",
+   "toughness": 0.0,
+   "knockback": 0.0,
+   "repair": "theaurorian:spectral_silk",
+   "age": "III"
+  },
+  "cerulean": {
+   "name": "cerulean",
+   "durability": 20,
+   "boots": 3,
+   "legs": 6,
+   "chest": 5,
+   "helmet": 3,
+   "enchant": 20,
+   "sound": "diamond",
+   "toughness": 1.0,
+   "knockback": 0.0,
+   "repair": "theaurorian:cerulean_ingot",
+   "age": "II"
+  }
+ },
+ "items": [
+  {
+   "id": "aurorian_coal",
+   "kind": "item",
+   "burn": 1600
+  },
+  {
+   "id": "aurorian_coal_nugget",
+   "kind": "item",
+   "burn": 200
+  },
+  {
+   "id": "aurorian_steel_ingot",
+   "kind": "item"
+  },
+  {
+   "id": "aurorian_steel_nugget",
+   "kind": "item"
+  },
+  {
+   "id": "aurorianite_ingot",
+   "kind": "item"
+  },
+  {
+   "id": "aurorianite_scrap",
+   "kind": "item"
+  },
+  {
+   "id": "cerulean_ingot",
+   "kind": "item"
+  },
+  {
+   "id": "cerulean_nugget",
+   "kind": "item"
+  },
+  {
+   "id": "crystalline_ingot",
+   "kind": "item"
+  },
+  {
+   "id": "crystalline_scrap",
+   "kind": "item"
+  },
+  {
+   "id": "cup",
+   "kind": "item",
+   "burn": 100
+  },
+  {
+   "id": "darkstone_key",
+   "rarity": "uncommon",
+   "kind": "item",
+   "durability": 3
+  },
+  {
+   "id": "lavender",
+   "kind": "item"
+  },
+  {
+   "id": "lockpicks",
+   "kind": "item",
+   "durability": 16
+  },
+  {
+   "id": "moon_temple_interior_key",
+   "rarity": "uncommon",
+   "kind": "item",
+   "durability": 1
+  },
+  {
+   "id": "moon_temple_key",
+   "rarity": "uncommon",
+   "kind": "item",
+   "durability": 3
+  },
+  {
+   "id": "moon_temple_key_fragment",
+   "kind": "item"
+  },
+  {
+   "id": "moonstone_ingot",
+   "kind": "item"
+  },
+  {
+   "id": "moonstone_nugget",
+   "kind": "item"
+  },
+  {
+   "id": "plant_fiber",
+   "kind": "item"
+  },
+  {
+   "id": "runestone_key",
+   "rarity": "uncommon",
+   "kind": "item",
+   "durability": 3
+  },
+  {
+   "id": "runestone_loot_key",
+   "rarity": "uncommon",
+   "kind": "item",
+   "durability": 1
+  },
+  {
+   "id": "silentwood_stick",
+   "kind": "item",
+   "burn": 100
+  },
+  {
+   "id": "spectral_silk",
+   "rarity": "uncommon",
+   "kind": "item"
+  },
+  {
+   "id": "umbra_ingot",
+   "kind": "item"
+  },
+  {
+   "id": "umbra_scrap",
+   "kind": "item"
+  },
+  {
+   "id": "bright_bulb_tea",
+   "kind": "drink",
+   "effects": [
+    {
+     "id": "fire_resistance",
+     "ticks": 600,
+     "amp": 1,
+     "chance": 1.0
+    }
+   ],
+   "nutrition": 0,
+   "saturation": 0.0,
+   "fast": true
+  },
+  {
+   "id": "lavender_bread",
+   "kind": "food",
+   "nutrition": 3,
+   "saturation": 1.2,
+   "fast": true
+  },
+  {
+   "id": "lavender_tea",
+   "kind": "drink",
+   "effects": [
+    {
+     "id": "resistance",
+     "ticks": 600,
+     "amp": 1,
+     "chance": 1.0
+    }
+   ],
+   "nutrition": 0,
+   "saturation": 0.0,
+   "fast": true
+  },
+  {
+   "id": "petunia_tea",
+   "kind": "drink",
+   "effects": [
+    {
+     "id": "strength",
+     "ticks": 600,
+     "amp": 1,
+     "chance": 1.0
+    }
+   ],
+   "nutrition": 0,
+   "saturation": 0.0,
+   "fast": true
+  },
+  {
+   "id": "silkberry",
+   "effects": [
+    {
+     "id": "regeneration",
+     "ticks": 20,
+     "amp": 0,
+     "chance": 0.5
+    }
+   ],
+   "kind": "food",
+   "nutrition": 2,
+   "saturation": 0.4,
+   "fast": false
+  },
+  {
+   "id": "silkberry_jam",
+   "effects": [
+    {
+     "id": "regeneration",
+     "ticks": 20,
+     "amp": 0,
+     "chance": 1.0
+    }
+   ],
+   "kind": "food",
+   "nutrition": 4,
+   "saturation": 1.6,
+   "fast": false
+  },
+  {
+   "id": "silkberry_jam_sandwich",
+   "kind": "food",
+   "nutrition": 7,
+   "saturation": 5.6,
+   "fast": false
+  },
+  {
+   "id": "silkberry_tea",
+   "kind": "drink",
+   "effects": [
+    {
+     "id": "regeneration",
+     "ticks": 600,
+     "amp": 1,
+     "chance": 1.0
+    }
+   ],
+   "nutrition": 0,
+   "saturation": 0.0,
+   "fast": true
+  },
+  {
+   "id": "strange_meat",
+   "kind": "food",
+   "nutrition": 8,
+   "saturation": 14.4,
+   "fast": false,
+   "durability": 10
+  },
+  {
+   "id": "aurorian_steel_hoe",
+   "rarity": "epic",
+   "kind": "hoe",
+   "mat": "aurorian_steel",
+   "damage": -3.0,
+   "speed": 0.0
+  },
+  {
+   "id": "aurorian_steel_leggings",
+   "rarity": "epic",
+   "kind": "armor",
+   "mat": "aurorian_steel",
+   "slot": "leggings"
+  },
+  {
+   "id": "aurorian_steel_pickaxe",
+   "rarity": "epic",
+   "kind": "pickaxe",
+   "mat": "aurorian_steel",
+   "damage": 1.0,
+   "speed": -2.8
+  },
+  {
+   "id": "aurorian_steel_shovel",
+   "rarity": "epic",
+   "kind": "shovel",
+   "mat": "aurorian_steel",
+   "damage": 1.5,
+   "speed": -3.0
+  },
+  {
+   "id": "aurorian_steel_sword",
+   "rarity": "epic",
+   "kind": "sword",
+   "mat": "aurorian_steel",
+   "damage": 3.0,
+   "speed": -2.4
+  },
+  {
+   "id": "aurorian_stone_axe",
+   "kind": "axe",
+   "mat": "aurorian_stone",
+   "damage": 7.0,
+   "speed": -3.2
+  },
+  {
+   "id": "aurorian_stone_hoe",
+   "kind": "hoe",
+   "mat": "aurorian_stone",
+   "damage": -1.0,
+   "speed": -2.0
+  },
+  {
+   "id": "aurorian_stone_pickaxe",
+   "kind": "pickaxe",
+   "mat": "aurorian_stone",
+   "damage": 1.0,
+   "speed": -2.8
+  },
+  {
+   "id": "aurorian_stone_shovel",
+   "kind": "shovel",
+   "mat": "aurorian_stone",
+   "damage": 1.5,
+   "speed": -3.0
+  },
+  {
+   "id": "aurorian_stone_sickle",
+   "kind": "sickle",
+   "mat": "aurorian_stone"
+  },
+  {
+   "id": "aurorian_stone_sword",
+   "kind": "sword",
+   "mat": "aurorian_stone",
+   "damage": 3.0,
+   "speed": -2.4
+  },
+  {
+   "id": "moonstone_axe",
+   "kind": "axe",
+   "mat": "moonstone",
+   "damage": 6.0,
+   "speed": -3.1
+  },
+  {
+   "id": "moonstone_hoe",
+   "kind": "hoe",
+   "mat": "moonstone",
+   "damage": -2.0,
+   "speed": -1.0
+  },
+  {
+   "id": "moonstone_pickaxe",
+   "kind": "pickaxe",
+   "mat": "moonstone",
+   "damage": 1.0,
+   "speed": -2.8
+  },
+  {
+   "id": "moonstone_shield",
+   "kind": "shield",
+   "mat": "moonstone",
+   "durability": 600
+  },
+  {
+   "id": "moonstone_shovel",
+   "kind": "shovel",
+   "mat": "moonstone",
+   "damage": 1.5,
+   "speed": -3.0
+  },
+  {
+   "id": "moonstone_sickle",
+   "kind": "sickle",
+   "mat": "moonstone"
+  },
+  {
+   "id": "moonstone_sword",
+   "kind": "sword",
+   "mat": "moonstone",
+   "damage": 3.0,
+   "speed": -2.4
+  },
+  {
+   "id": "silentwood_axe",
+   "kind": "axe",
+   "mat": "silentwood",
+   "damage": 6.0,
+   "speed": -3.2,
+   "burn": 200
+  },
+  {
+   "id": "silentwood_bow",
+   "kind": "bow",
+   "durability": 150,
+   "burn": 200
+  },
+  {
+   "id": "silentwood_hoe",
+   "kind": "hoe",
+   "mat": "silentwood",
+   "damage": 0.0,
+   "speed": -3.0,
+   "burn": 200
+  },
+  {
+   "id": "silentwood_pickaxe",
+   "kind": "pickaxe",
+   "mat": "silentwood",
+   "damage": 1.0,
+   "speed": -2.8,
+   "burn": 200
+  },
+  {
+   "id": "silentwood_shovel",
+   "kind": "shovel",
+   "mat": "silentwood",
+   "damage": 1.5,
+   "speed": -3.0,
+   "burn": 200
+  },
+  {
+   "id": "silentwood_sickle",
+   "kind": "sickle",
+   "mat": "silentwood"
+  },
+  {
+   "id": "silentwood_sword",
+   "kind": "sword",
+   "mat": "silentwood",
+   "damage": 3.0,
+   "speed": -2.4,
+   "burn": 200
+  },
+  {
+   "id": "aurorian_steel_axe",
+   "rarity": "epic",
+   "kind": "axe",
+   "mat": "aurorian_steel",
+   "damage": 5.0,
+   "speed": -3.0
+  },
+  {
+   "id": "aurorian_steel_boots",
+   "rarity": "epic",
+   "kind": "armor",
+   "mat": "aurorian_steel",
+   "slot": "boots"
+  },
+  {
+   "id": "aurorian_steel_chestplate",
+   "rarity": "epic",
+   "kind": "armor",
+   "mat": "aurorian_steel",
+   "slot": "chestplate"
+  },
+  {
+   "id": "aurorian_steel_helmet",
+   "rarity": "epic",
+   "kind": "armor",
+   "mat": "aurorian_steel",
+   "slot": "helmet"
+  },
+  {
+   "id": "cerulean_boots",
+   "kind": "armor",
+   "mat": "cerulean",
+   "slot": "boots"
+  },
+  {
+   "id": "cerulean_chestplate",
+   "kind": "armor",
+   "mat": "cerulean",
+   "slot": "chestplate"
+  },
+  {
+   "id": "cerulean_helmet",
+   "kind": "armor",
+   "mat": "cerulean",
+   "slot": "helmet"
+  },
+  {
+   "id": "cerulean_leggings",
+   "kind": "armor",
+   "mat": "cerulean",
+   "slot": "leggings"
+  },
+  {
+   "id": "cerulean_shield",
+   "kind": "shield",
+   "mat": "cerulean",
+   "durability": 300
+  },
+  {
+   "id": "knight_boots",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "knight",
+   "slot": "boots"
+  },
+  {
+   "id": "knight_chestplate",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "knight",
+   "slot": "chestplate"
+  },
+  {
+   "id": "knight_helmet",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "knight",
+   "slot": "helmet"
+  },
+  {
+   "id": "knight_leggings",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "knight",
+   "slot": "leggings"
+  },
+  {
+   "id": "spectral_boots",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "boots"
+  },
+  {
+   "id": "spectral_chestplate",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "chestplate"
+  },
+  {
+   "id": "spectral_helmet",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "helmet"
+  },
+  {
+   "id": "spectral_leggings",
+   "rarity": "uncommon",
+   "kind": "armor",
+   "mat": "spectral",
+   "slot": "leggings"
+  },
+  {
+   "id": "aurorianite_axe",
+   "rarity": "rare",
+   "kind": "axe",
+   "mat": "aurorianite",
+   "damage": 5.0,
+   "speed": -3.0
+  },
+  {
+   "id": "aurorianite_pickaxe",
+   "rarity": "rare",
+   "kind": "pickaxe",
+   "mat": "aurorianite",
+   "damage": 1.0,
+   "speed": -2.8
+  },
+  {
+   "id": "aurorianite_sword",
+   "rarity": "rare",
+   "kind": "sword",
+   "mat": "aurorianite",
+   "damage": 3.0,
+   "speed": -2.4
+  },
+  {
+   "id": "aurorianite_shovel",
+   "rarity": "rare",
+   "kind": "shovel",
+   "mat": "aurorianite",
+   "damage": 1.5,
+   "speed": -3.0
+  },
+  {
+   "id": "living_divining_rod",
+   "rarity": "rare",
+   "kind": "item",
+   "durability": 100
+  },
+  {
+   "id": "umbra_chestplate",
+   "rarity": "rare",
+   "kind": "armor",
+   "mat": "umbra",
+   "slot": "chestplate"
+  },
+  {
+   "id": "umbra_greatsword",
+   "rarity": "rare",
+   "kind": "sword",
+   "mat": "umbra",
+   "damage": 7.0,
+   "speed": -3.75
+  },
+  {
+   "id": "umbra_pickaxe",
+   "rarity": "rare",
+   "kind": "pickaxe",
+   "mat": "umbra",
+   "damage": 1.0,
+   "speed": -2.8
+  },
+  {
+   "id": "umbra_shield",
+   "rarity": "rare",
+   "kind": "shield",
+   "mat": "umbra",
+   "durability": 1000
+  },
+  {
+   "id": "absorption_orb",
+   "rarity": "rare",
+   "kind": "item",
+   "durability": 250
+  },
+  {
+   "id": "crystalline_pickaxe",
+   "rarity": "rare",
+   "kind": "pickaxe",
+   "mat": "crystalline",
+   "damage": 1.0,
+   "speed": -2.8
+  },
+  {
+   "id": "crystalline_shield",
+   "rarity": "rare",
+   "kind": "shield",
+   "mat": "crystalline",
+   "durability": 1000
+  },
+  {
+   "id": "crystalline_sword",
+   "rarity": "rare",
+   "kind": "sword",
+   "mat": "crystalline",
+   "damage": 3.0,
+   "speed": -2.4
+  },
+  {
+   "id": "amulet_of_chroma",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "emerald_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "keepers_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "mirror_of_guidance",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "ruby_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "sapphire_amulet",
+   "rarity": "epic",
+   "kind": "item"
+  },
+  {
+   "id": "cerulean_arrow",
+   "kind": "arrow"
+  },
+  {
+   "id": "crystal_arrow",
+   "kind": "arrow"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "runestone",
+   "kind": "full",
+   "copy": "minecraft:stone",
+   "unbreakable": true
+  },
+  {
+   "id": "runestone_bars",
+   "kind": "bars",
+   "copy": "theaurorian:runestone"
+  },
+  {
+   "id": "runestone_gate",
+   "kind": "full",
+   "copy": "theaurorian:runestone"
+  },
+  {
+   "id": "runestone_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:runestone",
+   "key": "theaurorian:runestone_key",
+   "lockpick": false
+  },
+  {
+   "id": "runestone_gate_loot_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:runestone",
+   "key": "theaurorian:runestone_loot_key",
+   "lockpick": false
+  },
+  {
+   "id": "runestone_lamp",
+   "kind": "full",
+   "copy": "theaurorian:runestone",
+   "light": 15
+  },
+  {
+   "id": "runestone_smooth",
+   "kind": "full",
+   "copy": "theaurorian:runestone"
+  },
+  {
+   "id": "runestone_stairs",
+   "kind": "stairs",
+   "copy": "theaurorian:runestone",
+   "base": "theaurorian:runestone"
+  },
+  {
+   "id": "darkstone",
+   "kind": "full",
+   "copy": "theaurorian:runestone"
+  },
+  {
+   "id": "darkstone_chipped",
+   "kind": "full",
+   "copy": "theaurorian:darkstone"
+  },
+  {
+   "id": "darkstone_gate",
+   "kind": "full",
+   "copy": "theaurorian:darkstone"
+  },
+  {
+   "id": "darkstone_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:darkstone",
+   "key": "theaurorian:darkstone_key",
+   "lockpick": false
+  },
+  {
+   "id": "darkstone_lamp",
+   "kind": "full",
+   "copy": "theaurorian:darkstone",
+   "light": 15
+  },
+  {
+   "id": "darkstone_pillar",
+   "kind": "full",
+   "copy": "theaurorian:darkstone"
+  },
+  {
+   "id": "darkstone_stairs",
+   "kind": "stairs",
+   "copy": "theaurorian:darkstone",
+   "base": "theaurorian:darkstone"
+  },
+  {
+   "id": "moon_temple_bricks",
+   "kind": "full",
+   "copy": "theaurorian:runestone"
+  },
+  {
+   "id": "moon_temple_bars",
+   "kind": "bars",
+   "copy": "theaurorian:moon_temple_bricks"
+  },
+  {
+   "id": "moon_temple_bricks_smooth",
+   "kind": "full",
+   "copy": "theaurorian:moon_temple_bricks"
+  },
+  {
+   "id": "moon_temple_gate",
+   "kind": "full",
+   "copy": "theaurorian:moon_temple_bricks"
+  },
+  {
+   "id": "moon_temple_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:moon_temple_bricks",
+   "key": "theaurorian:moon_temple_key",
+   "lockpick": false
+  },
+  {
+   "id": "moon_temple_interior_gate",
+   "kind": "full",
+   "copy": "theaurorian:moon_temple_bricks"
+  },
+  {
+   "id": "moon_temple_interior_gate_keyhole",
+   "kind": "keyhole",
+   "copy": "theaurorian:moon_temple_bricks",
+   "key": "theaurorian:moon_temple_interior_key",
+   "lockpick": false
+  },
+  {
+   "id": "moon_temple_lamp",
+   "kind": "full",
+   "copy": "theaurorian:moon_temple_bricks",
+   "light": 15
+  },
+  {
+   "id": "moon_temple_stairs",
+   "kind": "stairs",
+   "copy": "theaurorian:moon_temple_bricks",
+   "base": "theaurorian:moon_temple_bricks"
+  },
+  {
+   "id": "aurorian_cobblestone",
+   "kind": "full",
+   "copy": "minecraft:cobblestone"
+  },
+  {
+   "id": "aurorian_cobblestone_slab",
+   "kind": "slab",
+   "copy": "theaurorian:aurorian_cobblestone"
+  },
+  {
+   "id": "aurorian_cobblestone_stairs",
+   "kind": "stairs",
+   "copy": "theaurorian:aurorian_cobblestone",
+   "base": "theaurorian:aurorian_cobblestone"
+  },
+  {
+   "id": "aurorian_cobblestone_wall",
+   "kind": "wall",
+   "copy": "theaurorian:aurorian_cobblestone"
+  },
+  {
+   "id": "aurorian_deepslate",
+   "kind": "full",
+   "copy": "minecraft:deepslate"
+  },
+  {
+   "id": "aurorian_deepslate_slab",
+   "kind": "slab",
+   "copy": "theaurorian:aurorian_deepslate"
+  },
+  {
+   "id": "aurorian_deepslate_stairs",
+   "kind": "stairs",
+   "copy": "theaurorian:aurorian_deepslate",
+   "base": "minecraft:deepslate"
+  },
+  {
+   "id": "aurorian_deepslate_wall",
+   "kind": "wall",
+   "copy": "theaurorian:aurorian_deepslate"
+  },
+  {
+   "id": "aurorian_dirt",
+   "kind": "full",
+   "copy": "minecraft:dirt"
+  },
+  {
+   "id": "aurorian_grass",
+   "kind": "full",
+   "copy": "minecraft:grass_block"
+  },
+  {
+   "id": "aurorian_stone",
+   "kind": "full",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "silentwood_planks",
+   "kind": "full",
+   "copy": "minecraft:spruce_planks",
+   "burn": 300
+  },
+  {
+   "id": "silentwood_fence",
+   "kind": "fence",
+   "copy": "theaurorian:silentwood_planks",
+   "burn": 300
+  },
+  {
+   "id": "silentwood_leaves",
+   "kind": "leaves",
+   "copy": "minecraft:spruce_leaves"
+  },
+  {
+   "id": "silentwood_log",
+   "kind": "log",
+   "copy": "minecraft:spruce_log",
+   "burn": 300
+  },
+  {
+   "id": "silentwood_sapling",
+   "kind": "sapling",
+   "copy": "minecraft:spruce_sapling",
+   "burn": 100
+  },
+  {
+   "id": "silentwood_slab",
+   "kind": "slab",
+   "copy": "theaurorian:silentwood_planks",
+   "burn": 150
+  },
+  {
+   "id": "silentwood_stairs",
+   "kind": "stairs",
+   "copy": "theaurorian:silentwood_planks",
+   "burn": 300,
+   "base": "theaurorian:silentwood_planks"
+  },
+  {
+   "id": "aurorian_tallgrass",
+   "kind": "plant",
+   "copy": "minecraft:tall_grass"
+  },
+  {
+   "id": "bright_bulb",
+   "kind": "plant",
+   "copy": "minecraft:tall_grass",
+   "light": 10
+  },
+  {
+   "id": "lavender_block",
+   "kind": "plant",
+   "copy": "minecraft:tall_grass"
+  },
+  {
+   "id": "petunia",
+   "kind": "plant",
+   "copy": "minecraft:tall_grass"
+  },
+  {
+   "id": "silkberry_block",
+   "kind": "plant",
+   "copy": "minecraft:tall_grass"
+  },
+  {
+   "id": "aurorian_coal_ore",
+   "kind": "full",
+   "copy": "minecraft:coal_ore"
+  },
+  {
+   "id": "cerulean_ore",
+   "kind": "full",
+   "copy": "minecraft:iron_ore"
+  },
+  {
+   "id": "deepslate_cerulean_ore",
+   "kind": "full",
+   "copy": "theaurorian:cerulean_ore"
+  },
+  {
+   "id": "moonstone_ore",
+   "kind": "full",
+   "copy": "minecraft:iron_ore"
+  },
+  {
+   "id": "deepslate_moonstone_ore",
+   "kind": "full",
+   "copy": "theaurorian:moonstone_ore"
+  },
+  {
+   "id": "geode",
+   "kind": "full",
+   "copy": "minecraft:iron_ore"
+  },
+  {
+   "id": "aurorian_furnace",
+   "kind": "furnace",
+   "copy": "minecraft:furnace"
+  },
+  {
+   "id": "boss_spawner",
+   "kind": "boss_spawner",
+   "copy": "minecraft:spawner"
+  },
+  {
+   "id": "moonlight_forge",
+   "kind": "moonlight_forge",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "scrapper",
+   "kind": "scrapper",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "silentwood_chest",
+   "kind": "chest",
+   "copy": "minecraft:chest"
+  },
+  {
+   "id": "silentwood_crafting_table",
+   "kind": "crafting_table",
+   "copy": "minecraft:crafting_table"
+  },
+  {
+   "id": "aurorian_portal",
+   "kind": "portal",
+   "copy": "minecraft:nether_portal"
+  },
+  {
+   "id": "aurorian_portal_frame",
+   "kind": "portal_frame",
+   "copy": "theaurorian:aurorian_cobblestone"
+  },
+  {
+   "id": "chimney",
+   "kind": "chimney",
+   "copy": "minecraft:stone"
+  },
+  {
+   "id": "crystal",
+   "kind": "full",
+   "copy": "minecraft:stone",
+   "light": 15
+  },
+  {
+   "id": "fog_wall",
+   "kind": "fog_wall",
+   "copy": "theaurorian:runestone",
+   "light": 10
+  },
+  {
+   "id": "moon_gem",
+   "kind": "full",
+   "copy": "minecraft:stone"
+  }
+ ]
+}

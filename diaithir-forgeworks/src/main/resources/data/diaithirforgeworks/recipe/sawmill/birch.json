@@ -1,0 +1,20 @@
+{
+  "type": "diaithirforgeworks:sawmill",
+  "inputs": [
+    {
+      "ingredient": "#minecraft:birch_logs",
+      "count": 1
+    }
+  ],
+  "energy": 1600,
+  "time": 100,
+  "result": {
+    "id": "minecraft:birch_planks",
+    "count": 6
+  },
+  "bonus": {
+    "id": "diaithirforgeworks:sawdust",
+    "count": 1
+  },
+  "bonus_chance": 0.25
+}

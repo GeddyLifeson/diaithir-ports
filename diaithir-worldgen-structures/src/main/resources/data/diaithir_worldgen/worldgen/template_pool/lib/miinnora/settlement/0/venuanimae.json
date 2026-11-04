@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/miinnora/settlement/0/venuanimae",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/miinnora/ar_miinnora_e4_places_000083",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

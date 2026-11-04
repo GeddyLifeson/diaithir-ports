@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "net.diaithir.branding.mixin",
+  "client": [
+    "BrandingControlMixin",
+    "DebugEntryVersionMixin",
+    "LoadingOverlayMixin",
+    "LogoTextureMixin",
+    "MinecraftMixin",
+    "LevelLoadingScreenMixin",
+    "PackMixin",
+    "ScreenTitleMixin",
+    "OptionsScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

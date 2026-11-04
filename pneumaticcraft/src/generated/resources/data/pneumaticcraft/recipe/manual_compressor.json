@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "pneumaticcraft:stone_base",
+    "G": "#c:gears/compressed_iron",
+    "I": "#c:ingots/compressed_iron",
+    "R": "minecraft:red_dye",
+    "T": "pneumaticcraft:pressure_tube"
+  },
+  "pattern": [
+    "RIR",
+    " T ",
+    "GBG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:manual_compressor"
+  }
+}

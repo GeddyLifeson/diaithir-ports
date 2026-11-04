@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "diaithircompat:block/wild_fig_leaves"
+  }
+}

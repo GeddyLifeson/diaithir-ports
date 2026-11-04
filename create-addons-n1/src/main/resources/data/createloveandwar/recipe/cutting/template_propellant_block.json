@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "#c:plates/iron",
+ "result": {
+  "id": "createloveandwar:template_propellant_block",
+  "count": 1
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "type": "create:mechanical_crafting",
+ "pattern": [
+  "as ",
+  "dfg",
+  " h "
+ ],
+ "key": {
+  "s": "gearbound:fuel_canister",
+  "a": "gearbound:water_canister",
+  "d": "create:iron_sheet",
+  "f": "create:blaze_cake",
+  "g": "create:iron_sheet",
+  "h": "create:blaze_burner"
+ },
+ "result": {
+  "id": "gearbound:blaze_throwner"
+ },
+ "acceptMirrored": false
+}

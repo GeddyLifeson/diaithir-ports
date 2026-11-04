@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "C": "create:andesite_casing",
+  "T": "createloveandwar:tungsten",
+  "N": "createloveandwar:tungsten_nugget",
+  "S": "create:shaft"
+ },
+ "pattern": [
+  " S ",
+  " C ",
+  "TNT"
+ ],
+ "result": {
+  "id": "createloveandwar:stamping_press"
+ },
+ "show_notification": true
+}

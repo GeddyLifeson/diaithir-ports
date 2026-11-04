@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirbutchery:diamond_edge_knife",
+  "minecraft:amethyst_shard",
+  "minecraft:amethyst_shard"
+ ],
+ "result": {
+  "id": "diaithirbutchery:crystal_thread_knife"
+ }
+}

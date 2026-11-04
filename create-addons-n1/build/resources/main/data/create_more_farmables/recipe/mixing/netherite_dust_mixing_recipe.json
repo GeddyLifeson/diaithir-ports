@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create:powdered_obsidian",
+  "create:cinder_flour"
+ ],
+ "results": [
+  {
+   "id": "create_more_farmables:netherite_dust"
+  }
+ ],
+ "heat_requirement": "superheated"
+}

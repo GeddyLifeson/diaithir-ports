@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "diaithir_classes:ring_bronze",
+  "diaithir_classes:ring_steel",
+  "diaithir_classes:ring_composite"
+ ]
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirtrees:block/red_banana_stripped_log"
+ }
+}

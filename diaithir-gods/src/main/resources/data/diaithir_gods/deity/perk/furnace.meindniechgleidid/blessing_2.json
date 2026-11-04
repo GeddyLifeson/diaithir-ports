@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:rabbit_foot",
+    "color": 12080483,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:furnace.meindniechgleidid",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "furnace.meindniechgleidid_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

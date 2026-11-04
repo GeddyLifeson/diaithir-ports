@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "kaleidoscope_tavern:grapevine",
+    "P": "#c:glass_panes"
+  },
+  "pattern": [
+    "GGG",
+    "GPG",
+    "GGG"
+  ],
+  "result": {
+    "id": "kaleidoscope_tavern:glass_bar_cabinet"
+  }
+}

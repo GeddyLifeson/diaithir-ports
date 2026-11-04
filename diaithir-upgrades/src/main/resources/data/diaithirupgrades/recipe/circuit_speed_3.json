@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:circuit_speed_2", "K": "minecraft:sugar", "B": "minecraft:iron_ingot"}, "result": {"id": "diaithirupgrades:circuit_speed_3", "count": 1}}

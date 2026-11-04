@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/venilleth/harbor/0/coast",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/venilleth/ar_venilleth_e7_places_000506",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

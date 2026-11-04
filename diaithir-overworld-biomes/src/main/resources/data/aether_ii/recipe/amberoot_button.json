@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "aether_ii:amberoot_planks"
+ ],
+ "result": {
+  "id": "aether_ii:amberoot_button"
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:torarnak_drarnun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_drorkazhun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_drouktornun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_drozhagurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_grathar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_khouktozhar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_kruzhak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_toruggok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torarnak_vhuggun",
+   "required": false
+  }
+ ]
+}

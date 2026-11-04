@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "l": "minecraft:end_stone_brick_slab",
+  "s": "minecraft:end_stone_bricks"
+ },
+ "pattern": [
+  "l",
+  "s",
+  "l"
+ ],
+ "result": {
+  "id": "goety:pedestal_end_stone",
+  "count": 1
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "MMM",
+  "M M",
+  "M M"
+ ],
+ "key": {
+  "M": "diaithirarms:ballistic_weave"
+ },
+ "result": {
+  "id": "diaithirarms:ballistic_leggings",
+  "count": 1
+ }
+}

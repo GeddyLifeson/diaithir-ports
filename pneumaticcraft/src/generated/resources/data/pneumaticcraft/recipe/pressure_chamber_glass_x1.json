@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#c:glass_blocks",
+    "pneumaticcraft:pressure_chamber_wall"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:pressure_chamber_glass"
+  }
+}

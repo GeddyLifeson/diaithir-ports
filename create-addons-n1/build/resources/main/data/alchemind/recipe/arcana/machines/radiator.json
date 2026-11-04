@@ -1,0 +1,20 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "c": "alchemind:arcane_casing",
+  "f": "create:fluid_tank",
+  "m": "alchemind:arcane_mechanism",
+  "b": "create:blaze_burner",
+  "t": "create:brass_sheet"
+ },
+ "pattern": [
+  "tccct",
+  "tfmft",
+  "tcbct"
+ ],
+ "result": {
+  "id": "alchemind:arcana_radiator",
+  "count": 4
+ }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/male/0.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/male/1.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/male/2.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/male/ruler.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/male/warrior.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/male/priest.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/female/0.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/female/1.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/female/2.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/female/ruler.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/female/warrior.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/roudosach/female/priest.png",
+    "profession": "diaithircompat:roudosach",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

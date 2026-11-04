@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "theaurorian"
+version = "${version}"
+displayName = "The Aurorian"
+authors = "Shiroroku (Elise), original 1.12.2 team; port by Diaithir"
+description = '''An eternal-night dimension of silentwood forests, runestone dungeons and moon temples, with boss-gated tool and armour tiers (Aurorian stone, moonstone, cerulean, Aurorian steel, aurorianite, umbra, crystalline, spectral). Ported from the MIT 1.19.2 rewrite by Shiroroku; reaches players as Codex quests.'''
+
+[[dependencies.theaurorian]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

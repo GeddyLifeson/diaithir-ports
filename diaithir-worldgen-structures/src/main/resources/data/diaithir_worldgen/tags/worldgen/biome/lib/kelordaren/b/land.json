@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:kelordaren_drukak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelordaren_druthar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelordaren_karnok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelordaren_nuimwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelordaren_torazhugun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelordaren_xaisora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelordaren_zephivsis",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:kelordaren_zephyustis",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/0.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/1.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/2.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/ruler.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/warrior.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/priest.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/0.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/1.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/2.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/ruler.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/warrior.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/priest.png",
+    "profession": "diaithircompat:new_guinea_highlands_foragers_and_early",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "ingredient": "minecraft:potato",
+ "results": [
+  {
+   "id": "createmorepotatoes:french_fries"
+  }
+ ],
+ "processing_time": 50
+}

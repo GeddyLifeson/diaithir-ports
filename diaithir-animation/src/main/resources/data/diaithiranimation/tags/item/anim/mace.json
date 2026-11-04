@@ -1,0 +1,177 @@
+{
+"replace": false,
+"values": [
+{
+"id": "#diaithircombat:weapons/mace",
+"required": false
+},
+{
+"id": "#diaithircombat:weapons/warhammer",
+"required": false
+},
+{
+"id": "aether_ii:arkenium_hammer",
+"required": false
+},
+{
+"id": "aether_ii:gravitite_hammer",
+"required": false
+},
+{
+"id": "aether_ii:holystone_hammer",
+"required": false
+},
+{
+"id": "aether_ii:skyroot_hammer",
+"required": false
+},
+{
+"id": "aether_ii:zanite_hammer",
+"required": false
+},
+{
+"id": "diaithirrelics:cairn_hammer",
+"required": false
+},
+{
+"id": "diaithirrelics:smith_hammer",
+"required": false
+},
+{
+"id": "energizedpower:copper_hammer",
+"required": false
+},
+{
+"id": "energizedpower:diamond_hammer",
+"required": false
+},
+{
+"id": "energizedpower:golden_hammer",
+"required": false
+},
+{
+"id": "energizedpower:iron_hammer",
+"required": false
+},
+{
+"id": "energizedpower:netherite_hammer",
+"required": false
+},
+{
+"id": "energizedpower:stone_hammer",
+"required": false
+},
+{
+"id": "energizedpower:wooden_hammer",
+"required": false
+},
+{
+"id": "equivox:dm_hammer",
+"required": false
+},
+{
+"id": "equivox:rm_hammer",
+"required": false
+},
+{
+"id": "framedblocks:framed_hammer",
+"required": false
+},
+{
+"id": "iceandfire:troll_weapon_hammer",
+"required": false
+},
+{
+"id": "industrialforegoing:infinity_hammer",
+"required": false
+},
+{
+"id": "justdirethings:upgrade_hammer",
+"required": false
+},
+{
+"id": "mcwroofs:roofing_hammer",
+"required": false
+},
+{
+"id": "minecraft:mace",
+"required": false
+},
+{
+"id": "modern_industrialization:diamond_hammer",
+"required": false
+},
+{
+"id": "modern_industrialization:forge_hammer",
+"required": false
+},
+{
+"id": "modern_industrialization:iron_hammer",
+"required": false
+},
+{
+"id": "modern_industrialization:netherite_hammer",
+"required": false
+},
+{
+"id": "modern_industrialization:steel_hammer",
+"required": false
+},
+{
+"id": "mutantmonsters:hulk_hammer",
+"required": false
+},
+{
+"id": "oritech:electric_mace",
+"required": false
+},
+{
+"id": "paladins:diamond_great_hammer",
+"required": false
+},
+{
+"id": "paladins:diamond_mace",
+"required": false
+},
+{
+"id": "paladins:golden_great_hammer",
+"required": false
+},
+{
+"id": "paladins:golden_mace",
+"required": false
+},
+{
+"id": "paladins:iron_great_hammer",
+"required": false
+},
+{
+"id": "paladins:iron_mace",
+"required": false
+},
+{
+"id": "paladins:netherite_great_hammer",
+"required": false
+},
+{
+"id": "paladins:netherite_mace",
+"required": false
+},
+{
+"id": "paladins:stone_great_hammer",
+"required": false
+},
+{
+"id": "paladins:wooden_great_hammer",
+"required": false
+},
+{
+"id": "silentgear:crude_hammer",
+"required": false
+},
+{
+"id": "silentgear:prospector_hammer",
+"required": false
+}
+]
+}

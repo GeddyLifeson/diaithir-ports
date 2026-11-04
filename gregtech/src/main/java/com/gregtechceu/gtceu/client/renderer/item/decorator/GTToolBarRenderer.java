@@ -1,0 +1,20 @@
+package com.gregtechceu.gtceu.client.renderer.item.decorator;
+
+import com.gregtechceu.gtceu.api.item.IGTTool;
+import com.gregtechceu.gtceu.client.renderer.item.ToolChargeBarRenderer;
+
+import net.minecraft.client.gui.Font;
+import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.IItemDecorator;
+
+import org.jetbrains.annotations.NotNull;
+
+public class GTToolBarRenderer implements IItemDecorator {
+
+    public static final GTToolBarRenderer INSTANCE = new GTToolBarRenderer();
+
+    
+    @Override
+    public boolean render(@NotNull net.minecraft.client.gui.GuiGraphicsExtractor guiGraphics, @NotNull Font font, ItemStack stack, int x, int y) { return false; /* ported stub */ }
+}

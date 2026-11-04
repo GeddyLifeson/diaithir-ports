@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirbutchery:block/meat_grinder_top",
+  "side": "diaithirbutchery:block/meat_grinder_side"
+ }
+}

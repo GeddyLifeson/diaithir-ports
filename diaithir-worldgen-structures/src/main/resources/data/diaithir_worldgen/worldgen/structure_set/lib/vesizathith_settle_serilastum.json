@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_0_serilastum",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_1_serilastum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_2_serilastum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesizathith/settlement_3_serilastum",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 69414482
+ }
+}

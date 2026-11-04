@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/0.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/1.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/2.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/ruler.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/warrior.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/priest.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/0.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/1.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/2.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/ruler.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/warrior.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/priest.png",
+    "profession": "diaithircompat:sahul_pleistocene_core_tool_and_scraper",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

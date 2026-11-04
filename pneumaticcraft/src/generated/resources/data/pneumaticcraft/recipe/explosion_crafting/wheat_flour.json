@@ -1,0 +1,14 @@
+{
+  "type": "pneumaticcraft:explosion_crafting",
+  "input": {
+    "ingredient": "#c:crops/wheat",
+    "count": 1
+  },
+  "loss_rate": 50,
+  "results": [
+    {
+      "count": 1,
+      "id": "pneumaticcraft:wheat_flour"
+    }
+  ]
+}

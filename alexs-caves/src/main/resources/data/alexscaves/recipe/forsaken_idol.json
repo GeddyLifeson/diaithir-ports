@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BTB",
+    "TPT",
+    "TTT"
+  ],
+  "key": {
+    "B": "alexscaves:thornwood_branch",
+    "T": "alexscaves:thornwood_log",
+    "P": "alexscaves:occult_gem"
+  },
+  "result": {
+    "id": "alexscaves:forsaken_idol",
+    "count": 1
+  }
+}

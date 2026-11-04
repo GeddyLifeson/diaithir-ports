@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_0_kalusamum",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryellae/settlement_3_kalusamum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 33406706
+ }
+}

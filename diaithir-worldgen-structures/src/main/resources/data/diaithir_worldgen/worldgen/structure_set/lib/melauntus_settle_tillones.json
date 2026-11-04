@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_0_tillones",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/melauntus/settlement_1_tillones",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 160350655
+ }
+}

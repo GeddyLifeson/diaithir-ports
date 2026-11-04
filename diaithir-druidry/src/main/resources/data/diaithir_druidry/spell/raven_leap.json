@@ -1,0 +1,54 @@
+{
+ "school": "spell_power:physical_melee",
+ "range": 0.0,
+ "tier": 1,
+ "group": "fitech_battle",
+ "learn": {},
+ "active": {},
+ "release": {
+  "sound": {
+   "id": "spell_engine:weapon_swipe_launch"
+  }
+ },
+ "target": {
+  "type": "CASTER"
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "VELOCITY",
+    "velocity": {
+     "frame": "LOOK",
+     "push": {
+      "x": 0.0,
+      "y": 0.45,
+      "z": 1.5
+     },
+     "power_coefficient": 0.0,
+     "reset_velocity": true,
+     "intent": "HELPFUL"
+    }
+   }
+  },
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:speed",
+     "duration": 3.0,
+     "amplifier": 1,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 9.0
+  }
+ }
+}

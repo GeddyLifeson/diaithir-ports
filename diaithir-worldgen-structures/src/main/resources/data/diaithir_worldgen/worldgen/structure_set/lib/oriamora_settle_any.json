@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_0_any",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriamora/settlement_1_any",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 181502806
+ }
+}

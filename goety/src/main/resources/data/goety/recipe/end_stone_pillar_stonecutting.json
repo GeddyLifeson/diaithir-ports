@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:end_stone",
+ "result": {
+  "id": "goety:end_stone_pillar",
+  "count": 1
+ }
+}

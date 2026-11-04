@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 11712440,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_russian_plain_volga_and_urals_final_pala.spiuradklachabuindoir",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "a1_russian_plain_volga_and_urals_final_pala.spiuradklachabuindoir_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

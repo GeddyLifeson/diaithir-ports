@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "goety:indented_gold",
+ "result": {
+  "id": "goety:chiseled_indented_gold",
+  "count": 1
+ }
+}

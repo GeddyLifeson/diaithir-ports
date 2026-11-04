@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/coreoserus/settlement/1/thurnath",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/coreoserus/ki_coreoserus_e5_places_000123",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

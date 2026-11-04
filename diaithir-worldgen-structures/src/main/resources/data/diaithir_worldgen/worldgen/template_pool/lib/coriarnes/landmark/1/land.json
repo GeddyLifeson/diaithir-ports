@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/coriarnes/landmark/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/coriarnes/my_coriarnes_e4_assay_000383",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

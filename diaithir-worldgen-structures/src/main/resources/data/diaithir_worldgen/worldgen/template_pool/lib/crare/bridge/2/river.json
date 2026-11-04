@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/crare/bridge/2/river",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/crare/gr_crare_e6_places_000104",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

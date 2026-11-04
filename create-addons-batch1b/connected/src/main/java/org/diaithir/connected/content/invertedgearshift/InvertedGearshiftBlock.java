@@ -1,0 +1,19 @@
+package org.diaithir.connected.content.invertedgearshift;
+
+import org.diaithir.connected.registries.CCBlockEntityTypes;
+import com.zurrtum.create.content.kinetics.transmission.GearshiftBlock;
+import com.zurrtum.create.content.kinetics.transmission.SplitShaftBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+
+public class InvertedGearshiftBlock extends GearshiftBlock {
+
+    public InvertedGearshiftBlock(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    public BlockEntityType<? extends SplitShaftBlockEntity> getBlockEntityType() {
+        return CCBlockEntityTypes.INVERTED_GEARSHIFT.get();
+    }
+}
+

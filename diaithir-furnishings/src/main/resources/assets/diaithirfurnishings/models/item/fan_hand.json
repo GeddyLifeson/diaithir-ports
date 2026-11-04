@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/fan_hand_head",
+  "layer1": "diaithirfurnishings:item/fan_hand_handle",
+  "layer2": "diaithirfurnishings:item/fan_hand_binding"
+ }
+}

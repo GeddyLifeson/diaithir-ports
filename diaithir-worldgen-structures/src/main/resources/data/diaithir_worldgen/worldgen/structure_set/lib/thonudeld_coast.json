@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/harbor_0_coast",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/harbor_1_coast",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/harbor_2_coast",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/thonudeld/harbor_3_coast",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 6879759
+ }
+}

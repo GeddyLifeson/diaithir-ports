@@ -1,0 +1,16 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:dyes/purple",
+   "count": 1
+  },
+  {
+   "tag": "c:dusts/lapis",
+   "count": 1
+  }
+ ],
+ "result": "diaithir_classes:reagent_ainnir",
+ "time_s": 5
+}

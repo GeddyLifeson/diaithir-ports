@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:iron_hoe",
+    "color": 9012398,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:desert1.granubienuosul",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:speed",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "desert1.granubienuosul_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

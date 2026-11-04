@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_sauntia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_1_sauntia",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_sauntia",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 218512047
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:aerial_tree_gate",
+  "aerialhell:copper_pine_gate",
+  "aerialhell:ghost_boat_gate",
+  "aerialhell:golden_beech_gate",
+  "aerialhell:gray_shroom_gate",
+  "aerialhell:lapis_robinia_gate",
+  "aerialhell:shadow_pine_gate",
+  "aerialhell:sky_cactus_fiber_gate",
+  "aerialhell:stellar_jungle_tree_gate",
+  "aether_ii:amberoot_fence_gate",
+  "aether_ii:greatroot_fence_gate",
+  "aether_ii:skyroot_fence_gate",
+  "aether_ii:wisproot_fence_gate",
+  "the_backwoods:petrified_oak_fence_gate",
+  "the_backwoods:petrified_rotten_oak_fence_gate",
+  "the_backwoods:rotten_oak_gate",
+  "undergarden:ancient_root_fence_gate",
+  "undergarden:grongle_fence_gate",
+  "undergarden:smogstem_fence_gate",
+  "undergarden:wigglewood_fence_gate"
+ ]
+}

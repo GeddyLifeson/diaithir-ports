@@ -1,0 +1,265 @@
+[
+ {
+  "id": "wood",
+  "age": 1,
+  "hardness": 2,
+  "toughness": 5,
+  "density": 0.65,
+  "flex": 7,
+  "color": 9136958,
+  "roles": [
+   "handle",
+   "stock",
+   "grip",
+   "limb",
+   "pot"
+  ],
+  "items": [
+   "#minecraft:planks"
+  ]
+ },
+ {
+  "id": "bone",
+  "age": 1,
+  "hardness": 3,
+  "toughness": 3,
+  "density": 1.9,
+  "flex": 3,
+  "color": 15130568,
+  "roles": [
+   "handle",
+   "head",
+   "guard",
+   "grip"
+  ],
+  "items": [
+   "minecraft:bone"
+  ]
+ },
+ {
+  "id": "clay",
+  "age": 1,
+  "hardness": 3,
+  "toughness": 2,
+  "density": 1.8,
+  "flex": 0,
+  "color": 11888970,
+  "roles": [
+   "pot"
+  ],
+  "items": [
+   "minecraft:clay_ball",
+   "minecraft:brick"
+  ]
+ },
+ {
+  "id": "flint",
+  "age": 1,
+  "hardness": 4,
+  "toughness": 1,
+  "density": 2.6,
+  "flex": 0,
+  "color": 4868690,
+  "roles": [
+   "head"
+  ],
+  "items": [
+   "minecraft:flint"
+  ]
+ },
+ {
+  "id": "leather",
+  "age": 1,
+  "hardness": 1,
+  "toughness": 6,
+  "density": 0.9,
+  "flex": 9,
+  "color": 8014378,
+  "roles": [
+   "binding",
+   "grip"
+  ],
+  "items": [
+   "minecraft:leather"
+  ]
+ },
+ {
+  "id": "string",
+  "age": 1,
+  "hardness": 1,
+  "toughness": 4,
+  "density": 1.0,
+  "flex": 8,
+  "color": 14540236,
+  "roles": [
+   "binding",
+   "bowstring"
+  ],
+  "items": [
+   "minecraft:string"
+  ]
+ },
+ {
+  "id": "copper",
+  "age": 2,
+  "hardness": 3,
+  "toughness": 4,
+  "density": 8.96,
+  "flex": 5,
+  "color": 13136714,
+  "roles": [
+   "head",
+   "guard",
+   "pot"
+  ],
+  "items": [
+   "#c:ingots/copper"
+  ]
+ },
+ {
+  "id": "bronze",
+  "age": 3,
+  "hardness": 5,
+  "toughness": 5,
+  "density": 8.8,
+  "flex": 4,
+  "color": 11042874,
+  "roles": [
+   "head",
+   "guard",
+   "pot",
+   "barrel"
+  ],
+  "items": [
+   "#c:ingots/bronze"
+  ]
+ },
+ {
+  "id": "iron",
+  "age": 4,
+  "hardness": 6,
+  "toughness": 5,
+  "density": 7.87,
+  "flex": 3,
+  "color": 13225168,
+  "roles": [
+   "head",
+   "guard",
+   "pot",
+   "barrel",
+   "lock"
+  ],
+  "items": [
+   "#c:ingots/iron"
+  ]
+ },
+ {
+  "id": "steel",
+  "age": 5,
+  "hardness": 8,
+  "toughness": 6,
+  "density": 7.85,
+  "flex": 3,
+  "color": 10135218,
+  "roles": [
+   "head",
+   "guard",
+   "pot",
+   "barrel",
+   "lock"
+  ],
+  "items": [
+   "#c:ingots/steel"
+  ]
+ },
+ {
+  "id": "gunmetal",
+  "age": 6,
+  "hardness": 7,
+  "toughness": 7,
+  "density": 8.7,
+  "flex": 3,
+  "color": 5200227,
+  "roles": [
+   "barrel",
+   "lock",
+   "guard"
+  ],
+  "items": [
+   "#c:ingots/gunmetal"
+  ]
+ },
+ {
+  "id": "tempered",
+  "age": 6,
+  "hardness": 9,
+  "toughness": 7,
+  "density": 7.85,
+  "flex": 3,
+  "color": 8364996,
+  "roles": [
+   "head",
+   "guard",
+   "pot",
+   "barrel",
+   "lock"
+  ],
+  "items": [
+   "diaithirarms:tempered_ingot"
+  ]
+ },
+ {
+  "id": "ceramic",
+  "age": 7,
+  "hardness": 9,
+  "toughness": 3,
+  "density": 3.9,
+  "flex": 1,
+  "color": 15262420,
+  "roles": [
+   "head",
+   "pot"
+  ],
+  "items": [
+   "diaithirarms:ceramic_plate"
+  ]
+ },
+ {
+  "id": "rodos_alloy",
+  "age": 8,
+  "hardness": 10,
+  "toughness": 9,
+  "density": 5.0,
+  "flex": 4,
+  "color": 13674048,
+  "roles": [
+   "head",
+   "guard",
+   "pot",
+   "barrel",
+   "lock"
+  ],
+  "items": [
+   "diaithirarms:rodos_alloy_ingot"
+  ]
+ },
+ {
+  "id": "star_lattice",
+  "age": 9,
+  "hardness": 10,
+  "toughness": 10,
+  "density": 2.5,
+  "flex": 6,
+  "color": 9429247,
+  "roles": [
+   "head",
+   "guard",
+   "pot",
+   "barrel",
+   "lock"
+  ],
+  "items": [
+   "diaithirarms:star_lattice"
+  ]
+ }
+]

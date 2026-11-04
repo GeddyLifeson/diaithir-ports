@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/honey_extractor_head",
+  "layer1": "diaithirfurnishings:item/honey_extractor_handle",
+  "layer2": "diaithirfurnishings:item/honey_extractor_binding"
+ }
+}

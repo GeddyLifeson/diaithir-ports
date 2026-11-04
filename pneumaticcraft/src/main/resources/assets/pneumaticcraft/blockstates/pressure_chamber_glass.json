@@ -1,0 +1,5 @@
+{
+	"variants":{
+		"": { "model": "pneumaticcraft:block/pressure_chamber_glass" }
+	}
+}

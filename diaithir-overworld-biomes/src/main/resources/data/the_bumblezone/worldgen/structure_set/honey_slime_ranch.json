@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "the_bumblezone:honey_slime_ranch",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 29,
+  "separation": 8,
+  "salt": 52652
+ }
+}

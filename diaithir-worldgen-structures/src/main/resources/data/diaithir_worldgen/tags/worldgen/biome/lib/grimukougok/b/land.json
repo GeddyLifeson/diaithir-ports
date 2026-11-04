@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:grimukougok_draggurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimukougok_halustar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimukougok_khathurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimukougok_maurnus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimukougok_thurnak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimukougok_tiranamala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:grimukougok_zephyusasha",
+   "required": false
+  }
+ ]
+}

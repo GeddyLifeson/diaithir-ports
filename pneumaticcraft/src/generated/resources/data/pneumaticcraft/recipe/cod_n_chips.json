@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "pneumaticcraft:chips",
+    "minecraft:cooked_cod",
+    "minecraft:paper"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:cod_n_chips"
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/venarirleth/landmark/0/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/venarirleth/ar_venarirleth_e3_places_000363",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_0_saurnus",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_1_saurnus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_2_saurnus",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnornath/settlement_3_saurnus",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 186189089
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "food",
+ "ingredient": "diaithirbutchery:haunch",
+ "result": {
+  "id": "diaithirbutchery:cooked_haunch"
+ },
+ "experience": 0.35,
+ "cookingtime": 200
+}

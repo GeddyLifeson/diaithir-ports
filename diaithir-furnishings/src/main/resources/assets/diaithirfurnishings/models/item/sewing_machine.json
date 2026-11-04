@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/sewing_machine_head",
+  "layer1": "diaithirfurnishings:item/sewing_machine_handle",
+  "layer2": "diaithirfurnishings:item/sewing_machine_binding"
+ }
+}

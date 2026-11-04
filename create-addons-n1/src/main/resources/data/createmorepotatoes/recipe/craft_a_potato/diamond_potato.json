@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "minecraft:potato",
+  "minecraft:diamond",
+  "minecraft:diamond",
+  "minecraft:diamond",
+  "minecraft:diamond"
+ ],
+ "result": {
+  "id": "createmorepotatoes:diamond_potato"
+ }
+}

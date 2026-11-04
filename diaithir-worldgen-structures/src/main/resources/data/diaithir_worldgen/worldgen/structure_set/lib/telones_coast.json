@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/telones/harbor_0_coast",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/telones/harbor_2_coast",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 68103861
+ }
+}

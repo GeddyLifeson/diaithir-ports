@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "pneumaticcraft:display_table"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:display_shelf"
+  }
+}

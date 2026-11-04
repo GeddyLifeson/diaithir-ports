@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG"
+  ],
+  "key": {
+    "G": "alexscaves:cinder_block"
+  },
+  "result": {
+    "count": 6,
+    "id": "alexscaves:cinder_block_slab"
+  }
+}

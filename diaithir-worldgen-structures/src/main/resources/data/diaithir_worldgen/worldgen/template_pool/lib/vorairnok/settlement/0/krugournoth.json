@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/vorairnok/settlement/0/krugournoth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/vorairnok/ma_vorairnok_e5_places_000284",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

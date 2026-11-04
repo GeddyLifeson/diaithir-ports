@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:shaft",
+  "create:shaft",
+  "create:brass_ingot"
+ ],
+ "result": {
+  "id": "create_connected:cross_connector",
+  "count": 1
+ }
+}

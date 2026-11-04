@@ -1,0 +1,13 @@
+{
+  "type": "diaithir_gods:crop_multiplier",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:player"
+      }
+    }
+  ],
+  "crops": "diaithir_gods:crops"
+}

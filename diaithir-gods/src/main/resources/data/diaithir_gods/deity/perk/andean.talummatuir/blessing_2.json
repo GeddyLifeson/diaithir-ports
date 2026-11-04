@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:wheat",
+    "color": 10918828,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:andean.talummatuir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "andean.talummatuir_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

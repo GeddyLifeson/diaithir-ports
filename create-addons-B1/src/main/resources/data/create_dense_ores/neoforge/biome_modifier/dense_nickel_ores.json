@@ -1,0 +1,12 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "tfmg"
+  }
+ ],
+ "type": "neoforge:add_features",
+ "biomes": "#minecraft:is_overworld",
+ "features": "create_dense_ores:dense_nickel_ores",
+ "step": "underground_ores"
+}

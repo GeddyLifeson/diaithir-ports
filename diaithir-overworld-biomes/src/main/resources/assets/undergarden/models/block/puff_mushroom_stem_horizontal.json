@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column_horizontal",
+ "textures": {
+  "end": "undergarden:block/puff_mushroom_stem",
+  "side": "undergarden:block/puff_mushroom_stem"
+ }
+}

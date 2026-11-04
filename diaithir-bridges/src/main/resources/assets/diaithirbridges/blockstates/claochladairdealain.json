@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,reverse=false": {
+      "model": "diaithirbridges:block/claochladairdealain_a"
+    },
+    "facing=north,reverse=true": {
+      "model": "diaithirbridges:block/claochladairdealain_b"
+    },
+    "facing=east,reverse=false": {
+      "model": "diaithirbridges:block/claochladairdealain_a",
+      "y": 90
+    },
+    "facing=east,reverse=true": {
+      "model": "diaithirbridges:block/claochladairdealain_b",
+      "y": 90
+    },
+    "facing=south,reverse=false": {
+      "model": "diaithirbridges:block/claochladairdealain_a",
+      "y": 180
+    },
+    "facing=south,reverse=true": {
+      "model": "diaithirbridges:block/claochladairdealain_b",
+      "y": 180
+    },
+    "facing=west,reverse=false": {
+      "model": "diaithirbridges:block/claochladairdealain_a",
+      "y": 270
+    },
+    "facing=west,reverse=true": {
+      "model": "diaithirbridges:block/claochladairdealain_b",
+      "y": 270
+    }
+  }
+}

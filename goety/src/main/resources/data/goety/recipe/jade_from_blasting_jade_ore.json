@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:blasting",
+ "category": "misc",
+ "ingredient": "goety:jade_ore",
+ "experience": 1.0,
+ "cookingtime": 100,
+ "result": {
+  "id": "goety:jade"
+ }
+}

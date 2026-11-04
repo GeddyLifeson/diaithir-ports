@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "frost",
+ "activation": "goety:frost_breath_focus",
+ "offerings": [
+  "goety:ectoplasm",
+  "#c:gems/diamond",
+  "minecraft:tnt",
+  "minecraft:blue_ice",
+  "minecraft:powder_snow_bucket",
+  "minecraft:ghast_tear"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:frost_nova_focus",
+ "count": 1
+}

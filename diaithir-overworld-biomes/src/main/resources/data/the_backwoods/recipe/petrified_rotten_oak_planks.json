@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#the_backwoods:petrified_rotten_oak_logs"
+ ],
+ "result": {
+  "id": "the_backwoods:petrified_rotten_oak_planks",
+  "count": 4
+ }
+}

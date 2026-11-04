@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "deeperdarker:polished_gloomslate",
+  "result": {
+    "count": 1,
+    "id": "deeperdarker:gloomslate_brick_wall"
+  }
+}

@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:dark_wand",
+ "offerings": [
+  "#c:gems/jade",
+  "#c:gems/jade",
+  "#c:gems/jade",
+  "#c:gems/jade",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "#c:storage_blocks/lapis",
+  "goety:gale_fabric"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:wind_staff",
+ "count": 1
+}

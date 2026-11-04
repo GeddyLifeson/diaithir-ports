@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_high_pressure:graphite_powder"
+ ],
+ "results": [
+  {
+   "id": "create_high_pressure:graphite_compressed",
+   "chance": 0.5
+  }
+ ],
+ "heat_requirement": "heated"
+}

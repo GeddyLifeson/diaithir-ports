@@ -1,0 +1,14 @@
+{
+ "week": 52,
+ "cultures": {
+  "diaithir": {
+   "money": 24158.791999999958,
+   "ref": 19999,
+   "treasury": 0,
+   "tb": 0,
+   "wagePool": 0,
+   "taxMul": 2,
+   "arrears": 0
+  }
+ }
+}

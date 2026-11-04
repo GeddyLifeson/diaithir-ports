@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:filled_pistol_casing",
+ "ingredient": "#c:nuggets/iron",
+ "results": [
+  {
+   "id": "createloveandwar:pistol_bullet"
+  }
+ ]
+}

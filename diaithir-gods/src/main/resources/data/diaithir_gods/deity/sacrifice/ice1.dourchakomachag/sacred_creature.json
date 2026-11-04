@@ -1,0 +1,6 @@
+{
+  "entity": "minecraft:parrot",
+  "favor": -3,
+  "maxuses": 8,
+  "cooldown": 6000
+}

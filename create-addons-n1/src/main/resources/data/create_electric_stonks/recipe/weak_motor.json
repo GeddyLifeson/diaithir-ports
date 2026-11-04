@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "isi",
+  "crc",
+  "iii"
+ ],
+ "key": {
+  "c": "minecraft:copper_ingot",
+  "i": "minecraft:iron_ingot",
+  "s": "create:shaft",
+  "r": "minecraft:repeater"
+ },
+ "result": {
+  "id": "create_electric_stonks:weak_motor"
+ }
+}

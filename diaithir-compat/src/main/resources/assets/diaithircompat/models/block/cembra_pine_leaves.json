@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "diaithircompat:block/cembra_pine_leaves"
+  }
+}

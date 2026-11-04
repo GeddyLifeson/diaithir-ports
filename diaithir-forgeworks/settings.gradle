@@ -1,0 +1,2 @@
+rootProject.name = 'diaithir-forgeworks'
+includeBuild('../diaithir-upgrades')

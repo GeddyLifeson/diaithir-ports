@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 5949071,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:steppeeast.talumbienuosul",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:water_breathing",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "steppeeast.talumbienuosul_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

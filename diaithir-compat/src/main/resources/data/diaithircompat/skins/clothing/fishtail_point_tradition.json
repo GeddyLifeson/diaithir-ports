@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/0.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/1.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/2.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/ruler.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/warrior.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/priest.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/0.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/1.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/2.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/ruler.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/warrior.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/priest.png",
+    "profession": "diaithircompat:fishtail_point_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:gouthun_ashevsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_corolum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_drornaikun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_fenoldath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_ilokamum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_moruron",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_thournak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:gouthun_ukasalareno",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "alchemind:arcanum_ingot",
+  "minecraft:emerald",
+  "alchemind:warped_diamond_dust",
+  "alchemind:warped_diamond_dust",
+  "alchemind:warped_diamond_dust",
+  "minecraft:coal_block"
+ ],
+ "results": [
+  {
+   "id": "minecraft:diamond"
+  }
+ ],
+ "heat_requirement": "superheated"
+}

@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:biting_focus",
+ "offerings": [
+  "goety:hunger_core",
+  "#c:ender_pearls",
+  "#c:ender_pearls",
+  "#c:ender_pearls",
+  "#c:ender_pearls",
+  "goety:soul_ruby"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:feast_focus",
+ "count": 1
+}

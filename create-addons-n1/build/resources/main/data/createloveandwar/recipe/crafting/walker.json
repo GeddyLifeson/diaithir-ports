@@ -1,0 +1,17 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "B": "createloveandwar:barrel_iron",
+  "R": "createloveandwar:revolver_action_iron",
+  "G": "createloveandwar:grip_wood"
+ },
+ "pattern": [
+  "BR ",
+  " G "
+ ],
+ "result": {
+  "id": "createloveandwar:walker"
+ },
+ "show_notification": true
+}

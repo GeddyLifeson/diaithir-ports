@@ -1,0 +1,7 @@
+{
+  "parent": "create_chocopaste:custom/raw_chimney_cake_shaft",
+  "textures": {
+    "0": "create_chocopaste:block/raw_chimney_cake_shaft",
+    "particle": "create_chocopaste:item/raw_chimney_cake_shaft"
+  }
+}

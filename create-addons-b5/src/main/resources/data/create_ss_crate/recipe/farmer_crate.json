@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "BHB",
+  "HAH",
+  "BHB"
+ ],
+ "key": {
+  "B": "minecraft:bone_block",
+  "A": "create_ss_crate:andesite_crate_shell",
+  "H": "minecraft:hay_block"
+ },
+ "result": {
+  "id": "create_ss_crate:farmer_crate"
+ }
+}

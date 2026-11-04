@@ -1,0 +1,6 @@
+{
+    "values": [
+        {"id": "gtceu:flowing_potion", "required": false},
+        {"id": "gtceu:potion", "required": false}
+    ]
+}

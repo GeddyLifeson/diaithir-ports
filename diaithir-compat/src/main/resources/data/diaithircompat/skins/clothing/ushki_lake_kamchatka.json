@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/0.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/1.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/2.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/ruler.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/warrior.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/priest.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/0.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/1.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/2.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/ruler.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/warrior.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/priest.png",
+    "profession": "diaithircompat:ushki_lake_kamchatka",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

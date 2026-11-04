@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:yoruba.moirmatuir",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:nautilus_shell",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

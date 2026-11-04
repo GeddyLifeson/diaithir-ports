@@ -1,0 +1,10 @@
+{
+ "type": "create:pressing",
+ "ingredient": "minecraft:flint_and_steel",
+ "results": [
+  {
+   "id": "alchemind:trapped_ember",
+   "count": 16
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "type": "craft",
+ "school": "adept_nether",
+ "activation": "goety:slimy_focus",
+ "offerings": [
+  "minecraft:tnt",
+  "#minecraft:coals",
+  "minecraft:piston"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:magma_bomb_focus",
+ "count": 1
+}

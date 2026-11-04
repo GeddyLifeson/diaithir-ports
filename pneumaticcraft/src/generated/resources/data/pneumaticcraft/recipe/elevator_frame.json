@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    "I I",
+    "I I",
+    "I I"
+  ],
+  "result": {
+    "count": 4,
+    "id": "pneumaticcraft:elevator_frame"
+  }
+}

@@ -1,0 +1,21 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirforgeworks"
+version = "${version}"
+displayName = "Diaithir Forgeworks"
+description = "A family of FE-powered machines in three casing tiers (Age IV, V, VI): a crusher, an alloy furnace, a sawmill and a crucible. Data-driven recipes, redstone control, per-face side config and shared module slots (speed, efficiency and, on crushers and sawmills, productivity). Original clean-room work."
+
+[[dependencies.diaithirforgeworks]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirforgeworks]]
+modId = "diaithirupgrades"
+type = "required"
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"

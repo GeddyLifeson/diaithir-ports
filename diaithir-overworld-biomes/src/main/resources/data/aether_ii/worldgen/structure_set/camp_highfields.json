@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "aether_ii:camp_highfields",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 26,
+  "separation": 8,
+  "salt": 33996
+ }
+}

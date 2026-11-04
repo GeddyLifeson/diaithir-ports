@@ -1,0 +1,1 @@
+{"type":"neoforge:add_spawns","biomes":"#diaithir_end:surreal_end","spawners":[{"type":"minecraft:enderman","weight":2,"minCount":1,"maxCount":1}]}

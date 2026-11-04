@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#c:ingots/steel",
+  "#c:ingots/steel",
+  "minecraft:blaze_powder"
+ ],
+ "result": {
+  "id": "diaithirarms:tempered_ingot",
+  "count": 2
+ }
+}

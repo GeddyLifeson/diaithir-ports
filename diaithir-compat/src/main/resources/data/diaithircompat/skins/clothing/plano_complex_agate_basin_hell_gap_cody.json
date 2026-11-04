@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/0.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/1.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/2.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/ruler.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/warrior.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/priest.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/0.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/1.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/2.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/ruler.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/warrior.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/priest.png",
+    "profession": "diaithircompat:plano_complex_agate_basin_hell_gap_cody",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

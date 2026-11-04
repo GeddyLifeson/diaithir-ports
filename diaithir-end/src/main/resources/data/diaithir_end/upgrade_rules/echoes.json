@@ -1,0 +1,1 @@
+{"rule":"diaithir_end:echoes_loot_tier","description":"Outer End structure loot sits one tier below End Cities; upgrade via age gate tags diaithir:age/7..7.","tiers":[{"structure_tag":"#diaithir_end:age/7","min_age":5},{"structure_tag":"#diaithir_end:age/8","min_age":6},{"structure_tag":"#diaithir_end:age/8","min_age":7}],"magic_cost_quantum_joules":100}

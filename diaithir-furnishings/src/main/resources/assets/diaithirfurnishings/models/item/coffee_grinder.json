@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/coffee_grinder_head",
+  "layer1": "diaithirfurnishings:item/coffee_grinder_handle"
+ }
+}

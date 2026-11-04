@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/bridge_0_river",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/bridge_1_river",
+   "weight": 75
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/bridge_2_river",
+   "weight": 13
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 8009488
+ }
+}

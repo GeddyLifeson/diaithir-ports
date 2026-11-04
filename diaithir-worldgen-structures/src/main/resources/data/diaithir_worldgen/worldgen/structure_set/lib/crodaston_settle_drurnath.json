@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_0_drurnath",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_1_drurnath",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crodaston/settlement_2_drurnath",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 27776080
+ }
+}

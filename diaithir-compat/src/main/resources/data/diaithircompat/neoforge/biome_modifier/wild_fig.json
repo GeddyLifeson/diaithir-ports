@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:forest",
+    "minecraft:plains",
+    "minecraft:savanna",
+    "minecraft:windswept_savanna",
+    "minecraft:windswept_hills",
+    "minecraft:savanna_plateau"
+  ],
+  "features": "diaithircompat:wild_fig",
+  "step": "vegetal_decoration"
+}

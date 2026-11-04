@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "me.desht.pneumaticcraft.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "accessors.AbstractFurnaceBlockEntityAccess",
+    "accessors.BaseContainerBlockEntityAccess",
+    "accessors.BaseSpawnerAccess",
+    "accessors.BlockEntityTypeAccess",
+    "accessors.BoatItemAccess",
+    "accessors.EntityAccess",
+    "accessors.ItemEntityAccess",
+    "accessors.MinecartItemAccess",
+    "accessors.ServerPlayerAccess",
+    "accessors.ServerPlayerGameModeAccess",
+    "accessors.ShapedRecipeAccess",
+    "accessors.ShulkerAccess",
+    "accessors.StructureTemplatePoolAccess",
+    "accessors.WitchAccess",
+    "coremods.BaseSpawnerMixin",
+    "coremods.LivingEntityMixin"
+  ],
+  "client": [
+    "accessors.TooltipAccess"
+  ],
+  "minVersion": "0.8"
+}

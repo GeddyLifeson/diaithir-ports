@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/male/0.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/male/1.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/male/2.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/male/ruler.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/male/warrior.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/male/priest.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/female/0.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/female/1.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/female/2.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/female/ruler.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/female/warrior.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/dalton_tradition/female/priest.png",
+    "profession": "diaithircompat:dalton_tradition",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:snowy_slopes",
+    "minecraft:stony_peaks",
+    "minecraft:frozen_peaks",
+    "minecraft:jagged_peaks",
+    "minecraft:snowy_plains",
+    "minecraft:meadow",
+    "minecraft:grove"
+  ],
+  "features": "diaithircompat:saxifraga_oppositifolia",
+  "step": "vegetal_decoration"
+}

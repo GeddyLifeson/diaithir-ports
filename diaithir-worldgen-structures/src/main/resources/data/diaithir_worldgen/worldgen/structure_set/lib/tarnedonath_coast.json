@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/harbor_0_coast",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/harbor_1_coast",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/harbor_2_coast",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnedonath/harbor_3_coast",
+   "weight": 8
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 244851325
+ }
+}

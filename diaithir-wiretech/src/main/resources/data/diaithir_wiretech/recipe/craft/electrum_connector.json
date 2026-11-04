@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:brick",
+    "C": "diaithir_wiretech:electrum_ingot"
+  },
+  "pattern": [
+    " B ",
+    "CCC"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:electrum_connector",
+    "count": 2
+  }
+}

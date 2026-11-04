@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:jorernaston_drouthuggun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:jorernaston_druston",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:jorernaston_guzhairnar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:jorernaston_meravanoma",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:jorernaston_rauneolus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:jorernaston_suralareno",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:jorernaston_veseivsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:jorernaston_zephashis",
+   "required": false
+  }
+ ]
+}

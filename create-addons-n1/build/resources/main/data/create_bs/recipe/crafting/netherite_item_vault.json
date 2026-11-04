@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:raw_gold_block",
+  "I": "minecraft:netherite_ingot",
+  "S": "minecraft:diamond_block",
+  "V": "create_bs:diamond_item_vault"
+ },
+ "pattern": [
+  "BSB",
+  "IVI",
+  "BSB"
+ ],
+ "result": {
+  "id": "create_bs:netherite_item_vault"
+ },
+ "show_notification": true
+}

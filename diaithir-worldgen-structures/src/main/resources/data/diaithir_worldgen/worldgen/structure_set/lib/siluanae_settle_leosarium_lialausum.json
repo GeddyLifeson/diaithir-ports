@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_0_leosarium_lialausum",
+   "weight": 44
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_1_leosarium_lialausum",
+   "weight": 139
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_2_leosarium_lialausum",
+   "weight": 34
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanae/settlement_3_leosarium_lialausum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 48299150
+ }
+}

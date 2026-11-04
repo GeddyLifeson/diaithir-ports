@@ -1,0 +1,38 @@
+{
+ "parent": "create_ss_crate:base/starter_crate",
+ "display": {
+  "icon": {
+   "id": "create_ss_crate:barn_spawner_crate",
+   "count": 1
+  },
+  "title": {
+   "translate": "create_ss_crate.advancement.special.barn_spawner_crate.title"
+  },
+  "description": {
+   "translate": "create_ss_crate.advancement.special.barn_spawner_crate.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "have_starter_crate": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": [
+       "create_ss_crate:starter_crate"
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "rewards": {
+  "loot": [
+   "create_ss_crate:advancement_loot/barn_spawner_crate"
+  ]
+ }
+}

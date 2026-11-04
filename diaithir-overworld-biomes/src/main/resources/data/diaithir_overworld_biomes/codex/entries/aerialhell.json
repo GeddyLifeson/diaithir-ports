@@ -1,0 +1,20 @@
+{
+ "id": "diaithir_overworld_biomes:aerialhell",
+ "category": "dimension",
+ "title": "codex.diaithir_overworld_biomes.aerialhell.title",
+ "body": "codex.diaithir_overworld_biomes.aerialhell.body",
+ "age": 4,
+ "icon": "aerialhell:stellar_grass_block",
+ "unlock": {
+  "type": "enter_dimension",
+  "dimension": "aerialhell:aerial_hell"
+ },
+ "covers": {
+  "biomes": [
+   "#aerialhell:is_aerialhell"
+  ],
+  "blocks": 511,
+  "items": 116
+ },
+ "quest": "diaithir_overworld_biomes:aerialhell_descent"
+}

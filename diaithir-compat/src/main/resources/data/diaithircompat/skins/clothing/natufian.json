@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/male/0.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/male/1.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/male/2.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/male/ruler.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/male/warrior.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/male/priest.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/female/0.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/female/1.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/female/2.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/female/ruler.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/female/warrior.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/natufian/female/priest.png",
+    "profession": "diaithircompat:natufian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

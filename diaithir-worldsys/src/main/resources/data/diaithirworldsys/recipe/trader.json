@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "ELE",
+  "III"
+ ],
+ "key": {
+  "I": "#c:ingots/iron",
+  "E": "#c:gems/emerald",
+  "L": "minecraft:lectern"
+ },
+ "result": {
+  "id": "diaithirworldsys:easy_villagers_trader",
+  "count": 1
+ }
+}

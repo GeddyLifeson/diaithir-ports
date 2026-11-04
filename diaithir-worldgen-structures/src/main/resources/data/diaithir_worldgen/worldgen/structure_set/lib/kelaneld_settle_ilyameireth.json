@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_0_ilyameireth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kelaneld/settlement_1_ilyameireth",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 193208585
+ }
+}

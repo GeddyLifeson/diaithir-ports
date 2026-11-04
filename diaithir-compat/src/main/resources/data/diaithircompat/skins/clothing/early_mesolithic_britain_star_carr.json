@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/0.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/1.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/2.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/ruler.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/warrior.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/priest.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/0.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/1.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/2.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/ruler.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/warrior.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/priest.png",
+    "profession": "diaithircompat:early_mesolithic_britain_star_carr",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

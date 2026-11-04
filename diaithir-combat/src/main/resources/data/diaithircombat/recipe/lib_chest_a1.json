@@ -1,0 +1,31 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "diaithircombat:gear_material/a1"
+   }
+  }
+ ],
+ "_age": "I",
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "#diaithircombat:gear_material/a1",
+  "#diaithircombat:gear_material/a1",
+  "#diaithircombat:gear_material/a1",
+  "#diaithircombat:gear_material/a1",
+  "#diaithircombat:gear_material/a1",
+  "#diaithircombat:gear_material/a1",
+  "#diaithircombat:gear_material/a1",
+  "#diaithircombat:gear_material/a1"
+ ],
+ "result": {
+  "id": "diaithircombat:lib_chest",
+  "count": 1,
+  "components": {
+   "diaithircombat:forge_age": 1
+  }
+ }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/0.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/1.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/2.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/ruler.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/warrior.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/male/priest.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/0.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/1.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/2.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/ruler.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/warrior.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/the_island_court_home_pantheon/female/priest.png",
+    "profession": "diaithircompat:the_island_court_home_pantheon",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

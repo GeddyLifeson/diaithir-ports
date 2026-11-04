@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/male/0.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/male/1.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/male/2.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/male/ruler.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/male/warrior.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/male/priest.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/female/0.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/female/1.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/female/2.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/female/ruler.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/female/warrior.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/creswellian/female/priest.png",
+    "profession": "diaithircompat:creswellian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

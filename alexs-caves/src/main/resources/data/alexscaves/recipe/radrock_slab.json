@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG"
+  ],
+  "key": {
+    "G": "alexscaves:radrock"
+  },
+  "result": {
+    "count": 6,
+    "id": "alexscaves:radrock_slab"
+  }
+}

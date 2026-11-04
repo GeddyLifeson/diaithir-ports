@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "LLL",
+  "BAB"
+ ],
+ "key": {
+  "B": "#c:ingots/iron",
+  "A": "minecraft:honey_bottle",
+  "L": "minecraft:leather"
+ },
+ "result": {
+  "id": "diaithirrelics:bear_belt",
+  "count": 1
+ }
+}

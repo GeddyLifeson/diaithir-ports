@@ -1,0 +1,35 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:using_item",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "deeperdarker:item/sonorous_staff"
+    },
+    "on_true": {
+      "type": "minecraft:range_dispatch",
+      "property": "minecraft:use_duration",
+      "scale": 0.0078125,
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "deeperdarker:item/sonorous_staff"
+      },
+      "entries": [
+        {
+          "threshold": 0.001,
+          "model": {
+            "type": "minecraft:model",
+            "model": "deeperdarker:item/sonorous_staff_charging"
+          }
+        },
+        {
+          "threshold": 1.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "deeperdarker:item/sonorous_staff_charged"
+          }
+        }
+      ]
+    }
+  }
+}

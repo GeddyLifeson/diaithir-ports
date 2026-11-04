@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "adept_nether",
+ "activation": "goety:fire_breath_focus",
+ "offerings": [
+  "#c:storage_blocks/coal",
+  "#c:rods/blaze",
+  "minecraft:tnt",
+  "minecraft:lava_bucket",
+  "#c:storage_blocks/coal",
+  "#c:rods/blaze",
+  "minecraft:lava_bucket",
+  "minecraft:ghast_tear"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:fire_blast_focus",
+ "count": 1
+}

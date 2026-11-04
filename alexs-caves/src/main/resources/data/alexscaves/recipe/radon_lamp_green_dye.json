@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LLL",
+    "LDL",
+    "LLL"
+  ],
+  "key": {
+    "L": "#alexscaves:radon_lamps",
+    "D": "#c:dyes/green"
+  },
+  "result": {
+    "count": 8,
+    "id": "alexscaves:radon_lamp_green"
+  }
+}

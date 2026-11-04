@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/0.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/1.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/2.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/ruler.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/warrior.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/priest.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/0.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/1.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/2.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/ruler.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/warrior.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/priest.png",
+    "profession": "diaithircompat:central_african_late_stone_age_tshitolia",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

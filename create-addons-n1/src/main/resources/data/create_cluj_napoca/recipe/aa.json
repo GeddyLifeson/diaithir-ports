@@ -1,0 +1,12 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:short_grass",
+  "create_cluj_napoca:packed_meat"
+ ],
+ "results": [
+  {
+   "id": "create_cluj_napoca:sarmala"
+  }
+ ]
+}

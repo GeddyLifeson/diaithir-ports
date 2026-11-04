@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:feather",
+  "minecraft:feather",
+  "minecraft:feather",
+  "minecraft:feather",
+  "#c:stones"
+ ],
+ "result": {
+  "id": "diaithirworldsys:angel_block"
+ }
+}

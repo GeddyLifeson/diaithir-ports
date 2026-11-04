@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "the_backwoods:stair_to_nowhere",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 27,
+  "separation": 8,
+  "salt": 36527
+ }
+}

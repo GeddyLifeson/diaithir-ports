@@ -1,0 +1,33 @@
+{
+ "parent": "create_ss_crate:special/workshop_crate",
+ "display": {
+  "icon": {
+   "id": "create_ss_crate:workshop_crate_decor",
+   "count": 1
+  },
+  "title": {
+   "translate": "create_ss_crate.advancement.branch.workshop_crate_decor.title"
+  },
+  "description": {
+   "translate": "create_ss_crate.advancement.branch.workshop_crate_decor.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "have_workshop_crate_decor": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": [
+       "create_ss_crate:workshop_crate_decor"
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

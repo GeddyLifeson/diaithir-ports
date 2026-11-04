@@ -1,0 +1,528 @@
+{
+ "id": "diaithirarms:handbook",
+ "title": "Aurmachd",
+ "chapters": [
+  {
+   "tier": "bone",
+   "name": "Aurmachd knàim",
+   "age": "I",
+   "text": "Arms and armour of Age I. Hide cut and stitched over bone plates, the dress of the first hunters and the Telling singers' guards.",
+   "items": [
+    {
+     "id": "diaithirarms:bone_helmet",
+     "name": "Klogaid knàim",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bone_chestplate",
+     "name": "Broildech knàim",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bone_leggings",
+     "name": "Kas knàim",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bone_boots",
+     "name": "Bòtund knàim",
+     "age": "I",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bone_bow",
+     "name": "Umlaig knàim",
+     "age": "I",
+     "text": "Bow of Age I: arrows hit x0.9 of a plain bow's damage, 300 uses. Crafted from bone plates x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:bone_shield",
+     "name": "Skiad knàim",
+     "age": "I",
+     "text": "Off-hand shield of Age I: blocks 80% of a blow from the front, 160 uses. Crafted from bone plates x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "copper",
+   "name": "Aurmachd uma",
+   "age": "II",
+   "text": "Arms and armour of Age II. Beaten copper over hide, the first metal of the herders and the cairn builders.",
+   "items": [
+    {
+     "id": "diaithirarms:copper_helmet",
+     "name": "Klogaid uma",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:copper_chestplate",
+     "name": "Broildech uma",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:copper_leggings",
+     "name": "Kas uma",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:copper_boots",
+     "name": "Bòtund uma",
+     "age": "II",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:copper_bow",
+     "name": "Umlaig uma",
+     "age": "II",
+     "text": "Bow of Age II: arrows hit x0.95 of a plain bow's damage, 330 uses. Crafted from copper ingots x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:copper_shield",
+     "name": "Skiad uma",
+     "age": "II",
+     "text": "Off-hand shield of Age II: blocks 85% of a blow from the front, 260 uses. Crafted from copper ingots x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "bronze",
+   "name": "Aurmachd krèuma",
+   "age": "III",
+   "text": "Arms and armour of Age III. Bronze with red and blue enamel studs in the curving style of the island smiths.",
+   "items": [
+    {
+     "id": "diaithirarms:bronze_helmet",
+     "name": "Klogaid krèuma",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bronze_chestplate",
+     "name": "Broildech krèuma",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bronze_leggings",
+     "name": "Kas krèuma",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bronze_boots",
+     "name": "Bòtund krèuma",
+     "age": "III",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:bronze_bow",
+     "name": "Umlaig krèuma",
+     "age": "III",
+     "text": "Bow of Age III: arrows hit x1 of a plain bow's damage, 384 uses. Crafted from bronze ingots x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:bronze_shield",
+     "name": "Skiad krèuma",
+     "age": "III",
+     "text": "Off-hand shield of Age III: blocks 90% of a blow from the front, 330 uses. Crafted from bronze ingots x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "mail",
+   "name": "Aurmachd iarund",
+   "age": "IV",
+   "text": "Arms and armour of Age IV. Rings of iron linked by hand, the road-warden's coat in the age of kings.",
+   "items": [
+    {
+     "id": "diaithirarms:mail_helmet",
+     "name": "Klogaid iarund",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:mail_chestplate",
+     "name": "Broildech iarund",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:mail_leggings",
+     "name": "Kas iarund",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:mail_boots",
+     "name": "Bòtund iarund",
+     "age": "IV",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:mail_bow",
+     "name": "Umlaig iarund",
+     "age": "IV",
+     "text": "Bow of Age IV: arrows hit x1.05 of a plain bow's damage, 420 uses. Crafted from iron ingots x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:mail_crossbow",
+     "name": "Umlaig kroisi iarund",
+     "age": "IV",
+     "text": "Crossbow of Age IV: bolts hit x1.15 of a plain bow's damage, 465 uses. Crafted from rods x3, iron ingots x1, string x2 and a tripwire hook."
+    },
+    {
+     "id": "diaithirarms:mail_shield",
+     "name": "Skiad iarund",
+     "age": "IV",
+     "text": "Off-hand shield of Age IV: blocks 95% of a blow from the front, 420 uses. Crafted from iron ingots x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "steel",
+   "name": "Aurmachd kruoid",
+   "age": "V",
+   "text": "Arms and armour of Age V. Plate and blade of true steel, the first gear of the mills, the rails and the early cities. Sword, axe and spear start here.",
+   "items": [
+    {
+     "id": "diaithirarms:steel_helmet",
+     "name": "Klogaid kruoid",
+     "age": "V",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:steel_chestplate",
+     "name": "Broildech kruoid",
+     "age": "V",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:steel_leggings",
+     "name": "Kas kruoid",
+     "age": "V",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:steel_boots",
+     "name": "Bòtund kruoid",
+     "age": "V",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:steel_sword",
+     "name": "Klaidem kruoid",
+     "age": "V",
+     "text": "Steady sword: 7 attack damage, 1.6 swings a second, sweeps nearby foes, 900 uses. Crafted from steel ingots x2 and a rod; Age V."
+    },
+    {
+     "id": "diaithirarms:steel_axe",
+     "name": "Tuog kruoid",
+     "age": "V",
+     "text": "Heavy axe: 10 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 900 uses. Crafted from steel ingots x3 and rods x2; Age V."
+    },
+    {
+     "id": "diaithirarms:steel_spear",
+     "name": "Slieg kruoid",
+     "age": "V",
+     "text": "Long spear for lunging while moving: 4 base damage, charge damage x1. 900 uses. Crafted from steel ingots x1 and rods x2; Age V."
+    },
+    {
+     "id": "diaithirarms:steel_bow",
+     "name": "Umlaig kruoid",
+     "age": "V",
+     "text": "Bow of Age V: arrows hit x1.15 of a plain bow's damage, 560 uses. Crafted from steel ingots x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:steel_crossbow",
+     "name": "Umlaig kroisi kruoid",
+     "age": "V",
+     "text": "Crossbow of Age V: bolts hit x1.3 of a plain bow's damage, 600 uses. Crafted from rods x3, steel ingots x1, string x2 and a tripwire hook."
+    },
+    {
+     "id": "diaithirarms:steel_shield",
+     "name": "Skiad kruoid",
+     "age": "V",
+     "text": "Off-hand shield of Age V: blocks 100% of a blow from the front, 600 uses. Crafted from steel ingots x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "ballistic",
+   "name": "Aurmachd snàitlech",
+   "age": "VI",
+   "text": "Arms and armour of Age VI. Layers of woven fibre under a painted steel pot, made for the wars of the power grid. Its weapon tier is tempered steel.",
+   "items": [
+    {
+     "id": "diaithirarms:ballistic_helmet",
+     "name": "Klogaid snàitlech",
+     "age": "VI",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:ballistic_chestplate",
+     "name": "Broildech snàitlech",
+     "age": "VI",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:ballistic_leggings",
+     "name": "Kas snàitlech",
+     "age": "VI",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:ballistic_boots",
+     "name": "Bòtund snàitlech",
+     "age": "VI",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:tempered_sword",
+     "name": "Klaidem doirbi",
+     "age": "VI",
+     "text": "Steady sword: 7.5 attack damage, 1.6 swings a second, sweeps nearby foes, 1300 uses. Crafted from tempered ingots x2 and a rod; Age VI."
+    },
+    {
+     "id": "diaithirarms:tempered_axe",
+     "name": "Tuog doirbi",
+     "age": "VI",
+     "text": "Heavy axe: 10.5 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 1300 uses. Crafted from tempered ingots x3 and rods x2; Age VI."
+    },
+    {
+     "id": "diaithirarms:tempered_spear",
+     "name": "Slieg doirbi",
+     "age": "VI",
+     "text": "Long spear for lunging while moving: 4.5 base damage, charge damage x1.06. 1300 uses. Crafted from tempered ingots x1 and rods x2; Age VI."
+    },
+    {
+     "id": "diaithirarms:tempered_bow",
+     "name": "Umlaig doirbi",
+     "age": "VI",
+     "text": "Bow of Age VI: arrows hit x1.25 of a plain bow's damage, 700 uses. Crafted from tempered ingots x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:tempered_crossbow",
+     "name": "Umlaig kroisi doirbi",
+     "age": "VI",
+     "text": "Crossbow of Age VI: bolts hit x1.45 of a plain bow's damage, 750 uses. Crafted from rods x3, tempered ingots x1, string x2 and a tripwire hook."
+    },
+    {
+     "id": "diaithirarms:tempered_shield",
+     "name": "Skiad doirbi",
+     "age": "VI",
+     "text": "Off-hand shield of Age VI: blocks 100% of a blow from the front, 800 uses. Crafted from tempered ingots x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "composite",
+   "name": "Aurmachd kriadach",
+   "age": "VII",
+   "text": "Arms and armour of Age VII. Ceramic tiles in a carbon twill: light, hard and cold, the armour of the digital age.",
+   "items": [
+    {
+     "id": "diaithirarms:composite_helmet",
+     "name": "Klogaid kriadach",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:composite_chestplate",
+     "name": "Broildech kriadach",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:composite_leggings",
+     "name": "Kas kriadach",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:composite_boots",
+     "name": "Bòtund kriadach",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:composite_sword",
+     "name": "Klaidem mieskaichti",
+     "age": "VII",
+     "text": "Steady sword: 8 attack damage, 1.6 swings a second, sweeps nearby foes, 1900 uses. Crafted from ceramic plates x2 and a rod; Age VII."
+    },
+    {
+     "id": "diaithirarms:composite_axe",
+     "name": "Tuog mieskaichti",
+     "age": "VII",
+     "text": "Heavy axe: 11 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 1900 uses. Crafted from ceramic plates x3 and rods x2; Age VII."
+    },
+    {
+     "id": "diaithirarms:composite_spear",
+     "name": "Slieg mieskaichti",
+     "age": "VII",
+     "text": "Long spear for lunging while moving: 5 base damage, charge damage x1.12. 1900 uses. Crafted from ceramic plates x1 and rods x2; Age VII."
+    },
+    {
+     "id": "diaithirarms:composite_bow",
+     "name": "Umlaig mieskaichti",
+     "age": "VII",
+     "text": "Bow of Age VII: arrows hit x1.35 of a plain bow's damage, 900 uses. Crafted from ceramic plates x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:composite_crossbow",
+     "name": "Umlaig kroisi mieskaichti",
+     "age": "VII",
+     "text": "Crossbow of Age VII: bolts hit x1.6 of a plain bow's damage, 950 uses. Crafted from rods x3, ceramic plates x1, string x2 and a tripwire hook."
+    },
+    {
+     "id": "diaithirarms:composite_shield",
+     "name": "Skiad mieskaichti",
+     "age": "VII",
+     "text": "Off-hand shield of Age VII: blocks 100% of a blow from the front, 1100 uses. Crafted from ceramic plates x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "rodos",
+   "name": "Aurmachd kumask",
+   "age": "RODOS",
+   "text": "Arms and armour of Age Rodos. An alloy of teal and gold, worked only since the Delivered Collection landed at Rodos.",
+   "items": [
+    {
+     "id": "diaithirarms:rodos_helmet",
+     "name": "Klogaid kumask",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:rodos_chestplate",
+     "name": "Broildech kumask",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:rodos_leggings",
+     "name": "Kas kumask",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:rodos_boots",
+     "name": "Bòtund kumask",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:rodos_sword",
+     "name": "Klaidem kumask",
+     "age": "RODOS",
+     "text": "Steady sword: 9 attack damage, 1.6 swings a second, sweeps nearby foes, 2900 uses. Crafted from Rodos alloy ingots x2 and a rod; Age Rodos."
+    },
+    {
+     "id": "diaithirarms:rodos_axe",
+     "name": "Tuog kumask",
+     "age": "RODOS",
+     "text": "Heavy axe: 12 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 2900 uses. Crafted from Rodos alloy ingots x3 and rods x2; Age Rodos."
+    },
+    {
+     "id": "diaithirarms:rodos_spear",
+     "name": "Slieg kumask",
+     "age": "RODOS",
+     "text": "Long spear for lunging while moving: 6 base damage, charge damage x1.22. 2900 uses. Crafted from Rodos alloy ingots x1 and rods x2; Age Rodos."
+    },
+    {
+     "id": "diaithirarms:rodos_bow",
+     "name": "Umlaig kumask",
+     "age": "RODOS",
+     "text": "Bow of Age Rodos: arrows hit x1.5 of a plain bow's damage, 1400 uses. Crafted from Rodos alloy ingots x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:rodos_crossbow",
+     "name": "Umlaig kroisi kumask",
+     "age": "RODOS",
+     "text": "Crossbow of Age Rodos: bolts hit x1.8 of a plain bow's damage, 1500 uses. Crafted from rods x3, Rodos alloy ingots x1, string x2 and a tripwire hook."
+    },
+    {
+     "id": "diaithirarms:rodos_shield",
+     "name": "Skiad kumask",
+     "age": "RODOS",
+     "text": "Off-hand shield of Age Rodos: blocks 100% of a blow from the front, 1700 uses. Crafted from Rodos alloy ingots x3 and planks x4."
+    }
+   ]
+  },
+  {
+   "tier": "future",
+   "name": "Aurmachd riondag",
+   "age": "RODOS",
+   "text": "Arms and armour of Age Rodos. A pale lattice of star-metal with cold light in the seams, made after Rodos and by no maker the record names.",
+   "items": [
+    {
+     "id": "diaithirarms:future_helmet",
+     "name": "Klogaid riondag",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:future_chestplate",
+     "name": "Broildech riondag",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:future_leggings",
+     "name": "Kas riondag",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:future_boots",
+     "name": "Bòtund riondag",
+     "age": "RODOS",
+     "text": ""
+    },
+    {
+     "id": "diaithirarms:future_sword",
+     "name": "Klaidem riondag",
+     "age": "RODOS",
+     "text": "Steady sword: 10.5 attack damage, 1.6 swings a second, sweeps nearby foes, 4200 uses. Crafted from star lattice x2 and a rod; Age Rodos."
+    },
+    {
+     "id": "diaithirarms:future_axe",
+     "name": "Tuog riondag",
+     "age": "RODOS",
+     "text": "Heavy axe: 13.5 attack damage, 0.9 swings a second, chops wood and can knock a raised shield down. 4200 uses. Crafted from star lattice x3 and rods x2; Age Rodos."
+    },
+    {
+     "id": "diaithirarms:future_spear",
+     "name": "Slieg riondag",
+     "age": "RODOS",
+     "text": "Long spear for lunging while moving: 7.5 base damage, charge damage x1.35. 4200 uses. Crafted from star lattice x1 and rods x2; Age Rodos."
+    },
+    {
+     "id": "diaithirarms:future_bow",
+     "name": "Umlaig riondag",
+     "age": "RODOS",
+     "text": "Bow of Age Rodos: arrows hit x1.7 of a plain bow's damage, 2000 uses. Crafted from star lattice x3 and string x3."
+    },
+    {
+     "id": "diaithirarms:future_crossbow",
+     "name": "Umlaig kroisi riondag",
+     "age": "RODOS",
+     "text": "Crossbow of Age Rodos: bolts hit x2 of a plain bow's damage, 2100 uses. Crafted from rods x3, star lattice x1, string x2 and a tripwire hook."
+    },
+    {
+     "id": "diaithirarms:future_shield",
+     "name": "Skiad riondag",
+     "age": "RODOS",
+     "text": "Off-hand shield of Age Rodos: blocks 100% of a blow from the front, 2600 uses. Crafted from star lattice x3 and planks x4."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "diaithirforgeworks:bronze_ingot",
+    "D": "minecraft:diamond",
+    "M": "diaithirforgeworks:alloy_furnace_age5"
+  },
+  "pattern": [
+    "BDB",
+    "DMD",
+    "BDB"
+  ],
+  "result": {
+    "id": "diaithirforgeworks:alloy_furnace_age6",
+    "count": 1
+  }
+}

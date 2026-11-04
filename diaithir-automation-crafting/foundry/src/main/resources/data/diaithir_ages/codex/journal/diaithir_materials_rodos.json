@@ -1,0 +1,14 @@
+{
+  "age": "RODOS",
+  "names": {
+    "mat_steel_alloy_lattice": "Make Alloy Lattice Frame"
+  },
+  "side": [
+    {
+      "id": "mat_steel_alloy_lattice",
+      "title_key": "mat_steel_alloy_lattice",
+      "goal": "obtain:1 steel_alloy_lattice",
+      "text": "Make Alloy Lattice Frame at the fabricator."
+    }
+  ]
+}

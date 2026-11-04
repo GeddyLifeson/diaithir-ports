@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/0.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/1.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/2.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/ruler.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/warrior.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/priest.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/0.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/1.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/2.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/ruler.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/warrior.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/priest.png",
+    "profession": "diaithircompat:federmesser_group_tjongerian_havelte",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

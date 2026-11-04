@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/0.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/1.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/2.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/ruler.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/warrior.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/priest.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/0.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/1.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/2.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/ruler.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/warrior.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/priest.png",
+    "profession": "diaithircompat:pedra_pintada_lower_amazon",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

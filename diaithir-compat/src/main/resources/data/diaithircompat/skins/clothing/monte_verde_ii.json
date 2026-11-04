@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/0.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/1.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/2.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/ruler.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/warrior.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/priest.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/0.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/1.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/2.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/ruler.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/warrior.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/priest.png",
+    "profession": "diaithircompat:monte_verde_ii",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

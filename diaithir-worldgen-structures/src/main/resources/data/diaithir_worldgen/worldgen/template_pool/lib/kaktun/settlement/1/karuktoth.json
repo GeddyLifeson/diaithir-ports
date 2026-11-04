@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/kaktun/settlement/1/karuktoth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/kaktun/gr_kaktun_e4_places_000095",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:kapok_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:kapok_planks",
+  "count": 4
+ }
+}

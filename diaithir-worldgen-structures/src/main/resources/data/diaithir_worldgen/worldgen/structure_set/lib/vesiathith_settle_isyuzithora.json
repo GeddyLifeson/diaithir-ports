@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_0_isyuzithora",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_1_isyuzithora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_2_isyuzithora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_3_isyuzithora",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 217649636
+ }
+}

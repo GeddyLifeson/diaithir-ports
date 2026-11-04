@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_0_amelus",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_1_amelus",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/joradernath/settlement_2_amelus",
+   "weight": 4
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 240477270
+ }
+}

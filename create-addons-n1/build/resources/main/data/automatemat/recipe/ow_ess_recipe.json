@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aaa",
+  "bcb",
+  "ded"
+ ],
+ "key": {
+  "a": "minecraft:grass_block",
+  "b": "#minecraft:dirt",
+  "c": "automatemat:overworld_core",
+  "d": "#minecraft:stone_crafting_materials",
+  "e": "#minecraft:stone_bricks"
+ },
+ "result": {
+  "id": "automatemat:mob_essense"
+ }
+}

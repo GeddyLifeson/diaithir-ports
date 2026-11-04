@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:forbidden_fragment"
+ ],
+ "result": {
+  "id": "goety:forbidden_piece",
+  "count": 9
+ }
+}

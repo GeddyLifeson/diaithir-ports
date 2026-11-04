@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+version = "${minecraft_version}-${mod_version}"
+base { archivesName = 'diaithir-create-connected' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+repositories { maven { url = 'https://maven.createmod.net' } }
+neoForge {
+    version = project.neo_version
+    accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
+    mods { "diaithir_create_connected" { sourceSet(sourceSets.main) } }
+}
+dependencies {
+    compileOnly files(project.create_jar)
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+tasks.named('jar', Jar) {
+    from('LICENSE')
+    from('SOURCE.md')
+    manifest { attributes('Implementation-Version': project.mod_version) }
+}
+tasks.withType(ProcessResources).configureEach {
+    inputs.property('v', project.mod_version)
+    filesMatching('META-INF/neoforge.mods.toml') { expand(['file': ['jarVersion': project.mod_version]]) }
+}

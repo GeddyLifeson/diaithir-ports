@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/0.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/1.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/2.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/ruler.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/warrior.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/priest.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/0.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/1.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/2.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/ruler.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/warrior.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/priest.png",
+    "profession": "diaithircompat:andean_puna_hunters_lauricocha_junin",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

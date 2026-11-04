@@ -1,0 +1,18 @@
+{
+  "creature": "diaithir_myth:famuirkeid",
+  "court": "hellenic",
+  "region": "Greece, Aegean, Anatolian coast",
+  "min_age": 3,
+  "boxes": [
+    {
+      "lat": [
+        34.5,
+        41.8
+      ],
+      "lon": [
+        19.3,
+        29.5
+      ]
+    }
+  ]
+}

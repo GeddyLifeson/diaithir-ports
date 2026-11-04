@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "create_ss_crate:block/stone_crate"
+    }
+  }
+}

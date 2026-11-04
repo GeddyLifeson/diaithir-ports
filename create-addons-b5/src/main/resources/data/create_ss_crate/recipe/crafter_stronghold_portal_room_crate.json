@@ -1,0 +1,17 @@
+{
+ "type": "create:mechanical_crafting",
+ "accept_mirrored": false,
+ "key": {
+  "A": "create_ss_crate:stronghold_portal_room_crate_chunk"
+ },
+ "pattern": [
+  " AAA ",
+  "A   A",
+  "A   A",
+  "A   A",
+  " AAA "
+ ],
+ "result": {
+  "id": "create_ss_crate:stronghold_portal_room_crate"
+ }
+}

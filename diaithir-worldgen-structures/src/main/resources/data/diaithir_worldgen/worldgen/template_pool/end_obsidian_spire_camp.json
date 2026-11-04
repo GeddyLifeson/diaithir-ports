@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:end_obsidian_spire_camp",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:end_obsidian_spire_camp",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

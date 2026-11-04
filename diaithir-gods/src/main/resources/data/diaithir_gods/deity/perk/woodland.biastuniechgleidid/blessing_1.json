@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:cod",
+    "color": 8023405,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:woodland.biastuniechgleidid",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.3,
+  "cooldown": 1200,
+  "cooldown_category": "woodland.biastuniechgleidid_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

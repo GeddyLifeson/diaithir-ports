@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/0.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/1.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/2.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/ruler.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/warrior.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/priest.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/0.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/1.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/2.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/ruler.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/warrior.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/priest.png",
+    "profession": "diaithircompat:epipalaeolithic_egypt_isnan_afian_qaruni",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

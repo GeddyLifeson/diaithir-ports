@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "minecraft:copper_ingot",
+  "P": "#minecraft:planks"
+ },
+ "pattern": [
+  "#PP",
+  "P  ",
+  "P  "
+ ],
+ "result": {
+  "id": "spartanweaponry:copper_boomerang"
+ }
+}

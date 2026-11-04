@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "CCC",
+    "SHS"
+  ],
+  "key": {
+    "C": "minecraft:iron_chain",
+    "A": "alexscaves:azure_neodymium_ingot",
+    "S": "alexscaves:scarlet_neodymium_ingot",
+    "H": "alexscaves:heavyweight"
+  },
+  "result": {
+    "count": 1,
+    "id": "alexscaves:quarry_smasher"
+  }
+}

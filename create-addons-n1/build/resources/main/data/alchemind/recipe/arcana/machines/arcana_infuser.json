@@ -1,0 +1,21 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "c": "alchemind:arcane_casing",
+  "s": "create:spout",
+  "m": "alchemind:arcane_mechanism",
+  "p": "alchemind:philosophers_fragment",
+  "g": "alchemind:galaxium_shard",
+  "b": "minecraft:copper_block"
+ },
+ "pattern": [
+  "bmb",
+  "cmc",
+  "cpc",
+  "gsg"
+ ],
+ "result": {
+  "id": "alchemind:arcana_infuser"
+ }
+}

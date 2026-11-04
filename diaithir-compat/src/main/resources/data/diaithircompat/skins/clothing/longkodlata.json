@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/male/0.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/male/1.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/male/2.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/male/ruler.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/male/warrior.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/male/priest.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/female/0.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/female/1.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/female/2.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/female/ruler.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/female/warrior.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/longkodlata/female/priest.png",
+    "profession": "diaithircompat:longkodlata",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

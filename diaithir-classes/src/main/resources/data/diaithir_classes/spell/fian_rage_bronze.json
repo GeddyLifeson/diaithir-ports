@@ -1,0 +1,47 @@
+{
+ "school": "spell_power:physical_melee",
+ "range": 0.0,
+ "tier": 0,
+ "group": "fian_set",
+ "learn": {},
+ "release": {
+  "sound": {
+   "id": "spell_engine:weapon_swipe_launch"
+  }
+ },
+ "target": {
+  "type": "CASTER"
+ },
+ "deliver": {
+  "type": "DIRECT"
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:strength",
+     "duration": 5.0,
+     "amplifier": 1,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 6.0
+  }
+ },
+ "type": "PASSIVE",
+ "passive": {
+  "triggers": [
+   {
+    "type": "DAMAGE_TAKEN",
+    "stage": "POST",
+    "chance": 0.15
+   }
+  ]
+ }
+}

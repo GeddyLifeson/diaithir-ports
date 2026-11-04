@@ -1,0 +1,56 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "minecraft:gold_ingot",
+ "transitional_item": {
+  "id": "sometricks:incomplete_totem"
+ },
+ "result": {
+  "id": "minecraft:totem_of_undying"
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:brass_sheet",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "create:potion",
+    "amount": 20250
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "fluid": "create:potion",
+    "amount": 20250
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:emerald",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

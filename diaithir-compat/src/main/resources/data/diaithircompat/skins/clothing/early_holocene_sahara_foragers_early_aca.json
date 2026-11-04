@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/0.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/1.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/2.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/ruler.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/warrior.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/priest.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/0.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/1.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/2.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/ruler.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/warrior.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/priest.png",
+    "profession": "diaithircompat:early_holocene_sahara_foragers_early_aca",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

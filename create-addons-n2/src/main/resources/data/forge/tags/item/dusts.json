@@ -1,0 +1,25 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "create_thermobaric:carbon_dust",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:beryl_dust",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:impure_gold_dust",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:impure_iron_dust",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:impure_copper_dust",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/0.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/1.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/2.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/ruler.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/warrior.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/priest.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/0.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/1.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/2.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/ruler.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/warrior.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/priest.png",
+    "profession": "diaithircompat:abriense_tequendamense_and_el_jobo",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

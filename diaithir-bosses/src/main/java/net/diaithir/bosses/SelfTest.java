@@ -1,0 +1,696 @@
+package net.diaithir.bosses;
+
+import com.mojang.authlib.GameProfile;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.util.FakePlayer;
+import net.neoforged.neoforge.common.util.FakePlayerFactory;
+
+/**
+ * /bossesselftest: for every boss that can be spawned, spawns it on a stone platform with a fake player, runs every attack of its
+ * profile through telegraph and fire, forces each phase change, checks Age scaling, Age-gated loot, arena lock-in, the bar, the
+ * no-despawn flag and a kill with drops. Then checks the elite system on a zombie, a skeleton and a creeper.
+ */
+public final class SelfTest {
+    private static final List<String> FAILS = new ArrayList<>();
+    private static int ok;
+    private static final Set<String> TYPES = Set.of("slam", "charge", "leap", "bolt", "summon", "lightning", "cloud", "wave", "heal", "roar", "gravity_well", "rewind");
+
+    private static void check(boolean c, String what) {
+        if (c) ok++;
+        else {
+            FAILS.add(what);
+            System.out.println("[bossesselftest] FAIL " + what);
+        }
+    }
+
+    private static CommandSourceStack pending;
+    private static int wait;
+    private static boolean listening;
+
+    /**
+     * Entry point of the command. Entities only join a chunk once it is entity-ticking, which needs a few ticks after loading when no
+     * player is nearby (as on a console or rcon run), so the arena chunks are forced first and the run follows two seconds later.
+     */
+    static int start(CommandSourceStack src) {
+        ServerLevel level = src.getServer().overworld();
+        for (int cx = -3; cx <= 2; cx++) for (int cz = -3; cz <= 2; cz++) { level.getChunk(cx, cz); level.setChunkForced(cx, cz, true); }
+        if (!listening) {
+            listening = true;
+            net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.ServerTickEvent.Post.class, e -> {
+                if (pending != null && --wait <= 0) {
+                    CommandSourceStack s = pending;
+                    pending = null;
+                    try { run(s); } finally {
+                        ServerLevel lv = s.getServer().overworld();
+                        for (int cx = -3; cx <= 2; cx++) for (int cz = -3; cz <= 2; cz++) lv.setChunkForced(cx, cz, false);
+                        ServerLevel pl2 = planetLevel(s.getServer());
+                        if (pl2 != null) pl2.setChunkForced(0, 0, false);
+                    }
+                }
+            });
+        }
+        ServerLevel pl = planetLevel(src.getServer());
+        if (pl != null) { pl.getChunk(0, 0); pl.setChunkForced(0, 0, true); }
+        pending = src;
+        wait = 60;
+        src.sendSuccess(() -> Component.literal("bosses self test starts in 3 seconds; the total goes to the log"), false);
+        return 1;
+    }
+
+    static int run(CommandSourceStack src) {
+        FAILS.clear();
+        ok = 0;
+        ServerLevel level = src.getServer().overworld();
+        BlockPos c0 = new BlockPos(0, 230, 0);
+        for (int x = -34; x <= 34; x++) {
+            for (int z = -34; z <= 34; z++) {
+                level.getChunk(x >> 4, z >> 4);
+                level.setBlock(c0.offset(x, 0, z), Blocks.STONE.defaultBlockState(), 2);
+                for (int h = 1; h <= 14; h++) level.setBlock(c0.offset(x, h, z), Blocks.AIR.defaultBlockState(), 2);
+            }
+        }
+        FakePlayer fp = FakePlayerFactory.get(level, new GameProfile(UUID.fromString("00000000-0000-4000-8000-00000000b055"), "[boss-test]"));
+        fp.getAttribute(Attributes.MAX_HEALTH).setBaseValue(100000);
+        fp.setHealth(100000);
+        Integer oldForce = Ages.forced;
+        int bosses = 0, skipped = 0;
+        try {
+            for (Data.Profile p : Data.profiles().values()) {
+                check(!p.phases.isEmpty() && p.phases.get(0).at >= 0.999, p.id + ": first phase starts at full health");
+                for (Data.Phase ph : p.phases) for (String a : ph.attacks) check(p.attacks.containsKey(a), p.id + ": phase uses known attack " + a);
+                for (Data.Attack a : p.attacks.values()) check(TYPES.contains(a.type), p.id + ": attack type " + a.type);
+                check(DiaithirBosses.TROPHIES.containsKey(p.id), p.id + ": has a trophy");
+                check(p.age >= 1 && p.age <= Ages.RODOS, p.id + ": Age in range");
+            }
+            for (Data.Profile p : Data.profiles().values()) {
+                var type = BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(p.entity));
+                if (type.isEmpty()) {
+                    skipped++;
+                    System.out.println("[bossesselftest] skip " + p.id + " (" + p.entity + " not installed)");
+                    continue;
+                }
+                bosses++;
+                runBoss(level, c0, fp, p);
+            }
+            planetBosses(level, c0, fp);
+            wardens(level, c0, fp);
+            attach(level, c0, fp);
+            altar(level, c0, fp);
+            planetLair(src.getServer());
+            elites(level, c0);
+            rites(src, level, c0, fp);
+            library(src, level, c0, fp);
+            wardenAltar(src, level, c0, fp);
+        } finally {
+            Ritual.TEST_PLAYERS.clear();
+            Ages.forced = oldForce;
+            fp.setPos(0, 300, 0);
+        }
+        String msg = "bosses tested=" + bosses + " skipped=" + skipped + " ok=" + ok + " bad=" + FAILS.size();
+        System.out.println("[bossesselftest] " + msg);
+        src.sendSuccess(() -> Component.literal(msg), false);
+        return FAILS.isEmpty() ? 1 : 0;
+    }
+
+    /** Every Ascendant rite has steps and ends in a defend; one rite is played through start to boss. */
+    private static void rites(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        AscendantData data = AscendantData.get(level.getServer());
+        Ages.forced = Ages.RODOS;
+        data.clearDefeats();
+        for (Data.Profile p : Data.profiles().values()) {
+            if (p.summon == null) continue;
+            Ritual.Def d = Ritual.def(p.id);
+            if (d == null && AgeWardens.TIER.equals(p.tier)) continue;   // warden rite chains arrive with ports #242; the warden altar is the rites thread's
+            check(d != null && d.steps.size() >= 4, p.id + ": has a rite of four or more steps");
+            if (d != null) check(d.steps.get(d.steps.size() - 1).type.equals("defend"), p.id + ": rite ends in a defend");
+        }
+        for (int n : new int[]{1, 2, 3, 4, 5, 6, 8}) {
+            Ritual.Def w = Ritual.def("age_warden_" + n);
+            check(w != null && w.steps.size() >= 5, "age_warden_" + n + ": has a rite of five or more steps");
+            if (w == null) continue;
+            check(w.steps.get(w.steps.size() - 1).type.equals("defend"), "age_warden_" + n + ": rite ends in a defend");
+            for (Ritual.Step st : w.steps) {
+                if (st.item != null && !st.item.startsWith("#")) check(BuiltInRegistries.ITEM.getOptional(Identifier.parse(st.item)).isPresent(), "age_warden_" + n + ": item " + st.item + " exists");
+                if (st.mob != null) check(BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(st.mob)).isPresent(), "age_warden_" + n + ": creature " + st.mob + " exists");
+            }
+        }
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ritual.TEST_PLAYERS.add(fp);
+        data.removeRitual(key);
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(!data.rituals().containsKey(key), "rite: an empty hand does not start one");
+        Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
+        check(data.rituals().containsKey(key), "rite: a champion token starts one");
+        Ritual.Def d = Ritual.def("antlered_hollow");
+        play(src, level, altar, fp, key, d);
+        check(!data.rituals().containsKey(key), "rite: finished and cleared");
+        var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+        check(woken.size() == 1, "rite: the boss wakes (" + woken.size() + ")");
+        woken.forEach(Mob::discard);
+        // solo path of the co-op step: one fighter, a rite for two, tokens call spirits
+        Ritual.Def fd = Ritual.def("foundry_sovereign");
+        int ci = -1;
+        for (int i = 0; i < fd.steps.size(); i++) if (fd.steps.get(i).type.equals("coop")) ci = i;
+        check(ci >= 0, "rite: foundry_sovereign has a co-op step");
+        data.putRitual(key, "foundry_sovereign|" + ci + "|0");
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + ci + "|"), "rite: one fighter cannot pass a two-fighter step");
+        Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get()));
+        check(data.rituals().get(key).startsWith("foundry_sovereign|" + (ci + 1) + "|"), "rite: a token calls a spirit that stands in");
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(24), m -> m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+        data.removeRitual(key);
+        data.clearDefeats();
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG)).forEach(Mob::discard);
+    }
+
+
+    /** Plays every step of a rite at the altar the way a player would: offer, kills, wrong then right runes, the hour, co-op by token, defend. */
+    private static void play(CommandSourceStack src, ServerLevel level, BlockPos altar, FakePlayer fp, String key, Ritual.Def d) {
+        AscendantData data = AscendantData.get(level.getServer());
+        for (Ritual.Step st : d.steps) {
+            switch (st.type) {
+                case "offer" -> {
+                    Ritual.use(level, altar, fp, new ItemStack(st.item.startsWith("#") ? net.minecraft.world.item.Items.CAKE : BuiltInRegistries.ITEM.getValue(Identifier.parse(st.item)), st.count));
+                    check(!data.rituals().get(key).endsWith("|0|0"), "rite: the offering is taken");
+                }
+                case "hunt" -> {
+                    var type = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(st.mob));
+                    for (int i = 0; i < st.count; i++) {
+                        var e = type.create(level, net.minecraft.world.entity.EntitySpawnReason.MOB_SUMMONED);
+                        e.snapTo(altar.getX() + 4, altar.getY(), altar.getZ(), 0, 0);
+                        Ritual.onKill((net.minecraft.world.entity.LivingEntity) e);
+                    }
+                }
+                case "stones" -> {
+                    int wrong = (st.sequence.get(0) + 1) % 9;
+                    String before = data.rituals().get(key);
+                    float hp = fp.getHealth();
+                    Ritual.seal(level, altar.east(3), wrong, fp);
+                    check(data.rituals().get(key).equals(before), "rite: a wrong rune keeps the step at zero");
+                    fp.setHealth(hp);
+                    for (int r : st.sequence) Ritual.seal(level, altar.east(3), r, fp);
+                }
+                case "hour" -> {
+                    // the world clock depends on how long the server has run, so put it outside the window first
+                    src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.to + 1200) % 24000);
+                    long before = level.getOverworldClockTime() % 24000;
+                    boolean in = st.from <= st.to ? before >= st.from && before <= st.to : before >= st.from || before <= st.to;
+                    check(!in, "rite: the hour step is closed outside its window (clock " + before + ")");
+                    Ritual.use(level, altar, fp, ItemStack.EMPTY);
+                    check(data.rituals().get(key).contains("|" + d.steps.indexOf(st) + "|"), "rite: wrong hour does not advance");
+                    src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.from + 10));
+                    long now = level.getOverworldClockTime() % 24000;
+                    check(st.from <= st.to ? now >= st.from && now <= st.to : now >= st.from || now <= st.to, "rite: the test could set the clock (" + now + ")");
+                    Ritual.use(level, altar, fp, ItemStack.EMPTY);
+                }
+                case "coop" -> {
+                    Ritual.use(level, altar, fp, new ItemStack(DiaithirBosses.TOKEN.get(), 3));
+                    check(!data.rituals().get(key).contains("|" + d.steps.indexOf(st) + "|"), "rite: co-op by token passes (" + d.boss + ")");
+                }
+                case "defend" -> {
+                    Ritual.use(level, altar, fp, ItemStack.EMPTY);
+                    check(Ritual.DEFEND_START.containsKey(key), "rite: the defend step starts");
+                    Ritual.DEFEND_START.put(key, level.getGameTime() - 20L * st.seconds - 40);
+                    Ritual.step(src.getServer());
+                }
+                default -> check(false, "rite: unknown step type " + st.type);
+            }
+        }
+    }
+
+    /** The Library's rites: all convert to valid steps (items and creatures exist); one tier-7 rite is played through, the gate holds. */
+    private static void library(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        var files = RiteLibrary.universes();
+        if (files.isEmpty()) { System.out.println("[bossesselftest] skip library rites (no diaithir_druidry rite data; set -Ddiaithir.rites)"); return; }
+        int total = 0, bad = 0, shown = 0;
+        RiteLibrary.Rite sample = null;
+        for (String f : files) {
+            for (RiteLibrary.Rite r : RiteLibrary.universeFile(f).values()) {
+                total++;
+                Ritual.Def d = RiteLibrary.def(r.id);
+                String why = d == null || d.steps.isEmpty() ? "no steps" : null;
+                if (why == null) for (Ritual.Step st : d.steps) {
+                    if (st.item != null && !st.item.startsWith("#") && BuiltInRegistries.ITEM.getOptional(Identifier.parse(st.item)).isEmpty()) why = "item " + st.item;
+                    if (st.mob != null && BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(st.mob)).isEmpty()) why = "creature " + st.mob;
+                }
+                if (why != null) { bad++; if (shown++ < 5) System.out.println("[bossesselftest] bad rite " + r.id + ": " + why); }
+                if (sample == null && r.dimension.equals("minecraft:overworld") && r.tier == 7 && r.steps.stream().anyMatch(x -> x.step.equals("coop")) && r.steps.stream().anyMatch(x -> x.step.equals("stones"))) sample = r;
+            }
+        }
+        System.out.println("[bossesselftest] library rites: " + total + " in " + files.size() + " files, " + bad + " bad");
+        check(total > 50000, "library: " + total + " rites loaded from " + files.size() + " universe files");
+        check(bad == 0, "library: every rite converts to valid steps (" + bad + " bad of " + total + ")");
+        if (sample == null) { check(false, "library: found a tier 7 rite with co-op and stones to play"); return; }
+        AscendantData data = AscendantData.get(level.getServer());
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
+        data.removeRitual(key);
+        Ritual.TEST_PLAYERS.add(fp);
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ages.forced = 1;
+        check(Ritual.beginRite(level, altar, sample.id) != null && !data.rituals().containsKey(key), "library: " + sample.name + " is closed before Age " + Ages.name(sample.gate_age));
+        Ages.forced = sample.gate_age;
+        RiteLibrary.Rite far = RiteLibrary.universeFile("alaenneirae").values().iterator().next();
+        check(Ritual.beginRite(level, altar, far.id) != null && !data.rituals().containsKey(key), "library: a rite of " + far.planet + " does not run in the overworld");
+        ItemStack page = RiteLibrary.page(sample);
+        check(sample.id.equals(RiteLibrary.pageRite(page)), "library: the rite page carries its entry id");
+        Ritual.use(level, altar, fp, page);
+        check(data.rituals().containsKey(key) && data.rituals().get(key).startsWith(Ritual.RITE + sample.id + "|0|"), "library: " + sample.name + " begins from its page at its gate Age");
+        check(Ritual.beginRite(level, altar, sample.id) != null, "library: a second rite cannot start on a busy altar");
+        Data.Profile any = Data.profiles().values().iterator().next();
+        RiteLibrary.TEST_BOSS.put(sample.id, any.id);
+        play(src, level, altar, fp, key, Ritual.def(Ritual.RITE + sample.id));
+        RiteLibrary.TEST_BOSS.remove(sample.id);
+        var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+        check(woken.size() == 1, "library: the finished rite wakes its mapped boss (" + woken.size() + ")");
+        woken.forEach(Mob::discard);
+        System.out.println("[bossesselftest] library rite played: " + sample.id + " (" + sample.name + ", " + sample.steps.size() + " steps)");
+        check(!data.rituals().containsKey(key), "library: the rite finished and cleared");
+        System.out.println("[bossesselftest] library reward items dropped at the altar: " + level.getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, new AABB(altar).inflate(4)).size() + " (spell_engine absent in the test run)");
+        check(data.beaten(Ritual.RITE + sample.id), "library: the spell is learned");
+        check(Ritual.beginRite(level, altar, sample.id) != null, "library: a learned rite is not run twice");
+        data.clearDefeats();
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+    }
+
+    /** The Age-evolving warden altar starts the rite of the first unbeaten warden whose Age has come, bare-handed, and plays it to the boss. */
+    private static void wardenAltar(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        AscendantData data = AscendantData.get(level.getServer());
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
+        data.removeRitual(key);
+        data.clearDefeats();
+        boolean mine = !Data.profiles().containsKey("age_warden_1");
+        if (mine) {
+            Data.Profile p = new Data.Profile();
+            p.id = "age_warden_1"; p.entity = "minecraft:husk"; p.age = 1; p.summon = new Data.Summon(); p.summon.rite = "warden_altar";
+            Data.profiles().put(p.id, p);
+        }
+        var old = level.getBlockState(altar);
+        level.setBlock(altar, DiaithirBosses.WARDEN_ALTAR.get().defaultBlockState(), 3);
+        Ritual.TEST_PLAYERS.add(fp);
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ages.forced = 1;
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().containsKey(key) && data.rituals().get(key).startsWith("age_warden_1|0|"), "warden altar: bare hands begin the Age I warden's rite");
+        if (data.rituals().containsKey(key)) {
+            play(src, level, altar, fp, key, Ritual.def("age_warden_1"));
+            check(!data.rituals().containsKey(key), "warden altar: the rite finished and cleared");
+            var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+            check(woken.size() == 1, "warden altar: the warden wakes (" + woken.size() + ")");
+            woken.forEach(Mob::discard);
+        }
+        data.removeRitual(key);
+        data.clearDefeats();
+        level.setBlock(altar, old, 3);
+        if (mine) Data.profiles().remove("age_warden_1");
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+    }
+
+    private static Mob spawnAt(ServerLevel level, Data.Profile p, BlockPos c0) {
+        return DiaithirBosses.spawn(level, p, Vec3.atBottomCenterOf(c0.above()), c0);
+    }
+
+    private static void runBoss(ServerLevel level, BlockPos c0, FakePlayer fp, Data.Profile p) {
+        String n = p.id;
+        Ages.forced = p.age;
+        fp.setPos(c0.getX() + 7.5, c0.getY() + 1, c0.getZ() + 0.5);
+        Mob m = spawnAt(level, p, c0);
+        check(m != null, n + ": spawns");
+        if (m == null) return;
+        BossController c = BossController.ALL.get(m.getUUID());
+        check(c != null, n + ": controller attached");
+        if (c == null) {
+            m.discard();
+            return;
+        }
+        c.testPlayers.add(fp);
+        try {
+            for (int i = 0; i < 6; i++) c.tick();
+            check(c.bar.getPlayers().contains(fp), n + ": boss bar shows to the fighter");
+            check(m.isPersistenceRequired(), n + ": does not despawn");
+            check(m.entityTags().contains(BossController.TAG), n + ": tagged");
+            for (String a : p.attacks.keySet()) {
+                fp.setHealth(fp.getMaxHealth());
+                fp.setPos(c0.getX() + 5.5, c0.getY() + 1, c0.getZ() + 0.5);
+                c.invuln = 0;
+                m.setInvulnerable(false);
+                c.cooldown = 0;
+                c.beginAttack(a, List.of(fp));
+                check(c.current != null && c.telegraph > 0, n + ": " + a + " telegraphs first");
+                int guard = 0;
+                while (c.current != null && guard++ < 600) c.tick();
+                check(c.current == null, n + ": " + a + " completes");
+                check(c.fired.getOrDefault(p.attacks.get(a).type, 0) > 0, n + ": " + a + " fired");
+            }
+            for (int i = 1; i < p.phases.size(); i++) {
+                m.setHealth(Math.max(1, m.getMaxHealth() * (float) (p.phases.get(i).at - 0.02)));
+                c.cooldown = 99999;
+                c.tick();
+                check(c.phase == i, n + ": enters phase " + i);
+                check(m.entityTags().contains(BossController.T_PHASE + i), n + ": phase " + i + " persists in a tag");
+                if (p.phases.get(i).invuln > 0) check(m.isInvulnerable(), n + ": phase " + i + " is invulnerable during the change");
+                int g = 0;
+                while (c.invuln > 0 && g++ < 400) c.tick();
+                check(!m.isInvulnerable(), n + ": phase " + i + " ends its shield");
+            }
+            fp.setPos(c0.getX() + p.arena.radius + 6, c0.getY() + 1, c0.getZ() + 0.5);
+            fp.hurtMarked = false;
+            float before = fp.getHealth();
+            c.cooldown = 99999;
+            for (int i = 0; i < 20; i++) c.tick();
+            check(fp.hurtMarked || fp.getHealth() < before, n + ": arena pushes a fighter who leaves");
+            check(p.max_hit_fraction > 0 && p.max_hit_fraction < 1, n + ": hit cap sane");
+            List<ItemStack> low = c.rollLoot(1), high = c.rollLoot(7);
+            var trophy = DiaithirBosses.TROPHIES.get(n);
+            check(trophy != null ? high.stream().anyMatch(s -> s.getItem() == trophy.get()) : !high.isEmpty(), n + ": drops its trophy or loot");
+            check(p.loot.stream().noneMatch(l -> l.min_age > 1) || low.size() <= high.size(), n + ": loot grows with the Age");
+            m.setInvulnerable(false);
+            AABB box = m.getBoundingBox().inflate(6);
+            m.kill(level);
+            check(c.dead, n + ": death hook ran");
+            check(!level.getEntitiesOfClass(ItemEntity.class, box).isEmpty(), n + ": drops items on death");
+            level.getEntitiesOfClass(ItemEntity.class, new AABB(c0).inflate(40)).forEach(ItemEntity::discard);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            check(false, n + ": exception " + e);
+        }
+        if (m.isAlive()) m.discard();
+        Ages.forced = p.age;
+        Mob a = spawnAt(level, p, c0);
+        Ages.forced = Math.min(8, p.age + 3);
+        Mob b = spawnAt(level, p, c0);
+        if (a != null && b != null) {
+            BossController ca = BossController.ALL.get(a.getUUID()), cb = BossController.ALL.get(b.getUUID());
+            float ea = a.getMaxHealth() * ca.damageDivisor, eb = b.getMaxHealth() * cb.damageDivisor;
+            if (p.age < 8) {
+                check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + ca.damageDivisor + "/" + cb.damageDivisor + " near " + ca.participants().size() + ")");
+            } else {
+                // the last Age has no later Age to grow into: it keeps its full base health and still grows with the fighters present
+                check(ea >= (float) p.own.hp * 0.999F && eb == ea, n + ": Age 8 boss keeps its base health at every later Age (" + ea + ", " + eb + " vs " + p.own.hp + ")");
+                check(p.scaling.hp_per_extra_player > 0, n + ": grows with extra fighters");
+            }
+        }
+        if (a != null) a.discard();
+        if (b != null) b.discard();
+        level.getEntitiesOfClass(Mob.class, new AABB(c0).inflate(60), e -> e.entityTags().stream().anyMatch(t -> t.startsWith(BossController.T_MINION))).forEach(Mob::discard);
+    }
+
+    /** Age wardens: one per Age (I to VI, VIII); spawn through the rite hook, run 5 s, take damage, die, drop loot, stay under the 4x health cap. */
+    private static void wardens(ServerLevel level, BlockPos c0, FakePlayer fp) {
+        List<Integer> ages = AgeWardens.ages();
+        check(ages.equals(List.of(1, 2, 3, 4, 5, 6, 8)), "wardens: one per Age I-VI and VIII " + ages);
+        for (int age : ages) {
+            String n = AgeWardens.PREFIX + age;
+            try {
+                Data.Profile p = Data.profiles().get(n);
+                check(p != null && AgeWardens.TIER.equals(p.tier) && p.age == age, n + ": profile with tier and Age");
+                if (p == null) continue;
+                check(p.scaling.hp_per_age * p.scaling.max_age_steps + 1 <= 4.0, n + ": Age scaling stays under the 4x cap");
+                Data.Profile boss = Data.profiles().values().stream().filter(b -> b.age == age && !AgeWardens.TIER.equals(b.tier) && b.look).findFirst().orElse(null);
+                if (boss != null) check(p.own.hp < boss.own.hp, n + ": mini-boss, lighter than " + boss.id);
+                Ages.forced = age;
+                fp.setPos(c0.getX() + 7.5, c0.getY() + 1, c0.getZ() + 0.5);
+                Mob m = AgeWardens.spawn(level, age, Vec3.atBottomCenterOf(c0.above()), c0);
+                check(m != null, n + ": spawns through AgeWardens.spawn");
+                if (m == null) continue;
+                check(m.entityTags().contains("dwarfsandgiants:spawn_size_rolled"), n + ": size roll pre-tagged (no Dwarfs and Giants rescale)");
+                BossController c = BossController.ALL.get(m.getUUID());
+                check(c != null, n + ": controller attached");
+                if (c == null) { m.discard(); continue; }
+                c.testPlayers.add(fp);
+                float full = m.getMaxHealth();
+                check(full * c.damageDivisor <= p.own.hp * 4.0 + 0.5, n + ": effective health within 4x of base (" + full * c.damageDivisor + " vs " + p.own.hp + ")");
+                for (int i = 0; i < 100; i++) c.tick();
+                check(m.isAlive(), n + ": alive after 5 s of ticks");
+                check(c.bar.getPlayers().contains(fp), n + ": bar shows");
+                float h0 = m.getHealth();
+                c.invuln = 0;
+                m.setInvulnerable(false);
+                m.hurtServer(level, level.damageSources().playerAttack(fp), full * 0.05F * c.damageDivisor + 1.0F);
+                check(m.getHealth() < h0, n + ": takes damage (" + h0 + " -> " + m.getHealth() + ")");
+                List<ItemStack> loot = c.rollLoot(age);
+                check(loot.stream().anyMatch(s -> s.getItem() == DiaithirBosses.TROPHIES.get(n).get()), n + ": rolls its trophy");
+                check(p.loot.stream().noneMatch(l -> l.min_age > age + 1), n + ": loot is Age-appropriate");
+                m.setInvulnerable(false);
+                AABB box = m.getBoundingBox().inflate(6);
+                m.kill(level);
+                check(c.dead, n + ": dies, death hook ran");
+                check(!level.getEntitiesOfClass(ItemEntity.class, box).isEmpty(), n + ": drops loot");
+                level.getEntitiesOfClass(ItemEntity.class, new AABB(c0).inflate(40)).forEach(ItemEntity::discard);
+                if (m.isAlive()) m.discard();
+            } catch (RuntimeException e) {
+                e.printStackTrace();
+                check(false, n + ": exception " + e);
+            }
+        }
+        Ages.forced = 7;
+        check(AgeWardens.idFor(7).equals("age_warden_6"), "wardens: Age 7 maps to the Age VI warden");
+        check(AgeWardens.idFor(8).equals("age_warden_8"), "wardens: Age 8 maps to its own warden");
+        level.getEntitiesOfClass(Mob.class, new AABB(c0).inflate(60), e -> e.entityTags().stream().anyMatch(t -> t.startsWith(BossController.T_MINION))).forEach(Mob::discard);
+    }
+
+    /** Planet bosses: every profile is well formed and has its look files; one boss per body plan runs the full boss test. */
+    private static void planetBosses(ServerLevel level, BlockPos c0, FakePlayer fp) {
+        var all = Data.planetBosses().values();
+        check(all.size() >= 1000, "planet bosses loaded: " + all.size());
+        java.util.Map<String, Data.Profile> sample = new java.util.LinkedHashMap<>();
+        java.util.Set<String> planets = new java.util.HashSet<>();
+        for (Data.Profile p : all) {
+            planets.add(p.planet);
+            check(!p.phases.isEmpty() && p.phases.get(0).at >= 0.999, p.id + ": first phase starts at full health");
+            for (Data.Phase ph : p.phases) for (String a : ph.attacks) check(p.attacks.containsKey(a), p.id + ": phase uses known attack " + a);
+            for (Data.Attack a : p.attacks.values()) check(TYPES.contains(a.type), p.id + ": attack type " + a.type);
+            check(p.age >= 1 && p.age <= 8, p.id + ": Age in range");
+            check(BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(p.entity)).isPresent(), p.id + ": entity type registered");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/looks/" + p.id + ".json") != null, p.id + ": look file");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/textures/entity/planet/" + p.id + ".png") != null, p.id + ": texture");
+            sample.putIfAbsent(p.arch, p);
+        }
+        for (Data.Profile p : Data.profiles().values()) {
+            check(p.look, p.id + ": has its own look");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/looks/" + p.id + ".json") != null, p.id + ": look file");
+            check(PlanetBoss.class.getResource("/assets/" + DiaithirBosses.ID + "/textures/entity/planet/" + p.id + ".png") != null, p.id + ": texture");
+        }
+        check(planets.size() >= 200, "planet bosses cover " + planets.size() + " planets");
+        check(PlanetBoss.class.getResource("/data/" + DiaithirBosses.ID + "/structure/planet_lair.nbt") != null, "planet lair template present");
+        for (Data.Profile p : sample.values()) runBoss(level, c0, fp, p);
+        System.out.println("[bossesselftest] planet bosses " + all.size() + " on " + planets.size() + " planets, full test on " + sample.size() + " body plans");
+    }
+
+    private static final String PLANET_TEST = "ashestith";
+
+    /** A planet dimension, when the planets datapack is loaded (it is optional for the test). */
+    private static ServerLevel planetLevel(net.minecraft.server.MinecraftServer srv) {
+        return srv.getLevel(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION,
+            Identifier.parse("diaithir_planets:" + PLANET_TEST)));
+    }
+
+    /** A lair altar (no boss set) in a planet dimension wakes one of that planet's own bosses. */
+    private static void planetLair(net.minecraft.server.MinecraftServer srv) {
+        ServerLevel pl = planetLevel(srv);
+        if (pl == null) {
+            System.out.println("[bossesselftest] planet lair: no planet dimensions loaded, skipped");
+            return;
+        }
+        BlockPos pos = new BlockPos(0, 150, 0);
+        for (int x = -4; x <= 4; x++) for (int z = -4; z <= 4; z++) {
+            pl.setBlock(pos.offset(x, -1, z), Blocks.STONE.defaultBlockState(), 2);
+            for (int h = 0; h <= 8; h++) pl.setBlock(pos.offset(x, h, z), Blocks.AIR.defaultBlockState(), 2);
+        }
+        pl.setBlock(pos, DiaithirBosses.ALTAR.get().defaultBlockState(), 3);
+        var be = (AltarBlockEntity) pl.getBlockEntity(pos);
+        check(be != null && be.boss.isEmpty(), "planet lair: altar starts without a boss");
+        if (be == null) return;
+        FakePlayer fp = FakePlayerFactory.get(pl, new GameProfile(UUID.fromString("00000000-0000-4000-8000-00000000b056"), "[lair-test]"));
+        fp.setPos(pos.getX() + 3.5, pos.getY(), pos.getZ() + 0.5);
+        Integer old = Ages.forced;
+        Ages.forced = 8;
+        try {
+            be.activate(fp);
+            Data.Profile p = Data.byId(be.boss);
+            check(p != null && PLANET_TEST.equals(p.planet), "planet lair: picked a boss of its own planet (" + be.boss + ")");
+            var found = pl.getEntitiesOfClass(Mob.class, new AABB(pos).inflate(10), m -> m.isAlive() && m.entityTags().contains(AltarBlockEntity.posTag(pos)));
+            check(found.size() == 1 && found.get(0) instanceof PlanetBoss, "planet lair: wakes a planet boss (" + found.size() + ")");
+            if (!found.isEmpty() && found.get(0) instanceof PlanetBoss pb) {
+                check(pb.bossId().equals(be.boss), "planet lair: the woken boss wears the picked look");
+                found.get(0).discard();
+            }
+        } finally {
+            Ages.forced = old;
+            pl.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        }
+    }
+
+    /** The altar: Age gate, waking, no double wake, and the respawn rule after a kill. */
+    private static void altar(ServerLevel level, BlockPos c0, FakePlayer fp) {
+        BlockPos pos = c0.offset(-20, 1, 0);
+        level.setBlock(pos, DiaithirBosses.ALTAR.get().defaultBlockState(), 3);
+        var be = (AltarBlockEntity) level.getBlockEntity(pos);
+        check(be != null, "altar: block entity exists");
+        if (be == null) return;
+        for (String id : new String[] {"tribal_chief", "ceramic_warlord", "stone_colossus"}) {
+            Data.Profile p = Data.byId(id);
+            be.boss = id;
+            be.defeatedAt = -1;
+            be.defeats = 0;
+            Ages.forced = Math.max(1, p.age - 1);
+            if (p.age > 1) check(be.refusal(level, p) != null, "altar " + id + ": sleeps below its Age");
+            Ages.forced = p.age;
+            check(be.refusal(level, p) == null, "altar " + id + ": ready at its Age");
+            be.activate(fp);
+            var found = level.getEntitiesOfClass(Mob.class, new AABB(pos).inflate(10), m -> m.isAlive() && m.entityTags().contains(AltarBlockEntity.posTag(pos)));
+            check(found.size() == 1, "altar " + id + ": wakes the boss");
+            check(be.refusal(level, p) != null, "altar " + id + ": will not wake a second one");
+            if (!found.isEmpty()) {
+                found.get(0).kill(level);
+                check(be.defeats == 1, "altar " + id + ": remembers the defeat");
+                check(be.refusal(level, p) != null, "altar " + id + ": rests after the fight (" + p.respawn.mode + ")");
+                level.getEntitiesOfClass(ItemEntity.class, new AABB(pos).inflate(20)).forEach(ItemEntity::discard);
+            }
+        }
+        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+    }
+
+    /** A profile can turn another mod's creature into a boss: here a vanilla husk stands in for the diaithir_myth entities. */
+    private static void attach(ServerLevel level, BlockPos c0, FakePlayer fp) {
+        Data.Profile src = Data.byId("tribal_chief");
+        Data.Profile p = Data.GSON.fromJson(Data.GSON.toJson(src), Data.Profile.class);
+        p.id = "attach_test";
+        p.entity = "minecraft:husk";
+        p.own.hp = 300;
+        Data.attach(p);
+        try {
+            Ages.forced = 1;
+            Mob m = make(level, EntityType.HUSK, c0);
+            level.addFreshEntity(m);
+            BossController c = BossController.ALL.get(m.getUUID());
+            check(c != null, "attach: a profile adopts another mod's entity");
+            if (c != null) {
+                check(m.getMaxHealth() >= 300, "attach: health lifted to the profile (" + m.getMaxHealth() + ")");
+                check(m.isPersistenceRequired(), "attach: attached boss does not despawn");
+                c.testPlayers.add(fp);
+                for (int i = 0; i < 6; i++) c.tick();
+                check(c.bar.getPlayers().contains(fp), "attach: bar shows");
+                m.discard();
+                check(!BossController.ALL.containsKey(m.getUUID()), "attach: controller released on removal");
+            }
+        } finally {
+            Data.detach("attach_test");
+        }
+    }
+
+    private static Mob make(ServerLevel level, EntityType<?> t, BlockPos c0) {
+        Mob m = (Mob) t.create(level, EntitySpawnReason.NATURAL);
+        m.snapTo(c0.getX() + 20.5, c0.getY() + 1, c0.getZ() + 0.5, 0, 0);
+        return m;
+    }
+
+    private static void elites(ServerLevel level, BlockPos c0) {
+        Ages.forced = 7;
+        RandomSource r = RandomSource.create();
+        for (String id : new String[] {"minecraft:zombie", "minecraft:skeleton", "minecraft:creeper"}) {
+            Mob m = make(level, BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(id)).orElseThrow(), c0);
+            float base = m.getMaxHealth();
+            List<String> got = Elites.make(m, 7, r, null);
+            check(Elites.isElite(m), id + ": becomes a champion");
+            check(got.size() == 3, id + ": Age VII champion has three affixes");
+            check(m.hasCustomName(), id + ": champion is named");
+            check(m.getMaxHealth() >= base, id + ": champion is no weaker");
+            level.addFreshEntity(m);
+            m.discard();
+        }
+        Mob z = make(level, EntityType.ZOMBIE, c0);
+        float base = z.getMaxHealth();
+        Elites.make(z, 1, r, List.of("hulking", "shielded"));
+        check(z.getMaxHealth() > base * 1.5F, "hulking raises health (" + base + " -> " + z.getMaxHealth() + ")");
+        check(z.getAbsorptionAmount() > 0, "shielded gives absorption");
+        z.discard();
+        stacking(level, c0, r);
+        stackingLive(level, c0, r);
+        int n = 0;
+        for (int i = 0; i < 2000; i++) if (Elites.roll(make(level, EntityType.ZOMBIE, c0), 7, r)) n++;
+        check(n > 100 && n < 700, "elite roll rate at Age VII is about the table's (" + n + "/2000)");
+        n = 0;
+        for (int i = 0; i < 2000; i++) if (Elites.roll(make(level, EntityType.ZOMBIE, c0), 1, r)) n++;
+        check(n < 200, "elite rolls are rarer at Age I (" + n + "/2000)");
+    }
+
+    /** Foreign health changes (Dwarfs and Giants size, Remnants level) must add to the Age bonus, not multiply with it, and stay under the cap. */
+    private static void stacking(ServerLevel level, BlockPos c0, RandomSource r) {
+        Ages.forced = 7;
+        double want = Data.elites().extra_hp_per_age * 6, cap = Data.elites().max_combined_health_multiplier;
+        // {dwarfs-style TOTAL amount, remnants-style BASE amount}
+        double[][] cases = {{0.5, 0}, {-0.4, 0}, {1.0, 0}, {0, 1.0}, {0.5, 1.0}, {0.3, 0.2}, {2.0, 2.0}};
+        for (double[] c : cases) {
+            Mob m = make(level, EntityType.ZOMBIE, c0);
+            var mh = m.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH);
+            double base = mh.getBaseValue();
+            mh.addPermanentModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(Identifier.parse("dwarfsandgiants:scale"), c[0], net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            mh.addPermanentModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(Identifier.parse("remnant_mobs:level"), c[1], net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            double factor = (1 + c[1]) * (1 + c[0]);
+            Elites.make(m, 7, r, List.of());
+            double ratio = Elites.normaliseHealth(m);
+            double expect = Math.min(factor + want, cap);
+            String tag = "stacking (size " + c[0] + ", level " + c[1] + "): foreign x" + factor + " + Age " + want + " -> x" + String.format("%.3f", ratio) + " (expect " + String.format("%.3f", expect) + ", product would be " + String.format("%.3f", factor * (1 + want)) + ")";
+            check(Math.abs(ratio - expect) < 0.01, tag);
+            check(ratio <= cap + 0.01, "stacking cap holds, case " + c[0] + "/" + c[1]);
+            double again = Elites.normaliseHealth(m);
+            check(Math.abs(again - ratio) < 0.001, "normalising twice changes nothing, case " + c[0] + "/" + c[1]);
+            check(m.getHealth() <= m.getMaxHealth(), "health within max, case " + c[0] + "/" + c[1]);
+            m.discard();
+        }
+    }
+
+    /** Real mods in the pack (Dwarfs and Giants, Remnants) roll their own health changes when the zombie joins; the champion's Age bonus must add to them. */
+    private static void stackingLive(ServerLevel level, BlockPos c0, RandomSource r) {
+        Ages.forced = 7;
+        double want = Data.elites().extra_hp_per_age * 6, cap = Data.elites().max_combined_health_multiplier;
+        double lo = 1e9, hi = 0, sum = 0, worstProduct = 0, maxMult = 0;
+        int n = 60, varied = 0, multiplicativeWouldBreakCap = 0;
+        for (int i = 0; i < n; i++) {
+            Mob m = (Mob) EntityType.ZOMBIE.spawn(level, c0.offset(20, 1, i % 7), EntitySpawnReason.NATURAL);
+            if (m == null) continue;
+            var mh = m.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH);
+            if (Elites.isElite(m)) { m.discard(); continue; }
+            double base = mh.getBaseValue(), factor = mh.getValue() / base;
+            Elites.make(m, 7, r, List.of());
+            double mult = Elites.normaliseHealth(m);
+            double product = factor * (1 + want);
+            lo = Math.min(lo, factor); hi = Math.max(hi, factor); sum += mult; maxMult = Math.max(maxMult, mult);
+            if (Math.abs(factor - 1) > 0.01) varied++;
+            if (product > cap + 0.01) multiplicativeWouldBreakCap++;
+            worstProduct = Math.max(worstProduct, product);
+            check(mult <= cap + 0.01, "live stacking: x" + mult + " within cap (foreign x" + factor + ")");
+            check(factor < 1 || mult <= product + 0.01, "live stacking: x" + mult + " is not above the product x" + product + " (shrunk mobs get the full Age bonus on their own size)");
+            check(mult >= Math.min(factor, cap) - 0.01, "live stacking: the other mods' variety is kept (x" + factor + " -> x" + mult + ")");
+            m.discard();
+        }
+        System.out.println("[bossesselftest] live stacking over " + n + " zombies: foreign factor x" + String.format("%.2f", lo) + " to x" + String.format("%.2f", hi)
+            + ", " + varied + " not at x1, champion totals avg x" + String.format("%.2f", sum / n) + ", worst product would have been x" + String.format("%.2f", worstProduct)
+            + " (" + multiplicativeWouldBreakCap + " over the cap of " + cap + " when multiplied)");
+    }
+
+    private SelfTest() {}
+}

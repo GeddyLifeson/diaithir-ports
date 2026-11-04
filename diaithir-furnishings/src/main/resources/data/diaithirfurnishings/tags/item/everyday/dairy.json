@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:churn",
+  "diaithirfurnishings:cheese_press",
+  "diaithirfurnishings:cheese_mold",
+  "diaithirfurnishings:milking_stool"
+ ]
+}

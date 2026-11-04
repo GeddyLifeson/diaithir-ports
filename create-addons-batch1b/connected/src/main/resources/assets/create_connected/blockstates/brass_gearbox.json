@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "create_connected:block/brass_gearbox",
+   "x": 90,
+   "y": 90
+  },
+  "axis=y": {
+   "model": "create_connected:block/brass_gearbox"
+  },
+  "axis=z": {
+   "model": "create_connected:block/brass_gearbox",
+   "x": 90
+  }
+ }
+}

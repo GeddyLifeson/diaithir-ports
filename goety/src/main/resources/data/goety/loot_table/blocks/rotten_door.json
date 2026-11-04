@@ -1,0 +1,28 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    },
+    {
+     "condition": "minecraft:block_state_property",
+     "block": "goety:rotten_door",
+     "properties": {
+      "half": "lower"
+     }
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "goety:rotten_door"
+    }
+   ]
+  }
+ ],
+ "random_sequence": "goety:blocks/rotten_door"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "inputs": {
+    "fluid": {
+      "ingredient": "#pneumaticcraft:plastic",
+      "amount": 50
+    },
+    "item": "pneumaticcraft:pressure_tube"
+  },
+  "outputs": {
+    "item_output": {
+      "count": 1,
+      "id": "pneumaticcraft:reinforced_pressure_tube"
+    }
+  },
+  "pressure": 1.5
+}

@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "diaithirfauna:comb_quartz",
+ "result": {
+  "id": "minecraft:quartz"
+ },
+ "experience": 0.35,
+ "cookingtime": 200
+}

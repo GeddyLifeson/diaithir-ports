@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  "IIM",
+  "PI "
+ ],
+ "key": {
+  "I": "#c:ingots/gunmetal",
+  "M": "diaithirfirearms:gunmetal_mesh",
+  "P": "diaithirfirearms:gun_internals"
+ },
+ "result": {
+  "id": "diaithirfirearms:pump_shotgun",
+  "count": 1
+ }
+}

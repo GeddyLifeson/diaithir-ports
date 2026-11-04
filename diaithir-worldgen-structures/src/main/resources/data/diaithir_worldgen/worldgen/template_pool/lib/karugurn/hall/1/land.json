@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/karugurn/hall/1/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/karugurn/gr_karugurn_e3_assay_000497",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

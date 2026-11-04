@@ -1,0 +1,94 @@
+package com.iafenvoy.iceandfire.item.block.entity;
+
+import com.iafenvoy.iceandfire.entity.util.DreadSpawnerBaseLogic;
+import com.iafenvoy.iceandfire.registry.IafBlockEntities;
+import com.iafenvoy.iceandfire.registry.IafBlocks;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.BaseSpawner;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.SpawnData;
+import net.minecraft.world.level.Spawner;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import org.jetbrains.annotations.NotNull;
+
+public class DreadSpawnerBlockEntity extends BlockEntity implements Spawner {
+    private final DreadSpawnerBaseLogic spawner = new DreadSpawnerBaseLogic() {
+        @Override
+        public void broadcastEvent(Level world, @NotNull BlockPos pos, int status) {
+            world.blockEvent(pos, IafBlocks.DREAD_SPAWNER.get(), status, 0);
+        }
+
+        @Override
+        public void setNextSpawnData(Level world, @NotNull BlockPos pos, @NotNull SpawnData spawnEntry) {
+            super.setNextSpawnData(world, pos, spawnEntry);
+            if (world != null) {
+                BlockState blockstate = world.getBlockState(pos);
+                world.sendBlockUpdated(pos, blockstate, blockstate, 4);
+            }
+        }
+    };
+
+    public DreadSpawnerBlockEntity(BlockPos pos, BlockState state) {
+        super(IafBlockEntities.DREAD_SPAWNER.get(), pos, state);
+    }
+
+    @Override
+    protected void loadAdditional(@NotNull ValueInput input) {
+        super.loadAdditional(input);
+        this.spawner.load(this.level, this.worldPosition, input);
+    }
+
+    @Override
+    protected void saveAdditional(@NotNull ValueOutput output) {
+        super.saveAdditional(output);
+        this.spawner.save(output);
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider registryLookup) {
+        CompoundTag compoundtag = this.saveCustomOnly(registryLookup);
+        compoundtag.remove("SpawnPotentials");
+        return compoundtag;
+    }
+
+    @Override
+    public boolean triggerEvent(int p_59797_, int p_59798_) {
+        return this.spawner.onEventTriggered(this.level, p_59797_) || super.triggerEvent(p_59797_, p_59798_);
+    }
+
+    public boolean onlyOpCanSetNbt() {
+        return true;
+    }
+
+    public BaseSpawner getLogic() {
+        return this.spawner;
+    }
+
+    public static void clientTick(Level world, BlockPos pos, BlockState state, DreadSpawnerBlockEntity blockEntity) {
+        blockEntity.spawner.clientTick(world, pos);
+    }
+
+    public static void serverTick(Level world, BlockPos pos, BlockState state, DreadSpawnerBlockEntity blockEntity) {
+        blockEntity.spawner.serverTick((ServerLevel) world, pos);
+    }
+
+    @Override
+    public void setEntityId(@NotNull EntityType<?> type, @NotNull RandomSource random) {
+        this.spawner.setEntityId(type, this.level, random, this.worldPosition);
+        this.setChanged();
+    }
+}

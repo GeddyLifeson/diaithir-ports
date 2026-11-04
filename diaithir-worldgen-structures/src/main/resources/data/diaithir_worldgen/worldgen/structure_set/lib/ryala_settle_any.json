@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryala/settlement_0_any",
+   "weight": 107
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryala/settlement_1_any",
+   "weight": 161
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryala/settlement_2_any",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryala/settlement_3_any",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 119122230
+ }
+}

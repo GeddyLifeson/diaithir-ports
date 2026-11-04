@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aba",
+  "aca",
+  "ded"
+ ],
+ "key": {
+  "a": "#minecraft:leaves",
+  "b": "#minecraft:dirt",
+  "c": "#minecraft:saplings",
+  "d": "#minecraft:logs",
+  "e": "#minecraft:planks"
+ },
+ "result": {
+  "id": "automatemat:mob_essense"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_0_drouktornun",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/settlement_1_drouktornun",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 87492325
+ }
+}

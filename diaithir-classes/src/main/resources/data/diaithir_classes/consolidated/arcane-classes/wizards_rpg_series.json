@@ -1,0 +1,868 @@
+{
+ "slug": "diaithir_draoi",
+ "items": [
+  {
+   "id": "staff_tine_basic",
+   "kind": "weapon",
+   "name_en": "Tine Staff of Kindling",
+   "attrs": {
+    "school": "fire",
+    "spell_power": 1.0,
+    "haste_pct": 0,
+    "durability": 420,
+    "cast_focus": true,
+    "bound_spells": [
+     "tinebolt",
+     "teannadh_sraoilleadh"
+    ]
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_tine_steel",
+   "kind": "weapon",
+   "name_en": "Tine Staff of the Hearth-Flame",
+   "attrs": {
+    "school": "fire",
+    "spell_power": 2.0,
+    "haste_pct": 5,
+    "durability": 900,
+    "cast_focus": true,
+    "bound_spells": [
+     "tinebolt",
+     "teannadh_sraoilleadh",
+     "meitear_tine"
+    ]
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_tine_composite",
+   "kind": "weapon",
+   "name_en": "Tine Staff of the Meteor-Forge",
+   "attrs": {
+    "school": "fire",
+    "spell_power": 3.5,
+    "haste_pct": 10,
+    "durability": 1900,
+    "cast_focus": true,
+    "bound_spells": [
+     "tinebolt",
+     "teannadh_sraoilleadh",
+     "meitear_tine"
+    ]
+   },
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_reo_basic",
+   "kind": "weapon",
+   "name_en": "Reo Staff of Hoarfrost",
+   "attrs": {
+    "school": "frost",
+    "spell_power": 1.0,
+    "haste_pct": 0,
+    "durability": 420,
+    "cast_focus": true,
+    "bound_spells": [
+     "reo_bolt",
+     "reo_nova"
+    ]
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_reo_steel",
+   "kind": "weapon",
+   "name_en": "Reo Staff of the Winter-Ward",
+   "attrs": {
+    "school": "frost",
+    "spell_power": 2.0,
+    "haste_pct": 5,
+    "durability": 900,
+    "cast_focus": true,
+    "bound_spells": [
+     "reo_bolt",
+     "reo_nova",
+     "sciath_reo"
+    ]
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_reo_composite",
+   "kind": "weapon",
+   "name_en": "Reo Staff of the Long Winter",
+   "attrs": {
+    "school": "frost",
+    "spell_power": 3.5,
+    "haste_pct": 10,
+    "durability": 1900,
+    "cast_focus": true,
+    "bound_spells": [
+     "reo_bolt",
+     "reo_nova",
+     "sciath_reo"
+    ]
+   },
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_rún_basic",
+   "kind": "weapon",
+   "name_en": "Rún Staff of Whispers",
+   "attrs": {
+    "school": "arcane",
+    "spell_power": 1.0,
+    "haste_pct": 0,
+    "durability": 420,
+    "cast_focus": true,
+    "bound_spells": [
+     "saighead_run",
+     "luas_ceim"
+    ]
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_run_steel",
+   "kind": "weapon",
+   "name_en": "Rún Staff of the Hidden Door",
+   "attrs": {
+    "school": "arcane",
+    "spell_power": 2.0,
+    "haste_pct": 5,
+    "durability": 900,
+    "cast_focus": true,
+    "bound_spells": [
+     "saighead_run",
+     "luas_ceim",
+     "bacainn_run"
+    ]
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "staff_run_composite",
+   "kind": "weapon",
+   "name_en": "Rún Staff of the Unwritten Law",
+   "attrs": {
+    "school": "arcane",
+    "spell_power": 3.5,
+    "haste_pct": 10,
+    "durability": 1900,
+    "cast_focus": true,
+    "bound_spells": [
+     "saighead_run",
+     "luas_ceim",
+     "bacainn_run"
+    ]
+   },
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "wand_tine_basic",
+   "kind": "weapon",
+   "name_en": "Tine Wand of Sparks",
+   "attrs": {
+    "school": "fire",
+    "spell_power": 0.8,
+    "haste_pct": 8,
+    "durability": 300,
+    "cast_focus": true,
+    "bound_spells": [
+     "tinebolt"
+    ]
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "wand_reo_basic",
+   "kind": "weapon",
+   "name_en": "Reo Wand of Frostlight",
+   "attrs": {
+    "school": "frost",
+    "spell_power": 0.8,
+    "haste_pct": 8,
+    "durability": 300,
+    "cast_focus": true,
+    "bound_spells": [
+     "reo_bolt"
+    ]
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "wand_run_basic",
+   "kind": "weapon",
+   "name_en": "Rún Wand of Glimmers",
+   "attrs": {
+    "school": "arcane",
+    "spell_power": 0.8,
+    "haste_pct": 8,
+    "durability": 300,
+    "cast_focus": true,
+    "bound_spells": [
+     "saighead_run"
+    ]
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_tine_hat_basic",
+   "kind": "armor",
+   "name_en": "Tine Cowl of Embers",
+   "attrs": {
+    "school": "fire",
+    "slot": "head",
+    "armor": 1,
+    "spell_power": 1.0,
+    "haste_pct": 5,
+    "set": "tine_robes_basic",
+    "durability_mult": 10
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_tine_chest_basic",
+   "kind": "armor",
+   "name_en": "Tine Robe of Embers",
+   "attrs": {
+    "school": "fire",
+    "slot": "chest",
+    "armor": 2,
+    "spell_power": 2.0,
+    "haste_pct": 10,
+    "set": "tine_robes_basic",
+    "durability_mult": 10
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_tine_legs_basic",
+   "kind": "armor",
+   "name_en": "Tine Skirts of Embers",
+   "attrs": {
+    "school": "fire",
+    "slot": "legs",
+    "armor": 2,
+    "spell_power": 1.5,
+    "haste_pct": 8,
+    "set": "tine_robes_basic",
+    "durability_mult": 10
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_tine_boots_basic",
+   "kind": "armor",
+   "name_en": "Tine Sandals of Embers",
+   "attrs": {
+    "school": "fire",
+    "slot": "feet",
+    "armor": 1,
+    "spell_power": 1.0,
+    "haste_pct": 5,
+    "set": "tine_robes_basic",
+    "durability_mult": 10
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_tine_chest_comp",
+   "kind": "armor",
+   "name_en": "Tine Robe of the Meteor-Forge",
+   "attrs": {
+    "school": "fire",
+    "slot": "chest",
+    "armor": 5,
+    "toughness_J_proxy": 2.5,
+    "spell_power": 3.5,
+    "haste_pct": 15,
+    "crit_pct": 5,
+    "set": "tine_robes_composite",
+    "durability_mult": 36
+   },
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_reo_chest_basic",
+   "kind": "armor",
+   "name_en": "Reo Robe of Hoarfrost",
+   "attrs": {
+    "school": "frost",
+    "slot": "chest",
+    "armor": 2,
+    "spell_power": 2.0,
+    "haste_pct": 10,
+    "set": "reo_robes_basic",
+    "durability_mult": 10
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_reo_chest_comp",
+   "kind": "armor",
+   "name_en": "Reo Robe of the Long Winter",
+   "attrs": {
+    "school": "frost",
+    "slot": "chest",
+    "armor": 5,
+    "toughness_J_proxy": 2.5,
+    "spell_power": 3.5,
+    "haste_pct": 15,
+    "crit_pct": 5,
+    "set": "reo_robes_composite",
+    "durability_mult": 36
+   },
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_run_chest_basic",
+   "kind": "armor",
+   "name_en": "Rún Robe of Whispers",
+   "attrs": {
+    "school": "arcane",
+    "slot": "chest",
+    "armor": 2,
+    "spell_power": 2.0,
+    "haste_pct": 10,
+    "set": "run_robes_basic",
+    "durability_mult": 10
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "robe_run_chest_comp",
+   "kind": "armor",
+   "name_en": "Rún Robe of the Unwritten Law",
+   "attrs": {
+    "school": "arcane",
+    "slot": "chest",
+    "armor": 5,
+    "toughness_J_proxy": 2.5,
+    "spell_power": 3.5,
+    "haste_pct": 15,
+    "crit_pct": 5,
+    "set": "run_robes_composite",
+    "durability_mult": 36
+   },
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "spell_tinebolt",
+   "kind": "spell",
+   "name_en": "Tinebolt",
+   "attrs": {
+    "school": "fire",
+    "effect": "projectile_area_burn",
+    "cast_time_s": 1.0,
+    "cooldown_s": 8,
+    "damage_J_proxy": 6.0,
+    "burn_radius_m": 2.5,
+    "burn_time_s": 4
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "spell_teannadh_sraoilleadh",
+   "kind": "spell",
+   "name_en": "Teannadh Sraoilleadh",
+   "attrs": {
+    "school": "fire",
+    "effect": "flame_cone",
+    "cast_time_s": 0.5,
+    "cooldown_s": 12,
+    "cone_range_m": 6,
+    "cone_angle_deg": 45,
+    "duration_s": 2
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "spell_meitear_tine",
+   "kind": "spell",
+   "name_en": "Meitear Tine",
+   "attrs": {
+    "school": "fire",
+    "effect": "area_strike",
+    "cast_time_s": 2.0,
+    "cooldown_s": 30,
+    "radius_m": 4,
+    "delay_s": 1.5,
+    "damage_J_proxy": 14.0
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "spell_reo_bolt",
+   "kind": "spell",
+   "name_en": "Reo Bolt",
+   "attrs": {
+    "school": "frost",
+    "effect": "projectile_slow",
+    "cast_time_s": 0.8,
+    "cooldown_s": 6,
+    "damage_J_proxy": 5.0,
+    "slow_pct": 30,
+    "slow_time_s": 4
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "spell_reo_nova",
+   "kind": "spell",
+   "name_en": "Reo Nova",
+   "attrs": {
+    "school": "frost",
+    "effect": "pbaoe_chill",
+    "cast_time_s": 1.2,
+    "cooldown_s": 18,
+    "radius_m": 5,
+    "damage_J_proxy": 7.0,
+    "chill_time_s": 5
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "spell_sciath_reo",
+   "kind": "spell",
+   "name_en": "Sciath Reo",
+   "attrs": {
+    "school": "frost",
+    "effect": "self_shield",
+    "cast_time_s": 0.5,
+    "cooldown_s": 25,
+    "absorb_J_proxy": 10.0,
+    "duration_s": 6
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "spell_saighead_run",
+   "kind": "spell",
+   "name_en": "Saighead Rún",
+   "attrs": {
+    "school": "arcane",
+    "effect": "bolt_volley",
+    "cast_time_s": 0.7,
+    "cooldown_s": 5,
+    "bolts": 3,
+    "damage_J_proxy": 3.0
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "spell_luas_ceim",
+   "kind": "spell",
+   "name_en": "Luas Céim",
+   "attrs": {
+    "school": "arcane",
+    "effect": "blink",
+    "cast_time_s": 0.5,
+    "cooldown_s": 14,
+    "range_m": 9
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "spell_bacainn_run",
+   "kind": "spell",
+   "name_en": "Bacainn Rún",
+   "attrs": {
+    "school": "arcane",
+    "effect": "barrier",
+    "cast_time_s": 0.8,
+    "cooldown_s": 22,
+    "absorb_J_proxy": 8.0,
+    "duration_s": 5
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "block_cathair_draoi_bench",
+   "kind": "block",
+   "name_en": "Bench of the Draoi",
+   "attrs": {
+    "station": "robe_staff_crafting",
+    "hardness": 3.5,
+    "hardness_blast_J_proxy": 6.0
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
+  },
+  {
+   "id": "enchant_dluth_draoi",
+   "kind": "enchant",
+   "name_en": "Focus of the Draoi",
+   "attrs": {
+    "effect": "+0.5 spell power per level",
+    "max_level": 3,
+    "applies_to": "staves_wands"
+   },
+   "recipe": null,
+   "age": "V"
+  }
+ ],
+ "events": [
+  {
+   "id": "draoi_tower_entered",
+   "trigger": "player_enters_structure:diaithir_draoi:wizard_tower",
+   "effect": "unlock_codex_entry_draoi_tower_and_start_quest_an_chead_fhocal"
+  },
+  {
+   "id": "draoi_spell_cast",
+   "trigger": "spell_cast:school in [fire,frost,arcane]",
+   "effect": "apply_cooldown_and_scale_damage_by_spell_power_attribute"
+  },
+  {
+   "id": "draoi_set_bonus_2",
+   "trigger": "equip:2_pieces_same_robe_set",
+   "effect": "+0.5 spell_power and +3% haste"
+  },
+  {
+   "id": "draoi_set_bonus_4",
+   "trigger": "equip:4_pieces_same_robe_set",
+   "effect": "+1.5 spell_power, +5% crit, +10% crit_damage"
+  },
+  {
+   "id": "draoi_age_gate",
+   "trigger": "cast_attempt:spell_age>player_age",
+   "effect": "spell_power_multiplied_by_0.5_and_message_gated_by_age_scoreboard"
+  }
+ ],
+ "skills": [
+  "school_mastery_fire",
+  "school_mastery_frost",
+  "school_mastery_arcane",
+  "hasty_incantation",
+  "critical_flair"
+ ],
+ "id_migration": {
+  "wizards:staff_arcane": "diaithir_draoi:staff_run_basic",
+  "wizards:staff_fire": "diaithir_draoi:staff_tine_basic",
+  "wizards:staff_frost": "diaithir_draoi:staff_reo_basic",
+  "wizards:wand_arcane": "diaithir_draoi:wand_run_basic",
+  "wizards:wand_fire": "diaithir_draoi:wand_tine_basic",
+  "wizards:wand_frost": "diaithir_draoi:wand_reo_basic",
+  "wizards:wizard_robe_arcane": "diaithir_draoi:robe_run_chest_basic",
+  "wizards:wizard_robe_fire": "diaithir_draoi:robe_tine_chest_basic",
+  "wizards:wizard_robe_frost": "diaithir_draoi:robe_reo_chest_basic",
+  "wizards:netherite_staff_fire": "diaithir_draoi:staff_tine_composite",
+  "wizards:netherite_staff_frost": "diaithir_draoi:staff_reo_composite",
+  "wizards:netherite_staff_arcane": "diaithir_draoi:staff_run_composite"
+ },
+ "c_tags": {
+  "c:ingots/copper": [
+   "minecraft:copper_ingot"
+  ],
+  "c:ingots/steel": [
+   "diaithirarms:steel_ingot"
+  ],
+  "c:ingots/composite": [
+   "diaithirarms:composite_ingot"
+  ],
+  "c:gems/amethyst": [
+   "minecraft:amethyst_shard"
+  ],
+  "c:gems/quartz": [
+   "minecraft:quartz"
+  ],
+  "c:gems/diamond": [
+   "minecraft:diamond"
+  ],
+  "c:gems/amber": [
+   "diaithir_draoi:amber"
+  ],
+  "c:dusts/redstone": [
+   "minecraft:redstone"
+  ],
+  "c:dusts/glowstone": [
+   "minecraft:glowstone_dust"
+  ],
+  "c:dusts/blaze": [
+   "minecraft:blaze_powder"
+  ],
+  "c:dusts/snow": [
+   "diaithir_draoi:frost_dust"
+  ],
+  "c:rods/wooden": [
+   "minecraft:stick"
+  ],
+  "c:leathers": [
+   "minecraft:leather"
+  ],
+  "diaithir_draoi:staves": [
+   "diaithir_draoi:staff_tine_basic",
+   "diaithir_draoi:staff_tine_steel",
+   "diaithir_draoi:staff_tine_composite",
+   "diaithir_draoi:staff_reo_basic",
+   "diaithir_draoi:staff_reo_steel",
+   "diaithir_draoi:staff_reo_composite",
+   "diaithir_draoi:staff_rún_basic",
+   "diaithir_draoi:staff_run_steel",
+   "diaithir_draoi:staff_run_composite"
+  ],
+  "diaithir_draoi:wands": [
+   "diaithir_draoi:wand_tine_basic",
+   "diaithir_draoi:wand_reo_basic",
+   "diaithir_draoi:wand_run_basic"
+  ],
+  "diaithir_draoi:casting_focus": [
+   "#diaithir_draoi:staves",
+   "#diaithir_draoi:wands"
+  ],
+  "diaithir_draoi:robes": [
+   "diaithir_draoi:robe_tine_chest_basic",
+   "diaithir_draoi:robe_reo_chest_basic",
+   "diaithir_draoi:robe_run_chest_basic",
+   "diaithir_draoi:robe_tine_chest_comp",
+   "diaithir_draoi:robe_reo_chest_comp",
+   "diaithir_draoi:robe_run_chest_comp"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "draoi_staff_steel_upgrade",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:gems/amber",
+    "c:dusts/blaze",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "draoi_staff_composite_upgrade",
+   "inputs_as_c_tags": [
+    "c:ingots/composite",
+    "c:gems/diamond",
+    "c:dusts/glowstone",
+    "c:rods/wooden"
+   ]
+  },
+  {
+   "id": "draoi_robe_composite_upgrade",
+   "inputs_as_c_tags": [
+    "c:leathers",
+    "c:ingots/composite",
+    "c:dusts/blaze"
+   ]
+  },
+  {
+   "id": "draoi_bench",
+   "inputs_as_c_tags": [
+    "c:ingots/copper",
+    "c:gems/amethyst",
+    "c:stones/stone"
+   ]
+  }
+ ],
+ "capabilities": [
+  {
+   "block": "diaithir_draoi:block_cathair_draoi_bench",
+   "kind": "item",
+   "units_SI": "slots=9, stack_kg=0.064 per item max"
+  }
+ ],
+ "upgrade_rules": [
+  {
+   "id": "draoi_focus_socket",
+   "target": "diaithir_draoi:staves",
+   "slots": 2,
+   "kinds": [
+    "rune",
+    "gem"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "draoi_robe_socket",
+   "target": "diaithir_draoi:robes",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 2
+  }
+ ],
+ "global_events": [
+  {
+   "id": "draoi_blood_moon_surge",
+   "subscribes_to": "diaithir_events:blood_moon",
+   "effect": "fire_school_spell_power_x1.15_and_frost_cooldown_x1.1_for_event_duration_s"
+  },
+  {
+   "id": "draoi_aurora_surge",
+   "subscribes_to": "diaithir_events:aurora",
+   "effect": "arcane_school_haste_x1.2_for_event_duration_s"
+  },
+  {
+   "id": "draoi_age_advance",
+   "subscribes_to": "diaithir_core:age_advanced",
+   "effect": "unlock_next_tier_recipes_and_spell_power_cap_in_codex"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "draoi_overview",
+   "connects_to": [
+    "diaithir_classes:ogham_runes",
+    "diaithir_druidry:school_overview"
+   ]
+  },
+  {
+   "entry": "draoi_tine_school",
+   "connects_to": [
+    "diaithirarms:forge_metals",
+    "draoi_overview"
+   ]
+  },
+  {
+   "entry": "draoi_reo_school",
+   "connects_to": [
+    "draoi_overview"
+   ]
+  },
+  {
+   "entry": "draoi_run_school",
+   "connects_to": [
+    "diaithir_classes:cleirech_class",
+    "draoi_overview"
+   ]
+  },
+  {
+   "entry": "draoi_tower_lore",
+   "connects_to": [
+    "draoi_overview",
+    "diaithir_core:world_structures"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "an_chead_fhocal",
+  "intro": "A Draoi wanders the tower stairs and asks you to bring amber, quartz and amethyst so that the three first words can be spoken.",
+  "links_to": [
+   "diaithir_classes:ogham_first_rune",
+   "diaithir_combat:spell_damage_checks"
+  ]
+ },
+ "java_notes": "Mostly data: Spell Engine spells, assignments, equipment sets, loot, structure, trades. Java only for the bench block and menu, the age-gate spell-power multiplier hooked to the age scoreboard, and a Global Events subscriber applying temporary attribute modifiers for blood moon and aurora. Reuse diaithirarms armour materials and repair tags."
+}

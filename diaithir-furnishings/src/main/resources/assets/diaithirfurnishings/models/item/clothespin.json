@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/clothespin_head",
+  "layer1": "diaithirfurnishings:item/clothespin_handle",
+  "layer2": "diaithirfurnishings:item/clothespin_binding"
+ }
+}

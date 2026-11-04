@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "neoforge:block/default",
+	"textures": {
+		"particle": "pneumaticcraft:pnc_model/heat_pipe",
+		"all": "pneumaticcraft:pnc_model/heat_pipe"
+	},
+	"elements": [
+		{
+			"from": [4, 4, 4],
+			"to": [12, 12, 12],
+			"faces": {
+				"north": {"uv": [4, 4, 12, 12], "texture": "#all"},
+				"east": {"uv": [4, 4, 12, 12], "texture": "#all"},
+				"south": {"uv": [4, 4, 12, 12], "texture": "#all"},
+				"west": {"uv": [4, 4, 12, 12], "texture": "#all"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#all"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#all"}
+			}
+		}
+	]
+}

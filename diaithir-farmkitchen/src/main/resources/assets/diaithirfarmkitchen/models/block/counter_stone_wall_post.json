@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/template_wall_post",
+ "textures": {
+  "wall": "diaithirfarmkitchen:block/counter_stone_wall"
+ }
+}

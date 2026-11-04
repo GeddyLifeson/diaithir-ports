@@ -1,0 +1,69 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_ss_crate:stronghold_stair_crate",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_stronghold_crate"
+ },
+ "result": {
+  "id": "create_ss_crate:stronghold_crate"
+ },
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_ss_crate:stronghold_storeroom_crate",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_ss_crate:stronghold_corridor_crate",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_ss_crate:stronghold_fountain_crate",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_ss_crate:stronghold_jail_cell_crate",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_ss_crate:stronghold_library_crate",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_ss_crate:stronghold_library_crate",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create_ss_crate:stronghold_portal_room_crate",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

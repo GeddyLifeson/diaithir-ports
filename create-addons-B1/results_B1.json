@@ -1,0 +1,262 @@
+[
+ {
+  "slug": "create-synthetic-pressure",
+  "status": "ported",
+  "reason": "items+recipes"
+ },
+ {
+  "slug": "create-netherite",
+  "status": "skip",
+  "reason": "duplicate of batch0 recipes"
+ },
+ {
+  "slug": "create-bananas",
+  "status": "ported",
+  "reason": "item+recipe"
+ },
+ {
+  "slug": "create-fd-dough",
+  "status": "ported",
+  "reason": "recipes, needs farmersdelight"
+ },
+ {
+  "slug": "createrelics-integration",
+  "status": "ported",
+  "reason": "recipes, needs relics"
+ },
+ {
+  "slug": "create-stam1o-tweaks",
+  "status": "ported",
+  "reason": "recipes (LivingEntity mixin dropped)"
+ },
+ {
+  "slug": "create-perfect-processing",
+  "status": "ported",
+  "reason": "recipes (some dropped: absent mods)"
+ },
+ {
+  "slug": "create-slice-and-dice-growth-accelerator",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: sadbettersprinklers,sliceanddice"
+ },
+ {
+  "slug": "uncapped-windmill-bearing",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: uncappedbearing"
+ },
+ {
+  "slug": "create-fast-schematic-cannon",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: createfastschematiccannon"
+ },
+ {
+  "slug": "cannon-destroying-block",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: cdb"
+ },
+ {
+  "slug": "create-dense-ores",
+  "status": "ported",
+  "reason": "blocks+recipes"
+ },
+ {
+  "slug": "create-templates-gears",
+  "status": "ported",
+  "reason": "items+recipes"
+ },
+ {
+  "slug": "create-droid-netherrack",
+  "status": "ported",
+  "reason": "items+block+recipes"
+ },
+ {
+  "slug": "apotheoticcreation-neoforge-1.21.1",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: apotheosis,apotheoticcreation,apothic_attributes"
+ },
+ {
+  "slug": "tacz-automation",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: tacz,taczautomation"
+ },
+ {
+  "slug": "create-easyfilling",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: create_easyfilling,create_sa,curios"
+ },
+ {
+  "slug": "createconnected-and-destroy-compat-fix",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: ccvesselfix,create_connected"
+ },
+ {
+  "slug": "create-unclamped",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: unclamped"
+ },
+ {
+  "slug": "villager-tourists-neoforge",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: villagertourism"
+ },
+ {
+  "slug": "create-blockzapper-memorial",
+  "status": "ported",
+  "reason": "block+items+recipes (placement advancement procedure dropped)"
+ },
+ {
+  "slug": "create-take-a-seat-piglin-automated-bartering",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: take_a_seat_piglin"
+ },
+ {
+  "slug": "tough-as-nails-create-addon",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: tanca,toughasnails"
+ },
+ {
+  "slug": "create-heat-pipe",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: heatpipe"
+ },
+ {
+  "slug": "create-coincraft",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: coincraft,numismatics"
+ },
+ {
+  "slug": "pretty-in-pink",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: pretty_in_pink"
+ },
+ {
+  "slug": "create-skyblock-addon",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: create_jetpack,create_skyblock_addon,dndesires"
+ },
+ {
+  "slug": "create-redstone-tweaks",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: create_redstone_tweaks"
+ },
+ {
+  "slug": "create-more-sandpapers",
+  "status": "ported",
+  "reason": "sandpaper items+recipes"
+ },
+ {
+  "slug": "create-wrench-multitools",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: createwrenchmultitools"
+ },
+ {
+  "slug": "create-smoke-stacks",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: createsmokestacks"
+ },
+ {
+  "slug": "create-more-vertical-additions",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: cmverticaladditions"
+ },
+ {
+  "slug": "jade-sable-compat",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: jade,sable,sablejade"
+ },
+ {
+  "slug": "cbcenhanced-shell-armor-create-big-cannons",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: allthecompressed,cannoncompressedarmor,createbigcannons"
+ },
+ {
+  "slug": "create-jei-compat",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: createjeicompat,emi,jei"
+ },
+ {
+  "slug": "create-resource-vents-fork",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: molten_vents"
+ },
+ {
+  "slug": "create-kinetic-chutes.",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: create_kinetic_chutes"
+ },
+ {
+  "slug": "create-beamline",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: create_beamline"
+ },
+ {
+  "slug": "create-extended-gantries",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: extendedgantries"
+ },
+ {
+  "slug": "croparium-create",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: cp_create,cp_lib"
+ },
+ {
+  "slug": "create-numismatics-utils",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: numismaticsutils"
+ },
+ {
+  "slug": "create-netherless-ported",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: create_netherless"
+ },
+ {
+  "slug": "unlocked-void-sea",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: sable,simulated,unlockedvoidsea,veil"
+ },
+ {
+  "slug": "interiors",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: "
+ },
+ {
+  "slug": "create-upsizing",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: pehkui,upsizing"
+ },
+ {
+  "slug": "sky-whales",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: aeronautics,geckolib,sable,skywhales,spelunkery"
+ },
+ {
+  "slug": "sable-dynamic-lights",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: lambdynlights,sable,sabledynlights,sodium"
+ },
+ {
+  "slug": "create-cobblestone",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: createcobblestone"
+ },
+ {
+  "slug": "create-golems-galore",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: creategolemsgalore"
+ },
+ {
+  "slug": "create-solar-powered",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: "
+ },
+ {
+  "slug": "create-broken-bad-fabric",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: createbb"
+ },
+ {
+  "slug": "create-encapsulated",
+  "status": "blocked",
+  "reason": "needs hand source port of behaviour code (1.21.1 NeoForge, com.simibubi); other deps: cobblemon,create_encapsulated,world_of_color"
+ }
+]

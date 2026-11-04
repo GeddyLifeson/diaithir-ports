@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "pneumaticcraft:plastic_brick_white"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:smooth_plastic_brick_white"
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_0_torarnoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/fenarnock/settlement_1_torarnoth",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 91291376
+ }
+}

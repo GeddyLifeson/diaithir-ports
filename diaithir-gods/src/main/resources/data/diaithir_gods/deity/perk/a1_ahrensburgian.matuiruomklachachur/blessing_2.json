@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 9619627,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_ahrensburgian.matuiruomklachachur",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_ahrensburgian.matuiruomklachachur_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

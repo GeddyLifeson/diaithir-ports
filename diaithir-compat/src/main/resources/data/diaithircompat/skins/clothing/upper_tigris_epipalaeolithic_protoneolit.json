@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/0.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/1.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/2.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/ruler.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/warrior.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/priest.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/0.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/1.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/2.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/ruler.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/warrior.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/priest.png",
+    "profession": "diaithircompat:upper_tigris_epipalaeolithic_protoneolit",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

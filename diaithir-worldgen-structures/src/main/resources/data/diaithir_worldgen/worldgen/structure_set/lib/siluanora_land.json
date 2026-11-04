@@ -1,0 +1,130 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/forge_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/forge_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/forge_2_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_0_land",
+   "weight": 21
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_2_land",
+   "weight": 27
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/fortress_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/garden_0_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/garden_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/garden_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/hall_0_land",
+   "weight": 42
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/hall_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/hall_2_land",
+   "weight": 39
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_0_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_2_land",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/landmark_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/ruin_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/ruin_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/ruin_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/temple_0_land",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/temple_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/temple_2_land",
+   "weight": 36
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tomb_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tomb_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_0_land",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_2_land",
+   "weight": 42
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siluanora/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 175623613
+ }
+}

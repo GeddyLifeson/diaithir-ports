@@ -1,0 +1,201 @@
+package com.gregtechceu.gtceu.client.util;
+
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
+import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
+import com.gregtechceu.gtceu.api.recipe.GTRecipe;
+import com.gregtechceu.gtceu.api.recipe.content.Content;
+import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
+import com.gregtechceu.gtceu.utils.GTMatrixUtils;
+import com.gregtechceu.gtceu.utils.ResearchManager;
+
+import com.lowdragmc.lowdraglib.gui.util.DrawerHelper;
+
+import net.minecraft.util.Util;
+import net.minecraft.client.Minecraft;
+import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.renderer.LevelRenderer;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.rendertype.RenderType;
+
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.inventory.InventoryMenu;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.model.data.ModelData;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import org.jetbrains.annotations.Nullable;
+import org.joml.Matrix4f;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
+import org.joml.Vector3fc;
+
+import java.util.*;
+import java.util.function.BiFunction;
+
+@OnlyIn(Dist.CLIENT)
+public class RenderUtil {
+
+    public enum FluidTextureType {
+
+        STILL,
+        FLOWING,
+        OVERLAY;
+
+        private static final Identifier WATER_STILL = Identifier.withDefaultNamespace("block/water_still");
+
+        public TextureAtlasSprite map(IClientFluidTypeExtensions fluidTypeExtensions) {
+            return map(fluidTypeExtensions, FluidStack.EMPTY);
+        }
+
+        public TextureAtlasSprite map(IClientFluidTypeExtensions fluidTypeExtensions, FluidStack fluidStack) { return null; /* ported stub */ }
+    }
+
+    public static Vec3 vec3(double x, double y, double z) {
+        return new Vec3(x, y, z);
+    }
+
+    public static Vector3f vec3f(float x, float y, float z) {
+        return new Vector3f(x, y, z);
+    }
+
+    // spotless:off
+    private static final Map<Direction, Vector3fc[]> DIRECTION_POSITION_MAP = Util.make(new EnumMap<>(Direction.class), map -> {
+        map.put(Direction.UP, new Vector3fc[] { vec3f(0, 1, 1), vec3f(1, 1, 1), vec3f(1, 1, 0), vec3f(0, 1, 0) });
+        map.put(Direction.DOWN, new Vector3fc[] { vec3f(1, 0, 1), vec3f(0, 0, 1), vec3f(0, 0, 0), vec3f(1, 0, 0) });
+        map.put(Direction.SOUTH, new Vector3fc[] { vec3f(1, 1, 0), vec3f(1, 0, 0), vec3f(0, 0, 0), vec3f(0, 1, 0) });
+        map.put(Direction.NORTH, new Vector3fc[] { vec3f(0, 1, 1), vec3f(0, 0, 1), vec3f(1, 0, 1), vec3f(1, 1, 1) });
+        map.put(Direction.EAST, new Vector3fc[] { vec3f(0, 1, 0), vec3f(0, 0, 0), vec3f(0, 0, 1), vec3f(0, 1, 1) });
+        map.put(Direction.WEST, new Vector3fc[] { vec3f(1, 1, 1), vec3f(1, 0, 1), vec3f(1, 0, 0), vec3f(1, 1, 0) });
+    });
+    // spotless:on
+
+    public static Vector3fc[] getVertices(Direction direction) {
+        return DIRECTION_POSITION_MAP.get(direction);
+    }
+
+    // spotless:off
+    private static final Map<Direction, Vector3fc> DIRECTION_NORMAL_MAP = Util.make(new EnumMap<>(Direction.class), map -> {
+        map.put(Direction.UP, vec3f(0, 1, 0));
+        map.put(Direction.DOWN, vec3f(0, 1, 0));
+        map.put(Direction.SOUTH, vec3f(0, 0, 1));
+        map.put(Direction.NORTH, vec3f(0, 0, 1));
+        map.put(Direction.EAST, vec3f(1, 0, 0));
+        map.put(Direction.WEST, vec3f(1, 0, 0));
+    });
+    // spotless:on
+
+    public static Vector3fc getNormal(Direction direction) {
+        return DIRECTION_NORMAL_MAP.get(direction);
+    }
+
+    public static int getFluidLight(Fluid fluid, BlockPos pos) { return (int)0; /* ported stub */ }
+
+    public static void vertex(Matrix4f pose, VertexConsumer vertexConsumer,
+                              float x, float y, float z,
+                              int r, int g, int b, int a,
+                              float u, float v, int overlayCoords, int lightOverlay,
+                              float v0, float v1, float v2) {
+        /*
+         * For future reference:
+         * The order of the vertex calls is important.
+         * Change it, and it'll break and complain that you didn't fill all elements (even though you did).
+         */
+        vertexConsumer
+                .addVertex(pose, x, y, z)
+                .setColor(r, g, b, a)
+                .setUv(u, v)
+                .setOverlay(overlayCoords)
+                .setLight(lightOverlay)
+                .setNormal(v0, v1, v2);
+    }
+
+    public static Vector3f transformVertex(Vector3fc vertex, Direction direction,
+                                           float offsetX, float offsetY, float offsetZ) {
+        float addX = offsetX, addY = offsetY, addZ = offsetZ;
+        switch (direction) {
+            case DOWN -> addY = -addY;
+            case SOUTH -> addZ = -addZ;
+            case EAST -> addX = -addX;
+        }
+
+        return new Vector3f(vertex).add(addX, addY, addZ);
+    }
+
+    public static @Nullable Fluid getRecipeFluidToRender(GTRecipe recipe) { return null; /* ported stub */ }
+
+    public static void moveToFace(PoseStack poseStack, Vector3fc pos, Direction face) {
+        moveToFace(poseStack, pos.x(), pos.y(), pos.z(), face);
+    }
+
+    public static void moveToFace(PoseStack poseStack, float x, float y, float z, Direction face) {
+        poseStack.translate(Math.fma(face.getStepX(), 0.5f, x),
+                Math.fma(face.getStepY(), 0.5f, y),
+                Math.fma(face.getStepZ(), 0.5f, z));
+    }
+
+    public static void drawBlock(BlockAndTintGetter level, BlockPos pos, BlockState state,
+                                 MultiBufferSource bufferSource, PoseStack poseStack) {  /* ported stub */ }
+
+    /**
+     * Rotate the current coordinate system, so it is on the face of the given block side.
+     * This can be used to render on the given face as if it was a 2D canvas,
+     * where x+ is facing right and y+ is facing up.
+     */
+    public static void rotateToFace(PoseStack poseStack, Direction face, Direction spin) {
+        float rotationAngle = Mth.HALF_PI * switch (face) {
+            case UP, WEST -> 1;
+            case DOWN, EAST -> -1;
+            case SOUTH -> 2;
+            case NORTH -> 0;
+        };
+        Quaternionf rotation = new Quaternionf();
+        if (face.getAxis() == Direction.Axis.Y) {
+            poseStack.scale(1.0f, -1.0f, 1.0f);
+            rotation.rotateX(rotationAngle);
+        } else {
+            poseStack.scale(-1.0f, -1.0f, -1.0f);
+            rotation.rotateY(rotationAngle);
+        }
+        rotation.rotateZ(getSpinAngle(spin, face));
+
+        poseStack.mulPose(rotation);
+    }
+
+    private static float getSpinAngle(Direction spin, Direction face) {
+        if (spin.getAxis() == Direction.Axis.Z && face == Direction.DOWN) {
+            spin = spin.getOpposite();
+        }
+        return GTMatrixUtils.upwardFacingAngle(spin);
+    }
+
+    public static boolean renderResearchItemContent(GuiGraphics graphics, Operation<Void> originalMethod,
+                                                    @Nullable LivingEntity entity, @Nullable Level level,
+                                                    ItemStack stack, int x, int y, int z, int seed) { return false; /* ported stub */ }
+}

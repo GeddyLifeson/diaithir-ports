@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:oriinnys_alaanora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oriinnys_elaemwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oriinnys_orianniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oriinnys_ryirlaeneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oriinnys_suravamira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oriinnys_thougokurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oriinnys_venarae",
+   "required": false
+  }
+ ]
+}

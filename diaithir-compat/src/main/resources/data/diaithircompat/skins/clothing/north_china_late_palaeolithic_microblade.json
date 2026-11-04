@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/0.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/1.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/2.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/ruler.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/warrior.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/priest.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/0.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/1.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/2.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/ruler.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/warrior.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/priest.png",
+    "profession": "diaithircompat:north_china_late_palaeolithic_microblade",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

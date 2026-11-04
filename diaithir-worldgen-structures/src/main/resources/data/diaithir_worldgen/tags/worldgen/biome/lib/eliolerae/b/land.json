@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:eliolerae_coriarnes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eliolerae_ilyeniorae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eliolerae_meranaari",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eliolerae_mierwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eliolerae_miinallae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eliolerae_miirleiriel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eliolerae_oriemaennys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:eliolerae_veninae",
+   "required": false
+  }
+ ]
+}

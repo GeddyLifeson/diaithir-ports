@@ -1,0 +1,34 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "G": "#c:glass_blocks",
+  "P": "#c:plates/iron",
+  "F": "minecraft:bone_meal"
+ },
+ "pattern": [
+  "GGG",
+  "GFG",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithircropgenes:greenhouse_panel",
+  "count": 2
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "c:plates/iron"
+   }
+  },
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "c:glass_blocks"
+   }
+  }
+ ]
+}

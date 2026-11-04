@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:bone_block",
+  "minecraft:bone_block",
+  "minecraft:iron_nugget",
+  "minecraft:iron_nugget",
+  "minecraft:iron_nugget",
+  "minecraft:iron_nugget",
+  "#minecraft:wool",
+  "#minecraft:wool",
+  "minecraft:coal"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:stone_crate"
+  }
+ ]
+}
