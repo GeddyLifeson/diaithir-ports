@@ -45,3 +45,15 @@ Settings: `config/diaithirvoice-common.toml` (range, nearDistance, maxFramesPerS
 Creatures of the wild notice speech. A player's voice makes a vibration (a game event of its own, frequency 7) that sculk sensors and wardens hear, and creatures within `noticeRadius` (16 blocks for loud speech, less for quiet) react by rule: wolves, cats, villagers, golems, horses and parrots turn to look, foxes, ocelots, rabbits, chickens and bats take a few steps away. Speaking while sneaking is not noticed. Whispers and private groups are optional. Quiet speech under `thresholdDb` (-45 dB) is ignored, and one speaker is noticed at most every `intervalTicks` (10).
 
 It listens to Simple Voice Chat through its published plugin API (`de.maxhenkel.voicechat:voicechat-api`, compile-time only, nothing bundled; the plugin class is `@ForgeVoicechatPlugin` and only loaded when Simple Voice Chat is) and to diaithir-voice natively through its `net.diaithir.voice.api.SpeechEvent` (build `diaithir-voice` first, it is a compile-time dependency only). One speaker is noticed at most once per `intervalTicks` however many sources report, so Simple Voice Chat and diaithir-voice together do not double trigger. Any other voice source can call `net.diaithir.voiceinteraction.api.VoiceInteractionApi.onSpeech`. The vibration frequency, and which events wardens listen to, are data (`data/neoforge/data_maps/game_event/vibration_frequencies.json`, `data/minecraft/tags/game_event/`) that a datapack can change. Config `config/diaithirvoiceinteraction-common.toml`. Licence: MIT. Clean-room: written from the public description of the voice-interaction addons for Simple Voice Chat, no code, assets or text taken from them.
+
+## Round-2 fold (2026-11-03)
+
+Four standalone clean-room jars are now features of existing modules, and two more clean-room features were added; same namespaces, so ids and id_migrations are unchanged:
+
+- diaithir-lookat (Jade stand-in) -> diaithir-hud-overlays, package `lookat`. IMC target stays `diaithirlookat`.
+- diaithir-ctm (Fusion stand-in) -> diaithir-world-visuals, package `ctm`. Config `diaithir-world-visuals-ctm-client.toml`, still off by default.
+- diaithir-waypoints (Waystones stand-in) -> diaithir-claims, package `waypoints`.
+- diaithir-voice (voicechat stand-in) -> diaithir-voice-interaction, package `voice`. Configs `diaithir-voice-common.toml` and `diaithir-voice-client.toml`.
+- New: Structure Compass (diaithir-claims, package `compass`; use names the nearest structure of the chosen kind, sneak-use picks the next kind) and Sound Physics (diaithir-world-visuals, package `soundphysics`; muffles sound through solid blocks, occlusion only, no reverb). Both MIT, clean-room.
+- Sodium stays a separate jar (Polyform Shield renderer mixin). Trash slot, inventory sorting, dynamic lights and longer chat history were already folded.
+- diaithir-ultimine (FTB Ultimine stand-in) -> diaithir-claims, package `ultimine` (same ids, `/ultimine`).

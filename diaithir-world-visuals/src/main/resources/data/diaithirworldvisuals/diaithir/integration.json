@@ -2,8 +2,10 @@
  "module": "diaithirworldvisuals",
  "side": "client",
  "features": [
+  "ctm",
   "flickerfix",
-  "lambdynamiclights"
+  "lambdynamiclights",
+  "soundphysics"
  ],
  "codex": {
   "entry": "diaithirworldvisuals.overview",
