@@ -199,7 +199,7 @@ for vid, design, nm, gun, hp, mass, age, desc in VEHICLES:
     mat = [['minecraft:iron_ingot:0:%d' % (hp // 12)], ['minecraft:iron_block:0:%d' % (hp // 100)], ['minecraft:redstone:0:16'], ['minecraft:gunpowder:0:8']]
     w(f'{A}/jsondefs/vehicles/{vid}.json', {
      'general': {'type': 'vehicle', 'name': nm, 'description': desc, 'materialLists': mat, 'health': hp},
-     'motorized': {'emptyMass': mass, 'fuelCapacity': 1500, 'defaultFuelQty': 600, 'hasSkidSteer': True, 'hasPermanentSkidSteer': True, 'hasRunningLights': True, 'hasHeadlights': True,
+     'motorized': {'emptyMass': mass, 'fuelCapacity': 1500000, 'defaultFuelQty': 600000, 'hasSkidSteer': True, 'hasPermanentSkidSteer': True, 'hasRunningLights': True, 'hasHeadlights': True,
                    'axleRatio': 3.6, 'brakingFactor': 1.2, 'dragCoefficient': 0.9, 'crossSectionalArea': 8.0, 'steeringForceFactor': 1.0, 'overSteer': 0.0, 'underSteer': 0.0,
                    'crashSpeedMin': 0.5, 'crashSpeedMax': 1.0, 'crashSpeedDestroyed': 2.0, 'isBigTruck': False},
      'car': {'isFrontWheelDrive': True, 'isRearWheelDrive': True, 'axleRatio': 3.6, 'dragCoefficient': 0.9},

@@ -21,8 +21,8 @@
  },
  "motorized": {
   "emptyMass": 40000,
-  "fuelCapacity": 1500,
-  "defaultFuelQty": 600,
+  "fuelCapacity": 1500000,
+  "defaultFuelQty": 600000,
   "hasSkidSteer": true,
   "hasPermanentSkidSteer": true,
   "hasRunningLights": true,
