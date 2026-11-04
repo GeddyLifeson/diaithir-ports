@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_curved",
+  "textures": {
+    "rail": "diaithircarts:block/fast_rail_corner"
+  }
+}
