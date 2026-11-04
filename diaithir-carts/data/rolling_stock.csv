@@ -18,10 +18,10 @@ loco_sd40,loco_diesel,EMD SD40-2,1972,167000,2237000,https://en.wikipedia.org/wi
 loco_dash9,loco_diesel,GE Dash 9-44CW,1993,188000,3281000,https://en.wikipedia.org/wiki/GE_Dash_9-44CW
 loco_zephyr,loco_diesel,Pioneer Zephyr railcar,1934,90000,448000,https://en.wikipedia.org/wiki/Pioneer_Zephyr
 loco_hst,loco_diesel,InterCity 125 HST power car,1976,70000,1678000,https://en.wikipedia.org/wiki/British_Rail_Class_43_(HST)
-loco_gg1,loco_electric,PRR GG1,1934,208000,3400000,https://en.wikipedia.org/wiki/PRR_GG1
+loco_gg1,loco_electric,PRR GG1,1934,208000,3445000,https://en.wikipedia.org/wiki/PRR_GG1
 loco_ae,loco_electric,SBB Ae 6/6,1952,120000,4000000,https://en.wikipedia.org/wiki/SBB-CFF-FFS_Ae_6/6
 loco_shinkansen0,loco_electric,Shinkansen 0 Series,1964,60000,11840000,https://en.wikipedia.org/wiki/0_Series_Shinkansen
-loco_tgv,loco_electric,TGV Sud-Est power car,1978,67000,3100000,https://en.wikipedia.org/wiki/TGV_Sud-Est
+loco_tgv,loco_electric,TGV Sud-Est power car,1981,67000,3100000,https://en.wikipedia.org/wiki/TGV_Sud-Est
 loco_ice,loco_electric,ICE 1 power car,1991,78000,4800000,https://en.wikipedia.org/wiki/InterCityExpress
 loco_battery,loco_electric,Battery-electric locomotive,1900,40000,200000,https://en.wikipedia.org/wiki/Battery_electric_locomotive
 wag_boxcar,freight,Boxcar,1830,18000,60000,https://en.wikipedia.org/wiki/Boxcar
