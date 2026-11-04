@@ -1,270 +1,426 @@
 {
- "general": {
-  "type": "vehicle",
-  "name": "Mack Type 75 pumper",
-  "description": "Fire truck (1935). Fuel: Petrol.",
-  "materialLists": [
-   [
-    "minecraft:iron_ingot:0:100"
-   ],
-   [
-    "minecraft:redstone:0:4"
-   ]
-  ],
-  "health": 700
- },
- "motorized": {
-  "emptyMass": 6000.0,
-  "fuelCapacity": 150000,
-  "defaultFuelQty": 75000,
-  "hasRunningLights": true,
-  "hasHeadlights": true,
-  "axleRatio": 3.6,
-  "brakingFactor": 1.0,
-  "dragCoefficient": 0.5,
-  "crossSectionalArea": 5.57,
-  "steeringForceFactor": 1.0,
-  "crashSpeedMin": 0.5,
-  "crashSpeedMax": 1.0,
-  "crashSpeedDestroyed": 2.0,
-  "isBigTruck": true
- },
- "car": {
-  "isFrontWheelDrive": false,
-  "isRearWheelDrive": true,
-  "axleRatio": 3.6,
-  "dragCoefficient": 0.5
- },
- "parts": [
-  {
-   "pos": [
-    0,
-    0.7,
-    2.25
-   ],
-   "types": [
-    "engine_car"
-   ],
-   "defaultPart": "diaithirvehicles:engine_mack_type_75",
-   "minValue": 0.0,
-   "maxValue": 10.0
+  "general": {
+    "type": "vehicle",
+    "name": "Mack Type 75 pumper",
+    "description": "Fire truck (1935). Fuel: Petrol.",
+    "materialLists": [
+      [
+        "minecraft:iron_ingot:0:100"
+      ],
+      [
+        "minecraft:redstone:0:4"
+      ]
+    ],
+    "health": 700
   },
-  {
-   "pos": [
-    -1.08,
-    0.45,
-    2.35
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
-   "minValue": 0.0,
-   "maxValue": 10.0,
-   "turnsWithSteer": true
+  "motorized": {
+    "emptyMass": 6000.0,
+    "fuelCapacity": 150000,
+    "defaultFuelQty": 37500,
+    "hasRunningLights": true,
+    "hasHeadlights": true,
+    "axleRatio": 3.6,
+    "brakingFactor": 1.0,
+    "dragCoefficient": 0.5,
+    "crossSectionalArea": 5.57,
+    "steeringForceFactor": 1.0,
+    "crashSpeedMin": 0.5,
+    "crashSpeedMax": 1.0,
+    "crashSpeedDestroyed": 2.0,
+    "isBigTruck": true
   },
-  {
-   "pos": [
-    1.08,
-    0.45,
-    2.35
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
-   "minValue": 0.0,
-   "maxValue": 10.0,
-   "turnsWithSteer": true
+  "car": {
+    "isFrontWheelDrive": false,
+    "isRearWheelDrive": true,
+    "axleRatio": 3.6,
+    "dragCoefficient": 0.5
   },
-  {
-   "pos": [
-    -1.08,
-    0.45,
-    -2.35
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    1.08,
-    0.45,
-    -2.35
-   ],
-   "types": [
-    "ground_wheel"
-   ],
-   "defaultPart": "diaithirvehicles:wheel_mack_type_75",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    -0.4,
-    0.9,
-    0.2
-   ],
-   "types": [
-    "seat"
-   ],
-   "isController": true,
-   "defaultPart": "diaithirvehicles:vehicle_seat",
-   "dismountPos": [
-    -2.0,
-    0.5,
-    0.2
-   ],
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    0.4,
-    0.9,
-    -0.8
-   ],
-   "types": [
-    "seat"
-   ],
-   "defaultPart": "diaithirvehicles:vehicle_seat",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    -0.4,
-    0.9,
-    -0.8
-   ],
-   "types": [
-    "seat"
-   ],
-   "defaultPart": "diaithirvehicles:vehicle_seat",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  },
-  {
-   "pos": [
-    0.4,
-    0.9,
-    -1.6
-   ],
-   "types": [
-    "seat"
-   ],
-   "defaultPart": "diaithirvehicles:vehicle_seat",
-   "minValue": 0.0,
-   "maxValue": 10.0
-  }
- ],
- "definitions": [
-  {
-   "subName": "",
-   "name": "Mack Type 75 pumper",
-   "modelName": "mack_type_75",
-   "textureName": "mack_type_75",
-   "extraMaterialLists": [
-    []
-   ]
-  }
- ],
- "rendering": {},
- "instruments": [
-  {
-   "pos": [
-    0,
-    1.0,
-    0.8
-   ],
-   "rot": [
-    0,
-    0,
-    0
-   ],
-   "scale": 0.1,
-   "hudX": 78,
-   "hudY": 40,
-   "hudScale": 0.85,
-   "defaultInstrument": "diaithirvehicles:speedo"
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    0.8
-   ],
-   "rot": [
-    0,
-    0,
-    0
-   ],
-   "scale": 0.1,
-   "hudX": 190,
-   "hudY": 40,
-   "hudScale": 0.85,
-   "defaultInstrument": "diaithirvehicles:fuel"
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    0.8
-   ],
-   "rot": [
-    0,
-    0,
-    0
-   ],
-   "scale": 0.1,
-   "hudX": 302,
-   "hudY": 40,
-   "hudScale": 0.85,
-   "defaultInstrument": "diaithirvehicles:tacho"
-  },
-  {
-   "pos": [
-    0,
-    1.0,
-    0.8
-   ],
-   "rot": [
-    0,
-    0,
-    0
-   ],
-   "scale": 0.1,
-   "hudX": 190,
-   "hudY": 100,
-   "hudScale": 0.85,
-   "defaultInstrument": "diaithirvehicles:readout"
-  }
- ],
- "collisionGroups": [
-  {
-   "collisionTypes": [
-    "block",
-    "entity",
-    "vehicle",
-    "attack",
-    "bullet"
-   ],
-   "isInterior": false,
-   "collisions": [
+  "parts": [
     {
-     "pos": [
-      0,
-      1.45,
-      0
-     ],
-     "width": 2.4,
-     "height": 2.9
+      "pos": [
+        0,
+        0.7,
+        2.25
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirvehicles:engine_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 100.0
+    },
+    {
+      "pos": [
+        -1.08,
+        0.45,
+        2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        1.08,
+        0.45,
+        2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        -1.08,
+        0.45,
+        -2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        1.08,
+        0.45,
+        -2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 5.0
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        0.2
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "dismountPos": [
+        -2.0,
+        0.5,
+        0.2
+      ]
+    },
+    {
+      "pos": [
+        0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat"
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat"
+    },
+    {
+      "pos": [
+        0.4,
+        0.9,
+        -1.6
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat"
+    },
+    {
+      "pos": [
+        0,
+        0.7,
+        2.25
+      ],
+      "types": [
+        "engine_car"
+      ],
+      "defaultPart": "diaithirvehicles:engine_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -1.08,
+        0.45,
+        2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        1.08,
+        0.45,
+        2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 10.0,
+      "turnsWithSteer": true
+    },
+    {
+      "pos": [
+        -1.08,
+        0.45,
+        -2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        1.08,
+        0.45,
+        -2.35
+      ],
+      "types": [
+        "ground_wheel"
+      ],
+      "defaultPart": "diaithirvehicles:wheel_mack_type_75",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        0.2
+      ],
+      "types": [
+        "seat"
+      ],
+      "isController": true,
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "dismountPos": [
+        -2.0,
+        0.5,
+        0.2
+      ],
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        -0.4,
+        0.9,
+        -0.8
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "minValue": 0.0,
+      "maxValue": 10.0
+    },
+    {
+      "pos": [
+        0.4,
+        0.9,
+        -1.6
+      ],
+      "types": [
+        "seat"
+      ],
+      "defaultPart": "diaithirvehicles:vehicle_seat",
+      "minValue": 0.0,
+      "maxValue": 10.0
     }
-   ]
-  }
- ]
+  ],
+  "collisionGroups": [
+    {
+      "collisionTypes": [
+        "block",
+        "vehicle",
+        "entity",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "health": 700,
+      "armorThickness": 3.0,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.45,
+            2.25
+          ],
+          "width": 2.4,
+          "height": 2.9
+        },
+        {
+          "pos": [
+            0,
+            1.45,
+            0
+          ],
+          "width": 2.4,
+          "height": 2.9
+        },
+        {
+          "pos": [
+            0,
+            1.45,
+            -2.25
+          ],
+          "width": 2.4,
+          "height": 2.9
+        }
+      ]
+    },
+    {
+      "collisionTypes": [
+        "block",
+        "entity",
+        "vehicle",
+        "attack",
+        "bullet"
+      ],
+      "isInterior": false,
+      "collisions": [
+        {
+          "pos": [
+            0,
+            1.45,
+            0
+          ],
+          "width": 2.4,
+          "height": 2.9
+        }
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "subName": "",
+      "name": "Mack Type 75 pumper",
+      "modelName": "mack_type_75",
+      "textureName": "mack_type_75",
+      "extraMaterialLists": [
+        []
+      ]
+    }
+  ],
+  "rendering": {},
+  "instruments": [
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 78,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:speedo"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 190,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:fuel"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 302,
+      "hudY": 40,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:tacho"
+    },
+    {
+      "pos": [
+        0,
+        1.0,
+        0.8
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 0.1,
+      "hudX": 190,
+      "hudY": 100,
+      "hudScale": 0.85,
+      "defaultInstrument": "diaithirvehicles:readout"
+    }
+  ]
 }
