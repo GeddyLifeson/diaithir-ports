@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_0_thyuseizis",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_1_thyuseizis",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_2_thyuseizis",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_3_thyuseizis",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 104640030
+ }
+}

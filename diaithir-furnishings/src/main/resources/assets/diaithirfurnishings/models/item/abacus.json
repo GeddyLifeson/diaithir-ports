@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/abacus_head",
+  "layer1": "diaithirfurnishings:item/abacus_handle",
+  "layer2": "diaithirfurnishings:item/abacus_binding"
+ }
+}

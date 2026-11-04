@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/venuala/settlement_0_any",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/settlement_1_any",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/venuala/settlement_2_any",
+   "weight": 14
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 13986612
+ }
+}

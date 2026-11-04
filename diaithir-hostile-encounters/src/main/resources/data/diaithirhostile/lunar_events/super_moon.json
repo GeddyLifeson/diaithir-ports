@@ -17,5 +17,9 @@
     "pool": [
       "minecraft:slime"
     ]
+  },
+  "meteor": {
+    "interval_ticks": 3600,
+    "radius": 3
   }
 }

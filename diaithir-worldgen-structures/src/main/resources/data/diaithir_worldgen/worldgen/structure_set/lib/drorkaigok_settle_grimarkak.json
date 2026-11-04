@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_0_grimarkak",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drorkaigok/settlement_1_grimarkak",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 244811303
+ }
+}

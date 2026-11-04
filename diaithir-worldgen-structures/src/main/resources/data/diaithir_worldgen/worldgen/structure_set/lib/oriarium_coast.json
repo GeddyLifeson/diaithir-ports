@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/harbor_0_coast",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/oriarium/harbor_2_coast",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 209740651
+ }
+}

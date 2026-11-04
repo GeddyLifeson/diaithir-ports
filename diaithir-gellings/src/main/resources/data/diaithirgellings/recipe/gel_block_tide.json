@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "GGG",
+  "GGG",
+  "GGG"
+ ],
+ "key": {
+  "G": "diaithirgellings:gel_tide"
+ },
+ "result": {
+  "id": "diaithirgellings:gel_block_tide"
+ }
+}

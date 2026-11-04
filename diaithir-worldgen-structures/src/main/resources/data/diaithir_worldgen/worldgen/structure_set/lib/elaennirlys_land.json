@@ -1,0 +1,130 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/forge_0_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/forge_1_land",
+   "weight": 58
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/forge_2_land",
+   "weight": 33
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/forge_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/fortress_0_land",
+   "weight": 312
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/fortress_1_land",
+   "weight": 1135
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/fortress_2_land",
+   "weight": 160
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/garden_0_land",
+   "weight": 65
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/garden_1_land",
+   "weight": 107
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/garden_2_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/hall_0_land",
+   "weight": 104
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/hall_1_land",
+   "weight": 638
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/hall_2_land",
+   "weight": 73
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/hall_3_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/landmark_0_land",
+   "weight": 415
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/landmark_1_land",
+   "weight": 707
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/landmark_2_land",
+   "weight": 93
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/landmark_3_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/ruin_0_land",
+   "weight": 74
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/ruin_1_land",
+   "weight": 73
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/ruin_2_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/temple_0_land",
+   "weight": 103
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/temple_1_land",
+   "weight": 888
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/temple_2_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/tomb_0_land",
+   "weight": 135
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/tomb_1_land",
+   "weight": 400
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/tomb_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/tower_0_land",
+   "weight": 30
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/tower_1_land",
+   "weight": 122
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaennirlys/tower_2_land",
+   "weight": 12
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 16,
+  "separation": 5,
+  "salt": 159993792
+ }
+}

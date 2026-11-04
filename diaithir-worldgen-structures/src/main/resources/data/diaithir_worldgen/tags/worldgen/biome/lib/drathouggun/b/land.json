@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:drathouggun_ashiasizora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drathouggun_crastar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drathouggun_kragourkoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drathouggun_lerilor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drathouggun_moria",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drathouggun_tentia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drathouggun_thuren",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:drathouggun_tiravanuta",
+   "required": false
+  }
+ ]
+}

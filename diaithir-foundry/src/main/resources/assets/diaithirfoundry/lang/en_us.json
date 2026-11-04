@@ -1,0 +1,18 @@
+{
+  "block.diaithirfoundry.foundry_controller": "Foundry Controller",
+  "block.diaithirfoundry.foundry_bricks": "Foundry Bricks",
+  "block.diaithirfoundry.foundry_drain": "Foundry Drain",
+  "block.diaithirfoundry.foundry_tank": "Foundry Tank",
+  "block.diaithirfoundry.gem_cutter": "Gem Cutter",
+  "item.diaithirfoundry.cast_ingot": "Ingot Cast",
+  "item.diaithirfoundry.cast_nugget": "Nugget Cast",
+  "item.diaithirfoundry.cast_plate": "Plate Cast",
+  "item.diaithirfoundry.cast_rod": "Rod Cast",
+  "item.diaithirfoundry.cast_gear": "Gear Cast",
+  "item.diaithirfoundry.cast_block": "Block Cast",
+  "item.diaithirfoundry.raw_gem": "Raw Gem",
+  "item.diaithirfoundry.cut_gem": "Cut Gem",
+  "item.diaithirfoundry.plate": "Plate",
+  "item.diaithirfoundry.rod": "Rod",
+  "item.diaithirfoundry.gear": "Gear"
+}

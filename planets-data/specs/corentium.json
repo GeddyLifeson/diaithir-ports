@@ -1,0 +1,167 @@
+{
+ "sky": {
+  "sky": "#5a6470",
+  "fog": "#7d8690",
+  "cloud": "#b0303a40",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2e4a5c"
+ },
+ "terrain": "amplified",
+ "biomes": [
+  {
+   "entry": "MY.corentium.E5.places.000038",
+   "archetype": "plains",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7a8a4e",
+   "foliage": "#6b7d45",
+   "water": "#3b5566",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corentium.E5.places.000059",
+   "archetype": "windswept_hills",
+   "temp": -0.5,
+   "humid": -0.4,
+   "grass": "#6e7a5a",
+   "foliage": "#5c6a4c",
+   "water": "#34495a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corentium.E1.places.000066",
+   "archetype": "stony_peaks",
+   "temp": -0.6,
+   "humid": -0.1,
+   "grass": "#7f8a6a",
+   "foliage": "#6c7a5a",
+   "water": "#3f5a6e",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corentium.E7.places.000063",
+   "archetype": "badlands",
+   "temp": 0.6,
+   "humid": -0.8,
+   "grass": "#a08a5a",
+   "foliage": "#8f7a4c",
+   "water": "#4a5a68",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corentium.E4.places.000017",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.9,
+   "grass": "#7a6a58",
+   "foliage": "#6a5a4a",
+   "water": "#4a4f5a",
+   "precip": "none"
+  },
+  {
+   "entry": "MY.corentium.E6.places.000004",
+   "archetype": "mangrove_swamp",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#5a6b40",
+   "foliage": "#4a5e38",
+   "water": "#3a4a3a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corentium.E6.places.000005",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#5e6e48",
+   "foliage": "#4d6040",
+   "water": "#3e4e46",
+   "precip": "rain"
+  },
+  {
+   "entry": "MY.corentium.E2.places.000034",
+   "archetype": "dark_forest",
+   "temp": 0.0,
+   "humid": 0.5,
+   "grass": "#4f6a3e",
+   "foliage": "#3e5a32",
+   "water": "#33495a",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Corentium is a storm-wracked, mythic realm of walled cities, drowned spires and shattered lands, rendered in ash-grey skies and cold, brooding greens.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.06
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.04
+   },
+   {
+    "type": "soul",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#9a9fb8",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "MY.corentium.E6.places.000005",
+  "why": "Drowned bell-towers, copper air, wind-chimes and sky tempests suggest stormy mist",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "fancy_oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "dead_bush",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.2,
+   "copper": 0.8,
+   "gold": 0.8,
+   "redstone": 0.9,
+   "lapis": 1.0,
+   "diamond": 0.6
+  },
+  "why_entry": "MY.corentium.E5.items.000039",
+  "grounded": false
+ }
+}

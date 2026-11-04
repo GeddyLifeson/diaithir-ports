@@ -1,0 +1,102 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/breraston/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/forge_1_land",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/forge_2_land",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/fortress_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/fortress_1_land",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/fortress_2_land",
+   "weight": 20
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/garden_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/garden_1_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/garden_2_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/hall_1_land",
+   "weight": 32
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/hall_2_land",
+   "weight": 57
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/landmark_0_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/landmark_1_land",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/landmark_2_land",
+   "weight": 26
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/ruin_1_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/ruin_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/temple_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/temple_1_land",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/temple_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/tomb_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/tomb_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/tower_1_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/tower_2_land",
+   "weight": 9
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 138313992
+ }
+}

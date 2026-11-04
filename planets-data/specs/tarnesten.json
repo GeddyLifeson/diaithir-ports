@@ -1,0 +1,154 @@
+{
+ "sky": {
+  "sky": "#8a7f6e",
+  "fog": "#a89c86",
+  "cloud": "#c8b89a6e",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3b4a4f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "MA.tarnesten.E6.places.000575",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.8,
+   "grass": "#6e5a4a",
+   "foliage": "#5a4636",
+   "water": "#7a5a3a",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.tarnesten.E7.places.000597",
+   "archetype": "eroded_badlands",
+   "temp": 0.7,
+   "humid": -0.6,
+   "grass": "#7c6a58",
+   "foliage": "#66564a",
+   "water": "#6b5a48",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.tarnesten.E6.places.000570",
+   "archetype": "stony_peaks",
+   "temp": -0.1,
+   "humid": 0.4,
+   "grass": "#5d6b5a",
+   "foliage": "#4b5a4a",
+   "water": "#3e5560",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.tarnesten.E6.places.000603",
+   "archetype": "swamp",
+   "temp": 0.1,
+   "humid": 0.8,
+   "grass": "#5f6e4e",
+   "foliage": "#4e5c3e",
+   "water": "#4a5a40",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.tarnesten.E6.places.000604",
+   "archetype": "old_growth_pine_taiga",
+   "temp": -0.4,
+   "humid": 0.3,
+   "grass": "#4f6248",
+   "foliage": "#3e5238",
+   "water": "#3f5a4a",
+   "precip": "rain"
+  },
+  {
+   "entry": "MA.tarnesten.E6.places.000562",
+   "archetype": "frozen_peaks",
+   "temp": -0.9,
+   "humid": -0.2,
+   "grass": "#8fa3a8",
+   "foliage": "#7f9296",
+   "water": "#9bb0b8",
+   "precip": "snow"
+  },
+  {
+   "entry": "MA.tarnesten.E6.places.000601",
+   "archetype": "windswept_hills",
+   "temp": -0.3,
+   "humid": -0.3,
+   "grass": "#6f7a62",
+   "foliage": "#5c6852",
+   "water": "#55656e",
+   "precip": "none"
+  },
+  {
+   "entry": "MA.tarnesten.E6.places.000593",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.9,
+   "grass": "#a08f6a",
+   "foliage": "#8d7d5c",
+   "water": "#7f7560",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A soot-dimmed martial world of ash-choked badlands, iron-grey peaks, and fortress-coast waters, with cold highlands and swamps at its edges.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "snowflake",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#c9d6e3",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.4,
+  "precip_bias": "snow",
+  "storms": "stormy",
+  "why_entry": "MA.tarnesten.E6.places.000556",
+  "why": "Frost soil, wind-carved ridges, seasonal ridge exposure, cold ironwood, resonant wind",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 2
+   },
+   {
+    "base": "pine",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.4,
+   "copper": 0.8,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.6,
+   "diamond": 0.3
+  },
+  "why_entry": "MA.tarnesten.E6.places.000626",
+  "grounded": false
+ }
+}

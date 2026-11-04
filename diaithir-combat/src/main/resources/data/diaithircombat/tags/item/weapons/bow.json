@@ -12,6 +12,7 @@
   {
    "id": "diaithirarms:bronze_bow",
    "required": false
-  }
+  },
+  "diaithircombat:lib_bow"
  ]
 }

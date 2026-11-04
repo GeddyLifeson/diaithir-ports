@@ -1,0 +1,15 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 14,
+  "ingredients": [
+    {
+      "item": "minecraft:blaze_powder",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_heat_seeker_charge",
+    "count": 1
+  }
+}

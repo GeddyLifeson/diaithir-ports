@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/karugurn/settlement/2/gouktuthurn",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/karugurn/gr_karugurn_e1_places_000195",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

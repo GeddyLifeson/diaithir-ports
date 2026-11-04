@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/oriilora/settlement/0/osistyuzeth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/oriilora/ar_oriilora_e4_places_000094",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

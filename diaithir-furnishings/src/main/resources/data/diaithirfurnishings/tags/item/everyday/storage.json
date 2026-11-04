@@ -1,0 +1,31 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirfurnishings:amphora",
+  "diaithirfurnishings:pithos",
+  "diaithirfurnishings:kvevri",
+  "diaithirfurnishings:storage_jar",
+  "diaithirfurnishings:canopic_jar",
+  "diaithirfurnishings:bottle_glass",
+  "diaithirfurnishings:basket",
+  "diaithirfurnishings:wicker_basket",
+  "diaithirfurnishings:creel",
+  "diaithirfurnishings:hamper",
+  "diaithirfurnishings:keg",
+  "diaithirfurnishings:crate",
+  "diaithirfurnishings:chest",
+  "diaithirfurnishings:coffer",
+  "diaithirfurnishings:trunk",
+  "diaithirfurnishings:satchel",
+  "diaithirfurnishings:saddlebag",
+  "diaithirfurnishings:backpack",
+  "diaithirfurnishings:purse",
+  "diaithirfurnishings:tin_can",
+  "diaithirfurnishings:cookie_jar",
+  "diaithirfurnishings:spice_rack",
+  "diaithirfurnishings:tea_caddy",
+  "diaithirfurnishings:bread_box",
+  "diaithirfurnishings:ice_box",
+  "diaithirfurnishings:root_cellar_bin"
+ ]
+}

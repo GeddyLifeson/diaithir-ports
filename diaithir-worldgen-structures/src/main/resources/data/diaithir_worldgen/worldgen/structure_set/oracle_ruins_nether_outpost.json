@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:oracle_ruins_nether_outpost",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 26,
+  "separation": 10,
+  "salt": 9971325
+ }
+}

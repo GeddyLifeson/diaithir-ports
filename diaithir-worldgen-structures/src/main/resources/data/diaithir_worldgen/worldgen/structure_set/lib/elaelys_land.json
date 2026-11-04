@@ -1,0 +1,90 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/forge_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/forge_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/fortress_0_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/fortress_1_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/fortress_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/garden_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/garden_1_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/hall_0_land",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/hall_1_land",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/hall_2_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/landmark_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/landmark_1_land",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/landmark_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/ruin_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/temple_0_land",
+   "weight": 19
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/temple_1_land",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/tomb_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/tower_0_land",
+   "weight": 13
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/tower_1_land",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/elaelys/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 105642105
+ }
+}

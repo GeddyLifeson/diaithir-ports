@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:brurnadeld_corianerus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_maurnor_coriaranum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_reosalus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_roleontus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_teontellium_oreoniaria",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_tialenanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_valantium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:brurnadeld_viaranum",
+   "required": false
+  }
+ ]
+}

@@ -92,5 +92,13 @@
  "tooltip.diaithirrelics.active": "Active",
  "tooltip.diaithirrelics.passive": "Passive",
  "tooltip.diaithirrelics.worn": "Worn in a Curios %s slot",
- "itemGroup.diaithirrelics": "Iarmadun"
+ "itemGroup.diaithirrelics": "Iarmadun",
+ "item.diaithirrelics.netherite_ring": "Netherite Ring",
+ "item.diaithirrelics.emerald_ring": "Emerald Ring",
+ "item.diaithirrelics.diamond_ring": "Diamond Ring",
+ "item.diaithirrelics.amethyst_ring": "Amethyst Ring",
+ "item.diaithirrelics.quartz_ring": "Quartz Ring",
+ "item.diaithirrelics.golden_aglet": "Golden Aglet",
+ "item.diaithirrelics.amethyst_aglet": "Amethyst Aglet",
+ "item.diaithirrelics.netherite_shield_charm": "Netherite Shield Charm"
 }

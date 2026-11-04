@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:pistachio_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:pistachio_planks",
+  "count": 4
+ }
+}

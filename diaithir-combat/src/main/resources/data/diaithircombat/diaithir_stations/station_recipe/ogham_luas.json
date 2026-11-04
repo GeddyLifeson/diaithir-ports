@@ -1,0 +1,20 @@
+{
+ "station": "altar.basic",
+ "stage": "process",
+ "ingredients": [
+  {
+   "tag": "c:gems/amethyst",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/copper",
+   "count": 1
+  },
+  {
+   "item": "minecraft:feather",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:ogham_luas",
+ "time_s": 5
+}

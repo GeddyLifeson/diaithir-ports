@@ -55,7 +55,9 @@ import java.util.UUID;
 public class Creature extends PathfinderMob implements GeoEntity {
     private static final EntityDataAccessor<String> KIND = SynchedEntityData.defineId(Creature.class, EntityDataSerializers.STRING);
     private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle"), WALK = RawAnimation.begin().thenLoop("walk"),
-            FLY = RawAnimation.begin().thenLoop("fly"), ATTACK = RawAnimation.begin().thenPlay("attack");
+            FLY = RawAnimation.begin().thenLoop("fly"), ATTACK = RawAnimation.begin().thenPlay("attack"),
+            HURT = RawAnimation.begin().thenPlay("hurt"), SPAWN = RawAnimation.begin().thenPlay("spawn"),
+            DEATH = RawAnimation.begin().thenPlayAndHold("death");
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private @Nullable CreatureDef def;
     private @Nullable UUID owner;
@@ -239,6 +241,13 @@ public class Creature extends PathfinderMob implements GeoEntity {
     }
 
     @Override
+    public boolean hurtServer(ServerLevel level, DamageSource source, float amount) {
+        boolean hurt = super.hurtServer(level, source, amount);
+        if (hurt && isAlive()) triggerAnim("main", "hurt");
+        return hurt;
+    }
+
+    @Override
     protected EntityDimensions getDefaultDimensions(Pose pose) {
         return def() != null ? EntityDimensions.scalable(def.width(), def.height()) : super.getDefaultDimensions(pose);
     }
@@ -269,6 +278,7 @@ public class Creature extends PathfinderMob implements GeoEntity {
     public void tick() {
         super.tick();
         if (!level().isClientSide() && tickCount > 1 && def() == null) discard();
+        if (!level().isClientSide() && tickCount == 2) triggerAnim("main", "spawn");
     }
 
     @Override
@@ -290,10 +300,11 @@ public class Creature extends PathfinderMob implements GeoEntity {
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<Creature>("main", 4, test -> {
+            if (isDeadOrDying()) return test.setAndContinue(DEATH);
             if (paused()) return PlayState.PAUSE;
             if (flying() && !onGround()) return test.setAndContinue(FLY);
             return test.setAndContinue(test.isMoving() ? WALK : IDLE);
-        }).triggerableAnim("attack", ATTACK));
+        }).triggerableAnim("attack", ATTACK).triggerableAnim("hurt", HURT).triggerableAnim("spawn", SPAWN));
     }
 
     protected boolean paused() {

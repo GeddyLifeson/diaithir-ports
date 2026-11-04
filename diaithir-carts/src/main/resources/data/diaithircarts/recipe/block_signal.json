@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "pattern": [
+  "GRG",
+  "III",
+  " I "
+ ],
+ "key": {
+  "G": "minecraft:glass_pane",
+  "R": "minecraft:redstone_torch",
+  "I": "minecraft:iron_ingot"
+ },
+ "result": {
+  "id": "diaithircarts:block_signal",
+  "count": 1
+ }
+}

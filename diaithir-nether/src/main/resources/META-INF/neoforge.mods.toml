@@ -1,0 +1,62 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="diaithir_nether"
+version="1.0.0"
+displayName="Diaithir Nether"
+description='''New Nether biomes, blocks and items with data-driven worldgen.'''
+
+[[mods]]
+modId="incendium"
+version="1.0.0"
+displayName="Incendium (Diaithir)"
+description="Compatibility alias: this module replaces the incendium mod; dependencies on incendium resolve here."
+
+[[mods]]
+modId="netherex"
+version="1.0.0"
+displayName="NetherEx (Diaithir)"
+description="Compatibility alias: this module replaces the netherex mod; dependencies on netherex resolve here."
+
+[[mods]]
+modId="nether_descent"
+version="1.0.0"
+displayName="Nether Descent (Diaithir)"
+description="Compatibility alias: this module replaces the nether_descent mod; dependencies on nether_descent resolve here."
+
+[[dependencies.diaithir_nether]]
+modId="neoforge"
+type="required"
+versionRange="[26.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_nether]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2,26.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_nether]]
+modId="diaithir_codex"
+type="optional"
+versionRange="[1,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.diaithir_nether]]
+modId="tellus"
+type="optional"
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.diaithir_nether]]
+modId="terralith"
+type="optional"
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"

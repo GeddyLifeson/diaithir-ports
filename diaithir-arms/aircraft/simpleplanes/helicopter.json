@@ -1,0 +1,49 @@
+{
+ "id": "simple_helicopter",
+ "age": "VII",
+ "frames": [
+  "helicopter"
+ ],
+ "base_class": "large",
+ "source": "HelicopterEntity (extends LargePlaneEntity)",
+ "seats": {
+  "pilot": [
+   0,
+   0.5
+  ],
+  "rear": [
+   0,
+   -0.5
+  ],
+  "left": [
+   -1,
+   0
+  ],
+  "right": [
+   1,
+   0
+  ]
+ },
+ "controls": "W/S pitch forward/back (max 20 degrees), A/D yaw (2 degrees per tick) and bank (30 degrees forward, 50 degrees climbing), jump key climbs, no key holds hover.",
+ "fuel_cost_per_tick": 6,
+ "camera_distance_multiplier": 1.2,
+ "flight_model_ticks": {
+  "passive_engine_push": 0.028,
+  "push": 0.05,
+  "drag_quadratic_x10": true,
+  "drag_x2": true,
+  "forward_push_x": 1.5,
+  "back_push_x": 0.2,
+  "climb_push_per_throttle_step": 0.01,
+  "idle_horizontal_drag": 0.999
+ },
+ "forbidden_upgrades": [
+  "solar_panel"
+ ],
+ "notes": "Flight model is expressed in the source's per-tick push units; the Java side converts at load (1 push = 1 block/tick^2 = 400 m/s^2 before drag). The IV vehicle def is not generated here: IV rotor fields are not verified, see README.",
+ "airframe_recipe": {
+  "workbench": "plane_workbench",
+  "propellers": 2,
+  "material_units": 7
+ }
+}

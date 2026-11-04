@@ -1,0 +1,24 @@
+{
+  "namespaces": {
+    "alexsmobs": "I"
+  },
+  "overrides": {
+    "alexsmobs:void_worm": "VI",
+    "alexsmobs:void_portal": "VI",
+    "alexsmobs:enderiophage": "VI",
+    "alexsmobs:endergrade": "VI",
+    "alexsmobs:cosmaw": "VI",
+    "alexsmobs:cosmic_cod": "VI",
+    "alexsmobs:warped_mosco": "V",
+    "alexsmobs:warped_toad": "V",
+    "alexsmobs:mimicube": "V",
+    "alexsmobs:skreecher": "V",
+    "alexsmobs:underminer": "IV",
+    "alexsmobs:soul_vulture": "V",
+    "alexsmobs:bone_serpent": "V",
+    "alexsmobs:laviathan": "V",
+    "alexsmobs:guster": "III",
+    "alexsmobs:tarantula_hawk": "II"
+  },
+  "note": "Wildlife is Age I. Entities from the Nether and the End and the boss-like ones are held back to the Age where those places open. Spawn tuning (biome and Earth-range limits) is left to diaithir-compat earth_ranges."
+}

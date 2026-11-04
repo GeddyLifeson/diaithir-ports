@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "diaithirtrees:block/mandarin_log"
+  },
+  "axis=z": {
+   "model": "diaithirtrees:block/mandarin_log_horizontal",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "diaithirtrees:block/mandarin_log_horizontal",
+   "x": 90,
+   "y": 90
+  }
+ }
+}

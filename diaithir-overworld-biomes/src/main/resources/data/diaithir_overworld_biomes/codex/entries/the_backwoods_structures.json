@@ -1,0 +1,15 @@
+{
+ "id": "diaithir_overworld_biomes:the_backwoods_structures",
+ "category": "structure",
+ "title": "codex.diaithir_overworld_biomes.the_backwoods_structures.title",
+ "body": "codex.diaithir_overworld_biomes.the_backwoods_structures.body",
+ "age": 4,
+ "icon": "the_backwoods:rotten_oak_log",
+ "unlock": {
+  "type": "locate_structure_tag",
+  "tag": "the_backwoods:the_backwoods_structures"
+ },
+ "covers": {
+  "structures": "#the_backwoods:the_backwoods_structures"
+ }
+}

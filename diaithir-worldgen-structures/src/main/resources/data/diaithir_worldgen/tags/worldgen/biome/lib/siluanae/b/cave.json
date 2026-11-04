@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:siluanae_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_grottoes",
+   "required": false
+  }
+ ]
+}

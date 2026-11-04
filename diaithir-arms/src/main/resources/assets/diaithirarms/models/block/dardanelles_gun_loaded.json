@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "diaithirarms:block/dardanelles_gun_loaded"
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/fondue_pot_pot",
+  "layer1": "diaithirfurnishings:item/fondue_pot_handle"
+ }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i ",
+    " /i",
+    "/  "
+  ],
+  "key": {
+    "i": "minecraft:iron_ingot",
+    "/": "minecraft:stick"
+  },
+  "result": {
+    "id": "vs_tournament:hammer",
+    "count": 8
+  }
+}

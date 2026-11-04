@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/delve_0_cave",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alainiel/delve_3_cave",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 144778378
+ }
+}

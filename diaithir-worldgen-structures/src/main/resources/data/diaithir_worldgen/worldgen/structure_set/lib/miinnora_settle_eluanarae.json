@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_0_eluanarae",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miinnora/settlement_1_eluanarae",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 233496874
+ }
+}

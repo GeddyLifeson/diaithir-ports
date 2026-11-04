@@ -1,0 +1,12 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:gems/aurora x4 | c:ingots/bronze x1 | c:dusts/redstone",
+   "count": 4
+  }
+ ],
+ "result": "diaithirrelics:charged_crystal_block",
+ "time_s": 20
+}

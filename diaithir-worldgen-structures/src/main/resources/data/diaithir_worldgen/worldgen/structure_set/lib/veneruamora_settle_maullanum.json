@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_maullanum",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_maullanum",
+   "weight": 11
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 64070137
+ }
+}

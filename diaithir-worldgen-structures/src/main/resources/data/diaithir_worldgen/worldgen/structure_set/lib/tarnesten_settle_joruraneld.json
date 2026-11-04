@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_0_joruraneld",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_1_joruraneld",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_2_joruraneld",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tarnesten/settlement_3_joruraneld",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 115450382
+ }
+}

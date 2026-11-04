@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/zephessith/garden/0/land",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/zephessith/st_zephessith_e3_places_000078",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

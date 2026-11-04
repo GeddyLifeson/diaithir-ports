@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#minecraft:sand",
+  "minecraft:feather"
+ ],
+ "result": {
+  "id": "diaithirworldsys:sky_sand"
+ }
+}

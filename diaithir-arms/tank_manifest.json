@@ -1,0 +1,83 @@
+{
+ "vehicles": [
+  {
+   "id": "tank_mk1",
+   "name": "Main Battle Tank Mk I",
+   "age": "VII",
+   "desc": "Early heavy tracked armour with a 105 mm gun.",
+   "camo": [
+    "",
+    "_desert",
+    "_snow"
+   ]
+  },
+  {
+   "id": "tank_mk1a",
+   "name": "Main Battle Tank Mk IA",
+   "age": "VII",
+   "desc": "Mk I with the 120 mm gun and a thicker front.",
+   "camo": [
+    "",
+    "_desert",
+    "_snow"
+   ]
+  },
+  {
+   "id": "tank_mk1b",
+   "name": "Main Battle Tank Mk IB",
+   "age": "RODOS",
+   "desc": "Mk IA with composite side skirts and a stronger engine.",
+   "camo": [
+    "",
+    "_desert",
+    "_snow"
+   ]
+  },
+  {
+   "id": "tank_mk2",
+   "name": "Main Battle Tank Mk II",
+   "age": "VII",
+   "desc": "Low, domed three-crew tank with an autoloaded 125 mm gun.",
+   "camo": [
+    "",
+    "_desert",
+    "_snow"
+   ]
+  },
+  {
+   "id": "tank_mk2a",
+   "name": "Main Battle Tank Mk IIA",
+   "age": "VII",
+   "desc": "Mk II with added turret armour and smoke launchers.",
+   "camo": [
+    "",
+    "_desert",
+    "_snow"
+   ]
+  },
+  {
+   "id": "tank_mk2b",
+   "name": "Main Battle Tank Mk IIB",
+   "age": "RODOS",
+   "desc": "Mk IIA with composite armour and a stronger engine.",
+   "camo": [
+    "",
+    "_desert",
+    "_snow"
+   ]
+  }
+ ],
+ "parts": [
+  "tank_track",
+  "tank_track2",
+  "tank_engine",
+  "tank_seat",
+  "tank_gun_105",
+  "tank_gun_120",
+  "tank_gun_125"
+ ],
+ "bullets": [
+  "tank_shell_ap",
+  "tank_shell_he"
+ ]
+}

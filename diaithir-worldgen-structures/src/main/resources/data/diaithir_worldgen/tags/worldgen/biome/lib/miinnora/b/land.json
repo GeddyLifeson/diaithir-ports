@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:miinnora_eluanarae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miinnora_miineirliel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miinnora_morurneld",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miinnora_sileiniel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miinnora_silirwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miinnora_ukataira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miinnora_veneimae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miinnora_venuanimae",
+   "required": false
+  }
+ ]
+}

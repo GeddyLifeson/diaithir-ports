@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "staffed=false": {
+      "model": "diaithircrafting:block/foundry_operator_seat_off"
+    },
+    "staffed=true": {
+      "model": "diaithircrafting:block/foundry_operator_seat_on"
+    }
+  }
+}

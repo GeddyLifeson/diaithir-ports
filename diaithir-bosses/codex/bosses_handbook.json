@@ -213,6 +213,84 @@
      "text": ""
     }
    ]
+  },
+  {
+   "tier": "ascendant_1",
+   "name": "Ascendant I",
+   "age": "VII",
+   "text": "Post-endgame bosses, Age VII. Each is summoned at an Ascendant altar and needs the previous tier beaten.",
+   "items": [
+    {
+     "id": "diaithirbosses:antlered_hollow_trophy",
+     "name": "Daumo Falum",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:cauldron_heart_trophy",
+     "name": "Koiri Kridi",
+     "age": "VII",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:tide_reaver_trophy",
+     "name": "Tound Kriechaduir",
+     "age": "VII",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "ascendant_2",
+   "name": "Ascendant II",
+   "age": "Rodos",
+   "text": "Post-endgame bosses, Rodos I. Each is summoned at an Ascendant altar and needs the previous tier beaten.",
+   "items": [
+    {
+     "id": "diaithirbosses:foundry_sovereign_trophy",
+     "name": "Kierdach Rìg",
+     "age": "Rodos",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:mist_weaver_trophy",
+     "name": "Keò Figeduir",
+     "age": "Rodos",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:ash_seraph_trophy",
+     "name": "Luoitri Ainglen",
+     "age": "Rodos",
+     "text": ""
+    }
+   ]
+  },
+  {
+   "tier": "ascendant_3",
+   "name": "Ascendant III",
+   "age": "Rodos",
+   "text": "Post-endgame bosses, Rodos II. Each is summoned at an Ascendant altar and needs the previous tier beaten.",
+   "items": [
+    {
+     "id": "diaithirbosses:dusk_wyrm_trophy",
+     "name": "Dourchadas Natuir",
+     "age": "Rodos",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:rootbreaker_trophy",
+     "name": "Fréam Briesteoir",
+     "age": "Rodos",
+     "text": ""
+    },
+    {
+     "id": "diaithirbosses:last_wheel_trophy",
+     "name": "Roud Deiredi",
+     "age": "Rodos",
+     "text": ""
+    }
+   ]
   }
  ]
 }

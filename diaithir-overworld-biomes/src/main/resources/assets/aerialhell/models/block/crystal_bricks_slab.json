@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab",
+ "textures": {
+  "bottom": "aerialhell:block/crystal_bricks_slab",
+  "side": "aerialhell:block/crystal_bricks_slab",
+  "top": "aerialhell:block/crystal_bricks_slab"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:veontiastes_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:veontiastes_grottoes",
+   "required": false
+  }
+ ]
+}

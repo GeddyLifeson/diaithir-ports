@@ -21,5 +21,21 @@
     "cap": 14,
     "interval_ticks": 40,
     "biome_monsters": true
+  },
+  "block_sleeping": true,
+  "boost": {
+    "chance": 0.35,
+    "effects": [
+      "minecraft:strength",
+      "minecraft:speed",
+      "minecraft:resistance"
+    ],
+    "amplifier": 0,
+    "essence_chance": 0.5,
+    "creeper_effects": [
+      "minecraft:nausea",
+      "minecraft:infested"
+    ],
+    "phantoms": 4
   }
 }

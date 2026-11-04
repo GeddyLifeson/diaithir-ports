@@ -1,0 +1,13 @@
+{
+  "item.diaithirpipes.wrench": "Pipe Wrench",
+  "item.diaithirpipes.connector": "Pipe Connector",
+  "block.diaithirpipes.item_pipe_basic": "Basic Item Pipe",
+  "block.diaithirpipes.item_pipe_improved": "Improved Item Pipe",
+  "block.diaithirpipes.item_pipe_advanced": "Advanced Item Pipe",
+  "block.diaithirpipes.fluid_pipe_basic": "Basic Fluid Pipe",
+  "block.diaithirpipes.fluid_pipe_improved": "Improved Fluid Pipe",
+  "block.diaithirpipes.fluid_pipe_advanced": "Advanced Fluid Pipe",
+  "block.diaithirpipes.energy_pipe_basic": "Basic Energy Pipe",
+  "block.diaithirpipes.energy_pipe_improved": "Improved Energy Pipe",
+  "block.diaithirpipes.energy_pipe_advanced": "Advanced Energy Pipe"
+}

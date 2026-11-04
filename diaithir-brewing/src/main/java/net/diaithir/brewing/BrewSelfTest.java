@@ -45,6 +45,10 @@ final class BrewSelfTest {
         if (cellar != null) {
             failures.add(cellar);
         }
+        String cold = coldPot(level, pos);
+        if (cold != null) {
+            failures.add(cold);
+        }
         for (BrewRecipe r : BrewRecipes.all()) {
             String fail = one(level, pos, r);
             if (fail != null) {
@@ -75,6 +79,25 @@ final class BrewSelfTest {
         return null;
     }
 
+    /** A canning pot cooks only over heat: a lit campfire below for the test, plain air otherwise. */
+    private static void heat(ServerLevel level, BlockPos pos, BrewRecipe r) {
+        level.setBlockAndUpdate(pos.below(), r.station().equals("canning_pot")
+            ? net.minecraft.world.level.block.Blocks.CAMPFIRE.defaultBlockState() : net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+    }
+
+    /** Canning needs heat: a cold pot must not progress, a pot over a campfire must. */
+    private static String coldPot(ServerLevel level, BlockPos pos) {
+        var pot = DiaithirBrewing.CANNING_POT.get().defaultBlockState();
+        level.setBlockAndUpdate(pos.below(), net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(pos, pot);
+        boolean cold = Heat.rate(level, pos) == 0;
+        level.setBlockAndUpdate(pos.below(), net.minecraft.world.level.block.Blocks.CAMPFIRE.defaultBlockState());
+        boolean warm = Heat.rate(level, pos) > 0;
+        level.setBlockAndUpdate(pos.below(), net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+        return cold && warm ? null : "FAIL canning heat: cold pot rate zero " + cold + ", pot over campfire cooks " + warm;
+    }
+
     private static String one(ServerLevel level, BlockPos pos, BrewRecipe r) {
         BrewRecipe winner = BrewRecipes.all().stream().filter(x -> x.matches(r.station(), r.base(), r.ingredients())).findFirst().orElse(r);
         if (winner != r) {
@@ -83,6 +106,7 @@ final class BrewSelfTest {
         var block = DiaithirBrewing.block(r.station());
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
         level.setBlockAndUpdate(pos, block.get().defaultBlockState());
+        heat(level, pos, r);
         Player p = FakePlayerFactory.getMinecraft(level);
         BlockHitResult hit = new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false);
         if (r.base() != Items.AIR && !use(level, p, pos, hit, new ItemStack(r.base()))) return "FAIL base not accepted";
@@ -122,6 +146,7 @@ final class BrewSelfTest {
     private static String automation(ServerLevel level, BlockPos pos, BrewRecipe r) {
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
         level.setBlockAndUpdate(pos, DiaithirBrewing.block(r.station()).get().defaultBlockState());
+        heat(level, pos, r);
         BrewVesselEntity be = (BrewVesselEntity) level.getBlockEntity(pos);
         try (var tx = Transaction.openRoot()) {
             be.automation.insert(ItemResource.of(r.base() != Items.AIR ? r.base() : r.ingredients().keySet().iterator().next()), 1, tx);

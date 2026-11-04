@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:silanneth_ameolus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_anasakamira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_draggurn",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_ilosanala",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_ilyanneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_tarnerdath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_taurnolus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_torukornun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:silanneth_vesyuzith",
+   "required": false
+  }
+ ]
+}

@@ -4,8 +4,8 @@
  "name_en": "Tribal Chief",
  "age": 1,
  "own": {
-  "kind": "zombie",
-  "scale": 1.45,
+  "kind": "look_tall",
+  "scale": 1.56,
   "hp": 260,
   "damage": 5,
   "armor": 4,
@@ -226,5 +226,6 @@
  },
  "mythic": false,
  "entity": "diaithirbosses:tribal_chief",
- "creature_id": null
+ "creature_id": null,
+ "look": true
 }

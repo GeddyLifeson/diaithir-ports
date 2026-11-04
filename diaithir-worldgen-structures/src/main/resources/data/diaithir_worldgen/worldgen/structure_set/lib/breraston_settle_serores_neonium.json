@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_0_serores_neonium",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_1_serores_neonium",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/breraston/settlement_2_serores_neonium",
+   "weight": 12
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 35762901
+ }
+}

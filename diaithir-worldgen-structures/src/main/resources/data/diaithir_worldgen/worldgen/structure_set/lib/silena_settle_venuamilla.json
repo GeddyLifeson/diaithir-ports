@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silena/settlement_0_venuamilla",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/settlement_1_venuamilla",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silena/settlement_2_venuamilla",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 126660358
+ }
+}

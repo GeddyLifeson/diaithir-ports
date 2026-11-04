@@ -1,0 +1,589 @@
+{
+ "slug": "diaithir_skills",
+ "items": [
+  {
+   "id": "skills:rune_of_athfhas",
+   "kind": "rune",
+   "name_en": "Rune of Unlearning",
+   "attrs": {
+    "single_use": true,
+    "refund": "all_spent_points",
+    "stack_size": 16,
+    "respec_cost_xp_levels": 0,
+    "anneal_energy_J": 2400,
+    "crafting_mass_kg": 0.05
+   },
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
+  },
+  {
+   "id": "skills:clar_na_scil",
+   "kind": "relic",
+   "name_en": "Tablet of Skill",
+   "attrs": {
+    "grants_points": 1,
+    "admin_or_loot_only": true,
+    "stack_size": 16,
+    "use_time_s": 1.5,
+    "mass_kg": 0.4
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skills:cloch_ghlan",
+   "kind": "relic",
+   "name_en": "Clear Stone",
+   "attrs": {
+    "grants_points": 1,
+    "stack_size": 16,
+    "mass_kg": 0.2,
+    "loot_only": true
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skills:rune_of_athbheochan",
+   "kind": "rune",
+   "name_en": "Rune of Renewal",
+   "attrs": {
+    "single_use": true,
+    "refund": "all_spent_points",
+    "respec_cost_xp_levels": 0,
+    "stack_size": 16,
+    "anneal_energy_J": 9000,
+    "mass_kg": 0.05
+   },
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
+  },
+  {
+   "id": "skills:clar_ard_scil",
+   "kind": "relic",
+   "name_en": "Greater Tablet of Skill",
+   "attrs": {
+    "grants_points": 3,
+    "admin_or_loot_only": true,
+    "stack_size": 8,
+    "mass_kg": 1.1
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "skills:tobar_scil",
+   "kind": "relic",
+   "name_en": "Well of Skill",
+   "attrs": {
+    "grants_points": 5,
+    "stack_size": 1,
+    "mass_kg": 2.4,
+    "loot_only": true,
+    "guardian_boss_drop": true
+   },
+   "recipe": null,
+   "age": "VIII"
+  },
+  {
+   "id": "skills:hub_croi_reatha",
+   "kind": "skill",
+   "name_en": "Hub: Heart of the Wheel",
+   "attrs": {
+    "shared_start": true,
+    "cost": 0,
+    "adjacent_to": [
+     "fian_root",
+     "sleagh_root",
+     "ceilg_root",
+     "cleirech_root"
+    ]
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "skills:fian_slighe_fiain",
+   "kind": "skill",
+   "name_en": "Fian Branch: Path of the Warband",
+   "attrs": {
+    "class": "fian",
+    "minor_nodes": 6,
+    "keystones": 1,
+    "theme": "endurance_and_armor"
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skills:fian_croi_dair",
+   "kind": "skill",
+   "name_en": "Keystone: Oak Heart",
+   "attrs": {
+    "class": "fian",
+    "cost": 3,
+    "minecraft:max_health_add_hearts": 2.0,
+    "minecraft:knockback_resistance_pct": 15,
+    "requires_adjacent": "fian_cnoc_cosanta"
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skills:sleagh_slighe_sleagha",
+   "kind": "skill",
+   "name_en": "Sleagh Branch: Path of the Spear",
+   "attrs": {
+    "class": "sleagh",
+    "minor_nodes": 6,
+    "keystones": 1,
+    "theme": "reach_and_pierce"
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skills:sleagh_rinn_fada",
+   "kind": "skill",
+   "name_en": "Keystone: Long Point",
+   "attrs": {
+    "class": "sleagh",
+    "cost": 3,
+    "minecraft:entity_interaction_range_add_m": 0.5,
+    "spear_damage_pct": 15
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skills:ceilg_slighe_ceilge",
+   "kind": "skill",
+   "name_en": "Ceilg Branch: Path of the Hunt",
+   "attrs": {
+    "class": "ceilg",
+    "minor_nodes": 6,
+    "keystones": 1,
+    "theme": "ranged_and_stealth"
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skills:ceilg_suil_seabhaic",
+   "kind": "skill",
+   "name_en": "Keystone: Hawk Eye",
+   "attrs": {
+    "class": "ceilg",
+    "cost": 2,
+    "bow_draw_speed_pct": 12,
+    "ranged_damage_pct": 15
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skills:cleirech_slighe_draoi",
+   "kind": "skill",
+   "name_en": "Cleirech Branch: Path of the Druid",
+   "attrs": {
+    "class": "cleirech",
+    "minor_nodes": 6,
+    "keystones": 1,
+    "theme": "spell_power_and_mana"
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skills:cleirech_ruin_ogham",
+   "kind": "skill",
+   "name_en": "Keystone: Ogham Secret",
+   "attrs": {
+    "class": "cleirech",
+    "cost": 3,
+    "spell_power_pct": 25,
+    "rune_socket_bonus": 1
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "skills:minor_neart",
+   "kind": "skill",
+   "name_en": "Minor Node: Strength",
+   "attrs": {
+    "cost": 1,
+    "minecraft:attack_damage_pct": 3
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "skills:minor_luas",
+   "kind": "skill",
+   "name_en": "Minor Node: Swiftness",
+   "attrs": {
+    "cost": 1,
+    "minecraft:movement_speed_pct": 2
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "skills:minor_sine",
+   "kind": "skill",
+   "name_en": "Minor Node: Vigour",
+   "attrs": {
+    "cost": 1,
+    "minecraft:max_health_add_hearts": 1.0
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "skills:minor_cosaint",
+   "kind": "skill",
+   "name_en": "Minor Node: Warding",
+   "attrs": {
+    "cost": 1,
+    "minecraft:armor_add": 1.0
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "skills:minor_draiocht",
+   "kind": "skill",
+   "name_en": "Minor Node: Witchcraft",
+   "attrs": {
+    "cost": 1,
+    "spell_power_pct": 3
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skills:minor_ceannas",
+   "kind": "skill",
+   "name_en": "Minor Node: Mastery",
+   "attrs": {
+    "cost": 2,
+    "all_minor_bonus_pct": 0,
+    "minecraft:attack_damage_pct": 5,
+    "minecraft:armor_toughness_add": 0.5
+   },
+   "recipe": null,
+   "age": "V"
+  },
+  {
+   "id": "skills:xp_per_level_gate",
+   "kind": "enchant",
+   "name_en": "Scholar's Insight",
+   "attrs": {
+    "points_per_level_bonus_chance_pct": 0,
+    "xp_cost_levels_reduction": 1,
+    "max_level": 1
+   },
+   "recipe": null,
+   "age": "VII"
+  },
+  {
+   "id": "skills:ev_level_up",
+   "kind": "event",
+   "name_en": "Level Gained",
+   "attrs": {
+    "awards_points": 1,
+    "cap_level": 50
+   },
+   "recipe": null,
+   "age": "I"
+  },
+  {
+   "id": "skills:ev_respec",
+   "kind": "event",
+   "name_en": "Unlearning Performed",
+   "attrs": {
+    "refund": "all",
+    "purges_unknown_nodes": true
+   },
+   "recipe": null,
+   "age": "III"
+  },
+  {
+   "id": "skills:ev_keystone_bought",
+   "kind": "event",
+   "name_en": "Keystone Unlocked",
+   "attrs": {
+    "sound": "entity.player.levelup",
+    "particle": "end_rod",
+    "broadcast_radius_m": 32
+   },
+   "recipe": null,
+   "age": "V"
+  }
+ ],
+ "events": [
+  {
+   "id": "skills:ev_level_up",
+   "trigger": "PlayerXpEvent.LevelChange (player level increases, level <= level cap 50)",
+   "effect": "Add skills.pointsPerLevel (default 1) to the player's unspent points; sync to client; show action-bar toast"
+  },
+  {
+   "id": "skills:ev_purchase",
+   "trigger": "Client sends node purchase packet",
+   "effect": "Server validates enough points, node unowned and adjacent to an owned node (or hub); on success store node id, apply attribute modifier, sync; otherwise reject silently with log"
+  },
+  {
+   "id": "skills:ev_respec",
+   "trigger": "Player uses Rune of Unlearning or Rune of Renewal",
+   "effect": "Remove all node modifiers, refund all spent points, consume item"
+  },
+  {
+   "id": "skills:ev_death_persist",
+   "trigger": "PlayerEvent.Clone (death)",
+   "effect": "Copy skill attachment to the new player entity and reapply modifiers"
+  },
+  {
+   "id": "skills:ev_load_validate",
+   "trigger": "Player login / tree datapack reload",
+   "effect": "Drop unknown node ids, refund their cost, remove orphaned nodes whose adjacency is broken, resync"
+  },
+  {
+   "id": "skills:ev_keystone_bought",
+   "trigger": "Purchase of a node with cost >= 2",
+   "effect": "Play sound and particles, broadcast toast to players within 32 m"
+  }
+ ],
+ "skills": [
+  {
+   "id": "fian_cnoc_cosanta",
+   "branch": "fian",
+   "cost": 1,
+   "effect": "minecraft:armor +1.0",
+   "edges": [
+    "hub_croi_reatha",
+    "fian_croi_dair"
+   ]
+  },
+  {
+   "id": "sleagh_rinn_luath",
+   "branch": "sleagh",
+   "cost": 1,
+   "effect": "minecraft:attack_speed +3%",
+   "edges": [
+    "hub_croi_reatha",
+    "sleagh_rinn_fada"
+   ]
+  },
+  {
+   "id": "ceilg_laimh_cobhsaidh",
+   "branch": "ceilg",
+   "cost": 1,
+   "effect": "minecraft:sneaking_speed +5%",
+   "edges": [
+    "hub_croi_reatha",
+    "ceilg_suil_seabhaic"
+   ]
+  },
+  {
+   "id": "cleirech_anam_ban",
+   "branch": "cleirech",
+   "cost": 1,
+   "effect": "spell_power +3%",
+   "edges": [
+    "hub_croi_reatha",
+    "cleirech_ruin_ogham"
+   ]
+  },
+  {
+   "id": "shared_beatha_fada",
+   "branch": "shared",
+   "cost": 1,
+   "effect": "minecraft:max_health +2.0 (1 heart)",
+   "edges": [
+    "hub_croi_reatha"
+   ]
+  },
+  {
+   "id": "shared_cos_aeir",
+   "branch": "shared",
+   "cost": 2,
+   "effect": "minecraft:fall_damage_multiplier -15%",
+   "edges": [
+    "shared_beatha_fada"
+   ]
+  }
+ ],
+ "id_migration": {
+  "skilltree:respec_scroll": "diaithir_skills:rune_of_athfhas",
+  "skilltree:point_book": "diaithir_skills:clar_na_scil",
+  "skilltree:warrior_tree": "diaithir_skills:fian_slighe_fiain",
+  "skilltree:ranger_tree": "diaithir_skills:ceilg_slighe_ceilge",
+  "skilltree:mage_tree": "diaithir_skills:cleirech_slighe_draoi",
+  "skilltree:hub": "diaithir_skills:hub_croi_reatha",
+  "skilltree:health_node": "diaithir_skills:minor_sine",
+  "skilltree:damage_node": "diaithir_skills:minor_neart"
+ },
+ "c_tags": {
+  "c:ingots/bronze": [
+   "diaithir_skills:rune_of_athfhas"
+  ],
+  "c:ingots/steel": [
+   "diaithir_skills:rune_of_athbheochan"
+  ],
+  "c:gems/amethyst": [
+   "diaithir_skills:rune_of_athfhas",
+   "diaithir_skills:rune_of_athbheochan"
+  ],
+  "c:gems/diamond": [
+   "diaithir_skills:rune_of_athbheochan"
+  ],
+  "c:dusts/redstone": [
+   "diaithir_skills:rune_of_athfhas",
+   "diaithir_skills:rune_of_athbheochan"
+  ],
+  "c:runes/skill": [
+   "diaithir_skills:rune_of_athfhas",
+   "diaithir_skills:rune_of_athbheochan"
+  ],
+  "c:relics/point_grant": [
+   "diaithir_skills:clar_na_scil",
+   "diaithir_skills:cloch_ghlan",
+   "diaithir_skills:clar_ard_scil",
+   "diaithir_skills:tobar_scil"
+  ]
+ },
+ "xmod_recipes": [
+  {
+   "id": "diaithir_skills:rune_of_athfhas_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/bronze",
+    "c:gems/amethyst",
+    "c:dusts/redstone"
+   ]
+  },
+  {
+   "id": "diaithir_skills:rune_of_athbheochan_craft",
+   "inputs_as_c_tags": [
+    "c:ingots/steel",
+    "c:gems/diamond",
+    "c:dusts/redstone",
+    "c:gems/amethyst"
+   ]
+  },
+  {
+   "id": "diaithir_skills:rune_of_athbheochan_upgrade",
+   "inputs_as_c_tags": [
+    "c:runes/skill",
+    "c:ingots/steel"
+   ]
+  }
+ ],
+ "capabilities": [],
+ "upgrade_rules": [
+  {
+   "id": "diaithir_skills:keystone_synergy_socket",
+   "target": "diaithir_classes:ogham_socket_ring",
+   "slots": 1,
+   "kinds": [
+    "rune"
+   ],
+   "max_quality": 3
+  },
+  {
+   "id": "diaithir_skills:class_charm_link",
+   "target": "diaithir_classes:cleirech_charm",
+   "slots": 2,
+   "kinds": [
+    "rune",
+    "gem"
+   ],
+   "max_quality": 4
+  }
+ ],
+ "global_events": [
+  {
+   "id": "diaithir_skills:ge_level_to_points",
+   "subscribes_to": "diaithir:player_level_up",
+   "effect": "Awards skill points per level through the Global Events bus so quest and codex modules can listen"
+  },
+  {
+   "id": "diaithir_skills:ge_age_unlock",
+   "subscribes_to": "diaithir:age_advanced",
+   "effect": "Unlocks age-gated nodes and branches from age_gates.json, toasts the player, refreshes tree screen"
+  },
+  {
+   "id": "diaithir_skills:ge_class_chosen",
+   "subscribes_to": "diaithir:class_equipped",
+   "effect": "Highlights the matching class branch in the screen and enables its keystones"
+  },
+  {
+   "id": "diaithir_skills:ge_publish_purchase",
+   "subscribes_to": "diaithir_skills:node_bought",
+   "effect": "Re-emits purchase events (node id, cost) for codex and quest progress tracking"
+  }
+ ],
+ "codex": [
+  {
+   "entry": "codex/skills_handbook",
+   "connects_to": [
+    "codex/classes_overview",
+    "codex/rune_sockets",
+    "codex/ages_of_diaithir"
+   ]
+  },
+  {
+   "entry": "codex/branch_fian",
+   "connects_to": [
+    "codex/classes_fian",
+    "codex/skills_handbook"
+   ]
+  },
+  {
+   "entry": "codex/branch_sleagh",
+   "connects_to": [
+    "codex/classes_sleagh",
+    "codex/skills_handbook"
+   ]
+  },
+  {
+   "entry": "codex/branch_ceilg",
+   "connects_to": [
+    "codex/classes_ceilg",
+    "codex/skills_handbook"
+   ]
+  },
+  {
+   "entry": "codex/branch_cleirech",
+   "connects_to": [
+    "codex/classes_cleirech",
+    "codex/skills_handbook",
+    "codex/rune_sockets"
+   ]
+  },
+  {
+   "entry": "codex/respec_runes",
+   "connects_to": [
+    "codex/skills_handbook",
+    "codex/ogham_runes"
+   ]
+  }
+ ],
+ "quest": {
+  "id": "diaithir_skills:q_first_steps",
+  "intro": "The wheel turns when you do. Reach level 5, open the Skill Wheel with the keybind (K by default), and spend your first three points on one branch.",
+  "links_to": [
+   "diaithir_classes:q_choose_your_class",
+   "diaithir_arms:q_first_bronze_blade"
+  ]
+ },
+ "java_notes": "Needs: data attachment (owned node ids, unspent points) with codec and copy-on-death; server-authoritative purchase/respec packets; tree JSON reload listener under data/diaithir_skills/trees/<class>.json; attribute-modifier apply/remove keyed by node id; level-up and login validation listeners; screen with keybind; /skillsselftest command; TOML config (pointsPerLevel, levelCap, enabled)."
+}

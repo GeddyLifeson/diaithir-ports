@@ -17,3 +17,6 @@ type = "required"
 versionRange = "[26.1.2.109,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[mixins]]
+config = "diaithirhostile.mixins.json"

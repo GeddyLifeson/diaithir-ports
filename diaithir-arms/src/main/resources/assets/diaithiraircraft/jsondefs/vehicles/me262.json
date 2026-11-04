@@ -1,0 +1,65 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Messerschmitt Me 262",
+  "description": "jet_fighter, Germany, 1942. Source: https://en.wikipedia.org/wiki/Messerschmitt_Me_262",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:33"
+   ]
+  ],
+  "health": 400
+ },
+ "motorized": {
+  "isAircraft": true,
+  "emptyMass": 4000,
+  "fuelCapacity": 2000,
+  "defaultFuelQty": 500,
+  "wingSpan": 12.6,
+  "wingArea": 16.0,
+  "tailDistance": 4.8,
+  "aileronArea": 1.9,
+  "elevatorArea": 1.5,
+  "rudderArea": 0.8,
+  "dragCoefficient": 0.05,
+  "crossSectionalArea": 1.1,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    -1.386,
+    0.8,
+    2.12
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:me262_engine"
+  },
+  {
+   "pos": [
+    1.386,
+    0.8,
+    2.12
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:me262_engine"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -0.53
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  }
+ ]
+}

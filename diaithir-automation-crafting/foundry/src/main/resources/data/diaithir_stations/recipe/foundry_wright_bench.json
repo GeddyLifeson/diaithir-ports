@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "P": "minecraft:oak_planks",
+    "H": "diaithir_stations:foundry_hearth_bench"
+  },
+  "pattern": [
+    "IPI",
+    "PHP",
+    "III"
+  ],
+  "result": {
+    "id": "diaithir_stations:foundry_wright_bench",
+    "count": 1
+  },
+  "category": "misc"
+}

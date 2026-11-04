@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/silenioriel/settlement_0_any",
+   "weight": 200
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silenioriel/settlement_1_any",
+   "weight": 252
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silenioriel/settlement_2_any",
+   "weight": 56
+  },
+  {
+   "structure": "diaithir_worldgen:lib/silenioriel/settlement_3_any",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 267842550
+ }
+}

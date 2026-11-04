@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_0_orolia",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/reoria/settlement_1_orolia",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 127018398
+ }
+}

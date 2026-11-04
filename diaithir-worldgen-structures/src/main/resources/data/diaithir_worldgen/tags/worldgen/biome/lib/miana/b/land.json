@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:miana_caurillanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_elanerlae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_lyila",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_ryalora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_ryilleira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_silinemeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_syusheizora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:miana_venarleinae",
+   "required": false
+  }
+ ]
+}

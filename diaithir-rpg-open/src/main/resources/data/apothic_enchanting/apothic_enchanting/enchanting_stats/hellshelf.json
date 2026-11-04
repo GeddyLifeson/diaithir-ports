@@ -1,0 +1,8 @@
+{
+    "blocks": "apothic_enchanting:hellshelf",
+    "stats": {
+        "eterna": 3.0,
+        "maxEterna": 45.0,
+        "quanta": 3.0
+    }
+}

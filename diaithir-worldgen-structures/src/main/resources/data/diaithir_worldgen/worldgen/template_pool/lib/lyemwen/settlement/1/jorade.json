@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/lyemwen/settlement/1/jorade",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/lyemwen/ar_lyemwen_e3_places_000081",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

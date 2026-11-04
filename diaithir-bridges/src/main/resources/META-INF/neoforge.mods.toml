@@ -12,3 +12,10 @@ description = "Two machines that join magic and power in Diaithir: Toburdeluin t
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirbridges]]
+modId = "diaithirunits"
+type = "required"
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "apothic_enchanting:blocks/base_shelf",
+        "side": "apothic_enchanting:blocks/heart_seashelf_2"
+    }
+}

@@ -1,0 +1,1 @@
+{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"data":{"Name":"minecraft:wither_rose"},"weight":1},{"data":{"Name":"minecraft:poppy"},"weight":3},{"data":{"Name":"minecraft:dead_bush"},"weight":4}]}}}

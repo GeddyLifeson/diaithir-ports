@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_0_valesus_rauniallor",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_1_valesus_rauniallor",
+   "weight": 24
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_2_valesus_rauniallor",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/tasianium/settlement_3_valesus_rauniallor",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 44296423
+ }
+}

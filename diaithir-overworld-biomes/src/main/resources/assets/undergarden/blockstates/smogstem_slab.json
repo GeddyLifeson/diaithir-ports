@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "undergarden:block/smogstem_slab"
+    },
+    "type=double": {
+      "model": "undergarden:block/smogstem_planks"
+    },
+    "type=top": {
+      "model": "undergarden:block/smogstem_slab_top"
+    }
+  }
+}

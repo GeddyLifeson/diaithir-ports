@@ -1,0 +1,120 @@
+{
+ "general": {
+  "type": "vehicle",
+  "name": "Boeing B-17 Flying Fortress",
+  "description": "bomber, USA, 1935. Source: https://en.wikipedia.org/wiki/Boeing_B-17_Flying_Fortress",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:136"
+   ]
+  ],
+  "health": 1640
+ },
+ "motorized": {
+  "isAircraft": true,
+  "emptyMass": 16400,
+  "fuelCapacity": 10000,
+  "defaultFuelQty": 2500,
+  "wingSpan": 31.6,
+  "wingArea": 86.1,
+  "tailDistance": 10.2,
+  "aileronArea": 4.7,
+  "elevatorArea": 3.8,
+  "rudderArea": 1.9,
+  "dragCoefficient": 0.05,
+  "crossSectionalArea": 5.8,
+  "crashSpeedMin": 0.5,
+  "crashSpeedMax": 1.0,
+  "crashSpeedDestroyed": 2.0
+ },
+ "parts": [
+  {
+   "pos": [
+    -10.428,
+    0.8,
+    4.54
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+  },
+  {
+   "pos": [
+    -3.476,
+    0.8,
+    4.54
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+  },
+  {
+   "pos": [
+    3.476,
+    0.8,
+    4.54
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+  },
+  {
+   "pos": [
+    10.428,
+    0.8,
+    4.54
+   ],
+   "types": [
+    "engine_aircraft"
+   ],
+   "defaultPart": "diaithiraircraft:b17_flying_fortress_engine"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -1.135
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    0.9,
+    -1.935
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -1.135
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  },
+  {
+   "pos": [
+    0,
+    1.7000000000000002,
+    -1.935
+   ],
+   "types": [
+    "seat"
+   ],
+   "defaultPart": "mts:unified.seat"
+  }
+ ]
+}

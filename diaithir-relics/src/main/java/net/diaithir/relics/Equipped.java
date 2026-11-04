@@ -76,6 +76,22 @@ public final class Equipped {
         return out;
     }
 
+    /** Every stack matching the test in Curios slots or the off hand (for relics that are not DiaithirRelics.Def entries). */
+    public static List<ItemStack> stacks(LivingEntity p, Predicate<ItemStack> test) {
+        List<ItemStack> out = new ArrayList<>();
+        Object h = curios(p);
+        if (h != null) {
+            try {
+                for (Object r : (List<?>) findCurios.invoke(h, test)) out.add((ItemStack) stackOf.invoke(r));
+            } catch (Throwable t) {
+                // fall back to the off hand
+            }
+        }
+        ItemStack off = p.getItemInHand(InteractionHand.OFF_HAND);
+        if (test.test(off)) out.add(off);
+        return out;
+    }
+
     /** The relic in the main hand (weapons) or null. */
     public static Slot held(ServerPlayer p) {
         ItemStack s = p.getMainHandItem();

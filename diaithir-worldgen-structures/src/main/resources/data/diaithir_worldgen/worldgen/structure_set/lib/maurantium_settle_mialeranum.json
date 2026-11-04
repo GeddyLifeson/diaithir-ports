@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/settlement_0_mialeranum",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/settlement_1_mialeranum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/settlement_2_mialeranum",
+   "weight": 15
+  },
+  {
+   "structure": "diaithir_worldgen:lib/maurantium/settlement_3_mialeranum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 185924022
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:krouktaggun_grorkak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krouktaggun_ilonamari",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krouktaggun_jorastedath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krouktaggun_kelonadar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krouktaggun_orilasanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krouktaggun_sileimae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krouktaggun_tarnunerock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:krouktaggun_theishis",
+   "required": false
+  }
+ ]
+}

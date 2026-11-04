@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_glass_pane_noside",
+ "textures": {
+  "pane": "diaithircropgenes:block/glass_window_pane",
+  "edge": "diaithircropgenes:block/glass_window_pane"
+ }
+}

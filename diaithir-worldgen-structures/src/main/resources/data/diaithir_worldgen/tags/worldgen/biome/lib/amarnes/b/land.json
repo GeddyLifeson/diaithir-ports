@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:amarnes_analarira",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_grougorkok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_nualleth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_osiasora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_silenora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_telilentor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_thashevsora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_zephethis",
+   "required": false
+  }
+ ]
+}

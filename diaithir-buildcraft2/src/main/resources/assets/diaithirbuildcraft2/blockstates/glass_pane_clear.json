@@ -1,0 +1,77 @@
+{
+ "multipart": [
+  {
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_post"
+   }
+  },
+  {
+   "when": {
+    "north": "true"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_side"
+   }
+  },
+  {
+   "when": {
+    "east": "true"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_side",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "south": "true"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_side_alt"
+   }
+  },
+  {
+   "when": {
+    "west": "true"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_side_alt",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "north": "false"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_noside"
+   }
+  },
+  {
+   "when": {
+    "east": "false"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_noside_alt"
+   }
+  },
+  {
+   "when": {
+    "south": "false"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_noside_alt",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "west": "false"
+   },
+   "apply": {
+    "model": "diaithirbuildcraft2:block/glass_pane_clear_noside",
+    "y": 270
+   }
+  }
+ ]
+}

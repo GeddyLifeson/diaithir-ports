@@ -15,3 +15,8 @@ Raiders added to the raid wave table: Inquisitor, Incinerator, Savager, Necroman
 
 ## Horde Hoard / Zombie Hordes (package `net.diaithir.hostile.hordes`)
 Horde stacking and multiplying, intelligent zombie teams, leaping mobs, grave robbers, iron golem regeneration, a nightly horde spawner, game rules and a Thinking effect. Source: Zombie Hordes (Horde Hoard) 1.1.0, MC 26.1.2 NeoForge, by nojustgavin / warwa, MIT licence, Copyright (c) 2024 nojustgavin. The Fabric entry point and mixin were dropped, the NeoForge platform helper kept, the `@Mod` class replaced by `HordeHoardModNeoForge.init`. Ids stay in the `horde_hoard` namespace. Overlaps with the clean-room horde nights in `diaithir-encounters`; tags (`horde_hoard:hordes` and others) let the two share mobs.
+Also ported now: enchanting table cost (event), beacon radius (one mixin), meteors (a vanilla-block crater with magma core and ore rim, no entity or art), and the moon tint. The tint follows the event colour through the fog and horizon colour, synced to clients by a small packet; the moon disc itself is not recoloured (that needs a sky-render mixin that changes every Minecraft version).
+
+Not ported: upstream meteor entity, space moss blocks and the Space Moss Bug.
+
+Blood Moon (KS) by nugrevan (Modrinth ks-blood-moon, MIT, no public source repo) is folded in from its published feature list: mob boosts, Moon Essence, creeper effects, extra phantoms. Own code, own texture. Its resource pack is not used. Undead Nights is replaced by the clean-room bundles in the same module (see the encounters package), not by anything here.

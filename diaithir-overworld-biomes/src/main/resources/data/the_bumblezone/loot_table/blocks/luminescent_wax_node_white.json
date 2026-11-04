@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "the_bumblezone:blocks/luminescent_wax_node_white",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "the_bumblezone:luminescent_wax_node_white"
+    }
+   ]
+  }
+ ]
+}

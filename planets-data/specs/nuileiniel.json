@@ -1,0 +1,167 @@
+{
+ "sky": {
+  "sky": "#6a5acd",
+  "fog": "#9d8fd6",
+  "cloud": "#b0e0c8ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#4a7fb8"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.nuileiniel.E6.places.002498",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.8,
+   "grass": "#7fa89a",
+   "foliage": "#6f9a8c",
+   "water": "#5c8f9e",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuileiniel.E6.places.002604",
+   "archetype": "dark_forest",
+   "temp": -0.1,
+   "humid": 0.5,
+   "grass": "#4f6e6a",
+   "foliage": "#3e5f5c",
+   "water": "#4a6fa0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuileiniel.E6.places.002324",
+   "archetype": "cherry_grove",
+   "temp": 0.4,
+   "humid": 0.2,
+   "grass": "#b8a4d8",
+   "foliage": "#c9a6e0",
+   "water": "#8a7fc0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuileiniel.E6.places.002657",
+   "archetype": "stony_peaks",
+   "temp": -0.4,
+   "humid": -0.3,
+   "grass": "#7a7a8c",
+   "foliage": "#6a6a7e",
+   "water": "#5a6a8a",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.nuileiniel.E6.places.002584",
+   "archetype": "windswept_hills",
+   "temp": 0.0,
+   "humid": -0.2,
+   "grass": "#8f8fb0",
+   "foliage": "#7d7fa0",
+   "water": "#5f7fb0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuileiniel.E6.places.003337",
+   "archetype": "mushroom_fields",
+   "temp": 0.1,
+   "humid": 0.6,
+   "grass": "#9f7fc8",
+   "foliage": "#b08ad8",
+   "water": "#7a6fb8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.nuileiniel.E6.places.002319",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#c8b8d8",
+   "foliage": "#b8a8c8",
+   "water": "#8fa8c8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.nuileiniel.E6.places.002660",
+   "archetype": "snowy_slopes",
+   "temp": -0.8,
+   "humid": 0.1,
+   "grass": "#dfe6f5",
+   "foliage": "#cfd8ea",
+   "water": "#7f9fd0",
+   "precip": "snow"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-skied archipelago world of crystal spires, sunken cities and drifting mist, where ash drifts over its arcane ridges and the seas glow with stored starlight.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.07
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.03
+   }
+  ],
+  "fog": "#8a7ec8",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.nuileiniel.E6.places.002587",
+  "why": "Glowing arcane tides and luminous mist suggest soft violet light and haze",
+  "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 2
+   },
+   {
+    "base": "birch",
+    "log": "birch",
+    "leaves": "birch",
+    "weight": 1
+   }
+  ],
+  "density": 0.6,
+  "undergrowth": [
+   {
+    "block": "short_grass",
+    "weight": 3
+   },
+   {
+    "block": "fern",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "dandelion",
+   "oxeye_daisy",
+   "cornflower"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.5,
+   "copper": 1.2,
+   "gold": 0.8,
+   "redstone": 0.8,
+   "lapis": 1.0,
+   "diamond": 1.0
+  },
+  "why_entry": "AR.nuileiniel.E5.assay.005081",
+  "grounded": false
+ }
+}

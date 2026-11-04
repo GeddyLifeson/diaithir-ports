@@ -1,0 +1,29 @@
+{
+ "general": {
+  "type": "ground_wheel",
+  "name": "Volkswagen Type 2 Wheel",
+  "materialLists": [
+   [
+    "minecraft:iron_ingot:0:2"
+   ]
+  ]
+ },
+ "ground": {
+  "isWheel": true,
+  "width": 0.3,
+  "height": 0.72,
+  "motiveFriction": 1.0,
+  "lateralFriction": 1.0
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Volkswagen Type 2 Wheel",
+   "modelName": "wheel_vw_type_2",
+   "textureName": "wheel_vw_type_2",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}
