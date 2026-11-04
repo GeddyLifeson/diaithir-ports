@@ -10,3 +10,5 @@ Build: `./gradlew build` JDK 25, NeoForge 26.1.2.116, jar `diaithir-firearms-neo
 
 ## Ammo box
 `/firearmsselftest` (run twice, the first run loads the test chunk): ok=1048 bad=0 including six box checks (empty, capacity, one kind, take, refuse other kind, refill with a new kind). Drawing from a box during a live reload is not exercised headless. (2026-11-04)
+## Round 2: ammo containers and animation hook (2026-11-03)
+Headless dedicated server (gradle runServer, rcon), `/firearmsselftest` twice (the first run only loads the test chunk and reports bad=15 hits; the second is the result): `firearms ok=1315 bad=0`. New checks cover container kinds per class, container fit rules (class, round, other namespace), and drain bounds on plain json. Not tested: the real `diaithircrafting:ammo_container` component (that module is not built yet), a reload from a real container stack, a client, the AnimHook with diaithir-animation loaded (no-op here).

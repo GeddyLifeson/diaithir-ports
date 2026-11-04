@@ -1,0 +1,6 @@
+{
+  "parent": "diaithirlogistics:block/pipe_core",
+  "textures": {
+    "all": "diaithirlogistics:block/pipe"
+  }
+}

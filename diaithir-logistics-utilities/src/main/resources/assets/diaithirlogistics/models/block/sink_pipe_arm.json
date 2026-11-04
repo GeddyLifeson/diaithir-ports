@@ -1,0 +1,6 @@
+{
+  "parent": "diaithirlogistics:block/pipe_arm",
+  "textures": {
+    "all": "diaithirlogistics:block/sink_pipe"
+  }
+}

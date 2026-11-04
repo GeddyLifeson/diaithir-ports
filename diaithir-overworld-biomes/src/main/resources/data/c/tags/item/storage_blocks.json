@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
+  "#c:storage_blocks/arsonist",
   "#c:storage_blocks/cloggrum",
   "#c:storage_blocks/forgotten",
   "#c:storage_blocks/froststeel"

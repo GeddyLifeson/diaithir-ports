@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:yew_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:yew_planks",
+  "count": 4
+ }
+}

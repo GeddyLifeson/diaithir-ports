@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:acacia_planks"
+ },
+ "pattern": [
+  "P  ",
+  "PP ",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:acacia_roof",
+  "count": 4
+ }
+}

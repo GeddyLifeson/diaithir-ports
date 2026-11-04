@@ -138,6 +138,24 @@ public final class SelfTest {
         Engine.reload(fp);
         check(!Engine.reloading(fp), "no reload without ammo");
         for (var e : lv.getEntitiesOfClass(ArmorStand.class, new net.minecraft.world.phys.AABB(base).inflate(40))) e.discard();
+        containers();
+    }
+
+    /** Container contract logic on plain json (the component itself belongs to diaithir-crafting and may not be loaded). */
+    private static void containers() {
+        for (var m : Defs.GUNS.values()) check(Defs.KINDS.containsKey(m.cls()), m.id() + " class " + m.cls() + " has a container kind list");
+        check(Defs.KINDS.get("lmg").get(0).equals("belt") && Defs.KINDS.get("pistol").contains("speedloader") && Defs.KINDS.get("shotgun").isEmpty(), "kinds follow contract section 2");
+        var pistol = Defs.GUNS.get("sidearm_light");
+        var j = com.google.gson.JsonParser.parseString("{\"class\":\"pistol\",\"capacity\":15,\"count\":12,\"round\":\"diaithirfirearms:ammo_9mm\"}").getAsJsonObject();
+        check(Containers.fits(j, pistol), "pistol magazine of 9 mm fits the pistol");
+        check(!Containers.fits(j, Defs.GUNS.get("assault_rifle")), "pistol magazine does not fit a rifle");
+        j.addProperty("round", "diaithircrafting:ammo_45");
+        check(!Containers.fits(j, pistol), "wrong round does not fit");
+        j.addProperty("round", "diaithircrafting:ammo_9mm");
+        check(Containers.fits(j, pistol), "same round path from another namespace fits");
+        check(Containers.drain(j, 5) == 5 && j.get("count").getAsInt() == 7, "drain takes 5 of 12");
+        check(Containers.drain(j, 99) == 7 && j.get("count").getAsInt() == 0, "drain empties at 0, never negative");
+        check(Containers.drain(j, 3) == 0 && j.get("count").getAsInt() == 0, "empty container gives nothing");
     }
 
     private SelfTest() {}

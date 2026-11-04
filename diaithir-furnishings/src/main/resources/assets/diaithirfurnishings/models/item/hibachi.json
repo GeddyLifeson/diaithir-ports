@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/hibachi"
+  "layer0": "diaithirfurnishings:item/hibachi_pot",
+  "layer1": "diaithirfurnishings:item/hibachi_handle"
  }
 }

@@ -32,15 +32,17 @@ public class FaunaRenderer extends MobRenderer<FaunaMob, FaunaState, PlanModel> 
     public void extractRenderState(FaunaMob mob, FaunaState state, float partial) {
         super.extractRenderState(mob, state, partial);
         state.species = mob.species();
+        state.swing = mob.getAttackAnim(partial);
         state.flying = plan.fly() && !mob.onGround();
     }
 
     @Override
     public Identifier getTextureLocation(FaunaState state) {
         if (state.species != null) {
-            Identifier own = Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/" + state.species.id + ".png");
+            Identifier own = Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/" + state.species.id.toLowerCase(java.util.Locale.ROOT) + ".png");
             if (EXISTS.computeIfAbsent(own, id -> Minecraft.getInstance().getResourceManager().getResource(id).isPresent())) return own;
         }
-        return Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/plan/" + plan.name + ".png");
+        String el = state.species != null && state.species.tier > 0 ? "_" + state.species.element : "_none"; // Library creatures: plan texture tinted by element
+        return Identifier.fromNamespaceAndPath(FaunaMod.ID, "textures/entity/plan/" + plan.name + el + ".png");
     }
 }

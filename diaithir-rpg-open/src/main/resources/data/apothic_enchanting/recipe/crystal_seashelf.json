@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "I": "apothic_enchanting:infused_seashelf",
+        "P": "minecraft:prismarine_crystals"
+    },
+    "pattern": [
+        " P ",
+        " I ",
+        "P P"
+    ],
+    "result": {
+        "id": "apothic_enchanting:crystal_seashelf"
+    }
+}

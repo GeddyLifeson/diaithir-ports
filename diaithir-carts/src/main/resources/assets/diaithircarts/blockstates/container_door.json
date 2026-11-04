@@ -1,0 +1,22 @@
+{
+ "variants": {
+  "open=true,paint=red": {
+   "model": "diaithircarts:block/container_door_red"
+  },
+  "open=false,paint=red": {
+   "model": "diaithircarts:block/container_door_red"
+  },
+  "open=true,paint=blue": {
+   "model": "diaithircarts:block/container_door_blue"
+  },
+  "open=false,paint=blue": {
+   "model": "diaithircarts:block/container_door_blue"
+  },
+  "open=true,paint=white": {
+   "model": "diaithircarts:block/container_door_white"
+  },
+  "open=false,paint=white": {
+   "model": "diaithircarts:block/container_door_white"
+  }
+ }
+}

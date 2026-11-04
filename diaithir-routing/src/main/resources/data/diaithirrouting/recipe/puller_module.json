@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": ["diaithirrouting:extractor_module", "minecraft:sticky_piston"],
+  "result": { "id": "diaithirrouting:puller_module", "count": 1 }
+}

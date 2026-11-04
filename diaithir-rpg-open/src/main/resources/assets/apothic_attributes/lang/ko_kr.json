@@ -1,0 +1,206 @@
+{
+    "apothic_attributes.gui.attributes": "능력치",
+    "apothic_attributes.gui.base": "기본: %s",
+    "apothic_attributes.gui.min": "최소: %s",
+    "apothic_attributes.gui.max": "최대: %s",
+    "apothic_attributes.gui.modifiers": "옵션",
+    "apothic_attributes.gui.add_value": "추가: %s",
+    "apothic_attributes.gui.add_multiplied_base": "배수 기본: %s",
+    "apothic_attributes.gui.add_multiplied_total": "배수 총합: %s",
+    "apothic_attributes.gui.press_shift": "Shift를 눌러 설명확인.",
+    "apothic_attributes.gui.current": "현재: %s",
+    "apothic_attributes.gui.show_attributes": "능력치 표시",
+    "apothic_attributes.gui.dynamic": "(동적)",
+    "apothic_attributes.gui.formula": "옵션 공식",
+    "apothic_attributes.gui.formula.base": "기본",
+    "apothic_attributes.gui.formula.value": "값",
+    "apothic_attributes.gui.no_modifiers": "옵션 없음",
+
+    "attribute.name.armor.desc": "받는 물리적 피해 감소.",
+    "attribute.name.armor_toughness.desc": "적의 방어력 무시 효율 감소.",
+    "attribute.name.attack_damage.desc": "풀차지 공격으로 주는 물리적 피해.",
+    "attribute.name.attack_knockback.desc": "근접 공격으로 적을 밀어내는 거리(반 블록 단위).",
+    "attribute.name.attack_speed.desc": "1초에 풀차징 공격을 몇 번이나 할 수 있는가.",
+    "attribute.name.knockback_resistance.desc": "받는 넉백을 무시하는 정도.",
+    "attribute.name.luck.desc": "좋은 일이 일어날 가능성 증가.",
+    "attribute.name.max_health.desc": "최대 체력 수치.",
+    "attribute.name.movement_speed.desc": "걷는 동안의 이동속도.",
+
+    "attribute.name.entity_interaction_range.desc": "개체와 상호작용 가능한 거리(블록 단위).",
+    "attribute.name.gravity.desc": "지면을 향해 떨어질 때의 가속도(블록/s²)",
+    "neoforge.name_tag_distance.desc": "다른 플레이어가 당신의 닉네임을 보기 위해 필요한 거리.",
+    "attribute.name.block_interaction_range.desc": "블록과 상호작용 가능한 거리(블록 단위).",
+    "attribute.name.step_height.desc": "점프없이 걸어 올라갈 수 있는 블록의 높이.",
+
+    "button.apothic_attributes.hide_unchanged": "변경되지 않은 능력치 숨기기",
+    "text.apothic_attributes.hide_unchanged": "미변경 사항 숨기기",
+
+    "apothic_attributes:draw_speed": "당기기 속도",
+    "apothic_attributes:draw_speed.desc": "활, 석궁, 삼지창 등 원거리 무기의 당기기 속도",
+
+    "apothic_attributes:crit_chance": "치명타 확률",
+    "apothic_attributes:crit_chance.desc": "당신이 입힌 피해가 치명타로 적중 시, 치명타 피해에 기반해 추가 피해를 입힙니다.",
+
+    "apothic_attributes:crit_damage": "치명타 피해",
+    "apothic_attributes:crit_damage.desc": "바닐라의 점프 크리티컬을 포함한 치명타 데미지 배수.",
+
+    "apothic_attributes:cold_damage": "냉기 피해",
+    "apothic_attributes:cold_damage.desc": "근접 공격 시 추가 마법 피해를 주고, 적을 느리게 합니다.",
+
+    "apothic_attributes:fire_damage": "화염 피해",
+    "apothic_attributes:fire_damage.desc": "근접 공격 시 추가 마법 피해를 주고, 적을 불태웁니다.",
+
+    "apothic_attributes:life_steal": "생명력 흡수",
+    "apothic_attributes:life_steal.desc": "입힌 피해만큼 회복하는 비율.",
+
+    "apothic_attributes:current_hp_damage": "현재 HP 피해",
+    "apothic_attributes:current_hp_damage.desc": "대상의 현재 체력에 비례해 근접 공격 추가 피해.",
+
+    "apothic_attributes:overheal": "초과치유",
+    "apothic_attributes:overheal.desc": "피해를 입힌 후 흡수 보호막을 얻는 비율.",
+
+    "apothic_attributes:ghost_health": "Ghost Health",
+    "apothic_attributes:ghost_health.desc": "Not Yet Implemented",
+
+
+    "apothic_attributes:arrow_damage": "화살 피해",
+    "apothic_attributes:arrow_damage.desc": "화살의 피해 배수. 삼지창도 화살로 분류.",
+
+    "apothic_attributes:arrow_velocity": "화살 속도",
+    "apothic_attributes:arrow_velocity.desc": "화살의 속도 배수. 화살의 피해는 속도에 비례함.",
+
+    "apothic_attributes:experience_gained": "경험치 획득량",
+    "apothic_attributes:experience_gained.desc": "블록을 부수고 몹을 처치해 얻는 경험치의 배수",
+
+    "apothic_attributes:healing_received": "받는 치유",
+    "apothic_attributes:healing_received.desc": "들어오는 모든 치유의 배수.",
+
+    "apothic_attributes:armor_pierce": "방어 관통",
+    "apothic_attributes:armor_pierce.desc": "대상의 방어력 수치를 일정하게 감소시킵니다.",
+
+    "apothic_attributes:armor_shred": "방어 분쇄",
+    "apothic_attributes:armor_shred.desc": "대상의 방어력 수치를 %로 감소시킵니다.",
+
+    "apothic_attributes:projectile_damage": "투사체 피해",
+    "apothic_attributes:projectile_damage.desc": "모든 투사체에 대한 피해 배수.",
+
+    "apothic_attributes:prot_pierce": "보호 관통",
+    "apothic_attributes:prot_pierce.desc": "대상의 보호 수치를 일정하게 감소시킵니다.",
+
+    "apothic_attributes:prot_shred": "보호 분쇄",
+    "apothic_attributes:prot_shred.desc": "대상의 보호 수치를 %로 감소시킵니다.",
+
+    "apothic_attributes:dodge_chance": "회피 확률",
+    "apothic_attributes:dodge_chance.desc": "근접 공격이나 투사체를 회피할 확률.",
+
+    "apothic_attributes:elytra_flight": "겉날개 비행",
+    "apothic_attributes:elytra_flight.desc": "겉날개를 착용한 것처럼 비행 가능.",
+
+    "apothic_attributes:creative_flight": "크리에이티브 비행",
+    "apothic_attributes:creative_flight.desc": "크리에이티브 모드 처럼 비행 가능.",
+
+    "comment_id": "MobFx - descriptions are duplicated for JEED support.",
+
+    "effect.apothic_attributes.knowledge": "고대 지식",
+    "effect.apothic_attributes.vitality": "폭발적인 활력",
+    "effect.apothic_attributes.grievous": "심각한 상처",
+    "effect.apothic_attributes.flying": "비행",
+
+    "effect.apothic_attributes.sundering": "찢어짐",
+    "effect.apothic_attributes.sundering.desc": "받는 피해 증가.",
+    "effect.apothic_attributes.sundering.description": "받는 피해가 증가합니다.",
+
+    "effect.apothic_attributes.bleeding": "출혈",
+    "effect.apothic_attributes.bleeding.desc": "2초마다 피해를 입음.",
+    "effect.apothic_attributes.bleeding.description": "2초마다 피해를 입습니다.",
+
+    "effect.apothic_attributes.detonation": "불타는 폭발",
+    "effect.apothic_attributes.detonation.desc": "만료 시, 남은 화염 틱에 비례해 피해를 입힘.",
+    "effect.apothic_attributes.detonation.description": "만료 시, 남은 화염 틱에 비례해 피해를 입힙니다.",
+
+    "effect.minecraft.night_vision.desc": "어둠 속에서도 볼 수 있게 해줍니다",
+    "effect.minecraft.invisibility.desc": "장비를 제외하고 보이지 않게 합니다.",
+    "effect.minecraft.jump_boost.desc": "점프 높이를 증가시킵니다.",
+    "effect.minecraft.fire_resistance.desc": "화염 피해에 면역입니다.",
+    "effect.minecraft.water_breathing.desc": "익사하지 않습니다.",
+    "effect.minecraft.instant_health.desc": "일정량의 체력을 즉시 회복합니다.",
+    "effect.minecraft.instant_damage.desc": "일정량의 마법 피해를 즉시 받습니다.",
+    "effect.minecraft.poison.desc": "치명적이지는 않은 지속 피해를 받습니다.",
+    "effect.minecraft.regeneration.desc": "일정 시간동안 체력 재생 효과를 얻습니다.",
+
+
+    "death.attack.apothic_attributes:bleeding": "%1$s이(가) 출혈사했습니다",
+    "death.attack.apothic_attributes:bleeding.item": "%1$s이(가) %2$s의 %3$s에 의해 이 출혈사했습니다.",
+    "death.attack.apothic_attributes:bleeding.player": "%1$s이(가) %2$s에게 벗어나려다 출혈사했습니다.",
+
+    "death.attack.apothic_attributes:detonation": "%1$s이(가) 불꽃에 의해 폭사했습니다",
+    "death.attack.apothic_attributes:detonation.item": "%1$s이(가) 불꽃에 의해 폭사했습니다",
+    "death.attack.apothic_attributes:detonation.player": "%1$s이(가) 불꽃에 의해 폭사했습니다",
+
+    "death.attack.apothic_attributes:current_hp_damage": "%1$s이(가) 쓰러졌습니다.",
+    "death.attack.apothic_attributes:current_hp_damage.item": "%1$이(가) %2$s의 %3$s에 의해 쓰러졌니다.",
+    "death.attack.apothic_attributes:current_hp_damage.player": "%1$s이(가) %2$s에게 쓰러졌습니다.",
+
+    "death.attack.apothic_attributes:fire_damage": "%1$s이(가) 검게 그을렸습니다.",
+    "death.attack.apothic_attributes:fire_damage.item": "%1$s이(가) %2$s의 %3$s에 의해 검게 그을렸습니다",
+    "death.attack.apothic_attributes:fire_damage.player": "%1$s이(가) %2$s에게 벗어나려다 검게 그을렸습니다",
+
+    "death.attack.apothic_attributes:cold_damage": "%1$s이(가) 얼어 죽었습니다.",
+    "death.attack.apothic_attributes:cold_damage.item": "%1$s이(가) %2$s의 %3$s에 의해 얼어죽었습니다.",
+    "death.attack.apothic_attributes:cold_damage.player": "%1$s이(가) %2$s에게 벗어나려다 얼어죽었습니다.",
+
+    "item.minecraft.potion.effect.minecraft.resistance": "저항의 물약",
+    "item.minecraft.splash_potion.effect.minecraft.resistance": "투척용 저항의 물약",
+    "item.minecraft.lingering_potion.effect.minecraft.resistance": "잔류형 저항의 물약",
+    "item.minecraft.tipped_arrow.effect.minecraft.resistance": "저항의 화살",
+
+    "item.minecraft.potion.effect.minecraft.absorption": "흡수의 물약",
+    "item.minecraft.splash_potion.effect.minecraft.absorption": "투척용 흡수의 물약",
+    "item.minecraft.lingering_potion.effect.minecraft.absorption": "잔류형 흡수의 물약",
+    "item.minecraft.tipped_arrow.effect.minecraft.absorption": "흡수의 화살",
+
+    "item.minecraft.potion.effect.minecraft.haste": "성급함의 물약",
+    "item.minecraft.splash_potion.effect.minecraft.haste": "투척용 성급함의 물약",
+    "item.minecraft.lingering_potion.effect.minecraft.haste": "잔류형 성급함의 물약",
+    "item.minecraft.tipped_arrow.effect.minecraft.haste": "성급함의 화살",
+
+    "item.minecraft.potion.effect.minecraft.mining_fatigue": "채굴 피로의 물약",
+    "item.minecraft.splash_potion.effect.minecraft.mining_fatigue": "투척용 채굴 피로의 물약",
+    "item.minecraft.lingering_potion.effect.minecraft.mining_fatigue": "잔류형 채굴 피로의 물약",
+    "item.minecraft.tipped_arrow.effect.minecraft.mining_fatigue": "채굴 피로의 화살",
+
+    "item.minecraft.potion.effect.minecraft.wither": "시듦의 물약",
+    "item.minecraft.splash_potion.effect.minecraft.wither": "투척용 시듦의 물약",
+    "item.minecraft.lingering_potion.effect.minecraft.wither": "잔류형 시듦의 물약",
+    "item.minecraft.tipped_arrow.effect.minecraft.wither": "시듦의 화살",
+
+    "item.minecraft.potion.effect.minecraft.levitation": "공중 부양의 물약",
+    "item.minecraft.splash_potion.effect.minecraft.levitation": "투척용 공중 부양의 물약",
+    "item.minecraft.lingering_potion.effect.minecraft.levitation": "잔류형 공중 부양의 물약",
+    "item.minecraft.tipped_arrow.effect.minecraft.levitation": "공중 부양의 화살",
+
+    "item.minecraft.potion.effect.apothic_attributes.sundering": "찢어짐의 물약",
+    "item.minecraft.splash_potion.effect.apothic_attributes.sundering": "투척용 찢어짐의 물약",
+    "item.minecraft.lingering_potion.effect.apothic_attributes.sundering": "잔류형 찢어짐의 물약",
+    "item.minecraft.tipped_arrow.effect.apothic_attributes.sundering": "찢어짐의 화살",
+
+    "item.minecraft.potion.effect.apothic_attributes.knowledge": "고대 지식의 물약",
+    "item.minecraft.splash_potion.effect.apothic_attributes.knowledge": "투척용 고대 지식의 물약",
+    "item.minecraft.lingering_potion.effect.apothic_attributes.knowledge": "잔류형 고대 지식의 물약",
+    "item.minecraft.tipped_arrow.effect.apothic_attributes.knowledge": "고대 지식의 화살",
+
+    "item.minecraft.potion.effect.apothic_attributes.vitality": "치유 증폭의 물약",
+    "item.minecraft.splash_potion.effect.apothic_attributes.vitality": "투척용 치유 증폭의 물약",
+    "item.minecraft.lingering_potion.effect.apothic_attributes.vitality": "잔류형 치유 증폭의 물약",
+    "item.minecraft.tipped_arrow.effect.apothic_attributes.vitality": "치유 증폭의 화살",
+
+    "item.minecraft.potion.effect.apothic_attributes.grievous": "치유 감소의 물약",
+    "item.minecraft.splash_potion.effect.apothic_attributes.grievous": "투척용 치유 감소의 물약",
+    "item.minecraft.lingering_potion.effect.apothic_attributes.grievous": "잔류형 치유 감소의 물약",
+    "item.minecraft.tipped_arrow.effect.apothic_attributes.grievous": "치유 감소의 화살",
+
+    "item.minecraft.potion.effect.apothic_attributes.flying": "비행의 물약",
+    "item.minecraft.splash_potion.effect.apothic_attributes.flying": "투척용 비행의 물약",
+    "item.minecraft.lingering_potion.effect.apothic_attributes.flying": "잔류형 비행의 물약",
+    "item.minecraft.tipped_arrow.effect.apothic_attributes.flying": "비행의 화살"
+}

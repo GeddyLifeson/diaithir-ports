@@ -1,0 +1,8 @@
+{
+    "blocks": "apothic_enchanting:beeshelf",
+    "stats": {
+        "eterna": -30.0,
+        "maxEterna": 0.0,
+        "quanta": 100.0
+    }
+}

@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/coffee_pot"
+  "layer0": "diaithirfurnishings:item/coffee_pot_pot",
+  "layer1": "diaithirfurnishings:item/coffee_pot_handle"
  }
 }

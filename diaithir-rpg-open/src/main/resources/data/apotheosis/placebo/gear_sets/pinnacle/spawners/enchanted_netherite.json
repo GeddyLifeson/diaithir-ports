@@ -1,0 +1,185 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "apothic_spawners"
+        }
+    ],
+    "boots": [
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:protection": 10
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_boots"
+            },
+            "weight": 10
+        },
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:feather_falling": 15
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_boots"
+            },
+            "weight": 4
+        },
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:thorns": 15
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_boots"
+            },
+            "weight": 2
+        }
+    ],
+    "chestplates": [
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:protection": 10
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_chestplate"
+            },
+            "weight": 10
+        },
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:thorns": 15
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_chestplate"
+            },
+            "weight": 3
+        }
+    ],
+    "helmets": [
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:protection": 10
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_helmet"
+            },
+            "weight": 10
+        },
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:respiration": 15
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_helmet"
+            },
+            "weight": 3
+        },
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:thorns": 15
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_helmet"
+            },
+            "weight": 2
+        }
+    ],
+    "leggings": [
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:protection": 10
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_leggings"
+            },
+            "weight": 10
+        },
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "minecraft:thorns": 15
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_leggings"
+            },
+            "weight": 3
+        }
+    ],
+    "mainhands": [
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "apothic_spawners:capturing": 10
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_sword"
+            },
+            "weight": 6
+        },
+        {
+            "stack": {
+                "components": {
+                    "apotheosis:durability_bonus": 0.8,
+                    "minecraft:enchantments": {
+                        "apothic_spawners:capturing": 10
+                    }
+                },
+                "count": 1,
+                "id": "minecraft:netherite_axe"
+            },
+            "weight": 4
+        }
+    ],
+    "offhands": [
+        {
+            "stack": {
+                "count": 1,
+                "id": "minecraft:shield"
+            },
+            "weight": 10
+        }
+    ],
+    "quality": 5.0,
+    "weight": 20
+}
