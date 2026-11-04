@@ -7,7 +7,7 @@
     "age": "I",
     "text": "Timber, Age I: density 500 kg/m3, compressive strength 5 MPa, tensile strength 8 MPa, heat conductivity 0.13 W/(m K), no fire resistance, burns.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/timber_post_beam",
+    "quest": "mat_timber_post_beam",
     "connects": [
       "recipes:diaithir_materials:timber_post_beam"
     ]
@@ -20,7 +20,7 @@
     "age": "II",
     "text": "Timber, Age II: density 500 kg/m3, compressive strength 6 MPa, tensile strength 10 MPa, heat conductivity 0.13 W/(m K), no fire resistance, burns.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/timber_sawn",
+    "quest": "mat_timber_sawn",
     "connects": [
       "recipes:diaithir_materials:timber_sawn",
       "tags:c:timber/beam"
@@ -34,7 +34,7 @@
     "age": "VII",
     "text": "Timber, Age VII: density 550 kg/m3, compressive strength 25 MPa, tensile strength 24 MPa, heat conductivity 0.14 W/(m K), fire resistance 60 min, burns.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/timber_engineered",
+    "quest": "mat_timber_engineered",
     "connects": [
       "recipes:diaithir_materials:timber_engineered"
     ]
@@ -47,7 +47,7 @@
     "age": "I",
     "text": "Masonry, Age I: density 1600 kg/m3, compressive strength 2 MPa, tensile strength 0.2 MPa, heat conductivity 0.6 W/(m K), fire resistance 120 min.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/masonry_mud_brick",
+    "quest": "mat_masonry_mud_brick",
     "connects": [
       "recipes:diaithir_materials:masonry_mud_brick"
     ]
@@ -60,7 +60,7 @@
     "age": "I",
     "text": "Masonry, Age I: density 1900 kg/m3, compressive strength 15 MPa, tensile strength 1.5 MPa, heat conductivity 0.8 W/(m K), fire resistance 240 min.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/masonry_fired_brick",
+    "quest": "mat_masonry_fired_brick",
     "connects": [
       "recipes:diaithir_materials:masonry_fired_brick"
     ]
@@ -73,7 +73,7 @@
     "age": "II",
     "text": "Masonry, Age II: density 2400 kg/m3, compressive strength 40 MPa, tensile strength 4 MPa, heat conductivity 1.8 W/(m K), fire resistance 240 min.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/masonry_cut_stone",
+    "quest": "mat_masonry_cut_stone",
     "connects": [
       "recipes:diaithir_materials:masonry_cut_stone",
       "tags:c:stone/cut"
@@ -87,7 +87,7 @@
     "age": "IV",
     "text": "Masonry, Age IV: density 2000 kg/m3, compressive strength 10 MPa, tensile strength 1 MPa, heat conductivity 1 W/(m K), fire resistance 240 min.",
     "station": "station.smeltery",
-    "quest": "diaithir_materials:build/masonry_block",
+    "quest": "mat_masonry_block",
     "connects": [
       "recipes:diaithir_materials:masonry_block"
     ]
@@ -100,7 +100,7 @@
     "age": "I",
     "text": "Glass, Age I: density 2500 kg/m3, compressive strength 1000 MPa, tensile strength 40 MPa, heat conductivity 1 W/(m K), no fire resistance.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/glass_blown",
+    "quest": "mat_glass_blown",
     "connects": [
       "recipes:diaithir_materials:glass_blown",
       "tags:c:glass_blocks"
@@ -114,7 +114,7 @@
     "age": "III",
     "text": "Glass, Age III: density 2500 kg/m3, compressive strength 1000 MPa, tensile strength 45 MPa, heat conductivity 1 W/(m K), no fire resistance.",
     "station": "station.wright_bench",
-    "quest": "diaithir_materials:build/glass_sheet",
+    "quest": "mat_glass_sheet",
     "connects": [
       "recipes:diaithir_materials:glass_sheet",
       "tags:c:glass_blocks"
@@ -128,7 +128,7 @@
     "age": "V",
     "text": "Glass, Age V: density 2500 kg/m3, compressive strength 1000 MPa, tensile strength 50 MPa, heat conductivity 1 W/(m K), no fire resistance.",
     "station": "station.steam_forge",
-    "quest": "diaithir_materials:build/glass_plate",
+    "quest": "mat_glass_plate",
     "connects": [
       "recipes:diaithir_materials:glass_plate",
       "tags:c:glass_blocks"
@@ -142,7 +142,7 @@
     "age": "VI",
     "text": "Glass, Age VI: density 2500 kg/m3, compressive strength 1000 MPa, tensile strength 55 MPa, heat conductivity 1 W/(m K), no fire resistance.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/glass_float",
+    "quest": "mat_glass_float",
     "connects": [
       "recipes:diaithir_materials:glass_float",
       "tags:c:glass_blocks"
@@ -156,7 +156,7 @@
     "age": "VII",
     "text": "Glass, Age VII: density 2500 kg/m3, compressive strength 1000 MPa, tensile strength 90 MPa, heat conductivity 1 W/(m K), fire resistance 30 min.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/glass_laminated",
+    "quest": "mat_glass_laminated",
     "connects": [
       "recipes:diaithir_materials:glass_laminated",
       "tags:c:glass_blocks"
@@ -170,7 +170,7 @@
     "age": "II",
     "text": "Wall lining, Age II: density 1400 kg/m3, compressive strength 3 MPa, tensile strength 0.5 MPa, heat conductivity 0.7 W/(m K), fire resistance 60 min.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/lining_lime_plaster",
+    "quest": "mat_lining_lime_plaster",
     "connects": [
       "recipes:diaithir_materials:lining_lime_plaster",
       "tags:c:wallboard"
@@ -184,7 +184,7 @@
     "age": "IV",
     "text": "Wall lining, Age IV: density 1000 kg/m3, compressive strength 4 MPa, tensile strength 0.8 MPa, heat conductivity 0.4 W/(m K), fire resistance 90 min.",
     "station": "station.smeltery",
-    "quest": "diaithir_materials:build/lining_gypsum_plaster",
+    "quest": "mat_lining_gypsum_plaster",
     "connects": [
       "recipes:diaithir_materials:lining_gypsum_plaster",
       "tags:c:wallboard"
@@ -198,7 +198,7 @@
     "age": "V",
     "text": "Wall lining, Age V: density 800 kg/m3, compressive strength 5 MPa, tensile strength 2 MPa, heat conductivity 0.25 W/(m K), fire resistance 60 min.",
     "station": "station.steam_forge",
-    "quest": "diaithir_materials:build/lining_board",
+    "quest": "mat_lining_board",
     "connects": [
       "recipes:diaithir_materials:lining_board",
       "tags:c:wallboard"
@@ -212,7 +212,7 @@
     "age": "VI",
     "text": "Wall lining, Age VI: density 900 kg/m3, compressive strength 5 MPa, tensile strength 2 MPa, heat conductivity 0.25 W/(m K), fire resistance 120 min.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/lining_fire_board",
+    "quest": "mat_lining_fire_board",
     "connects": [
       "recipes:diaithir_materials:lining_fire_board",
       "tags:c:wallboard"
@@ -226,7 +226,7 @@
     "age": "I",
     "text": "Roofing, Age I: density 200 kg/m3, compressive strength 0.1 MPa, tensile strength 0.1 MPa, heat conductivity 0.07 W/(m K), no fire resistance, burns.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/roofing_thatch",
+    "quest": "mat_roofing_thatch",
     "connects": [
       "recipes:diaithir_materials:roofing_thatch",
       "tags:c:roofing"
@@ -240,7 +240,7 @@
     "age": "II",
     "text": "Roofing, Age II: density 2800 kg/m3, compressive strength 60 MPa, tensile strength 30 MPa, heat conductivity 2 W/(m K), fire resistance 240 min.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/roofing_slate",
+    "quest": "mat_roofing_slate",
     "connects": [
       "recipes:diaithir_materials:roofing_slate",
       "tags:c:roofing"
@@ -254,7 +254,7 @@
     "age": "III",
     "text": "Roofing, Age III: density 1900 kg/m3, compressive strength 15 MPa, tensile strength 8 MPa, heat conductivity 0.8 W/(m K), fire resistance 240 min.",
     "station": "station.wright_bench",
-    "quest": "diaithir_materials:build/roofing_tile",
+    "quest": "mat_roofing_tile",
     "connects": [
       "recipes:diaithir_materials:roofing_tile",
       "tags:c:roofing"
@@ -268,7 +268,7 @@
     "age": "V",
     "text": "Roofing, Age V: density 7850 kg/m3, compressive strength 300 MPa, tensile strength 350 MPa, heat conductivity 50 W/(m K), fire resistance 15 min.",
     "station": "station.steam_forge",
-    "quest": "diaithir_materials:build/roofing_metal_sheet",
+    "quest": "mat_roofing_metal_sheet",
     "connects": [
       "recipes:diaithir_materials:roofing_metal_sheet",
       "tags:c:roofing"
@@ -282,7 +282,7 @@
     "age": "VII",
     "text": "Roofing, Age VII: density 50 kg/m3, compressive strength 0.1 MPa, tensile strength 1 MPa, heat conductivity 0.025 W/(m K), fire resistance 30 min.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/roofing_insulated_panel",
+    "quest": "mat_roofing_insulated_panel",
     "connects": [
       "recipes:diaithir_materials:roofing_insulated_panel",
       "tags:c:roofing"
@@ -296,7 +296,7 @@
     "age": "I",
     "text": "Road surface, Age I: density 2400 kg/m3, compressive strength 40 MPa, tensile strength 4 MPa, heat conductivity 1.8 W/(m K), fire resistance 240 min, walking speed +5%.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/road_flagstone",
+    "quest": "mat_road_flagstone",
     "connects": [
       "recipes:diaithir_materials:road_flagstone",
       "tags:c:road_surface"
@@ -310,7 +310,7 @@
     "age": "II",
     "text": "Road surface, Age II: density 2300 kg/m3, compressive strength 40 MPa, tensile strength 4 MPa, heat conductivity 1.8 W/(m K), fire resistance 240 min, walking speed +10%.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/road_cobble",
+    "quest": "mat_road_cobble",
     "connects": [
       "recipes:diaithir_materials:road_cobble",
       "tags:c:road_surface"
@@ -324,7 +324,7 @@
     "age": "IV",
     "text": "Road surface, Age IV: density 2200 kg/m3, compressive strength 20 MPa, tensile strength 2 MPa, heat conductivity 1.3 W/(m K), no fire resistance, walking speed +20%.",
     "station": "station.smeltery",
-    "quest": "diaithir_materials:build/road_macadam",
+    "quest": "mat_road_macadam",
     "connects": [
       "recipes:diaithir_materials:road_macadam",
       "tags:c:road_surface"
@@ -338,7 +338,7 @@
     "age": "V",
     "text": "Road surface, Age V: density 2300 kg/m3, compressive strength 5 MPa, tensile strength 1 MPa, heat conductivity 0.8 W/(m K), no fire resistance, walking speed +30%.",
     "station": "station.steam_forge",
-    "quest": "diaithir_materials:build/road_asphalt",
+    "quest": "mat_road_asphalt",
     "connects": [
       "recipes:diaithir_materials:road_asphalt",
       "tags:c:road_surface"
@@ -352,7 +352,7 @@
     "age": "VI",
     "text": "Road surface, Age VI: density 2400 kg/m3, compressive strength 30 MPa, tensile strength 3 MPa, heat conductivity 1.7 W/(m K), fire resistance 180 min, walking speed +30%.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/road_concrete",
+    "quest": "mat_road_concrete",
     "connects": [
       "recipes:diaithir_materials:road_concrete",
       "tags:c:road_surface"
@@ -366,7 +366,7 @@
     "age": "I",
     "text": "Insulation, Age I: density 300 kg/m3, compressive strength 0.1 MPa, tensile strength 0.1 MPa, heat conductivity 0.1 W/(m K), no fire resistance, burns.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/insulation_turf",
+    "quest": "mat_insulation_turf",
     "connects": [
       "recipes:diaithir_materials:insulation_turf",
       "tags:c:insulation"
@@ -380,7 +380,7 @@
     "age": "IV",
     "text": "Insulation, Age IV: density 100 kg/m3, compressive strength 0.1 MPa, tensile strength 0.1 MPa, heat conductivity 0.04 W/(m K), fire resistance 240 min.",
     "station": "station.smeltery",
-    "quest": "diaithir_materials:build/insulation_rock_wool",
+    "quest": "mat_insulation_rock_wool",
     "connects": [
       "recipes:diaithir_materials:insulation_rock_wool",
       "tags:c:insulation"
@@ -394,7 +394,7 @@
     "age": "V",
     "text": "Insulation, Age V: density 30 kg/m3, compressive strength 0.1 MPa, tensile strength 0.1 MPa, heat conductivity 0.035 W/(m K), fire resistance 240 min.",
     "station": "station.steam_forge",
-    "quest": "diaithir_materials:build/insulation_glass_wool",
+    "quest": "mat_insulation_glass_wool",
     "connects": [
       "recipes:diaithir_materials:insulation_glass_wool",
       "tags:c:insulation"
@@ -408,7 +408,7 @@
     "age": "VII",
     "text": "Insulation, Age VII: density 35 kg/m3, compressive strength 0.2 MPa, tensile strength 0.2 MPa, heat conductivity 0.025 W/(m K), no fire resistance, burns.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/insulation_foam",
+    "quest": "mat_insulation_foam",
     "connects": [
       "recipes:diaithir_materials:insulation_foam",
       "tags:c:insulation"
@@ -422,7 +422,7 @@
     "age": "VIII",
     "text": "Insulation, Age VIII: density 150 kg/m3, compressive strength 0.5 MPa, tensile strength 0.1 MPa, heat conductivity 0.015 W/(m K), fire resistance 240 min.",
     "station": "station.fabricator",
-    "quest": "diaithir_materials:build/insulation_aerogel",
+    "quest": "mat_insulation_aerogel",
     "connects": [
       "recipes:diaithir_materials:insulation_aerogel",
       "tags:c:insulation"
@@ -436,7 +436,7 @@
     "age": "III",
     "text": "Iron and steel, Age III: density 7700 kg/m3, compressive strength 250 MPa, tensile strength 250 MPa, heat conductivity 50 W/(m K), fire resistance 15 min.",
     "station": "station.wright_bench",
-    "quest": "diaithir_materials:build/steel_wrought_bar",
+    "quest": "mat_steel_wrought_bar",
     "connects": [
       "recipes:diaithir_materials:steel_wrought_bar"
     ]
@@ -449,7 +449,7 @@
     "age": "IV",
     "text": "Iron and steel, Age IV: density 7200 kg/m3, compressive strength 300 MPa, tensile strength 300 MPa, heat conductivity 50 W/(m K), fire resistance 15 min.",
     "station": "station.smeltery",
-    "quest": "diaithir_materials:build/steel_rolled_iron",
+    "quest": "mat_steel_rolled_iron",
     "connects": [
       "recipes:diaithir_materials:steel_rolled_iron"
     ]
@@ -462,7 +462,7 @@
     "age": "V",
     "text": "Iron and steel, Age V: density 7850 kg/m3, compressive strength 350 MPa, tensile strength 400 MPa, heat conductivity 50 W/(m K), fire resistance 15 min.",
     "station": "station.steam_forge",
-    "quest": "diaithir_materials:build/steel_plate_angle",
+    "quest": "mat_steel_plate_angle",
     "connects": [
       "recipes:diaithir_materials:steel_plate_angle"
     ]
@@ -475,7 +475,7 @@
     "age": "VI",
     "text": "Iron and steel, Age VI: density 7850 kg/m3, compressive strength 350 MPa, tensile strength 400 MPa, heat conductivity 50 W/(m K), fire resistance 20 min.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/steel_i_beam",
+    "quest": "mat_steel_i_beam",
     "connects": [
       "recipes:diaithir_materials:steel_i_beam",
       "tags:c:beams/steel"
@@ -489,7 +489,7 @@
     "age": "VII",
     "text": "Iron and steel, Age VII: density 7850 kg/m3, compressive strength 300 MPa, tensile strength 350 MPa, heat conductivity 50 W/(m K), fire resistance 15 min.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/steel_light_gauge",
+    "quest": "mat_steel_light_gauge",
     "connects": [
       "recipes:diaithir_materials:steel_light_gauge"
     ]
@@ -502,7 +502,7 @@
     "age": "RODOS",
     "text": "Iron and steel, Age RODOS: density 4500 kg/m3, compressive strength 800 MPa, tensile strength 900 MPa, heat conductivity 20 W/(m K), fire resistance 60 min.",
     "station": "station.fabricator",
-    "quest": "diaithir_materials:build/steel_alloy_lattice",
+    "quest": "mat_steel_alloy_lattice",
     "connects": [
       "recipes:diaithir_materials:steel_alloy_lattice"
     ]
@@ -515,7 +515,7 @@
     "age": "II",
     "text": "Concrete, Age II: density 2000 kg/m3, compressive strength 20 MPa, tensile strength 2 MPa, heat conductivity 1.2 W/(m K), fire resistance 120 min.",
     "station": "station.hearth_bench",
-    "quest": "diaithir_materials:build/concrete_pozzolan",
+    "quest": "mat_concrete_pozzolan",
     "connects": [
       "recipes:diaithir_materials:concrete_pozzolan",
       "tags:c:concrete"
@@ -529,7 +529,7 @@
     "age": "IV",
     "text": "Concrete, Age IV: density 1400 kg/m3, compressive strength 0 MPa, tensile strength 0 MPa, heat conductivity 0.3 W/(m K), no fire resistance.",
     "station": "station.smeltery",
-    "quest": "diaithir_materials:build/cement_powder",
+    "quest": "mat_cement_powder",
     "connects": [
       "recipes:diaithir_materials:cement_powder",
       "tags:c:cement"
@@ -543,7 +543,7 @@
     "age": "V",
     "text": "Concrete, Age V: density 2400 kg/m3, compressive strength 30 MPa, tensile strength 3 MPa, heat conductivity 1.7 W/(m K), fire resistance 180 min.",
     "station": "station.steam_forge",
-    "quest": "diaithir_materials:build/concrete_portland",
+    "quest": "mat_concrete_portland",
     "connects": [
       "recipes:diaithir_materials:concrete_portland",
       "tags:c:concrete"
@@ -557,7 +557,7 @@
     "age": "VI",
     "text": "Concrete, Age VI: density 2500 kg/m3, compressive strength 40 MPa, tensile strength 250 MPa, heat conductivity 2 W/(m K), fire resistance 240 min.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/concrete_reinforced",
+    "quest": "mat_concrete_reinforced",
     "connects": [
       "recipes:diaithir_materials:concrete_reinforced",
       "tags:c:concrete"
@@ -571,7 +571,7 @@
     "age": "VII",
     "text": "Concrete, Age VII: density 2500 kg/m3, compressive strength 60 MPa, tensile strength 500 MPa, heat conductivity 2 W/(m K), fire resistance 240 min.",
     "station": "machine.assembler",
-    "quest": "diaithir_materials:build/concrete_precast",
+    "quest": "mat_concrete_precast",
     "connects": [
       "recipes:diaithir_materials:concrete_precast",
       "tags:c:concrete"
