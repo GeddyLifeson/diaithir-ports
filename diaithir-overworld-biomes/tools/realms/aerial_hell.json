@@ -1,0 +1,85 @@
+{
+ "modid": "aerialhell",
+ "title": "Aerial Hell",
+ "age": 4,
+ "dimension": "aerial_hell",
+ "default_block": "stellar_stone",
+ "top_block": "stellar_grass_block",
+ "filler_block": "stellar_dirt",
+ "sea_level": 48,
+ "ambient": {
+  "fog": "#7a6fa8",
+  "sky": "#5a4a8c",
+  "water": "#3a6a9a"
+ },
+ "icon": "aerialhell:stellar_grass_block",
+ "biome_style": {
+  "aerial_hell_plains": {
+   "temp": 0.7,
+   "fog": "#8a7fb8"
+  },
+  "aerial_tree_forest": {
+   "temp": 0.7,
+   "fog": "#7a6fa8"
+  },
+  "copper_pine_forest": {
+   "temp": 0.5,
+   "fog": "#b87a50"
+  },
+  "copper_pine_highland_forest": {
+   "temp": 0.3,
+   "fog": "#a8704a"
+  },
+  "cortinarius_violaceus_forest": {
+   "temp": 0.6,
+   "fog": "#6a3a8a"
+  },
+  "crystal_forest": {
+   "temp": 0.2,
+   "fog": "#9ac8e8"
+  },
+  "crystal_plains": {
+   "temp": 0.2,
+   "fog": "#a8d4f0"
+  },
+  "giant_red_mushroom_forest": {
+   "temp": 0.8,
+   "fog": "#c04040"
+  },
+  "lapis_robinia_savana": {
+   "temp": 1.0,
+   "fog": "#4a6ac8"
+  },
+  "shadow_forest": {
+   "temp": 0.3,
+   "fog": "#1a1428",
+   "top": "shadow_grass_block"
+  },
+  "shadow_plain": {
+   "temp": 0.3,
+   "fog": "#241c34",
+   "top": "shadow_grass_block"
+  },
+  "slippery_sand_ocean": {
+   "temp": 0.9,
+   "fog": "#e0d090"
+  },
+  "stellar_jungle": {
+   "temp": 0.9,
+   "fog": "#5a9a6a"
+  },
+  "verdigris_agaric_forest": {
+   "temp": 0.6,
+   "fog": "#4aa89a"
+  }
+ },
+ "portals": [
+  {
+   "block": "aerial_hell_portal",
+   "target": "aerialhell:aerial_hell",
+   "pad": "aerialhell:stellar_stone_bricks",
+   "activator": "aerialhell:volucite_shard",
+   "frame": "aerialhell:stellar_portal_frame_block"
+  }
+ ]
+}
