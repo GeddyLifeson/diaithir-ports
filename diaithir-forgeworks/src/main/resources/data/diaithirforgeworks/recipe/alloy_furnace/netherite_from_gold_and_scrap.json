@@ -1,0 +1,19 @@
+{
+  "type": "diaithirforgeworks:alloy_furnace",
+  "inputs": [
+    {
+      "ingredient": "minecraft:gold_ingot",
+      "count": 4
+    },
+    {
+      "ingredient": "minecraft:netherite_scrap",
+      "count": 4
+    }
+  ],
+  "energy": 9600,
+  "time": 400,
+  "result": {
+    "id": "minecraft:netherite_ingot",
+    "count": 2
+  }
+}
