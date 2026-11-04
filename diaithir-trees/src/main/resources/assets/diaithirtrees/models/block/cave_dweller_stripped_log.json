@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirtrees:block/cave_dweller_stripped_log_top",
-  "side": "diaithirtrees:block/cave_dweller_stripped_log"
- }
-}

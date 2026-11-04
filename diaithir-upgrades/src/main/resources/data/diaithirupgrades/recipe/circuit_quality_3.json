@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:circuit_quality_2", "K": "minecraft:diamond", "B": "minecraft:iron_ingot"}, "result": {"id": "diaithirupgrades:circuit_quality_3", "count": 1}}

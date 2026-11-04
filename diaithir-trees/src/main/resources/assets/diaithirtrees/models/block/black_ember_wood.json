@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "diaithirtrees:block/black_ember_log"
- }
-}

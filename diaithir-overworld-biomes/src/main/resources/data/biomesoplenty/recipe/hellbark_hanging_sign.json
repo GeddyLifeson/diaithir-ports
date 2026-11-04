@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["X X", "###", "###"], "key": {"X": "minecraft:iron_chain", "#": "biomesoplenty:stripped_hellbark_log"}, "result": {"id": "biomesoplenty:hellbark_hanging_sign", "count": 6}}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "theaurorian:block/silentwood_planks",
-    "side": "theaurorian:block/silentwood_planks",
-    "top": "theaurorian:block/silentwood_planks"
-  }
-}

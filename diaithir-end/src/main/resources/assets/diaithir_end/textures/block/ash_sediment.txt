@@ -1,1 +1,0 @@
-64px Industrial Factory style: fine-grain dark-grey sediment, subtle steel riveted border. (texture binary supplied by art pipeline)

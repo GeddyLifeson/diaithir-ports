@@ -1,6 +1,0 @@
-{
-   "textures" : {
-      "layer0" : "pneumaticcraft:item/module_expansion_card"
-   },
-   "parent" : "item/generated"
-}

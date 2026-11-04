@@ -1,9 +1,0 @@
-{
- "replace": false,
- "values": [
-  {
-   "id": "#c:ingots/rodos_alloy",
-   "required": false
-  }
- ]
-}

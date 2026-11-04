@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "alexscaves:block/thornwood/stripped_thornwood_log",
-    "side": "alexscaves:block/thornwood/stripped_thornwood_log"
-  }
-}

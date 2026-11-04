@@ -1,8 +1,0 @@
-{
-    "parent": "minecraft:block/orientable",
-    "textures": {
-        "front": "apothic_enchanting:blocks/geode_shelf_2",
-        "side": "apothic_enchanting:blocks/filtering_shelf/side",
-        "top": "apothic_enchanting:blocks/base_shelf"
-    }
-}

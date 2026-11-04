@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/fence_side",
- "textures": {
-  "texture": "diaithirfarmkitchen:block/kitchen_fence_oak"
- }
-}

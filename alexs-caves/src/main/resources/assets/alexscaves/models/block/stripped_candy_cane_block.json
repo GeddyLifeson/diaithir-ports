@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "side": "alexscaves:block/candy_cane_stripped",
-        "bottom": "alexscaves:block/candy_cane_block_top_stripped",
-        "top": "alexscaves:block/candy_cane_block_top_stripped"
-    }
-}

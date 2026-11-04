@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirworldsys:item/crafting_on_a_stick_smithing_table"
- }
-}

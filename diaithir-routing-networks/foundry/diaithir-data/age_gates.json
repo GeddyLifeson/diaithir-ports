@@ -1,9 +1,0 @@
-{
- "namespaces": {},
- "items": {
-  "diaithirrouting:foundry_barrel": "V",
-  "diaithirrouting:foundry_sieve": "V",
-  "diaithirrouting:foundry_router": "V"
- },
- "_note": "Same Ages as data/diaithirrouting/age_gate.json; draft for the tech-tree thread to confirm."
-}

@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirtrees:block/bull_pine_stripped_log_top",
-  "side": "diaithirtrees:block/bull_pine_stripped_log"
- }
-}

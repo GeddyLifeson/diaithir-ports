@@ -1,6 +1,0 @@
-{
-    "name": "Spawners",
-    "description": "$(9)Apothic Spawners$() lets you move and modify $(9)Mob Spawners$().$(p)Apotheosis replaces its upgrade recipes with Spawner Runes.",
-    "icon": "minecraft:spawner",
-	"flag": "apotheosis:spawner"
-}

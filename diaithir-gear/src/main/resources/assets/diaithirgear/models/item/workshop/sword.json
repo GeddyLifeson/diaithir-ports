@@ -1,9 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirgear:item/workshop/sword_head",
-  "layer1": "diaithirgear:item/workshop/sword_guard",
-  "layer2": "diaithirgear:item/workshop/sword_handle",
-  "layer3": "diaithirgear:item/workshop/sword_binding"
- }
-}

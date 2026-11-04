@@ -1,6 +1,0 @@
-{
-   "textures" : {
-      "layer0" : "pneumaticcraft:item/bandage"
-   },
-   "parent" : "item/generated"
-}

@@ -1,8 +1,0 @@
-{
-  "ui.toast.research_finished": {
-    "category": "master",
-    "sounds": [
-      "researcher:ui/toast/research_finished"
-    ]
-  }
-}

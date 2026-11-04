@@ -1,3 +1,0 @@
-{ "rules": [
-  { "pattern": "diaithirupgrades:beacon", "priority": 0, "slots": 2, "allowed": ["speed", "efficiency", "quality"], "max_quality": 4 }
-] }

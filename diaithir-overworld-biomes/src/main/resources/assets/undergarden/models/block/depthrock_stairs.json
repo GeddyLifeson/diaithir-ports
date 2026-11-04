@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/stairs",
- "textures": {
-  "bottom": "undergarden:block/depthrock_stairs",
-  "side": "undergarden:block/depthrock_stairs",
-  "top": "undergarden:block/depthrock_stairs"
- }
-}

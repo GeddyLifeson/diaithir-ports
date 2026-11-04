@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "undergarden:block/wigglewood_slab",
-  "side": "undergarden:block/wigglewood_slab",
-  "top": "undergarden:block/wigglewood_slab"
- }
-}

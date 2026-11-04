@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithircreatureutils:item/wheat_bait_item"
- }
-}

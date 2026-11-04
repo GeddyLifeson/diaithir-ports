@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/cube_all",
-"textures": {
-"all": "diaithir_planets:block/krouktaggun_voraiktak_ore"
-}
-}

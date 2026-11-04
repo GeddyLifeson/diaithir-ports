@@ -1,7 +1,0 @@
-{
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "particle": "block/mushroom_stem"
-  },
-  "elements": []
-}

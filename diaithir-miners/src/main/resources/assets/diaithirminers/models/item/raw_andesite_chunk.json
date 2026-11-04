@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "diaithirminers:item/raw_andesite_chunk"
-  }
-}

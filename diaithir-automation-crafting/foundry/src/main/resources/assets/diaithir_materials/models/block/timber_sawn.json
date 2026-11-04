@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "diaithir_materials:block/timber_sawn"
-  }
-}

@@ -1,9 +1,0 @@
-{
- "type": "create:haunting",
- "ingredient": "create_droid_diamond:scorial_coal",
- "results": [
-  {
-   "id": "create_droid_diamond:haunted_scorial_coal"
-  }
- ]
-}

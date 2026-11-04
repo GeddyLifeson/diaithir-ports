@@ -1,9 +1,0 @@
-{
-  "entities": [
-    "lycanitesmobs:epion"
-  ],
-  "size": "medium",
-  "count": 1,
-  "trait": "immersive_tanning:lightweight",
-  "priority": 10
-}

@@ -1,9 +1,0 @@
-{
- "type": "create:splashing",
- "ingredient": "#createloveandwar:plastic",
- "results": [
-  {
-   "id": "createloveandwar:white_plastic"
-  }
- ]
-}

@@ -1,1 +1,0 @@
-{"id":"diaithir_overworld_biomes:quests/visit_volcanic_plains","age":2,"task":{"type":"visit_biome","biome":"biomesoplenty:volcanic_plains"},"codex_link":"biomesoplenty:volcanic_plains","reward":{"energy_J":2000},"global_event":"biomes_ready"}

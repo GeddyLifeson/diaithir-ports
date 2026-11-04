@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "alexscaves:block/wafer_cookie_block",
-    "side": "alexscaves:block/wafer_cookie_block",
-    "top": "alexscaves:block/wafer_cookie_block"
-  }
-}

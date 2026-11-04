@@ -1,7 +1,0 @@
-{
-"parent": "minecraft:block/cube_column",
-"textures": {
-"end": "diaithir_planets:block/halurdock_grimuthakar_log_top",
-"side": "diaithir_planets:block/halurdock_grimuthakar_log"
-}
-}

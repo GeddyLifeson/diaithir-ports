@@ -1,8 +1,0 @@
-{
-  "required": true,
-  "package": "org.diaithir.connected.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "minVersion": "0.8",
-  "mixins": ["RotationPropagatorMixin"],
-  "injectors": {"defaultRequire": 1}
-}

@@ -1,9 +1,0 @@
-{
- "type": "create:haunting",
- "ingredient": "minecraft:shulker_shell",
- "results": [
-  {
-   "id": "minecraft:turtle_scute"
-  }
- ]
-}

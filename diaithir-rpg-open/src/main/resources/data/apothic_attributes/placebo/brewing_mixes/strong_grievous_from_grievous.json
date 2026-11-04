@@ -1,6 +1,0 @@
-{
-  "mix_type": "potion",
-  "from": "apothic_attributes:grievous",
-  "ingredient": "minecraft:glowstone_dust",
-  "to": "apothic_attributes:strong_grievous"
-}

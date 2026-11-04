@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "diaithircropgenes:block/glass_crate_lamp"
- }
-}

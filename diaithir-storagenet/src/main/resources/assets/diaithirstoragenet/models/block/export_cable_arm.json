@@ -1,6 +1,0 @@
-{
-  "parent": "diaithirstoragenet:block/cable_arm",
-  "textures": {
-    "all": "diaithirstoragenet:block/export_cable"
-  }
-}

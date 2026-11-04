@@ -1,6 +1,0 @@
-{
-  "mix_type": "potion",
-  "from": "apothic_attributes:grievous",
-  "ingredient": "minecraft:redstone",
-  "to": "apothic_attributes:long_grievous"
-}

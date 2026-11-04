@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "": [
-            { "model": "apothic_enchanting:block/soul_touched_sculkshelf" },
-            { "model": "apothic_enchanting:block/soul_touched_sculkshelf_2" },
-            { "model": "apothic_enchanting:block/soul_touched_sculkshelf_3" }
-        ]
-    }
-}

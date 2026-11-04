@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirtrees:block/star_fruit_stripped_log_top",
-  "side": "diaithirtrees:block/star_fruit_stripped_log"
- }
-}

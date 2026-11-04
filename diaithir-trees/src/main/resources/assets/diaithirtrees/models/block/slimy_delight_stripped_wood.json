@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "diaithirtrees:block/slimy_delight_stripped_log"
- }
-}

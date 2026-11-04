@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cross",
- "textures": {
-  "cross": "the_bumblezone:block/crystalline_flower"
- }
-}

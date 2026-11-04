@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["ABA", "BKB", "ACA"], "key": {"A": "minecraft:redstone", "B": "minecraft:iron_ingot", "C": "minecraft:copper_ingot", "K": "minecraft:gold_ingot"}, "result": {"id": "diaithirupgrades:circuit_productivity_1", "count": 1}}

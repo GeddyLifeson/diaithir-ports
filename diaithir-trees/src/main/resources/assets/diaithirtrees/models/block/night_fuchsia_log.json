@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirtrees:block/night_fuchsia_log_top",
-  "side": "diaithirtrees:block/night_fuchsia_log"
- }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "alexscaves:block/abyssmarine_bricks",
-    "side": "alexscaves:block/abyssmarine_bricks",
-    "top": "alexscaves:block/abyssmarine_bricks"
-  }
-}

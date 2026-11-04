@@ -1,1 +1,0 @@
-{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"data":{"Name":"minecraft:short_grass"},"weight":5},{"data":{"Name":"minecraft:dandelion"},"weight":2},{"data":{"Name":"minecraft:orange_tulip"},"weight":2},{"data":{"Name":"minecraft:red_tulip"},"weight":1}]}}}

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "the_backwoods:block/petrified_rotten_oak_slab",
-  "side": "the_backwoods:block/petrified_rotten_oak_slab",
-  "top": "the_backwoods:block/petrified_rotten_oak_slab"
- }
-}

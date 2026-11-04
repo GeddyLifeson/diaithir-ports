@@ -1,1 +1,0 @@
-{"type":"minecraft:random_selector","config":{"default":{"feature":"minecraft:oak","placement":[]},"features":[{"chance":0.35,"feature":{"feature":"minecraft:fancy_oak","placement":[]}},{"chance":0.3,"feature":{"feature":"minecraft:birch","placement":[]}},{"chance":0.04,"feature":"minecraft:fallen_oak_tree"}]}}

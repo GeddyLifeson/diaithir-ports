@@ -1,8 +1,0 @@
-{
-  "key.inventoryui.sort": "Sort Container",
-  "key.inventoryui.drag": "Drag-Move Modifier",
-  "key.inventoryui.lock": "Lock Slot",
-  "key.inventoryui.move_all": "Move All Matching (modifier)",
-  "key.categories.inventoryui": "Inventory UI",
-  "tooltip.inventoryui.sort": "Sort container"
-}

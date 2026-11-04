@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "alexscaves:item/biome_treat",
-    "layer1": "alexscaves:item/biome_treat_color"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "top": "diaithirautomationcrafting:block/researcher_top",
-    "bottom": "diaithirautomationcrafting:block/researcher_top",
-    "side": "diaithirautomationcrafting:block/researcher_side"
-  }
-}

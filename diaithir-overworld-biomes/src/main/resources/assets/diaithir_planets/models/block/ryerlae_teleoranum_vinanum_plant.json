@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/cross",
-"textures": {
-"cross": "diaithir_planets:block/ryerlae_teleoranum_vinanum_plant"
-}
-}

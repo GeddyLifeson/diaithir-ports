@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "diaithir_materials:block/glass_laminated"
-  },
-  "render_type": "minecraft:cutout"
-}

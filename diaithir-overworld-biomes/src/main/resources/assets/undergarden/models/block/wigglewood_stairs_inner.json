@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/inner_stairs",
- "textures": {
-  "bottom": "undergarden:block/wigglewood_stairs",
-  "side": "undergarden:block/wigglewood_stairs",
-  "top": "undergarden:block/wigglewood_stairs"
- }
-}

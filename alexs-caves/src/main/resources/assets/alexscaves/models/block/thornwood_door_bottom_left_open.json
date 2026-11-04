@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left_open",
-  "render_type": "cutout_mipped",
-  "textures": {
-    "bottom": "alexscaves:block/thornwood/thornwood_door_bottom",
-    "top": "alexscaves:block/thornwood/thornwood_door_top"
-  }
-}

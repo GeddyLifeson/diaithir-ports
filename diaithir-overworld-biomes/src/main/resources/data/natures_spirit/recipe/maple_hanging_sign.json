@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["X X", "###", "###"], "key": {"X": "minecraft:iron_chain", "#": "natures_spirit:stripped_maple_log"}, "result": {"id": "natures_spirit:maple_hanging_sign", "count": 6}}

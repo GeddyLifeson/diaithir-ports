@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["X X", "###", "###"], "key": {"X": "minecraft:iron_chain", "#": "biomesoplenty:stripped_umbran_log"}, "result": {"id": "biomesoplenty:umbran_hanging_sign", "count": 6}}

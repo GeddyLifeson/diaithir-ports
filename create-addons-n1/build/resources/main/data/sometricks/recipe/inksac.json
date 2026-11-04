@@ -1,9 +1,0 @@
-{
- "type": "create:splashing",
- "ingredient": "minecraft:charcoal",
- "results": [
-  {
-   "id": "minecraft:ink_sac"
-  }
- ]
-}

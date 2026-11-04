@@ -1,9 +1,0 @@
-{
- "type": "create:pressing",
- "ingredient": "minecraft:netherite_ingot",
- "results": [
-  {
-   "id": "createloveandwar:netherite_sheet"
-  }
- ]
-}

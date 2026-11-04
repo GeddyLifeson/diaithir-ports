@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "create_connected:block/brake_powered",
-  "end": "create_connected:block/brake_end"
- }
-}

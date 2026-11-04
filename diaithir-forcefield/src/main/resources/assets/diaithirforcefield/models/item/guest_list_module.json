@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "diaithirforcefield:item/guest_list_module"
-  }
-}

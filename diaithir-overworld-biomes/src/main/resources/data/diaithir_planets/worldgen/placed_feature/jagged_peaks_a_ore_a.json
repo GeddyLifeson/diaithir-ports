@@ -1,1 +1,0 @@
-{"feature":"diaithir_planets:jagged_peaks_a_ore_a","placement":[{"type":"minecraft:count","count":6},{"type":"minecraft:in_square"},{"type":"minecraft:height_range","height":{"type":"minecraft:trapezoid","max_inclusive":{"absolute":256},"min_inclusive":{"absolute":64}}},{"type":"minecraft:biome"}]}

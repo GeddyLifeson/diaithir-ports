@@ -1,8 +1,0 @@
-{
- "input": "theaurorian:moonstone_shield",
- "output": {
-  "id": "theaurorian:umbra_shield",
-  "count": 1
- },
- "catalyst": "theaurorian:umbra_ingot"
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "diaithirbridges:block/carrier_tank_top",
-    "side": "diaithirbridges:block/carrier_tank_side"
-  }
-}

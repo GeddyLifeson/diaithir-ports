@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/leaves",
- "textures": {
-  "all": "diaithirtrees:block/silver_fir_leaves"
- }
-}

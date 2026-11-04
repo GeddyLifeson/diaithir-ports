@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "create_droid_diamond:item/impure_diamond_chunk"
-  }
-}

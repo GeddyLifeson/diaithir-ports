@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/template_trapdoor_top",
- "textures": {
-  "texture": "the_backwoods:block/lignum_caro_trapdoor"
- }
-}

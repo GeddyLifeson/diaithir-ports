@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "undergarden:block/smogstem_slab",
-  "side": "undergarden:block/smogstem_slab",
-  "top": "undergarden:block/smogstem_slab"
- }
-}

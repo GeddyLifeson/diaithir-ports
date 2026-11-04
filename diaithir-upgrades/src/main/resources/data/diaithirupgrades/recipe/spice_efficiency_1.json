@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["ABA", "BKB", "ACA"], "key": {"A": "minecraft:sweet_berries", "B": "minecraft:wheat", "C": "minecraft:bone_meal", "K": "minecraft:glowstone_dust"}, "result": {"id": "diaithirupgrades:spice_efficiency_1", "count": 1}}

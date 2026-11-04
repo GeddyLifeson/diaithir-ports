@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/template_fence_gate_open",
- "textures": {
-  "texture": "undergarden:block/grongle_fence_gate"
- }
-}

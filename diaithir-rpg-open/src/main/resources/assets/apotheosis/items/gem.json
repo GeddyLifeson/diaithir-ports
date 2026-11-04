@@ -1,9 +1,0 @@
-{
-    "model": {
-        "type": "apotheosis:gem_dispatch",
-        "fallback": {
-            "type": "minecraft:model",
-            "model": "apotheosis:item/gem"
-        }
-    }
-}

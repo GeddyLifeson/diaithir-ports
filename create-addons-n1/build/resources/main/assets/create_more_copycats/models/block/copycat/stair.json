@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "create:block/copycat_base",
-    "side": "create:block/copycat_base",
-    "top": "create:block/copycat_base"
-  }
-}

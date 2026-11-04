@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirbutchery:block/cold_room_top",
-  "side": "diaithirbutchery:block/cold_room_side"
- }
-}

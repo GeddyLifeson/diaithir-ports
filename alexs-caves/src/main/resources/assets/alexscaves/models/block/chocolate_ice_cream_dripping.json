@@ -1,8 +1,0 @@
-{
-  "parent": "alexscaves:block/ice_cream_dripping_template",
-  "textures": {
-    "drip": "alexscaves:block/chocolate_ice_cream_dripping",
-    "hang": "alexscaves:block/chocolate_ice_cream_hang",
-    "scoop": "alexscaves:block/chocolate_ice_cream"
-  }
-}

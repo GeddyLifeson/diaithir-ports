@@ -1,4 +1,0 @@
-catacombs
-denizen_camp
-depleted_mine
-forgotten_vestige

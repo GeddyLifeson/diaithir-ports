@@ -1,7 +1,0 @@
-{
-  "net/minecraft/server/MinecraftServer": ["io/github/tr100000/researcher/api/ResearchManagerGetter"],
-  "net/minecraft/server/ReloadableServerResources": ["io/github/tr100000/researcher/api/ResearchManagerGetter"],
-  "net/minecraft/server/players/PlayerList": ["io/github/tr100000/researcher/api/ServerResearchTrackerGetter"],
-  "net/minecraft/server/level/ServerPlayer": ["io/github/tr100000/researcher/api/PlayerResearchTrackerGetter"],
-  "net/minecraft/client/multiplayer/ClientPacketListener": ["io/github/tr100000/researcher/api/ClientResearchTrackerGetter"]
-}

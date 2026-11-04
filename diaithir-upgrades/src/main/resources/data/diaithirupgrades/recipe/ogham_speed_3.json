@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:ogham_speed_2", "K": "minecraft:sugar", "B": "minecraft:stone"}, "result": {"id": "diaithirupgrades:ogham_speed_3", "count": 1}}

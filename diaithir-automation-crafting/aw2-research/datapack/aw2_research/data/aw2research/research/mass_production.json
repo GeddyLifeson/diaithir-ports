@@ -1,8 +1,0 @@
-{
-  "title": "Mass Production",
-  "description": "Ancient Warfare 2 research: mass production.",
-  "prerequisites": [
-    "aw2research:refining",
-    "aw2research:machinery"
-  ]
-}

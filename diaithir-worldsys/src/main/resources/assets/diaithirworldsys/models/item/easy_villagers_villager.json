@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirworldsys:item/easy_villagers_villager"
- }
-}

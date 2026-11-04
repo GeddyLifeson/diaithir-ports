@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["#S#", "#S#"], "key": {"#": "biomesoplenty:willow_planks", "S": "minecraft:stick"}, "result": {"id": "biomesoplenty:willow_fence", "count": 3}}

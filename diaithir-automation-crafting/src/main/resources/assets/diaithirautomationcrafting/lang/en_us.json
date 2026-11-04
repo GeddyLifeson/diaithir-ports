@@ -1,7 +1,0 @@
-{
-  "block.diaithirautomationcrafting.pkgmod_researcher": "Researcher",
-  "block.diaithirautomationcrafting.pkgmod_packager": "Packager",
-  "block.diaithirautomationcrafting.pkgmod_unpackager": "Unpackager",
-  "item.diaithirautomationcrafting.pkgmod_package": "Package",
-  "item.diaithirautomationcrafting.pkgmod_reader": "Package Reader"
-}

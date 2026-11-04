@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/leaves",
- "textures": {
-  "all": "diaithirtrees:block/purple_crepe_myrtle_leaves"
- }
-}

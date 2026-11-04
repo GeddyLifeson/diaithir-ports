@@ -1,1 +1,0 @@
-{"feature":"diaithir_planets:windswept_hills_c_ore_a","placement":[{"type":"minecraft:count","count":27},{"type":"minecraft:in_square"},{"type":"minecraft:height_range","height":{"type":"minecraft:uniform","max_inclusive":{"absolute":192},"min_inclusive":{"absolute":0}}},{"type":"minecraft:biome"}]}

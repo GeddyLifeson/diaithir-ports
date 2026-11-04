@@ -1,8 +1,0 @@
-{
-  "tooltip.diaithir_tooltips.durability": "Durability: %s",
-  "tooltip.diaithir_tooltips.unbreakable": "Unbreakable",
-  "key.diaithir_tooltips.toggle_durability": "Toggle Durability Tooltip",
-  "key.category.diaithir_tooltips.main": "Diaithir Tooltips",
-  "message.diaithir_tooltips.durability.on": "Durability tooltip: on",
-  "message.diaithir_tooltips.durability.off": "Durability tooltip: off"
-}

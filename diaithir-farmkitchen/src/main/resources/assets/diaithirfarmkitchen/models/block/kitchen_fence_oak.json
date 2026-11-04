@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "diaithirfarmkitchen:block/kitchen_fence_oak"
- }
-}

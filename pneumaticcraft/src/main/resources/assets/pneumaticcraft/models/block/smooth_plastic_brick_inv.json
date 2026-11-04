@@ -1,8 +1,0 @@
-{
-  "loader": "neoforge:composite",
-  "children": {
-    "part1": {
-      "parent": "pneumaticcraft:block/plastic_brick_none_none"
-    }
-  }
-}

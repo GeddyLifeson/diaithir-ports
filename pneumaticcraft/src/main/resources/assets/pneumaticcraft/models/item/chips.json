@@ -1,6 +1,0 @@
-{
-   "textures" : {
-      "layer0" : "pneumaticcraft:item/chips"
-   },
-   "parent" : "item/generated"
-}

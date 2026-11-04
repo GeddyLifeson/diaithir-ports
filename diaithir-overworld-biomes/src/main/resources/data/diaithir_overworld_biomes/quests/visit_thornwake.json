@@ -1,1 +1,0 @@
-{"id":"diaithir_overworld_biomes:quests/visit_thornwake","age":"VII","task":{"type":"visit_biome","biome":"diaithir_overworld_biomes:thornwake"},"codex_link":"diaithir_overworld_biomes:thornwake","reward":{"energy_J":5000},"global_event":"biomes_ready"}

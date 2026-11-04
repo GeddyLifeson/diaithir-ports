@@ -1,4 +1,0 @@
-- Update / migrate to 26.1.2
-- Add mk2 belt (twice as fast)
-- Add entity & player collisions to belts
-- Add entity movement to belts

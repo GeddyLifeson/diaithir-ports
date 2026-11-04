@@ -1,7 +1,0 @@
-{
-  "parent": "sometricks:custom/shieldblock",
-  "textures": {
-    "0": "sometricks:block/texture",
-    "particle": "sometricks:item/texture"
-  }
-}

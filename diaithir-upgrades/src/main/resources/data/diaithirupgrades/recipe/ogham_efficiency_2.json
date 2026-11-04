@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:ogham_efficiency_1", "K": "minecraft:glowstone_dust", "B": "minecraft:stone"}, "result": {"id": "diaithirupgrades:ogham_efficiency_2", "count": 1}}

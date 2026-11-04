@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "goety:block/polished_dark_ominous_stone",
-    "side": "goety:block/polished_dark_ominous_stone",
-    "top": "goety:block/polished_dark_ominous_stone"
-  }
-}

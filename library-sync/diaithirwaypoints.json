@@ -1,4 +1,0 @@
-[
-  {"id": "diaithirwaypoints:waypoint_stone", "name": "Clach-slighe", "text": "A standing stone that marks a path. Use it to light it for yourself; the stones you have lit are listed in chat. Stand beside any stone and pick a lit one to walk there. The walk costs experience points, one for every 100 m, up to 200, and a walk between dimensions costs as for 2000 m. A stone that has been broken drops out of your list when you try to reach it."},
-  {"id": "diaithirwaypoints:waypoint_scroll", "name": "Rolla-slighe", "text": "A scroll that walks you back to the stone you lit most recently, from anywhere, and is used up. Same experience cost as walking from a stone. Craft two from paper, an ender pearl and blue dye."}
-]

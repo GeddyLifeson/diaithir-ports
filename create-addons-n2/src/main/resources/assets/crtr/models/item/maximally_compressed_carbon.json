@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "crtr:item/maximally_compressed_carbon"
-  }
-}

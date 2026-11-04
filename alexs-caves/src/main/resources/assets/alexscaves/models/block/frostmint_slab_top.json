@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "alexscaves:block/frostmint",
-    "side": "alexscaves:block/frostmint_side",
-    "top": "alexscaves:block/frostmint"
-  }
-}

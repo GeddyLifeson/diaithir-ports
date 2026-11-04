@@ -1,6 +1,0 @@
-build/
-.gradle/
-run/
-server.log
-client.log
-gen.log

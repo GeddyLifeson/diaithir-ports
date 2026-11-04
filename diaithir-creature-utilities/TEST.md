@@ -1,2 +1,0 @@
-# Test: guard villagers fold (headless, NeoForge 26.1.2.109)
-Server boots clean with the guard entity registered. Summoned `diaithircreatureutilities:guard` (20 HP) and a zombie 8 blocks away on a forceloaded stone platform: the guard walked to it and killed it, guard stayed at full health. Sneak-use of a sword on an adult villager converts it (code path not exercised headless: needs a player). Renderer compiles; client join is not tested.

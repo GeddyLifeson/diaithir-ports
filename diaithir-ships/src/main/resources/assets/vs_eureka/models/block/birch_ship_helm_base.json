@@ -1,9 +1,0 @@
-{
-    "parent": "vs_eureka:block/template_ship_helm_base",
-	"textures": {
-		"log": "block/birch_log",
-		"log_top": "block/birch_log_top",
-		"planks": "block/birch_planks",
-		"particle": "block/birch_planks"
-	}
-  }

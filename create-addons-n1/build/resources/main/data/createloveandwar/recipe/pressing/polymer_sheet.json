@@ -1,9 +1,0 @@
-{
- "type": "create:pressing",
- "ingredient": "createloveandwar:polymer_ingot",
- "results": [
-  {
-   "id": "createloveandwar:polymer_sheet"
-  }
- ]
-}

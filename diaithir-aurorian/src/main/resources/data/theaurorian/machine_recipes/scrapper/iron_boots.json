@@ -1,7 +1,0 @@
-{
- "input": "minecraft:iron_boots",
- "output": {
-  "id": "minecraft:iron_nugget",
-  "count": 24
- }
-}

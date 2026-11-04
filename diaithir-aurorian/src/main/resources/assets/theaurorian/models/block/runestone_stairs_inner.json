@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "theaurorian:block/runestone",
-    "side": "theaurorian:block/runestone",
-    "top": "theaurorian:block/runestone"
-  }
-}

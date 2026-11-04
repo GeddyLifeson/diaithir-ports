@@ -1,1 +1,0 @@
-{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"weight":3,"data":{"Name":"minecraft:sweet_berry_bush","Properties":{"age":"3"}}},{"weight":2,"data":{"Name":"minecraft:sweet_berry_bush","Properties":{"age":"1"}}},{"weight":3,"data":{"Name":"minecraft:large_fern","Properties":{"half":"lower"}}}]}}}

@@ -1,6 +1,0 @@
-{
-   "textures" : {
-      "layer0" : "pneumaticcraft:item/reinforced_chest_kit"
-   },
-   "parent" : "item/generated"
-}

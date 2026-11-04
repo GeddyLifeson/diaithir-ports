@@ -1,9 +1,0 @@
-{
- "parent": "minecraft:block/cube_bottom_top",
- "textures": {
-  "top": "diaithirgear:block/workshop_bench_top",
-  "side": "diaithirgear:block/workshop_bench_side",
-  "bottom": "diaithirgear:block/workshop_bench_bottom",
-  "particle": "diaithirgear:block/workshop_bench_side"
- }
-}
