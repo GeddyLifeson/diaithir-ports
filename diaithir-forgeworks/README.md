@@ -11,7 +11,7 @@ Four machines, each in three casing tiers (Age IV, V, VI; speed 1x, 2x, 4x, FE b
 
 Every machine has a GUI: FE bar, progress arrow, input and output slots, module slots (open with the Upgrade Planner), a redstone button (ignore, needs a signal, stops on a signal) and a six-face side config. In the side config, left-click a face to cycle item access (closed, in, out, in and out) and right-click to switch FE intake for that face. Faces are world directions: D U N S W E. Hoppers and pipes see the machine through the normal item, energy and fluid capabilities.
 
-Upgrades are the shared modules (`circuit_speed_*`, `circuit_efficiency_*`, `circuit_productivity_*`, quality, plus ogham and spice themes). The old Veloqith, Thrimvael and Ostravine augment items are gone: their ids are registry aliases for `circuit_speed_1`, `circuit_efficiency_1` and `circuit_productivity_1`, so stacks in saves and chests load as those modules. A machine that still holds one in its old augment slot moves it into a free module slot on its first tick and drops what does not fit.
+Upgrades are the shared modules (`circuit_speed_*`, `circuit_efficiency_*`, `circuit_productivity_*` (quality modules are not accepted by these machines), plus ogham and spice themes). The old Veloqith, Thrimvael and Ostravine augment items are gone: their ids are registry aliases for `circuit_speed_1`, `circuit_efficiency_1` and `circuit_productivity_1`, so stacks in saves and chests load as those modules. A machine that still holds one in its old augment slot moves it into a free module slot on its first tick and drops what does not fit.
 
 Recipes are data. Each machine has its own recipe type (`diaithirforgeworks:crusher`, `alloy_furnace`, `sawmill`, `crucible`):
 
