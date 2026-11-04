@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "diaithircarts:block/rail_yard_controller_top",
+    "side": "diaithircarts:block/rail_yard_controller_front"
+  }
+}

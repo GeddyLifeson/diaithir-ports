@@ -9,6 +9,11 @@
   "block.diaithircarts.one_way_rail": "Eskavorn",
   "block.diaithircarts.destination_rail": "Tarvelmok",
   "block.diaithircarts.cart_loader": "Voskarmeth",
+  "block.diaithircarts.rail_yard_controller": "Hardemvoss",
+  "item.diaithircarts.cart_chassis": "Fremvak",
+  "item.diaithircarts.wheelset": "Rotamvek",
+  "item.diaithircarts.freight_body": "Grathmark",
+  "item.diaithircarts.bulk_body": "Skarvund",
   "item.diaithircarts.coupling_chain": "Quelvarith",
   "item.diaithircarts.chain_cutters": "Snithrekel"
 }

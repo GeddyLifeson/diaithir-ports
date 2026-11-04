@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "I I",
+    "SIS",
+    "I I"
+  ],
+  "result": {
+    "id": "diaithircarts:wheelset",
+    "count": 2
+  },
+  "category": "misc"
+}

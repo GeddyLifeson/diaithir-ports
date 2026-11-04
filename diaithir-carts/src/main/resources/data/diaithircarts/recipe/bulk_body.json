@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "H": "minecraft:hopper"
+  },
+  "pattern": [
+    "I I",
+    "IHI",
+    " I "
+  ],
+  "result": {
+    "id": "diaithircarts:bulk_body",
+    "count": 1
+  },
+  "category": "misc"
+}

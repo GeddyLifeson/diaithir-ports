@@ -50,6 +50,31 @@
   "text": "Cart loader. Put its back against a chest, barrel or hopper and its front toward a rail: it moves items between that container and a container cart (chest, hopper) standing on the rail, a stack every 8 ticks. Use it bare-handed to switch between loading and unloading; a redstone signal switches it off. Age V."
  },
  {
+  "id": "diaithircarts:rail_yard_controller",
+  "name": "Hardemvoss",
+  "text": "Rail yard controller. Choose a freight or bulk yard bare-handed (sneak to change), install cart chassis, two wheelsets and a body in that order by using them on it, and it builds each stage by itself. Bare-handed once complete it rolls a coupled train of three carts onto a rail within 3 blocks; with no rail nothing is spent. Parts need Age III. A real-time block, no turns."
+ },
+ {
+  "id": "diaithircarts:cart_chassis",
+  "name": "Fremvak",
+  "text": "Cart chassis. First part of a yard build: the frame the wheelsets and the body go on. Age III."
+ },
+ {
+  "id": "diaithircarts:wheelset",
+  "name": "Rotamvek",
+  "text": "Wheelset. Two go on each cart after the chassis. Age III."
+ },
+ {
+  "id": "diaithircarts:freight_body",
+  "name": "Grathmark",
+  "text": "Freight body. The last part of a freight build: three chest carts roll out. Age III."
+ },
+ {
+  "id": "diaithircarts:bulk_body",
+  "name": "Skarvund",
+  "text": "Bulk body. The last part of a bulk build: three hopper carts roll out. Age III."
+ },
+ {
   "id": "diaithircarts:coupling_chain",
   "name": "Quelvarith",
   "text": "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."

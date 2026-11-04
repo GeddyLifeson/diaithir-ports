@@ -3,7 +3,12 @@
     "age": 3,
     "items": [
       "diaithircarts:bronze_rail",
-      "diaithircarts:bronze_powered_rail"
+      "diaithircarts:bronze_powered_rail",
+      "diaithircarts:rail_yard_controller",
+      "diaithircarts:cart_chassis",
+      "diaithircarts:wheelset",
+      "diaithircarts:freight_body",
+      "diaithircarts:bulk_body"
     ]
   },
   "tier2": {

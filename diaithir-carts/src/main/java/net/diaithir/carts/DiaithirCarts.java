@@ -55,6 +55,15 @@ public final class DiaithirCarts {
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL));
     public static final DeferredItem<BlockItem> CART_LOADER_ITEM = ITEMS.registerSimpleBlockItem(CART_LOADER);
 
+    public static final DeferredBlock<RailYardBlock> RAIL_YARD = BLOCKS.registerBlock("rail_yard_controller", RailYardBlock::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.5F).sound(SoundType.METAL));
+    public static final DeferredItem<BlockItem> RAIL_YARD_ITEM = ITEMS.registerSimpleBlockItem(RAIL_YARD);
+    public static final DeferredRegister<net.minecraft.world.level.block.entity.BlockEntityType<?>> ENTITIES =
+            DeferredRegister.create(net.minecraft.core.registries.Registries.BLOCK_ENTITY_TYPE, ID);
+    public static final java.util.function.Supplier<net.minecraft.world.level.block.entity.BlockEntityType<RailYardBlock.Entity>> RAIL_YARD_ENTITY =
+            ENTITIES.register("rail_yard_controller", () -> new net.minecraft.world.level.block.entity.BlockEntityType<>(RailYardBlock.Entity::new, RAIL_YARD.get()));
+    public static final List<DeferredItem<Item>> YARD_PARTS = List.of("cart_chassis", "wheelset", "freight_body", "bulk_body").stream().map(ITEMS::registerSimpleItem).toList();
+
     public static final DeferredBlock<BlockSignal> BLOCK_SIGNAL = BLOCKS.registerBlock("block_signal", BlockSignal::new,
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F).sound(SoundType.METAL).lightLevel(s -> s.getValue(BlockSignal.RED) ? 7 : 3));
     public static final DeferredItem<BlockItem> BLOCK_SIGNAL_ITEM = ITEMS.registerSimpleBlockItem(BLOCK_SIGNAL);
@@ -68,11 +77,13 @@ public final class DiaithirCarts {
 
     public DiaithirCarts(IEventBus bus) {
         BLOCKS.register(bus);
+        ENTITIES.register(bus);
+        RailYard.register();
         ITEMS.register(bus);
         Coupling.ATTACHMENTS.register(bus);
         Destination.ATTACHMENTS.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); }
+            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(RAIL_YARD_ITEM.get()); YARD_PARTS.forEach(i -> e.accept(i.get())); }
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
                 e.accept(COUPLING_CHAIN.get());
                 e.accept(CHAIN_CUTTERS.get());

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "S": "diaithircarts:steel_rail",
+    "H": "minecraft:crafter",
+    "C": "minecraft:clock"
+  },
+  "pattern": [
+    "ISI",
+    "SHS",
+    "ICI"
+  ],
+  "result": {
+    "id": "diaithircarts:rail_yard_controller",
+    "count": 1
+  },
+  "category": "misc"
+}

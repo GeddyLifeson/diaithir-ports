@@ -9,6 +9,7 @@
     "diaithircarts:station_rail",
     "diaithircarts:one_way_rail",
     "diaithircarts:destination_rail",
-    "diaithircarts:cart_loader"
+    "diaithircarts:cart_loader",
+    "diaithircarts:rail_yard_controller"
   ]
 }

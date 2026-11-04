@@ -275,6 +275,81 @@ wj("items/cart_loader.json", {"model": {"type": "minecraft:model", "model": f"{N
 item_def("coupling_chain", None, "item/coupling_chain")
 item_def("chain_cutters", None, "item/chain_cutters")
 
+# rail yard controller block and the four yard part items
+def yard_face(kind):
+    im = Image.new("RGBA", (16, 16))
+    px = im.load()
+    for y in range(16):
+        for x in range(16):
+            b = 88 + rnd.randrange(-6, 7)
+            edge = x in (0, 15) or y in (0, 15)
+            px[x, y] = ((48, 54, 62) if edge else (b, b + 6, b + 14)) + (255,)
+    if kind == "front":
+        for y in range(3, 8):
+            for x in range(3, 13):
+                px[x, y] = (24, 28, 34, 255)
+        for x in range(4, 12):
+            px[x, 5] = (240, 190, 30, 255) if x % 2 == 0 else (28, 28, 30, 255)
+        for y in range(10, 14):
+            for x in range(2, 14):
+                px[x, y] = (240, 190, 30, 255) if ((x + y) // 2) % 2 == 0 else (28, 28, 30, 255)
+    if kind == "top":
+        for x in range(2, 14):
+            for y in (4, 8, 12):
+                px[x, y] = (58, 64, 74, 255)
+    return im
+
+
+for k in ("top", "side", "front"):
+    save(yard_face(k), f"textures/block/rail_yard_controller_{k}.png")
+wj("models/block/rail_yard_controller.json", {"parent": "minecraft:block/cube_column", "textures": {"end": f"{NS}:block/rail_yard_controller_top", "side": f"{NS}:block/rail_yard_controller_front"}})
+wj("blockstates/rail_yard_controller.json", {"variants": {"": v("rail_yard_controller")}})
+wj("items/rail_yard_controller.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/rail_yard_controller"}})
+
+
+def part_icon(name):
+    im = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+    px = im.load()
+    S = [(120, 130, 142), (176, 186, 198), (70, 76, 86)]
+    if name == "cart_chassis":
+        for x in range(2, 14):
+            for y in (5, 6, 11, 12):
+                px[x, y] = S[1] if y in (5, 11) else S[0]
+        for y in range(5, 13):
+            px[2, y] = px[13, y] = S[0]
+            if y % 3 == 0:
+                for x in range(3, 13):
+                    px[x, y] = S[2]
+    elif name == "wheelset":
+        for dx in (4, 11):
+            for yy in range(16):
+                for xx in range(16):
+                    r = math.hypot(xx - dx, yy - 8)
+                    if r <= 3.6 and r >= 1.2:
+                        px[xx, yy] = S[1] if r < 2.5 else S[0]
+                    elif r < 1.2:
+                        px[xx, yy] = (240, 190, 30, 255)
+        for x in range(4, 12):
+            px[x, 8] = S[2]
+    else:
+        col = (150, 104, 60) if name == "freight_body" else (96, 100, 108)
+        for x in range(2, 14):
+            for y in range(4, 13):
+                px[x, y] = tuple(max(0, c - 22 * (y % 3 == 0)) for c in col) + (255,)
+        for x in range(2, 14):
+            px[x, 4] = S[1] + (255,)
+        if name == "bulk_body":
+            for x in range(4, 12):
+                for y in range(10, 13):
+                    px[x, y] = (30, 32, 36, 255)
+    return im
+
+
+for n in ("cart_chassis", "wheelset", "freight_body", "bulk_body"):
+    save(part_icon(n), f"textures/item/{n}.png")
+    item_def(n, None, f"item/{n}")
+
+
 NAMES = {
     "bronze_rail": ("Brundarok", "Bronze rail. Carts ride it up to 0.6 blocks per tick, half again vanilla speed. Curves, slopes and junctions work like a normal rail. Age III."),
     "bronze_powered_rail": ("Brundavoss", "Bronze powered rail. Boosts a cart when powered, stops it when not. Caps at 0.6 blocks per tick. Age III."),
@@ -286,12 +361,17 @@ NAMES = {
     "one_way_rail": ("Eskavorn", "One-way rail. A steel-speed rail with an arrow, set to the way you face when you place it. A cart rolling against the arrow is stopped dead; carts going with it pass as on any rail. Place it straight, on a flat run. Age V."),
     "destination_rail": ("Tarvelmok", "Destination rail. A steel-speed detector rail with a coloured bar. Label a cart by using a dye on it (sneak with an empty hand to wipe the label); use a dye on the rail to choose which label it reads, an empty hand to make it read every cart. It gives a redstone signal only while a cart with a matching label is on it, so a row of them sorts a mixed line: wire each to a powered rail or junction. Age V."),
     "cart_loader": ("Voskarmeth", "Cart loader. Put its back against a chest, barrel or hopper and its front toward a rail: it moves items between that container and a container cart (chest, hopper) standing on the rail, a stack every 8 ticks. Use it bare-handed to switch between loading and unloading; a redstone signal switches it off. Age V."),
+    "rail_yard_controller": ("Hardemvoss", "Rail yard controller. Choose a freight or bulk yard bare-handed (sneak to change), install cart chassis, two wheelsets and a body in that order by using them on it, and it builds each stage by itself. Bare-handed once complete it rolls a coupled train of three carts onto a rail within 3 blocks; with no rail nothing is spent. Parts need Age III. A real-time block, no turns.", ),
+    "cart_chassis": ("Fremvak", "Cart chassis. First part of a yard build: the frame the wheelsets and the body go on. Age III."),
+    "wheelset": ("Rotamvek", "Wheelset. Two go on each cart after the chassis. Age III."),
+    "freight_body": ("Grathmark", "Freight body. The last part of a freight build: three chest carts roll out. Age III."),
+    "bulk_body": ("Skarvund", "Bulk body. The last part of a bulk build: three hopper carts roll out. Age III."),
     "coupling_chain": ("Quelvarith", "Coupling chain. Use it on one cart, then on a second: the first leads, the second follows at a fixed spacing and is pulled along, so a row of carts runs as a train. A link breaks if the carts get more than 8 blocks apart. Age V."),
     "chain_cutters": ("Snithrekel", "Chain cutters. Sneak and use on a cart to cut its link and get the chain back. Age V."),
 }
 lang = {}
 for k, v_ in NAMES.items():
-    lang[("item." if k in ("coupling_chain", "chain_cutters") else "block.") + f"{NS}.{k}"] = v_[0]
+    lang[("item." if k in ("coupling_chain", "chain_cutters", "cart_chassis", "wheelset", "freight_body", "bulk_body") else "block.") + f"{NS}.{k}"] = v_[0]
 wj("lang/en_us.json", lang)
 
 with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as f:
@@ -299,13 +379,13 @@ with open(os.path.join(HERE, "..", "..", "library-sync", NS + ".json"), "w") as 
     f.write("\n")
 
 with open(os.path.join(D, "age_gate.json"), "w") as f:
-    json.dump({"tier1": {"age": 3, "items": [f"{NS}:bronze_rail", f"{NS}:bronze_powered_rail"]},
+    json.dump({"tier1": {"age": 3, "items": [f"{NS}:bronze_rail", f"{NS}:bronze_powered_rail", f"{NS}:rail_yard_controller", f"{NS}:cart_chassis", f"{NS}:wheelset", f"{NS}:freight_body", f"{NS}:bulk_body"]},
                "tier2": {"age": 5, "items": [f"{NS}:steel_rail", f"{NS}:steel_powered_rail", f"{NS}:station_rail", f"{NS}:one_way_rail", f"{NS}:destination_rail", f"{NS}:cart_loader", f"{NS}:coupling_chain", f"{NS}:chain_cutters"]},
                "tier3": {"age": 6, "items": [f"{NS}:fast_rail", f"{NS}:fast_powered_rail"]}}, f, indent=2)
     f.write("\n")
 
 RAILS = [k for k in NAMES if k.endswith("rail")]
-PICK = RAILS + ["cart_loader"]
+PICK = RAILS + ["cart_loader", "rail_yard_controller"]
 wj("data/minecraft/tags/block/rails.json", {"values": [f"{NS}:{k}" for k in RAILS]}, ROOT)
 wj("data/minecraft/tags/item/rails.json", {"values": [f"{NS}:{k}" for k in RAILS]}, ROOT)
 wj("data/minecraft/tags/block/mineable/pickaxe.json", {"values": [f"{NS}:{k}" for k in PICK]}, ROOT)
@@ -333,6 +413,11 @@ recipe("station_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [
 recipe("one_way_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_rail", "minecraft:iron_ingot"]})
 recipe("destination_rail", {"type": "minecraft:crafting_shapeless", "ingredients": [f"{NS}:steel_rail", "minecraft:redstone", "minecraft:lapis_lazuli"]})
 shaped("cart_loader", ["I I", "IHI", " R "], {"I": "minecraft:iron_ingot", "H": "minecraft:hopper", "R": "minecraft:redstone"})
+shaped("rail_yard_controller", ["ISI", "SHS", "ICI"], {"I": "minecraft:iron_ingot", "S": f"{NS}:steel_rail", "H": "minecraft:crafter", "C": "minecraft:clock"})
+shaped("cart_chassis", ["I I", "III", "I I"], {"I": "minecraft:iron_ingot"})
+shaped("wheelset", ["I I", "SIS", "I I"], {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, 2)
+shaped("freight_body", ["P P", "PCP", "III"], {"P": "minecraft:oak_planks", "I": "minecraft:iron_ingot", "C": "minecraft:chest"})
+shaped("bulk_body", ["I I", "IHI", " I "], {"I": "minecraft:iron_ingot", "H": "minecraft:hopper"})
 shaped("coupling_chain", [" N ", "NIN", " N "], {"N": "minecraft:iron_nugget", "I": "minecraft:iron_ingot"}, 2)
 shaped("chain_cutters", ["I I", " S ", "C C"], {"I": "minecraft:iron_ingot", "S": "minecraft:stick", "C": "minecraft:copper_ingot"})
 print("ok")
