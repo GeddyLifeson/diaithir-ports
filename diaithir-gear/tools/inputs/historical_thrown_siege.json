@@ -1,0 +1,260 @@
+[
+ {
+  "id": "sling",
+  "group": "thrown",
+  "kind": "sling",
+  "age": "I"
+ },
+ {
+  "id": "retiarius_net",
+  "group": "thrown",
+  "kind": "net",
+  "age": "IV"
+ },
+ {
+  "id": "bolas",
+  "group": "thrown",
+  "kind": "bolas",
+  "age": "IV"
+ },
+ {
+  "id": "blowgun",
+  "group": "thrown",
+  "kind": "blowgun",
+  "age": "IV"
+ },
+ {
+  "id": "grenado",
+  "group": "thrown",
+  "kind": "grenade",
+  "age": "V"
+ },
+ {
+  "id": "stielhandgranate",
+  "group": "thrown",
+  "kind": "grenade",
+  "age": "VII"
+ },
+ {
+  "id": "mills_bomb",
+  "group": "thrown",
+  "kind": "grenade",
+  "age": "VII"
+ },
+ {
+  "id": "mk2_grenade",
+  "group": "thrown",
+  "kind": "grenade",
+  "age": "VII"
+ },
+ {
+  "id": "f1_grenade",
+  "group": "thrown",
+  "kind": "grenade",
+  "age": "VII"
+ },
+ {
+  "id": "rgd_33_grenade",
+  "group": "thrown",
+  "kind": "grenade",
+  "age": "VII"
+ },
+ {
+  "id": "m67_grenade",
+  "group": "thrown",
+  "kind": "grenade",
+  "age": "VII"
+ },
+ {
+  "id": "molotov_cocktail",
+  "group": "thrown",
+  "kind": "molotov",
+  "age": "VII"
+ },
+ {
+  "id": "satchel_charge",
+  "group": "thrown",
+  "kind": "charge",
+  "age": "VII"
+ },
+ {
+  "id": "bangalore_torpedo",
+  "group": "thrown",
+  "kind": "charge",
+  "age": "VII"
+ },
+ {
+  "id": "balearic_sling",
+  "group": "thrown",
+  "kind": "sling",
+  "age": "IV"
+ },
+ {
+  "id": "inca_sling_huaraca",
+  "group": "thrown",
+  "kind": "sling",
+  "age": "V"
+ },
+ {
+  "id": "scorpio",
+  "group": "siege",
+  "kind": "bolt",
+  "age": "IV"
+ },
+ {
+  "id": "ballista",
+  "group": "siege",
+  "kind": "bolt",
+  "age": "IV"
+ },
+ {
+  "id": "onager",
+  "group": "siege",
+  "kind": "stone",
+  "age": "IV"
+ },
+ {
+  "id": "battering_ram",
+  "group": "siege",
+  "kind": "ram",
+  "age": "III"
+ },
+ {
+  "id": "trebuchet",
+  "group": "siege",
+  "kind": "stone",
+  "age": "V"
+ },
+ {
+  "id": "springald",
+  "group": "siege",
+  "kind": "bolt",
+  "age": "V"
+ },
+ {
+  "id": "bombard",
+  "group": "siege",
+  "kind": "shell",
+  "age": "V"
+ },
+ {
+  "id": "greek_fire_siphon",
+  "group": "siege",
+  "kind": "flame",
+  "age": "IV"
+ },
+ {
+  "id": "hwacha",
+  "group": "siege",
+  "kind": "volley",
+  "age": "V"
+ },
+ {
+  "id": "polybolos",
+  "group": "siege",
+  "kind": "bolt",
+  "age": "IV"
+ },
+ {
+  "id": "cheiroballistra",
+  "group": "siege",
+  "kind": "bolt",
+  "age": "IV"
+ },
+ {
+  "id": "mons_meg",
+  "group": "siege",
+  "kind": "shell",
+  "age": "V"
+ },
+ {
+  "id": "dardanelles_gun",
+  "group": "siege",
+  "kind": "shell",
+  "age": "V"
+ },
+ {
+  "id": "culverin",
+  "group": "siege",
+  "kind": "shell",
+  "age": "V"
+ },
+ {
+  "id": "swivel_gun",
+  "group": "siege",
+  "kind": "shell",
+  "age": "V"
+ },
+ {
+  "id": "carronade",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VI"
+ },
+ {
+  "id": "napoleon_12_pounder",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VI"
+ },
+ {
+  "id": "gribeauval_12_pounder",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VI"
+ },
+ {
+  "id": "armstrong_gun",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VI"
+ },
+ {
+  "id": "flak_36",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VII"
+ },
+ {
+  "id": "qf_25_pounder",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VII"
+ },
+ {
+  "id": "m101_howitzer",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VII"
+ },
+ {
+  "id": "m777_howitzer",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VII"
+ },
+ {
+  "id": "stokes_mortar",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VII"
+ },
+ {
+  "id": "katyusha_bm_13",
+  "group": "siege",
+  "kind": "volley",
+  "age": "VII"
+ },
+ {
+  "id": "paris_gun",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VII"
+ },
+ {
+  "id": "schwerer_gustav",
+  "group": "siege",
+  "kind": "shell",
+  "age": "VII"
+ }
+]

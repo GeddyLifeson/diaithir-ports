@@ -81,6 +81,26 @@ for w in json.load(open(os.path.join(IN, "historical_weapons.json"))):
 for w in json.load(open(os.path.join(IN, "historical_arms.json"))):
     hist.append(dict(core[w["kind"]], id="hw_" + w["id"], base="diaithirarms:" + w["id"], age=ROMAN[w["age"].upper()], model=w["kind"]))
 
+# ---- historical throwables, slings and siege engines (diaithir-arms, ports #328 and #331) --------------------------------------
+ARMS_BY_KIND = {  # design kind -> (station, mass kg, slots); output is the item or block itself, so no workshop model is needed
+    "sling": ("workshop", 0.2, [slot("string", "bowstring", 2, 0.01, 0.5, 0.5, 0.5), slot("grip", "grip", 1, 0.02, 0.0, 0.3, 0.5)]),
+    "blowgun": ("workshop", 0.4, [slot("tube", "limb", 1, 0.1, 0.5, 0.5, 0.5), slot("grip", "grip", 1, 0.02, 0.0, 0.3, 0.5)]),
+    "bolas": ("workshop", 0.5, [slot("weight", "pot", 2, 0.1, 0.5, 0.5, 0.0), slot("cord", "bowstring", 2, 0.01, 0.0, 0.5, 0.5)]),
+    "net": ("workshop", 1.5, [slot("cord", "bowstring", 4, 0.02, 0.0, 0.5, 0.5), slot("weight", "pot", 2, 0.1, 0.0, 0.5, 0.0)]),
+    "grenade": ("smithy", 0.6, [slot("casing", "pot", 1, 0.1, 0.5, 0.5, 0.0), slot("fuse", "binding", 1, 0.01, 0.0, 0.3, 0.5)]),
+    "molotov": ("workshop", 0.6, [slot("bottle", "pot", 1, 0.1, 0.5, 0.5, 0.0), slot("wick", "binding", 1, 0.01, 0.0, 0.3, 0.5)]),
+    "charge": ("smithy", 3.0, [slot("casing", "pot", 2, 0.4, 0.5, 0.5, 0.0), slot("fuse", "binding", 1, 0.01, 0.0, 0.3, 0.5)]),
+    "bolt": ("workshop", 40.0, [slot("frame", "stock", 4, 6.0, 0.3, 0.5, 0.5), slot("arms", "limb", 2, 2.0, 1.0, 0.6, 1.0), slot("string", "bowstring", 2, 0.05, 0.5, 0.5, 0.5), slot("lock", "lock", 1, 0.05, 0.0, 0.4, 0.5)]),
+    "stone": ("workshop", 300.0, [slot("frame", "stock", 8, 20.0, 0.3, 0.5, 0.5), slot("arm", "limb", 2, 6.0, 1.0, 0.6, 1.0), slot("rope", "bowstring", 4, 0.1, 0.5, 0.5, 0.5), slot("fittings", "head", 2, 0.5, 0.0, 0.5, 0.0)]),
+    "ram": ("workshop", 400.0, [slot("frame", "stock", 8, 30.0, 0.3, 0.5, 0.5), slot("head", "head", 2, 3.0, 1.0, 0.6, 0.0), slot("binding", "binding", 2, 0.1, 0.0, 0.3, 0.5)]),
+    "flame": ("smithy", 80.0, [slot("tank", "pot", 3, 1.5, 0.5, 0.5, 0.0), slot("nozzle", "barrel", 1, 0.2, 0.5, 0.5, 0.0), slot("frame", "stock", 2, 4.0, 0.3, 0.5, 0.5)]),
+    "volley": ("workshop", 120.0, [slot("frame", "stock", 6, 12.0, 0.3, 0.5, 0.5), slot("tubes", "barrel", 4, 0.8, 1.0, 0.5, 0.0), slot("lock", "lock", 1, 0.05, 0.0, 0.4, 0.5)]),
+    "shell": ("gunsmith", 500.0, [slot("barrel", "barrel", 6, 2.0, 1.0, 0.5, 0.0), slot("lock", "lock", 2, 0.3, 0.4, 0.5, 0.5), slot("carriage", "stock", 6, 12.0, 0.0, 0.3, 1.0)]),
+}
+for w in json.load(open(os.path.join(IN, "historical_thrown_siege.json"))):
+    st, mass, slots = ARMS_BY_KIND[w["kind"]]
+    hist.append(bp("hw_" + w["id"], st, "diaithirarms:" + w["id"], ROMAN[w["age"].upper()], "ranged", 1.0, 0.0, 400, mass, slots, 1))
+
 # ---- everyday tools and kitchen items (diaithir-furnishings, ports #185) -------------------------------------------------------
 SMITHY_CATS = {"metalwork", "general", "mining", "farm", "household", "cookware", "utensil"}
 VESSEL = {"cookware": (3, 0.6, True), "storage": (2, 0.8, False), "tableware": (1, 0.2, False), "lighting": (1, 0.1, False)}
