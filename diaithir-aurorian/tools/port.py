@@ -22,7 +22,7 @@ EFFECTS = {"DAMAGE_RESISTANCE": "resistance", "DAMAGE_BOOST": "strength", "MOVEM
 AGE = {"SILENTWOOD": "I", "AURORIAN_STONE": "I", "CERULEAN": "II", "MOONSTONE": "II", "KNIGHT": "II", "SPECTRAL": "III",
        "AURORIAN_STEEL": "III", "AURORIANITE": "IV", "UMBRA": "IV", "CRYSTALLINE": "IV"}
 # Items whose behaviour lives in Java we have not ported yet; they are listed, not registered.
-DEFERRED_ITEMS = {"mirror_of_guidance", "cerulean_arrow", "crystal_arrow", "silentwood_bow", "crystalline_sword"}
+DEFERRED_ITEMS = set()
 DEFERRED_BLOCK_CLASS = set()
 BLOCK_KIND = {"Block": "full", "DungeonGateKeyHole": "keyhole", "AurorianPortal": "portal", "AurorianFurnaceBlock": "furnace", "FogWallBlock": "fog_wall", "ScrapperBlock": "scrapper", "MoonlightForgeBlock": "moonlight_forge", "CrystalBlock": "full", "BossSpawnerBlock": "boss_spawner", "ChimneyBlock": "chimney", "SilentwoodChestBlock": "chest", "SilentwoodCraftingTableBlock": "crafting_table", "AurorianPortalFrame": "portal_frame", "AurorianGrassBlock": "full", "AurorianDeepslateBlock": "full", "SlabBlock": "slab", "StairBlock": "stairs", "WallBlock": "wall", "FenceBlock": "fence",
               "IronBarsBlock": "bars", "RotatedPillarBlock": "log", "LeavesBlock": "leaves", "BushBlock": "plant", "SaplingBlock": "sapling", "TallGrassBlock": "plant"}
@@ -84,7 +84,7 @@ def build_items(tools, armor):
         rarity = re.search(r"Rarity\.(\w+)", body)
         dur = re.search(r"durability\((\d+)\)", body)
         burn = re.search(r"basicItemWithBurntime\(.*?, (\d+)\)", body)
-        if group == "_SPAWN_EGGS" or "BaseAurorianArrow" in body or False:
+        if group == "_SPAWN_EGGS" or False:
             continue
         spec = dict(id=iid)
         if rarity and rarity.group(1) != "COMMON":
@@ -119,7 +119,12 @@ def build_items(tools, armor):
                 spec["damage"], spec["speed"] = num(nums.group(1)), num(nums.group(2))
             used_t.add(mat)
         elif iid.endswith("_sickle"):
-            continue
+            spec.update(kind="sickle", mat=mat)
+            used_t.add(mat)
+        elif iid in ("cerulean_arrow", "crystal_arrow"):
+            spec["kind"] = "arrow"
+        elif iid == "silentwood_bow":
+            spec.update(kind="bow", durability=150, burn=200)
         else:
             spec.setdefault("kind", "item")
             if dur:
@@ -203,7 +208,8 @@ def conv_tag(t):
     if t.startswith("#"):
         return "#" + conv_tag(t[1:])
     if t.startswith("forge:"):
-        return "c:" + t[6:]
+        n = t[6:]
+        return "c:" + {"glass": "glass_blocks"}.get(n, n)
     return t
 
 
@@ -456,7 +462,7 @@ def main():
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 dst.write_text(json.dumps(dict(replace=False, values=vals), indent=1) + "\n")
     # worldgen, dimension, structures (validated by a server boot, see README)
-    for sub in ("dimension", "dimension_type", "worldgen"):
+    for sub in ("dimension", "dimension_type", "worldgen", "mirror_of_guidance"):
         s = MAIN / "data" / NS / sub
         if s.exists():
             shutil.copytree(s, D / sub, dirs_exist_ok=True)
@@ -510,6 +516,17 @@ def main():
     for mp in (A / "models/item").glob("*.json"):  # Forge-only loader models of unregistered items would fail to load
         if mp.stem not in allids and "forge:" in mp.read_text():
             mp.unlink()
+    bowdef = dict(model=dict(type="minecraft:condition", property="minecraft:using_item",
+        on_false=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow"),
+        on_true=dict(type="minecraft:range_dispatch", property="minecraft:use_duration", scale=0.05,
+                     fallback=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow_pulling_0"),
+                     entries=[dict(threshold=0.65, model=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow_pulling_1")),
+                              dict(threshold=0.9, model=dict(type="minecraft:model", model=f"{NS}:item/silentwood_bow_pulling_2"))])))
+    if (A / "models/item/silentwood_bow.json").exists():
+        (idir / "silentwood_bow.json").write_text(json.dumps(bowdef, indent=1) + "\n")
+        bm = json.loads((A / "models/item/silentwood_bow.json").read_text())
+        bm.pop("overrides", None)
+        (A / "models/item/silentwood_bow.json").write_text(json.dumps(bm, indent=1) + "\n")
     EGGS = ["hollow", "undead_knight", "dungeon_slime", "dungeon_keeper"]
     for n in EGGS:
         # 26.1 vanilla eggs are plain textures, so draw our own two-colour egg

@@ -161,6 +161,8 @@ public final class DiaithirAurorian {
             case "sword" -> new Item.Properties().sword(toolMaterial(s.mat()), s.damage(), s.speed());
             case "pickaxe" -> new Item.Properties().pickaxe(toolMaterial(s.mat()), s.damage(), s.speed());
             case "food", "drink" -> food(s);
+            case "bow" -> new Item.Properties().durability(s.durability());
+            case "sickle" -> new Item.Properties().durability(toolMaterial(s.mat()).durability()).component(DataComponents.TOOL, net.minecraft.world.item.ShearsItem.createToolProperties());
             default -> new Item.Properties();
         };
         if (s.durability() != null && s.kind().equals("item")) {
@@ -200,6 +202,9 @@ public final class DiaithirAurorian {
             case "axe" -> new AbilityAxe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
             case "shovel" -> new AbilityShovel(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
             case "hoe" -> new AbilityHoe(s.id(), toolMaterial(s.mat()), s.damage(), s.speed(), p);
+            case "arrow" -> new AbilityArrowItem(s.id().startsWith("cerulean"), p);
+            case "bow" -> new AbilityBow(p);
+            case "sickle" -> new AbilityShears(s.id(), p);
             default -> new AbilityItem(s.id(), p);
         };
     }
@@ -301,6 +306,9 @@ public final class DiaithirAurorian {
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent.class,
             e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "machine_recipes"), MachineRecipes.listener()));
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(Abilities.class);
+        AurorianProjectiles.init(bus);
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent.class,
+            e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "mirror_of_guidance"), MirrorGuide.listener()));
         AurorianMobs.init(bus);
         BLOCK_ENTITIES.register(bus);
         BLOCKS.register(bus);
