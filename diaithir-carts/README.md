@@ -29,4 +29,4 @@ Pallets, barrels, chests, crates, walkable shipping containers (20 and 40 ft, re
 - **Cart reader** (Age V): put it under a rail; it gives a redstone signal for the cart above (0 none, 1 unscheduled, 2 to 13 heading for stop (signal - 2) (13 = stop 11 and later), 14 scheduled but uncrewed, 15 autonomous), so circuit gates can read vehicles. Control goes the other way through the station rail's redstone release.
 - Test: `/diaithircarts scheduletest` (owners).
 
-Assets: run `tools/gen_assets.py` first, then `tools/gen_roads.py`, then the add-on generators (`gen_routing_assets.py`, `gen_signal_assets.py`, `gen_schedule_assets.py`); the add-ons append to the lang, age gate and Codex files the base generator writes.
+Assets: run `tools/gen_assets.py` first, then `tools/gen_roads.py`, then the add-on generators (`gen_routing_assets.py`, `gen_signal_assets.py`, `gen_schedule_assets.py`, `gen_freight_assets.py`); the add-ons append to the lang, age gate and Codex files the base generator writes.
