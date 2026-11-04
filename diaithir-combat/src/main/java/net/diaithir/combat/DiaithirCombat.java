@@ -41,6 +41,8 @@ public final class DiaithirCombat {
         LibraryGear.register(bus);
         bus.addListener(Net::register);
         net.diaithir.combat.survey.SwordBlocking.register(bus);
+        net.diaithir.combat.survey.Styles.register(bus);
+        NeoForge.EVENT_BUS.register(new net.diaithir.combat.survey.Styles());
         NeoForge.EVENT_BUS.register(new net.diaithir.combat.survey.Buildup());
         NeoForge.EVENT_BUS.register(new net.diaithir.combat.survey.Lance());
         NeoForge.EVENT_BUS.register(this);
