@@ -9,7 +9,7 @@
   ]
  },
  "interactable": {
-  "interactionType": "BARREL",
+  "interactionType": "barrel",
   "inventoryUnits": 3,
   "inventoryStackSize": 64,
   "canBeOpenedInHand": false

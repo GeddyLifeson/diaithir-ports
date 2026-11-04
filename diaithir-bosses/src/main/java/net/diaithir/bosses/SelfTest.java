@@ -118,6 +118,7 @@ public final class SelfTest {
             elites(level, c0);
             rites(src, level, c0, fp);
             library(src, level, c0, fp);
+            wardenAltar(src, level, c0, fp);
         } finally {
             Ritual.TEST_PLAYERS.clear();
             Ages.forced = oldForce;
@@ -139,6 +140,16 @@ public final class SelfTest {
             Ritual.Def d = Ritual.def(p.id);
             check(d != null && d.steps.size() >= 4, p.id + ": has a rite of four or more steps");
             if (d != null) check(d.steps.get(d.steps.size() - 1).type.equals("defend"), p.id + ": rite ends in a defend");
+        }
+        for (int n : new int[]{1, 2, 3, 4, 5, 6, 8}) {
+            Ritual.Def w = Ritual.def("age_warden_" + n);
+            check(w != null && w.steps.size() >= 5, "age_warden_" + n + ": has a rite of five or more steps");
+            if (w == null) continue;
+            check(w.steps.get(w.steps.size() - 1).type.equals("defend"), "age_warden_" + n + ": rite ends in a defend");
+            for (Ritual.Step st : w.steps) {
+                if (st.item != null && !st.item.startsWith("#")) check(BuiltInRegistries.ITEM.getOptional(Identifier.parse(st.item)).isPresent(), "age_warden_" + n + ": item " + st.item + " exists");
+                if (st.mob != null) check(BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(st.mob)).isPresent(), "age_warden_" + n + ": creature " + st.mob + " exists");
+            }
         }
         BlockPos altar = c0.above();
         String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
@@ -208,7 +219,7 @@ public final class SelfTest {
                     check(data.rituals().get(key).contains("|" + d.steps.indexOf(st) + "|"), "rite: wrong hour does not advance");
                     src.getServer().getCommands().performPrefixedCommand(src, "time set " + (st.from + 10));
                     long now = level.getOverworldClockTime() % 24000;
-                    check(now >= st.from && now <= st.to, "rite: the test could set the clock (" + now + ")");
+                    check(st.from <= st.to ? now >= st.from && now <= st.to : now >= st.from || now <= st.to, "rite: the test could set the clock (" + now + ")");
                     Ritual.use(level, altar, fp, ItemStack.EMPTY);
                 }
                 case "coop" -> {
@@ -278,6 +289,40 @@ public final class SelfTest {
         check(data.beaten(Ritual.RITE + sample.id), "library: the spell is learned");
         check(Ritual.beginRite(level, altar, sample.id) != null, "library: a learned rite is not run twice");
         data.clearDefeats();
+        level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
+    }
+
+    /** The Age-evolving warden altar starts the rite of the first unbeaten warden whose Age has come, bare-handed, and plays it to the boss. */
+    private static void wardenAltar(CommandSourceStack src, ServerLevel level, BlockPos c0, FakePlayer fp) {
+        AscendantData data = AscendantData.get(level.getServer());
+        BlockPos altar = c0.above();
+        String key = altar.getX() + "," + altar.getY() + "," + altar.getZ();
+        data.removeRitual(key);
+        data.clearDefeats();
+        boolean mine = !Data.profiles().containsKey("age_warden_1");
+        if (mine) {
+            Data.Profile p = new Data.Profile();
+            p.id = "age_warden_1"; p.entity = "minecraft:husk"; p.age = 1; p.summon = new Data.Summon(); p.summon.rite = "warden_altar";
+            Data.profiles().put(p.id, p);
+        }
+        var old = level.getBlockState(altar);
+        level.setBlock(altar, DiaithirBosses.WARDEN_ALTAR.get().defaultBlockState(), 3);
+        Ritual.TEST_PLAYERS.add(fp);
+        fp.setPos(altar.getX() + 0.5, altar.getY(), altar.getZ() + 0.5);
+        Ages.forced = 1;
+        Ritual.use(level, altar, fp, ItemStack.EMPTY);
+        check(data.rituals().containsKey(key) && data.rituals().get(key).startsWith("age_warden_1|0|"), "warden altar: bare hands begin the Age I warden's rite");
+        if (data.rituals().containsKey(key)) {
+            play(src, level, altar, fp, key, Ritual.def("age_warden_1"));
+            check(!data.rituals().containsKey(key), "warden altar: the rite finished and cleared");
+            var woken = level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(8), m -> m.entityTags().contains(AltarBlockEntity.posTag(altar)));
+            check(woken.size() == 1, "warden altar: the warden wakes (" + woken.size() + ")");
+            woken.forEach(Mob::discard);
+        }
+        data.removeRitual(key);
+        data.clearDefeats();
+        level.setBlock(altar, old, 3);
+        if (mine) Data.profiles().remove("age_warden_1");
         level.getEntitiesOfClass(Mob.class, new AABB(altar).inflate(48), m -> m.entityTags().contains(Ritual.WAVE_TAG) || m.entityTags().contains(Ritual.SPIRIT_TAG)).forEach(Mob::discard);
     }
 

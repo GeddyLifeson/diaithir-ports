@@ -47,6 +47,18 @@ public final class DiaithirBridges {
             () -> new BlockEntityType<>(ConverterEntity::new, EU_CONVERTER.get(), AIR_CONVERTER.get()));
     public static final Supplier<BlockEntityType<ReservoirEntity>> RESERVOIR_ENTITY = ENTITIES.register("reservoir",
             () -> new BlockEntityType<>(ReservoirEntity::new, RESERVOIR.get()));
+    public static final DeferredBlock<Block> CARRIER_TANK = BLOCKS.registerBlock("carrier_tank", CarrierTankBlock::new, DiaithirBridges::props);
+    public static final DeferredBlock<Block> MAGIC_CARRIER = BLOCKS.registerBlock("magic_carrier", MagicCarrierBlock::new, DiaithirBridges::props);
+    public static final DeferredItem<BlockItem> CARRIER_TANK_ITEM = ITEMS.registerSimpleBlockItem(CARRIER_TANK);
+    public static final DeferredItem<BlockItem> MAGIC_CARRIER_ITEM = ITEMS.registerSimpleBlockItem(MAGIC_CARRIER);
+    public static final Supplier<BlockEntityType<CarrierTankEntity>> CARRIER_TANK_ENTITY = ENTITIES.register("carrier_tank",
+            () -> new BlockEntityType<>(CarrierTankEntity::new, CARRIER_TANK.get()));
+    public static final Supplier<BlockEntityType<MagicCarrierEntity>> MAGIC_CARRIER_ENTITY = ENTITIES.register("magic_carrier",
+            () -> new BlockEntityType<>(MagicCarrierEntity::new, MAGIC_CARRIER.get()));
+    public static final DeferredBlock<Block> LOCO_CHARGER = BLOCKS.registerBlock("loco_charger", LocoChargerBlock::new, DiaithirBridges::props);
+    public static final DeferredItem<BlockItem> LOCO_CHARGER_ITEM = ITEMS.registerSimpleBlockItem(LOCO_CHARGER);
+    public static final Supplier<BlockEntityType<LocoChargerEntity>> LOCO_CHARGER_ENTITY = ENTITIES.register("loco_charger",
+            () -> new BlockEntityType<>(LocoChargerEntity::new, LOCO_CHARGER.get()));
     public static final DeferredRegister<net.minecraft.world.item.crafting.RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, MOD);
     public static final Supplier<net.minecraft.world.item.crafting.RecipeSerializer<EmptyCellRecipe>> EMPTY_CELL = SERIALIZERS.register("empty_cell_convert", () -> EmptyCellRecipe.SERIALIZER);
 
@@ -67,6 +79,10 @@ public final class DiaithirBridges {
         bus.addListener(RegisterCapabilitiesEvent.class, e -> {
             e.registerBlockEntity(Capabilities.Energy.BLOCK, CONVERTER.get(), (be, side) -> be.energyFor(side));
             e.registerBlockEntity(Capabilities.Fluid.BLOCK, RESERVOIR_ENTITY.get(), (be, side) -> be.tank());
+            e.registerBlockEntity(Ports.FUEL, CARRIER_TANK_ENTITY.get(), (be, side) -> be.store());
+            e.registerBlockEntity(Capabilities.Fluid.BLOCK, CARRIER_TANK_ENTITY.get(), (be, side) -> be.fluidPort());
+            e.registerBlockEntity(Ports.FUEL, MAGIC_CARRIER_ENTITY.get(), (be, side) -> be.store());
+            e.registerBlockEntity(Capabilities.Energy.BLOCK, LOCO_CHARGER_ENTITY.get(), (be, side) -> be.energy());
         });
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
@@ -74,6 +90,9 @@ public final class DiaithirBridges {
                 e.accept(EU_CONVERTER_ITEM.get());
                 e.accept(AIR_CONVERTER_ITEM.get());
                 e.accept(RESERVOIR_ITEM.get());
+                e.accept(CARRIER_TANK_ITEM.get());
+                e.accept(MAGIC_CARRIER_ITEM.get());
+                e.accept(LOCO_CHARGER_ITEM.get());
             }
         });
     }

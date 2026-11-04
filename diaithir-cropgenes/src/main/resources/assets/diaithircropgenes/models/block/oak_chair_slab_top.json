@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:block/slab_top",
+ "textures": {
+  "bottom": "diaithircropgenes:block/oak_chair_slab_top",
+  "top": "diaithircropgenes:block/oak_chair_slab_top",
+  "side": "diaithircropgenes:block/oak_chair_slab_top",
+  "particle": "diaithircropgenes:block/oak_chair_slab_top"
+ }
+}

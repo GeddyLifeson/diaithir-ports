@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:candlenut_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:candlenut_planks",
+  "count": 4
+ }
+}

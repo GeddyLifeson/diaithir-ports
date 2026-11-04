@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirtrees:block/foggy_blast_stripped_log_top",
+  "side": "diaithirtrees:block/foggy_blast_stripped_log"
+ }
+}

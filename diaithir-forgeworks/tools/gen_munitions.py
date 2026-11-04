@@ -38,6 +38,15 @@ LINES = {
         (7, "shard_missile", 160, 8e6, 80000, 3)]),
 }
 # rail cars carry the same rounds; cars themselves belong to the transport module
+# containers (MUNITIONS_CONTAINERS.md): id, kind, class, capacity in rounds (box: kg), age, parts made at casting_bay then assembled
+CONTAINERS = [
+    ("magazine_pistol", "magazine", "pistol", 15, 5), ("magazine_smg", "magazine", "smg", 30, 6),
+    ("magazine_rifle", "magazine", "rifle", 30, 6), ("magazine_sniper", "magazine", "sniper", 5, 6),
+    ("magazine_lmg_box", "magazine", "lmg", 100, 6), ("drum_smg", "drum", "smg", 70, 6), ("drum_lmg", "drum", "lmg", 150, 6),
+    ("clip_rifle", "clip", "rifle", 5, 5), ("speedloader_pistol", "speedloader", "pistol", 6, 5),
+    ("belt_lmg", "belt", "lmg", 200, 6), ("cartridge_musket", "cartridge", "musket", 1, 3),
+    ("cell_energy", "cell", "energy", 20, 7), ("ammo_box_small", "box", "any", 40, 4), ("ammo_box_large", "box", "any", 200, 5),
+]
 out = {"ages": AGES, "stations": STATIONS, "parts": [], "rounds": []}
 seen = set()
 for line, (tag, kinds, rows) in LINES.items():
@@ -51,6 +60,9 @@ for line, (tag, kinds, rows) in LINES.items():
                               "blast_J": blast, "range_m": rng, "guidance": guid,
                               "parts": parts, "station": STATIONS["round"],
                               "tags": [tag, f"{tag}/{AGES[age]}"]})
+out["containers"] = [{"id": i, "kind": k, "class": c, "capacity": n, "age": AGES[a], "station": STATIONS["casing"],
+                      "link": "link_lmg" if i == "belt_lmg" else None, "tags": [f"c:ammo_container/{k}", f"diaithircrafting:ammo_class/{c}"]}
+                     for i, k, c, n, a in CONTAINERS]
 path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "munitions", "catalog.json")
 with open(path, "w") as f:
     json.dump(out, f, indent=1)

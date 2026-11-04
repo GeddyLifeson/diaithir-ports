@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "diaithirtrees:block/greenheart_wood"
+  },
+  "axis=z": {
+   "model": "diaithirtrees:block/greenheart_wood",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "diaithirtrees:block/greenheart_wood",
+   "x": 90,
+   "y": 90
+  }
+ }
+}

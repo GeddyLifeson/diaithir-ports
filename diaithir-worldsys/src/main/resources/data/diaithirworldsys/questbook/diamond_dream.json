@@ -1,0 +1,25 @@
+{
+ "title": "Diamond Dream",
+ "category": "early",
+ "objectives": [
+  {
+   "type": "collect",
+   "target": "minecraft:diamond",
+   "amount": 5
+  }
+ ],
+ "rewards": [
+  {
+   "type": "item",
+   "value": "minecraft:golden_apple",
+   "amount": 4
+  },
+  {
+   "type": "points",
+   "amount": 1
+  }
+ ],
+ "requires": [
+  "iron_miner"
+ ]
+}

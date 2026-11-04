@@ -1,0 +1,15 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "part",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone",
+      "count": 4
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:masonry_cut_stone",
+    "count": 4
+  }
+}
