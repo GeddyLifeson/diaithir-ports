@@ -76,8 +76,23 @@ public final class Network {
         return level.getCapability(Capabilities.Item.BLOCK, s.pos(), s.side());
     }
 
-    /** Everything stored, merged by item and components. */
+    ServerLevel level() {
+        return level;
+    }
+
+    /** Networks reachable through wireless transmitters of a matching frequency, in any dimension. */
+    public List<Network> peers() {
+        return Links.peersOf(this);
+    }
+
+    /** Everything stored here and in every linked network, merged by item and components. */
     public Map<ItemResource, Long> contents() {
+        Map<ItemResource, Long> out = new LinkedHashMap<>(localContents());
+        for (Network p : peers()) p.localContents().forEach((r, a) -> out.merge(r, a, Long::sum));
+        return out;
+    }
+
+    Map<ItemResource, Long> localContents() {
         Map<ItemResource, Long> out = new LinkedHashMap<>();
         for (Store s : stores) {
             ResourceHandler<ItemResource> h = handler(s);
@@ -93,6 +108,12 @@ public final class Network {
     }
 
     public long count(ItemResource r) {
+        long total = localCount(r);
+        for (Network p : peers()) total += p.localCount(r);
+        return total;
+    }
+
+    long localCount(ItemResource r) {
         long total = 0;
         for (Store s : stores) {
             ResourceHandler<ItemResource> h = handler(s);
@@ -104,6 +125,16 @@ public final class Network {
 
     /** Inserts into storage in the given transaction. Inventories that name the item in a whitelist go first, then ones already holding it. */
     public int insert(ItemResource r, int amount, TransactionContext tx) {
+        int in = localInsert(r, amount, tx);
+        if (in >= amount) return in;
+        for (Network p : peers()) {
+            in += p.localInsert(r, amount - in, tx);
+            if (in >= amount) break;
+        }
+        return in;
+    }
+
+    int localInsert(ItemResource r, int amount, TransactionContext tx) {
         if (r.isEmpty() || amount <= 0) return 0;
         int left = amount;
         for (int pass = 0; pass < 3 && left > 0; pass++) {
@@ -125,6 +156,16 @@ public final class Network {
     }
 
     public int extract(ItemResource r, int amount, TransactionContext tx) {
+        int got = localExtract(r, amount, tx);
+        if (got >= amount) return got;
+        for (Network p : peers()) {
+            got += p.localExtract(r, amount - got, tx);
+            if (got >= amount) break;
+        }
+        return got;
+    }
+
+    int localExtract(ItemResource r, int amount, TransactionContext tx) {
         if (r.isEmpty() || amount <= 0) return 0;
         int got = 0;
         for (Store s : stores) {
@@ -162,6 +203,7 @@ public final class Network {
 
     public String summary() {
         return members.size() + " network blocks, " + stores.size() + " inventories, " + terminals + " terminals"
+                + (peers().isEmpty() ? "" : ", " + peers().size() + " linked network" + (peers().size() == 1 ? "" : "s"))
                 + (truncated ? ", size cap reached" : "") + (incomplete ? ", part unloaded" : "");
     }
 
