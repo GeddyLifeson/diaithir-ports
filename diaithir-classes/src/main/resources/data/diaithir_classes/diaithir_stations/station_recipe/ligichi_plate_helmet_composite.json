@@ -1,0 +1,13 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:ingots/composite",
+   "count": 5
+  }
+ ],
+ "result": "diaithir_classes:ligichi_plate_helmet_composite",
+ "time_s": 20,
+ "operator": true
+}

@@ -25,10 +25,12 @@
     "fortune_applies": true,
     "mass_kg": 12.0
    },
-   "recipe": [
-    "c:gems/aurora x4 | c:ingots/bronze x1 | c:dusts/redstone x4"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "aurora_lantern",
@@ -39,10 +41,12 @@
     "light_emission_during_event": 15,
     "mass_kg": 2.5
    },
-   "recipe": [
-    "c:ingots/bronze x4 | aurora_shard x1 | c:nuggets/bronze x4"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "skywatch_charm",
@@ -56,10 +60,12 @@
     "regen_amplifier": 0,
     "mass_kg": 0.1
    },
-   "recipe": [
-    "aurora_shard x2 | c:ingots/silver x2 | c:leather x1"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "charge_siphon",
@@ -71,10 +77,12 @@
     "buffer_J": 24000,
     "mass_kg": 18.0
    },
-   "recipe": [
-    "c:ingots/steel x4 | c:ingots/copper x4 | aurora_shard x1"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "aurora_cell",
@@ -85,10 +93,12 @@
     "stores_liquid_light": true,
     "mass_kg": 6.0
    },
-   "recipe": [
-    "c:glass x4 | c:ingots/steel x2 | aurora_shard x2"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "boreal_veil_trigger",
@@ -114,10 +124,12 @@
     "op": "add_value",
     "active_only_during_event": true
    },
-   "recipe": [
-    "aurora_shard x1 | c:dusts/redstone x1"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "process",
+    "time_s": 5
+   }
   },
   {
    "id": "skyharvest",

@@ -15,6 +15,15 @@
    "weight": 1,
    "element": {
     "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_002700_site",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  },
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
     "location": "diaithir_worldgen:lib/diaithir/ar_diaithir_e3_history_016234",
     "projection": "rigid",
     "processors": "minecraft:empty"

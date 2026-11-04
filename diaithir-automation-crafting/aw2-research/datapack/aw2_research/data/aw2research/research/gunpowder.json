@@ -1,0 +1,30 @@
+{
+  "title": "Gunpowder",
+  "description": "Ancient Warfare 2 research: gunpowder.",
+  "prerequisites": [
+    "aw2research:explosives",
+    "aw2research:refining"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:gunpowder",
+            "count": {
+              "min": 16
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:gunpowder"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "tier1": {
+    "age": 1,
+    "items": [
+      "diaithir_materials:glass_blown",
+      "diaithir_materials:insulation_turf",
+      "diaithir_materials:masonry_fired_brick",
+      "diaithir_materials:masonry_mud_brick",
+      "diaithir_materials:road_flagstone",
+      "diaithir_materials:roofing_thatch",
+      "diaithir_materials:timber_post_beam"
+    ]
+  },
+  "tier2": {
+    "age": 2,
+    "items": [
+      "diaithir_materials:concrete_pozzolan",
+      "diaithir_materials:lining_lime_plaster",
+      "diaithir_materials:masonry_cut_stone",
+      "diaithir_materials:road_cobble",
+      "diaithir_materials:roofing_slate",
+      "diaithir_materials:timber_sawn"
+    ]
+  },
+  "tier3": {
+    "age": 3,
+    "items": [
+      "diaithir_materials:glass_sheet",
+      "diaithir_materials:roofing_tile",
+      "diaithir_materials:steel_wrought_bar"
+    ]
+  },
+  "tier4": {
+    "age": 4,
+    "items": [
+      "diaithir_materials:cement_powder",
+      "diaithir_materials:insulation_rock_wool",
+      "diaithir_materials:lining_gypsum_plaster",
+      "diaithir_materials:masonry_block",
+      "diaithir_materials:road_macadam",
+      "diaithir_materials:steel_rolled_iron"
+    ]
+  },
+  "tier5": {
+    "age": 5,
+    "items": [
+      "diaithir_materials:concrete_portland",
+      "diaithir_materials:glass_plate",
+      "diaithir_materials:insulation_glass_wool",
+      "diaithir_materials:lining_board",
+      "diaithir_materials:road_asphalt",
+      "diaithir_materials:roofing_metal_sheet",
+      "diaithir_materials:steel_plate_angle"
+    ]
+  },
+  "tier6": {
+    "age": 6,
+    "items": [
+      "diaithir_materials:concrete_reinforced",
+      "diaithir_materials:glass_float",
+      "diaithir_materials:lining_fire_board",
+      "diaithir_materials:road_concrete",
+      "diaithir_materials:steel_i_beam"
+    ]
+  },
+  "tier7": {
+    "age": 7,
+    "items": [
+      "diaithir_materials:concrete_precast",
+      "diaithir_materials:glass_laminated",
+      "diaithir_materials:insulation_foam",
+      "diaithir_materials:roofing_insulated_panel",
+      "diaithir_materials:steel_light_gauge",
+      "diaithir_materials:timber_engineered"
+    ]
+  },
+  "tier8": {
+    "age": 8,
+    "items": [
+      "diaithir_materials:insulation_aerogel"
+    ]
+  },
+  "tier9": {
+    "age": 9,
+    "items": [
+      "diaithir_materials:steel_alloy_lattice"
+    ]
+  }
+}

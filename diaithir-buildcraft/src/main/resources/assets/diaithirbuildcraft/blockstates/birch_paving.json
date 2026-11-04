@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft:block/birch_paving"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft:block/birch_paving_top"
+  },
+  "type=double": {
+   "model": "minecraft:block/birch_planks"
+  }
+ }
+}

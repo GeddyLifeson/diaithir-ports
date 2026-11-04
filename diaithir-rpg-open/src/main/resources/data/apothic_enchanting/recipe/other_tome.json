@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "ingredients": [
+        "minecraft:book",
+        "minecraft:book",
+        "minecraft:book",
+        "minecraft:book",
+        "minecraft:book",
+        "minecraft:book",
+        "minecraft:blaze_rod"
+    ],
+    "result": {
+        "count": 6,
+        "id": "apothic_enchanting:other_tome"
+    }
+}

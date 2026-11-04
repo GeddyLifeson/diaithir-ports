@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "B": "minecraft:bamboo",
+        "F": "#minecraft:fishes"
+    },
+    "pattern": [
+        " B ",
+        "BFB",
+        " B "
+    ],
+    "result": {
+        "components": {
+            "minecraft:custom_name": {
+                "italic": false,
+                "translate": "\"%s\"",
+                "with": [
+                    {
+                        "translate": "item.minecraft.pufferfish"
+                    }
+                ]
+            }
+        },
+        "id": "minecraft:pufferfish"
+    }
+}

@@ -1,0 +1,6 @@
+{
+"parent": "minecraft:item/generated",
+"textures": {
+"layer0": "diaithir_planets:block/oseivsizith_neorenus_plant"
+}
+}

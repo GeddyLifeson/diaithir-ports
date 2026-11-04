@@ -32,6 +32,11 @@
   "diaithir_worldgen:tidal_watchtower",
   "diaithir_worldgen:timber_village_hub",
   "diaithir_worldgen:void_lantern_obelisk",
-  "diaithir_worldgen:void_survey_end"
+  "diaithir_worldgen:void_survey_end",
+  "diaithir_worldgen:nether_brick_bastion",
+  "diaithir_worldgen:nether_brick_manor",
+  "diaithir_worldgen:nether_citadel",
+  "diaithir_worldgen:nether_copper_spire",
+  "diaithir_worldgen:nether_watch_tower"
  ]
 }

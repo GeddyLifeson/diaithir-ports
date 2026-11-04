@@ -16,13 +16,12 @@
      "teannadh_sraoilleadh"
     ]
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:ingots/copper",
-    "c:dusts/redstone",
-    "c:gems/amber"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_tine_steel",
@@ -40,13 +39,12 @@
      "meitear_tine"
     ]
    },
-   "recipe": [
-    "staff_tine_basic",
-    "c:ingots/steel",
-    "c:gems/amber",
-    "c:dusts/blaze"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_tine_composite",
@@ -64,13 +62,12 @@
      "meitear_tine"
     ]
    },
-   "recipe": [
-    "staff_tine_steel",
-    "c:ingots/composite",
-    "c:gems/diamond",
-    "c:dusts/blaze"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_reo_basic",
@@ -87,13 +84,12 @@
      "reo_nova"
     ]
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:ingots/copper",
-    "c:dusts/redstone",
-    "c:gems/quartz"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_reo_steel",
@@ -111,13 +107,12 @@
      "sciath_reo"
     ]
    },
-   "recipe": [
-    "staff_reo_basic",
-    "c:ingots/steel",
-    "c:gems/quartz",
-    "c:dusts/snow"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_reo_composite",
@@ -135,18 +130,17 @@
      "sciath_reo"
     ]
    },
-   "recipe": [
-    "staff_reo_steel",
-    "c:ingots/composite",
-    "c:gems/diamond",
-    "c:dusts/snow"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
-   "id": "staff_r\u00fan_basic",
+   "id": "staff_rún_basic",
    "kind": "weapon",
-   "name_en": "R\u00fan Staff of Whispers",
+   "name_en": "Rún Staff of Whispers",
    "attrs": {
     "school": "arcane",
     "spell_power": 1.0,
@@ -158,18 +152,17 @@
      "luas_ceim"
     ]
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:ingots/copper",
-    "c:dusts/redstone",
-    "c:gems/amethyst"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_run_steel",
    "kind": "weapon",
-   "name_en": "R\u00fan Staff of the Hidden Door",
+   "name_en": "Rún Staff of the Hidden Door",
    "attrs": {
     "school": "arcane",
     "spell_power": 2.0,
@@ -182,18 +175,17 @@
      "bacainn_run"
     ]
    },
-   "recipe": [
-    "staff_r\u00fan_basic",
-    "c:ingots/steel",
-    "c:gems/amethyst",
-    "c:dusts/glowstone"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "staff_run_composite",
    "kind": "weapon",
-   "name_en": "R\u00fan Staff of the Unwritten Law",
+   "name_en": "Rún Staff of the Unwritten Law",
    "attrs": {
     "school": "arcane",
     "spell_power": 3.5,
@@ -206,13 +198,12 @@
      "bacainn_run"
     ]
    },
-   "recipe": [
-    "staff_run_steel",
-    "c:ingots/composite",
-    "c:gems/diamond",
-    "c:dusts/glowstone"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "wand_tine_basic",
@@ -228,12 +219,12 @@
      "tinebolt"
     ]
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:gems/amber",
-    "c:dusts/redstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "wand_reo_basic",
@@ -249,17 +240,17 @@
      "reo_bolt"
     ]
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:gems/quartz",
-    "c:dusts/redstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "wand_run_basic",
    "kind": "weapon",
-   "name_en": "R\u00fan Wand of Glimmers",
+   "name_en": "Rún Wand of Glimmers",
    "attrs": {
     "school": "arcane",
     "spell_power": 0.8,
@@ -270,12 +261,12 @@
      "saighead_run"
     ]
    },
-   "recipe": [
-    "c:rods/wooden",
-    "c:gems/amethyst",
-    "c:dusts/redstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_tine_hat_basic",
@@ -290,12 +281,12 @@
     "set": "tine_robes_basic",
     "durability_mult": 10
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/red",
-    "c:ingots/copper"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_tine_chest_basic",
@@ -310,12 +301,12 @@
     "set": "tine_robes_basic",
     "durability_mult": 10
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/red",
-    "c:ingots/copper"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_tine_legs_basic",
@@ -330,12 +321,12 @@
     "set": "tine_robes_basic",
     "durability_mult": 10
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/red",
-    "c:ingots/copper"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_tine_boots_basic",
@@ -350,12 +341,12 @@
     "set": "tine_robes_basic",
     "durability_mult": 10
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/red",
-    "c:ingots/copper"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_tine_chest_comp",
@@ -372,12 +363,12 @@
     "set": "tine_robes_composite",
     "durability_mult": 36
    },
-   "recipe": [
-    "robe_tine_chest_basic",
-    "c:ingots/composite",
-    "c:dusts/blaze"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_reo_chest_basic",
@@ -392,12 +383,12 @@
     "set": "reo_robes_basic",
     "durability_mult": 10
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/blue",
-    "c:ingots/copper"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_reo_chest_comp",
@@ -414,17 +405,17 @@
     "set": "reo_robes_composite",
     "durability_mult": 36
    },
-   "recipe": [
-    "robe_reo_chest_basic",
-    "c:ingots/composite",
-    "c:dusts/snow"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_run_chest_basic",
    "kind": "armor",
-   "name_en": "R\u00fan Robe of Whispers",
+   "name_en": "Rún Robe of Whispers",
    "attrs": {
     "school": "arcane",
     "slot": "chest",
@@ -434,17 +425,17 @@
     "set": "run_robes_basic",
     "durability_mult": 10
    },
-   "recipe": [
-    "c:leathers",
-    "c:dyes/purple",
-    "c:ingots/copper"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "robe_run_chest_comp",
    "kind": "armor",
-   "name_en": "R\u00fan Robe of the Unwritten Law",
+   "name_en": "Rún Robe of the Unwritten Law",
    "attrs": {
     "school": "arcane",
     "slot": "chest",
@@ -456,12 +447,12 @@
     "set": "run_robes_composite",
     "durability_mult": 36
    },
-   "recipe": [
-    "robe_run_chest_basic",
-    "c:ingots/composite",
-    "c:dusts/glowstone"
-   ],
-   "age": "VII"
+   "age": "VII",
+   "station_recipe": {
+    "station": "machine.assembler",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "spell_tinebolt",
@@ -561,7 +552,7 @@
   {
    "id": "spell_saighead_run",
    "kind": "spell",
-   "name_en": "Saighead R\u00fan",
+   "name_en": "Saighead Rún",
    "attrs": {
     "school": "arcane",
     "effect": "bolt_volley",
@@ -576,7 +567,7 @@
   {
    "id": "spell_luas_ceim",
    "kind": "spell",
-   "name_en": "Luas C\u00e9im",
+   "name_en": "Luas Céim",
    "attrs": {
     "school": "arcane",
     "effect": "blink",
@@ -590,7 +581,7 @@
   {
    "id": "spell_bacainn_run",
    "kind": "spell",
-   "name_en": "Bacainn R\u00fan",
+   "name_en": "Bacainn Rún",
    "attrs": {
     "school": "arcane",
     "effect": "barrier",
@@ -611,13 +602,12 @@
     "hardness": 3.5,
     "hardness_blast_J_proxy": 6.0
    },
-   "recipe": [
-    "c:ingots/copper",
-    "c:planks/wooden",
-    "c:gems/amethyst",
-    "c:stones/stone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "enchant_dluth_draoi",
@@ -727,7 +717,7 @@
    "diaithir_draoi:staff_reo_basic",
    "diaithir_draoi:staff_reo_steel",
    "diaithir_draoi:staff_reo_composite",
-   "diaithir_draoi:staff_r\u00fan_basic",
+   "diaithir_draoi:staff_rún_basic",
    "diaithir_draoi:staff_run_steel",
    "diaithir_draoi:staff_run_composite"
   ],

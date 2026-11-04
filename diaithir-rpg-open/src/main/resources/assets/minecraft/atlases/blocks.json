@@ -1,0 +1,12 @@
+{
+    "sources": [
+        {
+            "type": "minecraft:single",
+            "resource": "apothic_enchanting:entity/apothic_book"
+        },
+        {
+            "type": "minecraft:single",
+            "resource": "apothic_enchanting:entity/raven_book"
+        }
+    ]
+}

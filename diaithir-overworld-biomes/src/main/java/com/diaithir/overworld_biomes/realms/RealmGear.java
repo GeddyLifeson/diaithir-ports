@@ -12,6 +12,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.equipment.ArmorMaterial;
@@ -24,6 +31,47 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 /** Tools and armour of a realm: one tool and armour material per prefix, tier picked from the vanilla ladder. */
 final class RealmGear {
     private RealmGear() {}
+
+    /** item registry key -> material prefix, filled while gear registers. */
+    private static final Map<String, String> PREFIX_OF = new HashMap<>();
+    private static boolean hooked;
+
+    private static boolean has(String p, String rx) { return java.util.regex.Pattern.compile(rx).matcher(p).find(); }
+
+    /** Weapon strike: the struck creature gets an effect picked from the material's name. */
+    private static void strike(String prefix, LivingEntity target, LivingEntity wielder) {
+        if (has(prefix, "(frost|frozen|ice|shiver|cold|snow)")) target.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 80, 1));
+        else if (has(prefix, "(ember|blood|fire|rogdor|magma|blaze)")) target.igniteForSeconds(4);
+        else if (has(prefix, "(rot|toxic|virulent|infected|sick|decay|poison)")) target.addEffect(new MobEffectInstance(MobEffects.POISON, 80, 0));
+        else if (has(prefix, "(honey|amber|wax|royal|jelly|sugar|bee)")) wielder.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 0));
+        else if (has(prefix, "(cloud|sky|zanite|holy|aether|gravit)")) target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 30, 0));
+        else target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 80, 0));
+    }
+
+    /** Full set of one material: the wearer gets a short Resistance when hit and the attacker is slowed. */
+    private static void setBonus(LivingEntity wearer, LivingEntity attacker) {
+        String first = null;
+        for (EquipmentSlot sl : new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}) {
+            String p = PREFIX_OF.get(String.valueOf(BuiltInRegistries.ITEM.getKey(wearer.getItemBySlot(sl).getItem())));
+            if (p == null || (first != null && !first.equals(p))) return;
+            first = p;
+        }
+        wearer.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 60, 0));
+        if (attacker != null && attacker != wearer) attacker.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 40, 0));
+    }
+
+    private static void hook() {
+        if (hooked) return;
+        hooked = true;
+        NeoForge.EVENT_BUS.addListener(LivingDamageEvent.Post.class, e -> {
+            if (e.getEntity().level().isClientSide()) return;
+            if (e.getSource().getEntity() instanceof LivingEntity a) {
+                String p = PREFIX_OF.get(String.valueOf(BuiltInRegistries.ITEM.getKey(a.getMainHandItem().getItem())));
+                if (p != null && e.getEntity() != a) strike(p, e.getEntity(), a);
+            }
+            setBonus(e.getEntity(), e.getSource().getEntity() instanceof LivingEntity a ? a : null);
+        });
+    }
 
     private static TagKey<Block> incorrect(String tier) {
         return switch (tier) {
@@ -64,9 +112,11 @@ final class RealmGear {
     static void register(String modId, JsonObject manifest, DeferredRegister.Items items) {
         Map<String, ToolMaterial> tm = new HashMap<>();
         Map<String, ArmorMaterial> am = new HashMap<>();
+        hook();
         for (JsonElement e : manifest.getAsJsonArray("gear")) {
             JsonObject g = e.getAsJsonObject();
             String id = g.get("id").getAsString(), prefix = g.get("prefix").getAsString(), tier = g.get("tier").getAsString(), kind = g.get("kind").getAsString();
+            PREFIX_OF.put(modId + ":" + id, prefix);
             switch (kind) {
                 case "helmet", "chestplate", "leggings", "boots" -> {
                     ArmorMaterial m = am.computeIfAbsent(prefix, p -> armor(modId, p, tier));

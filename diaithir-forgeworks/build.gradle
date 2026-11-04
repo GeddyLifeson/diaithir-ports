@@ -27,4 +27,8 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation 'net.diaithir:diaithir-upgrades:1.0.0'
+}
+
 

@@ -1,0 +1,10 @@
+{
+ "variants": {
+  "unload=false": {
+   "model": "diaithircarts:block/cart_loader_load"
+  },
+  "unload=true": {
+   "model": "diaithircarts:block/cart_loader_unload"
+  }
+ }
+}

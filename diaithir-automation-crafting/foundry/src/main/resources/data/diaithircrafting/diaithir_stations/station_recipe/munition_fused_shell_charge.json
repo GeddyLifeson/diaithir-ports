@@ -1,0 +1,15 @@
+{
+  "station": "station.smeltery",
+  "stage": "part",
+  "time_s": 10,
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_fused_shell_charge",
+    "count": 1
+  }
+}

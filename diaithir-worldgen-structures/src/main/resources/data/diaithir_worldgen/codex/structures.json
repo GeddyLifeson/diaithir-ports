@@ -3347,5 +3347,566 @@
    "events:diaithir:calendar_year",
    "loot:diaithir_worldgen:chests/weathered_waystation"
   ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_altar_shrine",
+  "kind": "structure",
+  "name": "Nether Altar Shrine",
+  "text": "Stepped gold-trimmed altar with candle-lit niches and a lava-fall behind; smoking variant adds campfire vents",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson basalt",
+  "loot": "gold, enchanted books, golden carrots",
+  "mobs": "piglin brutes",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/nether_altar_shrine",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_altar_shrine",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_altar_shrine"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_blackstone_hut",
+  "kind": "structure",
+  "name": "Nether Blackstone Hut",
+  "text": "Medium blackstone lodge with chimney vent, bunk and storage nook",
+  "dimension": "nether",
+  "biomes": "nether basalt nether_wastes",
+  "loot": "gold, food, flint",
+  "mobs": "piglins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_blackstone_hut",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_blackstone_hut",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_blackstone_hut"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_blackstone_ring",
+  "kind": "structure",
+  "name": "Nether Blackstone Ring",
+  "text": "Ring of polished blackstone slabs around a central lava pit with four gilded entry posts",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes basalt",
+  "loot": "gilded blackstone, gold ingots, arrows",
+  "mobs": "piglins, hoglin",
+  "age": "VII",
+  "quest": "diaithir_worldgen:find/nether_blackstone_ring",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_blackstone_ring",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_blackstone_ring"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_blade_monument",
+  "kind": "structure",
+  "name": "Nether Blade Monument",
+  "text": "Giant blade of iron and blackstone plunged into a netherrack mound, hollow hilt room beneath",
+  "dimension": "nether",
+  "biomes": "nether basalt nether_wastes",
+  "loot": "swords, gold, netherite scrap rarely",
+  "mobs": "wither skeletons",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_blade_monument",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_blade_monument",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_blade_monument"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_bone_dune_skull",
+  "kind": "structure",
+  "name": "Nether Bone Dune Skull",
+  "text": "Half-buried skull of sand-coloured bone blocks with soul sand drifts and a chest in the jaw",
+  "dimension": "nether",
+  "biomes": "soul_sand_valley nether_wastes",
+  "loot": "bones, soul sand, skulls",
+  "mobs": "skeletons",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_bone_dune_skull",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_bone_dune_skull",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_bone_dune_skull"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_boneyard",
+  "kind": "structure",
+  "name": "Nether Boneyard",
+  "text": "Scattered gravestones of blackstone and bone with open crypt pits and soul lanterns",
+  "dimension": "nether",
+  "biomes": "soul_sand_valley nether",
+  "loot": "bones, skulls, soul sand, music disc fragment",
+  "mobs": "skeletons, wither skeletons",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_boneyard",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_boneyard",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_boneyard"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_brick_bastion",
+  "kind": "structure",
+  "name": "Nether Brick Bastion",
+  "text": "Squat fortified block of nether brick with corner turrets, courtyard and a stairwell down to a trap chest",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes",
+  "loot": "nether brick, gold, iron tools",
+  "mobs": "wither skeletons, piglin brutes",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/nether_brick_bastion",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_brick_bastion",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_brick_bastion"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_brick_manor",
+  "kind": "structure",
+  "name": "Nether Brick Manor",
+  "text": "Two-storey nether brick house with a lava-moat porch, bedroom nook and cellar vault",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson",
+  "loot": "food, gold, quartz, wart",
+  "mobs": "piglins, wither skeletons in cellar",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/nether_brick_manor",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_brick_manor",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_brick_manor"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_brick_ring",
+  "kind": "structure",
+  "name": "Nether Brick Ring",
+  "text": "Circular nether brick colonnade open at the top, a stair-ringed altar chest at centre",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson",
+  "loot": "nether bricks, quartz, wart",
+  "mobs": "wither skeletons, blazes rarely",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_brick_ring",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_brick_ring",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_brick_ring"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_broken_gate",
+  "kind": "structure",
+  "name": "Nether Broken Gate",
+  "text": "Partially collapsed obsidian frame with crying obsidian patches and netherrack rubble",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson basalt",
+  "loot": "obsidian, flint and steel, golden gear",
+  "mobs": "piglins, magma cubes",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_broken_gate",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_broken_gate",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_broken_gate"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_citadel",
+  "kind": "structure",
+  "name": "Nether Citadel",
+  "text": "Terraced super-structure of brick and blackstone with a central keep, four bridges and a vaulted treasury",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson basalt",
+  "loot": "netherite scrap, gold blocks, enchanted gear, ancient debris",
+  "mobs": "wither skeletons, piglin brutes, blazes",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/nether_citadel",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_citadel",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_citadel"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_copper_spire",
+  "kind": "structure",
+  "name": "Nether Copper Spire",
+  "text": "Slim tower of cut copper with a lava-lit lookout platform and a spiral internal stair",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes basalt",
+  "loot": "copper ingots, redstone, golden tools",
+  "mobs": "blazes, piglin brutes rarely",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/nether_copper_spire",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_copper_spire",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_copper_spire"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_crimson_grove_hall",
+  "kind": "structure",
+  "name": "Nether Crimson Grove Hall",
+  "text": "Giant fungus stem hollowed into a hall, wart-block roof, shroomlight lighting; replaces fungus and well variants in crimson",
+  "dimension": "nether",
+  "biomes": "crimson",
+  "loot": "crimson fungus, shroomlights, gold",
+  "mobs": "hoglins, piglins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_crimson_grove_hall",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_crimson_grove_hall",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_crimson_grove_hall"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_crimson_smithy",
+  "kind": "structure",
+  "name": "Nether Crimson Smithy",
+  "text": "Open-sided crimson-plank forge shed with lava cauldron anvil row and a hidden basement chest",
+  "dimension": "nether",
+  "biomes": "crimson nether_wastes",
+  "loot": "golden and iron gear, smithing templates",
+  "mobs": "piglins, hoglin",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_crimson_smithy",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_crimson_smithy",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_crimson_smithy"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_grand_arena",
+  "kind": "structure",
+  "name": "Nether Grand Arena",
+  "text": "Tiered stone arena with spectator ledges, central fighting pit and two cell doors",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson",
+  "loot": "gold armor, golden apples, netherite scrap",
+  "mobs": "piglin brutes, hoglins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_grand_arena",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_grand_arena",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_grand_arena"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_lava_well",
+  "kind": "structure",
+  "name": "Nether Lava Well",
+  "text": "Stepped stone-brick well shaft over lava with a fungus-capped rim; variant block palette chosen by biome",
+  "dimension": "nether",
+  "biomes": "crimson warped nether_wastes",
+  "loot": "fungus, gold nuggets, fire resistance potion",
+  "mobs": "magma cubes, striders nearby",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_lava_well",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_lava_well",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_lava_well"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_magma_pool",
+  "kind": "structure",
+  "name": "Nether Magma Pool",
+  "text": "Irregular lava basin edged in magma blocks with stone stepping platforms and a buried chest on an islet",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes basalt",
+  "loot": "fire resistance, magma cream, gold",
+  "mobs": "magma cubes, striders",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_magma_pool",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_magma_pool",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_magma_pool"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_micro_blackstone",
+  "kind": "structure",
+  "name": "Nether Micro Blackstone",
+  "text": "Tiny blackstone shelter or cairn; four layouts chosen at random (hut, cairn, pit-trap, lantern post)",
+  "dimension": "nether",
+  "biomes": "nether basalt nether_wastes",
+  "loot": "nuggets, flint, arrows",
+  "mobs": "piglin or none",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/nether_micro_blackstone",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_micro_blackstone",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_micro_blackstone"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_micro_brick",
+  "kind": "structure",
+  "name": "Nether Micro Brick",
+  "text": "Tiny nether brick ruin or chest alcove; three layouts chosen at random",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson",
+  "loot": "nuggets, bricks, wart",
+  "mobs": "piglin or none",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/nether_micro_brick",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_micro_brick",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_micro_brick"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_overgrowth_ruin",
+  "kind": "structure",
+  "name": "Nether Overgrowth Ruin",
+  "text": "Collapsed brick walls swallowed by roots and fungus with a half-buried chest",
+  "dimension": "nether",
+  "biomes": "crimson warped",
+  "loot": "roots, fungus, nuggets",
+  "mobs": "hoglin, zombified piglin",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/nether_overgrowth_ruin",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_overgrowth_ruin",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_overgrowth_ruin"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_pillar_court",
+  "kind": "structure",
+  "name": "Nether Pillar Court",
+  "text": "Grid of tall blackstone pillars with chain bridges between tops and a loot chest on the highest",
+  "dimension": "nether",
+  "biomes": "nether basalt nether_wastes",
+  "loot": "gilded blackstone, ender pearls, gold",
+  "mobs": "blazes, piglins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_pillar_court",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_pillar_court",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_pillar_court"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_rail_depot",
+  "kind": "structure",
+  "name": "Nether Rail Depot",
+  "text": "Long brick station platform with broken rails, a derelict minecart train of three cars and a signal post",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes basalt",
+  "loot": "rails, minecarts, iron, redstone",
+  "mobs": "piglins, magma cubes",
+  "age": "I",
+  "quest": "diaithir_worldgen:find/nether_rail_depot",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_rail_depot",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_rail_depot"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_skull_colossus",
+  "kind": "structure",
+  "name": "Nether Skull Colossus",
+  "text": "Giant bone-block skull whose eye sockets are entrances to a hollow chamber with a soul fire altar",
+  "dimension": "nether",
+  "biomes": "nether soul_sand_valley basalt",
+  "loot": "bones, soul-speed books, gold",
+  "mobs": "skeletons, ghast overhead",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_skull_colossus",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_skull_colossus",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_skull_colossus"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_soul_pyre",
+  "kind": "structure",
+  "name": "Nether Soul Pyre",
+  "text": "Ring of soul fire braziers around a bone-block pyre with a sunken chest",
+  "dimension": "nether",
+  "biomes": "soul_sand_valley",
+  "loot": "soul speed books, bones, nuggets",
+  "mobs": "ghasts, skeletons",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_soul_pyre",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_soul_pyre",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_soul_pyre"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_span_bridge",
+  "kind": "structure",
+  "name": "Nether Span Bridge",
+  "text": "Narrow nether-brick causeway with fence rails, a pillared midpoint and a collapsed gap that forces a jump",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson warped",
+  "loot": "travel supplies, gold nuggets, obsidian",
+  "mobs": "piglin patrol, occasional magma cube",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_span_bridge",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_span_bridge",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_span_bridge"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_wall_maze",
+  "kind": "structure",
+  "name": "Nether Wall Maze",
+  "text": "Concentric broken blackstone walls forming a short maze with a vault at the centre",
+  "dimension": "nether",
+  "biomes": "nether basalt",
+  "loot": "gold blocks, diamond rarely, arrows",
+  "mobs": "wither skeletons, piglins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_wall_maze",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_wall_maze",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_wall_maze"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_warped_cottage",
+  "kind": "structure",
+  "name": "Nether Warped Cottage",
+  "text": "Warped plank cottage with wart-block roof, small garden of roots and a cellar",
+  "dimension": "nether",
+  "biomes": "warped",
+  "loot": "warped roots, fungus, food",
+  "mobs": "endermen, striders",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_warped_cottage",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_warped_cottage",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_warped_cottage"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_warped_dome",
+  "kind": "structure",
+  "name": "Nether Warped Dome",
+  "text": "Glass-free dome of warped wart blocks with a central pond of lava ringed by chests",
+  "dimension": "nether",
+  "biomes": "warped",
+  "loot": "warped fungus, shroomlights, enchanted book",
+  "mobs": "endermen, striders",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_warped_dome",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_warped_dome",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_warped_dome"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_warped_grove_hall",
+  "kind": "structure",
+  "name": "Nether Warped Grove Hall",
+  "text": "Giant warped stem turned into a hall with warped wart roof and a central chest under a shroomlight",
+  "dimension": "nether",
+  "biomes": "warped",
+  "loot": "warped fungus, ender pearls, nuggets",
+  "mobs": "striders, endermen",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_warped_grove_hall",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_warped_grove_hall",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_warped_grove_hall"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_warped_tarn",
+  "kind": "structure",
+  "name": "Nether Warped Tarn",
+  "text": "Shallow pool of warped nylium surrounding a sunken shrine stone with vines",
+  "dimension": "nether",
+  "biomes": "warped nether",
+  "loot": "vines, nuggets, potions",
+  "mobs": "striders",
+  "age": "II",
+  "quest": "diaithir_worldgen:find/nether_warped_tarn",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_warped_tarn",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_warped_tarn"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_wart_terrace",
+  "kind": "structure",
+  "name": "Nether Wart Terrace",
+  "text": "Terraced soul sand rows of nether wart behind low brick walls with a tool shed",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes crimson",
+  "loot": "nether wart, soul sand, hoes",
+  "mobs": "piglins",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_wart_terrace",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_wart_terrace",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_wart_terrace"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_watch_tower",
+  "kind": "structure",
+  "name": "Nether Watch Tower",
+  "text": "Tall nether brick watchtower with ladder shaft, crenellated top and a stocked guard room",
+  "dimension": "nether",
+  "biomes": "nether nether_wastes basalt",
+  "loot": "arrows, gold, food, spyglass",
+  "mobs": "wither skeletons, blazes",
+  "age": "IV",
+  "quest": "diaithir_worldgen:find/nether_watch_tower",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_watch_tower",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_watch_tower"
+  ]
+ },
+ {
+  "id": "diaithir_worldgen:nether_wyrm_arena",
+  "kind": "structure",
+  "name": "Nether Wyrm Arena",
+  "text": "Sunken blackstone bowl with bone-block ribs arching overhead and a throne dais",
+  "dimension": "nether",
+  "biomes": "nether basalt nether_wastes",
+  "loot": "bone blocks, netherite scrap, rare enchanted book",
+  "mobs": "wither skeletons, blaze guards",
+  "age": "III",
+  "quest": "diaithir_worldgen:find/nether_wyrm_arena",
+  "connects": [
+   "tags:diaithir_worldgen:s/nether_wyrm_arena",
+   "events:diaithir:calendar_year",
+   "loot:diaithir_worldgen:chests/nether_wyrm_arena"
+  ]
  }
 ]

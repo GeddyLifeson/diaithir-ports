@@ -44,8 +44,10 @@ class SlipwayControllerBlock(props: Properties) : BaseEntityBlock(props) {
     override fun useItemOn(stack: ItemStack, state: BlockState, level: Level, pos: BlockPos, player: Player,
                            hand: InteractionHand, hit: BlockHitResult): InteractionResult {
         if (level !is ServerLevel) return InteractionResult.SUCCESS
-        val be = level.getBlockEntity(pos) as? SlipwayBlockEntity ?: return InteractionResult.PASS
-        val part = YardRegistry.part(BuiltInRegistries.ITEM.getKey(stack.item).toString()).orElse(null) ?: return InteractionResult.PASS
+        if (!ShipYardMod.apiPresent) return InteractionResult.CONSUME
+        // TRY_WITH_EMPTY_HAND (not PASS) so the click still reaches useWithoutItem (yard select, launch)
+        val be = level.getBlockEntity(pos) as? SlipwayBlockEntity ?: return InteractionResult.TRY_WITH_EMPTY_HAND
+        val part = YardRegistry.part(BuiltInRegistries.ITEM.getKey(stack.item).toString()).orElse(null) ?: return InteractionResult.TRY_WITH_EMPTY_HAND
         if (be.build == null) { player.sendSystemMessage(Component.literal("Choose a yard first (use the controller with an empty hand).")); return InteractionResult.CONSUME }
         val r = be.install(part)
         if (r == BuildState.InstallResult.OK) { if (!player.hasInfiniteMaterials()) stack.shrink(1) }
@@ -55,6 +57,7 @@ class SlipwayControllerBlock(props: Properties) : BaseEntityBlock(props) {
 
     override fun useWithoutItem(state: BlockState, level: Level, pos: BlockPos, player: Player, hit: BlockHitResult): InteractionResult {
         if (level !is ServerLevel) return InteractionResult.SUCCESS
+        if (!ShipYardMod.apiPresent) return InteractionResult.CONSUME
         val be = level.getBlockEntity(pos) as? SlipwayBlockEntity ?: return InteractionResult.PASS
         player.sendSystemMessage(Component.literal(be.onUse(player.isShiftKeyDown)))
         return InteractionResult.CONSUME
@@ -69,7 +72,7 @@ object ShipYardBlocks {
 
     /** Part items, crafted elsewhere (foundry / crafting stations). Stats live in data/vs_yard/yard_parts. */
     val PART_IDS = listOf("keel_beam", "hull_frame", "hull_plank_set", "deck_plating", "steam_engine", "rudder",
-        "helm_kit", "anchor_kit", "floater_kit", "balloon_kit", "thruster_kit", "propeller_kit", "fuel_tank_kit")
+        "helm_kit", "anchor_kit", "floater_kit", "balloon_kit", "thruster_kit", "propeller_kit", "fuel_tank_kit", "ballast_plate", "arcane_motor")
 
     val SLIPWAY = BLOCKS.register("slipway_controller") {
         SlipwayControllerBlock(DeferredRegister.blockProps().mapColor(MapColor.METAL).strength(3.5F).sound(SoundType.METAL))

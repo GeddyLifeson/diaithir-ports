@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "diaithirtrees:block/yellow_meranti_wood"
+  },
+  "axis=z": {
+   "model": "diaithirtrees:block/yellow_meranti_wood",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "diaithirtrees:block/yellow_meranti_wood",
+   "x": 90,
+   "y": 90
+  }
+ }
+}

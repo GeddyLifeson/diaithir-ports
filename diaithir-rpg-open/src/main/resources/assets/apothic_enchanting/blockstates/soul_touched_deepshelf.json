@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/soul_touched_deepshelf" },
+            { "model": "apothic_enchanting:block/soul_touched_deepshelf_2" },
+            { "model": "apothic_enchanting:block/soul_touched_deepshelf_3" }
+        ]
+    }
+}

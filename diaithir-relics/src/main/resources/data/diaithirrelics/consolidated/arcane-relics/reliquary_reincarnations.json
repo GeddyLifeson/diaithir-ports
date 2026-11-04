@@ -105,13 +105,12 @@
     "mass_kg": 0.05,
     "yield_per_refine": 1
    },
-   "recipe": [
-    "bat_wing_shard",
-    "bat_wing_shard",
-    "c:dusts/glowstone",
-    "c:gems/quartz"
-   ],
-   "age": "II"
+   "age": "II",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "essence_of_ooze",
@@ -121,13 +120,12 @@
     "mass_kg": 0.05,
     "yield_per_refine": 1
    },
-   "recipe": [
-    "slime_gel_core",
-    "slime_gel_core",
-    "c:dusts/redstone",
-    "c:gems/amethyst"
-   ],
-   "age": "II"
+   "age": "II",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "essence_of_venom",
@@ -137,13 +135,12 @@
     "mass_kg": 0.05,
     "yield_per_refine": 1
    },
-   "recipe": [
-    "spider_venom_gland",
-    "spider_venom_gland",
-    "c:dusts/redstone",
-    "c:ingots/copper"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "essence_of_the_grave",
@@ -153,13 +150,12 @@
     "mass_kg": 0.08,
     "yield_per_refine": 1
    },
-   "recipe": [
-    "zombie_marrow",
-    "skeleton_ash_bone",
-    "c:ingots/iron",
-    "c:dusts/glowstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "essence_of_storm",
@@ -169,13 +165,12 @@
     "mass_kg": 0.05,
     "yield_per_refine": 1
    },
-   "recipe": [
-    "creeper_spark_salt",
-    "creeper_spark_salt",
-    "c:ingots/copper",
-    "c:gems/diamond"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "essence_of_cinder",
@@ -185,13 +180,12 @@
     "mass_kg": 0.06,
     "yield_per_refine": 1
    },
-   "recipe": [
-    "blaze_ember_seed",
-    "blaze_ember_seed",
-    "c:ingots/gold",
-    "c:dusts/glowstone"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "essence_of_ruin",
@@ -201,13 +195,12 @@
     "mass_kg": 0.1,
     "yield_per_refine": 1
    },
-   "recipe": [
-    "wither_char_splinter",
-    "essence_of_the_grave",
-    "c:ingots/netherite",
-    "c:gems/diamond"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "crucible_of_echoes",
@@ -257,13 +250,12 @@
     "power_W": 0,
     "reserve_J": 0
    },
-   "recipe": [
-    "c:ingots/iron",
-    "c:dusts/glowstone",
-    "c:glass_blocks",
-    "blaze_ember_seed"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "station.wright_bench",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "gleaning_sickle",
@@ -276,13 +268,12 @@
     "durability": 400,
     "drain_per_use": 1
    },
-   "recipe": [
-    "c:ingots/iron",
-    "c:ingots/iron",
-    "c:rods/wooden",
-    "essence_of_flight"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "ember_brazier_staff",
@@ -297,13 +288,12 @@
     "burst_radius_m": 6,
     "damage": 8
    },
-   "recipe": [
-    "essence_of_cinder",
-    "c:rods/wooden",
-    "c:ingots/gold",
-    "c:dusts/gunpowder"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "rime_burst_rod",
@@ -315,13 +305,12 @@
     "slow_duration_s": 6,
     "damage": 6
    },
-   "recipe": [
-    "essence_of_ooze",
-    "c:rods/wooden",
-    "c:gems/diamond",
-    "c:ingots/iron"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "lantern_of_the_long_dark",
@@ -335,13 +324,12 @@
     "night_vision_s": 12,
     "light_radius_m": 10
    },
-   "recipe": [
-    "wardlight_lantern_block",
-    "essence_of_flight",
-    "c:dusts/glowstone",
-    "c:dusts/glowstone"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "sparkflint_torch_wand",
@@ -353,12 +341,12 @@
     "charges_per_item": 4,
     "place_range_m": 6
    },
-   "recipe": [
-    "essence_of_storm",
-    "c:rods/wooden",
-    "c:dusts/coal"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "gate_pearl_charm",
@@ -371,13 +359,12 @@
     "refill_item": "c:ender_pearls",
     "charges_per_item": 4
    },
-   "recipe": [
-    "essence_of_storm",
-    "c:ender_pearls",
-    "c:ender_pearls",
-    "c:ingots/gold"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "hearthmend_aura_brooch",
@@ -390,13 +377,12 @@
     "heal_J_equivalent_hearts": 1,
     "curios_slot": "charm"
    },
-   "recipe": [
-    "essence_of_ooze",
-    "c:gems/emerald",
-    "c:ingots/gold",
-    "c:dusts/glowstone"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "larder_aura_torc",
@@ -409,13 +395,12 @@
     "food_per_pulse": 1,
     "curios_slot": "necklace"
    },
-   "recipe": [
-    "essence_of_flight",
-    "c:ingots/copper",
-    "c:crops/wheat",
-    "c:ingots/gold"
-   ],
-   "age": "III"
+   "age": "III",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "fleetfoot_aura_anklet",
@@ -428,13 +413,12 @@
     "speed_mult": 1.2,
     "curios_slot": "charm"
    },
-   "recipe": [
-    "essence_of_flight",
-    "essence_of_storm",
-    "c:ingots/gold",
-    "c:string"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "cinderward_aura_ring",
@@ -446,12 +430,12 @@
     "radius_m": 10,
     "curios_slot": "ring"
    },
-   "recipe": [
-    "essence_of_cinder",
-    "c:ingots/gold",
-    "c:gems/diamond"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "embershot_repeater",
@@ -466,14 +450,12 @@
     "projectile_speed_m_s": 55,
     "durability": 900
    },
-   "recipe": [
-    "essence_of_storm",
-    "c:ingots/iron",
-    "c:ingots/iron",
-    "c:rods/wooden",
-    "c:dusts/gunpowder"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "station.steam_forge",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "hollowbough_arc",
@@ -488,14 +470,12 @@
     "projectile_speed_m_s": 60,
     "durability": 750
    },
-   "recipe": [
-    "essence_of_flight",
-    "c:rods/wooden",
-    "c:string",
-    "c:string",
-    "c:ingots/gold"
-   ],
-   "age": "IV"
+   "age": "IV",
+   "station_recipe": {
+    "station": "station.smeltery",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "phoenix_tear_token",
@@ -510,13 +490,12 @@
     "i_frame_s": 2,
     "slot": "curio_charm"
    },
-   "recipe": [
-    "essence_of_ruin",
-    "essence_of_cinder",
-    "c:ingots/gold",
-    "c:storage_blocks/diamond"
-   ],
-   "age": "VI"
+   "age": "VI",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "magazine_ember",
@@ -529,12 +508,12 @@
     "bonus_damage": 2,
     "load_ticks": 20
    },
-   "recipe": [
-    "essence_of_cinder",
-    "c:ingots/iron",
-    "c:dusts/gunpowder"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   },
   {
    "id": "magazine_rime",
@@ -547,12 +526,12 @@
     "bonus_damage": 2,
     "load_ticks": 20
    },
-   "recipe": [
-    "essence_of_ooze",
-    "c:ingots/iron",
-    "c:dusts/glowstone"
-   ],
-   "age": "V"
+   "age": "V",
+   "station_recipe": {
+    "station": "altar.basic",
+    "stage": "assembly",
+    "time_s": 20
+   }
   }
  ],
  "events": [

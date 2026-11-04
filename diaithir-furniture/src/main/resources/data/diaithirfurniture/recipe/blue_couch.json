@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "W": "minecraft:blue_wool",
+  "P": "#minecraft:planks"
+ },
+ "pattern": [
+  "W  ",
+  "WWW",
+  "P P"
+ ],
+ "result": {
+  "id": "diaithirfurniture:blue_couch",
+  "count": 1
+ }
+}
