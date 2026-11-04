@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "C": "minecraft:copper_ingot",
+    "H": "minecraft:hopper",
+    "B": "minecraft:chest"
+  },
+  "pattern": [
+    "ICI",
+    "BHB",
+    "III"
+  ],
+  "result": {
+    "id": "diaithirlogistics:foundry_depot",
+    "count": 1
+  },
+  "category": "misc"
+}

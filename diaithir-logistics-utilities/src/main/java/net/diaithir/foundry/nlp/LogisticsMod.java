@@ -54,6 +54,7 @@ public final class LogisticsMod {
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
+        net.diaithir.logistics.foundry.DiaithirLogistics.init(bus, container);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
                 for (DeferredItem<BlockItem> i : List.of(PIPE_ITEM, SINK_PIPE_ITEM, EXTRACTOR_PIPE_ITEM, SPEED_PIPE_ITEM)) e.accept(i.get());

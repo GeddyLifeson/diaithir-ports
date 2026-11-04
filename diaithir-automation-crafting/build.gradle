@@ -44,6 +44,15 @@ sourceSets.main {
     resources.srcDirs 'libsrc/sedna/resources', layout.buildDirectory.dir('minux')
 }
 
+// OpenComputers (OC2R) port, work in progress: the sources under li/cil/oc2 are compiled only with -Poc2 until they build clean.
+// -Poc2Stage=server also leaves out client, datagen, jcodec, integrations and mixins (server side first).
+if (!project.hasProperty('oc2')) {
+    sourceSets.main.java.exclude 'li/cil/oc2/**'
+} else if (project.findProperty('oc2Stage') == 'server') {
+    sourceSets.main.java.exclude 'li/cil/oc2/client/**', 'li/cil/oc2/data/**', 'li/cil/oc2/jcodec/**',
+        'li/cil/oc2/common/integration/**', 'li/cil/oc2/common/mixin/**'
+}
+
 // Prebuilt Minux guest images (Buildroot, GPL; sources https://github.com/North-Western-Development/minux).
 // Fetched from the OC2R release on the Modrinth CDN and checked by hash; never committed.
 def minuxJarUrl = 'https://cdn.modrinth.com/data/F1gm4RsH/versions/Uo2jfkas/oc2r-1.20.1-forge-2.2.13-all.jar'
