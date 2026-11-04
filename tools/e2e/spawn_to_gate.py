@@ -64,7 +64,7 @@ def newlines(log, pos):
 def run(a):
     W = Path(a.work)
     (W / "report").mkdir(parents=True, exist_ok=True)
-    out = {"branch": a.branch, "started": time.strftime("%FT%TZ", time.gmtime()), "breakpoints": [], "steps": []}
+    out = {"branch": a.pack_url or a.branch, "started": time.strftime("%FT%TZ", time.gmtime()), "breakpoints": [], "steps": []}
 
     def bp(stage, what, detail=""):
         out["breakpoints"].append({"stage": stage, "what": what, "detail": detail[:1500]})
