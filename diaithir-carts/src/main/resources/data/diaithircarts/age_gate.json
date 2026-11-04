@@ -9,6 +9,7 @@
   "tier2": {
     "age": 5,
     "items": [
+      "diaithircarts:cart_reader",
       "diaithircarts:chain_cutters",
       "diaithircarts:coupling_chain",
       "diaithircarts:station_rail",

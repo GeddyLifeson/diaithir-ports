@@ -78,5 +78,10 @@
   "id": "diaithircarts:autonomy_module",
   "name": "Autonomy Module",
   "text": "Use on a vehicle whose type is capable of autonomy (the entity type tag diaithircarts:autonomy_capable) to fit it. A scheduled vehicle with a module runs with no crew, and its crew jobs can be retired. Without one it needs a rider aboard. Age VII."
+ },
+ {
+  "id": "diaithircarts:cart_reader",
+  "name": "Cart Reader",
+  "text": "Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V."
  }
 ]

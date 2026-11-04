@@ -58,6 +58,10 @@ public final class DiaithirCarts {
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F).sound(SoundType.METAL).lightLevel(s -> s.getValue(BlockSignal.RED) ? 7 : 3));
     public static final DeferredItem<BlockItem> BLOCK_SIGNAL_ITEM = ITEMS.registerSimpleBlockItem(BLOCK_SIGNAL);
 
+    public static final DeferredBlock<CartReader> CART_READER = BLOCKS.registerBlock("cart_reader", CartReader::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(1.5F).sound(SoundType.METAL));
+    public static final DeferredItem<BlockItem> CART_READER_ITEM = ITEMS.registerSimpleBlockItem(CART_READER);
+
     public static final List<DeferredBlock<? extends Block>> ALL_RAILS = List.of(BRONZE_RAIL, BRONZE_POWERED_RAIL, STEEL_RAIL, STEEL_POWERED_RAIL, FAST_RAIL,
             FAST_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL, DESTINATION_RAIL, LOCKING_RAIL);
     public static final List<DeferredItem<BlockItem>> RAIL_ITEMS = ALL_RAILS.stream().map(b -> ITEMS.registerSimpleBlockItem(b)).toList();
@@ -77,7 +81,7 @@ public final class DiaithirCarts {
         ITEMS.register(bus);
         Coupling.ATTACHMENTS.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); }
+            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(CART_READER_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
                 e.accept(COUPLING_CHAIN.get());
                 e.accept(CHAIN_CUTTERS.get());

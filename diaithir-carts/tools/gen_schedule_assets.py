@@ -43,3 +43,26 @@ c = json.load(open(cp))
 if not any(e['id'] == f'{ID}:autonomy_module' for e in c):
     c.append({'id': f'{ID}:autonomy_module', 'name': 'Autonomy Module', 'text': 'Use on a vehicle whose type is capable of autonomy (the entity type tag diaithircarts:autonomy_capable) to fit it. A scheduled vehicle with a module runs with no crew, and its crew jobs can be retired. Without one it needs a rider aboard. Age VII.'})
     json.dump(c, open(cp, 'w'), indent=1)
+
+random.seed('reader'); im = Image.new('RGB', (64, 64))
+for x in range(64):
+    for y in range(64):
+        g = 78 + random.randint(-6, 6); im.putpixel((x, y), (g, g + 4, g + 10))
+for i in range(64):
+    for t_ in range(3):
+        for xy in ((i, t_), (i, 63 - t_), (t_, i), (63 - t_, i)): im.putpixel(xy, (36, 38, 46))
+for x in range(22, 42):
+    for y in range(22, 42): im.putpixel((x, y), (60, 150, 230))
+im.save(f'{R}/assets/{ID}/textures/block/cart_reader.png')
+w(f'assets/{ID}/models/block/cart_reader.json', {'parent': 'minecraft:block/cube_all', 'textures': {'all': f'{ID}:block/cart_reader'}})
+w(f'assets/{ID}/blockstates/cart_reader.json', {'variants': {f'power={n}': {'model': f'{ID}:block/cart_reader'} for n in range(16)}})
+w(f'assets/{ID}/items/cart_reader.json', {'model': {'type': 'minecraft:model', 'model': f'{ID}:block/cart_reader'}})
+w(f'data/{ID}/loot_table/blocks/cart_reader.json', {'type': 'minecraft:block', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': f'{ID}:cart_reader'}], 'conditions': [{'condition': 'minecraft:survives_explosion'}]}]})
+w(f'data/{ID}/recipe/cart_reader.json', {'type': 'minecraft:crafting_shaped', 'category': 'redstone', 'pattern': ['IRI', 'RQR', 'III'],
+  'key': {'I': 'minecraft:iron_ingot', 'R': 'minecraft:redstone', 'Q': 'minecraft:quartz'}, 'result': {'id': f'{ID}:cart_reader', 'count': 1}})
+l = json.load(open(lp)); l[f'block.{ID}.cart_reader'] = 'Cart Reader'; json.dump(l, open(lp, 'w'), indent=1)
+a = json.load(open(ap)); a['tier2']['items'] = sorted(set(a['tier2']['items'] + [f'{ID}:cart_reader'])); json.dump(a, open(ap, 'w'), indent=2)
+c = json.load(open(cp))
+if not any(e['id'] == f'{ID}:cart_reader' for e in c):
+    c.append({'id': f'{ID}:cart_reader', 'name': 'Cart Reader', 'text': 'Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V.'})
+    json.dump(c, open(cp, 'w'), indent=1)
