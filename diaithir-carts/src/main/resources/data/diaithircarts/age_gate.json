@@ -76,12 +76,6 @@
       "diaithircarts:locking_rail"
     ]
   },
-  "farm": {
-    "age": 5,
-    "items": [
-      "diaithircarts:reaper"
-    ]
-  },
   "autonomy": {
     "age": 7,
     "items": [
