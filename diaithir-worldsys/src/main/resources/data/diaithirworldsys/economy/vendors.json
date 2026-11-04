@@ -43,18 +43,6 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:dark_prismarine": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:dark_prismarine_slab": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:dark_prismarine_stairs": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:glow_ink_sac": {
      "price": 1,
      "stock": 32
@@ -63,31 +51,11 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:kelp_plant": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:nautilus_shell": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:prismarine": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:prismarine_shard": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:prismarine_slab": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:prismarine_stairs": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:prismarine_wall": {
      "price": 1,
      "stock": 32
     },
@@ -99,21 +67,9 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:tall_seagrass": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:wet_sponge": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:prismarine_crystals": {
      "price": 2,
      "stock": 16
-    },
-    "minecraft:dried_kelp_block": {
-     "price": 9,
-     "stock": 4
     }
    }
   },
@@ -162,29 +118,13 @@
      "price": 2,
      "stock": 16
     },
-    "minecraft:armadillo_scute": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:cobweb": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:scute": {
      "price": 1,
      "stock": 32
     },
     "minecraft:turtle_scute": {
      "price": 1,
      "stock": 32
-    },
-    "minecraft:leather_horse_armor": {
-     "price": 2,
-     "stock": 16
-    },
-    "minecraft:bone_block": {
-     "price": 18,
-     "stock": 4
     }
    }
   },
@@ -322,29 +262,13 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:fermented_spider_eye": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:rotten_flesh": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:spectral_arrow": {
      "price": 1,
      "stock": 32
     },
     "minecraft:spider_eye": {
      "price": 1,
      "stock": 32
-    },
-    "minecraft:tipped_arrow": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:music_disc_lava_chicken": {
-     "price": 6,
-     "stock": 5
     }
    }
   },
@@ -429,43 +353,7 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:lily_pad": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:moss_carpet": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:mossy_cobblestone": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:mossy_cobblestone_slab": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:mossy_cobblestone_stairs": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:mossy_cobblestone_wall": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:mushroom_stem": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:orange_tulip": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:pale_hanging_moss": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:pale_moss_carpet": {
      "price": 1,
      "stock": 32
     },
@@ -477,21 +365,33 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:potted_allium": {
+    "minecraft:red_mushroom": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:potted_azure_bluet": {
+    "minecraft:red_tulip": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:potted_blue_orchid": {
+    "minecraft:rose_bush": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:potted_brown_mushroom": {
+    "minecraft:sunflower": {
      "price": 1,
      "stock": 32
+    },
+    "minecraft:white_tulip": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:moss_block": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:glow_berries": {
+     "price": 3,
+     "stock": 11
     }
    }
   },
@@ -576,35 +476,7 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:andesite_slab": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:andesite_stairs": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:andesite_wall": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:basalt": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:blackstone": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:blackstone_slab": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:blackstone_stairs": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:blackstone_wall": {
      "price": 1,
      "stock": 32
     },
@@ -612,33 +484,57 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:chiseled_polished_blackstone": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:chiseled_red_sandstone": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:chiseled_sandstone": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:chiseled_tuff": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:coal_ore": {
-     "price": 1,
-     "stock": 32
-    },
     "minecraft:cobbled_deepslate": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:cobbled_deepslate_slab": {
+    "minecraft:deepslate": {
      "price": 1,
      "stock": 32
+    },
+    "minecraft:diorite": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:granite": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:mossy_cobblestone": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:polished_andesite": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:polished_diorite": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:polished_granite": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:red_sandstone": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:sandstone": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:smooth_basalt": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:tuff": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:dripstone_block": {
+     "price": 2,
+     "stock": 16
     }
    }
   },
@@ -719,7 +615,7 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:acacia_chest_boat": {
+    "minecraft:acacia_button": {
      "price": 1,
      "stock": 32
     },
@@ -743,6 +639,10 @@
      "price": 1,
      "stock": 32
     },
+    "minecraft:acacia_pressure_plate": {
+     "price": 1,
+     "stock": 32
+    },
     "minecraft:acacia_sapling": {
      "price": 1,
      "stock": 32
@@ -759,11 +659,11 @@
      "price": 1,
      "stock": 32
     },
-    "minecraft:acacia_wall_hanging_sign": {
+    "minecraft:acacia_trapdoor": {
      "price": 1,
      "stock": 32
     },
-    "minecraft:acacia_wall_sign": {
+    "minecraft:acacia_wood": {
      "price": 1,
      "stock": 32
     },
@@ -772,10 +672,6 @@
      "stock": 32
     },
     "minecraft:bamboo_button": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:bamboo_chest_raft": {
      "price": 1,
      "stock": 32
     },
@@ -834,93 +730,13 @@
      "price": 3,
      "stock": 11
     },
-    "minecraft:beetroots": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:cocoa": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:potted_red_mushroom": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:red_mushroom": {
-     "price": 1,
-     "stock": 32
-    },
-    "minecraft:attached_pumpkin_stem": {
-     "price": 2,
-     "stock": 16
-    },
-    "minecraft:carrot_on_a_stick": {
-     "price": 2,
-     "stock": 16
-    },
-    "minecraft:carved_pumpkin": {
-     "price": 2,
-     "stock": 16
-    },
-    "minecraft:pumpkin_stem": {
-     "price": 2,
-     "stock": 16
-    },
-    "minecraft:attached_melon_stem": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:blue_egg": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:brown_egg": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:carrots": {
-     "price": 3,
-     "stock": 11
-    },
     "minecraft:melon": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:melon_stem": {
      "price": 3,
      "stock": 11
     },
     "minecraft:poisonous_potato": {
      "price": 3,
      "stock": 11
-    },
-    "minecraft:potatoes": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:sniffer_egg": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:turtle_egg": {
-     "price": 3,
-     "stock": 11
-    },
-    "minecraft:chainmail_leggings": {
-     "price": 4,
-     "stock": 8
-    },
-    "minecraft:brown_mushroom_block": {
-     "price": 9,
-     "stock": 4
-    },
-    "minecraft:red_mushroom_block": {
-     "price": 9,
-     "stock": 4
-    },
-    "minecraft:dragon_egg": {
-     "price": 10,
-     "stock": 4
     }
    }
   },
