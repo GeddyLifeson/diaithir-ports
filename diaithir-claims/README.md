@@ -8,6 +8,15 @@ Clean-room chunk claims (stands in for FTB Chunks, all rights reserved). MIT. Wr
 - Tested headless: two fake players for claim, drop and counts, and `/claim selftest` (game master) fires break, place, use and explosion events from a stranger, the owner and a trusted player: all 8 checks pass. The map screen draws on a client only; it needs the first full-pack join.
 - Look-At shows `Claimed by <name>` for the chunk under the crosshair: Look-At has no claims code; claims sends it a provider by message, the client asks the server (`ClaimQuery`, answer `ClaimInfo`, at most every 3 s per chunk). Channels are optional so plain clients still join.
 
+## Round 2: FTB Chunks feature set (2026-11-03)
+Clean-room; behaviour taken from how chunk-claim mods work, no code or assets from FTB Chunks (all rights reserved). The jar also declares modId `ftbchunks` so dependents resolve, and `/ftbchunks` is an alias of `/claim`.
+- Teams: `/claim team create <name>|invite <player>|join|leave|info`. Team members may build in each other's claims. One team per player, saved in `diaithir_teams.dat` in the world folder; no other mod needed (replaces FTB Teams for claims).
+- Keep loaded: `/claim load` / `/claim unload` force-loads a claimed chunk you own (5 per player), also while nobody is online. Dropping the claim unloads it.
+- `/claim area <1-4>` claims the free square around you up to your limit. `/claim dropall` drops your claims near you.
+- Flags per chunk: `/claim flag public_use true|false` (strangers may open doors, chests, buttons; not break or place) and `/claim flag explosions true|false`.
+- Works in every dimension, so planets get claims too.
+- Selftest (`/claim selftest`, also from the console with a fake owner): 14 checks incl. flags and teams, all PASS on a headless NeoForge 26.1.2.116 boot. Not tested headless: the load/unload/area/dropall commands (they need a real player) and teams.dat reload after restart.
+- Not rebuilt: the minimap/large map (Atlas + Surveyor and `/claim map` cover it), FTB's per-chunk permission GUI.
 ## Structure protection (Structural Safety replacement)
 Package `net.diaithir.claims.structures`: inside generated structures only blocks in `diaithirclaims:structure_breakable` (flowers, leaves, crops, torches, ores) can be broken and only torches placed; creative and ops are exempt. Clean-room: Structural Safety (MIT) is a jar with no published source, and it works by switching players to adventure mode; this uses plain event checks instead.
 ## Grief log (GriefLogger replacement, stage 1)
@@ -18,6 +27,9 @@ Package `net.diaithir.claims.law`. Handcuffs (use on a player: slowed, cannot at
 Package `net.diaithir.claims.parties`: `/party create|invite|accept|leave|kick|disband|info|list`. Party members count as trusted on each other's claims (`Claim.allows`). Clean-room from behaviour (Open Parties and Claims is LGPL-3.0); no code taken. Later: shared claim map colours per party, party chat, claim limits per party.
 ## Capitals (MCA Capitals replacement, stage 1)
 Package `net.diaithir.claims.capitals`: `/capital found|list|info|swear|leave|heir|abdicate`. A capital stands on your own claim; one ruler, an optional heir, subjects in the order they swore; when the ruler dies or abdicates the heir (else the first subject) rules. Clean-room from the behaviour of MCA Capitals (GPL-3.0, 1.21.1, 28.8k lines on MCA 7.7.7 internals); no code taken. Later stages: MCA Reborn villagers as subjects, nobles and houses, taxes via Lightman's Currency.
+
+## Taxes (Tale of Kingdoms idea, clean-room)
+`/capital tax set ITEM AMOUNT` (ruler), `/capital pay` (subject, once per real day), `/capital treasury [take]` (ruler). Stacked on the capitals package. Tale of Kingdoms is LGPL-3.0 (Fabric 1.21.1); no code taken. Later: Lightman's Currency coins as the tax item, tax collection by MCA villagers.
 ## Permission nodes (PermissionGate port)
 Package `net.diaithir.claims.permissions`: nodes `pg.break`, `pg.interact`, `pg.use`, `pg.attack` on NeoForge's PermissionAPI (default allowed). From PermissionGate by ngoclinh_ (MIT, Fabric, 219 lines); events remapped to NeoForge. Test 2026-11-03: compile OK, server boots with nodes registered. Not tested with a permission handler such as LuckPerms.
 ## Graves (Epitaphs replacement)

@@ -9,6 +9,7 @@ public final class Module {
     public static final String ID = "diaithirentityanimation";
 
     public Module(IEventBus bus, ModContainer container) {
+        net.diaithir.entityanimation.emfetf.Feature.init(bus, container);
         net.diaithir.entityanimation.skinlayers3d.Feature.init(bus, container);
         net.diaithir.entityanimation.notenoughanimations.Feature.init(bus, container);
     }

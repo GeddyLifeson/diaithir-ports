@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "stellaris:titanium_ingot",
+  "M": "stellaris:space_suit_oxygen_module_tier_1",
+  "D": "stellaris:desh_ingot"
+ },
+ "pattern": [
+  "#M#",
+  "MDM",
+  "#M#"
+ ],
+ "result": {
+  "id": "stellaris:space_suit_oxygen_module_tier_2"
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "id": "mountain_strip_miner",
+ "tier": "AUTOMATED",
+ "site": "ground",
+ "dimensions": [],
+ "footprint": {
+  "w": 50,
+  "l": 100,
+  "h": 25
+ },
+ "result": "diaithirmega:mountain_strip_miner",
+ "stages": [
+  {
+   "id": "powertrain",
+   "order": 1,
+   "slots": [
+    {
+     "kind": "engine",
+     "count": 1
+    }
+   ],
+   "base_ticks": 60000,
+   "ghost": "diaithirmega:ghost/mountain_strip_miner_powertrain"
+  },
+  {
+   "id": "running_gear",
+   "order": 2,
+   "slots": [
+    {
+     "kind": "track",
+     "count": 2
+    }
+   ],
+   "base_ticks": 45000,
+   "ghost": "diaithirmega:ghost/mountain_strip_miner_running_gear"
+  },
+  {
+   "id": "working_gear",
+   "order": 3,
+   "slots": [
+    {
+     "kind": "wheel_boom",
+     "count": 1
+    }
+   ],
+   "base_ticks": 75000,
+   "ghost": "diaithirmega:ghost/mountain_strip_miner_working_gear"
+  },
+  {
+   "id": "crew",
+   "order": 4,
+   "slots": [
+    {
+     "kind": "seat",
+     "count": 4
+    }
+   ],
+   "base_ticks": 160,
+   "ghost": "diaithirmega:ghost/mountain_strip_miner_crew"
+  },
+  {
+   "id": "autonomy",
+   "order": 5,
+   "slots": [
+    {
+     "kind": "autonomy_module",
+     "count": 1
+    }
+   ],
+   "base_ticks": 100,
+   "ghost": "diaithirmega:ghost/mountain_strip_miner_autonomy"
+  }
+ ],
+ "crane_speedup": 1.0
+}

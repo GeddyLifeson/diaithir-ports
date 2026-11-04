@@ -59,6 +59,9 @@ public final class Carriers {
         LoadType t = typeOf(stack);
         if (t == null) return CargoBay.Result.UNKNOWN_TYPE;
         CargoBay bay = carrier.bay();
+        // a load wider than one cell is set down so it fits: aiming at a column near the edge slides it in
+        x = Math.max(0, Math.min(x, bay.w - t.w()));
+        z = Math.max(0, Math.min(z, bay.l - t.l()));
         NonNullList<ItemStack> items = NonNullList.withSize(t.itemSlots(), ItemStack.EMPTY);
         CargoBay inner = null;
         double kg;

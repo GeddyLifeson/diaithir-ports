@@ -1,0 +1,23 @@
+{
+ "station": "station.wright_bench",
+ "stage": "assembly",
+ "time_s": 8,
+ "ingredients": [
+  {
+   "item": "minecraft:leather",
+   "count": 1
+  },
+  {
+   "item": "minecraft:green_dye",
+   "count": 1
+  },
+  {
+   "item": "minecraft:feather",
+   "count": 1
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:sleagh_emblem",
+  "count": 1
+ }
+}

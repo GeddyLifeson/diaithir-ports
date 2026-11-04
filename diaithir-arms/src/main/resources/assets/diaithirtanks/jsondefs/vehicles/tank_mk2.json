@@ -21,8 +21,8 @@
  },
  "motorized": {
   "emptyMass": 36000,
-  "fuelCapacity": 1500,
-  "defaultFuelQty": 600,
+  "fuelCapacity": 1500000,
+  "defaultFuelQty": 600000,
   "hasSkidSteer": true,
   "hasPermanentSkidSteer": true,
   "hasRunningLights": true,
@@ -41,7 +41,7 @@
  },
  "car": {
   "isFrontWheelDrive": true,
-  "isRearWheelDrive": false,
+  "isRearWheelDrive": true,
   "axleRatio": 3.6,
   "dragCoefficient": 0.9
  },
@@ -62,24 +62,80 @@
   {
    "pos": [
     -1.25,
-    0.0,
+    0.45,
+    -2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    -1.25,
+    0.45,
     0.0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirtanks:tank_track2"
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    -1.25,
+    0.45,
+    2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
   },
   {
    "pos": [
     1.25,
-    0.0,
+    0.45,
+    -2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    1.25,
+    0.45,
     0.0
    ],
    "types": [
-    "ground_tread"
+    "ground_wheel"
    ],
-   "defaultPart": "diaithirtanks:tank_track2"
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
+  },
+  {
+   "pos": [
+    1.25,
+    0.45,
+    2.5
+   ],
+   "types": [
+    "ground_wheel"
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "defaultPart": "diaithirtanks:tank_wheel"
   },
   {
    "pos": [
@@ -92,7 +148,7 @@
    ],
    "isController": true,
    "linkedParts": [
-    5
+    10
    ],
    "defaultPart": "diaithirtanks:tank_seat",
    "dismountPos": [
@@ -121,6 +177,8 @@
    "types": [
     "gun_tank"
    ],
+   "minValue": 0.0,
+   "maxValue": 1000.0,
    "defaultPart": "diaithirtanks:tank_gun_125",
    "minYaw": -180,
    "maxYaw": 180,
@@ -218,5 +276,75 @@
    ]
   }
  ],
- "rendering": {}
+ "rendering": {},
+ "instruments": [
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 78,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirtanks:speedo"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirtanks:fuel"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 302,
+   "hudY": 40,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirtanks:tacho"
+  },
+  {
+   "pos": [
+    0,
+    1.0,
+    0.8
+   ],
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "scale": 0.1,
+   "hudX": 190,
+   "hudY": 100,
+   "hudScale": 0.85,
+   "defaultInstrument": "diaithirtanks:readout"
+  }
+ ]
 }

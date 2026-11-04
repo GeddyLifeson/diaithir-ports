@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/entity/raid/Raid$RaiderType",
+      "name": "DIAITHIRHOSTILE_INQUISITOR",
+      "constructor": "(Ljava/util/function/Supplier;[I)V",
+      "parameters": {
+        "class": "net/diaithir/hostile/raided/registry/RaidedRaiderTypes",
+        "field": "INQUISITOR"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/raid/Raid$RaiderType",
+      "name": "DIAITHIRHOSTILE_INCINERATOR",
+      "constructor": "(Ljava/util/function/Supplier;[I)V",
+      "parameters": {
+        "class": "net/diaithir/hostile/raided/registry/RaidedRaiderTypes",
+        "field": "INCINERATOR"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/raid/Raid$RaiderType",
+      "name": "DIAITHIRHOSTILE_SAVAGER",
+      "constructor": "(Ljava/util/function/Supplier;[I)V",
+      "parameters": {
+        "class": "net/diaithir/hostile/raided/registry/RaidedRaiderTypes",
+        "field": "SAVAGER"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/raid/Raid$RaiderType",
+      "name": "DIAITHIRHOSTILE_NECROMANCER",
+      "constructor": "(Ljava/util/function/Supplier;[I)V",
+      "parameters": {
+        "class": "net/diaithir/hostile/raided/registry/RaidedRaiderTypes",
+        "field": "NECROMANCER"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/raid/Raid$RaiderType",
+      "name": "DIAITHIRHOSTILE_ELECTROMANCER",
+      "constructor": "(Ljava/util/function/Supplier;[I)V",
+      "parameters": {
+        "class": "net/diaithir/hostile/raided/registry/RaidedRaiderTypes",
+        "field": "ELECTROMANCER"
+      }
+    }
+  ]
+}

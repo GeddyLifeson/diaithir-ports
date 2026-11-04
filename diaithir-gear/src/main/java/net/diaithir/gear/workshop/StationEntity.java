@@ -53,8 +53,9 @@ public final class StationEntity extends BlockEntity {
         parts.clear();
         spent.clear();
         sync();
+        Component given = out.getHoverName();
         if (!p.getInventory().add(out)) p.drop(out, false);
-        StationBlock.say(p, "workshop.diaithirgear.done", out.getHoverName());
+        StationBlock.say(p, "workshop.diaithirgear.done", given);
     }
 
     /** A part item clicked onto the bench: fills the first open slot that accepts it. */
