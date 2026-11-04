@@ -67810,6 +67810,10 @@ hash = "bc0c0c6c5bde89dd5dddcdb304f9e6a8516f8caec9fb726fb7454a2038b4b483"
 metafile = true
 
 [[files]]
+file = "mods/diaithir-bosses-neoforge-26.1.2-1.0.0.jar"
+hash = "dd0a3baf4ed05b766e7873ba3c88d1010d7739b266c0efe9aacc9f3cca0624cd"
+
+[[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
 hash = "e0c4162d1a3280b86e14b6c65aabdee4d5a1dbb5c3e5304ab35ba591eafaa2fa"
 metafile = true
