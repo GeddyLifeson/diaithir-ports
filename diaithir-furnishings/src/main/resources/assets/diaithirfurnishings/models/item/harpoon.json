@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/harpoon"
+  "layer0": "diaithirfurnishings:item/harpoon_head",
+  "layer1": "diaithirfurnishings:item/harpoon_handle",
+  "layer2": "diaithirfurnishings:item/harpoon_binding"
  }
 }

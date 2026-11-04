@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/melonshelf" },
+            { "model": "apothic_enchanting:block/melonshelf_2" },
+            { "model": "apothic_enchanting:block/melonshelf_3" }
+        ]
+    }
+}

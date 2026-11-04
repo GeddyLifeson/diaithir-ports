@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/pressure_cooker"
+  "layer0": "diaithirfurnishings:item/pressure_cooker_pot",
+  "layer1": "diaithirfurnishings:item/pressure_cooker_handle"
  }
 }

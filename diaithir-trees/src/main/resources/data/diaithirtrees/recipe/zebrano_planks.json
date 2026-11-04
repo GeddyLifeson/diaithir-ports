@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:zebrano_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:zebrano_planks",
+  "count": 4
+ }
+}

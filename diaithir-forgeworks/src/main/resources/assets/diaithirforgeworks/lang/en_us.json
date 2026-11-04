@@ -12,12 +12,9 @@
   "block.diaithirforgeworks.sawmill_age5": "Skerrivane (Age V)",
   "block.diaithirforgeworks.sawmill_age6": "Skerrivane (Age VI)",
   "item.diaithirforgeworks.bronze_ingot": "Bronze Ingot",
-  "item.diaithirforgeworks.chance_augment": "Ostravine Augment",
   "item.diaithirforgeworks.copper_dust": "Copper Dust",
-  "item.diaithirforgeworks.efficiency_augment": "Thrimvael Augment",
   "item.diaithirforgeworks.gold_dust": "Gold Dust",
   "item.diaithirforgeworks.iron_dust": "Iron Dust",
   "item.diaithirforgeworks.sawdust": "Sawdust",
-  "item.diaithirforgeworks.speed_augment": "Veloqith Augment",
   "itemGroup.diaithirforgeworks": "Diaithir Forgeworks"
 }

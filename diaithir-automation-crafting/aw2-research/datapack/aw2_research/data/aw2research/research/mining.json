@@ -1,0 +1,29 @@
+{
+  "title": "Mining",
+  "description": "Ancient Warfare 2 research: mining.",
+  "prerequisites": [
+    "aw2research:engineering"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_pickaxe",
+            "count": {
+              "min": 1
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:iron_pickaxe"
+    }
+  }
+}

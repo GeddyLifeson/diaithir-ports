@@ -1,6 +1,13 @@
 {
  "replace": false,
  "values": [
+  "aerialhell:aerial_tree_sapling",
+  "aerialhell:copper_pine_sapling",
+  "aerialhell:golden_beech_sapling",
+  "aerialhell:lapis_robinia_sapling",
+  "aerialhell:purple_shadow_pine_sapling",
+  "aerialhell:shadow_pine_sapling",
+  "aerialhell:stellar_jungle_tree_sapling",
   "aether_ii:amberoot_sapling",
   "aether_ii:greatboa_sapling",
   "aether_ii:greatoak_sapling",

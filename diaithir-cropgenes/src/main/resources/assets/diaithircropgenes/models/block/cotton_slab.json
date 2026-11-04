@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:block/slab",
+ "textures": {
+  "bottom": "diaithircropgenes:block/cotton_slab",
+  "top": "diaithircropgenes:block/cotton_slab",
+  "side": "diaithircropgenes:block/cotton_slab",
+  "particle": "diaithircropgenes:block/cotton_slab"
+ }
+}

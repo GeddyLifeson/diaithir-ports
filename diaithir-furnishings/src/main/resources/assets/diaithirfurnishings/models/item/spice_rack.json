@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/spice_rack"
+  "layer0": "diaithirfurnishings:item/spice_rack_pot"
  }
 }

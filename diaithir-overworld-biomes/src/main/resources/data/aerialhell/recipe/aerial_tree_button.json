@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "redstone",
+ "ingredients": [
+  "aerialhell:aerial_tree_planks"
+ ],
+ "result": {
+  "id": "aerialhell:aerial_tree_button"
+ }
+}

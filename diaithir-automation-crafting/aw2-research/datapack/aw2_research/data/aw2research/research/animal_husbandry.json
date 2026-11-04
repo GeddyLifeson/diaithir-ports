@@ -1,0 +1,29 @@
+{
+  "title": "Animal Husbandry",
+  "description": "Ancient Warfare 2 research: animal husbandry.",
+  "prerequisites": [
+    "aw2research:agriculture"
+  ],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wheat",
+            "count": {
+              "min": 12
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:wheat"
+    }
+  }
+}

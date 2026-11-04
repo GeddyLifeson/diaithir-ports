@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:acacia_planks",
+  "C": "minecraft:chest"
+ },
+ "pattern": [
+  "PPP",
+  "PCP",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:acacia_wardrobe",
+  "count": 1
+ }
+}

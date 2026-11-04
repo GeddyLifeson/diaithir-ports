@@ -1,0 +1,15 @@
+{
+  "station": "machine.assembler",
+  "stage": "part",
+  "time_s": 14,
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_rocket_pod_round_motor",
+    "count": 1
+  }
+}

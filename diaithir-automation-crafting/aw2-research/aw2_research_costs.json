@@ -1,0 +1,856 @@
+{
+  "advanced_siege_warfare": {
+    "time_s": 200,
+    "dependencies": [
+      "siege_warfare",
+      "machinery"
+    ],
+    "resources": [
+      {
+        "aw2": "ingotSteel",
+        "item": null,
+        "count": 8
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 12
+      },
+      {
+        "aw2": "plankWood",
+        "item": "#minecraft:planks",
+        "count": 16
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 12
+      }
+    ]
+  },
+  "agriculture": {
+    "time_s": 200,
+    "dependencies": [],
+    "resources": [
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 24
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 3
+      },
+      {
+        "aw2": "cropWheat",
+        "item": "minecraft:wheat",
+        "count": 4
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 4
+      }
+    ]
+  },
+  "animal_husbandry": {
+    "time_s": 200,
+    "dependencies": [
+      "agriculture"
+    ],
+    "resources": [
+      {
+        "aw2": "cropWheat",
+        "item": "minecraft:wheat",
+        "count": 12
+      },
+      {
+        "aw2": "leather",
+        "item": "minecraft:leather",
+        "count": 4
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 12
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 4
+      }
+    ]
+  },
+  "ballistics": {
+    "time_s": 200,
+    "dependencies": [
+      "theory_of_gravity"
+    ],
+    "resources": [
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 6
+      },
+      {
+        "aw2": "dyeBlack",
+        "item": "minecraft:black_dye",
+        "count": 6
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 12
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 6
+      }
+    ]
+  },
+  "chemistry": {
+    "time_s": 200,
+    "dependencies": [
+      "mining"
+    ],
+    "resources": [
+      {
+        "aw2": "dustRedstone",
+        "item": "minecraft:redstone",
+        "count": 32
+      },
+      {
+        "aw2": "dyeBlue",
+        "item": "minecraft:blue_dye",
+        "count": 16
+      },
+      {
+        "aw2": "ingotGold",
+        "item": "minecraft:gold_ingot",
+        "count": 2
+      },
+      {
+        "aw2": "netherrack",
+        "item": "minecraft:netherrack",
+        "count": 8
+      }
+    ]
+  },
+  "combustion": {
+    "time_s": 200,
+    "dependencies": [
+      "mining",
+      "the_wheel"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 10
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 8
+      },
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 5
+      },
+      {
+        "aw2": "netherrack",
+        "item": "minecraft:netherrack",
+        "count": 12
+      }
+    ]
+  },
+  "command": {
+    "time_s": 200,
+    "dependencies": [
+      "leadership"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:iron_helmet",
+        "item": "minecraft:iron_helmet",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:iron_chestplate",
+        "item": "minecraft:iron_chestplate",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:iron_leggings",
+        "item": "minecraft:iron_leggings",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:iron_boots",
+        "item": "minecraft:iron_boots",
+        "count": 1
+      }
+    ]
+  },
+  "conscription": {
+    "time_s": 200,
+    "dependencies": [
+      "leadership"
+    ],
+    "resources": [
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 12
+      },
+      {
+        "aw2": "ingotGold",
+        "item": "minecraft:gold_ingot",
+        "count": 4
+      },
+      {
+        "aw2": "minecraft:iron_sword",
+        "item": "minecraft:iron_sword",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:golden_apple",
+        "item": "minecraft:golden_apple",
+        "count": 1
+      }
+    ]
+  },
+  "construction": {
+    "time_s": 200,
+    "dependencies": [
+      "engineering"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:iron_pickaxe",
+        "item": "minecraft:iron_pickaxe",
+        "count": 1
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 4
+      },
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 12
+      },
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 4
+      }
+    ]
+  },
+  "engineering": {
+    "time_s": 200,
+    "dependencies": [
+      "invention"
+    ],
+    "resources": [
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 20
+      },
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 12
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 4
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 4
+      }
+    ]
+  },
+  "explosives": {
+    "time_s": 200,
+    "dependencies": [
+      "combustion",
+      "chemistry"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 12
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 8
+      },
+      {
+        "aw2": "sand",
+        "item": "#minecraft:sand",
+        "count": 10
+      },
+      {
+        "aw2": "netherrack",
+        "item": "minecraft:netherrack",
+        "count": 10
+      }
+    ]
+  },
+  "farming": {
+    "time_s": 200,
+    "dependencies": [
+      "invention",
+      "agriculture"
+    ],
+    "resources": [
+      {
+        "aw2": "cropWheat",
+        "item": "minecraft:wheat",
+        "count": 12
+      },
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 24
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 3
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 4
+      }
+    ]
+  },
+  "fishing": {
+    "time_s": 200,
+    "dependencies": [
+      "agriculture"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:fish",
+        "item": "minecraft:fish",
+        "count": 5
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 24
+      },
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 12
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 4
+      }
+    ]
+  },
+  "gunpowder": {
+    "time_s": 200,
+    "dependencies": [
+      "explosives",
+      "refining"
+    ],
+    "resources": [
+      {
+        "aw2": "gunpowder",
+        "item": "minecraft:gunpowder",
+        "count": 16
+      },
+      {
+        "aw2": "sand",
+        "item": "#minecraft:sand",
+        "count": 12
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 12
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 8
+      }
+    ]
+  },
+  "invention": {
+    "time_s": 200,
+    "dependencies": [],
+    "resources": [
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 12
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 3
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 4
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 4
+      }
+    ]
+  },
+  "leadership": {
+    "time_s": 200,
+    "dependencies": [],
+    "resources": [
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 10
+      },
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 24
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 3
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 4
+      }
+    ]
+  },
+  "machinery": {
+    "time_s": 200,
+    "dependencies": [
+      "theory_of_gravity"
+    ],
+    "resources": [
+      {
+        "aw2": "ingotSteel",
+        "item": null,
+        "count": 10
+      },
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 8
+      },
+      {
+        "aw2": "gearIron",
+        "item": null,
+        "count": 3
+      },
+      {
+        "aw2": "bearingIron",
+        "item": null,
+        "count": 2
+      }
+    ]
+  },
+  "mass_production": {
+    "time_s": 200,
+    "dependencies": [
+      "refining",
+      "machinery"
+    ],
+    "resources": [
+      {
+        "aw2": "ingotSteel",
+        "item": null,
+        "count": 12
+      },
+      {
+        "aw2": "gearSteel",
+        "item": null,
+        "count": 6
+      },
+      {
+        "aw2": "bearingSteel",
+        "item": null,
+        "count": 3
+      },
+      {
+        "aw2": "shaftSteel",
+        "item": null,
+        "count": 3
+      }
+    ]
+  },
+  "mathematics": {
+    "time_s": 200,
+    "dependencies": [
+      "engineering"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:book",
+        "item": "minecraft:book",
+        "count": 3
+      },
+      {
+        "aw2": "dustRedstone",
+        "item": "minecraft:redstone",
+        "count": 5
+      },
+      {
+        "aw2": "minecraft:noteblock",
+        "item": "minecraft:noteblock",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 4
+      }
+    ]
+  },
+  "mining": {
+    "time_s": 200,
+    "dependencies": [
+      "engineering"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:iron_pickaxe",
+        "item": "minecraft:iron_pickaxe",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:furnace_minecart",
+        "item": "minecraft:furnace_minecart",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:golden_rail",
+        "item": "minecraft:golden_rail",
+        "count": 6
+      },
+      {
+        "aw2": "minecraft:bucket",
+        "item": "minecraft:bucket",
+        "count": 1
+      }
+    ]
+  },
+  "naval_warfare": {
+    "time_s": 200,
+    "dependencies": [
+      "machinery",
+      "navigation",
+      "tactics"
+    ],
+    "resources": [
+      {
+        "aw2": "gunpowder",
+        "item": "minecraft:gunpowder",
+        "count": 16
+      },
+      {
+        "aw2": "plankWood",
+        "item": "#minecraft:planks",
+        "count": 12
+      },
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 16
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 8
+      }
+    ]
+  },
+  "navigation": {
+    "time_s": 200,
+    "dependencies": [
+      "theory_of_gravity",
+      "seafaring"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:compass",
+        "item": "minecraft:compass",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:map",
+        "item": "minecraft:map",
+        "count": 1
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 12
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 5
+      }
+    ]
+  },
+  "refining": {
+    "time_s": 200,
+    "dependencies": [
+      "chemistry"
+    ],
+    "resources": [
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 12
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 10
+      },
+      {
+        "aw2": "ingotGold",
+        "item": "minecraft:gold_ingot",
+        "count": 2
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 12
+      }
+    ]
+  },
+  "rocketry": {
+    "time_s": 200,
+    "dependencies": [
+      "theory_of_gravity"
+    ],
+    "resources": [
+      {
+        "aw2": "gunpowder",
+        "item": "minecraft:gunpowder",
+        "count": 12
+      },
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 6
+      },
+      {
+        "aw2": "stickWood",
+        "item": "minecraft:stick",
+        "count": 18
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 12
+      },
+      {
+        "aw2": "torch",
+        "item": "minecraft:torch",
+        "count": 6
+      }
+    ]
+  },
+  "seafaring": {
+    "time_s": 200,
+    "dependencies": [
+      "the_wheel",
+      "mathematics",
+      "trade"
+    ],
+    "resources": [
+      {
+        "aw2": "plankWood",
+        "item": "#minecraft:planks",
+        "count": 12
+      },
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 8
+      },
+      {
+        "aw2": "minecraft:wool",
+        "item": "#minecraft:wool",
+        "count": 10
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 12
+      }
+    ]
+  },
+  "siege_warfare": {
+    "time_s": 200,
+    "dependencies": [
+      "tactics"
+    ],
+    "resources": [
+      {
+        "aw2": "plankWood",
+        "item": "#minecraft:planks",
+        "count": 12
+      },
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 10
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 12
+      },
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 6
+      }
+    ]
+  },
+  "tactics": {
+    "time_s": 200,
+    "dependencies": [
+      "conscription",
+      "command"
+    ],
+    "resources": [
+      {
+        "aw2": "paper",
+        "item": "minecraft:paper",
+        "count": 8
+      },
+      {
+        "aw2": "minecraft:coal",
+        "item": "minecraft:coal",
+        "count": 4
+      },
+      {
+        "aw2": "minecraft:book",
+        "item": "minecraft:book",
+        "count": 1
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 4
+      }
+    ]
+  },
+  "the_wheel": {
+    "time_s": 200,
+    "dependencies": [
+      "engineering"
+    ],
+    "resources": [
+      {
+        "aw2": "minecraft:hopper",
+        "item": "minecraft:hopper",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:dropper",
+        "item": "minecraft:dropper",
+        "count": 1
+      },
+      {
+        "aw2": "stone",
+        "item": "minecraft:stone",
+        "count": 4
+      },
+      {
+        "aw2": "plankWood",
+        "item": "#minecraft:planks",
+        "count": 4
+      }
+    ]
+  },
+  "theory_of_gravity": {
+    "time_s": 200,
+    "dependencies": [
+      "the_wheel",
+      "construction",
+      "mathematics"
+    ],
+    "resources": [
+      {
+        "aw2": "ingotIron",
+        "item": "minecraft:iron_ingot",
+        "count": 8
+      },
+      {
+        "aw2": "string",
+        "item": "minecraft:string",
+        "count": 8
+      },
+      {
+        "aw2": "minecraft:book",
+        "item": "minecraft:book",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:apple",
+        "item": "minecraft:apple",
+        "count": 1
+      }
+    ]
+  },
+  "trade": {
+    "time_s": 200,
+    "dependencies": [
+      "fishing",
+      "command"
+    ],
+    "resources": [
+      {
+        "aw2": "ingotGold",
+        "item": "minecraft:gold_ingot",
+        "count": 8
+      },
+      {
+        "aw2": "gemDiamond",
+        "item": "minecraft:diamond",
+        "count": 3
+      },
+      {
+        "aw2": "gemEmerald",
+        "item": "minecraft:emerald",
+        "count": 1
+      },
+      {
+        "aw2": "minecraft:book",
+        "item": "minecraft:book",
+        "count": 4
+      }
+    ]
+  }
+}

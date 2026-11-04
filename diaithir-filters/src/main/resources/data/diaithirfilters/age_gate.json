@@ -1,0 +1,9 @@
+{
+  "tier1": {
+    "age": 5,
+    "items": [
+      "diaithirfilters:filter",
+      "diaithirfilters:filter_card"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "station": "station.steam_forge",
+  "stage": "assembly",
+  "time_s": 12,
+  "ingredients": [
+    {
+      "tag": "c:ingots/steel",
+      "count": 2
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "count": 3
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:ammo_box_small",
+    "count": 1
+  },
+  "power": "steam",
+  "w": 20000.0
+}

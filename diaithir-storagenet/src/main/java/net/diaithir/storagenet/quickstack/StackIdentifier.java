@@ -1,0 +1,68 @@
+package net.diaithir.storagenet.quickstack;
+
+import net.diaithir.storagenet.quickstack.InventoryUtils;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.PatchedDataComponentMap;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
+
+/**
+ * Compact record used for identifying item stacks by both their item and component data.
+ * @param item The item of the stack.
+ * @param components The component data of the stack.
+ */
+public record StackIdentifier(Item item, @Nullable PatchedDataComponentMap components) {
+
+    public StackIdentifier(ItemStack stack) {
+        this(stack.getItem(), new PatchedDataComponentMap(stack.getComponents()));
+    }
+
+    /**
+     * Use InventoryUtils.areComponentMapsEqual instead of the ComponentMapImpl.equals method which checks if the
+     * baseComponent ComponentMaps are equal by reference.
+     * @param o the reference object with which to compare.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o instanceof StackIdentifier other) {
+            if (!Objects.equals(item, other.item)) {
+                return false;
+            }
+
+            if (components == null && other.components == null)  {
+                return true;
+            }
+            if (components == null || other.components == null)  {
+                return false;
+            }
+
+            return InventoryUtils.areComponentMapsEqual(this.components, other.components);
+        }
+
+        return false;
+    }
+
+    /**
+     * Calculating a hashCode based on the actual contents of the component map.
+     * @return The updated hash code.
+     */
+    @Override
+    public int hashCode() {
+        int result = item != null ? item.hashCode() : 0;
+
+        // Use custom logic to hash component contents directly
+        if (components != null) {
+            for (DataComponentType<?> type : components.keySet()) {
+                Object componentValue = components.get(type);
+                result = 31 * result + (componentValue != null ? componentValue.hashCode() : 0);
+            }
+        }
+        return result;
+    }
+}

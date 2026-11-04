@@ -63,6 +63,9 @@ public final class DiaithirBosses {
     public static final DeferredBlock<Block> ALTAR = BLOCKS.registerBlock("boss_altar", AltarBlock::new,
         () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops().lightLevel(s -> 7));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> ALTAR_ITEM = ITEMS.registerSimpleBlockItem(ALTAR);
+    public static final DeferredBlock<Block> WARDEN_ALTAR = BLOCKS.registerBlock("warden_altar", WardenAltarBlock::new,
+        () -> BlockBehaviour.Properties.of().strength(3.0F, 6.0F).requiresCorrectToolForDrops().lightLevel(s -> 5));
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> WARDEN_ALTAR_ITEM = ITEMS.registerSimpleBlockItem(WARDEN_ALTAR);
     public static final DeferredBlock<Block> ASCENDANT_ALTAR = BLOCKS.registerBlock("ascendant_altar", AscendantAltarBlock::new,
         () -> BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops().lightLevel(s -> 10));
     public static final DeferredItem<net.minecraft.world.item.BlockItem> ASCENDANT_ALTAR_ITEM = ITEMS.registerSimpleBlockItem(ASCENDANT_ALTAR);
@@ -88,6 +91,7 @@ public final class DiaithirBosses {
         .icon(() -> new ItemStack(ALTAR_ITEM.get()))
         .displayItems((params, out) -> {
             out.accept(ALTAR_ITEM.get());
+            out.accept(WARDEN_ALTAR_ITEM.get());
             out.accept(ASCENDANT_ALTAR_ITEM.get());
             out.accept(OGHAM_STONE_ITEM.get());
             out.accept(GATE_ITEM.get());

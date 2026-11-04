@@ -1,0 +1,10 @@
+{
+    "comparator_output": 3,
+    "description": {
+        "translate": "jukebox_song.apothic_enchanting.arcana"
+    },
+    "length_in_seconds": 291.0,
+    "sound_event": {
+        "sound_id": "apothic_enchanting:music_disc.arcana"
+    }
+}

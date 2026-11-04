@@ -1,0 +1,56 @@
+{
+  "age": "I",
+  "names": {
+    "mat_timber_post_beam": "Make Post and Beam Timber",
+    "mat_masonry_mud_brick": "Make Mud Brick",
+    "mat_masonry_fired_brick": "Make Fired Brick",
+    "mat_glass_blown": "Make Blown Glass",
+    "mat_roofing_thatch": "Make Thatch",
+    "mat_road_flagstone": "Make Flagstone Paving",
+    "mat_insulation_turf": "Make Turf Insulation"
+  },
+  "side": [
+    {
+      "id": "mat_timber_post_beam",
+      "title_key": "mat_timber_post_beam",
+      "goal": "obtain:1 timber_post_beam",
+      "text": "Make Post and Beam Timber at the hearth bench."
+    },
+    {
+      "id": "mat_masonry_mud_brick",
+      "title_key": "mat_masonry_mud_brick",
+      "goal": "obtain:1 masonry_mud_brick",
+      "text": "Make Mud Brick at the hearth bench."
+    },
+    {
+      "id": "mat_masonry_fired_brick",
+      "title_key": "mat_masonry_fired_brick",
+      "goal": "obtain:1 masonry_fired_brick",
+      "text": "Make Fired Brick at the hearth bench."
+    },
+    {
+      "id": "mat_glass_blown",
+      "title_key": "mat_glass_blown",
+      "goal": "obtain:1 glass_blown",
+      "text": "Make Blown Glass at the hearth bench."
+    },
+    {
+      "id": "mat_roofing_thatch",
+      "title_key": "mat_roofing_thatch",
+      "goal": "obtain:1 roofing_thatch",
+      "text": "Make Thatch at the hearth bench."
+    },
+    {
+      "id": "mat_road_flagstone",
+      "title_key": "mat_road_flagstone",
+      "goal": "obtain:1 road_flagstone",
+      "text": "Make Flagstone Paving at the hearth bench."
+    },
+    {
+      "id": "mat_insulation_turf",
+      "title_key": "mat_insulation_turf",
+      "goal": "obtain:1 insulation_turf",
+      "text": "Make Turf Insulation at the hearth bench."
+    }
+  ]
+}

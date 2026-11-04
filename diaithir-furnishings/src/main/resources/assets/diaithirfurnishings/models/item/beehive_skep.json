@@ -1,6 +1,8 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/beehive_skep"
+  "layer0": "diaithirfurnishings:item/beehive_skep_head",
+  "layer1": "diaithirfurnishings:item/beehive_skep_handle",
+  "layer2": "diaithirfurnishings:item/beehive_skep_binding"
  }
 }

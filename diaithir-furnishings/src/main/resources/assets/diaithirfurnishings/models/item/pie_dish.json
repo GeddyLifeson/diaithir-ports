@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/pie_dish"
+  "layer0": "diaithirfurnishings:item/pie_dish_pot",
+  "layer1": "diaithirfurnishings:item/pie_dish_handle"
  }
 }

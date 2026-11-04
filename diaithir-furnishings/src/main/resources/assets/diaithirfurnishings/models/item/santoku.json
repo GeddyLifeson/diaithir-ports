@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/santoku"
+  "layer0": "diaithirfurnishings:item/santoku_head",
+  "layer1": "diaithirfurnishings:item/santoku_handle"
  }
 }

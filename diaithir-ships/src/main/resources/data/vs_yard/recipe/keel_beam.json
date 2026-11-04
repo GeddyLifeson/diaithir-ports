@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LLL",
+    "III",
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:spruce_log",
+    "I": "minecraft:iron_ingot"
+  },
+  "result": {
+    "id": "vs_yard:keel_beam",
+    "count": 1
+  }
+}
