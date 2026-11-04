@@ -57,6 +57,7 @@ public final class MegaSelfTest {
         check("catalog has 12 vehicles", MegaCatalog.ids().size() == 12);
         physics();
         digHead(level);
+        site(level);
         finish(level);
     }
 
@@ -131,8 +132,6 @@ public final class MegaSelfTest {
         int n = 0;
         for (int i = 0; i < c.getContainerSize(); i++) if (c.getItem(i).is(item)) n += c.getItem(i).getCount();
         return n;
-        site(level);
-        finish(level);
     }
 
     /** Site office, depot, stage engine and layout. Needs -Dmegamachines.timescale high (set by MegaMod when the selftest is on). */
