@@ -130,24 +130,34 @@ try {
     if ($code -ne 0) { throw "The pack installer stopped with code $code. See the lines above." }
 
     # 7. Map keybinds: the pack's conflict-free key map (M opens the Atlas) is merged into options.txt.
+    # Each key's pack value is applied once: keybinds.applied.txt (next to options.txt) records what was applied, so a key
+    # the player rebinds afterwards is left alone until the pack changes that key's value.
     $opt = Join-Path $mc 'options.txt'
+    $appliedPath = Join-Path $mc 'keybinds.applied.txt'
     $keysUrl = $packUrl -replace 'pack\.toml$', 'keybinds.txt'
     $want = [ordered]@{}
     foreach ($l in ([string](Invoke-RestMethod -Uri "$keysUrl?t=$stamp" -UseBasicParsing)) -split "`r?`n") {
         if ($l -match '^(key_[^:]+):(.+)$') { $want[$Matches[1]] = $Matches[2] }
     }
     if ($want.Count -lt 100) { throw "keybinds.txt looks wrong ($($want.Count) entries) at $keysUrl" }
+    $applied = @{}
+    if (Test-Path $appliedPath) {
+        foreach ($l in (Get-Content $appliedPath)) { if ($l -match '^(key_[^:]+):(.+)$') { $applied[$Matches[1]] = $Matches[2] } }
+    }
+    $todo = [ordered]@{}
+    foreach ($k in $want.Keys) { if (-not $applied.ContainsKey($k) -or $applied[$k] -ne $want[$k]) { $todo[$k] = $want[$k] } }
     $optLines = @()
     if (Test-Path $opt) { $optLines = @(Get-Content $opt) }
     $kept = @($optLines | Where-Object {
         $line = $_
-        -not ($line -match '^(key_[^:]+):' -and $want.Contains($Matches[1]))
+        -not ($line -match '^(key_[^:]+):' -and $todo.Contains($Matches[1]))
     })
     # The game ignores an options.txt that has no version line.
     if (-not ($kept | Where-Object { $_ -like 'version:*' })) { $kept = @('version:4790') + $kept }
-    foreach ($k in $want.Keys) { $kept += ($k + ':' + $want[$k]) }
+    foreach ($k in $todo.Keys) { $kept += ($k + ':' + $todo[$k]) }
     [IO.File]::WriteAllLines($opt, $kept, (New-Object Text.UTF8Encoding($false)))
-    Write-Host "Keybinds set ($($want.Count) entries, no overlaps)."
+    [IO.File]::WriteAllLines($appliedPath, @($want.Keys | ForEach-Object { $_ + ':' + $want[$_] }), (New-Object Text.UTF8Encoding($false)))
+    Write-Host "Keybinds: $($todo.Count) of $($want.Count) entries applied, the rest were applied earlier (your own changes to those are kept)."
 
     # 8. Bring the server mods folder in line with the pack (removes JourneyMap and MapFrontiers).
     $srv = 'C:\DiaithirServer'
