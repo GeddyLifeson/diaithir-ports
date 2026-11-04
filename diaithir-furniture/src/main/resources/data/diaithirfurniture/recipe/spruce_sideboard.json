@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:spruce_planks",
+  "C": "minecraft:chest"
+ },
+ "pattern": [
+  "PPP",
+  "PCP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:spruce_sideboard",
+  "count": 1
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "diaithircrafting:quest/first_munition",
+  "title": "Cast your first round",
+  "steps": [
+    "Cast a stone shot casing and a charge at the hearth bench",
+    "Assemble them into a stone shot",
+    "Keep rounds in an armoured magazine: filled rounds can chain-detonate when their block breaks"
+  ],
+  "next": "diaithircrafting:quest/first_operator"
+}

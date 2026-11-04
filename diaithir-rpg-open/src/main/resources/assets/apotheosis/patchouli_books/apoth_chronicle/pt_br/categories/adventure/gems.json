@@ -1,0 +1,7 @@
+{
+    "name": "Gemas e encaixes",
+    "description": "Uma pedra brilhante sempre chama a atenção.$(p)Fique de olho nas Gemas Apóticas, que concedem bônus quando encaixadas em itens com afixo.",
+    "icon": "apotheosis:gem",
+    "flag": "apotheosis:adventure",
+    "parent": "apotheosis:adventure/adventure"
+}

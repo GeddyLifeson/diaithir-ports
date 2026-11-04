@@ -301,6 +301,8 @@ final class SelfTest {
                 else if (!a2.saveWithoutMetadata(server.registryAccess()).toString().contains("links")) fails.add("links not saved");
             }
 
+            fails.addAll(net.diaithir.wiretech.circuit.CircuitSelfTest.run(level, base));
+
             // age gate lists real items only
             try (var in = SelfTest.class.getResourceAsStream("/data/" + DiaithirWiretech.ID + "/age_gate.json")) {
                 if (in == null) fails.add("age_gate.json missing");

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:mandarin_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:mandarin_planks",
+  "count": 4
+ }
+}

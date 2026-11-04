@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/leaves",
+ "textures": {
+  "all": "diaithirtrees:block/cherry_plum_leaves"
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:cobblestone"
+ },
+ "pattern": [
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:cobblestone_paving",
+  "count": 6
+ }
+}

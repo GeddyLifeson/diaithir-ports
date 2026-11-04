@@ -15,7 +15,11 @@ neoForge {
             programArgument '--nogui'
         }
     }
-    mods { diaithircrashtools { sourceSet(sourceSets.main) } }
+    accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
+    mods {
+        diaithircrashtools { sourceSet(sourceSets.main) }
+        simplebackups { sourceSet(sourceSets.main) }
+    }
 }
 
 processResources {
@@ -28,6 +32,8 @@ repositories {
 }
 
 dependencies {
+    implementation(jarJar('org.tukaani:xz:1.12'))
+    implementation(jarJar('com.github.luben:zstd-jni:1.5.7-7'))
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'com.google.code.gson:gson:2.11.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'

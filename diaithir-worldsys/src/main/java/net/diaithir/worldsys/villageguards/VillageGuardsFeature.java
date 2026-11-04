@@ -50,6 +50,9 @@ public final class VillageGuardsFeature {
         modBus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.SPAWN_EGGS) e.accept((Item) GUARD_EGG.get());
         });
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+            modBus.addListener(net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers.class, e -> e.registerEntityRenderer(GUARD.get(), GuardRenderer::new));
+        }
         NeoForge.EVENT_BUS.addListener(EntityJoinLevelEvent.class, VillageGuardsFeature::onJoin);
     }
 

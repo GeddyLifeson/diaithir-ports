@@ -37,3 +37,9 @@ Boss rituals, per-creature models and abilities, loot rooms and chests in struct
 
 ## Slice 7: generated art
 All realm blocks and simple items now use generated 64 px textures (tools/realm_art.py, procedural, own design; stairs/slabs/etc. share their parent's look; logs and turf get _top variants; leaves/glass/portals alpha; plants are cross sprites; ores have colored spots). No vanilla stand-in textures remain. Per-creature models and hand-painted art are still open.
+
+## Slice 8: loot, gear abilities, sizes
+- Every structure template now holds chests with a per-structure loot table (`<modid>:chests/<structure>`: realm gear, ingots/crystals, vanilla staples; towers and shrines are richer and enchanted).
+- Gear abilities (RealmGear): weapon hits apply an effect picked from the material name (frost slows, ember ignites, rot poisons, honey heals the wielder, cloud lifts, default weakness). A full armour set of one material gives short Resistance when hit and slows the attacker.
+- Per-creature size: scale comes from the creature's id hash (0.8-1.4 monsters, 0.7-1.2 passive, 1.5-2.2 bosses). Hand-modelled bodies are still open.
+- Boss rituals: bosses are tagged `<modid>:bosses` for the diaithir-bosses lane; the rites thread owns the ritual itself.

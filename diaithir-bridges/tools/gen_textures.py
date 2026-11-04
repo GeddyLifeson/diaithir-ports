@@ -79,3 +79,41 @@ for kind, name in (("eu", "claochladairdealain"), ("air", "claochladairanalach")
     top().save(f"{OUT}/{name}_top.png")
 tank(True).save(f"{OUT}/amarlionna_side.png")
 top().save(f"{OUT}/amarlionna_top.png")
+
+
+# ---- carrier tank (fuel bridge): steel tank, green band with a fuel drop; magic carrier: violet core with a spark
+def carrier_side():
+    im = tank(False); px = im.load()
+    for x in range(5, 11):
+        px[x, 6] = (60, 180, 90); px[x, 7] = (60, 180, 90)
+    for x, y in ((7, 9), (8, 9), (7, 10), (8, 10), (7, 11), (8, 11), (6, 11), (9, 11)):
+        px[x, y] = (232, 120, 40)
+    return im
+
+
+def magic_side():
+    im = tank(False); px = im.load()
+    for x in range(5, 11):
+        for y in range(5, 12):
+            px[x, y] = (58, 28, 96)
+    for x, y in ((7, 6), (8, 7), (7, 8), (8, 9), (7, 10), (6, 8), (9, 8)):
+        px[x, y] = (200, 150, 255)
+    return im
+
+
+carrier_side().save(f"{OUT}/carrier_tank_side.png")
+top().save(f"{OUT}/carrier_tank_top.png")
+magic_side().save(f"{OUT}/magic_carrier_side.png")
+top().save(f"{OUT}/magic_carrier_top.png")
+
+
+def loco_side():
+    im = base(); px = im.load()
+    hazard(im, 3, 5); hazard(im, 11, 13)
+    for x, y in ((8, 6), (7, 7), (6, 8), (7, 8), (8, 8), (9, 8), (8, 9), (7, 10)):   # lightning bolt
+        px[x, y] = (250, 220, 70)
+    return im
+
+
+loco_side().save(f"{OUT}/loco_charger_side.png")
+top().save(f"{OUT}/loco_charger_top.png")

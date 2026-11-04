@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "/": "minecraft:stick",
+    "@": "minecraft:string",
+    "B": "minecraft:cobblestone"
+  },
+  "pattern": [
+    " BB",
+    "@BB",
+    "/@ "
+  ],
+  "result": {
+    "id": "oredetector:focused_void_detector"
+  }
+}

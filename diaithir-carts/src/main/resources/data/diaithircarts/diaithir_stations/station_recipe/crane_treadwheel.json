@@ -1,0 +1,24 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 40,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 5
+  },
+  {
+   "item": "minecraft:iron_chain",
+   "count": 6
+  },
+  {
+   "item": "minecraft:oak_planks",
+   "count": 8
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:crane_treadwheel",
+  "count": 1
+ }
+}
