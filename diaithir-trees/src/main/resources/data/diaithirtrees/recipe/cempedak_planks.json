@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:cempedak_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:cempedak_planks",
+  "count": 4
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/wall_inventory",
+ "textures": {
+  "wall": "diaithirfarmkitchen:block/counter_stone_wall"
+ }
+}

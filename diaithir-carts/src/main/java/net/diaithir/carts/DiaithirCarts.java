@@ -45,6 +45,10 @@ public final class DiaithirCarts {
     public static final DeferredBlock<TierPoweredRail> STEEL_POWERED_RAIL = BLOCKS.registerBlock("steel_powered_rail", p -> new TierPoweredRail(p, Tier.STEEL), DiaithirCarts::rail);
     public static final DeferredBlock<TierRail> FAST_RAIL = BLOCKS.registerBlock("fast_rail", p -> new TierRail(p, Tier.FAST), DiaithirCarts::rail);
     public static final DeferredBlock<TierPoweredRail> FAST_POWERED_RAIL = BLOCKS.registerBlock("fast_powered_rail", p -> new TierPoweredRail(p, Tier.FAST), DiaithirCarts::rail);
+    public static final DeferredBlock<TierRail> NARROW_RAIL = BLOCKS.registerBlock("narrow_rail", p -> new TierRail(p, Tier.NARROW), DiaithirCarts::rail);
+    public static final DeferredBlock<TierPoweredRail> NARROW_POWERED_RAIL = BLOCKS.registerBlock("narrow_powered_rail", p -> new TierPoweredRail(p, Tier.NARROW), DiaithirCarts::rail);
+    public static final DeferredBlock<TierRail> DUAL_RAIL = BLOCKS.registerBlock("dual_rail", p -> new TierRail(p, Tier.DUAL), DiaithirCarts::rail);
+    public static final DeferredBlock<TierPoweredRail> DUAL_POWERED_RAIL = BLOCKS.registerBlock("dual_powered_rail", p -> new TierPoweredRail(p, Tier.DUAL), DiaithirCarts::rail);
     public static final DeferredBlock<StationRail> STATION_RAIL = BLOCKS.registerBlock("station_rail", StationRail::new, DiaithirCarts::rail);
 
     public static final DeferredBlock<OneWayRail> ONE_WAY_RAIL = BLOCKS.registerBlock("one_way_rail", OneWayRail::new, DiaithirCarts::rail);
@@ -63,7 +67,7 @@ public final class DiaithirCarts {
     public static final DeferredItem<BlockItem> CART_READER_ITEM = ITEMS.registerSimpleBlockItem(CART_READER);
 
     public static final List<DeferredBlock<? extends Block>> ALL_RAILS = List.of(BRONZE_RAIL, BRONZE_POWERED_RAIL, STEEL_RAIL, STEEL_POWERED_RAIL, FAST_RAIL,
-            FAST_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL, DESTINATION_RAIL, LOCKING_RAIL);
+            FAST_POWERED_RAIL, NARROW_RAIL, NARROW_POWERED_RAIL, DUAL_RAIL, DUAL_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL, DESTINATION_RAIL, LOCKING_RAIL);
     public static final List<DeferredItem<BlockItem>> RAIL_ITEMS = ALL_RAILS.stream().map(b -> ITEMS.registerSimpleBlockItem(b)).toList();
 
     public static final java.util.Map<Roads, DeferredBlock<Block>> ROAD_BLOCKS = new java.util.EnumMap<>(Roads.class);
@@ -78,6 +82,8 @@ public final class DiaithirCarts {
     public static final DeferredItem<Item> COUPLING_CHAIN = ITEMS.registerSimpleItem("coupling_chain");
     public static final DeferredItem<Item> CHAIN_CUTTERS = ITEMS.registerItem("chain_cutters", Item::new, p -> p.durability(96));
 
+    public static final DeferredItem<Item> MANA_FIREBOX = ITEMS.registerItem("mana_firebox", Item::new, p -> p.stacksTo(16));
+    public static final DeferredItem<Item> MANA_CELL = ITEMS.registerItem("mana_cell", Item::new, p -> p.stacksTo(16));
     public static final DeferredItem<Item> TIMETABLE = ITEMS.registerItem("timetable", TimetableItem::new, p -> p.stacksTo(1));
 
     public static final DeferredItem<Item> AUTONOMY_MODULE = ITEMS.registerItem("autonomy_module", Item::new, p -> p.stacksTo(16));
@@ -85,11 +91,14 @@ public final class DiaithirCarts {
     public DiaithirCarts(IEventBus bus) {
         Autonomy.ATTACHMENTS.register(bus);
         Schedule.ATTACHMENTS.register(bus);
+        GaugeData.ATTACHMENTS.register(bus);
+        MagicFuel.ATTACHMENTS.register(bus);
         Schedule.COMPONENTS.register(bus);
         BLOCKS.register(bus);
         ITEMS.register(bus);
         Coupling.ATTACHMENTS.register(bus);
         net.diaithir.freight.Freight.init(bus);
+        net.diaithir.yards.YardContent.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(CART_READER_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) ROAD_ITEMS.forEach(i -> e.accept(i.get()));
@@ -108,13 +117,18 @@ public final class DiaithirCarts {
             if (e.getEntity() instanceof AbstractMinecart cart && cart.level() instanceof ServerLevel level && cart.getRemovalReason() != null
                     && cart.getRemovalReason().shouldDestroy()) Coupling.onRemoved(level, cart);
         });
-        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); RoutingTest.tick(e.getServer()); ScheduleTest.tick(e.getServer()); });
+        NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); net.diaithir.yards.YardSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); RoutingTest.tick(e.getServer()); ScheduleTest.tick(e.getServer()); });
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirCarts::interact);
     }
 
     private static void interact(PlayerInteractEvent.EntityInteract e) {
         if (!(e.getTarget() instanceof AbstractMinecart cart)) return;
         ItemStack held = e.getItemStack();
+        if (e.getLevel() instanceof ServerLevel && (held.is(MagicFuel.FUEL) || held.is(MANA_FIREBOX.get()) || held.is(MANA_CELL.get()))) {
+            var r = MagicFuel.use(cart, e.getEntity(), e.getHand(), held);
+            if (r != null) { e.setCancellationResult(r); e.setCanceled(true); }
+            return;
+        }
         if (held.is(AUTONOMY_MODULE.get())) {
             e.setCancellationResult(InteractionResult.SUCCESS);
             e.setCanceled(true);

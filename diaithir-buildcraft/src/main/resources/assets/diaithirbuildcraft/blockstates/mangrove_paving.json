@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithirbuildcraft:block/mangrove_paving"
+  },
+  "type=top": {
+   "model": "diaithirbuildcraft:block/mangrove_paving_top"
+  },
+  "type=double": {
+   "model": "minecraft:block/mangrove_planks"
+  }
+ }
+}

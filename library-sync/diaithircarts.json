@@ -143,5 +143,25 @@
     "id": "diaithircarts:cart_reader",
     "name": "Cart Reader",
     "text": "Put it under a rail. Gives a redstone signal for the cart above it: 0 none, 1 a cart with no schedule, 2 to 13 a scheduled cart heading for that stop (signal minus 2; 13 means stop 11 or any later stop), 14 a scheduled cart with no crew waiting for one, 15 an autonomous cart. Age V."
+  },
+  {
+    "id": "diaithircarts:narrow_rail",
+    "name": "Narrow-Gauge Rail",
+    "text": "Narrow-gauge rail (3 ft). Cheap and light: it takes tight curves and steep grades, so it suits mountains and mines, but carts cap at 0.5 blocks per tick and narrow vehicles carry about 40% of the payload and are limited in weight. Does not connect with standard gauge. Age III."
+  },
+  {
+    "id": "diaithircarts:narrow_powered_rail",
+    "name": "Narrow-Gauge Powered Rail",
+    "text": "Narrow-gauge powered rail. Boosts a narrow-gauge vehicle when powered, stops it when not. Caps at 0.5 blocks per tick. Age III."
+  },
+  {
+    "id": "diaithircarts:dual_rail",
+    "name": "Dual-Gauge Rail",
+    "text": "Three rails laid so both gauges run on one track. Narrow and standard vehicles both pass, at the narrow cap of 0.5 blocks per tick and with the standard gauge's wide curves. Use it at yards and transfer stations. Age V."
+  },
+  {
+    "id": "diaithircarts:dual_powered_rail",
+    "name": "Dual-Gauge Powered Rail",
+    "text": "Dual-gauge powered rail. Boosts vehicles of either gauge when powered. Age V."
   }
 ]

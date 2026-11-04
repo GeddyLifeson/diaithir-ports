@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:bay_leaf_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:bay_leaf_planks",
+  "count": 4
+ }
+}

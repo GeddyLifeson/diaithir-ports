@@ -13,6 +13,7 @@ neoForge {
         server {
             server()
             programArgument '--nogui'
+            if (project.hasProperty('yardtest')) systemProperty 'diaithir.yardtest', 'true'
         }
     }
     mods { diaithircarts { sourceSet(sourceSets.main) } }

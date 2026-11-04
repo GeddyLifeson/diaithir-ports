@@ -246,6 +246,9 @@ public final class DiaithirAurorian {
             case "scrapper" -> new MachineBlock(p, false);
             case "moonlight_forge" -> new MachineBlock(p.noOcclusion(), true);
             case "portal_frame" -> new PortalFrameBlock(p);
+            case "sapling" -> new net.minecraft.world.level.block.SaplingBlock(new net.minecraft.world.level.block.grower.TreeGrower("silentwood", java.util.Optional.empty(),
+                java.util.Optional.of(net.minecraft.resources.ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(ID, "silentwood_tree"))), java.util.Optional.empty()),
+                p.noCollision().instabreak().noOcclusion().randomTicks());
             case "bars" -> new IronBarsBlock(p);
             case "log" -> new RotatedPillarBlock(p);
             case "leaves" -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, p.noOcclusion());

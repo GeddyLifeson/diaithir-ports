@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/pearl_endshelf" },
+            { "model": "apothic_enchanting:block/pearl_endshelf_2" },
+            { "model": "apothic_enchanting:block/pearl_endshelf_3" }
+        ]
+    }
+}

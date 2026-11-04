@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:blue_yonder_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:blue_yonder_planks",
+  "count": 4
+ }
+}
