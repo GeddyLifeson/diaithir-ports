@@ -110,6 +110,7 @@ for n in items:
         pre, kd = mt_.groups(); GEAR[n] = {'id': n, 'prefix': pre, 'kind': kd, 'tier': next((t for k, t in TIER if k in pre), 'iron')}
 sitems = []
 for n in items:
+    if n in cfg.get('keep_items', []): sitems.append(n); continue  # loot tables and recipes name it: a plain item, not a vanilla stand-in
     if n in GEAR: continue
     if n in made: continue
     if n in bset: continue  # block item of a skipped block

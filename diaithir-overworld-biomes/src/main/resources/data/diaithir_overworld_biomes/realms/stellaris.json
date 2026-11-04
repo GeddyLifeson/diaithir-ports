@@ -626,7 +626,26 @@
   "purple_can",
   "red_can",
   "white_can",
-  "yellow_can"
+  "yellow_can",
+  "autopilot_module",
+  "cargo_module",
+  "coal_lantern",
+  "coal_torch",
+  "diesel_bucket",
+  "flag",
+  "fuel_bucket",
+  "hydrogen_bucket",
+  "oil_bucket",
+  "rover_speed_module",
+  "rover_tank_module",
+  "sd_card",
+  "shield_module",
+  "skin_frost",
+  "skin_galaxy",
+  "skin_military",
+  "small_rocket_model",
+  "space_station_blueprint",
+  "tablet"
  ],
  "gear": [
   {
@@ -692,7 +711,7 @@
    "role": "passive",
    "hp": 10,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.9
   },
   {
    "id": "blue_fish",
@@ -700,7 +719,7 @@
    "role": "passive",
    "hp": 10,
    "atk": 2,
-   "scale": 1.0
+   "scale": 0.88
   },
   {
    "id": "heart_of_luna",
@@ -708,7 +727,7 @@
    "role": "boss",
    "hp": 300,
    "atk": 6,
-   "scale": 1.6
+   "scale": 1.86
   },
   {
    "id": "luna_shadow",
@@ -716,7 +735,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.01
   },
   {
    "id": "lunar_parasite",
@@ -732,7 +751,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 0.83
   },
   {
    "id": "parasite_affected_villager_evolved",
@@ -740,7 +759,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.09
   },
   {
    "id": "star_crawler",
@@ -748,7 +767,7 @@
    "role": "monster",
    "hp": 20,
    "atk": 3,
-   "scale": 1.0
+   "scale": 1.24
   },
   {
    "id": "star_crawler_boss",
@@ -756,7 +775,7 @@
    "role": "boss",
    "hp": 300,
    "atk": 6,
-   "scale": 1.6
+   "scale": 1.78
   }
  ]
 }
