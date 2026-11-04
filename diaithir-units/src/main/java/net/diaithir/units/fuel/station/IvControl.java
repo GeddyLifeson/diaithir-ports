@@ -77,6 +77,11 @@ final class IvControl {
         StringBuilder sb = new StringBuilder();
         try {
             List<?> engines = (List<?>) v.getClass().getField("engines").get(v);
+            try {
+                sb.append("creativeVehicle=").append(v.getClass().getField("isCreative").getBoolean(v)).append(' ');
+            } catch (ReflectiveOperationException | RuntimeException ex) {
+                sb.append("creativeVehicle=? ");
+            }
             sb.append("engines=").append(engines.size()).append(" running=").append(v.getClass().getField("enginesRunning").getBoolean(v));
             try {
                 sb.append(" rpm=").append(Math.round(named(v, "engine_rpm_1")));
