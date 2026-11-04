@@ -41,6 +41,7 @@ public final class Thrown {
                          int durability, int stack, int cooldown, String ammo) {}
 
     public static final List<Design> DESIGNS = load();
+    private static final Design SIEGE = new Design("siege", "siege", 0, 0, 0, 0, 0, 0, 0, 1, 0, null);
 
     private static List<Design> load() {
         try (var r = new InputStreamReader(Thrown.class.getResourceAsStream("/data/" + DiaithirArms.ID + "/historical_thrown.json"))) {
@@ -101,6 +102,8 @@ public final class Thrown {
     public static final class Shot extends ThrowableItemProjectile {
         private String designId = "grenado";
         private int fuse;
+        private float sPower, sDamage;
+        private boolean sBreaks, sFire;
 
         public Shot(EntityType<? extends Shot> type, Level level) {
             super(type, level);
@@ -112,7 +115,16 @@ public final class Thrown {
             this.fuse = byId(designId).fuse();
         }
 
-        private Design design() { return byId(designId); }
+        /** A shot from a siege engine: impact damage and an explosion of the given radius (0 for a plain bolt). */
+        public Shot(EntityType<? extends Shot> type, Level level, LivingEntity owner, ItemStack shown, float damage, float power, boolean breaks, boolean fire) {
+            super(type, owner, level, shown);
+            this.designId = "siege";
+            this.sDamage = damage; this.sPower = power; this.sBreaks = breaks; this.sFire = fire;
+        }
+
+        private boolean siege() { return designId.equals("siege"); }
+
+        private Design design() { return siege() ? SIEGE : byId(designId); }
 
         @Override
         protected Item getDefaultItem() { return Items.FLINT; }
@@ -130,6 +142,12 @@ public final class Thrown {
             Design d = design();
             if (fused()) return;
             Entity e = hit.getEntity();
+            if (siege()) {
+                e.hurt(damageSources().thrown(this, getOwner()), sDamage);
+                if (sFire) e.igniteForSeconds(5);
+                if (!level().isClientSide()) { if (sPower > 0) detonate(); else discard(); }
+                return;
+            }
             DamageSource src = damageSources().thrown(this, getOwner());
             if (d.damage() > 0) e.hurt(src, d.damage());
             if (e instanceof LivingEntity le && d.effectTicks() > 0) {
@@ -145,7 +163,9 @@ public final class Thrown {
         protected void onHitBlock(BlockHitResult hit) {
             super.onHitBlock(hit);
             if (level().isClientSide()) return;
-            if (fused()) {
+            if (siege()) {
+                if (sPower > 0) detonate(); else discard();
+            } else if (fused()) {
                 setDeltaMovement(getDeltaMovement().scale(0.1));
             } else if (design().kind().equals("molotov")) {
                 detonate();
@@ -166,7 +186,9 @@ public final class Thrown {
         private void detonate() {
             if (!(level() instanceof ServerLevel sl)) return;
             Design d = design();
-            if (d.kind().equals("molotov")) {
+            if (siege()) {
+                sl.explode(this, getX(), getY(), getZ(), sPower, sFire, sBreaks ? Level.ExplosionInteraction.TNT : Level.ExplosionInteraction.NONE);
+            } else if (d.kind().equals("molotov")) {
                 for (Entity e : sl.getEntities(this, new AABB(blockPosition()).inflate(2.5))) e.igniteForSeconds(8);
                 for (BlockPos p : BlockPos.betweenClosed(blockPosition().offset(-1, -1, -1), blockPosition().offset(1, 1, 1))) {
                     var fire = Blocks.FIRE.defaultBlockState();
@@ -184,6 +206,7 @@ public final class Thrown {
             super.addAdditionalSaveData(out);
             out.putString("design", designId);
             out.putInt("fuse", fuse);
+            out.putFloat("sPower", sPower); out.putFloat("sDamage", sDamage); out.putBoolean("sBreaks", sBreaks); out.putBoolean("sFire", sFire);
         }
 
         @Override
@@ -191,6 +214,7 @@ public final class Thrown {
             super.readAdditionalSaveData(in);
             designId = in.getStringOr("design", "grenado");
             fuse = in.getIntOr("fuse", 0);
+            sPower = in.getFloatOr("sPower", 0); sDamage = in.getFloatOr("sDamage", 0); sBreaks = in.getBooleanOr("sBreaks", false); sFire = in.getBooleanOr("sFire", false);
         }
     }
 

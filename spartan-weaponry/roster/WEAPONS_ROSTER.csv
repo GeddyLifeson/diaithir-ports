@@ -30,7 +30,7 @@ ballista,Ballista,siege,"Greece, Rome",c.400 BC,IV,siege,https://en.wikipedia.or
 onager,Onager,siege,Rome,c.300 AD,IV,siege,https://en.wikipedia.org/wiki/Onager_(siege_weapon)
 gastraphetes,Gastraphetes,crossbow,Ancient Greece,c.400 BC,IV,ranged-bow,https://en.wikipedia.org/wiki/Gastraphetes
 battering_ram,Battering ram,siege,"Assyria, worldwide",c.2000 BC,III,siege,https://en.wikipedia.org/wiki/Battering_ram
-siege_tower,Siege tower,siege,"Assyria, worldwide",c.800 BC,IV,siege,https://en.wikipedia.org/wiki/Siege_tower
+siege_tower,Siege tower,siege,"Assyria, worldwide",c.800 BC,IV,later,https://en.wikipedia.org/wiki/Siege_tower
 chinese_crossbow,Chinese crossbow (Qin repeating prototype),crossbow,China,c.400 BC,IV,duplicate,https://en.wikipedia.org/wiki/Crossbow
 zhanmadao,Zhanmadao,sword,China,c.600,IV,melee,https://en.wikipedia.org/wiki/Zhanmadao
 jian,Jian,sword,China,c.700 BC,IV,melee,https://en.wikipedia.org/wiki/Jian
@@ -196,20 +196,20 @@ claymore_mine,Claymore mine (M18A1),trap,United States,c.1960,VII,later,https://
 cranequin_crossbow,Cranequin crossbow,crossbow,Europe,c.1450,V,ranged-bow,https://en.wikipedia.org/wiki/Cranequin
 polybolos,Polybolos,siege,Ancient Greece,c.250 BC,IV,siege,https://en.wikipedia.org/wiki/Polybolos
 cheiroballistra,Cheiroballistra,siege,Rome,c.100,IV,siege,https://en.wikipedia.org/wiki/Cheiroballistra
-helepolis,Helepolis,siege,Macedon,c.305 BC,IV,siege,https://en.wikipedia.org/wiki/Helepolis
-great_bombard,Great bombard (Mons Meg),siege,"Burgundy, Scotland",c.1449,V,siege,https://en.wikipedia.org/wiki/Mons_Meg
+helepolis,Helepolis,siege,Macedon,c.305 BC,IV,later,https://en.wikipedia.org/wiki/Helepolis
+mons_meg,Great bombard (Mons Meg),siege,"Burgundy, Scotland",c.1449,V,siege,https://en.wikipedia.org/wiki/Mons_Meg
 dardanelles_gun,Dardanelles Gun,siege,Ottoman Empire,c.1464,V,siege,https://en.wikipedia.org/wiki/Dardanelles_Gun
 culverin,Culverin,siege,Europe,c.1450,V,siege,https://en.wikipedia.org/wiki/Culverin
 swivel_gun,Swivel gun,siege,Europe,c.1450,V,siege,https://en.wikipedia.org/wiki/Swivel_gun
 carronade,Carronade,siege,Britain,c.1778,VI,siege,https://en.wikipedia.org/wiki/Carronade
 napoleon_12_pounder,Napoleon 12-pounder,siege,"France, USA",c.1853,VI,siege,https://en.wikipedia.org/wiki/M1857_12-pounder_Napoleon
 gribeauval_12_pounder,Gribeauval 12-pounder,siege,France,c.1765,VI,siege,https://en.wikipedia.org/wiki/Gribeauval_system
-armstrong_breech_loading_gun,Armstrong breech-loading gun,siege,Britain,c.1855,VI,siege,https://en.wikipedia.org/wiki/Armstrong_Whitworth
-krupp_8_8_cm_flak_36,Krupp 8.8 cm FlaK 36,siege,Germany,c.1936,VII,siege,https://en.wikipedia.org/wiki/8.8_cm_Flak_18/36/37/41
-ordnance_qf_25_pounder,Ordnance QF 25-pounder,siege,Britain,c.1940,VII,siege,https://en.wikipedia.org/wiki/Ordnance_QF_25-pounder
-m101_105_mm_howitzer,M101 105 mm howitzer,siege,United States,c.1941,VII,siege,https://en.wikipedia.org/wiki/M101_howitzer
+armstrong_gun,Armstrong breech-loading gun,siege,Britain,c.1855,VI,siege,https://en.wikipedia.org/wiki/Armstrong_Whitworth
+flak_36,Krupp 8.8 cm FlaK 36,siege,Germany,c.1936,VII,siege,https://en.wikipedia.org/wiki/8.8_cm_Flak_18/36/37/41
+qf_25_pounder,Ordnance QF 25-pounder,siege,Britain,c.1940,VII,siege,https://en.wikipedia.org/wiki/Ordnance_QF_25-pounder
+m101_howitzer,M101 105 mm howitzer,siege,United States,c.1941,VII,siege,https://en.wikipedia.org/wiki/M101_howitzer
 m777_howitzer,M777 howitzer,siege,"United Kingdom, USA",c.2005,VII,siege,https://en.wikipedia.org/wiki/M777_howitzer
-mortar,Mortar (Stokes),siege,Britain,c.1915,VII,siege,https://en.wikipedia.org/wiki/Stokes_mortar
+stokes_mortar,Mortar (Stokes),siege,Britain,c.1915,VII,siege,https://en.wikipedia.org/wiki/Stokes_mortar
 katyusha_bm_13,Katyusha BM-13,siege,USSR,c.1941,VII,siege,https://en.wikipedia.org/wiki/Katyusha_rocket_launcher
 paris_gun,Paris Gun,siege,Germany,c.1918,VII,siege,https://en.wikipedia.org/wiki/Paris_Gun
 schwerer_gustav,Schwerer Gustav,siege,Germany,c.1942,VII,siege,https://en.wikipedia.org/wiki/Schwerer_Gustav
