@@ -74,6 +74,15 @@ public final class DiaithirCarts {
             FAST_POWERED_RAIL, NARROW_RAIL, NARROW_POWERED_RAIL, DUAL_RAIL, DUAL_POWERED_RAIL, STATION_RAIL, ONE_WAY_RAIL, DESTINATION_RAIL, LOCKING_RAIL);
     public static final List<DeferredItem<BlockItem>> RAIL_ITEMS = ALL_RAILS.stream().map(b -> ITEMS.registerSimpleBlockItem(b)).toList();
 
+    public static final java.util.Map<Roads, DeferredBlock<Block>> ROAD_BLOCKS = new java.util.EnumMap<>(Roads.class);
+    static {
+        for (Roads r : Roads.ALL) {
+            ROAD_BLOCKS.put(r, BLOCKS.registerBlock(r.id, Block::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.0F, 3.0F)
+                    .sound(r.ordinal() < 2 ? SoundType.GRAVEL : SoundType.STONE).speedFactor(r.speedFactor)));
+        }
+    }
+    public static final List<DeferredItem<BlockItem>> ROAD_ITEMS = ROAD_BLOCKS.values().stream().map(b -> ITEMS.registerSimpleBlockItem(b)).toList();
+
     public static final DeferredItem<Item> COUPLING_CHAIN = ITEMS.registerSimpleItem("coupling_chain");
     public static final DeferredItem<Item> CHAIN_CUTTERS = ITEMS.registerItem("chain_cutters", Item::new, p -> p.durability(96));
 
@@ -95,9 +104,7 @@ public final class DiaithirCarts {
         net.diaithir.freight.Freight.init(bus);
         net.diaithir.yards.YardContent.register(bus);
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); }
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(REAPER_ITEM.get()); }
-            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(CART_READER_ITEM.get()); }
+            if (e.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) { RAIL_ITEMS.forEach(i -> e.accept(i.get())); e.accept(BLOCK_SIGNAL_ITEM.get()); e.accept(CART_LOADER_ITEM.get()); e.accept(CART_READER_ITEM.get()); e.accept(REAPER_ITEM.get()); }
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) ROAD_ITEMS.forEach(i -> e.accept(i.get()));
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
                 e.accept(COUPLING_CHAIN.get());
