@@ -48,7 +48,7 @@ final class TradeScreens {
             long p = EconModel.quote(st.market, EconWorld.REGIONS, data::good, at.town(), id, n, buying, ctx.scale());
             return buying ? Math.ceil(p * (1 + taxRate)) : Math.floor(p * (1 - taxRate));
         };
-        List<String> stall = EconOffers.stall(profession, data.openIds(ctx.age()), seed, EconWorld.vendors(ctx.culture()));
+        List<String> stall = EconOffers.stall(profession, data.openIds(ctx.age()).stream().filter(TradeScreens::has).toList(), seed, EconWorld.vendors(ctx.culture()));
         List<EconOffers.Offer> plan = EconOffers.offerPlan(stall, ctx.denoms(), quote, id -> {
             Double h = st.market.stock.getOrDefault(at.town(), Map.of()).get(id);
             return h == null ? data.good(id).usual() : h;
