@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfurniture:block/cherry_bookshelf"
+  },
+  "facing=east": {
+   "model": "diaithirfurniture:block/cherry_bookshelf",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfurniture:block/cherry_bookshelf",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfurniture:block/cherry_bookshelf",
+   "y": 270
+  }
+ }
+}

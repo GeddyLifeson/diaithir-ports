@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirbuildcraft"
+version = "${version}"
+displayName = "Diaithir Buildcraft"
+description = "Building-block families (roofs, pavings, shutters) for every vanilla wood and stone, from one table. Clean-room: written from how the Macaw's building mods behave, no code or art taken from them."
+
+[[dependencies.diaithirbuildcraft]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"

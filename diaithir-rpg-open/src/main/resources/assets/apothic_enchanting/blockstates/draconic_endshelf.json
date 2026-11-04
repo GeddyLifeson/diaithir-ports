@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "apothic_enchanting:block/draconic_endshelf" },
+            { "model": "apothic_enchanting:block/draconic_endshelf_2" },
+            { "model": "apothic_enchanting:block/draconic_endshelf_3" }
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:boxwood_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:boxwood_planks",
+  "count": 4
+ }
+}

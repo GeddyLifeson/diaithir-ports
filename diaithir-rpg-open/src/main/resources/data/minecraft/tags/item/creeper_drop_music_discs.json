@@ -1,0 +1,14 @@
+{
+	"replace": false,
+	"values": [
+		{
+			"id": "apothic_enchanting:music_disc_eterna"
+		},
+		{
+			"id": "apothic_enchanting:music_disc_quanta"
+		},
+		{
+			"id": "apothic_enchanting:music_disc_arcana"
+		}
+	]
+}

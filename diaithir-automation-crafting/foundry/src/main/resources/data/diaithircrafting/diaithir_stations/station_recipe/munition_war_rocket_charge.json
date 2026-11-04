@@ -1,0 +1,15 @@
+{
+  "station": "station.hearth_bench",
+  "stage": "part",
+  "time_s": 6,
+  "ingredients": [
+    {
+      "item": "minecraft:gunpowder",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_war_rocket_charge",
+    "count": 1
+  }
+}

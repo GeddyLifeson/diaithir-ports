@@ -48,12 +48,17 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class DiaithirArms {
     public static final String ID = "diaithirarms";
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
+    private static final DeferredRegister.Entities ENTITIES = DeferredRegister.createEntities(ID);
+    public static final net.neoforged.neoforge.registries.DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<Thrown.Shot>> THROWN =
+        ENTITIES.registerEntityType("thrown_weapon", Thrown.Shot::new, net.minecraft.world.entity.MobCategory.MISC,
+            b -> b.sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10));
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
     private static final DeferredRegister<net.minecraft.world.item.crafting.RecipeSerializer<?>> RECIPES =
             DeferredRegister.create(Registries.RECIPE_SERIALIZER, ID);
     public static final net.neoforged.neoforge.registries.DeferredBlock<TransmogTableBlock> TRANSMOG_TABLE = BLOCKS.registerBlock("transmog_table",
             TransmogTableBlock::new, () -> net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRAFTING_TABLE));
     private static net.neoforged.neoforge.registries.DeferredItem<net.minecraft.world.item.BlockItem> TRANSMOG_ITEM;
+    private static final List<DeferredItem<net.minecraft.world.item.BlockItem>> ENGINES = new java.util.ArrayList<>();
     private static final Map<String, DeferredItem<Item>> ALL = new LinkedHashMap<>();
 
     public record ArmorMat(int durability, int boots, int legs, int chest, int helmet, int enchant, String sound,
@@ -70,7 +75,12 @@ public final class DiaithirArms {
     private static Data load() {
         try (Reader r = new InputStreamReader(DiaithirArms.class.getResourceAsStream("/data/" + ID + "/arms.json"))) {
             Type t = new TypeToken<Data>() {}.getType();
-            return new Gson().fromJson(r, t);
+            Data d = new Gson().fromJson(r, t);
+            List<Spec> items = new java.util.ArrayList<>(d.items());
+            try (Reader h = new InputStreamReader(DiaithirArms.class.getResourceAsStream("/data/" + ID + "/historical_arms.json"))) {
+                items.addAll(new Gson().fromJson(h, new TypeToken<List<Spec>>() {}.getType()));
+            }
+            return new Data(d.armor(), d.tools(), items, d.parts());
         } catch (Exception e) {
             throw new IllegalStateException("arms.json missing", e);
         }
@@ -170,6 +180,18 @@ public final class DiaithirArms {
         for (String id : DATA.parts()) {
             ALL.put(id, ITEMS.registerSimpleItem(id));
         }
+        for (Thrown.Design d : Thrown.DESIGNS) {
+            ALL.put(d.id(), ITEMS.registerItem(d.id(), p -> new Thrown.ThrownItem(p, d), () -> Thrown.props(d)));
+        }
+        for (Siege.Design d : Siege.DESIGNS) {
+            var blk = BLOCKS.registerBlock(d.id(), p -> new Siege.Engine(p, d), () -> net.minecraft.world.level.block.state.BlockBehaviour.Properties
+                .of().strength(3.0F, 6.0F).noOcclusion().sound(net.minecraft.world.level.block.SoundType.WOOD));
+            ENGINES.add(ITEMS.registerSimpleBlockItem(d.id(), blk));
+        }
+        ENTITIES.register(bus);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+            ThrownClient.init(bus);
+        }
         BLOCKS.register(bus);
         RECIPES.register("transmog", () -> TransmogRecipe.SERIALIZER);
         RECIPES.register(bus);
@@ -179,6 +201,7 @@ public final class DiaithirArms {
             if (e.getTabKey().equals(CreativeModeTabs.COMBAT)) {
                 ALL.values().forEach(i -> e.accept(i.get()));
                 e.accept(TRANSMOG_ITEM.get());
+                ENGINES.forEach(i -> e.accept(i.get()));
             }
         });
         NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));

@@ -1,0 +1,19 @@
+{
+  "station": "station.fabricator",
+  "stage": "assembly",
+  "time_s": 12,
+  "ingredients": [
+    {
+      "tag": "c:plates/nanoalloy",
+      "count": 2
+    },
+    {
+      "item": "diaithir_materials:steel_i_beam",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithir_materials:steel_alloy_lattice",
+    "count": 2
+  }
+}

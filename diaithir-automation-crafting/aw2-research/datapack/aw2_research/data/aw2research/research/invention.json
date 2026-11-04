@@ -1,0 +1,27 @@
+{
+  "title": "Invention",
+  "description": "Ancient Warfare 2 research: invention.",
+  "prerequisites": [],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stick",
+            "count": {
+              "min": 12
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:stick"
+    }
+  }
+}

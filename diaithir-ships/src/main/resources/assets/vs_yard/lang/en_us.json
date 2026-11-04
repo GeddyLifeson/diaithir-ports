@@ -1,0 +1,22 @@
+{
+  "item.vs_yard.keel_beam": "Keel Beam",
+  "item.vs_yard.hull_frame": "Hull Frame",
+  "item.vs_yard.hull_plank_set": "Hull Plank Set",
+  "item.vs_yard.deck_plating": "Deck Plating",
+  "item.vs_yard.steam_engine": "Steam Engine",
+  "item.vs_yard.arcane_motor": "Arcane Motor",
+  "item.vs_yard.rudder": "Rudder",
+  "item.vs_yard.helm_kit": "Helm Kit",
+  "item.vs_yard.anchor_kit": "Anchor Kit",
+  "item.vs_yard.floater_kit": "Floater Kit",
+  "item.vs_yard.balloon_kit": "Balloon Kit",
+  "item.vs_yard.thruster_kit": "Thruster Kit",
+  "item.vs_yard.propeller_kit": "Propeller Kit",
+  "item.vs_yard.fuel_tank_kit": "Fuel Tank Kit",
+  "block.vs_yard.slipway_controller": "Slipway Controller",
+  "block.vs_yard.treadwheel_crane": "Treadwheel Crane",
+  "block.vs_yard.steam_crane": "Steam Crane",
+  "block.vs_yard.gantry_crane": "Gantry Crane",
+  "itemGroup.vs_yard.ship_yard": "Ship Yard",
+  "item.vs_yard.ballast_plate": "Ballast Plate"
+}
