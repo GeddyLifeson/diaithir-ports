@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": "pneumaticcraft:pressure_tube"
+  },
+  "pattern": [
+    "T",
+    "T",
+    "T"
+  ],
+  "result": {
+    "count": 3,
+    "id": "pneumaticcraft:drill_pipe"
+  }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "W",
+  "P"
+ ],
+ "key": {
+  "W": "#minecraft:wool",
+  "P": "#minecraft:planks"
+ },
+ "result": {
+  "id": "archimedes:seat",
+  "count": 1
+ }
+}

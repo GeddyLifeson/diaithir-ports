@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_0_valiarium",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_1_valiarium",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_2_valiarium",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/losaustanum/settlement_3_valiarium",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 154952885
+ }
+}

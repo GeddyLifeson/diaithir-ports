@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "l": "minecraft:prismarine_brick_slab",
+  "s": "minecraft:prismarine_bricks"
+ },
+ "pattern": [
+  "l",
+  "s",
+  "l"
+ ],
+ "result": {
+  "id": "goety:pedestal_prismarine",
+  "count": 1
+ }
+}

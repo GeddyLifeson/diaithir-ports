@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "diaithirstoragenet:block/terminal_top",
+    "bottom": "diaithirstoragenet:block/terminal_top",
+    "front": "diaithirstoragenet:block/terminal_front",
+    "side": "diaithirstoragenet:block/terminal_side"
+  }
+}

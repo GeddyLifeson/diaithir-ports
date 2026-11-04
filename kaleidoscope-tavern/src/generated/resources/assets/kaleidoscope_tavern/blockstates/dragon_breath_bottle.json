@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "kaleidoscope_tavern:block/brew/dragon_breath_bottle",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "kaleidoscope_tavern:block/brew/dragon_breath_bottle"
+    },
+    "facing=south": {
+      "model": "kaleidoscope_tavern:block/brew/dragon_breath_bottle",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "kaleidoscope_tavern:block/brew/dragon_breath_bottle",
+      "y": 270
+    }
+  }
+}

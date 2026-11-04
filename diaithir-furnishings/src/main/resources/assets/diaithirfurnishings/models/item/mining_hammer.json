@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/mining_hammer_head",
+  "layer1": "diaithirfurnishings:item/mining_hammer_handle",
+  "layer2": "diaithirfurnishings:item/mining_hammer_binding"
+ }
+}

@@ -1,0 +1,15 @@
+{
+  "item.automatemat.mining_essense": "Stone Core",
+  "item.automatemat.diamond_shard": "Diamond Shard",
+  "item.automatemat.nether_core": "Nether Rose",
+  "item.automatemat.end_essense": "End Essense",
+  "item.automatemat.end_city_core": "End City Core",
+  "item.automatemat.nether_essense": "Nether Essense",
+  "item.automatemat.village_core": "Village Core",
+  "item.automatemat.end_core": "End Star",
+  "item.automatemat.overworld_core": "Overworld Core",
+  "item.automatemat.fortress_core": "Fortress Core",
+  "item_group.automatemat.material_deco": "Material Deco",
+  "item.automatemat.mob_essense": "Overworld Mob Essense",
+  "item_group.automatemat.mob_essense_tab": "Automate Materials"
+}

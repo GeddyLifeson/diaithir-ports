@@ -1,0 +1,38 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "crtr:maximally_compressed_carbon",
+ "sequence": [
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "amount": 20250,
+    "fluid": "minecraft:lava"
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 50
+  }
+ ],
+ "loops": 4,
+ "transitional_item": {
+  "id": "crtr:unprocessed_maximally_compressed_carbon"
+ },
+ "result": {
+  "id": "crtr:rough_diamond"
+ }
+}

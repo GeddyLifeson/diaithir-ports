@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "pattern": ["#S#", "#S#"], "key": {"#": "natures_spirit:wisteria_mosaic", "S": "minecraft:stick"}, "result": {"id": "natures_spirit:wisteria_fence", "count": 3}}

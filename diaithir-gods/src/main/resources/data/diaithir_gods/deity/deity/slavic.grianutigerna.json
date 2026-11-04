@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:slavic.grianutigerna",
+  "icon": "minecraft:minecart",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

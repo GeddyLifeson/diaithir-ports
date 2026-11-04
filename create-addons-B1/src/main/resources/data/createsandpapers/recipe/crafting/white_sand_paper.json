@@ -1,0 +1,21 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:not",
+   "value": {
+    "type": "neoforge:tag_empty",
+    "tag": "createsandpapers:creates_white_sandpaper"
+   }
+  }
+ ],
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:paper",
+  "#createsandpapers:creates_white_sandpaper"
+ ],
+ "result": {
+  "count": 1,
+  "id": "createsandpapers:white_sand_paper"
+ }
+}

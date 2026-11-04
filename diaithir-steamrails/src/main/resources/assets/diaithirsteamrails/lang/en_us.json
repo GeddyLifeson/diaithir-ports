@@ -1,0 +1,21 @@
+{
+ "block.diaithirsteamrails.boiler_firebox": "Kaldravelk",
+ "block.diaithirsteamrails.copper_boiler_shell": "Cuprenhold",
+ "block.diaithirsteamrails.steel_boiler_shell": "Sorvannhold",
+ "block.diaithirsteamrails.smokestack": "Tharvusk",
+ "block.diaithirsteamrails.steam_cylinder": "Pistrovane",
+ "block.diaithirsteamrails.steam_whistle": "Wheshindrel",
+ "block.diaithirsteamrails.fuel_tender": "Vaskurmeth",
+ "block.diaithirsteamrails.driver_bogey": "Gravenroq",
+ "block.diaithirsteamrails.pony_bogey": "Lepturin",
+ "item.diaithirsteamrails.riveted_plate": "Nitharok",
+ "item.diaithirsteamrails.flue_tube": "Cavrelune",
+ "item.diaithirsteamrails.piston_rod": "Strumvekt",
+ "bogey.diaithirsteamrails.driver": "Gravenroq driver",
+ "bogey.diaithirsteamrails.pony": "Lepturin pony",
+ "message.diaithirsteamrails.boiler": "Pressure %1$s of %2$s bar, water %3$s of %4$s mB, %5$s fuel, %6$s cylinders, fire %7$s",
+ "message.diaithirsteamrails.tender": "Water %1$s of %2$s mB, %3$s fuel",
+ "message.diaithirsteamrails.fire_lit": "burning",
+ "message.diaithirsteamrails.fire_out": "out",
+ "subtitles.diaithirsteamrails.steam_whistle": "Steam whistle blows"
+}

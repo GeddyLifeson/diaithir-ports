@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:white_wool",
+    "color": 13593709,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:germanic.rundiumuirbanrig",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "germanic.rundiumuirbanrig_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

@@ -1,0 +1,30 @@
+{
+ "id": "polearm",
+ "pattern": "sweep",
+ "range": 4.6,
+ "arc": 120,
+ "width": 0.4,
+ "max_targets": 5,
+ "knockback": 0.5,
+ "combo_window": 16,
+ "parry_window": 0,
+ "fallback": "minecraft:iron_sword",
+ "combo": [
+  {
+   "damage": 1.0,
+   "cooldown": 16,
+   "stamina": 4
+  },
+  {
+   "damage": 1.0,
+   "cooldown": 16,
+   "stamina": 4
+  },
+  {
+   "damage": 1.4,
+   "cooldown": 22,
+   "stamina": 5,
+   "pattern": "overhead"
+  }
+ ]
+}

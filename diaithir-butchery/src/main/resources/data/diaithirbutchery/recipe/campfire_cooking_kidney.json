@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:campfire_cooking",
+ "category": "food",
+ "ingredient": "diaithirbutchery:kidney",
+ "result": {
+  "id": "diaithirbutchery:cooked_kidney"
+ },
+ "experience": 0.35,
+ "cookingtime": 600
+}

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab_top",
+ "textures": {
+  "bottom": "aether_ii:block/infected_wood_slab",
+  "side": "aether_ii:block/infected_wood_slab",
+  "top": "aether_ii:block/infected_wood_slab"
+ }
+}

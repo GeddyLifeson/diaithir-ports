@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "diaithir_wiretech:block/hand_crank"
+    },
+    "facing=east": {
+      "model": "diaithir_wiretech:block/hand_crank",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "diaithir_wiretech:block/hand_crank",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "diaithir_wiretech:block/hand_crank",
+      "y": 270
+    }
+  }
+}

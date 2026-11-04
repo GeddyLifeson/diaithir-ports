@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "acceptMirrored": false,
+ "key": {
+  "B": "createloveandwar:barrel_iron",
+  "U": "createloveandwar:bolt_action_iron",
+  "G": "createloveandwar:grip_wood"
+ },
+ "pattern": [
+  "BU",
+  " G"
+ ],
+ "result": {
+  "id": "createloveandwar:dreysepistol"
+ },
+ "show_notification": true
+}

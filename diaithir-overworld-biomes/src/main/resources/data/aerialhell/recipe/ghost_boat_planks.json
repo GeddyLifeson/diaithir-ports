@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#aerialhell:ghost_boat_logs"
+ ],
+ "result": {
+  "id": "aerialhell:ghost_boat_planks",
+  "count": 4
+ }
+}

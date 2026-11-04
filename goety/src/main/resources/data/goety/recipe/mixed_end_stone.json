@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:end_stone",
+  "$": "goety:smooth_end_stone"
+ },
+ "pattern": [
+  "$#",
+  "#$"
+ ],
+ "result": {
+  "id": "goety:mixed_end_stone",
+  "count": 4
+ }
+}

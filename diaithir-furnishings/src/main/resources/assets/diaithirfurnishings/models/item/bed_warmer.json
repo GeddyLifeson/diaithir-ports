@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/bed_warmer_head",
+  "layer1": "diaithirfurnishings:item/bed_warmer_handle",
+  "layer2": "diaithirfurnishings:item/bed_warmer_binding"
+ }
+}

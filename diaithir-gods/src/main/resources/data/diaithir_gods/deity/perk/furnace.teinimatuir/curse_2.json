@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:rabbit_foot",
+    "color": 12080483,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:furnace.teinimatuir",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "furnace.teinimatuir_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

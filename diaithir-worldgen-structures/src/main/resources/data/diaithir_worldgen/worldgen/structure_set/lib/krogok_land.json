@@ -1,0 +1,38 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/krogok/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krogok/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krogok/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krogok/temple_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krogok/temple_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krogok/tower_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/krogok/tower_1_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 6358682
+ }
+}

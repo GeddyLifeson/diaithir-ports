@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/male/0.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/male/1.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/male/2.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/male/ruler.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/male/warrior.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/male/priest.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/female/0.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/female/1.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/female/2.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/female/ruler.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/female/warrior.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/katuirliunach/female/priest.png",
+    "profession": "diaithircompat:katuirliunach",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/harbor_0_coast",
+   "weight": 29
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/harbor_1_coast",
+   "weight": 22
+  },
+  {
+   "structure": "diaithir_worldgen:lib/siliomaerae/harbor_3_coast",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 1401201
+ }
+}

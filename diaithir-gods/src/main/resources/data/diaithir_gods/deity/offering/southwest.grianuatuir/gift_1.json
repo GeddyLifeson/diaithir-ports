@@ -1,0 +1,6 @@
+{
+  "item": "minecraft:carrot",
+  "favor": 5,
+  "maxuses": 8,
+  "cooldown": 12000
+}

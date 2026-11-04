@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create_droid_diamond:unprocessed_lava_coal_block"
+ ],
+ "result": {
+  "id": "create_droid_diamond:heated_lava_coal_block"
+ }
+}

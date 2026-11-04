@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/khogar/settlement/0/seisiazeth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/khogar/ma_khogar_e5_places_000037",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

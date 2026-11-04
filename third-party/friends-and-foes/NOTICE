@@ -1,0 +1,10 @@
+Friends&Foes 5.0.4 (mod id friendsandfoes) with Beekeeper Hut 3.0.4 (beekeeperhut) and Flowery Mooblooms 3.0.3 (flowerymooblooms), NeoForge builds for Minecraft 26.1.2, used unmodified as pack dependencies (MOD-FIRST rule: a current 26.1.2 NeoForge build exists, so no port and no new Diaithir jar).
+Source: Modrinth project friends-and-foes-forge (BOCJKD49) and the two addon projects friends-and-foes-beekeeper-hut-forge (K62sN7Sd) and friends-and-foes-flowery-mooblooms-forge (wYtDgIUZ). Author: Faboslav. Code: https://github.com/Faboslav/friends-and-foes
+Files (sha256):
+ friendsandfoes-neoforge-5.0.4+mc26.1.2.jar 6774bcdda8d2629ca9f1400d7c9b7deb6c436c5790eb7abf2f1ab4c53a28616b
+ beekeeperhut-neoforge-3.0.4+mc26.1.2.jar 6d3b6d223f9d12056446091900abe0551b4ea752e0ebe363b246d4832cee05c2
+ flowerymooblooms-neoforge-3.0.3+mc26.1.2.jar 1c5ea9fef5d2f5fd32aa81d161f10c40ce9ffd9aaca18b8c5450fa5f39a670cf
+Licence: CC-BY-NC-ND-4.0 (all three). NoDerivatives: the jars are shipped unmodified, never patched or merged into a Diaithir module. NonCommercial: the pack must stay non-commercial while they are in it. No Diaithir code is under this licence.
+Requires Resourceful Lib 4.0.1 (resourcefullib, MIT; ResourcefulLib-4.0.1.jar, sha256 4ccedbc89c82a73132eb3a83a5dd3b1923c62d1373aa5cd707780dc5160e9e15). YACL is an optional client-side dependency and is already in the pack.
+Family decision: PLAN_TO_V1 and the consolidation audit do not mention Friends&Foes; its family is the base mod plus two official addons. Mutant Monsters is not part of this family: it is already in the pack and is slated to merge into diaithir-hostile-encounters. The Fabric-only variants (friends-and-foes, polymer) and the Repurposed Structures / CTOV compat packs are not used.
+Walkers 8.2 (already patched for Alex's Mobs) ships variants for friendsandfoes mauler, moobloom, tuff_golem and copper_golem. Copper Golem is not a registered entity in 5.0.4 (the vanilla copper golem replaced it), so that one variant is inert; it loads without error.

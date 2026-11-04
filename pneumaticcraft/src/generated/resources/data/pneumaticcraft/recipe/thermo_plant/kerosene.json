@@ -1,0 +1,19 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "inputs": {
+    "fluid": {
+      "ingredient": "#c:diesel",
+      "amount": 100
+    }
+  },
+  "outputs": {
+    "fluid_output": {
+      "amount": 80,
+      "id": "pneumaticcraft:kerosene"
+    }
+  },
+  "pressure": 2.0,
+  "temperature": {
+    "min": 573
+  }
+}

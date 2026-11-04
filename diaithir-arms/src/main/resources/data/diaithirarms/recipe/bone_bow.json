@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " MS",
+  "M S",
+  " MS"
+ ],
+ "key": {
+  "M": "diaithirarms:bone_plate",
+  "S": "minecraft:string"
+ },
+ "result": {
+  "id": "diaithirarms:bone_bow",
+  "count": 1
+ }
+}

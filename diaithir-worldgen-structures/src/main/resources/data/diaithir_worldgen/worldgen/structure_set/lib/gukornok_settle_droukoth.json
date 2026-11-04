@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_0_droukoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_1_droukoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/gukornok/settlement_2_droukoth",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 225420670
+ }
+}

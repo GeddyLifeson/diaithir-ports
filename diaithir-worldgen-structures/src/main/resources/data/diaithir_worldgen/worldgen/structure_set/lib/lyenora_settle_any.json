@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_0_any",
+   "weight": 72
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_1_any",
+   "weight": 115
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_2_any",
+   "weight": 53
+  },
+  {
+   "structure": "diaithir_worldgen:lib/lyenora/settlement_3_any",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 63612341
+ }
+}

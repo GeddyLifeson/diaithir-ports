@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:hopper",
+  "minecraft:bucket"
+ ],
+ "result": {
+  "id": "diaithirworldsys:fluid_hopper"
+ }
+}

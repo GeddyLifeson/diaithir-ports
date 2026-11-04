@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:amarnes_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:amarnes_grottoes",
+   "required": false
+  }
+ ]
+}

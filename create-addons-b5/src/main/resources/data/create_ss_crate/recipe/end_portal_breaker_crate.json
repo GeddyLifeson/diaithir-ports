@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "blocks",
+ "pattern": [
+  "P",
+  "E",
+  "T"
+ ],
+ "key": {
+  "P": "minecraft:iron_pickaxe",
+  "E": "minecraft:end_portal_frame",
+  "T": "minecraft:tnt"
+ },
+ "result": {
+  "id": "create_ss_crate:end_portal_breaker_crate"
+ }
+}

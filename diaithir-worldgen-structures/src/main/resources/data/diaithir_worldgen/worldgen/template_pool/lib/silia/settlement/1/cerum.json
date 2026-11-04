@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/silia/settlement/1/cerum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/silia/my_silia_e7_places_000285",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

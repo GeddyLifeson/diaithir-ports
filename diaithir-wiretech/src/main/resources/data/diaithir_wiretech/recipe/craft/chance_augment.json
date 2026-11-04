@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "minecraft:redstone",
+    "Q": "minecraft:quartz",
+    "A": "minecraft:amethyst_shard"
+  },
+  "pattern": [
+    "RQR",
+    "QAQ",
+    "RQR"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:chance_augment",
+    "count": 1
+  }
+}

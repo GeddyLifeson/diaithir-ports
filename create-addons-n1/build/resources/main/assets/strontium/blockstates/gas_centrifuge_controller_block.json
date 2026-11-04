@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "strontium:block/gas_centrifuge_bottom" },
+    "facing=south": { "model": "strontium:block/gas_centrifuge_bottom", "y": 180 },
+    "facing=west":  { "model": "strontium:block/gas_centrifuge_bottom", "y": 270 },
+    "facing=east":  { "model": "strontium:block/gas_centrifuge_bottom", "y": 90 }
+  }
+}

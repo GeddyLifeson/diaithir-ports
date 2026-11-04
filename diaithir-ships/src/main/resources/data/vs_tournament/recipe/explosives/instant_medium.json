@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TRT",
+    "GRG",
+    "ITI"
+  ],
+  "key": {
+    "G": "minecraft:gunpowder",
+    "R": "minecraft:redstone",
+    "T": "minecraft:tnt",
+    "I": "minecraft:iron_ingot"
+  },
+  "result": {
+    "id": "vs_tournament:explosive_instant_medium",
+    "count": 1
+  }
+}

@@ -1,0 +1,82 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/forge_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/fortress_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/fortress_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/fortress_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/garden_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_0_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_1_land",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_2_land",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/hall_3_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/landmark_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/landmark_2_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/temple_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/temple_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/temple_3_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/tower_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/tower_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/kaluvamoma/tower_3_land",
+   "weight": 6
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 249644486
+ }
+}

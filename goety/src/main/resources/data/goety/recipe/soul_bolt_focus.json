@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "a": "#minecraft:arrows",
+  "e": "goety:soul_light_focus",
+  "s": "goety:ectoplasm"
+ },
+ "pattern": [
+  " a ",
+  "aea",
+  " s "
+ ],
+ "result": {
+  "id": "goety:soul_bolt_focus",
+  "count": 1
+ }
+}

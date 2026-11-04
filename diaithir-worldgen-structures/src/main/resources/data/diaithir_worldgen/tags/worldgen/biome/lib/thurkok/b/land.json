@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:thurkok_gouktukun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thurkok_khouzhak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thurkok_kozhun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thurkok_krogok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thurkok_kuktun",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thurkok_thoggar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thurkok_vorukok",
+   "required": false
+  }
+ ]
+}

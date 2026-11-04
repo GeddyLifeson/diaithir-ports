@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:sand",
+  "minecraft:end_stone",
+  "minecraft:end_stone"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:end_sheet",
+   "count": 2
+  }
+ ]
+}

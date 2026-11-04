@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:glow_ink_sac",
+  "create:cinder_flour"
+ ],
+ "results": [
+  {
+   "id": "minecraft:glowstone_dust",
+   "count": 2
+  }
+ ]
+}

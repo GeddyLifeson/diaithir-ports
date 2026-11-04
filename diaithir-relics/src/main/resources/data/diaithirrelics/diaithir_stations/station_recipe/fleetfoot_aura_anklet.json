@@ -1,0 +1,24 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "item": "diaithirrelics:essence_of_flight",
+   "count": 1
+  },
+  {
+   "item": "diaithirrelics:essence_of_storm",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/gold",
+   "count": 1
+  },
+  {
+   "tag": "c:string",
+   "count": 1
+  }
+ ],
+ "result": "diaithirrelics:fleetfoot_aura_anklet",
+ "time_s": 20
+}

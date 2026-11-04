@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirworldsys:item/jewelry_ruby_necklace"
+ }
+}

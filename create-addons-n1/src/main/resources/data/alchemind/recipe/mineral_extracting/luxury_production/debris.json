@@ -1,0 +1,18 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create:brass_ingot",
+  "alchemind:arcanum_ingot",
+  "create:brass_ingot",
+  "alchemind:arcanum_ingot",
+  "create:brass_ingot",
+  "alchemind:arcanum_ingot",
+  "alchemind:unstable_debris"
+ ],
+ "results": [
+  {
+   "id": "minecraft:ancient_debris"
+  }
+ ],
+ "heat_requirement": "superheated"
+}

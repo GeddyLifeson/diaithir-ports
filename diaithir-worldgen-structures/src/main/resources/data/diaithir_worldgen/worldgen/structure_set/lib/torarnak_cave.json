@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/delve_0_cave",
+   "weight": 8
+  },
+  {
+   "structure": "diaithir_worldgen:lib/torarnak/delve_1_cave",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 178640567
+ }
+}

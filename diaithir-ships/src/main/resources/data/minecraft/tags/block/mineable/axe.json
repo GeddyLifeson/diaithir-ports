@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#vs_eureka:ship_helms",
+    "archimedes:buffer",
+    "archimedes:crate",
+    "archimedes:floater",
+    "vs_eureka:floater",
+    "vs_tournament:floater",
+    "vs_tournament:seat"
+  ]
+}

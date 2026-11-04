@@ -1,0 +1,46 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:necklace_blank",
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "neoforge:single",
+    "amount": 40500,
+    "fluid": "minecraft:water"
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:amethyst_shard"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:amethyst_shard"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:necklace_blank"
+ },
+ "result": {
+  "id": "relics:jellyfish_necklace",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

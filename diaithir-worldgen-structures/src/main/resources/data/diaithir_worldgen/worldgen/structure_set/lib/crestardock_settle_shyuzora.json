@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/settlement_0_shyuzora",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/settlement_1_shyuzora",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 9562875
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "aether_ii:wisproot_log",
+  "aether_ii:wisproot_wood",
+  "aether_ii:stripped_wisproot_log",
+  "aether_ii:stripped_wisproot_wood"
+ ]
+}

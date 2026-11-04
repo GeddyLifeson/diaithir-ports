@@ -1,0 +1,8 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "net.diaithir.nemesis.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["LcmLootManagerMixin"],
+  "injectors": { "defaultRequire": 0 }
+}

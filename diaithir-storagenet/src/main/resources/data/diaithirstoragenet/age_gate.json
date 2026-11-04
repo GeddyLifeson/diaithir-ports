@@ -1,0 +1,19 @@
+{
+  "tier1": {
+    "age": 5,
+    "items": [
+      "diaithirstoragenet:cable",
+      "diaithirstoragenet:import_cable",
+      "diaithirstoragenet:export_cable",
+      "diaithirstoragenet:filter_cable"
+    ]
+  },
+  "tier2": {
+    "age": 6,
+    "items": [
+      "diaithirstoragenet:controller",
+      "diaithirstoragenet:terminal",
+      "diaithirstoragenet:crafting_terminal"
+    ]
+  }
+}

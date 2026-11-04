@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": "iceandfire:deathworm_chitin_white",
+    "H": "iceandfire:chain",
+    "T": "iceandfire:deathworm_tounge"
+  },
+  "pattern": [
+    " T ",
+    "CHC",
+    "CCC"
+  ],
+  "result": {
+    "id": "iceandfire:deathworm_gauntlet_white"
+  },
+  "show_notification": true
+}

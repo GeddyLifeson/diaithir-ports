@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:venarirleth_elannimeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venarirleth_lyennae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venarirleth_miamuanneth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venarirleth_nuarlora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venarirleth_oriimys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venarirleth_ryamys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venarirleth_venaellora",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "replace": false,
+ "values": [
+  "aerialhell:cloud_abandonned_portal",
+  "aerialhell:copper_pine_cottage",
+  "aerialhell:floating_boat",
+  "aerialhell:golden_nether_prison",
+  "aerialhell:ground_abandonned_portal",
+  "aerialhell:lapis_robinia_hut",
+  "aerialhell:lunatic_temple",
+  "aerialhell:mud_dungeon",
+  "aerialhell:overworld_abandonned_portal",
+  "aerialhell:shadow_catacombs",
+  "aerialhell:shadow_pine_tower",
+  "aerialhell:slippery_sand_ocean_abandonned_structure",
+  "aerialhell:stellar_stone_bricks_tower",
+  "aerialhell:upside_down_pyramid",
+  "aerialhell:volucite_castle"
+ ]
+}

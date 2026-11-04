@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "abc",
+  "ded",
+  "cba"
+ ],
+ "key": {
+  "a": "create:copper_sheet",
+  "b": "create:brass_casing",
+  "c": "create:iron_sheet",
+  "d": "create:electron_tube",
+  "e": "minecraft:redstone_block"
+ },
+ "result": {
+  "id": "sometricks:charger"
+ }
+}

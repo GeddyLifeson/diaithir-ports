@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:smelting",
+ "ingredient": "theaurorian:moonstone_ore",
+ "result": {
+  "id": "theaurorian:moonstone_ingot"
+ },
+ "experience": 1.0,
+ "cookingtime": 200
+}

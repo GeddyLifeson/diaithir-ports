@@ -1,0 +1,71 @@
+{
+ "general": {
+  "type": "engine_car",
+  "name": "Diesel Engine 2500 kW (Speed)",
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:41"
+   ],
+   [
+    "minecraft:piston:0:8"
+   ]
+  ]
+ },
+ "engine": {
+  "type": "NORMAL",
+  "isAutomatic": false,
+  "fuelType": "diesel",
+  "fuelConsumption": 11.213,
+  "maxRPM": 1890,
+  "maxSafeRPM": 1656,
+  "idleRPM": 600,
+  "startRPM": 450,
+  "stallRPM": 350,
+  "revlimitRPM": 1980,
+  "starterPower": 6,
+  "gearRatios": [
+   -4.0,
+   0.0,
+   6.0,
+   4.0,
+   2.8,
+   2.0,
+   1.4
+  ],
+  "upShiftRPM": [
+   1530,
+   1530,
+   1530,
+   1530,
+   1530,
+   1530,
+   1530
+  ],
+  "downShiftRPM": [
+   1000,
+   1000,
+   1000,
+   1000,
+   1000,
+   1000,
+   1000
+  ],
+  "shiftSpeed": 14,
+  "clutchTime": 14,
+  "revResistance": 8,
+  "heatingCoefficient": 0.4,
+  "coolingCoefficient": 0.6,
+  "engineWearFactor": 0.3
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Diesel Engine 2500 kW (Speed)",
+   "modelName": "engine_e3000",
+   "textureName": "engine",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ]
+}

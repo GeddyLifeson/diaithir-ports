@@ -1,0 +1,34 @@
+{
+ "_doc": "Merge into DiaithirRPG content/tech_ages.json. create_connected follows Create: Age IV. Items listed here beat the namespace entry.",
+ "namespaces": {
+  "create_connected": "IV",
+  "createdieselgenerators": "IV"
+ },
+ "items": {
+  "create_connected:parallel_gearbox": "IV",
+  "create_connected:vertical_parallel_gearbox": "IV",
+  "create_connected:six_way_gearbox": "IV",
+  "create_connected:vertical_six_way_gearbox": "IV",
+  "create_connected:brass_gearbox": "IV",
+  "create_connected:vertical_brass_gearbox": "IV",
+  "create_connected:inverted_clutch": "IV",
+  "create_connected:inverted_gearshift": "IV",
+  "create_connected:brake": "IV",
+  "createdieselgenerators:diesel_engine": "IV",
+  "createdieselgenerators:crude_oil_bucket": "IV",
+  "createdieselgenerators:diesel_bucket": "IV",
+  "createdieselgenerators:gasoline_bucket": "IV",
+  "createdieselgenerators:biodiesel_bucket": "IV",
+  "createdieselgenerators:ethanol_bucket": "IV",
+  "createdieselgenerators:plant_oil_bucket": "IV",
+  "createdieselgenerators:modular_diesel_engine": "IV",
+  "createdieselgenerators:huge_diesel_engine": "IV",
+  "createdieselgenerators:burner": "IV",
+  "createdieselgenerators:canister": "IV",
+  "createdieselgenerators:distillation_tower": "IV",
+  "createdieselgenerators:pumpjack": "IV",
+  "createdieselgenerators:engine_silencer": "IV",
+  "createdieselgenerators:engine_turbocharger": "IV",
+  "create_connected:shear_pin": "IV"
+ }
+}

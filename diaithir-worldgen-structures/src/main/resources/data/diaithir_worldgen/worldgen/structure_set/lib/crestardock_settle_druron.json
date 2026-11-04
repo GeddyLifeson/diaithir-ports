@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/settlement_1_druron",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/crestardock/settlement_2_druron",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 123733892
+ }
+}

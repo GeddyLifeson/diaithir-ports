@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/fire_shovel_head",
+  "layer1": "diaithirfurnishings:item/fire_shovel_handle",
+  "layer2": "diaithirfurnishings:item/fire_shovel_binding"
+ }
+}

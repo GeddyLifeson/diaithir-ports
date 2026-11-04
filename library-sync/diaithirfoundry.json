@@ -1,0 +1,82 @@
+[
+ {
+  "id": "diaithirfoundry:cast_block",
+  "name": "Block Cast",
+  "text": "cast_block. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:cast_gear",
+  "name": "Gear Cast",
+  "text": "cast_gear. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:cast_ingot",
+  "name": "Ingot Cast",
+  "text": "cast_ingot. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:cast_nugget",
+  "name": "Nugget Cast",
+  "text": "cast_nugget. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:cast_plate",
+  "name": "Plate Cast",
+  "text": "cast_plate. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:cast_rod",
+  "name": "Rod Cast",
+  "text": "cast_rod. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:cut_gem",
+  "name": "Cut Gem",
+  "text": "cut_gem. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:foundry_bricks",
+  "name": "Foundry Bricks",
+  "text": "Foundry Bricks. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:foundry_controller",
+  "name": "Foundry Controller",
+  "text": "Foundry Controller. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:foundry_drain",
+  "name": "Foundry Drain",
+  "text": "Foundry Drain. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:foundry_tank",
+  "name": "Foundry Tank",
+  "text": "Foundry Tank. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:gear",
+  "name": "Gear",
+  "text": "gear. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:gem_cutter",
+  "name": "Gem Cutter",
+  "text": "Gem Cutter. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:plate",
+  "name": "Plate",
+  "text": "plate. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:raw_gem",
+  "name": "Raw Gem",
+  "text": "raw_gem. Age 5."
+ },
+ {
+  "id": "diaithirfoundry:rod",
+  "name": "Rod",
+  "text": "rod. Age 5."
+ }
+]

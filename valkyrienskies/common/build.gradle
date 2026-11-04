@@ -1,0 +1,176 @@
+dependencies {
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
+
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+    // We depend on fabric loader here purely to use the fabric @Environment compile-time
+    // annotations (architectury's client/server code stripping). We do NOT ship a Fabric build
+    // or use any other classes from fabric loader.
+    // (loom-no-remap: no `mod` prefix needed - there's nothing to remap.)
+    implementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+
+    // Add NeoForge to the compile classpath
+    compileOnly("net.neoforged:neoforge:$rootProject.neoforge_version")
+
+    // VS2's own config-screen infrastructure (not 3rd-party mod compat).
+    api("me.shedaniel.cloth:cloth-config:${cloth_config_version}")
+    compileOnly "fuzs.forgeconfigapiport:forgeconfigapiport-common:${rootProject.fcap_version}"
+
+    // vs-core - version-independent physics engine, consumed as a prebuilt artifact.
+    runtimeOnly("org.valkyrienskies.core:impl:${rootProject.vs_core_version}") {
+        exclude module: "netty-buffer"
+        exclude module: "fastutil"
+    }
+    implementation("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
+    implementation("org.valkyrienskies.core:internal:${rootProject.vs_core_version}")
+    implementation("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
+
+    implementation("com.google.guava:guava:31.1-jre")
+
+    // TODO Phase 3: 3rd-party MOD compat (Sodium, Alex's Caves, TIS-3D, CC:Tweaked, Dynmap,
+    // Moonlight/Supplementaries, Create, EMF/ETF, Weather2, VMP, Bluemap, Immersive Portals,
+    // Sable) intentionally dropped from initial 26.2 scope - none of these mods have 26.2 builds
+    // yet either. Re-add once upstream mods catch up; see excluded source sets below.
+}
+
+architectury {
+    common(rootProject.enabled_platforms.split(","))
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/valkyrienskies-common.accesswidener")
+}
+
+sourceSets {
+    main {
+        java {
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/hexcasting/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/flywheel/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/create_big_cannons/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/flywheel_renderer/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/sodium/**"
+            exclude "org/valkyrienskies/mod/compat/FlywheelEvents.java"
+            exclude "org/valkyrienskies/mod/compat/flywheel/**"
+            exclude "org/valkyrienskies/mod/mixin/accessors/client/render/chunk/**"
+            exclude "org/valkyrienskies/mod/mixin/accessors/server/level/ChunkHolderAccessor.java"
+            exclude "org/valkyrienskies/mod/mixin/feature/enchantment_table/**"
+            exclude "org/valkyrienskies/mod/mixin/feature/ai/node_evaluator/**"
+            exclude "org/valkyrienskies/mod/mixin/feature/sculk/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/alex_caves/**"
+            // TODO Phase 2/3: additional 3rd-party MOD compat dropped from initial 26.2 scope
+            // (their compileOnly deps were removed above) - vanilla_renderer/optifine_vanilla are
+            // NOT excluded since those are the default fallback render path, not mod compat.
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/sable/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/sableCompanion/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/cc_tweaked/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/tis3d/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/bluemap/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/echochest/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/ftb_chunks/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/create_utilities/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/immersive_portals/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/reachentityattributes/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/moonlight/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/etf/**"
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/optifine/**"
+            exclude "org/valkyrienskies/mod/mixinducks/mod_compat/bluemap/**"
+            exclude "org/valkyrienskies/mod/mixinducks/mod_compat/sodium/**"
+            exclude "org/valkyrienskies/mod/compat/tis3d/**"
+            // These two weren't caught by the mod_compat/** excludes above (direct/differently-named).
+            exclude "org/valkyrienskies/mod/compat/SodiumCompat.java"
+            exclude "org/valkyrienskies/mod/compat/create/**"
+
+            // TODO Phase 2b: rendering mixins that touch the now-deleted MultiBufferSource /
+            // old EntityRenderer<T>(single arg) / old chunk-render-dispatcher APIs. Dropped from
+            // Phase 2a scope (core-compiles-headless goal) regardless of whether they're
+            // "vanilla" or 3rd-party-compat - all need a real rewrite against the new
+            // SubmitNodeCollector-based render pipeline, not a one-line fix.
+            // Phase 2b: MixinGameRenderer re-enabled (entity-dragging moved to extract(); camera-mount
+            // moved to MixinCamera; pick/depthFar dropped as those GameRenderer methods were deleted).
+            // Phase 2b: MixinLevelRenderer re-enabled (occlusion invalidation ported to 26.2 render()).
+            exclude "org/valkyrienskies/mod/mixin/client/renderer/MixinEntityRenderer.java"
+            exclude "org/valkyrienskies/mod/mixin/feature/hit_outline/MixinLevelRenderer.java"
+            // Phase 2b: render_blockentity_distance_check re-enabled - ported to 26.2's
+            // tryExtractRenderState (the cull moved out of render()). Without it, ship block
+            // entities are distance-culled and never render.
+            exclude "org/valkyrienskies/mod/mixin/feature/render_pathfinding/MixinDebugRenderer.java"
+            // Phase 2b: 26.2 removed EntityRenderer.renderLeash (leash rendering overhauled). Needs a
+            // rewrite against the new leash render path; ship-leash position fix deferred.
+            exclude "org/valkyrienskies/mod/mixin/feature/render_leashes/MixinMobRenderer.java"
+            exclude "org/valkyrienskies/mod/mixin/feature/render_ship_debug_bb/MixinDebugRenderer.java"
+            exclude "org/valkyrienskies/mod/mixin/feature/shipyard_entities/MixinEntityRenderer.java"
+            exclude "org/valkyrienskies/mod/mixin/feature/vs2_alpha_hud/MixinGui.java"
+            exclude "org/valkyrienskies/mod/mixin/feature/ship_debug_overlay/MixinDebugScreenOverlay.java"
+            // Phase 2b: MixinLevelRendererVanilla re-enabled (ship sections ride the vanilla
+            // GPU-batched section pipeline via per-section ChunkSectionInfo matrices).
+            // Phase 2b: MixinViewAreaVanilla re-enabled (ship RenderSection storage ported to 26.2).
+            exclude "org/valkyrienskies/mod/mixin/mod_compat/optifine_vanilla/MixinLevelRenderer.java"
+            exclude "org/valkyrienskies/mod/mixin/feature/fix_render_chunk_sorting/MixinRenderChunk.java"
+            exclude "org/valkyrienskies/mod/mixin/accessors/client/render/OverlayVertexConsumerAccessor.java"
+        }
+        kotlin {
+            exclude "org/valkyrienskies/mod/compat/hexcasting/**"
+            exclude "org/valkyrienskies/mod/compat/flywheel/**"
+            // B5: physics entity render/entity/creator-item ported to 26.2 (re-included).
+            // AreaAssembler/ConnectionChecker items remain excluded - they're registered as plain
+            // Item stubs (unused tool items), out of B5 scope.
+            exclude "org/valkyrienskies/mod/common/item/AreaAssemblerItem.kt"
+            exclude "org/valkyrienskies/mod/common/item/ConnectionCheckerItem.kt"
+            // TODO Phase 2/3: matches the java-side 3rd-party compat exclusions above.
+            exclude "org/valkyrienskies/mod/compat/CreateCompat.kt"
+            exclude "org/valkyrienskies/mod/compat/create/**"
+            exclude "org/valkyrienskies/mod/compat/dynmap/**"
+            exclude "org/valkyrienskies/mod/compat/SableCompat.kt"
+            exclude "org/valkyrienskies/mod/compat/tis3d/**"
+            exclude "org/valkyrienskies/mod/compat/Weather2Compat.kt"
+        }
+    }
+}
+
+jar {
+    // Exclude dummy Optifine classes
+    exclude "net/optifine/**"
+}
+
+// VS2 keeps some .kt files under src/main/java, so the Kotlin compiler picks them up regardless of
+// the sourceSets kotlin{}/java{} excludes above. Exclude out-of-scope compat .kt files at the task
+// level so they're reliably dropped from Kotlin compilation too.
+// Test* block/blockentity files are developer scaffolding (not gameplay-critical) with several
+// unrelated deep BlockBehaviour/BlockEntityTicker API changes each - dropped from initial 26.2
+// scope. Their NeoForge registration (forge/.../ValkyrienSkiesModForge.kt) is commented out too.
+tasks.named("compileKotlin").configure {
+    exclude "**/compat/create/**"
+    exclude "**/compat/tis3d/**"
+    exclude "**/block/TestAntigravBlock.kt"
+    exclude "**/block/TestChairBlock.kt"
+    exclude "**/block/TestFlapBlock.kt"
+    exclude "**/block/TestHingeBlock.kt"
+    exclude "**/block/TestThrusterBlock.kt"
+    exclude "**/block/TestWingBlock.kt"
+    exclude "**/blockentity/TestAntigravBlockEntity.kt"
+    exclude "**/blockentity/TestHingeBlockEntity.kt"
+    exclude "**/blockentity/TestThrusterBlockEntity.kt"
+}
+
+// Raise javac's default 100-error cap so a full pass surfaces everything at once during migration.
+tasks.named("compileJava").configure {
+    options.compilerArgs.add("-Xmaxerrs")
+    options.compilerArgs.add("2000")
+}
+
+compileKotlin { doLast {
+    file(compileKotlin.destinationDirectory.get().toString() + "/META-INF/valkyrienskies-120.kotlin_module").renameTo(file(compileKotlin.destinationDirectory.get().toString() + "/META-INF/valkyrienskies-120_common.kotlin_module"))
+} }
+
+publishing {
+    publications {
+        mavenCommon(MavenPublication) {
+            groupId = "org.valkyrienskies"
+            version = project.version
+            artifactId = rootProject.archives_base_name + "-" + project.name
+            // loom-no-remap: components.java already carries the (dev-classified) jar loom produces;
+            // the explicit `artifact(jar){classifier 'dev'}` duplicated it and broke publishToMavenLocal
+            // ("multiple artifacts with the identical extension and classifier ('jar','dev')").
+            from components.java
+        }
+    }
+}

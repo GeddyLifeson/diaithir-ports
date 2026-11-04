@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithircreatureutils:item/bread_fish_item"
+ }
+}

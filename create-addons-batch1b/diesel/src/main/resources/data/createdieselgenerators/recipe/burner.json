@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "ISI",
+  "IBI",
+  "III"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "S": "create:shaft",
+  "B": "minecraft:bucket"
+ },
+ "result": {
+  "id": "createdieselgenerators:burner",
+  "count": 1
+ }
+}

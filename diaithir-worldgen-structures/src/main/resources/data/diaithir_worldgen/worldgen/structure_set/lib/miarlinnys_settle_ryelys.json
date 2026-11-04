@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_0_ryelys",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/miarlinnys/settlement_1_ryelys",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 265011172
+ }
+}

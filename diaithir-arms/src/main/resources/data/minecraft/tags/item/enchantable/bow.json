@@ -1,0 +1,14 @@
+{
+ "replace": false,
+ "values": [
+  "diaithirarms:bone_bow",
+  "diaithirarms:copper_bow",
+  "diaithirarms:bronze_bow",
+  "diaithirarms:mail_bow",
+  "diaithirarms:steel_bow",
+  "diaithirarms:tempered_bow",
+  "diaithirarms:composite_bow",
+  "diaithirarms:rodos_bow",
+  "diaithirarms:future_bow"
+ ]
+}

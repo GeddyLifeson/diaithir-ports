@@ -1,0 +1,14 @@
+{
+  "age": "VIII",
+  "names": {
+    "mat_insulation_aerogel": "Make Aerogel Panel"
+  },
+  "side": [
+    {
+      "id": "mat_insulation_aerogel",
+      "title_key": "mat_insulation_aerogel",
+      "goal": "obtain:1 insulation_aerogel",
+      "text": "Make Aerogel Panel at the fabricator."
+    }
+  ]
+}

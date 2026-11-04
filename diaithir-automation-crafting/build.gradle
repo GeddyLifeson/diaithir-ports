@@ -1,0 +1,83 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-automation-crafting-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
+    interfaceInjectionData.from('src/main/resources/interfaces.json')
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        client {
+            client()
+            if (project.hasProperty('joinServer')) {
+                programArguments.addAll('--username', 'Researcher', '--quickPlayMultiplayer', project.property('joinServer'))
+            }
+        }
+    }
+    mods {
+        researcher { sourceSet(sourceSets.main) }
+        diaithirautomationcrafting { sourceSet(sourceSets.main) }
+    }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+// Sedna (RISC-V VM), Ceres (serialisation) and the Minux loader are vendored as source (MIT, see licences/).
+sourceSets.main {
+    java.srcDirs 'libsrc/sedna/java', 'libsrc/ceres/java', 'libsrc/minux/java'
+    resources.srcDirs 'libsrc/sedna/resources', layout.buildDirectory.dir('minux')
+}
+
+// Prebuilt Minux guest images (Buildroot, GPL; sources https://github.com/North-Western-Development/minux).
+// Fetched from the OC2R release on the Modrinth CDN and checked by hash; never committed.
+def minuxJarUrl = 'https://cdn.modrinth.com/data/F1gm4RsH/versions/Uo2jfkas/oc2r-1.20.1-forge-2.2.13-all.jar'
+def minuxJarSha512 = '4f5164bf7c325222fa26e7a42285f9a391c294aec2ffaf4ed8e27c6eeb9ef07d5ad519dedb3ea0a9bec27f4038210b880ed690f2072df45942e27622f527795b'
+tasks.register('fetchMinux') {
+    def out = layout.buildDirectory.dir('minux')
+    outputs.dir(out)
+    doLast {
+        def dir = out.get().asFile
+        dir.mkdirs()
+        def tmp = new File(temporaryDir, 'oc2r.jar')
+        tmp.withOutputStream { o -> new URL(minuxJarUrl).openStream().withCloseable { it.transferTo(o) } }
+        def sha = java.security.MessageDigest.getInstance('SHA-512').digest(tmp.bytes).encodeHex().toString()
+        if (sha != minuxJarSha512) throw new GradleException("OC2R jar hash mismatch: ${sha}")
+        copy {
+            from(zipTree(tmp)) { include 'META-INF/jarjar/sedna.jar' }
+            into temporaryDir
+        }
+        copy {
+            from(zipTree(new File(temporaryDir, 'META-INF/jarjar/sedna.jar'))) { include 'generated/**', 'licenses/**' }
+            into dir
+        }
+    }
+}
+tasks.named('processResources') { dependsOn 'fetchMinux' }
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations:23.0.0'
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'com.google.code.gson:gson:2.11.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+test {
+    useJUnitPlatform()
+}

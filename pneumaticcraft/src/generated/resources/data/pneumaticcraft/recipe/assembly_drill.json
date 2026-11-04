@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "pneumaticcraft:printed_circuit_board",
+    "C": "pneumaticcraft:pneumatic_cylinder",
+    "D": "#c:gems/diamond",
+    "I": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    "DCC",
+    "  C",
+    "IBI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:assembly_drill"
+  }
+}

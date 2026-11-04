@@ -1,0 +1,37 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "ground",
+          "fixed"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "alexscaves:item/limestone_spear_inventory"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:condition",
+      "property": "minecraft:using_item",
+      "on_false": {
+        "type": "minecraft:special",
+        "base": "alexscaves:item/limestone_spear",
+        "model": {
+          "type": "alexscaves:legacy_item"
+        }
+      },
+      "on_true": {
+        "type": "minecraft:special",
+        "base": "alexscaves:item/limestone_spear_throwing",
+        "model": {
+          "type": "alexscaves:legacy_item"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+ "values": [
+  "#minecraft:is_taiga",
+  "#minecraft:is_mountain",
+  "minecraft:plains",
+  {
+   "id": "diaithir_biomes:cinderfen",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#c:plates/iron",
+  "createloveandwar:redstone_circuit"
+ ],
+ "result": {
+  "id": "createloveandwar:seeker_unit",
+  "count": 4
+ }
+}

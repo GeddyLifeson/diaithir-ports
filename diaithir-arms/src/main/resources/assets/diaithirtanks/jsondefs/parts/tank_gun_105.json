@@ -1,0 +1,81 @@
+{
+ "general": {
+  "type": "gun_tank",
+  "name": "Tank Gun 105 mm",
+  "width": 0.8,
+  "height": 0.8,
+  "mass": 1500,
+  "materialLists": [
+   [
+    "minecraft:iron_block:0:8"
+   ],
+   [
+    "minecraft:gunpowder:0:16"
+   ]
+  ]
+ },
+ "gun": {
+  "capacity": 1,
+  "reloadTime": 90,
+  "muzzleVelocity": 150,
+  "fireDelay": 2.0,
+  "bulletSpreadFactor": 0.0,
+  "diameter": 120,
+  "minCaseLength": 100,
+  "maxCaseLength": 900,
+  "minYaw": -180,
+  "maxYaw": 180,
+  "minPitch": -8,
+  "maxPitch": 20,
+  "yawSpeed": 0.55,
+  "pitchSpeed": 0.45,
+  "isSemiAuto": true,
+  "autoReload": true,
+  "preloadedBullet": "diaithirtanks:tank_shell_ap",
+  "muzzleGroups": [
+   {
+    "muzzles": [
+     {
+      "pos": [
+       0,
+       0,
+       3.0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "definitions": [
+  {
+   "subName": "",
+   "name": "Tank Gun 105 mm",
+   "modelName": "tank_gun_main",
+   "textureName": "tank_gun_main",
+   "extraMaterialLists": [
+    []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 0.8,
+     "height": 0.8
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"feature":"diaithir_planets:badlands_b_ore_a","placement":[{"type":"minecraft:count","count":20},{"type":"minecraft:in_square"},{"type":"minecraft:height_range","height":{"type":"minecraft:trapezoid","max_inclusive":{"absolute":96},"min_inclusive":{"absolute":-16}}},{"type":"minecraft:biome"}]}

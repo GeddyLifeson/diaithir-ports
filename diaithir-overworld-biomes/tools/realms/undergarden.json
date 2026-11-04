@@ -1,0 +1,76 @@
+{
+ "modid": "undergarden",
+ "title": "The Undergarden",
+ "age": 2,
+ "dimension": "undergarden",
+ "default_block": "depthrock",
+ "top_block": "deepturf",
+ "filler_block": "deepsoil",
+ "sea_level": 40,
+ "ambient": {
+  "fog": "#1a2230",
+  "sky": "#0b0f18",
+  "water": "#2c5a6e"
+ },
+ "icon": "undergarden:depthrock",
+ "biome_style": {
+  "frostfields": {
+   "temp": 0.0,
+   "fog": "#9fc7da",
+   "top": "frozen_deepturf"
+  },
+  "frosty_smogstem_forest": {
+   "temp": 0.0,
+   "fog": "#8fb3c6",
+   "top": "frozen_deepturf"
+  },
+  "icy_sea": {
+   "temp": 0.0,
+   "fog": "#a8d4e6"
+  },
+  "ancient_sea": {
+   "temp": 0.5,
+   "fog": "#17304a"
+  },
+  "dead_sea": {
+   "temp": 0.5,
+   "fog": "#2a2f24"
+  },
+  "barren_abyss": {
+   "temp": 0.7,
+   "fog": "#201a16",
+   "top": "coarse_deepsoil"
+  },
+  "infected_depths": {
+   "temp": 0.8,
+   "fog": "#2c3a14",
+   "top": "ashen_deepturf"
+  },
+  "smog_spires": {
+   "temp": 0.9,
+   "fog": "#3a3630",
+   "top": "ashen_deepturf"
+  },
+  "rogdorium_grove": {
+   "temp": 0.8,
+   "fog": "#4a2630"
+  },
+  "forgotten_field": {
+   "temp": 0.6,
+   "fog": "#242c3a"
+  },
+  "depths": {
+   "temp": 0.5,
+   "fog": "#161b24"
+  }
+ },
+ "portals": [
+  {
+   "block": "undergarden_portal",
+   "target": "undergarden:undergarden",
+   "pad": "undergarden:depthrock_bricks",
+   "activator": "undergarden:catalyst",
+   "frame": "undergarden:forgotten_block"
+  }
+ ]
+}

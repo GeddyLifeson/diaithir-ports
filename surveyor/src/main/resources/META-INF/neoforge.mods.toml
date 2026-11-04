@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "LGPL-3.0-or-later"
+issueTrackerURL = "https://github.com/sisby-folk/surveyor/issues"
+
+[[mods]]
+modId = "surveyor"
+version = "${version}"
+displayName = "Surveyor Map Framework"
+description = '''Unified API, networking, and save data for map mods. NeoForge 26.1.2 port of Surveyor by Sisby folk, made for Diaithir. Original: https://github.com/sisby-folk/surveyor (LGPL-3.0-or-later).'''
+authors = "Sisby folk. Contributions by Ampflower, falkreon, jaskarth, Garden System. NeoForge port for Diaithir."
+credits = "Surveyor by Sisby folk (LGPL-3.0-or-later). Ported to NeoForge without Fabric API or Connector."
+displayURL = "https://modrinth.com/mod/surveyor"
+logoFile = "assets/surveyor/icon.png"
+
+[[mixins]]
+config = "surveyor.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/accesstransformer.cfg"
+
+[[dependencies.surveyor]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.surveyor]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.1.2,)"
+ordering = "NONE"
+side = "BOTH"

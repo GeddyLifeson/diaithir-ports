@@ -1,0 +1,17 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:updraft_focus",
+ "offerings": [
+  "minecraft:iron_sword",
+  "#c:storage_blocks/lapis",
+  "#c:gems/quartz",
+  "#c:gems/quartz",
+  "minecraft:iron_sword",
+  "minecraft:phantom_membrane"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:razor_wind_focus",
+ "count": 1
+}

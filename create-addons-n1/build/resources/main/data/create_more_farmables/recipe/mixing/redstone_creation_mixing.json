@@ -1,0 +1,20 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create:cinder_flour",
+  "create:cinder_flour",
+  "create:cinder_flour",
+  "create:cinder_flour",
+  "minecraft:iron_nugget",
+  "minecraft:iron_nugget",
+  "minecraft:iron_nugget",
+  "minecraft:iron_nugget"
+ ],
+ "results": [
+  {
+   "id": "minecraft:redstone",
+   "count": 4
+  }
+ ],
+ "heat_requirement": "heated"
+}

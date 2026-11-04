@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:water_bucket",
+    "color": 7651271,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_kunda_culture.matuirlouchklachain",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:water_breathing",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_kunda_culture.matuirlouchklachain_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

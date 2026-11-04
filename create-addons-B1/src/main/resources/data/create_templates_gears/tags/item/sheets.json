@@ -1,0 +1,19 @@
+{
+ "values": [
+  "create_templates_gears:bolt_sheet",
+  "create_templates_gears:coast_coral_sheet",
+  "create_templates_gears:coast_sheet",
+  "create_templates_gears:deepslate_sheet",
+  "create_templates_gears:end_sheet",
+  "create_templates_gears:flow_sheet",
+  "create_templates_gears:granite_sheet",
+  "create_templates_gears:mossy_stone_sheet",
+  "create_templates_gears:rib_sheet",
+  "create_templates_gears:sand_sheet",
+  "create_templates_gears:silence_echo_sheet",
+  "create_templates_gears:spire_sheet",
+  "create_templates_gears:stone_sheet",
+  "create_templates_gears:tide_sheet",
+  "create_templates_gears:netherrack_sheet"
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "deepdrilling:block/copper_drill_head_block"
+    },
+    "facing=east": {
+      "model": "deepdrilling:block/copper_drill_head_block"
+    },
+    "facing=north": {
+      "model": "deepdrilling:block/copper_drill_head_block"
+    },
+    "facing=south": {
+      "model": "deepdrilling:block/copper_drill_head_block"
+    },
+    "facing=up": {
+      "model": "deepdrilling:block/copper_drill_head_block"
+    },
+    "facing=west": {
+      "model": "deepdrilling:block/copper_drill_head_block"
+    }
+  }
+}

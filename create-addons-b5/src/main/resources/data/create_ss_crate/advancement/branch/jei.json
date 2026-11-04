@@ -1,0 +1,24 @@
+{
+ "parent": "create_ss_crate:base/root",
+ "display": {
+  "icon": {
+   "id": "create:brass_hand",
+   "count": 1
+  },
+  "title": {
+   "translate": "create_ss_crate.advancement.branch.jei.title"
+  },
+  "description": {
+   "translate": "create_ss_crate.advancement.branch.jei.description"
+  },
+  "frame": "task",
+  "show_toast": false,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "enter_world": {
+   "trigger": "minecraft:tick"
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:alaima_elaerwen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_eleila",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_ilyennae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_lyamiel",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_lyireth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_mielora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_oreostia_liranum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_oriannora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:alaima_sileilae",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:cobbled_end_stone"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:cobbled_end_stone_slab",
+  "count": 6
+ }
+}

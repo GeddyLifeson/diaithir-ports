@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": "#minecraft:wool",
+    "S": "minecraft:stick",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "WSW",
+    "SIS",
+    "WSW"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:windmill",
+    "count": 1
+  }
+}

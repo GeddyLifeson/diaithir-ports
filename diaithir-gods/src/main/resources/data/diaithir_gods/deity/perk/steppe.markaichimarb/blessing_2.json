@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:saddle",
+    "color": 5467032,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:steppe.markaichimarb",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:resistance",
+        "Amplifier": 1,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "steppe.markaichimarb_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

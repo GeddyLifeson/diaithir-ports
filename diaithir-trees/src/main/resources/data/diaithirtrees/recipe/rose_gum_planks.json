@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:rose_gum_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:rose_gum_planks",
+  "count": 4
+ }
+}

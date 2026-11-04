@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:torch",
+    "color": 6343560,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:italic.tieldachlasuir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:fire_resistance",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "italic.tieldachlasuir_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

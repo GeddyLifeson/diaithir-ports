@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LLL",
+    "LDL",
+    "LLL"
+  ],
+  "key": {
+    "L": "#alexscaves:rock_candies",
+    "D": "#c:dyes/light_gray"
+  },
+  "result": {
+    "count": 8,
+    "id": "alexscaves:rock_candy_light_gray"
+  }
+}

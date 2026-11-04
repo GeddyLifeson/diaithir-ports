@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smoking",
+ "category": "food",
+ "ingredient": "diaithirbutchery:ribs",
+ "result": {
+  "id": "diaithirbutchery:cooked_ribs"
+ },
+ "experience": 0.35,
+ "cookingtime": 100
+}

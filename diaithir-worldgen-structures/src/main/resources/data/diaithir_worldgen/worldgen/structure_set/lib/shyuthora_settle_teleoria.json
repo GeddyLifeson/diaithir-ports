@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_0_teleoria",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_1_teleoria",
+   "weight": 5
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_2_teleoria",
+   "weight": 33
+  },
+  {
+   "structure": "diaithir_worldgen:lib/shyuthora/settlement_3_teleoria",
+   "weight": 17
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 114771595
+ }
+}

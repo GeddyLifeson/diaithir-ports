@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "ingredients": [
+  "create_thermobaric:beryl_dust"
+ ],
+ "results": [
+  {
+   "id": "create_thermobaric:beryl_ingot",
+   "chance": 0.8
+  }
+ ]
+}

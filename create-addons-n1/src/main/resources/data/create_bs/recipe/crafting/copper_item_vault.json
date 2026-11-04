@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:copper_block",
+  "I": "minecraft:copper_ingot",
+  "V": "create:item_vault"
+ },
+ "pattern": [
+  "IBI",
+  "BVB",
+  "IBI"
+ ],
+ "result": {
+  "id": "create_bs:copper_item_vault"
+ },
+ "show_notification": true
+}

@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_0_montium_miastonanum",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_1_montium_miastonanum",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_2_montium_miastonanum",
+   "weight": 54
+  },
+  {
+   "structure": "diaithir_worldgen:lib/caustenum/settlement_3_montium_miastonanum",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 136274174
+ }
+}

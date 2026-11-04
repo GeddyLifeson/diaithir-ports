@@ -1,0 +1,40 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:crede_castenor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_kelunasten",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_morardath",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_nirnium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_orellia_naurnor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_sarnanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_telernum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_thasten",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:crede_xaazeth",
+   "required": false
+  }
+ ]
+}

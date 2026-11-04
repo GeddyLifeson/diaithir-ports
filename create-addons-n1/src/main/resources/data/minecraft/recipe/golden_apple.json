@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ggg",
+  "ghg",
+  "ggg"
+ ],
+ "key": {
+  "g": "minecraft:gold_ingot",
+  "h": "create:honeyed_apple"
+ },
+ "result": {
+  "id": "minecraft:golden_apple"
+ }
+}

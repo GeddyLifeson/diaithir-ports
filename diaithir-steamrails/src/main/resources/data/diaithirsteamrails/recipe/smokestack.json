@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "T": "diaithirsteamrails:flue_tube",
+  "P": "diaithirsteamrails:riveted_plate"
+ },
+ "pattern": [
+  "T",
+  "T",
+  "P"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:smokestack",
+  "count": 1
+ },
+ "category": "misc"
+}

@@ -1,0 +1,233 @@
+{
+ "polity": [
+  {
+   "coin": 7.917047464637365,
+   "fiat": 8.485281374238571,
+   "com": 1
+  },
+  {
+   "money": 980,
+   "treasury": 20,
+   "wagePool": 0,
+   "arrears": 0,
+   "tb": 0,
+   "taxMul": 1,
+   "infl": 0,
+   "weak": 0,
+   "reform": false
+  },
+  {
+   "money": 1460,
+   "treasury": 0,
+   "wagePool": 0,
+   "arrears": 0,
+   "tb": 0,
+   "taxMul": 1.05,
+   "infl": 0,
+   "weak": 0,
+   "reform": false
+  },
+  {
+   "debase": 0.18071196962708602
+  },
+  {
+   "wage": 0
+  },
+  {
+   "wage": 10
+  },
+  {
+   "money": 1470,
+   "treasury": 0,
+   "wagePool": 40,
+   "arrears": 10,
+   "tb": 0,
+   "taxMul": 1.05,
+   "infl": 0,
+   "weak": 0,
+   "reform": false
+  },
+  {
+   "money": 0,
+   "treasury": 0,
+   "wagePool": 0,
+   "arrears": 600,
+   "tb": 0,
+   "taxMul": 1.3400956406250004,
+   "infl": 0.20000000000000018,
+   "weak": 5,
+   "reform": true
+  },
+  {
+   "red": false
+  }
+ ],
+ "bank": [
+  {
+   "cap": 4000
+  },
+  {
+   "r": true
+  },
+  {
+   "equity": 0,
+   "fund": 0,
+   "failed": false,
+   "dep": 1000,
+   "loans": 808,
+   "goods": 0
+  },
+  {
+   "r": true,
+   "w": 350
+  },
+  {
+   "notes": 0
+  },
+  {
+   "equity": 0.4889673320251177,
+   "fund": 0,
+   "failed": false,
+   "dep": 1050.1009615384614,
+   "loans": 909.5899288704867,
+   "goods": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "equity": 2.9404981258026375,
+   "fund": 0,
+   "failed": false,
+   "dep": 1050.605914867043,
+   "loans": 912.5464129928457,
+   "goods": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 3
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "equity": -459.76469494872896,
+   "fund": 0,
+   "failed": true,
+   "dep": 140.99999999999994,
+   "loans": 0,
+   "goods": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "equity": -459.76469494872896,
+   "fund": 0,
+   "failed": true,
+   "dep": 140.99999999999994,
+   "loans": 0,
+   "goods": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "notes": 0
+  },
+  {
+   "rep": 0
+  },
+  {
+   "equity": -459.76469494872896,
+   "fund": 0,
+   "failed": true,
+   "dep": 140.99999999999994,
+   "loans": 0,
+   "goods": 0
+  },
+  {
+   "rates": {
+    "policy": 0.02,
+    "lend": 0.03,
+    "save": 0
+   }
+  }
+ ],
+ "vault": [
+  {
+   "equity": 0,
+   "fund": 200,
+   "failed": false,
+   "dep": 0,
+   "loans": 0,
+   "goods": 0
+  },
+  {
+   "m": 200
+  },
+  {
+   "b1": true,
+   "b2": false,
+   "b3": false,
+   "b4": true
+  },
+  {
+   "equity": 0,
+   "fund": 0,
+   "failed": false,
+   "dep": 0,
+   "loans": 0,
+   "goods": 200
+  },
+  {
+   "equity": 0,
+   "fund": 288,
+   "failed": false,
+   "dep": 0,
+   "loans": 0,
+   "goods": 0
+  },
+  {
+   "rep": 0
+  }
+ ]
+}

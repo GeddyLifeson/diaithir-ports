@@ -1,0 +1,17 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": false,
+ "key": {
+  "B": "createloveandwar:barrel_iron",
+  "R": "createloveandwar:revolver_action_iron",
+  "G": "createloveandwar:handguard_wood",
+  "S": "createloveandwar:stock_wood"
+ },
+ "pattern": [
+  "BGRS"
+ ],
+ "result": {
+  "id": "createloveandwar:perrin"
+ },
+ "show_notification": true
+}

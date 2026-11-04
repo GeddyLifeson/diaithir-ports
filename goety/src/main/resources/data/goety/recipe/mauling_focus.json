@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:hunting_focus",
+  "f": "#minecraft:fishes",
+  "s": "minecraft:sweet_berries",
+  "h": "minecraft:honeycomb"
+ },
+ "pattern": [
+  "fhf",
+  "ses",
+  "fsf"
+ ],
+ "result": {
+  "id": "goety:mauling_focus",
+  "count": 1
+ }
+}

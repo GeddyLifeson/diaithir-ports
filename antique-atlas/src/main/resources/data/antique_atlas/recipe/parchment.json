@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "misc",
+	"ingredients": ["minecraft:leather", "minecraft:paper"],
+	"result": {"id": "antique_atlas:parchment", "count": 2}
+}

@@ -1,0 +1,26 @@
+{
+ "values": [
+  "sophisticatedbackpacks:pickup_upgrade",
+  "sophisticatedbackpacks:filter_upgrade",
+  "sophisticatedbackpacks:magnet_upgrade",
+  "sophisticatedbackpacks:feeding_upgrade",
+  "sophisticatedbackpacks:compacting_upgrade",
+  "sophisticatedbackpacks:void_upgrade",
+  "sophisticatedbackpacks:restock_upgrade",
+  "sophisticatedbackpacks:deposit_upgrade",
+  "sophisticatedbackpacks:refill_upgrade",
+  "sophisticatedbackpacks:smelting_upgrade",
+  "sophisticatedbackpacks:smoking_upgrade",
+  "sophisticatedbackpacks:blasting_upgrade",
+  "sophisticatedbackpacks:crafting_upgrade",
+  "sophisticatedbackpacks:stonecutter_upgrade",
+  "sophisticatedbackpacks:jukebox_upgrade",
+  "sophisticatedbackpacks:tool_swapper_upgrade",
+  "sophisticatedbackpacks:tank_upgrade",
+  "sophisticatedbackpacks:battery_upgrade",
+  "sophisticatedbackpacks:pump_upgrade",
+  "sophisticatedbackpacks:anvil_upgrade",
+  "sophisticatedbackpacks:smithing_upgrade",
+  "sophisticatedbackpacks:alchemy_upgrade"
+ ]
+}

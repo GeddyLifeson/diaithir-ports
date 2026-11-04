@@ -1,0 +1,14 @@
+{
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "aerialhell:stellar_stone_bricks_tower",
+    "processors": "minecraft:empty",
+    "projection": "rigid"
+   }
+  }
+ ]
+}

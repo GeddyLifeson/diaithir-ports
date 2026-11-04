@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a",
+    "x",
+    "x"
+  ],
+  "key": {
+    "x": "minecraft:netherite_ingot",
+    "a": "#iceandfire:dragon_skulls"
+  },
+  "result": {
+    "id": "iceandfire:dragon_seeker",
+    "count": 1
+  }
+}

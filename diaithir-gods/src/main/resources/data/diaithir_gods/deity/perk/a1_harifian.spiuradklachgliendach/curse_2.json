@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 10839159,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_harifian.spiuradklachgliendach",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "a1_harifian.spiuradklachgliendach_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

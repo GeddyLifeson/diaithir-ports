@@ -1,0 +1,15 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:soul_bolt_focus",
+ "offerings": [
+  "goety:soul_ruby",
+  "goety:fireball_focus",
+  "goety:vexing_focus",
+  "minecraft:book"
+ ],
+ "soul_cost": 5,
+ "duration": 10,
+ "result": "goety:sword_focus",
+ "count": 1
+}

@@ -1,0 +1,15 @@
+{
+ "type": "craft",
+ "school": "sky",
+ "activation": "goety:wind_core",
+ "offerings": [
+  "minecraft:sugar",
+  "#c:feathers",
+  "minecraft:goat_horn",
+  "minecraft:cobweb"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:trembling_focus",
+ "count": 1
+}

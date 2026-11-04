@@ -1,0 +1,46 @@
+package com.gregtechceu.gtceu.common.commands;
+
+import com.gregtechceu.gtceu.common.network.packets.SCPacketShareProspection;
+
+
+import net.minecraft.commands.CommandBuildContext;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.world.entity.player.Player;
+import net.neoforged.neoforge.network.PacketDistributor;
+
+import com.mojang.brigadier.CommandDispatcher;
+
+import java.util.List;
+import java.util.UUID;
+
+import static net.minecraft.commands.Commands.*;
+
+public class GTClientCommands {
+
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext) {
+        dispatcher.register(literal("gtceu")
+                .then(literal("share_prospection_data")
+                        .then(argument("player", EntityArgument.player())
+                                .executes(ctx -> {
+                                    Player player = EntityArgument.getPlayer(ctx, "player");
+                                    Thread sendThread = new Thread(new ProspectingShareTask(
+                                            ctx.getSource().getPlayerOrException().getUUID(), player.getUUID()));
+                                    sendThread.start();
+                                    return 1;
+                                }))));
+    }
+
+    private static class ProspectingShareTask implements Runnable {/* ported: removed */
+        private final UUID sender;
+        private final UUID receiver;
+
+        public ProspectingShareTask(UUID sender, UUID receiver) {
+            this.sender = sender;
+            this.receiver = receiver;
+        }
+
+        @Override
+        public void run() {  /* ported stub */ }
+    }
+}

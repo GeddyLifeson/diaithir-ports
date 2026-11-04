@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/vaurnes/settlement/0/sollanum",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/vaurnes/my_vaurnes_e5_places_000274",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "aether_ii:beast_pelt"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "aether_ii:beast_pelt"
+   }
+  ]
+ }
+}

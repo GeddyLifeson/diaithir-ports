@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:hopper",
+    "#c:ingots/compressed_iron"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:transfer_gadget"
+  }
+}

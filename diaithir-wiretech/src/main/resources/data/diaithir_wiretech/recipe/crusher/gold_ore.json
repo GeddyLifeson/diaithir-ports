@@ -1,0 +1,20 @@
+{
+  "type": "diaithir_wiretech:crusher",
+  "inputs": [
+    {
+      "ingredient": "#c:ores/gold",
+      "count": 1
+    }
+  ],
+  "energy": 2400,
+  "time": 200,
+  "result": {
+    "id": "diaithir_wiretech:gold_dust",
+    "count": 2
+  },
+  "bonus": {
+    "id": "minecraft:redstone",
+    "count": 1
+  },
+  "bonus_chance": 0.15
+}

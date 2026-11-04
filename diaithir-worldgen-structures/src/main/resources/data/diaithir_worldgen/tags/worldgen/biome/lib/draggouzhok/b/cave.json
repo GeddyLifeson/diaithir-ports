@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:draggouzhok_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:draggouzhok_grottoes",
+   "required": false
+  }
+ ]
+}

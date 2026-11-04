@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bone",
+    "color": 8674687,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:ice1.fuortigerna",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "ice1.fuortigerna_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

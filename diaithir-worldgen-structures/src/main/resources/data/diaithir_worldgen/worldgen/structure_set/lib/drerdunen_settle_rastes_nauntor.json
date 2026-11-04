@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_0_rastes_nauntor",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_1_rastes_nauntor",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/drerdunen/settlement_2_rastes_nauntor",
+   "weight": 23
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 95737378
+ }
+}

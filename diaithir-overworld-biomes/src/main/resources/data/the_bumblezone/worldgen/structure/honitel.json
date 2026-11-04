@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:jigsaw",
+ "biomes": "#the_bumblezone:is_the_bumblezone",
+ "step": "surface_structures",
+ "spawn_overrides": {},
+ "terrain_adaptation": "beard_thin",
+ "start_pool": "the_bumblezone:honitel",
+ "size": 1,
+ "max_distance_from_center": 30,
+ "use_expansion_hack": false,
+ "start_height": {
+  "absolute": 52
+ }
+}

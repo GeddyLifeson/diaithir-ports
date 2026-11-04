@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "ingredient": "goety:jade_ore",
+ "experience": 1.0,
+ "cookingtime": 200,
+ "result": {
+  "id": "goety:jade"
+ }
+}

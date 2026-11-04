@@ -1,0 +1,24 @@
+{
+  "preset": "avatar",
+  "width": 1.4,
+  "height": 4.0,
+  "stats": {
+    "health": 360,
+    "armor": 8,
+    "damage": 14,
+    "speed": 0.32,
+    "follow_range": 48,
+    "knockback_resistance": 1.0
+  },
+  "boss": {
+    "phase_two_at": 0.5,
+    "bar_color": "blue"
+  },
+  "spawn": {
+    "biomes": "minecraft:is_beach",
+    "weight": 2,
+    "min_age": "III",
+    "rare": true
+  },
+  "loot_table": "diaithirbestiary:entities/marenoth"
+}

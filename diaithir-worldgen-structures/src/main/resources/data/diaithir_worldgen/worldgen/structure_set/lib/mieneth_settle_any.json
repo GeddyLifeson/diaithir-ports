@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_0_any",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mieneth/settlement_1_any",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 20,
+  "separation": 6,
+  "salt": 86889075
+ }
+}

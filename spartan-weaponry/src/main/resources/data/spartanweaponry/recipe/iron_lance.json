@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "minecraft:iron_ingot",
+  "|": "spartanweaponry:handle",
+  "/": "spartanweaponry:pole"
+ },
+ "pattern": [
+  "  #",
+  "#/ ",
+  "|# "
+ ],
+ "result": {
+  "id": "spartanweaponry:iron_lance"
+ }
+}

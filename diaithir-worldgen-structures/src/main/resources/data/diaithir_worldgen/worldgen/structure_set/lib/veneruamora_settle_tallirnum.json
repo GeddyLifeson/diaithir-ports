@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_0_tallirnum",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_1_tallirnum",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/veneruamora/settlement_2_tallirnum",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 76188671
+ }
+}

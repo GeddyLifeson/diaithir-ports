@@ -1,0 +1,159 @@
+{
+ "sky": {
+  "sky": "#c9a46a",
+  "fog": "#d8b98a",
+  "cloud": "#e6d3a8",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "frequent"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#6f7d6a"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "GR.thurkok.E6.places.000091",
+   "archetype": "desert",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#b8a878",
+   "foliage": "#a89a6a",
+   "water": "#8a8f7a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurkok.E6.places.000122",
+   "archetype": "badlands",
+   "temp": 0.7,
+   "humid": -0.8,
+   "grass": "#a58f6a",
+   "foliage": "#8c7656",
+   "water": "#7d7f70",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurkok.E6.places.000104",
+   "archetype": "swamp",
+   "temp": 0.2,
+   "humid": 0.6,
+   "grass": "#7a8068",
+   "foliage": "#6a7158",
+   "water": "#5e6650",
+   "precip": "rain"
+  },
+  {
+   "entry": "GR.thurkok.E6.places.000103",
+   "archetype": "savanna",
+   "temp": 0.5,
+   "humid": 0.1,
+   "grass": "#a0a070",
+   "foliage": "#8f9060",
+   "water": "#7f8a70",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurkok.E6.places.000136",
+   "archetype": "eroded_badlands",
+   "temp": 0.8,
+   "humid": -0.5,
+   "grass": "#b0875a",
+   "foliage": "#9a7650",
+   "water": "#8a7a66",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurkok.E6.places.000095",
+   "archetype": "windswept_hills",
+   "temp": -0.1,
+   "humid": -0.3,
+   "grass": "#8c8a72",
+   "foliage": "#7a7a64",
+   "water": "#70756a",
+   "precip": "none"
+  },
+  {
+   "entry": "GR.thurkok.E6.places.000106",
+   "archetype": "desert",
+   "temp": 1.0,
+   "humid": -1.0,
+   "grass": "#c2b07e",
+   "foliage": "#b09e70",
+   "water": "#94918a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "lukewarm_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "Thurkok's grounded wastes of salt flats, ash and rust are rendered in dusty ochres and greys, with sparse green pockets where water is hidden.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "ash",
+    "probability": 0.09
+   },
+   {
+    "type": "white_ash",
+    "probability": 0.04
+   }
+  ],
+  "fog": "#8a7a6a",
+  "fog_density": "thick",
+  "night": "dark",
+  "stars": 0.2,
+  "precip_bias": "dry",
+  "storms": "stormy",
+  "why_entry": "GR.thurkok.E6.events.000232",
+  "why": "Ashen Noon scoured the basins; skies of ash, storms, dry salt flats",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "dark_oak",
+    "log": "dark_oak",
+    "leaves": "dark_oak",
+    "weight": 2
+   },
+   {
+    "base": "spruce",
+    "log": "spruce",
+    "leaves": "spruce",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 4
+   },
+   {
+    "block": "cactus",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [
+   "wither_rose"
+  ],
+  "ores": {
+   "coal": 1.5,
+   "iron": 2.5,
+   "copper": 2.5,
+   "gold": 0.5,
+   "redstone": 1.0,
+   "lapis": 0.3,
+   "diamond": 0.2
+  },
+  "why_entry": "GR.thurkok.E6.places.000094",
+  "grounded": true
+ }
+}

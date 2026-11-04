@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/hall_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/ruin_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryeralwen/temple_1_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 32,
+  "separation": 10,
+  "salt": 251354019
+ }
+}

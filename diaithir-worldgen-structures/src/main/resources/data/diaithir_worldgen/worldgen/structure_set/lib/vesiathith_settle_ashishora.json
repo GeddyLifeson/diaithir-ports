@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_0_ashishora",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_2_ashishora",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/vesiathith/settlement_3_ashishora",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 23801962
+ }
+}

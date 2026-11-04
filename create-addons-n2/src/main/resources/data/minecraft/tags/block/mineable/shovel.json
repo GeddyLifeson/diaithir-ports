@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "create_deepslate_processing:deep_gravel",
+   "required": false
+  }
+ ]
+}

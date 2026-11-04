@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:leather",
+    "color": 10399433,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:finnic.koildibienuosul",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:slowness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "finnic.koildibienuosul_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

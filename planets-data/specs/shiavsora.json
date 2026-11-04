@@ -1,0 +1,161 @@
+{
+ "sky": {
+  "sky": "#3a2f5c",
+  "fog": "#5b4a7a",
+  "cloud": "#66c9b0ff",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#2f6f8f"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "ST.shiavsora.E6.places.001553",
+   "archetype": "windswept_hills",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7a8f5c",
+   "foliage": "#6b7d4f",
+   "water": "#3d6e8a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.shiavsora.E6.places.000456",
+   "archetype": "badlands",
+   "temp": 0.9,
+   "humid": -0.9,
+   "grass": "#8c6a4a",
+   "foliage": "#7d5e42",
+   "water": "#4a5a6a",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.shiavsora.E6.places.001529",
+   "archetype": "desert",
+   "temp": 0.8,
+   "humid": -0.8,
+   "grass": "#c9b27a",
+   "foliage": "#b89f6a",
+   "water": "#4f7a8c",
+   "precip": "none"
+  },
+  {
+   "entry": "ST.shiavsora.E6.places.001549",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.4,
+   "grass": "#4c5e3c",
+   "foliage": "#3d5233",
+   "water": "#2e5a6e",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.shiavsora.E6.places.000325",
+   "archetype": "jungle",
+   "temp": 0.6,
+   "humid": 0.8,
+   "grass": "#4f9a5c",
+   "foliage": "#3f8a4c",
+   "water": "#3a9a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.shiavsora.E6.places.000470",
+   "archetype": "snowy_slopes",
+   "temp": -0.8,
+   "humid": 0.2,
+   "grass": "#c9d6e0",
+   "foliage": "#b5c8d6",
+   "water": "#7fa8c4",
+   "precip": "snow"
+  },
+  {
+   "entry": "ST.shiavsora.E6.places.000419",
+   "archetype": "swamp",
+   "temp": 0.3,
+   "humid": 0.9,
+   "grass": "#5f7a4a",
+   "foliage": "#50693c",
+   "water": "#4a6e6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "ST.shiavsora.E6.places.000364",
+   "archetype": "mushroom_fields",
+   "temp": 0.0,
+   "humid": 0.6,
+   "grass": "#7a5f9a",
+   "foliage": "#6a4f8a",
+   "water": "#5a4f7a",
+   "precip": "none"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet-skied world of ash-laced desert, badlands and windswept hills, with a humid jungle and swamp belt and a cold glacial highland, drawn from the Shiavsora entries' ember, glass and crystal imagery.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "white_ash",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   },
+   {
+    "type": "soul",
+    "probability": 0.01
+   }
+  ],
+  "fog": "#8a8f99",
+  "fog_density": "normal",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "stormy",
+  "why_entry": "ST.shiavsora.E6.events.001443",
+  "why": "Orbital wardens, shockwaves and tide-wars suggest a stormy, war-torn sky",
+  "grounded": true
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.4,
+  "undergrowth": [
+   {
+    "block": "dead_bush",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 1
+   }
+  ],
+  "flowers": [],
+  "ores": {
+   "coal": 1.0,
+   "iron": 3.0,
+   "copper": 1.5,
+   "gold": 0.5,
+   "redstone": 0.5,
+   "lapis": 0.5,
+   "diamond": 0.5
+  },
+  "why_entry": "ST.shiavsora.E6.places.001523",
+  "grounded": false
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:netherite_ingot",
+  "diaithirarms:tempered_ingot",
+  "minecraft:amethyst_shard",
+  "minecraft:echo_shard"
+ ],
+ "result": {
+  "id": "diaithirarms:rodos_alloy_ingot",
+  "count": 1
+ }
+}

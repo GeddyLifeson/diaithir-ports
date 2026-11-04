@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/tenon_saw_head",
+  "layer1": "diaithirfurnishings:item/tenon_saw_handle",
+  "layer2": "diaithirfurnishings:item/tenon_saw_binding"
+ }
+}

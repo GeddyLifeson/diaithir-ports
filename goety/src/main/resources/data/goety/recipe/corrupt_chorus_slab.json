@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:corrupt_chorus_planks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:corrupt_chorus_slab",
+  "count": 6
+ }
+}

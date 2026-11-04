@@ -1,0 +1,27 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "alchemind:pure_basalt",
+  "alchemind:corvium",
+  "create:cinder_flour",
+  "create:scorchia",
+  "minecraft:soul_sand"
+ ],
+ "results": [
+  {
+   "id": "alchemind:glamerite_powder",
+   "chance": 0.25
+  },
+  {
+   "id": "alchemind:corvium"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:water",
+   "amount": 81000
+  }
+ ],
+ "heat_requirement": "heated"
+}

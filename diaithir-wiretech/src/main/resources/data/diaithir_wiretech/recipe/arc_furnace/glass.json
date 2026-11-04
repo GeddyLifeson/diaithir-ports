@@ -1,0 +1,15 @@
+{
+  "type": "diaithir_wiretech:arc_furnace",
+  "inputs": [
+    {
+      "ingredient": "#minecraft:sand",
+      "count": 1
+    }
+  ],
+  "energy": 900,
+  "time": 50,
+  "result": {
+    "id": "minecraft:glass",
+    "count": 1
+  }
+}

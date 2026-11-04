@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:thivsora_oseithasha",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thivsora_seshora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thivsora_seshora1",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thivsora_syazora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thivsora_syivsezith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thivsora_thazeithess",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thivsora_vesyusith",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:thivsora_xaishora",
+   "required": false
+  }
+ ]
+}

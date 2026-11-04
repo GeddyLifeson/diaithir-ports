@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " P ",
+  "P P",
+  " P "
+ ],
+ "key": {
+  "P": "#c:ingots/bronze"
+ },
+ "result": {
+  "id": "diaithir_classes:ring_bronze",
+  "count": 1
+ }
+}

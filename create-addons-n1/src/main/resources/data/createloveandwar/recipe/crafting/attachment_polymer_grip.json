@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "N": "#c:nuggets/iron",
+  "G": "createloveandwar:grip_polymer"
+ },
+ "pattern": [
+  " N ",
+  " G ",
+  "   "
+ ],
+ "result": {
+  "id": "createloveandwar:attachment_polymer_grip"
+ },
+ "show_notification": true
+}

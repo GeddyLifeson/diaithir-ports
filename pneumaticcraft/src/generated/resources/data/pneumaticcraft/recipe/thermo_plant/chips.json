@@ -1,0 +1,19 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "inputs": {
+    "fluid": {
+      "ingredient": "#c:plantoil",
+      "amount": 100
+    },
+    "item": "#c:crops/potato"
+  },
+  "outputs": {
+    "item_output": {
+      "count": 4,
+      "id": "pneumaticcraft:chips"
+    }
+  },
+  "temperature": {
+    "min": 423
+  }
+}

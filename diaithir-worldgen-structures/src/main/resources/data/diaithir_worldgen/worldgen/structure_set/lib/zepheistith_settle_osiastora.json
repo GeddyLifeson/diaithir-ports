@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/zepheistith/settlement_0_osiastora",
+   "weight": 3
+  },
+  {
+   "structure": "diaithir_worldgen:lib/zepheistith/settlement_2_osiastora",
+   "weight": 5
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 1028463
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_0_liarintes",
+   "weight": 12
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_1_liarintes",
+   "weight": 7
+  },
+  {
+   "structure": "diaithir_worldgen:lib/corolor/settlement_2_liarintes",
+   "weight": 3
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 161883801
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "station": "canning_pot",
+ "base": "minecraft:water_bucket",
+ "base_returns": "minecraft:bucket",
+ "ingredients": {
+  "minecraft:cooked_cod": 3
+ },
+ "ticks": 1200,
+ "drink": "diaithirbrewing:canned_fish",
+ "servings": 4,
+ "container": "diaithirbrewing:jar"
+}

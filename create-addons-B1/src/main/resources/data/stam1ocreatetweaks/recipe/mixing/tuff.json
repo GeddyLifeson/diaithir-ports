@@ -1,0 +1,20 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:andesite",
+  "#c:cobblestones"
+ ],
+ "results": [
+  {
+   "id": "minecraft:tuff",
+   "count": 1
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 328050,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

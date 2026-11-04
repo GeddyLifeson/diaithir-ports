@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PP",
+    "PP"
+  ],
+  "key": {
+    "P": "alexscaves:peppermint_powder"
+  },
+  "result": {
+    "id": "alexscaves:small_peppermint",
+    "count": 1
+  }
+}

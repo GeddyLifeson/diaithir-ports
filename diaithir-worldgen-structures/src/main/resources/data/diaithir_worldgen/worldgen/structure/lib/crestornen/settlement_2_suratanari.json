@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:jigsaw",
+ "biomes": "#diaithir_worldgen:lib/crestornen/b/suratanari",
+ "step": "underground_structures",
+ "spawn_overrides": {},
+ "terrain_adaptation": "none",
+ "start_pool": "diaithir_worldgen:lib/crestornen/settlement/2/suratanari",
+ "size": 2,
+ "max_distance_from_center": 48,
+ "use_expansion_hack": false,
+ "liquid_settings": "apply_waterlogging",
+ "start_height": {
+  "absolute": 24
+ }
+}

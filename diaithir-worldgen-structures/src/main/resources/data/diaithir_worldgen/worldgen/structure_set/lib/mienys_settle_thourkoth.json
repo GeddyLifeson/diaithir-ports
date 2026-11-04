@@ -1,0 +1,18 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_0_thourkoth",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/mienys/settlement_1_thourkoth",
+   "weight": 2
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 150486762
+ }
+}

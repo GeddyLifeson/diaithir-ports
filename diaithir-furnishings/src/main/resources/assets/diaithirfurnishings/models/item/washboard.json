@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/washboard_head",
+  "layer1": "diaithirfurnishings:item/washboard_handle",
+  "layer2": "diaithirfurnishings:item/washboard_binding"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:composite_spear",
+  "diaithir_classes:fian_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:fian_spear_composite",
+  "count": 1
+ }
+}

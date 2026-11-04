@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/male/0.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/male/1.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/male/2.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/male/ruler.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/male/warrior.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/male/priest.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/female/0.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/female/1.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/female/2.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/female/ruler.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/female/warrior.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/olumaein/female/priest.png",
+    "profession": "diaithircompat:olumaein",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

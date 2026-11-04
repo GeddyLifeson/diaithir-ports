@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:filled_shotgun_casing",
+ "ingredient": "createloveandwar:ball_bearings",
+ "results": [
+  {
+   "id": "createloveandwar:buckshot_shell"
+  }
+ ]
+}

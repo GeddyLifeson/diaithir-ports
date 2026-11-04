@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "d": "goety:dark_ingot",
+  "s": "#c:rods/wooden"
+ },
+ "pattern": [
+  "dd ",
+  "ds ",
+  " s "
+ ],
+ "result": {
+  "id": "goety:dark_axe",
+  "count": 1
+ }
+}

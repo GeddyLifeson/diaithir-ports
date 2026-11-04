@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_blocks",
+    "I": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    "IGI"
+  ],
+  "result": {
+    "count": 8,
+    "id": "pneumaticcraft:pressure_tube"
+  }
+}

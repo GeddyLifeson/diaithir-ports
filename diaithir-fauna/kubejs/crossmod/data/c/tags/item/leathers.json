@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "iceandfire:troll_leather_forest",
+   "required": false
+  },
+  {
+   "id": "iceandfire:troll_leather_frost",
+   "required": false
+  },
+  {
+   "id": "iceandfire:troll_leather_mountain",
+   "required": false
+  },
+  {
+   "id": "#c:leather",
+   "required": false
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "undergarden:blocks/dreadrock_rogdorium_ore",
+ "pools": [
+  {
+   "rolls": 1.0,
+   "bonus_rolls": 0.0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "undergarden:dreadrock_rogdorium_ore"
+    }
+   ]
+  }
+ ]
+}

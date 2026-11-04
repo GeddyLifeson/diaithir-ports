@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirfirearms:gunmetal_nugget",
+  "minecraft:gunpowder"
+ ],
+ "result": {
+  "id": "diaithirfirearms:ammo_magnum",
+  "count": 6
+ }
+}

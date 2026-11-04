@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_templates_gears:stone_sheet",
+  "minecraft:moss_block",
+  "minecraft:moss_block"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:mossy_stone_sheet"
+  }
+ ]
+}

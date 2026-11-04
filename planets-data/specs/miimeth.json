@@ -1,0 +1,196 @@
+{
+ "sky": {
+  "sky": "#7a5cb8",
+  "fog": "#c9a8e8",
+  "cloud": "#e6d4ffb0",
+  "cloud_height": 200
+ },
+ "weather": {
+  "kind": "ash",
+  "frequency": "normal"
+ },
+ "sea": {
+  "liquid": "water",
+  "water": "#3a6fa0"
+ },
+ "terrain": "large_biomes",
+ "biomes": [
+  {
+   "entry": "AR.miimeth.E3.places.000496",
+   "archetype": "meadow",
+   "temp": 0.2,
+   "humid": 0.4,
+   "grass": "#8fcf7a",
+   "foliage": "#9be08a",
+   "water": "#4f8fc0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miimeth.E1.places.000513",
+   "archetype": "dark_forest",
+   "temp": 0.1,
+   "humid": 0.5,
+   "grass": "#5e8f5a",
+   "foliage": "#4c7a4a",
+   "water": "#3e7a9a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miimeth.E1.places.000526",
+   "archetype": "stony_peaks",
+   "temp": -0.2,
+   "humid": -0.3,
+   "grass": "#7f8f7a",
+   "foliage": "#6f8070",
+   "water": "#5a80a0",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miimeth.E4.places.000535",
+   "archetype": "badlands",
+   "temp": 0.8,
+   "humid": -0.7,
+   "grass": "#b8a060",
+   "foliage": "#a8905a",
+   "water": "#6a8aa8",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miimeth.E4.places.000521",
+   "archetype": "cherry_grove",
+   "temp": 0.5,
+   "humid": 0.2,
+   "grass": "#c9a0d8",
+   "foliage": "#f0b8e0",
+   "water": "#6aa0d0",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miimeth.E2.places.000516",
+   "archetype": "birch_forest",
+   "temp": 0.4,
+   "humid": 0.1,
+   "grass": "#a6d28a",
+   "foliage": "#b8dc9a",
+   "water": "#5a9ac8",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miimeth.E6.places.000333",
+   "archetype": "sunflower_plains",
+   "temp": 0.9,
+   "humid": -0.2,
+   "grass": "#e8c060",
+   "foliage": "#f0d070",
+   "water": "#e0a040",
+   "precip": "none"
+  },
+  {
+   "entry": "AR.miimeth.E6.places.000334",
+   "archetype": "mangrove_swamp",
+   "temp": 0.6,
+   "humid": 0.9,
+   "grass": "#6a9a58",
+   "foliage": "#587e48",
+   "water": "#3c6e6a",
+   "precip": "rain"
+  },
+  {
+   "entry": "AR.miimeth.E5.places.000561",
+   "archetype": "windswept_hills",
+   "temp": -0.5,
+   "humid": 0.3,
+   "grass": "#7ab070",
+   "foliage": "#68a060",
+   "water": "#4a80b0",
+   "precip": "snow"
+  },
+  {
+   "entry": "AR.miimeth.E4.places.000520",
+   "archetype": "mushroom_fields",
+   "temp": 0.3,
+   "humid": 0.8,
+   "grass": "#7a6aa8",
+   "foliage": "#8a7ab8",
+   "water": "#5a5aa0",
+   "precip": "rain"
+  }
+ ],
+ "ocean_archetype": "deep_ocean",
+ "beach_archetype": "beach",
+ "river_archetype": "river",
+ "notes": "A violet, ember-lit world of drowned citadels, glowing hearths and singing groves, its skies streaked with drifting ash over a tidal sea that seems to remember every oath.",
+ "atmo": {
+  "particles": [
+   {
+    "type": "glow",
+    "probability": 0.05
+   },
+   {
+    "type": "firefly",
+    "probability": 0.03
+   },
+   {
+    "type": "end_rod",
+    "probability": 0.02
+   }
+  ],
+  "fog": "#c9b8e0",
+  "fog_density": "thin",
+  "night": "dark",
+  "stars": 0.7,
+  "precip_bias": "mixed",
+  "storms": "calm",
+  "why_entry": "AR.miimeth.E6.powers.000338",
+  "why": "Arcane shimmer and lantern light suggest soft luminous air, not ash",
+  "grounded": false
+ },
+ "kit": {
+  "trees": [
+   {
+    "base": "cherry",
+    "log": "cherry",
+    "leaves": "cherry",
+    "weight": 2
+   },
+   {
+    "base": "oak",
+    "log": "oak",
+    "leaves": "oak",
+    "weight": 1
+   }
+  ],
+  "density": 0.9,
+  "undergrowth": [
+   {
+    "block": "pink_petals",
+    "weight": 3
+   },
+   {
+    "block": "moss_carpet",
+    "weight": 2
+   },
+   {
+    "block": "short_grass",
+    "weight": 2
+   }
+  ],
+  "flowers": [
+   "pink_tulip",
+   "lily_of_the_valley",
+   "cornflower",
+   "oxeye_daisy"
+  ],
+  "ores": {
+   "coal": 1.0,
+   "iron": 1.0,
+   "copper": 1.0,
+   "gold": 1.0,
+   "redstone": 1.5,
+   "lapis": 2.5,
+   "diamond": 2.0
+  },
+  "why_entry": "AR.miimeth.E1.places.000526",
+  "grounded": true
+ }
+}

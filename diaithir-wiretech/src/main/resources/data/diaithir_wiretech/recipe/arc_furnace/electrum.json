@@ -1,0 +1,19 @@
+{
+  "type": "diaithir_wiretech:arc_furnace",
+  "inputs": [
+    {
+      "ingredient": "minecraft:gold_ingot",
+      "count": 1
+    },
+    {
+      "ingredient": "minecraft:copper_ingot",
+      "count": 1
+    }
+  ],
+  "energy": 3000,
+  "time": 120,
+  "result": {
+    "id": "diaithir_wiretech:electrum_ingot",
+    "count": 2
+  }
+}

@@ -1,0 +1,341 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    // com.github.johnrengelman.shadow is unmaintained and incompatible with Gradle 9
+    // (uses the removed `project.convention` API). com.gradleup.shadow is its maintained
+    // successor; 9.5.1 supports Gradle 9.2+.
+    id "com.gradleup.shadow" version "9.5.1"
+    id "com.matthewprenger.cursegradle"
+    id "com.modrinth.minotaur"
+}
+
+apply from: '../gradle-scripts/publish-curseforge.gradle'
+
+architectury {
+    platformSetupLoomIde()
+    neoForge()
+}
+
+sourceSets {
+    main {
+        java {
+            // All 3rd-party MOD compat mixins dropped from initial 26.2 scope (see build.gradle
+            // dependencies TODO above) - this covers hexcasting, connectiblechains, emf, sodium,
+            // create, mekanism, oc2r, modular_routers, mffs, integrateddynamics,
+            // immersivengineering, thermalexpansion, twilightforest, tfcambiental,
+            // create_stuff_additions, mixinbooster, cc_tweaked, and anything else under compat/.
+            exclude "org/valkyrienskies/mod/forge/mixin/compat/**"
+            exclude "org/valkyrienskies/mod/forge/mixin/feature/forge_interact/MixinIForge2Player.java"
+            // TODO Phase 3: Create mod compat duck interfaces dropped alongside compat/** above -
+            // Create has no 26.2 build yet either.
+            exclude "org/valkyrienskies/mod/forge/mixinducks/mod_compat/create/**"
+            // Epic Fight compat - not caught by the mixin/compat/** exclude above (different path).
+            exclude "org/valkyrienskies/mod/forge/compat/epicfight/**"
+            // TODO Phase 2b: BlockEntityRenderer lost getRenderBoundingBox() entirely in 26.2's
+            // submit()/SubmitNodeCollector rendering rewrite (now 2-type-param
+            // BlockEntityRenderer<T, S extends BlockEntityRenderState>). This frustum-culling
+            // patch needs a real redesign against the new render-state model, not a one-line fix.
+            exclude "org/valkyrienskies/mod/forge/mixin/neoforged/neoforge/client/MixinClientHooks.java"
+            // TODO Phase 4: this mixin hooks both vanilla's Entity fluid-eye tracking (already
+            // reworked into EntityFluidInteraction, see common's entity/MixinEntity) AND
+            // NeoForge's own IEntityExtension fluid-push/FluidType API (setFluidTypeHeight no
+            // longer exists either) via raw opcode-offset injections. Needs a full redesign
+            // against both reworked APIs; dropped for now (ships won't get the custom
+            // ship-relative buoyancy fluid-push behavior until this is redone).
+            exclude "org/valkyrienskies/mod/forge/mixin/feature/water_in_ships_entity/MixinEntity.java"
+        }
+        kotlin {
+            exclude "org/valkyrienskies/mod/forge/compat/hexcasting/**"
+            exclude "org/valkyrienskies/mod/forge/compat/dynmap/**"
+            exclude "org/valkyrienskies/mod/forge/compat/CreateConversions.kt"
+            exclude "org/valkyrienskies/mod/forge/common/ContraptionShipyardEntityHandlerForge.kt"
+        }
+        resources {
+            srcDir "$buildDir/generated/resources"
+        }
+    }
+}
+
+loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+
+    // loom-no-remap: no obfuscated<->named remapping happens, so there's no refmap to produce -
+    // useLegacyMixinAp/defaultRefmapName (SRG-era refmap machinery) no longer apply.
+    // TODO Phase 4: verify mixins still apply correctly at runtime without a refmap - loom-no-remap
+    // mixins should resolve directly against named classes since everything is unobfuscated now.
+
+    mods {
+        "valkyrienskies" {
+            sourceSet sourceSets.main
+            // Multiproject: without the common sourceSet here, architectury's dev launch registers
+            // an extra bare "main" mod group that is missing this project's build/classes/kotlin/main
+            // output. FML then picks that Kotlin-less group for the "valkyrienskies" modid and never
+            // finds/constructs the @Mod object ValkyrienSkiesModForge (its init{} - which sets
+            // vsCoreProvider and calls ValkyrienSkiesMod.init() - silently never runs).
+            sourceSet project(":common").sourceSets.main
+        }
+    }
+}
+
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
+    core
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentNeoForge.extendsFrom common
+    compileClasspath.extendsFrom core
+    forgeRuntimeLibrary.extendsFrom core
+    shadowCommon.extendsFrom core
+    shadowCommonDevNoShadow
+    shadowCommonDevNoShadow.extendsFrom core
+}
+
+dependencies {
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
+    // implementation(include("io.github.llamalad7:mixinextras-forge:0.3.5"))
+    // TODO Phase 3: this explicit older fabric sponge-mixin AP (0.12.5+mixin.0.8.5, added for
+    // interface-injector support in MixinContainerEntity) defaults to SRG/intermediary
+    // obfuscation-mapping lookups and fails outright under loom-no-remap's unobfuscated
+    // environment ("Unable to locate obfuscation mapping" at compile time). Removed - the
+    // loom-provided mixin AP (matching :common's, which handles interface mixins fine) is used
+    // instead. Re-add only if interface injectors turn out to be genuinely required.
+    // annotationProcessor("net.fabricmc:sponge-mixin:0.12.5+mixin.0.8.5")
+
+    neoForge "net.neoforged:neoforge:$rootProject.neoforge_version"
+
+    // loom-no-remap: the `namedElements` configuration no longer exists (nothing to remap to
+    // "named" from) - reference the common project directly.
+    common(project(path: ":common")) {
+        transitive = false
+    }
+    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) {
+        transitive = false
+    }
+    shadowCommonDevNoShadow(project(path: ":common", configuration: "transformProductionNeoForge")) {
+        transitive = false
+    }
+
+    // TODO Phase 3: 3rd-party MOD compat (Embeddium, Create/Ponder/Flywheel/Registrate,
+    // CC:Tweaked, OC2R, EMF/ETF, energy, TIS-3D, Modular Routers, MFFS, Epic Fight, Dynmap,
+    // Integrated Dynamics, Mekanism) dropped from initial 26.2 scope - none of these mods have
+    // 26.2 builds yet either. Re-add once upstream mods catch up; the corresponding
+    // forge/mixin/compat/** source sets are excluded above until then.
+
+    // Kotlin for Forge
+    forgeRuntimeLibrary(implementation("thedarkcolour:kotlinforforge-neoforge:${kotlin_for_forge_version}"))
+
+    // Cloth for config (loom-no-remap: no `mod` prefix needed)
+    include(implementation("me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}"))
+
+    // Shade vs-core
+    implementation("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
+    implementation("org.valkyrienskies.core:internal:${rootProject.vs_core_version}") {
+        exclude group: 'org.joml', module: 'joml'
+    }
+    runtimeOnly("org.valkyrienskies.core:impl:${rootProject.vs_core_version}") {
+        exclude group: 'org.joml', module: 'joml'
+    }
+    forgeRuntimeLibrary shadowCommon("org.valkyrienskies.core:impl:${rootProject.vs_core_version}") {
+        exclude group: 'org.joml', module: 'joml'
+        transitive = false
+    }
+
+    // region Manually include every single dependency of vs-core (total meme)
+    forgeRuntimeLibrary include("org.valkyrienskies.core:api:${rootProject.vs_core_version}") {
+        exclude group: 'org.joml', module: 'joml'
+        transitive = false
+    }
+
+    forgeRuntimeLibrary shadowCommon("org.valkyrienskies.core:internal:${rootProject.vs_core_version}") {
+        exclude group: 'org.joml', module: 'joml'
+        transitive = false
+    }
+
+    forgeRuntimeLibrary include("org.valkyrienskies.core:util:${rootProject.vs_core_version}") {
+        exclude group: 'org.joml', module: 'joml'
+        transitive = false
+    }
+
+    forgeRuntimeLibrary shadowCommon("org.valkyrienskies:physics_api_krunch:${rootProject.krunch_version}") {
+        exclude group: 'org.joml', module: 'joml'
+        transitive = false
+    }
+
+    forgeRuntimeLibrary shadowCommon("org.valkyrienskies:physics_api:${rootProject.krunch_api_version}") {
+        exclude group: 'org.joml', module: 'joml'
+        transitive = false
+    }
+
+    forgeRuntimeLibrary include("javax.inject:javax.inject:1") { transitive = false }
+
+    // JOML for Math
+    forgeRuntimeLibrary include("org.joml:joml-primitives:1.10.0")
+
+    // Apache Commons Math for Linear Programming
+    forgeRuntimeLibrary include("org.apache.commons:commons-math3:3.6.1") { transitive = false }
+
+    // Jackson Binary Dataformat for Object Serialization
+    def jacksonVersion = '2.14.0'
+    // forked to remove module-info
+    forgeRuntimeLibrary include("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion-rubyfork") { transitive = false }
+    forgeRuntimeLibrary include("com.fasterxml.jackson.module:jackson-module-parameter-names:$jacksonVersion") { transitive = false }
+    forgeRuntimeLibrary include("com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:$jacksonVersion") { transitive = false }
+    forgeRuntimeLibrary include("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion") { transitive = false }
+    forgeRuntimeLibrary include("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion") { transitive = false }
+    forgeRuntimeLibrary include("com.fasterxml.jackson.core:jackson-core:$jacksonVersion") { transitive = false }
+    forgeRuntimeLibrary include("com.github.Rubydesic:jackson-kotlin-dsl:1.2.0") { transitive = false }
+
+    forgeRuntimeLibrary include("com.networknt:json-schema-validator:1.0.71") { transitive = false }
+    forgeRuntimeLibrary include("com.ethlo.time:itu:1.7.0") { transitive = false }
+    forgeRuntimeLibrary include("com.github.victools:jsonschema-module-jackson:4.25.0") { transitive = false }
+    forgeRuntimeLibrary include("com.github.victools:jsonschema-generator:4.25.0") { transitive = false }
+    forgeRuntimeLibrary include("com.fasterxml:classmate:1.5.1") { transitive = false }
+    forgeRuntimeLibrary include("com.flipkart.zjsonpatch:zjsonpatch:0.4.11") { transitive = false }
+    forgeRuntimeLibrary include("org.apache.commons:commons-collections4:4.3") { transitive = false }
+
+    forgeRuntimeLibrary include("com.google.dagger:dagger:2.43.2") { transitive = false }
+
+    // endregion
+}
+
+// I don't know why, but this is the only way gradle can launch it
+tasks.runClient.configure {
+    jvmArgs '-Dkotlinx.coroutines.debug=off'
+}
+
+tasks.runServer.configure {
+    jvmArgs '-Dkotlinx.coroutines.debug=off'
+}
+
+// NeoForge reads access transformers, not access wideners: convert the common access widener.
+def generatedResourcesDir = layout.buildDirectory.dir("generated/resources")
+
+tasks.register("accessTransformerFromWidener") {
+    def aw = project(":common").file("src/main/resources/valkyrienskies-common.accesswidener")
+    def at = generatedResourcesDir.map { it.file("META-INF/accesstransformer.cfg") }
+    inputs.file(aw)
+    outputs.file(at)
+    doLast {
+        def entries = new LinkedHashMap<String, Boolean>()
+        aw.readLines().drop(1).each { line ->
+            def p = line.replaceAll(/#.*/, "").trim().split(/\s+/)
+            if (p.length < 3) return
+            def owner = p[2].replace('/', '.')
+            def key = p[1] == "class" ? owner : p[1] == "field" ? "$owner ${p[3]}" : "$owner ${p[3]}${p[4]}"
+            entries[key] = (entries[key] ?: false) || p[0] == "mutable"
+        }
+        def out = at.get().asFile
+        out.parentFile.mkdirs()
+        out.text = entries.collect { k, mutable -> (mutable ? "public-f " : "public ") + k }.join("\n") + "\n"
+    }
+}
+
+processResources {
+    dependsOn("accessTransformerFromWidener")
+    inputs.property "version", project.version
+
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand "version": project.version
+    }
+}
+
+// loom-no-remap: remapJar doesn't exist anymore (nothing to remap - MC 26.x ships unobfuscated).
+// Following the community-verified migration pattern (see plugin block comment at top of
+// build.gradle): the raw `jar` output becomes an intermediate, and `shadowJar` - built on top of
+// it - becomes the actual main artifact.
+jar {
+    archiveClassifier.set "raw"
+}
+
+tasks.register('devNoShadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
+    exclude "fabric.mod.json"
+    exclude "architectury.common.json"
+
+    dependsOn jar
+    from(zipTree(tasks.named("jar").get().archiveFile))
+
+    // We still have to shade in the common jar, but nothing else
+    configurations = [project.configurations.shadowCommonDevNoShadow]
+    archiveClassifier.set("dev-no-shadow")
+}
+
+build.dependsOn devNoShadowJar
+
+shadowJar {
+    dependsOn jar
+    mainSpec.sourcePaths.clear()
+    from(zipTree(tasks.named("jar").get().archiveFile))
+    from(rootProject.file("LICENSE")) { rename { "valkyrienskies_LICENSE" } }
+    from(rootProject.file("NOTICE")) { rename { "valkyrienskies_NOTICE" } }
+
+    exclude "fabric.mod.json"
+    exclude "architectury.common.json"
+    // Exclude dummy Optifine classes
+    exclude "net/optifine/**"
+    exclude "org/apache/commons/**"
+
+    configurations = [project.configurations.shadowCommon]
+    archiveClassifier.set null
+}
+
+build.dependsOn shadowJar
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+// Kotlin has no JVM_25 target yet (as of 2.2.20); 21 bytecode runs fine under JVM 25.
+compileKotlin.compilerOptions.jvmTarget = JvmTarget.JVM_21
+
+// Phase 4 dev-launch fix: in the dev environment architectury-loom generates an extra bare "main"
+// mod classpath group that contains only build/classes/java/main and omits build/classes/kotlin/main.
+// FML picks that Kotlin-less "main" group as the mod file for modid "valkyrienskies" and therefore
+// never finds/constructs the Kotlin @Mod object ValkyrienSkiesModForge - so its init{} (which sets
+// ValkyrienSkiesMod.vsCoreProvider and calls ValkyrienSkiesMod.init()) never runs, and the first
+// chunk load crashes with "lateinit property vsCoreProvider has not been initialized". Emitting the
+// Kotlin classes into the same directory as the Java classes puts the @Mod object into build/classes/
+// java/main, so it's present in every dev mod-classpath group regardless of which one FML selects.
+compileKotlin.destinationDirectory.set(compileJava.destinationDirectory)
+
+sourcesJar {
+    dependsOn("accessTransformerFromWidener")
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    def commonSources = project(":common").sourcesJar
+    dependsOn commonSources
+    from commonSources.archiveFile.map { zipTree(it) }
+}
+
+// loom-no-remap gist Step 3: redirect published variants to shadowJar (now the main artifact
+// with a null classifier) instead of the raw `jar` (classifier "raw").
+configurations {
+    apiElements {
+        outgoing.artifacts.clear()
+        outgoing.artifact(shadowJar)
+    }
+    runtimeElements {
+        outgoing.artifacts.clear()
+        outgoing.artifact(shadowJar)
+    }
+}
+
+publishing {
+    publications {
+        mavenForge(MavenPublication) {
+            groupId = "org.valkyrienskies"
+            version = project.version
+            artifactId = rootProject.archives_base_name + "-" + project.name
+            artifact(devNoShadowJar) {
+                classifier "dev-no-shadow"
+            }
+            // components.java now resolves to shadowJar per the apiElements/runtimeElements
+            // override above, preserving POM dependency metadata.
+            from components.java
+        }
+    }
+}
+
+

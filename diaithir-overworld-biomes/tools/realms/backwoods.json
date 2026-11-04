@@ -1,0 +1,193 @@
+{
+ "modid": "the_backwoods",
+ "title": "The Backwoods",
+ "age": 4,
+ "icon": "the_backwoods:rotten_oak_log",
+ "plant_rx": "(sedgebrush|ash_rose|foliage|windcap|plant$)",
+ "dimensions": [
+  {
+   "name": "backwoods",
+   "biomes": [
+    "deep_backwoods",
+    "the_thicket",
+    "weald_outskirts",
+    "wood_plains"
+   ],
+   "base": "overworld",
+   "default_block": "minecraft:stone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "minecraft:grass_block",
+   "filler_block": "minecraft:dirt",
+   "title": "The Backwoods"
+  },
+  {
+   "name": "the_familiar",
+   "biomes": [
+    "mirrored_birch_forest",
+    "mirrored_desert",
+    "mirrored_forest",
+    "mirrored_jungle",
+    "mirrored_ocean",
+    "mirrored_plains",
+    "mirrored_savannah",
+    "mirrored_taiga"
+   ],
+   "base": "overworld",
+   "default_block": "minecraft:stone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "minecraft:grass_block",
+   "filler_block": "minecraft:dirt",
+   "title": "The Familiar"
+  },
+  {
+   "name": "the_grain",
+   "biomes": [
+    "the_dead_grain",
+    "uniform_grain",
+    "labyrinthine_grids"
+   ],
+   "base": "overworld",
+   "default_block": "nullstone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "faded_block",
+   "filler_block": "nullstone",
+   "title": "The Grain"
+  },
+  {
+   "name": "the_petrified_weald",
+   "biomes": [
+    "petrified_thickwoods",
+    "pillar_thicket"
+   ],
+   "base": "overworld",
+   "default_block": "nullstone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "petrified_oak_planks",
+   "filler_block": "nullstone",
+   "title": "The Petrified Weald"
+  },
+  {
+   "name": "the_still",
+   "biomes": [
+    "still",
+    "stillwood",
+    "ashen_barrens"
+   ],
+   "base": "overworld",
+   "default_block": "nullstone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "sinking_ash",
+   "filler_block": "amber_grit",
+   "title": "The Still"
+  },
+  {
+   "name": "rotting",
+   "biomes": [
+    "rotting_deep",
+    "splinter_nest"
+   ],
+   "base": "overworld",
+   "default_block": "nullstone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "rotten_oak_planks",
+   "filler_block": "splintered_oak_planks",
+   "title": "The Rotting"
+  },
+  {
+   "name": "loss",
+   "biomes": [
+    "fractured_barrens",
+    "confusion"
+   ],
+   "base": "overworld",
+   "default_block": "nullstone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "cracked_nullstone",
+   "filler_block": "nullstone",
+   "title": "Loss"
+  },
+  {
+   "name": "the_sub_strata",
+   "biomes": [
+    "fossilized_core",
+    "calcified_plains"
+   ],
+   "base": "overworld",
+   "default_block": "nullstone",
+   "sea_level": 63,
+   "ambient": {
+    "fog": "#9a9a96",
+    "sky": "#aaaaa5",
+    "water": "#4a5a5a"
+   },
+   "top_block": "fossilized_silt",
+   "filler_block": "nullstone",
+   "title": "The Sub-Strata"
+  }
+ ],
+ "portals": [
+  {
+   "block": "backwoods_portal",
+   "target": "the_backwoods:backwoods",
+   "pad": "the_backwoods:cobbled_nullstone",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:cobbled_nullstone"
+  },
+  {
+   "block": "loss_portal",
+   "target": "the_backwoods:loss",
+   "pad": "the_backwoods:cracked_nullstone",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:faded_block"
+  },
+  {
+   "block": "the_grain_portal",
+   "target": "the_backwoods:the_grain",
+   "pad": "the_backwoods:nullstone",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:amber_grit"
+  },
+  {
+   "block": "the_petrified_weald_portal",
+   "target": "the_backwoods:the_petrified_weald",
+   "pad": "the_backwoods:petrified_oak_planks",
+   "activator": "the_backwoods:memory_quartz",
+   "frame": "the_backwoods:petrified_oak_planks"
+  }
+ ]
+}

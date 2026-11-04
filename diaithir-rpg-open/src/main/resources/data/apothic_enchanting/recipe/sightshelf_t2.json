@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "apothic_enchanting",
+    "key": {
+        "E": "minecraft:emerald_block",
+        "I": "#c:ingots/netherite",
+        "P": {
+            "neoforge:ingredient_type": "neoforge:components",
+            "components": {
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:long_night_vision"
+                }
+            },
+            "items": "minecraft:potion"
+        },
+        "S": "apothic_enchanting:sightshelf"
+    },
+    "pattern": [
+        "EIE",
+        "PSP",
+        "EIE"
+    ],
+    "result": {
+        "id": "apothic_enchanting:sightshelf_t2"
+    }
+}

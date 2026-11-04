@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "aerialhell:lunatic_crystal",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "##",
+  "#S",
+  " S"
+ ],
+ "result": {
+  "id": "aerialhell:lunatic_axe"
+ }
+}

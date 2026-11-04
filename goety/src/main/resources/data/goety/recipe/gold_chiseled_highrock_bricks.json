@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "goety:highrock_bricks",
+  "g": "#c:ingots/gold"
+ },
+ "pattern": [
+  "mmm",
+  "ggg",
+  "mmm"
+ ],
+ "result": {
+  "id": "goety:gold_chiseled_highrock_bricks",
+  "count": 3
+ }
+}

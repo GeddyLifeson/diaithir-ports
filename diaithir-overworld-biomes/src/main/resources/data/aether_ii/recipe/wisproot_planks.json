@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#aether_ii:wisproot_logs"
+ ],
+ "result": {
+  "id": "aether_ii:wisproot_planks",
+  "count": 4
+ }
+}

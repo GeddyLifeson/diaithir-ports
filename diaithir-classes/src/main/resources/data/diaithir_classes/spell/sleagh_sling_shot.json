@@ -1,0 +1,96 @@
+{
+ "school": "spell_power:physical_ranged",
+ "range": 30.0,
+ "tier": 0,
+ "group": "sleagh_sling",
+ "learn": {},
+ "active": {
+  "cast": {
+   "duration": 0.5,
+   "animation": {
+    "id": "spell_engine:one_handed_throw_charge"
+   },
+   "sound": {
+    "id": "spell_engine:generic_soul_casting"
+   },
+   "particles": [
+    {
+     "id": "spell_engine:magic_rage",
+     "appearance": {
+      "color": 1856653055,
+      "motion": "ASCEND"
+     },
+     "batch": {
+      "count": 2.0,
+      "shape": "PIPE",
+      "anchor": "ENTITY",
+      "min_speed": 0.03,
+      "max_speed": 0.08
+     }
+    }
+   ]
+  }
+ },
+ "release": {
+  "animation": {
+   "id": "spell_engine:one_handed_throw_release"
+  },
+  "sound": {
+   "id": "spell_engine:weapon_throw"
+  }
+ },
+ "target": {
+  "type": "AIM",
+  "aim": {}
+ },
+ "deliver": {
+  "type": "PROJECTILE",
+  "projectile": {
+   "launch_properties": {
+    "velocity": 1.7
+   },
+   "projectile": {
+    "divergence": 0.0,
+    "homing_angle": 0.0,
+    "client_data": {
+     "light_level": 8,
+     "travel_particles": [
+      {
+       "id": "spell_engine:magic_rage",
+       "appearance": {
+        "color": 1856653055
+       },
+       "batch": {
+        "count": 1.0,
+        "shape": "CIRCLE",
+        "anchor": "ENTITY",
+        "min_speed": 0.0,
+        "max_speed": 0.05
+       }
+      }
+     ]
+    }
+   }
+  }
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 0.9,
+     "knockback": 0.4
+    }
+   },
+   "sound": {
+    "id": "spell_engine:weapon_dagger_impact"
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 3.0
+  }
+ }
+}

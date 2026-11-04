@@ -1,0 +1,44 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "pneumaticcraft:pneumatic_primary",
+    "dyeable": {
+     "color_when_undyed": -1
+    }
+   },
+   {
+    "texture": "pneumaticcraft:pneumatic_secondary",
+    "dyeable": {
+     "color_when_undyed": -1
+    }
+   },
+   {
+    "texture": "pneumaticcraft:pneumatic_eyepiece"
+   },
+   {
+    "texture": "pneumaticcraft:pneumatic_translucent"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "pneumaticcraft:pneumatic_primary",
+    "dyeable": {
+     "color_when_undyed": -1
+    }
+   },
+   {
+    "texture": "pneumaticcraft:pneumatic_secondary",
+    "dyeable": {
+     "color_when_undyed": -1
+    }
+   },
+   {
+    "texture": "pneumaticcraft:pneumatic_eyepiece"
+   },
+   {
+    "texture": "pneumaticcraft:pneumatic_translucent"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/diaithir/b/ar_diaithir_e3_history_002615",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/diaithir/b/ar_diaithir_e3_history_002615",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

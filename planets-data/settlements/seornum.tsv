@@ -1,0 +1,15 @@
+entry_id	name	tier	era	biome_entry
+GR.seornum.E2.places.000007	Seornia	1	E2	GR.seornum.E7.places.000102
+GR.seornum.E2.places.000034	Thorduren	2	E2	GR.seornum.E3.places.000059
+GR.seornum.E3.places.000041	Pelustar	2	E3	GR.seornum.E4.places.000090
+GR.seornum.E3.places.000042	Drakturn	2	E3	GR.seornum.E7.places.000102
+GR.seornum.E3.places.000059	Krukar	3	E3	GR.seornum.E3.places.000041
+GR.seornum.E3.places.000089	Tolanum	4	E3	GR.seornum.E3.places.000059
+GR.seornum.E4.places.000069	Miirlora	3	E4	GR.seornum.E1.places.000055
+GR.seornum.E5.places.000096	Sistora	4	E5	GR.seornum.E1.places.000002
+GR.seornum.E5.places.000097	Mollanum	4	E5	GR.seornum.E3.places.000040
+GR.seornum.E5.places.000098	Ristaurnum	4	E5	GR.seornum.E4.places.000090
+GR.seornum.E5.places.000099	Orallostor	4	E5	GR.seornum.E3.places.000040
+GR.seornum.E5.places.000100	Vesethith	4	E5	GR.seornum.E3.places.000041
+GR.seornum.E7.places.000077	Ukatamlaira	3	E7	GR.seornum.E4.places.000094
+GR.seornum.E7.places.000102	Drasterneld	4	E7	GR.seornum.E1.places.000002

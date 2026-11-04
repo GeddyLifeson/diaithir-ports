@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_las_vegas_culture.tigernagoburklachoir",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:goat_horn",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

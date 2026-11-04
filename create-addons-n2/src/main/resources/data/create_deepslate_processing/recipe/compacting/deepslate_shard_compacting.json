@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "create_deepslate_processing:deepslate_shard",
+  "create_deepslate_processing:deepslate_shard",
+  "create_deepslate_processing:deepslate_shard",
+  "create_deepslate_processing:deepslate_shard"
+ ],
+ "results": [
+  {
+   "id": "minecraft:cobbled_deepslate"
+  }
+ ]
+}

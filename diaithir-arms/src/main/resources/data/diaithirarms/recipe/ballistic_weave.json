@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "minecraft:string",
+  "minecraft:string",
+  "minecraft:string",
+  "minecraft:string",
+  "#c:ingots/steel"
+ ],
+ "result": {
+  "id": "diaithirarms:ballistic_weave",
+  "count": 2
+ }
+}

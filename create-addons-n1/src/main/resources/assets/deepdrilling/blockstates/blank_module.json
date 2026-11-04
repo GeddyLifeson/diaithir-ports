@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "deepdrilling:block/blank_module/block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "deepdrilling:block/blank_module/block"
+    },
+    "axis=z": {
+      "model": "deepdrilling:block/blank_module/block",
+      "x": 90
+    }
+  }
+}

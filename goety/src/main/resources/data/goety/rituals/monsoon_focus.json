@@ -1,0 +1,13 @@
+{
+ "type": "craft",
+ "school": "storm",
+ "activation": "goety:wind_core",
+ "offerings": [
+  "goety:thunderbolt_focus",
+  "goety:magic_emerald"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:monsoon_focus",
+ "count": 1
+}

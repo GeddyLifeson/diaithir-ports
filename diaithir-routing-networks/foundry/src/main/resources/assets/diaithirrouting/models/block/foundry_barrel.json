@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "diaithirrouting:block/foundry_barrel_top",
+    "bottom": "diaithirrouting:block/foundry_barrel_top",
+    "side": "diaithirrouting:block/foundry_barrel_side"
+  }
+}

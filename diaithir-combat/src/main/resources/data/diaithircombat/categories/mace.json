@@ -1,0 +1,24 @@
+{
+ "id": "mace",
+ "pattern": "overhead",
+ "range": 2.9,
+ "arc": 70,
+ "width": 0.4,
+ "max_targets": 2,
+ "knockback": 0.9,
+ "combo_window": 14,
+ "parry_window": 0,
+ "fallback": "minecraft:mace",
+ "combo": [
+  {
+   "damage": 1.2,
+   "cooldown": 15,
+   "stamina": 3.5
+  },
+  {
+   "damage": 1.5,
+   "cooldown": 18,
+   "stamina": 4
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:cherry_planks",
+  "B": "minecraft:book"
+ },
+ "pattern": [
+  "PPP",
+  "BBB",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirfurniture:cherry_bookshelf",
+  "count": 1
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/ryeralwen/settlement/2/sevseth",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/ryeralwen/ar_ryeralwen_e1_places_000195",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

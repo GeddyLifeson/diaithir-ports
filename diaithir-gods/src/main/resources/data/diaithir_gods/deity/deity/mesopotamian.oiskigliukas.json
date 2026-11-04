@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:mesopotamian.oiskigliukas",
+  "icon": "minecraft:salmon",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

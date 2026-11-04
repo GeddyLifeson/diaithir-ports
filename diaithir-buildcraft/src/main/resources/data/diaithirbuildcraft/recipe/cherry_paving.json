@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "minecraft:cherry_planks"
+ },
+ "pattern": [
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirbuildcraft:cherry_paving",
+  "count": 6
+ }
+}

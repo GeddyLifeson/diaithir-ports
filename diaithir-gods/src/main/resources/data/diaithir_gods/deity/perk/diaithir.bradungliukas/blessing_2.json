@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:salmon",
+    "color": 12627034,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:diaithir.bradungliukas",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "diaithir.bradungliukas_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

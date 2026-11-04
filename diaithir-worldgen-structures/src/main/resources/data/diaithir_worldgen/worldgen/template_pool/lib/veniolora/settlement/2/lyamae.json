@@ -1,0 +1,15 @@
+{
+ "name": "diaithir_worldgen:lib/veniolora/settlement/2/lyamae",
+ "fallback": "minecraft:empty",
+ "elements": [
+  {
+   "weight": 1,
+   "element": {
+    "element_type": "minecraft:single_pool_element",
+    "location": "diaithir_worldgen:lib/veniolora/ar_veniolora_e6_assay_000229",
+    "projection": "rigid",
+    "processors": "minecraft:empty"
+   }
+  }
+ ]
+}

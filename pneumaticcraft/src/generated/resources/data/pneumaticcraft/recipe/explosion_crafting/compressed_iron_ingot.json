@@ -1,0 +1,14 @@
+{
+  "type": "pneumaticcraft:explosion_crafting",
+  "input": {
+    "ingredient": "#c:ingots/iron",
+    "count": 1
+  },
+  "loss_rate": 20,
+  "results": [
+    {
+      "count": 1,
+      "id": "pneumaticcraft:ingot_iron_compressed"
+    }
+  ]
+}

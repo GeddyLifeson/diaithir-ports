@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:orestanum_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:orestanum_grottoes",
+   "required": false
+  }
+ ]
+}

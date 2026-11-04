@@ -1,0 +1,78 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/ryira/forge_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/fortress_0_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/fortress_1_land",
+   "weight": 11
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/fortress_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/garden_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/garden_1_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/hall_0_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/hall_1_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/hall_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/landmark_0_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/landmark_1_land",
+   "weight": 2
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/temple_0_land",
+   "weight": 4
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/temple_1_land",
+   "weight": 9
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/tower_0_land",
+   "weight": 10
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/tower_1_land",
+   "weight": 6
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/tower_2_land",
+   "weight": 1
+  },
+  {
+   "structure": "diaithir_worldgen:lib/ryira/tower_3_land",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 57018032
+ }
+}

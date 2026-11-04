@@ -1,0 +1,10 @@
+{
+  "type": "deeperdarker:crafting_gloomslate_pot",
+  "back": "#deeperdarker:gloomslate_pot_ingredients",
+  "front": "#deeperdarker:gloomslate_pot_ingredients",
+  "left": "#deeperdarker:gloomslate_pot_ingredients",
+  "right": "#deeperdarker:gloomslate_pot_ingredients",
+  "result": {
+    "id": "deeperdarker:gloomslate_pot"
+  }
+}

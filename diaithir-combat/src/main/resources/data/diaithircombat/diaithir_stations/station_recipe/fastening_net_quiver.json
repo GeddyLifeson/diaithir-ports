@@ -1,0 +1,20 @@
+{
+ "station": "altar.basic",
+ "stage": "assembly",
+ "ingredients": [
+  {
+   "tag": "c:leather",
+   "count": 1
+  },
+  {
+   "tag": "c:string",
+   "count": 1
+  },
+  {
+   "tag": "c:ingots/steel",
+   "count": 1
+  }
+ ],
+ "result": "diaithircombat:fastening_net_quiver",
+ "time_s": 20
+}

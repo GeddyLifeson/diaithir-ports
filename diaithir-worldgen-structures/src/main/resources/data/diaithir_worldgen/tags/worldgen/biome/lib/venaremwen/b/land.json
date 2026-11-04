@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:venaremwen_graithokoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venaremwen_ilyireth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venaremwen_kalukamuta",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venaremwen_khuthok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venaremwen_krarnoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venaremwen_morunen",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venaremwen_silaennirae",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:venaremwen_thistasha",
+   "required": false
+  }
+ ]
+}

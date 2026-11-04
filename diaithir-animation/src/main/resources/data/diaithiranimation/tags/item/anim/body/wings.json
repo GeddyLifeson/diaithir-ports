@@ -1,0 +1,161 @@
+{
+"replace": false,
+"values": [
+{
+"id": "actuallyadditions:wings_of_the_bats",
+"required": false
+},
+{
+"id": "aether_ii:blue_aercloud_glider",
+"required": false
+},
+{
+"id": "aether_ii:cold_aercloud_glider",
+"required": false
+},
+{
+"id": "aether_ii:golden_aercloud_glider",
+"required": false
+},
+{
+"id": "aether_ii:purple_aercloud_glider",
+"required": false
+},
+{
+"id": "aether_ii:valkyrie_wings",
+"required": false
+},
+{
+"id": "betterarcheology:music_disc_swings",
+"required": false
+},
+{
+"id": "enderio:glider",
+"required": false
+},
+{
+"id": "enderio:glider_wing",
+"required": false
+},
+{
+"id": "iceandfire:pixie_wings",
+"required": false
+},
+{
+"id": "ironjetpacks:advanced_coil",
+"required": false
+},
+{
+"id": "ironjetpacks:basic_coil",
+"required": false
+},
+{
+"id": "ironjetpacks:capacitor",
+"required": false
+},
+{
+"id": "ironjetpacks:cell",
+"required": false
+},
+{
+"id": "ironjetpacks:elite_coil",
+"required": false
+},
+{
+"id": "ironjetpacks:jetpack",
+"required": false
+},
+{
+"id": "ironjetpacks:strap",
+"required": false
+},
+{
+"id": "ironjetpacks:thruster",
+"required": false
+},
+{
+"id": "ironjetpacks:ultimate_coil",
+"required": false
+},
+{
+"id": "justdirethings:upgrade_elytra",
+"required": false
+},
+{
+"id": "mekanism:hdpe_elytra",
+"required": false
+},
+{
+"id": "mekanism:jetpack",
+"required": false
+},
+{
+"id": "mekanism:jetpack_armored",
+"required": false
+},
+{
+"id": "mekanism:module_elytra_unit",
+"required": false
+},
+{
+"id": "mekanism:module_jetpack_unit",
+"required": false
+},
+{
+"id": "minecraft:elytra",
+"required": false
+},
+{
+"id": "modern_industrialization:diesel_jetpack",
+"required": false
+},
+{
+"id": "oritech:exo_jetpack",
+"required": false
+},
+{
+"id": "oritech:jetpack",
+"required": false
+},
+{
+"id": "oritech:jetpack_elytra",
+"required": false
+},
+{
+"id": "oritech:jetpack_exo_elytra",
+"required": false
+},
+{
+"id": "pneumaticcraft:elytra_upgrade",
+"required": false
+},
+{
+"id": "silentgear:elytra",
+"required": false
+},
+{
+"id": "silentgear:elytra_blueprint",
+"required": false
+},
+{
+"id": "silentgear:elytra_template",
+"required": false
+},
+{
+"id": "silentgear:elytra_wings",
+"required": false
+},
+{
+"id": "tconstruct:slime_wings",
+"required": false
+},
+{
+"id": "theurgy:alchemical_sulfur_elytra",
+"required": false
+},
+{
+"id": "twilightforest:travellers_wings",
+"required": false
+}
+]
+}

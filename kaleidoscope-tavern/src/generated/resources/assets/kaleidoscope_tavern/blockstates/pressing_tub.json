@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,tilt=false": {
+      "model": "kaleidoscope_tavern:block/brew/pressing_tub",
+      "y": 90
+    },
+    "facing=east,tilt=true": {
+      "model": "kaleidoscope_tavern:block/brew/tilt_pressing_tub",
+      "y": 90
+    },
+    "facing=north,tilt=false": {
+      "model": "kaleidoscope_tavern:block/brew/pressing_tub"
+    },
+    "facing=north,tilt=true": {
+      "model": "kaleidoscope_tavern:block/brew/tilt_pressing_tub"
+    },
+    "facing=south,tilt=false": {
+      "model": "kaleidoscope_tavern:block/brew/pressing_tub",
+      "y": 180
+    },
+    "facing=south,tilt=true": {
+      "model": "kaleidoscope_tavern:block/brew/tilt_pressing_tub",
+      "y": 180
+    },
+    "facing=west,tilt=false": {
+      "model": "kaleidoscope_tavern:block/brew/pressing_tub",
+      "y": 270
+    },
+    "facing=west,tilt=true": {
+      "model": "kaleidoscope_tavern:block/brew/tilt_pressing_tub",
+      "y": 270
+    }
+  }
+}

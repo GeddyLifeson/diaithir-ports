@@ -1,0 +1,26 @@
+{
+ "structures": [
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_0_oriannora",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_1_oriannora",
+   "weight": 14
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_2_oriannora",
+   "weight": 23
+  },
+  {
+   "structure": "diaithir_worldgen:lib/alaima/settlement_3_oriannora",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 24,
+  "separation": 8,
+  "salt": 10653654
+ }
+}

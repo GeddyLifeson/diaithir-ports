@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:ilyenna_hollows",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:ilyenna_grottoes",
+   "required": false
+  }
+ ]
+}

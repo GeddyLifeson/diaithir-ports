@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "pneumaticcraft:turbine_rotor",
+    "S": "#c:crops"
+  },
+  "pattern": [
+    " R ",
+    "RSR",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:harvesting_drone"
+  }
+}

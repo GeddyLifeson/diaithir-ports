@@ -1,0 +1,68 @@
+package com.lowdragmc.lowdraglib.gui.editor.ui.tool;
+
+import com.lowdragmc.lowdraglib.gui.editor.ColorPattern;
+import com.lowdragmc.lowdraglib.gui.editor.Icons;
+import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegister;
+import com.lowdragmc.lowdraglib.gui.editor.configurator.IConfigurableWidget;
+
+import com.lowdragmc.lowdraglib.gui.editor.ui.ToolPanel;
+import com.lowdragmc.lowdraglib.gui.texture.ResourceTexture;
+import com.lowdragmc.lowdraglib.gui.texture.WidgetTexture;
+import com.lowdragmc.lowdraglib.gui.widget.DraggableScrollableWidgetGroup;
+import com.lowdragmc.lowdraglib.gui.widget.ImageWidget;
+import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
+import com.lowdragmc.lowdraglib.gui.widget.SelectableWidgetGroup;
+import com.lowdragmc.lowdraglib.utils.Position;
+import com.lowdragmc.lowdraglib.utils.Size;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+
+/**
+ * @author KilaBash
+ * @date 2022/12/10
+ * @implNote WidgetToolBox
+ */
+public class WidgetToolBox extends DraggableScrollableWidgetGroup {
+    public static class Default {
+        public static List<Default> TABS = new ArrayList<>();
+        public static final Default BASIC = registerTab("widget.basic", Icons.WIDGET_BASIC);
+        public static final Default GROUP = registerTab("widget.group", Icons.WIDGET_GROUP);
+        public static final Default CONTAINER = registerTab("widget.container", Icons.WIDGET_CONTAINER);
+        public static final Default CUSTOM = registerTab("widget.custom", Icons.WIDGET_CUSTOM);
+
+        public final String groupName;
+        public final ResourceTexture icon;
+
+        private Default(String groupName, ResourceTexture icon) {
+            this.groupName = groupName;
+            this.icon = icon;
+            TABS.add(this);
+        }
+
+        @Deprecated
+        public WidgetToolBox createToolBox() {
+            return new WidgetToolBox(groupName, new Size(ToolPanel.WIDTH, 100));
+        }
+
+        public WidgetToolBox createToolBox(Size size) {
+            return new WidgetToolBox(groupName, size);
+        }
+
+        public static Default registerTab(String groupName, ResourceTexture icon) {
+            return new Default(groupName, icon);
+        }
+    }
+
+    public WidgetToolBox(String groupName, Size size) {
+        super(0, 0, size.width, size.height);
+        int yOffset = 3;
+        setYScrollBarWidth(4).setYBarStyle(null, ColorPattern.T_WHITE.rectTexture().setRadius(2).transform(-0.5f, 0));
+        // PORT: widget registry scan (AnnotationDetector) not ported
+
+    }
+
+    public interface IWidgetPanelDragging extends Supplier<IConfigurableWidget> {
+    }
+}

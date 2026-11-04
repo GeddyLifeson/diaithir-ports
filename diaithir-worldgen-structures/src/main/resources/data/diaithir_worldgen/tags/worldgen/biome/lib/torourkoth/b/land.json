@@ -1,0 +1,44 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:torourkoth_halaredock",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_karouggoth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_sastanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_sheithora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_shiathora",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_thaigak",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_tharkoktar",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_torathok",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_venellys",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:torourkoth_zephiastora",
+   "required": false
+  }
+ ]
+}

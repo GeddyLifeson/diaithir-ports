@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:oseivsizith_cauntium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oseivsizith_ceoses",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oseivsizith_corinium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oseivsizith_seivsazeth",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oseivsizith_serestialia",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oseivsizith_vellor",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oseivsizith_venes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:oseivsizith_virastes",
+   "required": false
+  }
+ ]
+}

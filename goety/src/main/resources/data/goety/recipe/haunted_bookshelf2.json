@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:haunted_planks",
+  "X": "minecraft:book"
+ },
+ "pattern": [
+  "###",
+  "XXX",
+  "###"
+ ],
+ "result": {
+  "id": "goety:haunted_bookshelf",
+  "count": 1
+ }
+}

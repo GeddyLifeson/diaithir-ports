@@ -1,0 +1,62 @@
+[
+ {
+  "id": "diaithirsteamrails:boiler_firebox",
+  "name": "Kaldravelk",
+  "text": "Firebox. Burns coal, charcoal or wood, takes water, and makes the steam. Shell blocks touching it add water volume; the weakest block sets the pressure rating (firebox 12 bar). Big boilers heat slower but hold pressure under load. A smokestack on it improves the draught. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:copper_boiler_shell",
+  "name": "Cuprenhold",
+  "text": "Copper boiler shell. Adds water volume to a boiler and rates it for 7 bar. Cheap, and the weak link of a high pressure boiler. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:steel_boiler_shell",
+  "name": "Sorvannhold",
+  "text": "Steel boiler shell. Adds water volume and holds 16 bar, so the firebox (12 bar) becomes the limit. Age VI."
+ },
+ {
+  "id": "diaithirsteamrails:smokestack",
+  "name": "Tharvusk",
+  "text": "Smokestack. Next to a boiler it gives a stronger draught, 25 percent more steam from the same fire, and it smokes while the fire burns. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:steam_cylinder",
+  "name": "Pistrovane",
+  "text": "Steam cylinder. Put against a boiler on a carriage that rides a steam bogey: each cylinder turns pressure above 1 bar into pulling power, full speed at 6 bar. Several cylinders pull longer trains. The boiler feeds about one cylinder per two size units. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:steam_whistle",
+  "name": "Wheshindrel",
+  "text": "Steam whistle. Touching a boiler, a redstone signal blows it and repeats while it holds. A blast costs a little steam and the pitch rises with pressure. On a train it blows as the train pulls out. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:fuel_tender",
+  "name": "Vaskurmeth",
+  "text": "Fuel and water tender. Holds 16000 mB of water and nine stacks of fuel. Boilers beside it, or on any carriage of the same train, draw from it. Pour buckets in, load fuel by hand or with a hopper, and read it bare-handed. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:driver_bogey",
+  "name": "Gravenroq",
+  "text": "Driver bogey, steam style. Make a bogey as usual (railway casing on the assembly track) and use a wrench on it to cycle styles. A carriage needs a driver or pony bogey for its boiler to pull the train. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:pony_bogey",
+  "name": "Lepturin",
+  "text": "Pony bogey, steam style: the small leading truck of a locomotive. Wrench a plain small bogey to get it. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:riveted_plate",
+  "name": "Nitharok",
+  "text": "Riveted plate. Boiler and tender skin. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:flue_tube",
+  "name": "Cavrelune",
+  "text": "Flue tube. Copper pipe for boilers, chimneys and whistles. Age V."
+ },
+ {
+  "id": "diaithirsteamrails:piston_rod",
+  "name": "Strumvekt",
+  "text": "Piston rod. Steel rod for steam cylinders. Age V."
+ }
+]

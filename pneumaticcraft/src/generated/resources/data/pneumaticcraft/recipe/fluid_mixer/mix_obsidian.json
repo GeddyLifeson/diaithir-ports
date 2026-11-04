@@ -1,0 +1,18 @@
+{
+  "type": "pneumaticcraft:fluid_mixer",
+  "fluid_output": {},
+  "input1": {
+    "ingredient": "minecraft:water",
+    "amount": 1000
+  },
+  "input2": {
+    "ingredient": "minecraft:lava",
+    "amount": 1000
+  },
+  "item_output": {
+    "count": 1,
+    "id": "minecraft:obsidian"
+  },
+  "pressure": 0.5,
+  "time": 40
+}

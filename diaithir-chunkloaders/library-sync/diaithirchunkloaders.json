@@ -1,0 +1,8 @@
+[
+  {"id": "diaithirchunkloaders:chunk_loader_1", "name": "Velhorn Loader", "text": "Age III. Keeps its own chunk loaded while it burns fuel, about 13 minutes per coal. Feed it by hand; use it empty-handed to read time left. Owner and team only."},
+  {"id": "diaithirchunkloaders:chunk_loader_2", "name": "Marduvain Loader", "text": "Age V. Keeps a 3x3 square of chunks loaded. Burns fuel twice as fast as the Velhorn. Made from a Velhorn Loader, iron blocks and ender pearls."},
+  {"id": "diaithirchunkloaders:chunk_loader_3", "name": "Ixthuran Loader", "text": "Age VII. Keeps a 5x5 square of chunks loaded. Burns fuel four times as fast as the Velhorn. Made from a Marduvain Loader, diamonds and eyes of ender."},
+  {"id": "diaithirchunkloaders:cart_seal", "name": "Rhovel Cartseal", "text": "Age V. Use on a minecart to keep the 3x3 chunks around it loaded while it rides, 30 minutes per seal, up to 3 hours."},
+  {"id": "diaithirchunkloaders:limits", "name": "Loader Limits", "text": "Each player may own 4 loaders and 2 sealed carts by default. The server may change these. Only the owner, their team or an operator may fuel or break a loader."},
+  {"id": "diaithirchunkloaders:list", "name": "Loader List", "text": "The command /diaithirchunkloaders list shows your loaders, where they are, their radius and time left."}
+]

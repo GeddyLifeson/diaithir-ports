@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "key": {
+    "G": "alexscaves:wafer_cookie_block"
+  },
+  "result": {
+    "count": 6,
+    "id": "alexscaves:wafer_cookie_wall"
+  }
+}

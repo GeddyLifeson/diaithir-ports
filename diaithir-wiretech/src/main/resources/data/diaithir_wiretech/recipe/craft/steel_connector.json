@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:brick",
+    "C": "diaithir_wiretech:steel_ingot"
+  },
+  "pattern": [
+    " B ",
+    "CCC"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:steel_connector",
+    "count": 2
+  }
+}

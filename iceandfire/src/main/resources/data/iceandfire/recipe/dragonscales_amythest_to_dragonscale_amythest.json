@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "iceandfire:dragonscales_amethyst"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "iceandfire:dragonscale_amethyst"
+  },
+  "show_notification": true
+}

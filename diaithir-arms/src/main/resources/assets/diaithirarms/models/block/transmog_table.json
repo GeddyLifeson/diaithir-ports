@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/cube_bottom_top", "textures": {"top": "diaithirarms:block/transmog_table_top", "side": "diaithirarms:block/transmog_table_side", "bottom": "diaithirarms:block/transmog_table_bottom", "particle": "diaithirarms:block/transmog_table_side"}}

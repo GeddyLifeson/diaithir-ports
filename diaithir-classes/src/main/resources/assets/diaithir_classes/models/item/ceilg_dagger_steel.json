@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithir_classes:item/ceilg_dagger_steel"
+ }
+}

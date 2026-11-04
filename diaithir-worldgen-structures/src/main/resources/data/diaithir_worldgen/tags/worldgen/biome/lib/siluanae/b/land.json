@@ -1,0 +1,36 @@
+{
+ "values": [
+  {
+   "id": "diaithir_planets:siluanae_cerum_oresintum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_leosarium_lialausum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_maulium_laseoles",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_mentastes",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_resantum_maurnanum",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_rineosus",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_tones_ameostium",
+   "required": false
+  },
+  {
+   "id": "diaithir_planets:siluanae_valonum_valeontum",
+   "required": false
+  }
+ ]
+}

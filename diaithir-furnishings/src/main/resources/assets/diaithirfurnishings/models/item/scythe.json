@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:item/handheld",
+ "textures": {
+  "layer0": "diaithirfurnishings:item/scythe_head",
+  "layer1": "diaithirfurnishings:item/scythe_handle",
+  "layer2": "diaithirfurnishings:item/scythe_binding"
+ }
+}

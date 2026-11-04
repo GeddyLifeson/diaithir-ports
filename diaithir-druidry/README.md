@@ -10,7 +10,7 @@ It is a data-only mod (no Java). The jar holds `data/` and `assets/` and loads o
 ## Schools
 
 Spell Power attributes are registered in Java, so a data-only module cannot add new ones. Each Celtic school is a spell line
-(`group` prefix) mapped onto the existing Spell Power schools, so staves and gear from any pack scale it. Seven schools, seven spells each, tiers 1 to 4:
+(`group` prefix) mapped onto the existing Spell Power schools, so staves and gear from any pack scale it. Seven Celtic schools of seven spells (tiers 1 to 4, Ages III to V), plus the Age VI Glyph school below:
 
 | School | Power | Spells (tier, Age) |
 |---|---|---|
@@ -21,6 +21,10 @@ Spell Power attributes are registered in Java, so a data-only module cannot add 
 | Fitech (Raven) | physical melee | Boildifiendag (T1, III), Glaedkad (T1, III), Leimfitech (T2, III), Bàinid (T2, III), Roudspoiri (T3, IV), Oildti (T3, IV), Àdbàsu (T4, V) |
 | Sìtichi (Otherworld) | frost | Kietach (T1, III), Loindskàili (T1, III), Keimknok (T2, III), Tiudlak (T2, III), Geigairged (T3, IV), Uoirsìtichi (T3, IV), Klachmelduin (T4, V) |
 | Gouba (Smith) | fire | Sraudag (T1, III), Kaisk (T1, III), Iarnaigitied (T2, III), Kaisiiarnaigi (T2, III), Skòdsaliaruind (T3, IV), Anuilkum (T3, IV), Oiskiliegti (T4, V) |
+
+### Glyph school (Age VI)
+
+Lietirrùan (Glyph), arcane power, eight spells, all learnt at Age VI. Each is one form joined to one effect cut into a rune, after the compose-a-spell idea of glyph magic (Ars Nouveau, LGPL; the idea only, nothing copied): Rune Bolt (aim, harm, pierces one foe), Rune Touch (touch, harm, slows), Rune Mend (self or aim, heal and cleanse), Rune Blink (self, 16 blocks), Rune Light (self, night vision 2 minutes), Rune Pull (area, drags foes in), Rune Wall (self, resistance and absorption), Rune Seal (cloud, holds foes slow and weak). Staves: `staff_glyph_1` (silver ingot, lapis lazuli, Age VI) and `staff_glyph_2` (steel ingot, two lapis, Age VI). Glyph scrolls and staves drop from `chests/age6` (end city treasure, ancient city ice box, ominous trial rewards). The silver ingot tag `c:ingots/silver` is declared empty so the recipe parses without a silver mod.
 
 Names are Diaithiris compounds (head first) built from `LEXICON.json` words; ids are English snake case and never change.
 
@@ -53,3 +57,7 @@ python3 build.py 0.1.0             # build/diaithir_druidry-0.1.0.jar
 * No new Spell Power attributes (Java only). A later small Java module can register `druid`, `ovate`, ... as real schools and the spell JSON only needs its `school` changed.
 * Staves are components on a vanilla stick, so Age gating of the staff is by recipe materials, not by item id.
 * No custom projectile models or sounds yet: spells use Spell Engine's particles and sounds.
+
+## Rites from the Library (52k)
+
+`data/diaithir_druidry/rites/<universe>.json` (215 files, `_index.json` lists counts): one rite per Library SPELL entry (51,884), format `rite.v1`. Name, text, Age and school come from the entry and its Realm (Martial Fitech, Ki Filid, Arcane Fiusaichi, Stellar Bardu, Mythic Draeid, Grounded Gouba, Outer Sitichi). Steps use the Ascendant rite vocabulary (offer, hunt, stones, hour, feast, coop, defend), picked deterministically from the entry id and Age tier. Loaded per universe, so no 52k registrations. Regenerate: `python3 -I tools/gen_rites.py <content.sqlite> <library.sqlite> <planets.tsv>`; each rite also has `planet`, `dimension` and `gate_age` (planet opens_age + tier - 1) (Global-Repo S-id in the PR).

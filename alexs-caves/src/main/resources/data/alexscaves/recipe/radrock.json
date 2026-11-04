@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NPN",
+    "NNN"
+  ],
+  "key": {
+    "N": "minecraft:cobblestone",
+    "P": "alexscaves:toxic_paste"
+  },
+  "result": {
+    "count": 8,
+    "id": "alexscaves:radrock"
+  }
+}

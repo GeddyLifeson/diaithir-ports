@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:water_bucket",
+    "color": 10786693,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_qadan.matuirlouchklach",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:water_breathing",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.75,
+  "cooldown": 1200,
+  "cooldown_category": "a1_qadan.matuirlouchklach_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

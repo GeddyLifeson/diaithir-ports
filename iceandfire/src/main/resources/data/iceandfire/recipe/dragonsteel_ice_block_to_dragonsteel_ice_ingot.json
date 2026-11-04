@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "iceandfire:dragonsteel_ice_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "iceandfire:dragonsteel_ice_ingot"
+  }
+}
