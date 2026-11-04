@@ -66850,6 +66850,10 @@ file = "kubejs/data/powah/loot_table/blocks/solar_panel_starter.json"
 hash = "37eca8535100c9c3e527d1d22546553548dae023e547c95ee6ba4807f85a8e70"
 
 [[files]]
+file = "kubejs/data/productivebees/recipe/bee_conversion/undergarden/regalium_bee.json"
+hash = "0d48a639a756382fd033582792e1fd960ab6b6d496c17ce20f2c74d4d1e6b521"
+
+[[files]]
 file = "kubejs/data/productivefarming/loot_table/blocks/attached_kiwi_stem.json"
 hash = "58a1c8525711f77af6cf91f9f386957d4b4af37d2519bc3a9a6331714c3a0473"
 
@@ -67346,16 +67350,8 @@ file = "kubejs/data/silentgems/loot_table/blocks/silver_ore.json"
 hash = "7dea23364114ab02a7202a958a9c0ca9561e54518d70a4225a742d225fcdf660"
 
 [[files]]
-file = "kubejs/data/stellaris/loot_table/blocks/coal_generator.json"
-hash = "5080f5b0b6882fa5d99677d64fbcdf2785ec5f169dbe5bb19b5a7526b2606145"
-
-[[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/deepslate_titanium_ore.json"
 hash = "b61e3f99832f894a869735855472bd66e92d1c27e4390bce74f9289085092f4f"
-
-[[files]]
-file = "kubejs/data/stellaris/loot_table/blocks/diesel_generator.json"
-hash = "30293554d8d11b9ae0b82b3117b38d2d87f1cde4914a365faaa59f247c67efcf"
 
 [[files]]
 file = "kubejs/data/stellaris/loot_table/blocks/moon_titanium_ore.json"
@@ -68565,7 +68561,7 @@ hash = "0b7ab2cd1cfa81a7c0c9b0fc83707e0083a9c2459080823b1e4a354dcfd2cccf"
 
 [[files]]
 file = "mods/diaithir-content-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "414efc9393cdcb46bc410c2e0b1227ac1a091353c884e30d9ebbc6125d1dcb5c"
+hash = "66b06d534d5e4234d80b299837f360747ac2969d614e503f851681da5eb40942"
 
 [[files]]
 file = "mods/diaithir-core-ext-suite-neoforge-26.1.2-1.0.0.jar"
@@ -68582,7 +68578,7 @@ hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
+hash = "966b8906e6a03e4090af1eb521429aeea6c8d2ef2f621e805c18448b80a06020"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68599,7 +68595,7 @@ hash = "ab391fb6f4332268fbb27ab334bb4a8ba49843faae9cd81987db61f64c6227f5"
 
 [[files]]
 file = "mods/diaithir-realms-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "7eecccf55fd33f76bed814860785fb97fc09162e35b598a7ff1f2a6af6df49da"
+hash = "9b7d3b749fd48abd570844827e826c67f6196ae394c0e6740025892dd07cb6c7"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
@@ -68632,7 +68628,7 @@ hash = "df010dae61b362a2c4a68345c146582d1ceb0b04b0b5c9989be6b2618aa2e244"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "6b5193bce5b4efebdaec0a43353894aa7bb34a6a0601fb6444122f2dfb797b6b"
+hash = "32510ad7e76dab9c14a9b660d6e4fb3802b381ef65babd55999969bf4b99163f"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
