@@ -30,7 +30,21 @@
   "yawSpeed": 0.6,
   "pitchSpeed": 0.5,
   "isSemiAuto": true,
-  "autoReload": true
+  "autoReload": true,
+  "preloadedBullet": "diaithirtanks:tank_shell_ap",
+  "muzzleGroups": [
+   {
+    "muzzles": [
+     {
+      "pos": [
+       0,
+       0,
+       3.0
+      ]
+     }
+    ]
+   }
+  ]
  },
  "definitions": [
   {

@@ -20,7 +20,7 @@
   "muzzleVelocity": 165,
   "fireDelay": 2.0,
   "bulletSpreadFactor": 0.0,
-  "diameter": 125,
+  "diameter": 120,
   "minCaseLength": 100,
   "maxCaseLength": 900,
   "minYaw": -180,
@@ -30,7 +30,21 @@
   "yawSpeed": 0.5,
   "pitchSpeed": 0.45,
   "isSemiAuto": true,
-  "autoReload": true
+  "autoReload": true,
+  "preloadedBullet": "diaithirtanks:tank_shell_ap",
+  "muzzleGroups": [
+   {
+    "muzzles": [
+     {
+      "pos": [
+       0,
+       0,
+       3.0
+      ]
+     }
+    ]
+   }
+  ]
  },
  "definitions": [
   {
