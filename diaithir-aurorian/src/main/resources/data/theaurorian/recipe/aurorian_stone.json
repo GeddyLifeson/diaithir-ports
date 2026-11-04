@@ -1,9 +1,0 @@
-{
- "type": "minecraft:smelting",
- "ingredient": "theaurorian:aurorian_cobblestone",
- "result": {
-  "id": "theaurorian:aurorian_stone"
- },
- "experience": 0.1,
- "cookingtime": 200
-}

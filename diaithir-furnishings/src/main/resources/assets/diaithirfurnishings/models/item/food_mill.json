@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/food_mill_head",
-  "layer1": "diaithirfurnishings:item/food_mill_handle"
- }
-}

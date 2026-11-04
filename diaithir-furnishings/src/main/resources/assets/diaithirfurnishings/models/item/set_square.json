@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/set_square_head",
-  "layer1": "diaithirfurnishings:item/set_square_handle",
-  "layer2": "diaithirfurnishings:item/set_square_binding"
- }
-}

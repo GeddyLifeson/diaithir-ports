@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/cube_all",
-"textures": {
-"all": "diaithir_planets:block/ryirleth_thivsis_ore"
-}
-}

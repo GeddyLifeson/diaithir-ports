@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/felling_axe_head",
-  "layer1": "diaithirfurnishings:item/felling_axe_handle",
-  "layer2": "diaithirfurnishings:item/felling_axe_binding"
- }
-}

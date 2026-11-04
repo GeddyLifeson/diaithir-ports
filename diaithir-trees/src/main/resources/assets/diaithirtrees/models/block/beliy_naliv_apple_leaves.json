@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/leaves",
- "textures": {
-  "all": "diaithirtrees:block/beliy_naliv_apple_leaves"
- }
-}

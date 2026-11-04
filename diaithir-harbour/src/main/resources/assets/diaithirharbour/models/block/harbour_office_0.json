@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "diaithirharbour:block/harbour_office_0_top",
-    "side": "diaithirharbour:block/harbour_office_0_side"
-  }
-}

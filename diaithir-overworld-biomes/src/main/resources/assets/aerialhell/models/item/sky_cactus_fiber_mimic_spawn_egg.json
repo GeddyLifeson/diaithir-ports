@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "aerialhell:item/sky_cactus_fiber_mimic_spawn_egg"
- }
-}

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/miners_lamp_head",
-  "layer1": "diaithirfurnishings:item/miners_lamp_handle",
-  "layer2": "diaithirfurnishings:item/miners_lamp_binding"
- }
-}

@@ -1,6 +1,0 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": ["EIE", " R ", "I I"],
-  "key": { "E": "minecraft:ender_pearl", "I": "minecraft:iron_ingot", "R": "minecraft:redstone" },
-  "result": { "id": "diaithirpipes:connector", "count": 1 }
-}

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/chisel_head",
-  "layer1": "diaithirfurnishings:item/chisel_handle",
-  "layer2": "diaithirfurnishings:item/chisel_binding"
- }
-}

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/crucible_head",
-  "layer1": "diaithirfurnishings:item/crucible_handle",
-  "layer2": "diaithirfurnishings:item/crucible_binding"
- }
-}

@@ -1,8 +1,0 @@
-{
- "input": "theaurorian:moonstone_pickaxe",
- "output": {
-  "id": "theaurorian:umbra_pickaxe",
-  "count": 1
- },
- "catalyst": "theaurorian:umbra_ingot"
-}

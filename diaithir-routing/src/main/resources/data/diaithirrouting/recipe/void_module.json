@@ -1,5 +1,0 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": ["diaithirrouting:extractor_module", "minecraft:obsidian"],
-  "result": { "id": "diaithirrouting:void_module", "count": 1 }
-}

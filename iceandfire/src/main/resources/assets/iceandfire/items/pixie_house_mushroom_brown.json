@@ -1,9 +1,0 @@
-{
-  "model": {
-    "type": "minecraft:special",
-    "base": "iceandfire:item/pixie_house_mushroom_brown",
-    "model": {
-      "type": "uranus:dynamic"
-    }
-  }
-}

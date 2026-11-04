@@ -1,9 +1,0 @@
-{
- "replace": false,
- "values": [
-  {
-   "id": "create_thermobaric:impure_gold_dust",
-   "required": false
-  }
- ]
-}

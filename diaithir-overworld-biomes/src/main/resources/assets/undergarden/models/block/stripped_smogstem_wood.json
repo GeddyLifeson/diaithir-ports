@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "undergarden:block/stripped_smogstem_wood_top",
-  "side": "undergarden:block/stripped_smogstem_wood"
- }
-}

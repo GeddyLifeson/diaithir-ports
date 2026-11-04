@@ -1,9 +1,0 @@
-{
- "type": "create:haunting",
- "ingredient": "minecraft:andesite",
- "results": [
-  {
-   "id": "minecraft:netherrack"
-  }
- ]
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "diaithir_stations:block/foundry_boiler_off"
-  }
-}

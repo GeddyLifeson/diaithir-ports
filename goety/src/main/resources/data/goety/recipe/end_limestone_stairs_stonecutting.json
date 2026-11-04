@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "goety:end_limestone",
- "result": {
-  "id": "goety:end_limestone_stairs",
-  "count": 1
- }
-}

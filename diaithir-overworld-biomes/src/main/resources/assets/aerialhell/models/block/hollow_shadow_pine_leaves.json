@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "aerialhell:block/hollow_shadow_pine_leaves"
- }
-}

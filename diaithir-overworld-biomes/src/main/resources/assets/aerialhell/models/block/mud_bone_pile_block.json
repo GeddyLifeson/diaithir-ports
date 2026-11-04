@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "aerialhell:block/mud_bone_pile_block"
- }
-}

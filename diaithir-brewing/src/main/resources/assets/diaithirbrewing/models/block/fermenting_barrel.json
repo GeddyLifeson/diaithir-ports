@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/cube_bottom_top",
- "textures": {
-  "bottom": "diaithirbrewing:block/fermenting_barrel_bottom",
-  "side": "diaithirbrewing:block/fermenting_barrel_side",
-  "top": "diaithirbrewing:block/fermenting_barrel_top"
- }
-}

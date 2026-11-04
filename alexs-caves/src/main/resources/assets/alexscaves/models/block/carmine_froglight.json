@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "alexscaves:block/carmine_froglight_top",
-    "side": "alexscaves:block/carmine_froglight_side"
-  }
-}

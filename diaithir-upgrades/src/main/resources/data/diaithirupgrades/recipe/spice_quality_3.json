@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:spice_quality_2", "K": "minecraft:diamond", "B": "minecraft:wheat"}, "result": {"id": "diaithirupgrades:spice_quality_3", "count": 1}}

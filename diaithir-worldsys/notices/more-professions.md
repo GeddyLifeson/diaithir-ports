@@ -1,6 +1,0 @@
-# More Professions fold (package `moreprofessions`)
-
-Trades and job tokens come from **More Professions** 1.5.3 by Pepsied (Modrinth `more-professions`, datapack).
-Licence: MIT. The jar's mods.toml and fabric/quilt metadata say `license = MIT` and Modrinth lists MIT. No separate LICENSE file and no public source repository were found (the Modrinth page has no source link), so the grant rests on that metadata; the mcfunction trade data is the only material taken.
-
-Changes: the scoreboard/NBT mcfunction machinery is replaced by Java. `tools/convert_more_professions.py` reads the datapack's `jobs/<job>/trade1..5` and `set/*` files and writes `data/diaithirworldsys/moreprofessions/jobs.json` (6 jobs: Redstoner, Lumber Jack, Miner, Beekeeper, Hunter, Explorer; 5 levels, 2 trades per level, rolled from 3 to 6 slots a level). Nothing is invented; upstream slips (log2..log4 pointing at log1 variants, a missing `sapling_to_emerald`) are resolved or skipped by the script. Behaviour kept: a fletcher with no trade xp, working at a fletching table with an item frame above it holding the job token, takes the job. Left out: the "visible locked trades" display and the villager helmet marker. No art. No turn-based mechanics.

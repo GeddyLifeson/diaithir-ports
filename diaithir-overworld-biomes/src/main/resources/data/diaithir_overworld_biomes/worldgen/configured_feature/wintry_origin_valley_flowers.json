@@ -1,1 +1,0 @@
-{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"data":{"Name":"minecraft:lily_of_the_valley"},"weight":4},{"data":{"Name":"minecraft:blue_orchid"},"weight":2},{"data":{"Name":"minecraft:azure_bluet"},"weight":2},{"data":{"Name":"minecraft:cornflower"},"weight":1}]}}}

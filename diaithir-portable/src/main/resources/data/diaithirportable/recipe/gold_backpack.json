@@ -1,1 +1,0 @@
-{ "type": "minecraft:crafting_shaped", "pattern": ["GGG","GBG","GGG"], "key": { "G": "minecraft:gold_ingot", "B": "diaithirportable:iron_backpack" }, "result": { "id": "diaithirportable:gold_backpack" } }

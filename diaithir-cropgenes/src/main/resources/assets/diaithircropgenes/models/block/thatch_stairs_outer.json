@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/outer_stairs",
- "textures": {
-  "bottom": "diaithircropgenes:block/thatch_stairs",
-  "top": "diaithircropgenes:block/thatch_stairs",
-  "side": "diaithircropgenes:block/thatch_stairs"
- }
-}

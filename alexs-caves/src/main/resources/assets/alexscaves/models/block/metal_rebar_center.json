@@ -1,6 +1,0 @@
-{
-    "parent": "alexscaves:block/rebar_center",
-	"textures": {
-		"rebar": "alexscaves:block/metal_rebar"
-	}
-}

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/pliers_head",
-  "layer1": "diaithirfurnishings:item/pliers_handle",
-  "layer2": "diaithirfurnishings:item/pliers_binding"
- }
-}

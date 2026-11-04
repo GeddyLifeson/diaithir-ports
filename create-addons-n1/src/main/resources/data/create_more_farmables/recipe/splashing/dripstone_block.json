@@ -1,9 +1,0 @@
-{
- "type": "create:splashing",
- "ingredient": "minecraft:stone",
- "results": [
-  {
-   "id": "minecraft:dripstone_block"
-  }
- ]
-}

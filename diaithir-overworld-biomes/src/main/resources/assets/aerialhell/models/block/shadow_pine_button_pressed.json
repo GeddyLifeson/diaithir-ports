@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/button_pressed",
- "textures": {
-  "texture": "aerialhell:block/shadow_pine_button"
- }
-}

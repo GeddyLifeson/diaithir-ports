@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/grease_gun_head",
-  "layer1": "diaithirfurnishings:item/grease_gun_handle",
-  "layer2": "diaithirfurnishings:item/grease_gun_binding"
- }
-}

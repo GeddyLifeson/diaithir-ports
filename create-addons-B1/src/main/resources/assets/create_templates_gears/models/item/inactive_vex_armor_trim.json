@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "create_templates_gears:item/vex_trim_no_energy"
-  }
-}

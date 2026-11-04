@@ -1,8 +1,0 @@
-{
-  "icon": "theaurorian:umbra_ingot",
-  "x": -200,
-  "y": 80,
-  "children": [
-    "theaurorian:aurorian_steel"
-  ]
-}

@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "aerialhell:block/hollow_shadow_pine_log",
-  "side": "aerialhell:block/hollow_shadow_pine_log"
- }
-}

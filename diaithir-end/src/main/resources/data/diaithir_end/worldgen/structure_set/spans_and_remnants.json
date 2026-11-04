@@ -1,1 +1,0 @@
-{"structures":[{"structure":"diaithir_end:broken_bridge","weight":2},{"structure":"diaithir_end:floating_remnant","weight":2}],"placement":{"type":"minecraft:random_spread","spacing":30,"separation":10,"salt":1784201102,"exclusion_zone":{"other_set":"minecraft:end_cities","chunk_count":6}}}

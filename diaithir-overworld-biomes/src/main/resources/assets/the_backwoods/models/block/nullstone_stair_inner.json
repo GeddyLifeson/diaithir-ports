@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/inner_stairs",
- "textures": {
-  "bottom": "the_backwoods:block/nullstone_stair",
-  "side": "the_backwoods:block/nullstone_stair",
-  "top": "the_backwoods:block/nullstone_stair"
- }
-}

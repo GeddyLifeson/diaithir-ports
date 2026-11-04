@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "": [
-      { "model": "alexscaves:block/potted_curly_fern" },
-      { "model": "alexscaves:block/potted_curly_fern", "y": 90 }
-    ]
-  }
-}

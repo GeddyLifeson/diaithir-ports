@@ -1,6 +1,0 @@
-{
-   "textures" : {
-      "layer0" : "pneumaticcraft:item/network_components/network_registry"
-   },
-   "parent" : "item/generated"
-}

@@ -1,5 +1,0 @@
-build/
-.gradle/
-run/
-*.log
-run-client/

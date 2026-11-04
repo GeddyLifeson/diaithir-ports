@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/glue_pot_head",
-  "layer1": "diaithirfurnishings:item/glue_pot_handle",
-  "layer2": "diaithirfurnishings:item/glue_pot_binding"
- }
-}

@@ -1,2 +1,0 @@
-# Test: better caravans fold (headless, NeoForge 26.1.2.109)
-compileJava clean. Server boots to Done. Via rcon (196 chunks forceloaded): `caravan spawn` created a wandering trader 70 blocks off with 5 caravan trades from the pool (emerald for cooked beef, leather, arrows, torches, experience bottles) and two leashed mules; `caravan info` listed it; `caravan despawn` removed 3 members. Not exercised: the random spawn roll, walking, 20 minute despawn, camel/llama biome choice, trading by a player, client.

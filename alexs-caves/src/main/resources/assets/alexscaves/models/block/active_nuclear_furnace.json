@@ -1,8 +1,0 @@
-{
-	"parent": "block/block",
-	"render_type": "cutout",
-	"ambientocclusion": false,
-	"textures": {
-		"particle": "alexscaves:block/nuclear_furnace_component"
-	}
-}

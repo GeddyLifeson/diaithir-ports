@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "diaithirforcefield:item/mob_filter_module"
-  }
-}

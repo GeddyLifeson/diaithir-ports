@@ -1,6 +1,0 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": [" P ", "PIP", " P "],
-  "key": { "P": "minecraft:paper", "I": "minecraft:iron_nugget" },
-  "result": { "id": "diaithirrouting:filter", "count": 1 }
-}

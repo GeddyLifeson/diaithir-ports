@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/outer_stairs",
- "textures": {
-  "bottom": "aerialhell:block/smooth_smoky_quartz_stairs",
-  "side": "aerialhell:block/smooth_smoky_quartz_stairs",
-  "top": "aerialhell:block/smooth_smoky_quartz_stairs"
- }
-}

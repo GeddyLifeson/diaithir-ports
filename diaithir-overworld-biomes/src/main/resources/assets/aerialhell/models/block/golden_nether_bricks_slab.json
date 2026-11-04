@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/golden_nether_bricks_slab",
-  "side": "aerialhell:block/golden_nether_bricks_slab",
-  "top": "aerialhell:block/golden_nether_bricks_slab"
- }
-}

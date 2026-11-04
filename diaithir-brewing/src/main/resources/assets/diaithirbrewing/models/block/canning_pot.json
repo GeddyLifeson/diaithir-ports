@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/cube_bottom_top",
- "textures": {
-  "bottom": "diaithirbrewing:block/canning_pot_bottom",
-  "side": "diaithirbrewing:block/canning_pot_side",
-  "top": "diaithirbrewing:block/canning_pot_top"
- }
-}

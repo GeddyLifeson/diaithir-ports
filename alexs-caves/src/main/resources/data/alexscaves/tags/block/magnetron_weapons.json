@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "alexscaves:scarlet_magnet",
-    "alexscaves:azure_magnet",
-    "#minecraft:anvil",
-    "minecraft:stonecutter"
-  ]
-}

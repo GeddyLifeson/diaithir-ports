@@ -1,6 +1,0 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": ["C C", "CFC", " C "],
-  "key": { "C": "minecraft:copper_ingot", "F": "diaithirrouting:filter" },
-  "result": { "id": "diaithirrouting:copper_filter_hopper", "count": 1 }
-}

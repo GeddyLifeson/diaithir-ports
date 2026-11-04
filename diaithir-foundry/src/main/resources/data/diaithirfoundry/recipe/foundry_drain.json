@@ -1,1 +1,0 @@
-{ "type": "minecraft:crafting_shaped", "pattern": [ "B B", "BHB", "BBB" ], "key": { "B": "diaithirfoundry:foundry_bricks", "H": "minecraft:hopper" }, "result": { "id": "diaithirfoundry:foundry_drain" } }

@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/bow_pulling_1",
- "textures": {
-  "layer0": "diaithirarms:item/bhutanese_bamboo_bow_pulling_1"
- }
-}

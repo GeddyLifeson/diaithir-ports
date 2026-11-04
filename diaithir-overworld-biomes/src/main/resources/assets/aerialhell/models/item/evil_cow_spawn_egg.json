@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "aerialhell:item/evil_cow_spawn_egg"
- }
-}

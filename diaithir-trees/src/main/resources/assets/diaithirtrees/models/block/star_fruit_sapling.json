@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cross",
- "textures": {
-  "cross": "diaithirtrees:block/star_fruit_sapling"
- }
-}

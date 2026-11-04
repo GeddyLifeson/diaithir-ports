@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/meat_mallet_head",
-  "layer1": "diaithirfurnishings:item/meat_mallet_handle"
- }
-}

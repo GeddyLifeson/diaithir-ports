@@ -1,5 +1,0 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": ["diaithirrouting:extractor_module", "minecraft:ender_pearl"],
-  "result": { "id": "diaithirrouting:sender_module", "count": 1 }
-}

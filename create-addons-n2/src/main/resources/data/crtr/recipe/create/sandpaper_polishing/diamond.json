@@ -1,7 +1,0 @@
-{
- "type": "create:sandpaper_polishing",
- "ingredient": "crtr:rough_diamond",
- "result": {
-  "id": "minecraft:diamond"
- }
-}

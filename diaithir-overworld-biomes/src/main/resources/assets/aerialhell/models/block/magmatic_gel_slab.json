@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/magmatic_gel_slab",
-  "side": "aerialhell:block/magmatic_gel_slab",
-  "top": "aerialhell:block/magmatic_gel_slab"
- }
-}

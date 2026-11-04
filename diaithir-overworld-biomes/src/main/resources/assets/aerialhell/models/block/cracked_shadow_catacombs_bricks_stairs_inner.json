@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/inner_stairs",
- "textures": {
-  "bottom": "aerialhell:block/cracked_shadow_catacombs_bricks_stairs",
-  "side": "aerialhell:block/cracked_shadow_catacombs_bricks_stairs",
-  "top": "aerialhell:block/cracked_shadow_catacombs_bricks_stairs"
- }
-}

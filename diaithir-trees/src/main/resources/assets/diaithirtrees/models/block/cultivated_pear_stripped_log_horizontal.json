@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column_horizontal",
- "textures": {
-  "end": "diaithirtrees:block/cultivated_pear_stripped_log_top",
-  "side": "diaithirtrees:block/cultivated_pear_stripped_log"
- }
-}

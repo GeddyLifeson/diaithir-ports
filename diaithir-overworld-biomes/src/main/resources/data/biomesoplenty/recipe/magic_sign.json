@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["###", "###", " S "], "key": {"#": "biomesoplenty:magic_planks", "S": "minecraft:stick"}, "result": {"id": "biomesoplenty:magic_sign", "count": 3}}

@@ -1,1 +1,0 @@
-{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"data":{"Name":"minecraft:pink_petals","Properties":{"facing":"north","flower_amount":"3"}},"weight":3},{"data":{"Name":"minecraft:allium"},"weight":2},{"data":{"Name":"minecraft:azure_bluet"},"weight":2},{"data":{"Name":"minecraft:cornflower"},"weight":1}]}}}

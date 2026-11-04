@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/orientable",
- "textures": {
-  "top": "diaithircarts:block/loading_dock_side",
-  "side": "diaithircarts:block/loading_dock_side",
-  "front": "diaithircarts:block/loading_dock_front"
- }
-}

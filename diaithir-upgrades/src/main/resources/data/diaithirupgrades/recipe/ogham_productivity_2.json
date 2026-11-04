@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:ogham_productivity_1", "K": "minecraft:gold_ingot", "B": "minecraft:stone"}, "result": {"id": "diaithirupgrades:ogham_productivity_2", "count": 1}}

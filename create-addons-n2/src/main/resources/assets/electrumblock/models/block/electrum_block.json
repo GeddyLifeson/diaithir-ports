@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "electrumblock:block/electrum_block",
-    "particle": "electrumblock:block/electrum_block"
-  },
-  "render_type": "solid"
-}

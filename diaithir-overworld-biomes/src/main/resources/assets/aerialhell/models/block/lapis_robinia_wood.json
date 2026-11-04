@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "aerialhell:block/lapis_robinia_wood_top",
-  "side": "aerialhell:block/lapis_robinia_wood"
- }
-}

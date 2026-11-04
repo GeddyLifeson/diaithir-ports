@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/orientable",
- "textures": {
-  "front": "archimedes:block/engine_front",
-  "side": "archimedes:block/engine_side",
-  "top": "archimedes:block/engine_top"
- }
-}

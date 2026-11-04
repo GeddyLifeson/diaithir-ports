@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["#S#", "#S#"], "key": {"#": "biomesoplenty:hellbark_planks", "S": "minecraft:stick"}, "result": {"id": "biomesoplenty:hellbark_fence", "count": 3}}

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/orientable",
- "textures": {
-  "front": "archimedes:block/marker_front",
-  "side": "archimedes:block/marker_side",
-  "top": "archimedes:block/marker_top"
- }
-}

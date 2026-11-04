@@ -1,9 +1,0 @@
-{
-  "icon": "theaurorian:darkstone",
-  "x": -200,
-  "y": 40,
-  "border": "BLUE",
-  "children": [
-    "theaurorian:umbra"
-  ]
-}

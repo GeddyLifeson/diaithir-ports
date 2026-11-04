@@ -1,7 +1,0 @@
-id,name,age,speed_factor,tool,source
-dirt_track,Dirt track,I,1.0,walking and worn paths,Wikipedia: Dirt road
-gravel_road,Gravel road,II,1.15,spade and gravel,Wikipedia: Road surface
-cobbled_road,Cobbled and paved stone road,III,1.3,stone and a mason,Wikipedia: Roman roads
-macadam_road,Macadam (crushed stone) road,V,1.5,crushed stone and a roller,Wikipedia: Macadam
-asphalt_road,Asphalt (tarmac) road,VI,1.8,bitumen and a paver,Wikipedia: Tarmacadam
-concrete_motorway,Concrete motorway,VII,2.0,concrete and a slipform paver,Wikipedia: Controlled-access highway

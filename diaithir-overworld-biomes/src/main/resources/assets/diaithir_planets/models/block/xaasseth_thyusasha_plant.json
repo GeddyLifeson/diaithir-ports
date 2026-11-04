@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/cross",
-"textures": {
-"cross": "diaithir_planets:block/xaasseth_thyusasha_plant"
-}
-}

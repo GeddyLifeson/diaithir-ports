@@ -1,6 +1,0 @@
-{
-  "parent": "diaithirstoragenet:block/cable_inventory",
-  "textures": {
-    "all": "diaithirstoragenet:block/filter_cable"
-  }
-}

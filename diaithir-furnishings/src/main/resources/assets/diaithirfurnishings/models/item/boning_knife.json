@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/boning_knife_head",
-  "layer1": "diaithirfurnishings:item/boning_knife_handle"
- }
-}

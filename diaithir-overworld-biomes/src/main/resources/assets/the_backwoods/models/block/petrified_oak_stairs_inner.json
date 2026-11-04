@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/inner_stairs",
- "textures": {
-  "bottom": "the_backwoods:block/petrified_oak_stairs",
-  "side": "the_backwoods:block/petrified_oak_stairs",
-  "top": "the_backwoods:block/petrified_oak_stairs"
- }
-}

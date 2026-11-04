@@ -1,1 +1,0 @@
-{"feature":"diaithir_overworld_biomes:gravel_patch","placement":[{"type":"minecraft:rarity_filter","chance":4},{"type":"minecraft:in_square"},{"type":"minecraft:heightmap","heightmap":"OCEAN_FLOOR_WG"},{"type":"minecraft:biome"}]}

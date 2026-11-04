@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/leaves",
-"textures": {
-"all": "diaithir_planets:block/joradernath_caullostia_leaves"
-}
-}

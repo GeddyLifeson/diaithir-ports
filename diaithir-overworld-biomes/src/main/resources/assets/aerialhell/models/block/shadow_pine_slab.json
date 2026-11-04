@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/shadow_pine_slab",
-  "side": "aerialhell:block/shadow_pine_slab",
-  "top": "aerialhell:block/shadow_pine_slab"
- }
-}

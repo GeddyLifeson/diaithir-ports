@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "createsandpapers:item/soul_sand_paper"
-  }
-}

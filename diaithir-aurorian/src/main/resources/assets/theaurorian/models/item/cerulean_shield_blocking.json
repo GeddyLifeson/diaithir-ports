@@ -1,6 +1,0 @@
-{
-  "parent": "theaurorian:item/shield_blocking",
-  "textures": {
-    "layer0": "theaurorian:item/cerulean_shield"
-  }
-}

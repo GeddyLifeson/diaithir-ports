@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "sometricks:item/music_disc_blocks_je1_be1"
-  }
-}

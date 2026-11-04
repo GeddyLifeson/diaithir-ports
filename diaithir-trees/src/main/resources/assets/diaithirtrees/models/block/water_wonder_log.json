@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirtrees:block/water_wonder_log_top",
-  "side": "diaithirtrees:block/water_wonder_log"
- }
-}

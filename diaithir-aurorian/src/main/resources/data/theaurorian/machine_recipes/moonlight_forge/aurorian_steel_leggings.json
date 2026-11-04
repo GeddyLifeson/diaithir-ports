@@ -1,8 +1,0 @@
-{
- "input": "theaurorian:cerulean_leggings",
- "output": {
-  "id": "theaurorian:aurorian_steel_leggings",
-  "count": 1
- },
- "catalyst": "theaurorian:aurorian_steel_ingot"
-}

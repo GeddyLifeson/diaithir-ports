@@ -1,1 +1,0 @@
-{"id":"diaithir_overworld_biomes:quests/visit_lavender_field","age":1,"task":{"type":"visit_biome","biome":"biomesoplenty:lavender_field"},"codex_link":"biomesoplenty:lavender_field","reward":{"energy_J":1000},"global_event":"biomes_ready"}

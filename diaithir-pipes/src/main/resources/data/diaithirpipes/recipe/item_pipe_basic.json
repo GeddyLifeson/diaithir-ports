@@ -1,6 +1,0 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": ["III", "GHG", "III"],
-  "key": { "I": "minecraft:iron_ingot", "G": "minecraft:glass", "H": "minecraft:hopper" },
-  "result": { "id": "diaithirpipes:item_pipe_basic", "count": 8 }
-}

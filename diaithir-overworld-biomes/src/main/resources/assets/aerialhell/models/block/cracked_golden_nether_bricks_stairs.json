@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/stairs",
- "textures": {
-  "bottom": "aerialhell:block/cracked_golden_nether_bricks_stairs",
-  "side": "aerialhell:block/cracked_golden_nether_bricks_stairs",
-  "top": "aerialhell:block/cracked_golden_nether_bricks_stairs"
- }
-}

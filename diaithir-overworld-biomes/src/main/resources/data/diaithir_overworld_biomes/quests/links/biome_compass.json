@@ -1,1 +1,0 @@
-{"quest":"diaithir_overworld_biomes:find_rare_biome","task":{"type":"diaithir:global_event","event":"diaithir_overworld_biomes.naturescompass.CompassEvents$BiomeLocatedEvent"},"reward_item":"diaithir_overworld_biomes:biome_compass","age":1,"optional_dependency":"diaithir_codex"}

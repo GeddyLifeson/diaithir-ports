@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab_top",
- "textures": {
-  "bottom": "aerialhell:block/aerial_netherrack_slab",
-  "side": "aerialhell:block/aerial_netherrack_slab",
-  "top": "aerialhell:block/aerial_netherrack_slab"
- }
-}

@@ -1,6 +1,0 @@
-{
-    "name": "Adventure",
-    "description": "Apotheosis lets you gear up with procedurally generated loot items that have powerful bonuses.$(p)But beware, new foes are also present.",
-    "icon": "minecraft:netherite_sword",
-	"flag": "apotheosis:adventure"
-}

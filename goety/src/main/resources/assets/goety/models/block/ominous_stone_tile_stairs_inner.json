@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "goety:block/ominous_stone_tiles",
-    "side": "goety:block/ominous_stone_tiles",
-    "top": "goety:block/ominous_stone_tiles"
-  }
-}

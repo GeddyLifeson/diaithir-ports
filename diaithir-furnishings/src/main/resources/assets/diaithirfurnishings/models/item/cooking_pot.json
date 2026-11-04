@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/cooking_pot_pot",
-  "layer1": "diaithirfurnishings:item/cooking_pot_handle"
- }
-}

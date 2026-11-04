@@ -1,8 +1,0 @@
-{
- "input": "theaurorian:moonstone_pickaxe",
- "output": {
-  "id": "theaurorian:aurorianite_pickaxe",
-  "count": 1
- },
- "catalyst": "theaurorian:aurorianite_ingot"
-}

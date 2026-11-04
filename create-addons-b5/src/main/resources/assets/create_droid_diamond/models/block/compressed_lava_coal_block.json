@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "create_droid_diamond:block/compressed_lava_coal_block"
-  }
-}

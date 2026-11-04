@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/flying_shuttle_head",
-  "layer1": "diaithirfurnishings:item/flying_shuttle_handle",
-  "layer2": "diaithirfurnishings:item/flying_shuttle_binding"
- }
-}

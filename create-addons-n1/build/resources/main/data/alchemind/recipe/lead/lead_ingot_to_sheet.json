@@ -1,9 +1,0 @@
-{
- "type": "create:pressing",
- "ingredient": "#c:ingots/lead",
- "results": [
-  {
-   "id": "alchemind:lead_sheet"
-  }
- ]
-}

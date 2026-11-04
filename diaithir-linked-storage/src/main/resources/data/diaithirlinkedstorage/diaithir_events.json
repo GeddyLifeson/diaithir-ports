@@ -1,8 +1,0 @@
-{
-  "listens": [
-    "calendar_year",
-    "disaster",
-    "trade_boom"
-  ],
-  "fires": []
-}

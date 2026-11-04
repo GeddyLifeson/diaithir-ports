@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "alexscaves:block/galena_top",
-    "side": "alexscaves:block/galena",
-    "top": "alexscaves:block/galena_top"
-  }
-}

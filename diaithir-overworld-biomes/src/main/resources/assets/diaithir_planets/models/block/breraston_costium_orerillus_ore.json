@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/cube_all",
-"textures": {
-"all": "diaithir_planets:block/breraston_costium_orerillus_ore"
-}
-}

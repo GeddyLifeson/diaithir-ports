@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/stairs",
- "textures": {
-  "bottom": "aerialhell:block/magmatic_gel_stairs",
-  "side": "aerialhell:block/magmatic_gel_stairs",
-  "top": "aerialhell:block/magmatic_gel_stairs"
- }
-}

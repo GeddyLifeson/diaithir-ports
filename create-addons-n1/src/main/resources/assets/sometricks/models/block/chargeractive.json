@@ -1,9 +1,0 @@
-{
-  "parent": "sometricks:custom/chargerwork",
-  "textures": {
-    "all": "sometricks:block/brass_casing",
-    "particle": "sometricks:block/brass_casing",
-    "5": "sometricks:block/texture12"
-  },
-  "render_type": "solid"
-}

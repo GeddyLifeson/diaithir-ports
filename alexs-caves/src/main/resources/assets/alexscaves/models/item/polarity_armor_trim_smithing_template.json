@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "alexscaves:item/polarity_armor_trim_smithing_template"
-  }
-}

@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirbosses:item/age_warden_6_spawn_egg"
- }
-}

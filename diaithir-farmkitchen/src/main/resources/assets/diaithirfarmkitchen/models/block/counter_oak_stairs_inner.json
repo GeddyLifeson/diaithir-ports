@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/inner_stairs",
- "textures": {
-  "bottom": "diaithirfarmkitchen:block/counter_oak_stairs",
-  "top": "diaithirfarmkitchen:block/counter_oak_stairs",
-  "side": "diaithirfarmkitchen:block/counter_oak_stairs"
- }
-}

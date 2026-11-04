@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "minecraft:piston",
-    "minecraft:sticky_piston",
-    "minecraft:dispenser",
-    "minecraft:dropper"
-  ]
-}

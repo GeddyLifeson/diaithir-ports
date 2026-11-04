@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["PKP", "KBK", "PKP"], "key": {"P": "diaithirupgrades:spice_productivity_2", "K": "minecraft:gold_ingot", "B": "minecraft:wheat"}, "result": {"id": "diaithirupgrades:spice_productivity_3", "count": 1}}

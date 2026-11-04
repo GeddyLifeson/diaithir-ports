@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["SS", "PP", "PP"], "key": {"S": "minecraft:string", "P": "#minecraft:planks"}, "result": {"id": "diaithirarms:transmog_table", "count": 1}}

@@ -1,1 +1,0 @@
-{ "type": "minecraft:crafting_shaped", "pattern": [" J ","IRI"," P "], "key": { "J": "minecraft:jukebox", "I": "minecraft:iron_ingot", "R": "minecraft:redstone", "P": "minecraft:paper" }, "result": { "id": "diaithirportable:jukebox_upgrade" } }

@@ -1,9 +1,0 @@
-{
- "_doc": "Draft against UPGRADES.md (#117); adjust keys to the final schema. The UpgradeHost capability glue is a TODO: the router and sieve have no tick code yet, so a speed module changes nothing until the router gets a throughput limit.",
- "id": "diaithirrouting:sorting",
- "priority": 0,
- "targets": ["diaithirrouting:foundry_sieve", "diaithirrouting:foundry_router"],
- "slots": 1,
- "kinds": ["speed"],
- "max_quality": "rare"
-}

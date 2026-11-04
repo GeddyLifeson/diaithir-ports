@@ -1,1 +1,0 @@
-{"quest_link":"diaithir:age1/field_survey","requires_codex":"diaithir_overworld_biomes:blooming_biosphere","age":1,"global_event":"diaithir_overworld_biomes:blooming_overhaul","upgrade_rule":{"scope":"data_only","on_upgrade":"regenerate_new_chunks_only","units":"SI"}}

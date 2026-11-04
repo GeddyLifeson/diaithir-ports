@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/door_top_left_open",
- "textures": {
-  "bottom": "aerialhell:block/copper_pine_door",
-  "top": "aerialhell:block/copper_pine_door"
- }
-}

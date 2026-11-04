@@ -1,8 +1,0 @@
-{
- "input": "theaurorian:moonstone_shovel",
- "output": {
-  "id": "theaurorian:aurorian_steel_shovel",
-  "count": 1
- },
- "catalyst": "theaurorian:aurorian_steel_ingot"
-}

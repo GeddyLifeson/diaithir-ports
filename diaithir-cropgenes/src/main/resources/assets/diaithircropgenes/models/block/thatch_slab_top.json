@@ -1,9 +1,0 @@
-{
- "parent": "minecraft:block/slab_top",
- "textures": {
-  "bottom": "diaithircropgenes:block/thatch_slab_top",
-  "top": "diaithircropgenes:block/thatch_slab_top",
-  "side": "diaithircropgenes:block/thatch_slab_top",
-  "particle": "diaithircropgenes:block/thatch_slab_top"
- }
-}

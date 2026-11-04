@@ -1,9 +1,0 @@
-{
- "replace": false,
- "values": [
-  {
-   "id": "musketmod:cartridge",
-   "required": false
-  }
- ]
-}

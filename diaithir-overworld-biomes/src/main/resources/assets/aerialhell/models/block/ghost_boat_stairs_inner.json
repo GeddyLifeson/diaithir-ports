@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/inner_stairs",
- "textures": {
-  "bottom": "aerialhell:block/ghost_boat_stairs",
-  "side": "aerialhell:block/ghost_boat_stairs",
-  "top": "aerialhell:block/ghost_boat_stairs"
- }
-}

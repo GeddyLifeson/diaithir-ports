@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/smooth_smoky_quartz_slab",
-  "side": "aerialhell:block/smooth_smoky_quartz_slab",
-  "top": "aerialhell:block/smooth_smoky_quartz_slab"
- }
-}

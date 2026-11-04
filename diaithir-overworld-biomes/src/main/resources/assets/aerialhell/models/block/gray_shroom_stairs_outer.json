@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/outer_stairs",
- "textures": {
-  "bottom": "aerialhell:block/gray_shroom_stairs",
-  "side": "aerialhell:block/gray_shroom_stairs",
-  "top": "aerialhell:block/gray_shroom_stairs"
- }
-}

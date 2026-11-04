@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/stellar_stone_slab",
-  "side": "aerialhell:block/stellar_stone_slab",
-  "top": "aerialhell:block/stellar_stone_slab"
- }
-}

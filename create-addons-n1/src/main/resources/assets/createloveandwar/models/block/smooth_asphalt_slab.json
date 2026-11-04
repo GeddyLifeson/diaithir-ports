@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "createloveandwar:block/smooth_asphalt",
-    "side": "createloveandwar:block/smooth_asphalt",
-    "top": "createloveandwar:block/smooth_asphalt"
-  }
-}

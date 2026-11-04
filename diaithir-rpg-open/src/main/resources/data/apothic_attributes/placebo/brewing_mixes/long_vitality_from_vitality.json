@@ -1,6 +1,0 @@
-{
-  "mix_type": "potion",
-  "from": "apothic_attributes:vitality",
-  "ingredient": "minecraft:redstone",
-  "to": "apothic_attributes:long_vitality"
-}

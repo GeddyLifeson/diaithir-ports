@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "create_soda_pop:block/cocaleaftexturefull",
-    "particle": "minecraft:block/azalea_top"
-  },
-  "render_type": "cutout"
-}

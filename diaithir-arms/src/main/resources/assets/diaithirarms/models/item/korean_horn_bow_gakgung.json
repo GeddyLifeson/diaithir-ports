@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/bow",
- "textures": {
-  "layer0": "diaithirarms:item/korean_horn_bow_gakgung"
- }
-}

@@ -1,1 +1,0 @@
-{"type":"minecraft:simple_block","config":{"to_place":{"type":"minecraft:weighted_state_provider","entries":[{"weight":5,"data":{"Name":"minecraft:pumpkin"}},{"weight":1,"data":{"Name":"minecraft:carved_pumpkin","Properties":{"facing":"south"}}}]}}}

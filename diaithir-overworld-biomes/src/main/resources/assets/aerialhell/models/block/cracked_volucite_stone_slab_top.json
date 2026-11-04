@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab_top",
- "textures": {
-  "bottom": "aerialhell:block/cracked_volucite_stone_slab",
-  "side": "aerialhell:block/cracked_volucite_stone_slab",
-  "top": "aerialhell:block/cracked_volucite_stone_slab"
- }
-}

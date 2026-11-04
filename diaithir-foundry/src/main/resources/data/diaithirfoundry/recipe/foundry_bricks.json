@@ -1,1 +1,0 @@
-{ "type": "minecraft:crafting_shaped", "pattern": [ "BCB", "CBC", "BCB" ], "key": { "B": "minecraft:bricks", "C": "minecraft:clay_ball" }, "result": { "id": "diaithirfoundry:foundry_bricks", "count": 4 } }

@@ -1,5 +1,0 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": ["diaithirrouting:filter_module", "minecraft:comparator"],
-  "result": { "id": "diaithirrouting:sorter_module", "count": 1 }
-}

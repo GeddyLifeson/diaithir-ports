@@ -1,9 +1,0 @@
-{
-  "model": {
-    "type": "minecraft:special",
-    "base": "alexscaves:item/raygun",
-    "model": {
-      "type": "alexscaves:legacy_item"
-    }
-  }
-}

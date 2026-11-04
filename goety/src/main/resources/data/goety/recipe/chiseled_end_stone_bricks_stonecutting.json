@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "goety:chiseled_end_stone",
- "result": {
-  "id": "goety:chiseled_end_stone_bricks",
-  "count": 1
- }
-}

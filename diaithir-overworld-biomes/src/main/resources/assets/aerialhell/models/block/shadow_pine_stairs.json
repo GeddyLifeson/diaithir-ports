@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/stairs",
- "textures": {
-  "bottom": "aerialhell:block/shadow_pine_stairs",
-  "side": "aerialhell:block/shadow_pine_stairs",
-  "top": "aerialhell:block/shadow_pine_stairs"
- }
-}

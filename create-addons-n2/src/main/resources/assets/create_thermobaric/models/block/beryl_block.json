@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "create_thermobaric:block/beryl_block",
-    "particle": "create_thermobaric:block/beryl_block"
-  },
-  "render_type": "solid"
-}

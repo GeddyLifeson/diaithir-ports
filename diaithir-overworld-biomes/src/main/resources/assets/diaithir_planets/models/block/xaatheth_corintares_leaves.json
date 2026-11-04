@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/leaves",
-"textures": {
-"all": "diaithir_planets:block/xaatheth_corintares_leaves"
-}
-}

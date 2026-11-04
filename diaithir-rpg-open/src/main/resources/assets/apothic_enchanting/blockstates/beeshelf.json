@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "": [
-            { "model": "apothic_enchanting:block/beeshelf" },
-            { "model": "apothic_enchanting:block/beeshelf_2" },
-            { "model": "apothic_enchanting:block/beeshelf_3" }
-        ]
-    }
-}

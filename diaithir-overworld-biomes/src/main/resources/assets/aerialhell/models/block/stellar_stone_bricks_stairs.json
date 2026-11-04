@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/stairs",
- "textures": {
-  "bottom": "aerialhell:block/stellar_stone_bricks_stairs",
-  "side": "aerialhell:block/stellar_stone_bricks_stairs",
-  "top": "aerialhell:block/stellar_stone_bricks_stairs"
- }
-}

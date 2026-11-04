@@ -1,1 +1,0 @@
-{"required":false,"minVersion":"0.8","package":"com.diaithir.overworld_biomes.nomorecraters.mixin","compatibilityLevel":"JAVA_21","mixins":["Ae2MeteoritePlacerMixin"],"injectors":{"defaultRequire":0}}

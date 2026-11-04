@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/wall_inventory",
- "textures": {
-  "wall": "aerialhell:block/crystal_bricks_wall"
- }
-}

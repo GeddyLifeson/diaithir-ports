@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "": [
-            { "model": "apothic_enchanting:block/stoneshelf" },
-            { "model": "apothic_enchanting:block/stoneshelf_2" },
-            { "model": "apothic_enchanting:block/stoneshelf_3" }
-        ]
-    }
-}

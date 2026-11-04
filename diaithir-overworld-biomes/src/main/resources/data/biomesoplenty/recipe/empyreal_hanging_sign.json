@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["X X", "###", "###"], "key": {"X": "minecraft:iron_chain", "#": "biomesoplenty:stripped_empyreal_log"}, "result": {"id": "biomesoplenty:empyreal_hanging_sign", "count": 6}}

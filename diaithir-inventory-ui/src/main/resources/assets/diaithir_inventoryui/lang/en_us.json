@@ -1,8 +1,0 @@
-{
-  "key.diaithir_inventoryui.toggle_trash": "Toggle Trash Slot",
-  "key.categories.diaithir_inventoryui": "Diaithir Inventory UI",
-  "trashslot.tooltip": "Trash",
-  "trashslot.tooltip.last": "Last: %s x %s",
-  "trashslot.confirm.title": "Trash item?",
-  "trashslot.confirm.message": "Really trash %s?"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "alexscaves:block/smooth_coprolith",
-    "side": "alexscaves:block/smooth_coprolith",
-    "top": "alexscaves:block/smooth_coprolith"
-  }
-}

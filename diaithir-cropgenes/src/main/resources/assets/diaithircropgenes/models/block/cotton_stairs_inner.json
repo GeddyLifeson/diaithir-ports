@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/inner_stairs",
- "textures": {
-  "bottom": "diaithircropgenes:block/cotton_stairs",
-  "top": "diaithircropgenes:block/cotton_stairs",
-  "side": "diaithircropgenes:block/cotton_stairs"
- }
-}

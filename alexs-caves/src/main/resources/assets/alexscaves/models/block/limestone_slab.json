@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "alexscaves:block/limestone",
-    "side": "alexscaves:block/limestone",
-    "top": "alexscaves:block/limestone"
-  }
-}

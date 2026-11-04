@@ -1,8 +1,0 @@
-{
-  "parent": "alexscaves:block/peering_coprolith_base",
-  "textures": {
-    "outside": "alexscaves:block/porous_coprolith_1",
-    "inside": "alexscaves:block/porous_coprolith_inside",
-    "eyes": "alexscaves:block/peering_coprolith_inside_1"
-  }
-}

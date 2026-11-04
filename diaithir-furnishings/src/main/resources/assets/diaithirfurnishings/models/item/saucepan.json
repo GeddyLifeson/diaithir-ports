@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/saucepan_pot",
-  "layer1": "diaithirfurnishings:item/saucepan_handle"
- }
-}

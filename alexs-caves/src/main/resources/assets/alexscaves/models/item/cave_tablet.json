@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "alexscaves:item/cave_tablet",
-    "layer1": "alexscaves:item/cave_tablet_text"
-  }
-}

@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/mirror_bronze_head",
-  "layer1": "diaithirfurnishings:item/mirror_bronze_handle",
-  "layer2": "diaithirfurnishings:item/mirror_bronze_binding"
- }
-}

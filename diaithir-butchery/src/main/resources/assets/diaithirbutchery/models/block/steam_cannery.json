@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirbutchery:block/steam_cannery_top",
-  "side": "diaithirbutchery:block/steam_cannery_side"
- }
-}

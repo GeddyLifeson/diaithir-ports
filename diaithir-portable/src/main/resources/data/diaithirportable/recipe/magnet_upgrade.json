@@ -1,1 +1,0 @@
-{ "type": "minecraft:crafting_shaped", "pattern": ["R R","III"," P "], "key": { "R": "minecraft:redstone", "I": "minecraft:iron_ingot", "P": "minecraft:paper" }, "result": { "id": "diaithirportable:magnet_upgrade" } }

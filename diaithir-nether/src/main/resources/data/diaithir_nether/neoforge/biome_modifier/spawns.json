@@ -1,1 +1,0 @@
-{"type":"neoforge:add_spawns","biomes":"#diaithir_nether:expanded_biomes","spawners":[{"type":"diaithir_nether:slag_crawler","weight":20,"minCount":1,"maxCount":2},{"type":"diaithir_nether:ash_wisp","weight":10,"minCount":1,"maxCount":2},{"type":"diaithir_nether:cinder_grazer","weight":8,"minCount":2,"maxCount":4}]}

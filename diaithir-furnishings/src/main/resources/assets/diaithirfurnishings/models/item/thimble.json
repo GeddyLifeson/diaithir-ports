@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/thimble_head",
-  "layer1": "diaithirfurnishings:item/thimble_handle",
-  "layer2": "diaithirfurnishings:item/thimble_binding"
- }
-}

@@ -1,9 +1,0 @@
-{
- "type": "create:haunting",
- "ingredient": "create:cinder_flour",
- "results": [
-  {
-   "id": "minecraft:redstone"
-  }
- ]
-}

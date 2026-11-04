@@ -1,8 +1,0 @@
-{
-  "required": false,
-  "minVersion": "0.8",
-  "package": "net.diaithir.hostile.celestials.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": ["BeaconRangeMixin"],
-  "injectors": { "defaultRequire": 0 }
-}

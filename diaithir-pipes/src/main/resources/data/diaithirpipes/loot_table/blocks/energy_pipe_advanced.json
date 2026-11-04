@@ -1,4 +1,0 @@
-{
-  "type": "minecraft:block",
-  "pools": [ { "rolls": 1, "entries": [ { "type": "minecraft:item", "name": "diaithirpipes:energy_pipe_advanced" } ], "conditions": [ { "condition": "minecraft:survives_explosion" } ] } ]
-}

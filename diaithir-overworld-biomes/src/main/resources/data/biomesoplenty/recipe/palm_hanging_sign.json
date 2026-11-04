@@ -1,1 +1,0 @@
-{"type": "minecraft:crafting_shaped", "pattern": ["X X", "###", "###"], "key": {"X": "minecraft:iron_chain", "#": "biomesoplenty:stripped_palm_log"}, "result": {"id": "biomesoplenty:palm_hanging_sign", "count": 6}}

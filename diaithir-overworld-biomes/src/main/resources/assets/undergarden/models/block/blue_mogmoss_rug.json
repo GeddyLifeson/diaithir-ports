@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "undergarden:block/blue_mogmoss_rug"
- }
-}

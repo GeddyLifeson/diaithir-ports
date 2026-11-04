@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": "create_trades:machine_token",
- "result": {
-  "id": "create:nozzle",
-  "count": 8
- }
-}

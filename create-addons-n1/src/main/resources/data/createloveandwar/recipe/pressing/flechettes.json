@@ -1,9 +1,0 @@
-{
- "type": "create:pressing",
- "ingredient": "createloveandwar:ball_bearings",
- "results": [
-  {
-   "id": "createloveandwar:flechettes"
-  }
- ]
-}

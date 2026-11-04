@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/proofing_basket_head",
-  "layer1": "diaithirfurnishings:item/proofing_basket_handle",
-  "layer2": "diaithirfurnishings:item/proofing_basket_binding"
- }
-}

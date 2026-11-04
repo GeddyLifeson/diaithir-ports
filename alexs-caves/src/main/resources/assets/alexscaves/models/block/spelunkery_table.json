@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "side": "alexscaves:block/spelunkery_table_side",
-        "bottom": "alexscaves:block/spelunkery_table_bottom",
-        "top": "alexscaves:block/spelunkery_table_top"
-    }
-}

@@ -1,6 +1,0 @@
-{
- "parent": "spartanweaponry:item/base/battle_hammer",
- "textures": {
-  "layer0": "spartanweaponry:item/cossack_nagaika"
- }
-}

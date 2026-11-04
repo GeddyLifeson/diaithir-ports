@@ -1,6 +1,0 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "pattern": ["PPP", "PNP", "PPP"],
-  "key": { "P": "diaithirpipes:fluid_pipe_improved", "N": "minecraft:netherite_ingot" },
-  "result": { "id": "diaithirpipes:fluid_pipe_advanced", "count": 8 }
-}

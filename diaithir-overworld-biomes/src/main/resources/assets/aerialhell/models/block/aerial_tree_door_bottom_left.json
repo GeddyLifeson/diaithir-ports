@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/door_bottom_left",
- "textures": {
-  "bottom": "aerialhell:block/aerial_tree_door",
-  "top": "aerialhell:block/aerial_tree_door"
- }
-}

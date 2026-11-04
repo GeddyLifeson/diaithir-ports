@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/polished_glaucophanite_slab",
-  "side": "aerialhell:block/polished_glaucophanite_slab",
-  "top": "aerialhell:block/polished_glaucophanite_slab"
- }
-}

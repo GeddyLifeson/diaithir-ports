@@ -1,5 +1,0 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": ["diaithirrouting:extractor_module", "minecraft:ender_eye"],
-  "result": { "id": "diaithirrouting:vacuum_module", "count": 1 }
-}

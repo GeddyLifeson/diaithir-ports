@@ -1,5 +1,0 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": ["diaithirrouting:extractor_module", "minecraft:bucket"],
-  "result": { "id": "diaithirrouting:fluid_module", "count": 1 }
-}

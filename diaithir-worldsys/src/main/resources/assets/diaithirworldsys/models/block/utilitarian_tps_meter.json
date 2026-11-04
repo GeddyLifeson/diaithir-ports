@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "diaithirworldsys:block/utilitarian_tps_meter"
- }
-}

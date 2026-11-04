@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "the_backwoods:item/petrified_log_splinter_spawn_egg"
- }
-}

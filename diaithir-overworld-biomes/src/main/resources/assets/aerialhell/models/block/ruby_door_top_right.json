@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/door_top_right",
- "textures": {
-  "bottom": "aerialhell:block/ruby_door",
-  "top": "aerialhell:block/ruby_door"
- }
-}

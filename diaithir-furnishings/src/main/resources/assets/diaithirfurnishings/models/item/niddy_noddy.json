@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/niddy_noddy_head",
-  "layer1": "diaithirfurnishings:item/niddy_noddy_handle",
-  "layer2": "diaithirfurnishings:item/niddy_noddy_binding"
- }
-}

@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/leaves",
-"textures": {
-"all": "diaithir_planets:block/elamirla_sevseth_leaves"
-}
-}

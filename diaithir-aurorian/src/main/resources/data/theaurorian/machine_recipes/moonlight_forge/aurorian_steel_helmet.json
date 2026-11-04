@@ -1,8 +1,0 @@
-{
- "input": "theaurorian:cerulean_helmet",
- "output": {
-  "id": "theaurorian:aurorian_steel_helmet",
-  "count": 1
- },
- "catalyst": "theaurorian:aurorian_steel_ingot"
-}

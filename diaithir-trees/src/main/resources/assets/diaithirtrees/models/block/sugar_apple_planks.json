@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "diaithirtrees:block/sugar_apple_planks"
- }
-}

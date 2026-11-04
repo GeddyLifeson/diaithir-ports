@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/cube_all",
-"textures": {
-"all": "diaithir_planets:block/silaeramys_orillontus_ore"
-}
-}

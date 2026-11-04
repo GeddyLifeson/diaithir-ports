@@ -1,8 +1,0 @@
-{
- "input": "theaurorian:cerulean_chestplate",
- "output": {
-  "id": "theaurorian:aurorian_steel_chestplate",
-  "count": 1
- },
- "catalyst": "theaurorian:aurorian_steel_ingot"
-}

@@ -1,6 +1,0 @@
-# Friends&Foes 5.0.4 + Beekeeper Hut 3.0.4 + Flowery Mooblooms 3.0.3 on the Diaithir pack (2026-11-03)
-
-Server: NeoForge 26.1.2.116, JDK 25, the full pack (392 jars, same set as the Alex's Mobs test, with Walkers diaithir.2) + the three jars + ResourcefulLib 4.0.1, flat world, pause-when-empty-seconds=-1, ports 28891/28892, difficulty normal.
-- Boot: Done (37.5 s) first try. No datapack or registry conflict (the Walkers id problem seen with Alex's Mobs does not occur; Walkers' copper_golem variant is inert, no error).
-- Summon test (ufftest.py): the 14 `entity.friendsandfoes.*` lang keys: 12 summoned and alive after 25 s of ticking (barnacle, crab, glare, ice_chunk, iceologer, illusioner, mauler, moobloom, penguin, rascal, tuff_golem, wildfire); copper_golem and player_illusion are lang-only and not registered in this build. Beekeeper Hut and Flowery Mooblooms add no entity types of their own. No friendsandfoes/flowerymooblooms/beekeeperhut ERROR, WARN or exception lines in the log (the only hits are Structurize's harmless "no blueprints" warning).
-- Not tested: client join and rendering, natural spawns on the Tellus world, structures (beekeeper hut, iceologer cabin), Walkers traits in play, recipes and loot beyond load.

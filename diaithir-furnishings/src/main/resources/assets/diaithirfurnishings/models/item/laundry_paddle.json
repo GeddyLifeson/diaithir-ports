@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirfurnishings:item/laundry_paddle_head",
-  "layer1": "diaithirfurnishings:item/laundry_paddle_handle",
-  "layer2": "diaithirfurnishings:item/laundry_paddle_binding"
- }
-}

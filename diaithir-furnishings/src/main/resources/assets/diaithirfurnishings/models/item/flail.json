@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/flail_head",
-  "layer1": "diaithirfurnishings:item/flail_handle",
-  "layer2": "diaithirfurnishings:item/flail_binding"
- }
-}

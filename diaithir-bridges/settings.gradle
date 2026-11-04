@@ -1,5 +1,0 @@
-rootProject.name = 'diaithir-bridges'
-
-includeBuild('../diaithir-units') {
-    dependencySubstitution { substitute module('net.diaithir:diaithir-units') using project(':') }
-}

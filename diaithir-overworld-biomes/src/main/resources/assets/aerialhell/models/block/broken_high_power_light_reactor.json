@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cube_all",
- "textures": {
-  "all": "aerialhell:block/broken_high_power_light_reactor"
- }
-}

@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:item/generated",
-"textures": {
-"layer0": "diaithir_planets:block/thudarneld_tarneldar_plant"
-}
-}

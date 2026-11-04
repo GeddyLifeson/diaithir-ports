@@ -1,7 +1,0 @@
-{
-  "variants": {
-    "": {
-      "model": "electrumblock:block/electrum_block"
-    }
-  }
-}

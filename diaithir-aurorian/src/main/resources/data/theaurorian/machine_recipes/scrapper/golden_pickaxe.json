@@ -1,7 +1,0 @@
-{
- "input": "minecraft:golden_pickaxe",
- "output": {
-  "id": "minecraft:gold_nugget",
-  "count": 18
- }
-}

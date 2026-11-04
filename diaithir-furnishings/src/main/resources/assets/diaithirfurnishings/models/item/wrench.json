@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/wrench_head",
-  "layer1": "diaithirfurnishings:item/wrench_handle",
-  "layer2": "diaithirfurnishings:item/wrench_binding"
- }
-}

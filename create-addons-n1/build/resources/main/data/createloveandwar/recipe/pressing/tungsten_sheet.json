@@ -1,9 +1,0 @@
-{
- "type": "create:pressing",
- "ingredient": "createloveandwar:tungsten",
- "results": [
-  {
-   "id": "createloveandwar:tungsten_sheet"
-  }
- ]
-}

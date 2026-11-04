@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/door_bottom_right_open",
- "textures": {
-  "bottom": "undergarden:block/smogstem_door",
-  "top": "undergarden:block/smogstem_door"
- }
-}

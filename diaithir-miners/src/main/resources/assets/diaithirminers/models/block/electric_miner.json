@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "top": "diaithirminers:block/electric_miner_top",
-    "bottom": "diaithirminers:block/electric_miner_bottom",
-    "side": "diaithirminers:block/electric_miner_side"
-  }
-}

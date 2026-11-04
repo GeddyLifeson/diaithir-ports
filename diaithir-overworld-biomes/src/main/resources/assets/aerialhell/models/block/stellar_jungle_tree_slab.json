@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/stellar_jungle_tree_slab",
-  "side": "aerialhell:block/stellar_jungle_tree_slab",
-  "top": "aerialhell:block/stellar_jungle_tree_slab"
- }
-}

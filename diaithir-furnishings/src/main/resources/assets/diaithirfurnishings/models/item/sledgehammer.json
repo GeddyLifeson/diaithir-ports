@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:item/handheld",
- "textures": {
-  "layer0": "diaithirfurnishings:item/sledgehammer_head",
-  "layer1": "diaithirfurnishings:item/sledgehammer_handle",
-  "layer2": "diaithirfurnishings:item/sledgehammer_binding"
- }
-}

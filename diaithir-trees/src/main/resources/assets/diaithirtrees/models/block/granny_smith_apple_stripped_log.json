@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "end": "diaithirtrees:block/granny_smith_apple_stripped_log_top",
-  "side": "diaithirtrees:block/granny_smith_apple_stripped_log"
- }
-}

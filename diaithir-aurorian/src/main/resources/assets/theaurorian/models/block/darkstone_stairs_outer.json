@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "theaurorian:block/darkstone",
-    "side": "theaurorian:block/darkstone",
-    "top": "theaurorian:block/darkstone"
-  }
-}

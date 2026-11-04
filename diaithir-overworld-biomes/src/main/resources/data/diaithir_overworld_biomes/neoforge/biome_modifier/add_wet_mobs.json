@@ -1,1 +1,0 @@
-{"type":"neoforge:add_spawns","biomes":"#diaithir_overworld_biomes:is_wet","spawners":{"type":"minecraft:frog","weight":8,"minCount":2,"maxCount":4}}

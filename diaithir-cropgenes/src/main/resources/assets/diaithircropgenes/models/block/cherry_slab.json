@@ -1,9 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "diaithircropgenes:block/cherry_slab",
-  "top": "diaithircropgenes:block/cherry_slab",
-  "side": "diaithircropgenes:block/cherry_slab",
-  "particle": "diaithircropgenes:block/cherry_slab"
- }
-}

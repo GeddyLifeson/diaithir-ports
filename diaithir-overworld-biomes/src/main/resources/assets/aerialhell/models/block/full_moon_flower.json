@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/cross",
- "textures": {
-  "cross": "aerialhell:block/full_moon_flower"
- }
-}

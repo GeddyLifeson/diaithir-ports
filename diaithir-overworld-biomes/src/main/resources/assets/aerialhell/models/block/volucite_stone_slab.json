@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/slab",
- "textures": {
-  "bottom": "aerialhell:block/volucite_stone_slab",
-  "side": "aerialhell:block/volucite_stone_slab",
-  "top": "aerialhell:block/volucite_stone_slab"
- }
-}

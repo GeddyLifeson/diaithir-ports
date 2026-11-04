@@ -1,6 +1,0 @@
-{
-"parent": "minecraft:block/cube_all",
-"textures": {
-"all": "diaithir_planets:block/vesiathith_zepheishis_ore"
-}
-}

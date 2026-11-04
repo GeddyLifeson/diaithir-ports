@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:item/generated",
- "textures": {
-  "layer0": "diaithirworldsys:item/jewelry_diamond_necklace"
- }
-}

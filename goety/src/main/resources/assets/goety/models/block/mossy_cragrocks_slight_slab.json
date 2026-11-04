@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "goety:block/mossy_cragrocks_slight",
-    "side": "goety:block/mossy_cragrocks_slight",
-    "top": "goety:block/mossy_cragrocks_slight"
-  }
-}

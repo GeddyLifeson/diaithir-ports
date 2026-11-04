@@ -1,6 +1,0 @@
-{
- "parent": "minecraft:block/leaves",
- "textures": {
-  "all": "diaithirtrees:block/brazil_nut_leaves"
- }
-}

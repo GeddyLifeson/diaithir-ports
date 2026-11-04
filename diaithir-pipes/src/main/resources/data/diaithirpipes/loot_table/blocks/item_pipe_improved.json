@@ -1,4 +1,0 @@
-{
-  "type": "minecraft:block",
-  "pools": [ { "rolls": 1, "entries": [ { "type": "minecraft:item", "name": "diaithirpipes:item_pipe_improved" } ], "conditions": [ { "condition": "minecraft:survives_explosion" } ] } ]
-}

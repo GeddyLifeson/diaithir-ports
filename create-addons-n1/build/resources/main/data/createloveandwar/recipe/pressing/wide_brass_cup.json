@@ -1,9 +1,0 @@
-{
- "type": "create:pressing",
- "ingredient": "createloveandwar:brass_cup",
- "results": [
-  {
-   "id": "createloveandwar:wide_brass_cup"
-  }
- ]
-}

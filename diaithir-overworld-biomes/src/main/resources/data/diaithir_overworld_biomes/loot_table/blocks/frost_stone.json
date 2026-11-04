@@ -1,1 +1,0 @@
-{"type":"minecraft:block","pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"diaithir_overworld_biomes:frost_stone"}],"conditions":[{"condition":"minecraft:survives_explosion"}]}]}
