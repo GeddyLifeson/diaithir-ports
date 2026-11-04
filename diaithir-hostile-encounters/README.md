@@ -6,6 +6,10 @@ Lunar events: blood moon (horde pressure), blue moon (luck, double XP, cheaper a
 
 Test: `./gradlew runSelftest` (JDK 25) boots a server, checks the forecast and forcing an event, then stops.
 
+## Survey part 2 folds
+- **Raided** (MIT): Inquisitor, Incinerator, Savager, Necromancer, Electromancer join the raid waves (`raided:*`).
+- **Zombie Hordes / Horde Hoard** (MIT): horde stacking and multiplying, intelligent teams, leaping, grave robbers, iron golem regeneration, nightly horde spawner. Game rules `horde_stacking`, `horde_multiplying`, `iron_golem_regen_power`, `horde_spawner_chance`.
+Credits and licences in `NOTICE.md`.
 Selftest covers (fake player, 0 failures): forecast, forcing, horde spawns, luck effect, XP x2, harvest drops x2, sleep block, anvil and enchanting cost, beacon multiplier, meteor crater. Not covered: the client tint (needs a client run).
 
 Blood Moon (KS, nugrevan, MIT) is folded into the lunar blood moon: boosted red-marked mobs, Moon Essence drops that give experience when used, creeper blasts that sicken, more phantoms. Written from the mod's public description; no code or art copied.

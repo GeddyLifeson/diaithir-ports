@@ -13,3 +13,15 @@ modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
 side = "BOTH"
+
+[[mixins]]
+config = "immediatelyfast-common.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/immediatelyfast.at.cfg"
+
+[[mixins]]
+config = "badoptimizations.mixins.json"
+
+[[accessTransformers]]
+file = "META-INF/badoptimizations.at.cfg"

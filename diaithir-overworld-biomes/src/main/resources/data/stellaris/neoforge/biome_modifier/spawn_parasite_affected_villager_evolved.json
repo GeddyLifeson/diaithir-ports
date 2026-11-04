@@ -1,0 +1,10 @@
+{
+ "type": "neoforge:add_spawns",
+ "biomes": "#stellaris:is_moon",
+ "spawners": {
+  "type": "stellaris:parasite_affected_villager_evolved",
+  "weight": 10,
+  "minCount": 1,
+  "maxCount": 3
+ }
+}

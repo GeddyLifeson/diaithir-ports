@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "stellaris:titanium_ingot"
+ },
+ "pattern": [
+  "# ",
+  "##",
+  "##"
+ ],
+ "result": {
+  "id": "stellaris:rocket_fin",
+  "count": 2
+ }
+}

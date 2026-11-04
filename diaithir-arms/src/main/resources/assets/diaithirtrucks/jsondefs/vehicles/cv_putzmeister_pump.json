@@ -44,7 +44,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -55,7 +58,10 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0,
+   "turnsWithSteer": true
   },
   {
    "pos": [
@@ -66,7 +72,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -77,7 +85,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -88,7 +98,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -99,7 +111,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -110,7 +124,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -121,7 +137,9 @@
    "types": [
     "ground_wheel"
    ],
-   "defaultPart": "diaithirtrucks:truck_wheel"
+   "defaultPart": "diaithirtrucks:truck_wheel",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -132,7 +150,9 @@
    "types": [
     "engine_car"
    ],
-   "defaultPart": "diaithirtrucks:engine_e350_stock"
+   "defaultPart": "diaithirtrucks:engine_e350_stock",
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -149,7 +169,9 @@
     -2.0,
     0.0,
     1.956
-   ]
+   ],
+   "minValue": 0.0,
+   "maxValue": 10.0
   },
   {
    "pos": [
@@ -160,18 +182,9 @@
    "types": [
     "interactable_barrel"
    ],
-   "defaultPart": "diaithirtrucks:tank_10"
-  }
- ],
- "collision": [
-  {
-   "pos": [
-    0,
-    2.25,
-    0
-   ],
-   "width": 2.5,
-   "height": 3.9
+   "defaultPart": "diaithirtrucks:tank_10",
+   "minValue": 0.0,
+   "maxValue": 10.0
   }
  ],
  "definitions": [
@@ -210,5 +223,28 @@
   "axleRatio": 3.6,
   "dragCoefficient": 0.8,
   "isBigTruck": true
- }
+ },
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "block",
+    "entity",
+    "vehicle",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      2.25,
+      0
+     ],
+     "width": 2.5,
+     "height": 3.9
+    }
+   ]
+  }
+ ]
 }

@@ -1,0 +1,71 @@
+id,page,status,notes
+loco_rocket,Rocket_(locomotive),ok,
+loco_adler,Adler_(locomotive),check,power 30 kW not near any figure in article
+loco_americanboiler,4-4-0,check,year 1850 not in article
+loco_consolidation,2-8-0,ok,
+loco_mogul,2-6-0,ok,
+loco_pacific,4-6-2,ok,
+loco_mallard,LNER_Class_A4_4468_Mallard,ok,
+loco_big_boy,Union_Pacific_4000_class,check,year 1941 not in article
+loco_garratt,Garratt_locomotive,ok,
+loco_shay,Shay_locomotive,ok,
+loco_tank,Tank_locomotive,check,year 1870 not in article
+loco_f_unit,EMD_F7,ok,
+loco_gp7,EMD_GP7,ok,
+loco_sw1,EMD_SW1,ok,
+loco_gp38,EMD_GP38-2,check,year 1972 not in article
+loco_sd40,EMD_SD40-2,ok,
+loco_dash9,GE_Dash_9-44CW,ok,
+loco_zephyr,Pioneer_Zephyr,ok,
+loco_hst,British_Rail_Class_43_(HST),ok,
+loco_gg1,PRR_GG1,check,power 3400 kW not near any figure in article
+loco_ae,SBB-CFF-FFS_Ae_6/6,ok,
+loco_shinkansen0,0_Series_Shinkansen,check,power 11840 kW not near any figure in article
+loco_tgv,TGV_Sud-Est,check,power 3100 kW not near any figure in article
+loco_ice,InterCityExpress,ok,
+loco_battery,Battery_electric_locomotive,check,year 1900 not in article
+wag_boxcar,Boxcar,check,year 1830 not in article
+wag_covered_hopper,Covered_hopper,check,year 1950 not in article
+wag_open_hopper,Hopper_car,check,year 1860 not in article
+wag_tank,Tank_car,ok,
+wag_flatcar,Flatcar,check,year 1830 not in article
+wag_gondola,Gondola_(rail),check,year 1850 not in article
+wag_reefer,Refrigerator_car,ok,
+wag_well,Well_car,ok,
+wag_autorack,Autorack,ok,
+wag_ore,Ore_car,check,year 1900 not in article
+wag_stock,Stock_car_(rail),ok,
+wag_caboose,Caboose,check,year 1860 not in article
+wag_log,Log_car,check,year 1890 not in article
+wag_crane,Crane_(rail),check,year 1900 not in article
+wag_schnabel,Schnabel_car,check,year 1900 not in article
+pas_compartment,Passenger_car_(rail),check,year 1830 not in article
+pas_open_saloon,Passenger_car_(rail),check,year 1860 not in article
+pas_pullman,Pullman_Company,check,year 1865 not in article
+pas_dining,Dining_car,check,year 1868 not in article
+pas_observation,Observation_car,check,year 1890 not in article
+pas_baggage,Baggage_car,check,year 1850 not in article
+pas_mail,Railway_post_office,ok,
+pas_streamliner,Budd_Company,ok,
+pas_bilevel,Bilevel_rail_car,ok,
+pas_dome,Dome_car,ok,
+pas_subway,Rapid_transit,ok,
+pas_tram,Tram,ok,
+wag_wagonway,Wagonway,ok,
+wag_chaldron,Chaldron_wagon,check,year 1700 not in article
+wag_tub,Plateway,check,year 1750 not in article
+pas_horse_omnibus,Horsecar,ok,
+pas_stagecoach_rail,Stockton_and_Darlington_Railway,ok,
+loco_cugnot,Fardier_%C3%A0_vapeur,ok,
+loco_trevithick,Richard_Trevithick,ok,
+loco_horse_gin,Horse_engine,check,year 1600 not in article
+crane_treadwheel,Treadwheel_crane,check,year -30 not in article
+crane_shear_legs,Shear_legs,check,year 1500 not in article
+crane_a_frame,Derrick,check,year 1400 not in article
+crane_steam,Crane_(machine),check,year 1830 not in article
+crane_hammerhead,Hammerhead_crane,check,year 1900 not in article
+crane_gantry,Overhead_crane,check,year 1880 not in article
+crane_container,Container_crane,ok,
+crane_mobile,Mobile_crane,check,year 1950 not in article
+yard_slip,Slipway,check,year -300 not in article
+yard_erecting,Erecting_shop,check,year 1830 not in article

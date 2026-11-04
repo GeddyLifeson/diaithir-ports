@@ -1,0 +1,21 @@
+{
+ "id": "diaithir_overworld_biomes:stellaris_descent",
+ "codex_link": "diaithir_overworld_biomes:stellaris",
+ "age": 7,
+ "age_gate": "diaithir:age/7",
+ "title": "Descent: Stellaris",
+ "description": "Enter Stellaris and mine its first ore.",
+ "tasks": [
+  {
+   "type": "dimension",
+   "dimension": "stellaris:moon"
+  }
+ ],
+ "rewards": [
+  {
+   "type": "energy",
+   "amount_j": 100
+  }
+ ],
+ "next": []
+}

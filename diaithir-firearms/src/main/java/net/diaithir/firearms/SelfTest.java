@@ -70,6 +70,16 @@ public final class SelfTest {
         for (int y = 0; y < 4; y++) for (int z = 0; z <= 30; z++) lv.setBlock(base.offset(0, y, z), net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
         for (String n : new String[]{"shot_pistol", "shot_smg", "shot_rifle", "shot_shotgun", "shot_sniper", "shot_lmg", "shot_launcher", "shot_energy", "reload_start", "reload_end", "dry_fire", "attach"})
             check(DiaithirFirearms.sound(n) != null && BuiltInRegistries.SOUND_EVENT.containsKey(Identifier.fromNamespaceAndPath(DiaithirFirearms.ID, n)), "sound " + n);
+        {
+            net.minecraft.world.item.ItemStack box = stack("ammo_box");
+            check(box.getItem() instanceof AmmoBox && AmmoBox.content(box).count() == 0, "ammo box empty");
+            check(AmmoBox.put(box, "ammo_9mm", 600) == AmmoBox.CAPACITY && AmmoBox.count(box, "ammo_9mm") == AmmoBox.CAPACITY, "box fills to capacity");
+            check(AmmoBox.put(box, "ammo_45", 5) == 0, "box holds one kind");
+            check(AmmoBox.take(box, "ammo_9mm", 100) == 100 && AmmoBox.count(box, "ammo_9mm") == AmmoBox.CAPACITY - 100, "box gives rounds");
+            check(AmmoBox.take(box, "ammo_45", 5) == 0, "box refuses other kind");
+            AmmoBox.take(box, "ammo_9mm", 9999);
+            check(AmmoBox.content(box).count() == 0 && AmmoBox.put(box, "ammo_45", 5) == 5, "emptied box takes a new kind");
+        }
         check(Defs.GUNS.size() >= 17, "at least 17 guns, got " + Defs.GUNS.size());
         for (Defs.Att a : Defs.ATTS.values()) check(!stack(a.id()).isEmpty() && BuiltInRegistries.ITEM.containsKey(Identifier.fromNamespaceAndPath(DiaithirFirearms.ID, a.id())), "attachment " + a.id());
         for (var m : Defs.GUNS.values()) {

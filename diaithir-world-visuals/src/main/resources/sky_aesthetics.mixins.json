@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "fr.tathan.sky_aesthetics.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "minVersion": "0.8",
+  "client": [
+    "AttributeSystemMixin",
+    "client.FogRendererMixin",
+    "client.LightmapRenderStateExtractorMixin",
+    "client.WeatherEffectRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

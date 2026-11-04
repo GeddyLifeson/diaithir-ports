@@ -1,0 +1,15 @@
+{
+ "station": "machine.assembler",
+ "stage": "assembly",
+ "time_s": 22,
+ "ingredients": [
+  {
+   "item": "diaithirarms:ceramic_plate",
+   "count": 4
+  }
+ ],
+ "result": {
+  "id": "diaithir_classes:ring_composite",
+  "count": 1
+ }
+}
