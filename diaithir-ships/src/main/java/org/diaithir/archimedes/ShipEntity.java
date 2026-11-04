@@ -93,6 +93,16 @@ public class ShipEntity extends Entity implements IEntityWithComplexSpawn {
         return new Vec3(getX() + rx(lx, lz, getYRot()), getY() + local.getY() + 0.5, getZ() + rz(lx, lz, getYRot()));
     }
 
+    /** Ship-local point to world space (local y is measured from the ship's feet). */
+    public Vec3 toWorldPoint(Vec3 local) {
+        double lx = local.x - chunk.centerX(), lz = local.z - chunk.centerZ();
+        return new Vec3(getX() + rx(lx, lz, getYRot()), getY() + local.y, getZ() + rz(lx, lz, getYRot()));
+    }
+
+    public Vec3 toLocalPoint(Vec3 world) {
+        return toLocal(world);
+    }
+
     private Vec3 toLocal(Vec3 w) {
         double dx = w.x - getX(), dz = w.z - getZ();
         double r = Math.toRadians(getYRot());
@@ -261,11 +271,14 @@ public class ShipEntity extends Entity implements IEntityWithComplexSpawn {
         my = Mth.clamp(my, -lim, lim);
         if (onGround()) { mx *= 0.8; mz *= 0.8; }
 
+        java.util.Map<Entity, Vec3> deck = DeckWalk.collect(this);
+        float yawBefore = getYRot();
         setYRot((float) (getYRot() + motionYaw));
         motionYaw *= 0.7;
         setBoundingBox(makeBoundingBox());
         setDeltaMovement(mx, my, mz);
         move(MoverType.SELF, getDeltaMovement());
+        DeckWalk.carry(this, deck, getYRot() - yawBefore);
         Vec3 d = getDeltaMovement();
         setDeltaMovement(d.x * 0.98, d.y * (volume > 0 ? 0.9 : 0.98), d.z * 0.98);
     }
