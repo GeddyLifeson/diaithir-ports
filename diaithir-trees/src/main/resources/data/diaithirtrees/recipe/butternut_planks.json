@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:butternut_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:butternut_planks",
+  "count": 4
+ }
+}

@@ -41,6 +41,12 @@ public class MegaCabBlockEntity extends BlockEntity {
         return r != null && r.autonomyCapable();
     }
 
+    /** True when this machine can be built with that engine class (diaithir-units Engine id), for example arcane_motor to burn magic. */
+    public boolean acceptsEngine(String engineId) {
+        MegaCatalog.Row r = MegaCatalog.get(specId);
+        return r != null && r.acceptsEngine(engineId);
+    }
+
     public boolean moduleFitted() { return moduleFitted; }
 
     /** Fits a module. False when the machine is not capable or one is already fitted. */

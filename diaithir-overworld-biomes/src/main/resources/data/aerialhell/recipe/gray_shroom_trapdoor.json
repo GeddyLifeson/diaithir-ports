@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "#": "aerialhell:gray_shroom_planks"
+ },
+ "pattern": [
+  "###",
+  "###"
+ ],
+ "result": {
+  "id": "aerialhell:gray_shroom_trapdoor",
+  "count": 2
+ }
+}

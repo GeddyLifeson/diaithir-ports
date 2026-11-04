@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "ancient_ruins:mossy_maze",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 690106,
+    "spacing": 34,
+    "separation": 8
+  }
+}

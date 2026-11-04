@@ -1,0 +1,56 @@
+{
+    "name": "Atributos de encantamento",
+    "icon": "minecraft:bookshelf",
+    "category": "apotheosis:enchanting/table",
+    "flag": "apotheosis:enchanting",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Com o Apotheosis, o encantamento depende de mais do que apenas níveis.$(p)Atualmente, existem cinco novos atributos de encantamento.$(p)Os blocos que fornecem esses atributos os exibem em suas descrições."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Eterna",
+            "text": "$(eterna) é o atributo principal do encantamento.$(p)Cada ponto de $(eterna) aumenta em dois o nível máximo de encantamento.$(p)Alguns blocos só fornecem $(eterna) até determinado valor máximo."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Quanta",
+            "anchor": "quanta",
+            "text": "$(quanta) é um atributo secundário que controla a variação dos encantamentos.$(p)Durante o encantamento, você parte de um $(poderb), correspondente ao nível gasto, e chega a um $(poderf) após todas as modificações.$(p)$(quanta) é um dos fatores desse processo."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Um valor é selecionado entre $(4)1 - Quanta$() e $(9)1 + Quanta$().$(p)Seu $(poderf) é igual a esse valor multiplicado pelo seu $(poderb).$(p)Valores mais altos de $(quanta) aumentam a faixa de poder, o que significa que seus encantamentos são menos consistentes em seu $(poderf)."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Arcana",
+            "text": "$(arcana) é um atributo secundário que controla os pesos de raridade e, em determinados valores, garante encantamentos adicionais.$(p)Com 25% de $(arcana), você sempre recebe ao menos dois encantamentos. Com 75%, sempre recebe três."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Por padrão, as raridades têm os seguintes pesos:$(p)Comum: 10$(br)Incomum: 5$(br)Raro: 3$(br)Muito raro: 1$(p)A cada 10% de $(arcana), os pesos mudam até se inverterem completamente.$(p)Passe o cursor sobre a barra de $(arcana) para ver os pesos atuais."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Estabilidade quântica",
+            "anchor": "rectification",
+            "text": "A Estabilidade Quântica é um atributo terciário. Ela afeta diretamente o limite inferior das modificações de $(quanta).$(p)Quando está presente, não é mais possível obter modificadores negativos de $(quanta)."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Matemática da Quanta",
+            "text": "Caso não goste de matemática, você pode pular para a próxima página.$(p)Normalmente, os resultados de $(quanta) seguem uma distribuição normal em toda a faixa. Após a estabilização, porém, passam a seguir uma distribuição uniforme apenas no lado positivo."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Pistas",
+            "text": "As pistas são outro atributo terciário.$(p)Cada pista revela um encantamento adicional na janela de visualização.$(p)Quando todos os encantamentos disponíveis estiverem visíveis, o texto mudará ligeiramente."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Você também pode ter zero pistas e não conseguir ver nada."
+        }
+    ]
+}

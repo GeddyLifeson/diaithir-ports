@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/baking_sheet"
+  "layer0": "diaithirfurnishings:item/baking_sheet_pot",
+  "layer1": "diaithirfurnishings:item/baking_sheet_handle"
  }
 }

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:grapefruit_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:grapefruit_planks",
+  "count": 4
+ }
+}

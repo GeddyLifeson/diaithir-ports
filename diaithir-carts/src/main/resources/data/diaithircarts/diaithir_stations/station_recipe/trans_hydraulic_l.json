@@ -1,0 +1,26 @@
+{
+ "station": "station.steam_forge",
+ "stage": "part",
+ "time_s": 35,
+ "operator": false,
+ "ingredients": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 64
+  },
+  {
+   "item": "minecraft:bucket",
+   "count": 7
+  },
+  {
+   "item": "minecraft:piston",
+   "count": 13
+  }
+ ],
+ "result": {
+  "id": "diaithircarts:trans_hydraulic_l",
+  "count": 1
+ },
+ "power": "steam",
+ "w": 20000
+}

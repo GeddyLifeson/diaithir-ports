@@ -28,6 +28,7 @@ public final class PackVersionCheckFeature {
             REPORTED.remove(e.getEntity().getUUID());
         });
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, PackVersionCheckFeature::tick);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) PackVersionClient.init();
     }
 
     private static void registerPayloads(RegisterPayloadHandlersEvent e) {

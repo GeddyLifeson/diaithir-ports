@@ -13,4 +13,4 @@ This folder ports OpenComputers II: Reimagined (OC2R) to Minecraft 26.1.2 NeoFor
 The licence texts are kept unchanged in `upstream/oc2r-1.21.1/LICENSE` and `LICENSE-JCODEC`. The MIT notice must stay in every distributed jar.
 
 Art: upstream PNG, OGG and WAV files are not copied here. All textures are redrawn in the Diaithir 64 px Industrial Factory style; no upstream or Factorio art ships.
-Not yet decided: Minux (Linux guest images). Its licence and size need checking before it can ship.
+Minux guest images: Buildroot-built Linux (GPL-2.0-or-later with per-package licences, listed in the unpacked `licenses/` folder; sources at https://github.com/North-Western-Development/minux). Fetched at build time, not stored in git; the jar ships the images with those licence texts, which satisfies GPL notice, and the source offer is the link above.

@@ -1,0 +1,36 @@
+{
+ "variants": {
+  "facing=north,loaded=false": {
+   "model": "diaithirarms:block/greek_fire_siphon",
+   "y": 0
+  },
+  "facing=north,loaded=true": {
+   "model": "diaithirarms:block/greek_fire_siphon_loaded",
+   "y": 0
+  },
+  "facing=east,loaded=false": {
+   "model": "diaithirarms:block/greek_fire_siphon",
+   "y": 90
+  },
+  "facing=east,loaded=true": {
+   "model": "diaithirarms:block/greek_fire_siphon_loaded",
+   "y": 90
+  },
+  "facing=south,loaded=false": {
+   "model": "diaithirarms:block/greek_fire_siphon",
+   "y": 180
+  },
+  "facing=south,loaded=true": {
+   "model": "diaithirarms:block/greek_fire_siphon_loaded",
+   "y": 180
+  },
+  "facing=west,loaded=false": {
+   "model": "diaithirarms:block/greek_fire_siphon",
+   "y": 270
+  },
+  "facing=west,loaded=true": {
+   "model": "diaithirarms:block/greek_fire_siphon_loaded",
+   "y": 270
+  }
+ }
+}

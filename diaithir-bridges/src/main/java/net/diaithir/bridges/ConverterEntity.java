@@ -84,6 +84,9 @@ public final class ConverterEntity extends BlockEntity {
 
     int stored() { return buf.getAmountAsInt(); }
 
+    /** Comparator level from the buffer (signal port). */
+    int signal() { return Ports.level((double) stored() / Math.max(1, Config.get(Config.BUFFER))); }
+
     void serverTick() {
         if (level == null) return;
         buf.resize();

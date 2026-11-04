@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column_horizontal",
+ "textures": {
+  "end": "aerialhell:block/giant_verdigris_agaric_bark_stem",
+  "side": "aerialhell:block/giant_verdigris_agaric_bark_stem"
+ }
+}

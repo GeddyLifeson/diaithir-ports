@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:mahogany_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:mahogany_planks",
+  "count": 4
+ }
+}

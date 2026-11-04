@@ -1,6 +1,7 @@
 {
  "parent": "minecraft:item/generated",
  "textures": {
-  "layer0": "diaithirfurnishings:item/cutting_board"
+  "layer0": "diaithirfurnishings:item/cutting_board_head",
+  "layer1": "diaithirfurnishings:item/cutting_board_handle"
  }
 }

@@ -2,7 +2,9 @@ package net.diaithir.brewing;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -33,20 +35,34 @@ public final class DiaithirBrewing {
         p -> new BrewVesselBlock(p, "fermenting_barrel", 12), () -> props().strength(2.5F));
     public static final DeferredBlock<BrewVesselBlock> OAK_CASK = BLOCKS.registerBlock("oak_cask",
         p -> new BrewVesselBlock(p, "oak_cask", 8), () -> props().strength(3.0F));
+    public static final DeferredBlock<BrewVesselBlock> CANNING_POT = BLOCKS.registerBlock("canning_pot",
+        p -> new BrewVesselBlock(p, "canning_pot", 8), () -> props().strength(3.0F).mapColor(MapColor.METAL).sound(SoundType.METAL));
+    public static final DeferredItem<BlockItem> CANNING_POT_ITEM = ITEMS.registerSimpleBlockItem(CANNING_POT);
+    public static final DeferredItem<Item> JAR = ITEMS.registerSimpleItem("jar");
+    public static final DeferredItem<Item> CANNED_MEAT = canned("canned_meat", 8, 0.8F);
+    public static final DeferredItem<Item> CANNED_FISH = canned("canned_fish", 6, 0.7F);
+    public static final DeferredItem<Item> CANNED_VEGETABLES = canned("canned_vegetables", 5, 0.6F);
+    public static final DeferredItem<Item> CANNED_FRUIT = canned("canned_fruit", 4, 0.5F);
     public static final DeferredItem<BlockItem> OAK_CASK_ITEM = ITEMS.registerSimpleBlockItem(OAK_CASK);
     public static final DeferredItem<BlockItem> KEG_ITEM = ITEMS.registerSimpleBlockItem(KEG);
     public static final DeferredItem<BlockItem> FERMENTING_BARREL_ITEM = ITEMS.registerSimpleBlockItem(FERMENTING_BARREL);
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrewVesselEntity>> VESSEL_ENTITY = ENTITIES.register("vessel",
-        () -> new BlockEntityType<>(BrewVesselEntity::new, KEG.get(), FERMENTING_BARREL.get(), OAK_CASK.get()));
+        () -> new BlockEntityType<>(BrewVesselEntity::new, KEG.get(), FERMENTING_BARREL.get(), OAK_CASK.get(), CANNING_POT.get()));
 
     /** The block for a recipe station name. */
     static DeferredBlock<BrewVesselBlock> block(String station) {
         return switch (station) {
             case "keg" -> KEG;
             case "oak_cask" -> OAK_CASK;
+            case "canning_pot" -> CANNING_POT;
             default -> FERMENTING_BARREL;
         };
+    }
+
+    /** Sealed jar food: filling, and tagged diaithirbrewing:preserved so the spoilage system leaves it alone. */
+    private static DeferredItem<Item> canned(String name, int nutrition, float saturation) {
+        return ITEMS.registerSimpleItem(name, () -> new Item.Properties().food(new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation).build()));
     }
 
     private static BlockBehaviour.Properties props() {

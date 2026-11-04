@@ -1,6 +1,8 @@
 {
- "parent": "minecraft:item/generated",
+ "parent": "minecraft:item/handheld",
  "textures": {
-  "layer0": "diaithirfurnishings:item/yoke"
+  "layer0": "diaithirfurnishings:item/yoke_head",
+  "layer1": "diaithirfurnishings:item/yoke_handle",
+  "layer2": "diaithirfurnishings:item/yoke_binding"
  }
 }

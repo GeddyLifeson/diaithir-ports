@@ -173,6 +173,8 @@ public final class DiaithirClasses {
         });
         bus.addListener(ModifyDefaultComponentsEvent.class, DiaithirClasses::modifyDefaults);
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> net.diaithir.classes.tree.TreeCommands.register(e.getDispatcher()));
+        NeoForge.EVENT_BUS.register(new net.diaithir.classes.tree.TreeCommands());
         if (ModList.get().isLoaded("curios")) {
             CuriosHook.register();
         }

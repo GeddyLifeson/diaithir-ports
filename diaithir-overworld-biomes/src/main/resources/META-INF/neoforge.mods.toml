@@ -62,6 +62,12 @@ version="1.0.0"
 displayName="The Aether II (Diaithir)"
 description="Compatibility alias: clean-room replacement for The Aether II, same modid and ids, original worldgen."
 
+[[mods]]
+modId="aerialhell"
+version="1.0.0"
+displayName="Aerial Hell (Diaithir)"
+description="Compatibility alias: clean-room replacement for Aerial Hell, same modid and ids, original worldgen."
+
 [[dependencies.diaithir_overworld_biomes]]
 modId="neoforge"
 type="required"

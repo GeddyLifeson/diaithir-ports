@@ -2,6 +2,9 @@
  "general": {
   "type": "engine_tank",
   "name": "Tank Diesel Engine",
+  "width": 1.0,
+  "height": 0.8,
+  "mass": 900,
   "materialLists": [
    [
     "minecraft:iron_block:0:6"
@@ -53,6 +56,27 @@
    "name": "Tank Diesel Engine",
    "extraMaterialLists": [
     []
+   ]
+  }
+ ],
+ "collisionGroups": [
+  {
+   "collisionTypes": [
+    "click",
+    "attack",
+    "bullet"
+   ],
+   "isInterior": false,
+   "collisions": [
+    {
+     "pos": [
+      0,
+      0.0,
+      0
+     ],
+     "width": 1.0,
+     "height": 0.8
+    }
    ]
   }
  ]
