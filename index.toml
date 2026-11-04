@@ -66850,6 +66850,10 @@ file = "kubejs/data/powah/loot_table/blocks/solar_panel_starter.json"
 hash = "37eca8535100c9c3e527d1d22546553548dae023e547c95ee6ba4807f85a8e70"
 
 [[files]]
+file = "kubejs/data/productivebees/recipe/bee_conversion/undergarden/regalium_bee.json"
+hash = "0d48a639a756382fd033582792e1fd960ab6b6d496c17ce20f2c74d4d1e6b521"
+
+[[files]]
 file = "kubejs/data/productivefarming/loot_table/blocks/attached_kiwi_stem.json"
 hash = "58a1c8525711f77af6cf91f9f386957d4b4af37d2519bc3a9a6331714c3a0473"
 
