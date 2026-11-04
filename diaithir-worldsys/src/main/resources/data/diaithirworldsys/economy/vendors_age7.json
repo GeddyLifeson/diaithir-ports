@@ -10,127 +10,127 @@
     "data hall"
    ],
    "items": {
-    "extendedae:infinity_cobblestone_cell": {
-     "price": 317,
+    "extendedae:entro_block": {
+     "price": 18,
      "stock": 4
     },
-    "advanced_ae:quantum_alloy_slab": {
+    "ae2:fluix_slab": {
      "price": 447,
      "stock": 4
     },
-    "ae2:smooth_sky_stone_stairs": {
-     "price": 447,
-     "stock": 4
-    },
-    "advanced_ae:hp_buffer_card": {
+    "advanced_ae:attack_speed_card": {
      "price": 631,
      "stock": 4
     },
-    "advanced_ae:quantum_multi_threader": {
+    "advanced_ae:portable_workbench_card": {
      "price": 631,
      "stock": 4
     },
-    "advanced_ae:sprint_speed_card": {
+    "advanced_ae:quantum_upgrade_base": {
      "price": 631,
      "stock": 4
     },
-    "ae2:black_lumen_paint_ball": {
+    "advanced_ae:water_breathing_card": {
      "price": 631,
      "stock": 4
     },
-    "ae2:brown_paint_ball": {
+    "ae2:blue_lumen_paint_ball": {
      "price": 631,
      "stock": 4
     },
-    "ae2:cell_workbench": {
+    "ae2:cable_pattern_provider": {
      "price": 631,
      "stock": 4
     },
-    "ae2:cyan_smart_cable": {
+    "ae2:conversion_monitor": {
      "price": 631,
      "stock": 4
     },
-    "ae2:fluid_cell_housing": {
+    "ae2:energy_card": {
      "price": 631,
      "stock": 4
     },
-    "ae2:glass_cable_base": {
+    "ae2:fluid_storage_cell_64k": {
      "price": 631,
      "stock": 4
     },
-    "ae2:guide": {
+    "ae2:gray_smart_dense_cable": {
      "price": 631,
      "stock": 4
     },
-    "ae2:light_blue_covered_dense_cable": {
+    "ae2:io_port": {
      "price": 631,
      "stock": 4
     },
-    "ae2:lime_covered_dense_cable": {
+    "ae2:light_detector": {
      "price": 631,
      "stock": 4
     },
-    "ae2:matter_ball": {
+    "ae2:logic_processor": {
      "price": 631,
      "stock": 4
     },
-    "ae2:orange_covered_dense_cable": {
+    "ae2:memory_card_base": {
      "price": 631,
      "stock": 4
     },
-    "ae2:pink_lumen_paint_ball": {
+    "ae2:orange_smart_dense_cable": {
      "price": 631,
      "stock": 4
     },
-    "ae2:printed_logic_processor": {
+    "ae2:portable_fluid_cell_1k": {
      "price": 631,
      "stock": 4
     },
-    "ae2:red_lumen_paint_ball": {
+    "ae2:purple_glass_cable": {
      "price": 631,
      "stock": 4
     },
-    "ae2:spatial_cell_component_128": {
+    "ae2:silicon": {
      "price": 631,
      "stock": 4
     },
-    "ae2:white_covered_cable": {
+    "ae2:spatial_pylon": {
      "price": 631,
      "stock": 4
     },
-    "ae2:yellow_paint_ball": {
+    "ae2:white_paint_ball": {
      "price": 631,
      "stock": 4
     },
-    "extendedae:entro_cluster": {
+    "extendedae:caner": {
      "price": 631,
      "stock": 4
     },
-    "extendedae:ex_pattern_provider": {
+    "extendedae:entro_cluster_small": {
      "price": 631,
      "stock": 4
     },
-    "extendedae:pattern_provider_upgrade": {
+    "extendedae:infinity_cell_name": {
      "price": 631,
      "stock": 4
     },
-    "extradisks:1024k_item_storage_disk": {
+    "extendedae:precise_storage_bus": {
      "price": 631,
      "stock": 4
     },
-    "extradisks:262144b_fluid_storage_disk": {
+    "extradisks:1048576b_chemical_storage_disk": {
      "price": 631,
      "stock": 4
     },
-    "extradisks:infinite_chemical_storage_part": {
+    "extradisks:262144k_item_storage_disk": {
      "price": 631,
      "stock": 4
     },
-    "megacells:cell_component_4m": {
+    "extradisks:infinite_fluid_storage_disk": {
      "price": 631,
      "stock": 4
     },
-    "megacells:fluid_storage_cell_1m": {
+    "megacells:cell_component_64m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:fluid_storage_cell_256m": {
      "price": 631,
      "stock": 4
     },
@@ -154,167 +154,167 @@
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:black_creative_controller": {
+    "refinedstorage:black_controller": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:blue_cable": {
+    "refinedstorage:blue_autocrafter_manager": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:blue_wireless_transmitter": {
+    "refinedstorage:blue_security_manager": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:brown_pattern_grid": {
+    "refinedstorage:brown_network_receiver": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:cable/magenta": {
+    "refinedstorage:cable/lime": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:constructor/cyan": {
+    "refinedstorage:constructor/blue": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:cyan_cable": {
+    "refinedstorage:cyan_autocrafter": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:cyan_wireless_transmitter": {
+    "refinedstorage:cyan_relay": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:destructor/red": {
+    "refinedstorage:destructor/orange": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:detector/purple": {
+    "refinedstorage:detector/magenta": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:exporter/lime": {
+    "refinedstorage:exporter/green": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:external_storage/green": {
+    "refinedstorage:external_storage/brown": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:gray_autocrafter": {
+    "refinedstorage:fortune_2_upgrade": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:green_constructor": {
+    "refinedstorage:gray_wireless_transmitter": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:grid": {
+    "refinedstorage:green_pattern_grid": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:importer/red": {
+    "refinedstorage:importer/magenta": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:light_gray_creative_controller": {
+    "refinedstorage:light_gray_autocrafter": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:lime_cable": {
+    "refinedstorage:light_gray_relay": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:lime_security_manager": {
+    "refinedstorage:lime_importer": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:magenta_network_transmitter": {
+    "refinedstorage:magenta_exporter": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:orange_destructor": {
+    "refinedstorage:orange_autocrafter_manager": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:pattern/smithing_table": {
+    "refinedstorage:orange_relay": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:pink_network_receiver": {
+    "refinedstorage:pink_detector": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:purple_disk_interface": {
+    "refinedstorage:purple_cable": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:red_controller": {
+    "refinedstorage:purple_security_manager": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:relay": {
+    "refinedstorage:red_network_receiver": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:white_constructor": {
+    "refinedstorage:stack_upgrade": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:wireless_grid": {
+    "refinedstorage:white_importer": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:wireless_transmitter/purple": {
+    "refinedstorage:wireless_transmitter/green": {
      "price": 631,
      "stock": 4
     },
-    "refinedstorage:yellow_grid": {
+    "refinedstorage:yellow_constructor": {
      "price": 631,
      "stock": 4
     },
-    "ae2:64k_crafting_storage": {
+    "universalgrid:wireless_universal_grid": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:tiny_tnt": {
      "price": 795,
      "stock": 4
     },
-    "extendedae:entro_ingot": {
+    "refinedstorage:blue_autocrafting_monitor": {
      "price": 795,
      "stock": 4
     },
-    "refinedstorage:brown_crafting_grid": {
+    "refinedstorage:magenta_crafting_grid": {
      "price": 795,
      "stock": 4
     },
-    "refinedstorage:orange_crafting_grid": {
+    "refinedstorage:yellow_autocrafting_monitor": {
      "price": 795,
      "stock": 4
     },
-    "refinedstorage_quartz_arsenal:wireless_crafting_grid/active": {
-     "price": 795,
-     "stock": 4
-    },
-    "ae2:quartz_wall": {
+    "ae2:quartz_pillar_wall": {
      "price": 892,
      "stock": 4
     },
-    "ae2:certus_quartz_wrench": {
+    "ae2:redstone_p2p_tunnel": {
+     "price": 1000,
+     "stock": 4
+    },
+    "ae2:printed_engineering_processor": {
      "price": 1259,
      "stock": 4
     },
-    "ae2:quartz_fixture": {
+    "extendedae:machine_frame": {
      "price": 1259,
      "stock": 4
     },
-    "extendedae:silicon_block": {
+    "extradisks:65536k_item_storage_block": {
      "price": 1259,
      "stock": 4
     },
-    "extradisks:advanced_machine_casing": {
-     "price": 1259,
-     "stock": 4
-    },
-    "ae2:certus_quartz_cutting_knife": {
+    "advanced_ae:adv_pattern_encoder": {
      "price": 1585,
      "stock": 4
     },
@@ -322,7 +322,7 @@
      "price": 1996,
      "stock": 4
     },
-    "ae2:debug_eraser": {
+    "ae2:debug_energy_gen": {
      "price": 6310,
      "stock": 4
     },
@@ -349,51 +349,55 @@
      "price": 631,
      "stock": 4
     },
-    "cabletiers:black_mega_disk_interface": {
+    "cabletiers:black_mega_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:blue_creative_constructor": {
+    "cabletiers:black_ultra_importer": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:blue_elite_exporter": {
+    "cabletiers:blue_elite_constructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:blue_ultra_constructor": {
+    "cabletiers:blue_mega_exporter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:brown_creative_exporter": {
+    "cabletiers:brown_creative_constructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:brown_mega_constructor": {
+    "cabletiers:brown_elite_disk_interface": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:brown_ultra_importer": {
+    "cabletiers:brown_ultra_autocrafter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:cyan_elite_constructor": {
+    "cabletiers:cyan_creative_constructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:cyan_mega_exporter": {
+    "cabletiers:cyan_elite_exporter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:elite_autocrafter": {
+    "cabletiers:cyan_ultra_constructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:elite_constructor/light_gray": {
+    "cabletiers:elite_constructor/black": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:elite_destructor": {
+    "cabletiers:elite_constructor/magenta": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_destructor/blue": {
      "price": 631,
      "stock": 4
     },
@@ -405,55 +409,59 @@
      "price": 631,
      "stock": 4
     },
-    "cabletiers:elite_exporter/magenta": {
+    "cabletiers:elite_exporter/lime": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:elite_importer/blue": {
+    "cabletiers:elite_importer/black": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:elite_importer/orange": {
+    "cabletiers:elite_importer/magenta": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:gray_elite_autocrafter": {
+    "cabletiers:exporter/base": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:green_creative_disk_interface": {
+    "cabletiers:green_creative_autocrafter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:green_mega_autocrafter": {
+    "cabletiers:green_elite_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:green_ultra_disk_interface": {
+    "cabletiers:green_mega_importer": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:light_blue_elite_destructor": {
+    "cabletiers:light_blue_creative_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:light_blue_ultra_importer": {
+    "cabletiers:light_blue_mega_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:light_gray_elite_destructor": {
+    "cabletiers:light_gray_creative_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:light_gray_mega_importer": {
+    "cabletiers:light_gray_elite_exporter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:lime_creative_destructor": {
+    "cabletiers:light_gray_ultra_constructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:lime_elite_importer": {
+    "cabletiers:lime_creative_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:lime_mega_autocrafter": {
      "price": 631,
      "stock": 4
     },
@@ -461,119 +469,127 @@
      "price": 631,
      "stock": 4
     },
-    "cabletiers:magenta_elite_autocrafter": {
+    "cabletiers:magenta_creative_importer": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:magenta_mega_disk_interface": {
+    "cabletiers:magenta_mega_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_autocrafter": {
+    "cabletiers:magenta_ultra_importer": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_constructor/light_gray": {
+    "cabletiers:mega_constructor/green": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_destructor": {
+    "cabletiers:mega_constructor/white": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_destructor/magenta": {
+    "cabletiers:mega_destructor/green": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_exporter/black": {
+    "cabletiers:mega_destructor/white": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_exporter/magenta": {
+    "cabletiers:mega_exporter/green": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_importer/blue": {
+    "cabletiers:mega_exporter/red": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:mega_importer/orange": {
+    "cabletiers:mega_importer/green": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:orange_creative_disk_interface": {
+    "cabletiers:mega_importer/white": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:orange_mega_autocrafter": {
+    "cabletiers:orange_creative_importer": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:orange_ultra_disk_interface": {
+    "cabletiers:orange_mega_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:pink_elite_autocrafter": {
+    "cabletiers:orange_ultra_exporter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:pink_mega_disk_interface": {
+    "cabletiers:pink_elite_constructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:purple_creative_constructor": {
+    "cabletiers:pink_mega_exporter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:purple_elite_exporter": {
+    "cabletiers:purple_creative_autocrafter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:purple_ultra_constructor": {
+    "cabletiers:purple_elite_disk_interface": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:red_creative_exporter": {
+    "cabletiers:purple_mega_importer": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:red_mega_constructor": {
+    "cabletiers:red_creative_destructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:red_ultra_exporter": {
+    "cabletiers:red_elite_importer": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:ultra_constructor/light_blue": {
+    "cabletiers:red_ultra_constructor": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:ultra_constructor/yellow": {
+    "cabletiers:ultra_constructor/brown": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:ultra_destructor/light_gray": {
+    "cabletiers:ultra_constructor/orange": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:ultra_disk_interface": {
+    "cabletiers:ultra_destructor/brown": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:ultra_exporter/light_gray": {
+    "cabletiers:ultra_destructor/pink": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:ultra_importer/black": {
+    "cabletiers:ultra_exporter/blue": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:ultra_importer/magenta": {
+    "cabletiers:ultra_exporter/orange": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:white_creative_constructor": {
+    "cabletiers:ultra_importer/blue": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_importer/orange": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:white_creative_destructor": {
      "price": 631,
      "stock": 4
     },
@@ -585,71 +601,55 @@
      "price": 631,
      "stock": 4
     },
-    "cabletiers:yellow_creative_importer": {
+    "cabletiers:yellow_creative_disk_interface": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:yellow_mega_destructor": {
+    "cabletiers:yellow_mega_autocrafter": {
      "price": 631,
      "stock": 4
     },
-    "cabletiers:yellow_ultra_importer": {
+    "cabletiers:yellow_ultra_disk_interface": {
      "price": 631,
      "stock": 4
     },
-    "energizedpower:energizing_speed_upgrade_module_8": {
+    "energizedpower:energizing_speed_upgrade_module_6": {
      "price": 631,
      "stock": 4
     },
-    "energizedpower:item_pulling_upgrade_module_7": {
+    "energizedpower:xp_extraction_upgrade_module_7": {
      "price": 631,
      "stock": 4
     },
-    "mekanism:mekasuit_pants": {
+    "pneumaticcraft:drone_interface": {
      "price": 631,
      "stock": 4
     },
-    "mekanism:qio_exporter": {
-     "price": 631,
-     "stock": 4
-    },
-    "pneumaticcraft:collector_drone": {
-     "price": 631,
-     "stock": 4
-    },
-    "modern_industrialization:quantum_circuit_board": {
-     "price": 795,
-     "stock": 4
-    },
-    "dimstorage:dimensional_tank": {
-     "price": 1259,
-     "stock": 4
-    },
-    "modern_industrialization:quantum_machine_hull": {
-     "price": 1259,
-     "stock": 4
-    },
-    "cabletiers:creative_constructor/gray": {
+    "cabletiers:creative_constructor": {
      "price": 6310,
      "stock": 4
     },
-    "cabletiers:creative_constructor/red": {
+    "cabletiers:creative_constructor/lime": {
      "price": 6310,
      "stock": 4
     },
-    "cabletiers:creative_destructor/green": {
+    "cabletiers:creative_destructor": {
      "price": 6310,
      "stock": 4
     },
-    "cabletiers:creative_destructor/white": {
+    "cabletiers:creative_destructor/lime": {
      "price": 6310,
      "stock": 4
     },
-    "cabletiers:creative_exporter/green": {
+    "cabletiers:creative_exporter": {
      "price": 6310,
      "stock": 4
     },
-    "cabletiers:creative_exporter/yellow": {
+    "cabletiers:creative_exporter/light_gray": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_importer": {
      "price": 6310,
      "stock": 4
     },
@@ -672,111 +672,47 @@
     "fabrication hall"
    ],
    "items": {
-    "justdirethings:raw_celestigem_ore": {
+    "justdirethings:blazegold_block": {
+     "price": 18,
+     "stock": 4
+    },
+    "justdirethings:upgrade_orescanner": {
      "price": 317,
      "stock": 4
     },
-    "justdirethings:raw_coal_t3_ore": {
-     "price": 317,
-     "stock": 4
-    },
-    "justdirethings:raw_eclipsealloy_ore": {
-     "price": 317,
-     "stock": 4
-    },
-    "mysticalagradditions:end_prosperity_ore": {
-     "price": 317,
-     "stock": 4
-    },
-    "mysticalagradditions:nether_prosperity_ore": {
-     "price": 317,
-     "stock": 4
-    },
-    "mysticalagradditions:insanium_nugget": {
+    "justdirethings:template_ferricore": {
      "price": 399,
      "stock": 4
     },
-    "forbidden_arcanus:black_quantum_catcher": {
+    "ironjetpacks:thruster": {
      "price": 631,
      "stock": 4
     },
-    "forbidden_arcanus:cyan_quantum_catcher": {
+    "justdirethings:blockplacert1": {
      "price": 631,
      "stock": 4
     },
-    "forbidden_arcanus:light_blue_quantum_catcher": {
+    "justdirethings:bow_celestigem_pulling_0": {
      "price": 631,
      "stock": 4
     },
-    "forbidden_arcanus:magenta_quantum_catcher": {
+    "justdirethings:bow_eclipsealloy": {
      "price": 631,
      "stock": 4
     },
-    "forbidden_arcanus:purple_quantum_catcher": {
+    "justdirethings:bow_ferricore_pulling_0": {
      "price": 631,
      "stock": 4
     },
-    "forbidden_arcanus:quantum_injector": {
+    "justdirethings:celestigem_hoe_active": {
      "price": 631,
      "stock": 4
     },
-    "forbidden_arcanus:yellow_quantum_catcher": {
+    "justdirethings:clickert1": {
      "price": 631,
      "stock": 4
     },
-    "forestry:bee_drone_default": {
-     "price": 631,
-     "stock": 4
-    },
-    "hostilenetworks:data_center": {
-     "price": 631,
-     "stock": 4
-    },
-    "hostilenetworks:data_model_anchor": {
-     "price": 631,
-     "stock": 4
-    },
-    "hostilenetworks:end_prediction": {
-     "price": 631,
-     "stock": 4
-    },
-    "hostilenetworks:nether_prediction": {
-     "price": 631,
-     "stock": 4
-    },
-    "hostilenetworks:prediction": {
-     "price": 631,
-     "stock": 4
-    },
-    "hostilenetworks:twilight_prediction": {
-     "price": 631,
-     "stock": 4
-    },
-    "ironjetpacks:strap": {
-     "price": 631,
-     "stock": 4
-    },
-    "justdirethings:blockbreakert1": {
-     "price": 631,
-     "stock": 4
-    },
-    "justdirethings:blockplacert2": {
-     "price": 631,
-     "stock": 4
-    },
-    "justdirethings:celestigem_axe_active": {
-     "price": 631,
-     "stock": 4
-    },
-    "justdirethings:celestigem_paxel_active": {
-     "price": 631,
-     "stock": 4
-    },
-    "justdirethings:coal_t1": {
-     "price": 631,
-     "stock": 4
-    },
-    "justdirethings:coal_t3": {
+    "justdirethings:coal_t2": {
      "price": 631,
      "stock": 4
     },
@@ -784,23 +720,23 @@
      "price": 631,
      "stock": 4
     },
-    "justdirethings:creaturecatcher": {
+    "justdirethings:creaturecatcher_base": {
      "price": 631,
      "stock": 4
     },
-    "justdirethings:droppert2": {
+    "justdirethings:eclipsealloy_hoe_active": {
      "price": 631,
      "stock": 4
     },
-    "justdirethings:eclipsealloy_paxel": {
+    "justdirethings:eclipsegate_wand": {
      "price": 631,
      "stock": 4
     },
-    "justdirethings:eclipsegateblock": {
+    "justdirethings:ferricore_axe_active": {
      "price": 631,
      "stock": 4
     },
-    "justdirethings:ferricore_hoe_active": {
+    "justdirethings:fluidcollectort1": {
      "price": 631,
      "stock": 4
     },
@@ -812,11 +748,31 @@
      "price": 631,
      "stock": 4
     },
-    "justdirethings:goosoil_tier2": {
+    "justdirethings:goosoil_tier3": {
      "price": 631,
      "stock": 4
     },
-    "justdirethings:itemcollector": {
+    "justdirethings:playeraccessor": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:polymorphic_wand_v2": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:portalgun": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:portalgun_v2_33": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:potion_canister_2": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:refined_t3_fluid_bucket": {
      "price": 631,
      "stock": 4
     },
@@ -824,15 +780,59 @@
      "price": 631,
      "stock": 4
     },
+    "justdirethings:unrefined_t3_fluid_bucket": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_cauterizewounds": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_dropteleport": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_flight": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_instabreak": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_lawnmower": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_mobscanner": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_noai": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_runspeed": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_splash": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_time_protection": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:upgrade_waterbreathing": {
+     "price": 631,
+     "stock": 4
+    },
     "mysticalagradditions:awakened_supremium_paxel": {
      "price": 631,
      "stock": 4
     },
-    "mysticalagradditions:imperium_paxel": {
-     "price": 631,
-     "stock": 4
-    },
-    "mysticalagradditions:inferium_paxel": {
+    "mysticalagradditions:inferium_coal": {
      "price": 631,
      "stock": 4
     },
@@ -844,15 +844,11 @@
      "price": 631,
      "stock": 4
     },
-    "mysticalagradditions:molten_inferium": {
+    "mysticalagradditions:molten_inferium_bucket": {
      "price": 631,
      "stock": 4
     },
-    "mysticalagradditions:molten_insanium_bucket": {
-     "price": 631,
-     "stock": 4
-    },
-    "mysticalagradditions:molten_prudentium": {
+    "mysticalagradditions:molten_prosperity_bucket": {
      "price": 631,
      "stock": 4
     },
@@ -860,15 +856,11 @@
      "price": 631,
      "stock": 4
     },
-    "mysticalagradditions:molten_supremium_bucket": {
+    "mysticalagradditions:molten_tertium": {
      "price": 631,
      "stock": 4
     },
-    "mysticalagradditions:neutronium_crux": {
-     "price": 631,
-     "stock": 4
-    },
-    "mysticalagradditions:supremium_coal": {
+    "mysticalagradditions:prudentium_paxel": {
      "price": 631,
      "stock": 4
     },
@@ -876,15 +868,11 @@
      "price": 631,
      "stock": 4
     },
-    "stepcrafter:step_crafter": {
+    "stepcrafter:step_requester": {
      "price": 631,
      "stock": 4
     },
-    "ironjetpacks:advanced_coil": {
-     "price": 795,
-     "stock": 4
-    },
-    "ironjetpacks:elite_coil": {
+    "ironjetpacks:capacitor": {
      "price": 795,
      "stock": 4
     },
@@ -892,7 +880,11 @@
      "price": 795,
      "stock": 4
     },
-    "mysticalagradditions:insanium_ingot": {
+    "justdirethings:time_crystal_cluster": {
+     "price": 795,
+     "stock": 4
+    },
+    "justdirethings:upgrade_extinguish": {
      "price": 795,
      "stock": 4
     },
@@ -900,7 +892,11 @@
      "price": 1000,
      "stock": 4
     },
-    "justdirethings:celestigem_pickaxe": {
+    "justdirethings:bow_blazegold_pulling_2": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:celestigem_hoe": {
      "price": 1000,
      "stock": 4
     },
@@ -912,7 +908,7 @@
      "price": 1000,
      "stock": 4
     },
-    "justdirethings:eclipsealloy_pickaxe_active": {
+    "justdirethings:eclipsealloy_pickaxe": {
      "price": 1000,
      "stock": 4
     },
@@ -920,15 +916,11 @@
      "price": 1000,
      "stock": 4
     },
-    "justdirethings:ferricore_axe": {
+    "justdirethings:ferricore_helmet": {
      "price": 1000,
      "stock": 4
     },
-    "justdirethings:ferricore_hoe": {
-     "price": 1000,
-     "stock": 4
-    },
-    "justdirethings:ferricore_shovel": {
+    "justdirethings:ferricore_pickaxe_active": {
      "price": 1000,
      "stock": 4
     },
@@ -936,27 +928,39 @@
      "price": 1000,
      "stock": 4
     },
-    "justdirethings:generatort1": {
+    "justdirethings:ferricore_chestplate": {
      "price": 1259,
      "stock": 4
     },
-    "justdirethings:blazegold_axe": {
+    "justdirethings:pocket_generator": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:portal_fluid_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:template_blazegold": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:unrefined_t4_fluid_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:blazegold_boots": {
      "price": 1585,
      "stock": 4
     },
-    "justdirethings:blazegold_pickaxe_active": {
+    "justdirethings:blazegold_pickaxe": {
      "price": 1585,
      "stock": 4
     },
-    "justdirethings:blazegold_shovel_active": {
+    "justdirethings:blazegold_sword": {
      "price": 1585,
      "stock": 4
     },
-    "mysticalagradditions:imperium_apple": {
-     "price": 1585,
-     "stock": 4
-    },
-    "mysticalagradditions:nether_star_shard": {
+    "mysticalagradditions:inferium_apple": {
      "price": 1585,
      "stock": 4
     },
@@ -964,32 +968,28 @@
      "price": 1585,
      "stock": 4
     },
+    "justdirethings:eclipsealloy_leggings": {
+     "price": 2512,
+     "stock": 4
+    },
     "mysticalagradditions:dragon_scale": {
      "price": 2512,
      "stock": 4
     },
-    "mysticalagradditions:imperium_coal_block": {
-     "price": 5679,
+    "mysticalagradditions:dragon_egg_chunk": {
+     "price": 3982,
      "stock": 4
     },
     "mysticalagradditions:insanium_gemstone_block": {
      "price": 5679,
      "stock": 4
     },
-    "mysticalagradditions:supremium_coal_block": {
+    "mysticalagradditions:tertium_coal_block": {
      "price": 5679,
      "stock": 4
     },
-    "mysticalagradditions:dragon_egg_crux": {
-     "price": 6310,
-     "stock": 4
-    },
-    "justdirethings:ferricore_block": {
+    "justdirethings:time_crystal_block": {
      "price": 7155,
-     "stock": 4
-    },
-    "justdirethings:blazegold_block": {
-     "price": 11331,
      "stock": 4
     }
    }

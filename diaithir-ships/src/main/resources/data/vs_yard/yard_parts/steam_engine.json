@@ -1,0 +1,18 @@
+{
+  "item": "vs_yard:steam_engine",
+  "kind": "engine",
+  "mass_kg": 1200,
+  "hp": 50,
+  "power_w": 150000,
+  "thrust_n": 8000,
+  "buoyancy_n": 0,
+  "capacity_l": 0,
+  "crew_slots": 0,
+  "block": "vs_eureka:engine",
+  "extra": {
+    "anchor_x": 0,
+    "anchor_y": 1,
+    "anchor_row": 0.25
+  },
+  "min_age": 4
+}

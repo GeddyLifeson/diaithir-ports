@@ -864,10 +864,25 @@
    "id": "#diaithir_worldgen:lib/zephivsora.json",
    "required": false
   },
-  "#diaithir_worldgen:rc/stone",
-  "#diaithir_worldgen:rc/sand",
-  "#diaithir_worldgen:rc/nether",
-  "#diaithir_worldgen:rc/ice",
-  "#diaithir_worldgen:rc/deep"
+  {
+   "id": "#diaithir_worldgen:rc/stone",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:rc/sand",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:rc/nether",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:rc/ice",
+   "required": false
+  },
+  {
+   "id": "#diaithir_worldgen:rc/deep",
+   "required": false
+  }
  ]
 }

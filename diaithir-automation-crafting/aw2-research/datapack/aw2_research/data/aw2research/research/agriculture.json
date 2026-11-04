@@ -1,0 +1,27 @@
+{
+  "title": "Agriculture",
+  "description": "Ancient Warfare 2 research: agriculture.",
+  "prerequisites": [],
+  "to_unlock": {
+    "criterion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stick",
+            "count": {
+              "min": 24
+            }
+          }
+        ]
+      }
+    },
+    "count": 1
+  },
+  "display": {
+    "type": "item",
+    "item": {
+      "id": "minecraft:stick"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "station": "machine.assembler",
+  "stage": "assembly",
+  "time_s": 18,
+  "ingredients": [
+    {
+      "item": "diaithircrafting:munition_guided_rocket_casing",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_guided_rocket_charge",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_guided_rocket_fuze",
+      "count": 1
+    },
+    {
+      "item": "diaithircrafting:munition_guided_rocket_motor",
+      "count": 1
+    }
+  ],
+  "result": {
+    "id": "diaithircrafting:munition_guided_rocket",
+    "count": 1
+  },
+  "operator": true
+}

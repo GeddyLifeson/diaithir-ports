@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "minecraft:cod"
+ },
+ "pattern": [
+  "BBB"
+ ],
+ "result": {
+  "id": "diaithircreatureutils:fish_trophy_item",
+  "count": 1
+ }
+}

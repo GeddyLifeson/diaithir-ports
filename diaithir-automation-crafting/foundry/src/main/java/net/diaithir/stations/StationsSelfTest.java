@@ -40,6 +40,12 @@ final class StationsSelfTest {
         check(fails, StationRecipes.forStation("research.bench").size() == 6, "research bench has " + StationRecipes.forStation("research.bench").size() + " recipes, expected 6");
         check(fails, StationRecipes.forStation("machine.assembler").stream().anyMatch(r -> r.result().item().value() == DiaithirCrafting.OPERATOR_SEAT_ITEM.get()), "operator seat is not an assembler recipe");
 
+        // munitions (plans/MUNITIONS.md): every registered munition item has exactly one station recipe; containers carry the ammo_container component
+        java.util.Map<net.minecraft.world.item.Item, Long> made = DiaithirStations.STATIONS.values().stream().flatMap(k -> StationRecipes.forStation(k).stream())
+                .collect(java.util.stream.Collectors.groupingBy(r -> r.result().item().value(), java.util.stream.Collectors.counting()));
+        for (var m : DiaithirCrafting.MUNITIONS) check(fails, made.getOrDefault(m.get(), 0L) == 1, "munition " + m.getId() + " has " + made.getOrDefault(m.get(), 0L) + " recipes, expected 1");
+        check(fails, DiaithirCrafting.MUNITIONS.size() > 150 && DiaithirCrafting.MUNITIONS.stream().anyMatch(m -> m.get().components().has(DiaithirCrafting.AMMO_CONTAINER.get())), "munition items or container component missing");
+
         StationRecipe nail = parse(level, "{\"station\":\"station.wright_bench\",\"stage\":\"part\",\"time_s\":1,"
                 + "\"ingredients\":[{\"item\":\"minecraft:iron_ingot\",\"count\":2},{\"tag\":\"minecraft:planks\"}],\"result\":{\"id\":\"minecraft:iron_nugget\",\"count\":9}}");
         check(fails, nail != null, "good recipe did not parse");

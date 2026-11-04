@@ -57,6 +57,10 @@
   "diaithir_worldgen:sunken_tomb_stones",
   "diaithir_worldgen:verdant_grotto_shrine",
   "diaithir_worldgen:verdant_shrine_ring",
-  "diaithir_worldgen:warped_grove_shrine"
+  "diaithir_worldgen:warped_grove_shrine",
+  "diaithir_worldgen:nether_altar_shrine",
+  "diaithir_worldgen:nether_micro_brick",
+  "diaithir_worldgen:nether_overgrowth_ruin",
+  "diaithir_worldgen:nether_warped_tarn"
  ]
 }

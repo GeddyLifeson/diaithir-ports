@@ -17,7 +17,6 @@ public final class MachineMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerData data;
     private final int machineSlots;
-    private final int upgradeIndex;
 
     /** Client side. */
     public MachineMenu(int id, Inventory inv, RegistryFriendlyByteBuf buf) {
@@ -47,14 +46,6 @@ public final class MachineMenu extends AbstractContainerMenu {
                 n++;
             }
         }
-        upgradeIndex = n;
-        addSlot(new Slot(container, Kind.UPGRADE, 150, 55) {
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                return stack.getItem() instanceof AugmentItem;
-            }
-        });
-        n++;
         machineSlots = n;
         for (int r = 0; r < 3; r++) for (int c = 0; c < 9; c++) addSlot(new Slot(inv, c + r * 9 + 9, 8 + c * 18, 84 + r * 18));
         for (int c = 0; c < 9; c++) addSlot(new Slot(inv, c, 8 + c * 18, 142));
@@ -139,8 +130,6 @@ public final class MachineMenu extends AbstractContainerMenu {
         int end = slots.size();
         if (index < machineSlots) {
             if (!moveItemStackTo(stack, machineSlots, end, true)) return ItemStack.EMPTY;
-        } else if (stack.getItem() instanceof AugmentItem) {
-            if (!moveItemStackTo(stack, upgradeIndex, upgradeIndex + 1, false)) return ItemStack.EMPTY;
         } else if (!moveItemStackTo(stack, 0, kind.inputs, false)) {
             return ItemStack.EMPTY;
         }

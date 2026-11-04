@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "diaithirfurniture:block/gray_couch"
+  },
+  "facing=east": {
+   "model": "diaithirfurniture:block/gray_couch",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "diaithirfurniture:block/gray_couch",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "diaithirfurniture:block/gray_couch",
+   "y": 270
+  }
+ }
+}

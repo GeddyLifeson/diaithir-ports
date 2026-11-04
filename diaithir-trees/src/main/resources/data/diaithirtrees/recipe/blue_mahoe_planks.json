@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "#diaithirtrees:blue_mahoe_logs"
+ ],
+ "result": {
+  "id": "diaithirtrees:blue_mahoe_planks",
+  "count": 4
+ }
+}

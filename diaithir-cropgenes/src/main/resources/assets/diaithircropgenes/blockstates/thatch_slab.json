@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "type=bottom": {
+   "model": "diaithircropgenes:block/thatch_slab"
+  },
+  "type=top": {
+   "model": "diaithircropgenes:block/thatch_slab_top"
+  },
+  "type=double": {
+   "model": "diaithircropgenes:block/thatch_slab_full"
+  }
+ }
+}
