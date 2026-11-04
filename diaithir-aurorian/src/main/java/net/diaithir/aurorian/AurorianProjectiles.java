@@ -42,6 +42,11 @@ public final class AurorianProjectiles {
             setBaseDamage(cerulean() ? 1.5 : 3.0);
         }
 
+        public Arrow(EntityType<? extends Arrow> t, Level l, double x, double y, double z, ItemStack pickup, @Nullable ItemStack weapon) {
+            super(t, x, y, z, l, pickup, weapon);
+            setBaseDamage(cerulean() ? 1.5 : 3.0);
+        }
+
         /** Note: AbstractArrow's constructor calls getDefaultPickupItem, so nothing here may depend on fields of this class. */
         private boolean cerulean() {
             return getType() == CERULEAN.get();

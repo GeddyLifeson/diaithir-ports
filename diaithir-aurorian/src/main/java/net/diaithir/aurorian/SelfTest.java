@@ -22,7 +22,12 @@ final class SelfTest {
                 return shape.interior.size();
             })))
             .then(Commands.literal("mirror").executes(c -> {
-                MirrorGuide.open(c.getSource().getPlayerOrException(), net.minecraft.world.InteractionHand.MAIN_HAND);
+                var pl = c.getSource().getPlayerOrException();
+                if (!Abilities.idOf(pl.getMainHandItem()).equals("mirror_of_guidance")) {
+                    c.getSource().sendFailure(Component.literal("mirror: hold a mirror of guidance in the main hand"));
+                    return 0;
+                }
+                MirrorGuide.open(pl, net.minecraft.world.InteractionHand.MAIN_HAND);
                 c.getSource().sendSuccess(() -> Component.literal("mirror nodes: " + MirrorGuide.nodes()), false);
                 return MirrorGuide.nodes();
             }))

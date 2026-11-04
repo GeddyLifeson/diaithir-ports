@@ -527,6 +527,19 @@ def main():
         bm = json.loads((A / "models/item/silentwood_bow.json").read_text())
         bm.pop("overrides", None)
         (A / "models/item/silentwood_bow.json").write_text(json.dumps(bm, indent=1) + "\n")
+    cm = A / "models/item/crystalline_sword.json"
+    if cm.exists():
+        # legacy "charging"/"charge" overrides -> using_item + use_duration (charge in seconds = ticks / 20)
+        m = json.loads(cm.read_text())
+        ov = m.pop("overrides", [])
+        if ov:
+            entries = [dict(threshold=o["predicate"]["charge"], model=dict(type="minecraft:model", model=o["model"])) for o in ov if "charge" in o["predicate"]]
+            first = [o for o in ov if "charge" not in o["predicate"]][0]
+            (idir / "crystalline_sword.json").write_text(json.dumps(dict(model=dict(type="minecraft:condition", property="minecraft:using_item",
+                on_false=dict(type="minecraft:model", model=f"{NS}:item/crystalline_sword"),
+                on_true=dict(type="minecraft:range_dispatch", property="minecraft:use_duration", scale=0.05,
+                             fallback=dict(type="minecraft:model", model=first["model"]), entries=entries))), indent=1) + "\n")
+            cm.write_text(json.dumps(m, indent=1) + "\n")
     EGGS = ["hollow", "undead_knight", "dungeon_slime", "dungeon_keeper"]
     for n in EGGS:
         # 26.1 vanilla eggs are plain textures, so draw our own two-colour egg
@@ -548,6 +561,22 @@ def main():
         title = n.replace("_", " ").title()
         lang.setdefault(f"entity.{NS}.{n}", title)
         lang.setdefault(f"item.{NS}.{n}_spawn_egg", title + " Spawn Egg")
+    # upstream's Mirror of Guidance has no text for six of its twelve nodes; these are ours (clean-room, from what this port implements)
+    mir = {
+        "crafting": ("Crafting", "Silentwood makes a crafting table and a chest. A scrapper breaks tools and armour back into parts: put a crystal in the top slot and the item below it. A crystal block placed above the scrapper makes it four times faster. The moonlight forge upgrades gear at night under open sky; the higher it stands, the faster it works. Chimneys on top of an Aurorian furnace speed it up."),
+        "ore_cerulean": ("Cerulean Ore", "Cerulean ore generates underground in the Aurorian. Smelt it into cerulean ingots for cerulean tools, armour and arrows."),
+        "ore_moonstone": ("Moonstone Ore", "Moonstone ore generates underground. Moonstone tools last longer: half of the hits cost no durability, but during the day each hit costs one extra point."),
+        "ore_geode": ("Geodes", "Geodes are crystal lumps buried in the stone. Crystals from them power a scrapper."),
+        "umbra": ("Umbra", "Umbra gear is heavy. The greatsword slows you but gives resistance while held, and the chestplate hits back at attackers while you sneak."),
+        "aurorian_steel": ("Aurorian Steel", "Aurorian steel tools and armour level up their own enchantments as they wear: enough use raises one enchantment by a level, and each next level needs 25 percent more wear than the last."),
+    }
+    for k, (nm, ds) in mir.items():
+        lang.setdefault(f"mirror_of_guidance.{NS}.{k}.name", nm)
+        lang.setdefault(f"mirror_of_guidance.{NS}.{k}.desc", ds)
+    # chat shows the guide, so drop the book-page padding
+    for k in list(lang):
+        if k.startswith("mirror_of_guidance.") and k.endswith(".desc"):
+            lang[k] = re.sub(r"\n{3,}", "\n\n", lang[k])
     (A / "lang/en_us.json").write_text(json.dumps(lang, indent=1, ensure_ascii=False) + "\n")
     # fuel data map
     fuels = {NS + ":" + i["id"]: {"burn_time": i["burn"]} for i in data["items"] if "burn" in i}

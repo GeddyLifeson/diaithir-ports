@@ -110,20 +110,6 @@
    "repair": "theaurorian:aurorian_steel_ingot",
    "age": "III"
   },
-  "spectral": {
-   "name": "spectral",
-   "durability": 20,
-   "boots": 4,
-   "legs": 6,
-   "chest": 6,
-   "helmet": 4,
-   "enchant": 25,
-   "sound": "leather",
-   "toughness": 0.0,
-   "knockback": 0.0,
-   "repair": "theaurorian:spectral_silk",
-   "age": "III"
-  },
   "umbra": {
    "name": "umbra",
    "durability": 20,
@@ -137,6 +123,20 @@
    "knockback": 0.2,
    "repair": "theaurorian:umbra_ingot",
    "age": "IV"
+  },
+  "spectral": {
+   "name": "spectral",
+   "durability": 20,
+   "boots": 4,
+   "legs": 6,
+   "chest": 6,
+   "helmet": 4,
+   "enchant": 25,
+   "sound": "leather",
+   "toughness": 0.0,
+   "knockback": 0.0,
+   "repair": "theaurorian:spectral_silk",
+   "age": "III"
   },
   "cerulean": {
    "name": "cerulean",

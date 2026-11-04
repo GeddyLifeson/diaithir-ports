@@ -31,8 +31,7 @@ public class AbilityArrowItem extends ArrowItem {
 
     @Override
     public Projectile asProjectile(Level level, Position pos, ItemStack stack, Direction dir) {
-        AurorianProjectiles.Arrow a = new AurorianProjectiles.Arrow(type(), level, null, stack.copyWithCount(1), null);
-        a.setPos(pos.x(), pos.y(), pos.z());
+        AurorianProjectiles.Arrow a = new AurorianProjectiles.Arrow(type(), level, pos.x(), pos.y(), pos.z(), stack.copyWithCount(1), null);
         a.pickup = AbstractArrow.Pickup.ALLOWED;
         return a;
     }
