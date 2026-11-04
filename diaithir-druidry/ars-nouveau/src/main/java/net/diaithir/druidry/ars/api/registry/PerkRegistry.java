@@ -1,0 +1,60 @@
+package net.diaithir.druidry.ars.api.registry;
+
+import net.diaithir.druidry.ars.api.perk.IPerk;
+import net.diaithir.druidry.ars.api.perk.PerkSlot;
+import net.diaithir.druidry.ars.common.items.PerkItem;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class PerkRegistry {
+    private static ConcurrentHashMap<Identifier, IPerk> perkMap = new ConcurrentHashMap<>();
+
+    private static ConcurrentHashMap<Identifier, PerkItem> perkItemMap = new ConcurrentHashMap<>();
+
+    private static ConcurrentHashMap<Item, List<List<PerkSlot>>> itemPerkProviderMap = new ConcurrentHashMap<>();
+
+    public static Map<Identifier, IPerk> getPerkMap() {
+        return perkMap;
+    }
+
+    public static Map<Identifier, PerkItem> getPerkItemMap() {
+        return perkItemMap;
+    }
+
+    public static boolean registerPerk(IPerk perk) {
+        perkMap.put(perk.getRegistryName(), perk);
+        return true;
+    }
+
+    public static boolean registerPerkProvider(ItemLike item, List<List<PerkSlot>> tierList) {
+        itemPerkProviderMap.put(item.asItem(), tierList);
+        return true;
+    }
+
+    public static @Nullable List<List<PerkSlot>> getPerkProvider(Item item) {
+        return itemPerkProviderMap.get(item);
+    }
+
+    public static @Nullable List<List<PerkSlot>> getPerkProvider(ItemStack item) {
+        return getPerkProvider(item.getItem());
+    }
+
+    public static @NotNull List<Item> getPerkProviderItems() {
+        List<Item> list = new ArrayList<>();
+        for (Iterator<Item> it = itemPerkProviderMap.keys().asIterator(); it.hasNext(); ) {
+            Item i = it.next();
+            list.add(i);
+        }
+        return list;
+    }
+}

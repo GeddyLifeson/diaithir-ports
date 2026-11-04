@@ -1,0 +1,37 @@
+package net.diaithir.druidry.ars.common.potions;
+
+import net.diaithir.druidry.ars.client.particle.ParticleColor;
+import net.diaithir.druidry.ars.common.lib.EntityTags;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+
+public class MagicFindEffect extends MobEffect {
+
+    public MagicFindEffect() {
+        super(MobEffectCategory.BENEFICIAL, new ParticleColor(30, 200, 200).getColor());
+    }
+
+    @Override
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity pLivingEntity, int pAmplifier) {
+        Level level = pLivingEntity.level();
+        if (level.isClientSide() || level.getGameTime() % 60 != 0)
+            return true;
+        for (Entity e : level.getEntities(pLivingEntity, new AABB(pLivingEntity.blockPosition()).inflate(75))) {
+            if (e instanceof LivingEntity living && living.typeHolder().is(EntityTags.MAGIC_FIND)) {
+                living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 60 * 20));
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean shouldApplyEffectTickThisTick(int pDuration, int pAmplifier) {
+        return true;
+    }
+}

@@ -1,0 +1,107 @@
+package net.diaithir.druidry.ars.common.ritual;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.api.registry.ScryRitualRegistry;
+import net.diaithir.druidry.ars.api.ritual.AbstractRitual;
+import net.diaithir.druidry.ars.api.scrying.IScryer;
+import net.diaithir.druidry.ars.api.scrying.SingleBlockScryer;
+import net.diaithir.druidry.ars.api.scrying.TagScryer;
+import net.diaithir.druidry.ars.client.particle.ParticleColor;
+import net.diaithir.druidry.ars.client.particle.ParticleUtil;
+import net.diaithir.druidry.ars.common.crafting.recipes.ScryRitualRecipe;
+import net.diaithir.druidry.ars.common.lib.RitualLib;
+import net.diaithir.druidry.ars.common.network.Networking;
+import net.diaithir.druidry.ars.common.network.PacketGetPersistentData;
+import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
+import net.diaithir.druidry.ars.setup.registry.ModPotions;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
+import net.minecraft.world.phys.AABB;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.Optional;
+
+public class RitualScrying extends AbstractRitual {
+
+    @Override
+    protected void tick() {
+
+        ParticleUtil.spawnFallingSkyEffect(this, tile, rand, getCenterColor().toWrapper());
+        if (getWorld().getGameTime() % 20 == 0 && !getWorld().isClientSide())
+            incrementProgress();
+
+        if (!getWorld().isClientSide() && getProgress() >= 15) {
+            List<ServerPlayer> players = getWorld().getEntitiesOfClass(ServerPlayer.class, new AABB(getPos()).inflate(5.0));
+            if (!players.isEmpty()) {
+                ItemStack item = getConsumedItems().stream().filter(i -> i.getItem() != ItemsRegistry.MANIPULATION_ESSENCE.get()).findFirst().orElse(ItemStack.EMPTY);
+                int modifier = didConsumeItem(ItemsRegistry.MANIPULATION_ESSENCE.get()) ? 3 : 1;
+                for (ServerPlayer playerEntity : players) {
+                    Optional<ScryRitualRecipe> hasRecipe = ScryRitualRegistry.getRecipes().stream().filter(recipe -> recipe.matches(new SingleRecipeInput(item), getWorld())).findFirst();
+                    IScryer scryer = null;
+                    if (hasRecipe.isPresent()) scryer = new TagScryer(hasRecipe.get().highlight());
+                    else if (item.getItem() instanceof BlockItem blockItem) scryer = new SingleBlockScryer(blockItem.getBlock());
+                    if (scryer != null) {
+                        RitualScrying.grantScrying(playerEntity, 60 * 20 * 5 * modifier, scryer);
+                    }
+                }
+            }
+            setFinished();
+        }
+    }
+
+    @Override
+    public Identifier getRegistryName() {
+        return ArsNouveau.prefix( RitualLib.SCRYING);
+    }
+
+    public static void grantScrying(ServerPlayer playerEntity, int ticks, IScryer scryer) {
+        playerEntity.addEffect(new MobEffectInstance(ModPotions.SCRYING_EFFECT, ticks));
+        CompoundTag tag = playerEntity.getPersistentData().getCompoundOrEmpty(Player.PERSISTED_NBT_TAG);
+        tag.put("an_scryer", scryer.toTag(new CompoundTag()));
+        playerEntity.getPersistentData().put(Player.PERSISTED_NBT_TAG, tag);
+        Networking.sendToPlayerClient(new PacketGetPersistentData(tag), playerEntity);
+    }
+
+    @Override
+    public boolean canStart(@Nullable Player player) {
+        return !getConsumedItems().isEmpty();
+    }
+
+    @Override
+    public boolean canConsumeItem(ItemStack stack) {
+        boolean hasExtended = didConsumeItem(ItemsRegistry.MANIPULATION_ESSENCE.get());
+        if (!hasExtended && stack.getItem() == ItemsRegistry.MANIPULATION_ESSENCE.get()) return true;
+
+        boolean hasConsumedAugment = getConsumedItems().size() - (hasExtended ? 1 : 0) > 0;
+        if (!hasConsumedAugment) {
+            if (stack.getItem() instanceof BlockItem) {
+                return true;
+            }
+            return ScryRitualRegistry.getRecipes().stream().anyMatch(recipe -> recipe.matches(new SingleRecipeInput(stack), getWorld()));
+        }
+
+        return false;
+    }
+
+    @Override
+    public ParticleColor getCenterColor() {
+        return ParticleColor.makeRandomColor(50, 155, 80, rand);
+    }
+
+    @Override
+    public String getLangName() {
+        return "Scrying";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Grants vision of a given block through any other block for a given time. White particles signify you are very close, green is semi-far, and blue particles are blocks very far from you.  To complete the ritual, throw any block of your choice before starting. You may also add a Manipulation Essence to increase the duration to 15 minutes.";
+    }
+}

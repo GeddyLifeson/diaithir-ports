@@ -52,6 +52,9 @@ public final class DiaithirStorageNet {
     public static final DeferredBlock<TerminalBlock> TERMINAL = BLOCKS.registerBlock("terminal", p -> new TerminalBlock(p, false), DiaithirStorageNet::metal);
     public static final DeferredBlock<TerminalBlock> CRAFTING_TERMINAL = BLOCKS.registerBlock("crafting_terminal", p -> new TerminalBlock(p, true), DiaithirStorageNet::metal);
 
+    public static final DeferredBlock<WirelessBlock> WIRELESS = BLOCKS.registerBlock("wireless_transmitter", WirelessBlock::new, DiaithirStorageNet::metal);
+
+    public static final DeferredItem<BlockItem> WIRELESS_ITEM = ITEMS.registerSimpleBlockItem(WIRELESS);
     public static final DeferredItem<BlockItem> CONTROLLER_ITEM = ITEMS.registerSimpleBlockItem(CONTROLLER);
     public static final DeferredItem<BlockItem> CABLE_ITEM = ITEMS.registerSimpleBlockItem(CABLE);
     public static final DeferredItem<BlockItem> IMPORT_CABLE_ITEM = ITEMS.registerSimpleBlockItem(IMPORT_CABLE);
@@ -65,6 +68,9 @@ public final class DiaithirStorageNet {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PortCableBlockEntity>> PORT_BE = BLOCK_ENTITIES.register("port_cable",
             () -> new BlockEntityType<>(PortCableBlockEntity::new, IMPORT_CABLE.get(), EXPORT_CABLE.get(), FILTER_CABLE.get()));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WirelessBlockEntity>> WIRELESS_BE = BLOCK_ENTITIES.register("wireless_transmitter",
+            () -> new BlockEntityType<>(WirelessBlockEntity::new, WIRELESS.get()));
+
     public DiaithirStorageNet(IEventBus bus, ModContainer container) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
@@ -75,7 +81,7 @@ public final class DiaithirStorageNet {
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
                 for (DeferredItem<BlockItem> i : List.of(CONTROLLER_ITEM, CABLE_ITEM, IMPORT_CABLE_ITEM, EXPORT_CABLE_ITEM, FILTER_CABLE_ITEM, TERMINAL_ITEM,
-                        CRAFTING_TERMINAL_ITEM)) e.accept(i.get());
+                        CRAFTING_TERMINAL_ITEM, WIRELESS_ITEM)) e.accept(i.get());
             }
         });
         bus.addListener(RegisterPayloadHandlersEvent.class, QuickStackPayload::register);

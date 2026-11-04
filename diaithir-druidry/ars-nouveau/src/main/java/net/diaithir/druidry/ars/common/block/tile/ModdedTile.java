@@ -1,0 +1,59 @@
+package net.diaithir.druidry.ars.common.block.tile;
+
+import net.diaithir.druidry.ars.setup.registry.BlockEntityTypeRegistryWrapper;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+
+public class ModdedTile extends BlockEntity {
+
+    public ModdedTile(BlockEntityType<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
+        super(tileEntityTypeIn, pos, state);
+    }
+
+    public ModdedTile(BlockEntityTypeRegistryWrapper<?> tileEntityTypeIn, BlockPos pos, BlockState state) {
+        this(tileEntityTypeIn.get(), pos, state);
+    }
+
+    @Override
+    @Nullable
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    public boolean updateBlock() {
+        if (level != null) {
+            BlockState state = level.getBlockState(worldPosition);
+            level.sendBlockUpdated(worldPosition, state, state, 3);
+            setChanged();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider pRegistries) {
+        return this.saveCustomOnly(pRegistries);
+    }
+
+    public double getX() {
+        return this.worldPosition.getX();
+    }
+
+    public double getY() {
+        return this.worldPosition.getY();
+    }
+
+    public double getZ() {
+        return this.worldPosition.getZ();
+    }
+}

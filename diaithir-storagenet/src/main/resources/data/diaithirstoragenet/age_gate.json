@@ -15,5 +15,11 @@
       "diaithirstoragenet:terminal",
       "diaithirstoragenet:crafting_terminal"
     ]
+  },
+  "tier3": {
+    "age": 7,
+    "items": [
+      "diaithirstoragenet:wireless_transmitter"
+    ]
   }
 }

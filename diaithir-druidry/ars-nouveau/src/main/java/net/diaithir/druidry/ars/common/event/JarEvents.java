@@ -1,0 +1,50 @@
+package net.diaithir.druidry.ars.common.event;
+
+import net.diaithir.druidry.ars.ArsNouveau;
+import net.diaithir.druidry.ars.common.block.tile.MobJarTile;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.LevelAccessor;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.EntityMountEvent;
+import net.neoforged.neoforge.event.level.NoteBlockEvent;
+
+@EventBusSubscriber(modid = ArsNouveau.HOST)
+public class JarEvents {
+
+    @SubscribeEvent
+    public static void onNoteblock(NoteBlockEvent.Play e) {
+        if(e.getLevel().isClientSide())
+            return;
+        if(e.getLevel().getBlockEntity(e.getPos().below()) instanceof MobJarTile mobJarTile){
+            LevelAccessor level = e.getLevel();
+            RandomSource random = level.getRandom();
+            if(mobJarTile.getEntity() instanceof net.minecraft.world.entity.Mob mob){
+                // Port note: MobAccessorMixin removed; plays the mob's own ambient sound at its position.
+                mob.playAmbientSound();
+                e.setCanceled(true);
+            }else if(mobJarTile.getEntity() instanceof LightningBolt bolt){
+                e.getLevel().playSound(null, e.getPos(), SoundEvents.LIGHTNING_BOLT_THUNDER, SoundSource.BLOCKS, 10000.0F, 0.8F + random.nextFloat() * 0.2F);
+                e.getLevel().playSound(null, e.getPos(),  SoundEvents.LIGHTNING_BOLT_IMPACT, SoundSource.BLOCKS, 2.0F,random.nextFloat() * 0.2F);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onRide(EntityMountEvent mountEvent){
+        if (mountEvent.isDismounting()) return;
+        if (mountEvent.getLevel().isClientSide()) return;
+        if (mountEvent.getEntityMounting() instanceof Player) {
+            Entity beingMounted = mountEvent.getEntityBeingMounted();
+            if (mountEvent.getLevel().isLoaded(beingMounted.getOnPos()) && mountEvent.getLevel().getBlockEntity(beingMounted.getOnPos()) instanceof MobJarTile) {
+                mountEvent.setCanceled(true);
+            }
+        }
+    }
+}

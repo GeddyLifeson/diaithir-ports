@@ -1,0 +1,42 @@
+package net.diaithir.druidry.ars.api.registry;
+
+import net.diaithir.druidry.ars.api.spell.AbstractCaster;
+import net.diaithir.druidry.ars.api.spell.ItemCasterProvider;
+import net.diaithir.druidry.ars.setup.registry.DataComponentRegistry;
+import net.diaithir.druidry.ars.setup.registry.ItemsRegistry;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
+
+import javax.annotation.Nullable;
+import java.util.concurrent.ConcurrentHashMap;
+
+@SuppressWarnings("deprecation")
+public class SpellCasterRegistry {
+
+    private static final ConcurrentHashMap<Identifier, ItemCasterProvider> MAP = new ConcurrentHashMap<>();
+
+    static {
+        register(ItemsRegistry.NOVICE_SPELLBOOK, (stack) -> stack.get(DataComponentRegistry.SPELL_CASTER));
+        register(ItemsRegistry.APPRENTICE_SPELLBOOK, (stack) -> stack.get(DataComponentRegistry.SPELL_CASTER));
+        register(ItemsRegistry.ARCHMAGE_SPELLBOOK, (stack) -> stack.get(DataComponentRegistry.SPELL_CASTER));
+        register(ItemsRegistry.CREATIVE_SPELLBOOK, (stack) -> stack.get(DataComponentRegistry.SPELL_CASTER));
+        register(ItemsRegistry.SPELL_PARCHMENT, (stack) -> stack.get(DataComponentRegistry.SPELL_CASTER));
+    }
+
+    public static @Nullable AbstractCaster<?> from(ItemStack stack) {
+        return MAP.getOrDefault(stack.getItem().builtInRegistryHolder().key().identifier(), (s) -> s.get(DataComponentRegistry.SPELL_CASTER)).getSpellCaster(stack);
+    }
+
+    public static boolean hasCaster(ItemStack stack) {
+        return MAP.containsKey(stack.getItem().builtInRegistryHolder().key().identifier());
+    }
+
+    public static void register(ItemLike itemLike, ItemCasterProvider provider) {
+        MAP.put(itemLike.asItem().builtInRegistryHolder().key().identifier(), provider);
+    }
+
+    public static void register(Identifier location, ItemCasterProvider provider) {
+        MAP.put(location, provider);
+    }
+}

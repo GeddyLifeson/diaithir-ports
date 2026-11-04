@@ -1,0 +1,37 @@
+package net.diaithir.druidry.ars.api.registry;
+
+import net.diaithir.druidry.ars.api.entity.ChangeableBehavior;
+import net.diaithir.druidry.ars.common.entity.Starbuncle;
+import net.diaithir.druidry.ars.common.entity.goal.carbuncle.StarbyPotionBehavior;
+import net.diaithir.druidry.ars.common.entity.goal.carbuncle.StarbyTransportBehavior;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.Entity;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class BehaviorRegistry {
+
+    private static final Map<Identifier, CreateFromTag> REGISTRY = new HashMap<>();
+
+    public static void register(Identifier name, CreateFromTag creator){
+        REGISTRY.put(name, creator);
+    }
+
+    public static ChangeableBehavior create(Identifier id, Entity entity, CompoundTag tag){
+        CreateFromTag create = REGISTRY.get(id);
+        return create == null ? null : create.create(entity, tag);
+    }
+
+    static{
+        register(StarbyTransportBehavior.TRANSPORT_ID, (entity, tag) -> new StarbyTransportBehavior((Starbuncle) entity, tag));
+        register(StarbyPotionBehavior.POTION_ID, (entity, tag) -> new StarbyPotionBehavior((Starbuncle) entity, tag));
+    }
+
+    public interface CreateFromTag{
+        ChangeableBehavior create(Entity entity, CompoundTag tag);
+    }
+
+    private BehaviorRegistry(){}
+}

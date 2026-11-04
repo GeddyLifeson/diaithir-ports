@@ -1,0 +1,17 @@
+package net.diaithir.druidry.ars.common.util;
+
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+
+public class HolderHelper {
+
+    public static <T> Holder<T> unwrap(Level level, ResourceKey<T> key) {
+        return level.registryAccess().lookupOrThrow(key.registryKey()).getOrThrow(key);
+    }
+
+    public static <T> Holder<T> unwrap(BlockEntity entity, ResourceKey<T> key) {
+        return entity.getLevel().registryAccess().lookupOrThrow(key.registryKey()).getOrThrow(key);
+    }
+}

@@ -1,0 +1,72 @@
+package net.diaithir.druidry.ars.common.entity.goal.chimera;
+
+import net.diaithir.druidry.ars.api.event.ChimeraSummonEvent;
+import net.diaithir.druidry.ars.api.event.EventQueue;
+import net.diaithir.druidry.ars.client.particle.ParticleUtil;
+import net.diaithir.druidry.ars.common.entity.WildenChimera;
+import net.diaithir.druidry.ars.common.network.Networking;
+import net.diaithir.druidry.ars.common.network.PacketTimedEvent;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.ai.goal.Goal;
+
+import java.util.EnumSet;
+
+public class ChimeraSummonGoal extends Goal {
+    private static final SoundEvent WOLF_HOWL = SoundEvent.createVariableRangeEvent(Identifier.withDefaultNamespace("entity.wolf.howl"));
+
+    private WildenChimera mob;
+    public int timeSummoning;
+    public boolean done;
+    public boolean howling;
+
+    public ChimeraSummonGoal(WildenChimera boss) {
+        this.mob = boss;
+        this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+    }
+
+    @Override
+    public void start() {
+        super.start();
+        timeSummoning = 0;
+        done = false;
+        howling = false;
+    }
+
+    @Override
+    public boolean isInterruptable() {
+        return false;
+    }
+
+    @Override
+    public boolean canContinueToUse() {
+        return !done && !mob.getPhaseSwapping();
+    }
+
+    @Override
+    public boolean canUse() {
+        return mob.canSummon() && !mob.isSwimming();
+    }
+
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (!howling) {
+            howling = true;
+            this.mob.setHowling(true);
+            ChimeraSummonEvent summonEvent = new ChimeraSummonEvent(40 + mob.getPhase() * 20, mob.getPhase(), mob.level(), mob.blockPosition(), this.mob.getId());
+            EventQueue.getServerInstance().addEvent(summonEvent);
+            Networking.sendToNearbyClient(mob.level(), mob, new PacketTimedEvent(summonEvent));
+            mob.level().playSound(null, mob.blockPosition(), WOLF_HOWL, SoundSource.HOSTILE, 1.0f, 0.2f);
+        }
+        timeSummoning++;
+        if (timeSummoning >= 80) {
+            done = true;
+            mob.summonCooldown = (int) (1000 + ParticleUtil.inRange(-100, 100) + mob.getCooldownModifier());
+            mob.setHowling(false);
+        }
+    }
+}
