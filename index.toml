@@ -67590,7 +67590,7 @@ hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "6d4a6c41afb1d5423a6139a590dec9fc4f2d6bb737349b385a0eae6b749c0123"
+hash = "177250d53cf4ece73b901e151c9e54d6a9a2f4d2eb210ed866da32e560f9b050"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -67640,7 +67640,7 @@ hash = "df010dae61b362a2c4a68345c146582d1ceb0b04b0b5c9989be6b2618aa2e244"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "a42519903cd2000c4e62de3b65bf542bf955ec41d7337bc82872d6c9dfe268a3"
+hash = "7f9a054175f08dc1da442b8ef98a94e31ac2b1cb849f6fac8b55772b7e32451d"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
