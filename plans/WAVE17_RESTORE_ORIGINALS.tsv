@@ -1,0 +1,112 @@
+stem	prism_jar	licence	audit_route	rewrite_module
+abusimbel	abusimbel-1.0.0.jar	arr	clean-room	diaithir-ruins-landmarks
+adorabuild-structures	adorabuild-structures-2.11.0-neoforge-26.1.1.jar	arr	clean-room	diaithir-adventure-structures
+ai-improvements	AI-Improvements-26.1.1-0.5.4.jar	unknown	clean-room	diaithir-server-logic-tweaks
+ancient-jungle-ring	ancient-jungle-ring-1.0.0.jar	arr	clean-room	diaithir-ruins-landmarks
+aquaculture	Aquaculture-26.1.1-2.9.2.jar	arr	clean-room	diaithir-creature-utilities
+archers-neoforge	archers-neoforge-3.1.3.002+26.1.2.jar	arr	clean-room	diaithir-combat-arms
+auroral	auroral-26.1.2-1.5.9.jar	arr	clean-room	diaithir-arcane-relics
+aztec-ruins	aztec-ruins-1.0.0.jar	arr	clean-room	diaithir-ruins-landmarks
+balm-neoforge	balm-neoforge-26.1.2-26.1.2.15.jar	arr	keep	(keep separate)
+better-compatability-checker-neoforge	better-compatability-checker-neoforge-26.1.2.1.jar	arr	clean-room	diaithir-network-compat
+betteradvancements-neoforge	better-advanced-tooltips-2601.1.0-build.11.jar	arr	clean-room	diaithir-hud-overlays
+bettercombat-neoforge	bettercombat-neoforge-3.2.2+26.1.2.jar	arr	clean-room	diaithir-combat-arms
+big_lost_city	big_lost_city-1.0.1 Neoforge 26.1.2.jar	arr	clean-room	diaithir-ruins-landmarks
+camol	camol-26.1.2-0.4.1.jar	arr	clean-room	diaithir-decor-furnishings
+cc-tweaked	cc-tweaked-26.1.2-forge-1.120.0.jar	arr	keep	(keep separate)
+classicpipes-neoforge	classicpipes-neoforge-26.1.2-1.1.7.jar	arr	clean-room	diaithir-pipes
+cookingforblockheads-neoforge	cookingforblockheads-neoforge-26.1.2-26.1.2.6.jar	arr	clean-room	diaithir-kitchen-farmtech
+crafting_on_a_stick-neoforge	crafting_on_a_stick-neoforge-26.1-1.1.jar	unknown	clean-room	diaithir-tools-gadgets
+craftingtweaks-neoforge	craftingtweaks-neoforge-26.1.2-26.1.2.3.jar	arr	clean-room	diaithir-world-interaction
+crashassistant-neoforge	CrashAssistant-neoforge-26.1-1.11.11.jar	arr	clean-room	diaithir-crash-tools
+cupboard	cupboard-26.1-4.1.jar	arr	keep	(keep separate)
+delfos	delfos-1.0.0.jar	arr	clean-room	diaithir-ruins-landmarks
+desert_tomb	desert_tomb-2.0.0-neoforge-26.1.2.jar	unknown	clean-room	diaithir-ruins-landmarks
+discoveria	discoveria-4.0.2d.jar	arr	clean-room	diaithir-adventure-structures
+dungeons-and-taverns	dungeons-and-taverns-5.2.0.jar	arr	clean-room	diaithir-dungeons-underground
+durabilitytooltip	durabilitytooltip-1.2.0-neoforge-mc26.1.jar	arr	clean-room	diaithir-tooltips
+easy-piglins-neoforge	easy-piglins-neoforge-1.1.7+26.1.2.jar	arr	clean-room	diaithir-villagers-npcs
+easy-villagers-neoforge	easy-villagers-neoforge-1.1.47+26.1.2.jar	arr	clean-room	diaithir-villagers-npcs
+entangled	entangled-1.3.21-neoforge-mc26.1.jar	arr	clean-room	diaithir-linked-storage
+entityculling-neoforge	entityculling-neoforge-1.11.3-mc26.1.2.jar	arr	clean-room	diaithir-client-render-culling
+epic-structures-villages	epic-structures-villages-2.0.0.jar	arr	clean-room	diaithir-villages-settlements
+explorations-neoforge	explorations-neoforge-26.1.2-1.6.5.jar	arr	clean-room	diaithir-adventure-structures
+explorerscompass	ExplorersCompass-26.1-3.3.0-neoforge.jar	arr	clean-room	diaithir-structure-navigation
+farmingforblockheads-neoforge	farmingforblockheads-neoforge-26.1.2-26.1.2.5.jar	arr	clean-room	diaithir-kitchen-farmtech
+firstperson-neoforge	firstperson-neoforge-2.7.3-mc26.1.2.jar	arr	clean-room	diaithir-client-view-input
+flickerfix	flickerfix-26.1-7.0.0.jar	unknown	clean-room	diaithir-world-visuals
+forest_ruins	forest_ruins-1.0.0 Neoforge 26.1.2.jar	arr	clean-room	diaithir-ruins-landmarks
+fragmentum-neoforge	fragmentum-neoforge-26.1-4.1.0.jar	unknown	keep	(keep separate)
+ftb-essentials-neoforge	ftb-essentials-neoforge-26.1.2.5.jar	arr	clean-room	diaithir-admin-core
+ftb-filter-system-neoforge	ftb-filter-system-neoforge-26.1.2.2.jar	arr	clean-room	diaithir-filter-system
+ftb-library-neoforge	ftb-library-neoforge-26.1.2.9.jar	arr	keep	(keep separate)
+ftb-quests-neoforge	ftb-quests-neoforge-26.1.2.9.jar	arr	clean-room	diaithir-quests-skills
+ftb-ranks-neoforge	ftb-ranks-neoforge-26.1.2.4.jar	arr	clean-room	diaithir-admin-core
+ftb-teams-neoforge	ftb-teams-neoforge-26.1.2.4.jar	arr	keep	(keep separate)
+ftb-xmod-compat-neoforge	ftb-xmod-compat-neoforge-26.1.2.4.jar	arr	keep	(keep separate)
+giant_natural_additions	giant_natural_additions-1.0.0 neoforge 26.1.2.jar	arr	clean-room	diaithir-ruins-landmarks
+glitchcore-neoforge	GlitchCore-neoforge-26.1.2-26.1.2.0.2.jar	arr	keep	(keep separate)
+grim-kingdoms-lost-structures-ruins	grim-kingdoms-lost-structures-ruins-2.0.3.jar	arr	clean-room	diaithir-adventure-structures
+guardvillagers	guardvillagers-3.0.4-26.1.0.jar	arr	clean-room	diaithir-villagers-npcs
+hopobetterunderwaterruins-[26.1]	HopoBetterUnderwaterRuins-[26.1]-1.2.7.jar	unknown	clean-room	diaithir-yungs-structures
+illager_arena	illager_arena-1.0.0 Neoforge 26.1.2.jar	arr	clean-room	diaithir-ruins-landmarks
+immersive_vehicles	Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar	arr	clean-room	diaithir-vehicles
+inventoryessentials-neoforge	inventoryessentials-neoforge-26.1.2-26.1.2.7.jar	arr	clean-room	diaithir-inventory-ui
+irons_lib	irons_lib-26.1.2-2.2.0.jar	arr	keep	(keep separate)
+itemcollectors	itemcollectors-1.1.12a-neoforge-mc26.1.jar	arr	clean-room	diaithir-logistics-utilities
+jewelry-neoforge	jewelry-neoforge-2.5.1+26.1.2.jar	arr	clean-room	diaithir-accessories
+jousting	jousting-26.1.2-v1.0.12.jar	arr	data	diaithir-combat-arms
+katters-structures	katters-structures-2.4.jar	arr	clean-room	diaithir-adventure-structures
+lambdynamiclights	lambdynamiclights-4.11.2+26.1.2.jar	arr	clean-room	diaithir-world-visuals
+logisticsnetworks	logisticsnetworks-26.1.2-1.12.0.jar	arr	clean-room	diaithir-routing-networks
+longerchathistory-neoforge	LongerChatHistory-neoforge-1.8.jar	arr	clean-room	diaithir-chat-client
+man_of_many_planes	man_of_many_planes-0.2.3+26.1.2-neoforge.jar	unknown	clean-room	diaithir-aircraft
+mcw-bridges	mcw-bridges-3.1.2-mc26.1neoforge.jar	arr	clean-room	diaithir-macaw-blocks
+mcw-furniture	mcw-furniture-3.4.2-mc26.1neoforge.jar	arr	clean-room	diaithir-macaw-blocks
+mcw-lights	mcw-lights-1.1.5-mc26.1neoforge.jar	arr	clean-room	diaithir-macaw-blocks
+mcw-roofs	mcw-roofs-2.3.2-mc26.1neoforge.jar	arr	clean-room	diaithir-macaw-blocks
+mcw-stairs	mcw-stairs-1.0.2-mc26.1neoforge.jar	arr	clean-room	diaithir-macaw-blocks
+mcw-windows	mcw-windows-2.4.2-mc26.1neoforge.jar	arr	clean-room	diaithir-macaw-blocks
+medieval_buildings-neoforge	medieval_buildings-neoforge-26.1.2-1.2.0.jar	unknown	clean-room	diaithir-villages-settlements
+mycenae	mycenae-1.0.0.jar	arr	clean-room	diaithir-ruins-landmarks
+netherportalfix-neoforge	netherportalfix-neoforge-26.1-26.1.0.1.jar	arr	clean-room	diaithir-attribute-fixes
+newgrange	newgrange-1.0.0.jar	arr	clean-room	diaithir-ruins-landmarks
+notenoughanimations-neoforge	notenoughanimations-neoforge-1.12.5-mc26.1.2.jar	arr	clean-room	diaithir-entity-animation
+paladins-neoforge	paladins-neoforge-3.1.3.002+26.1.2.jar	arr	data	diaithir-arcane-classes
+petra	petra-1.0.0.jar	arr	clean-room	diaithir-ruins-landmarks
+pipez-neoforge	pipez-neoforge-1.2.31+26.1.2.jar	arr	clean-room	diaithir-pipes
+pointblank-neoforge	pointblank-neoforge-26.1.2-2.2.0.jar	arr	keep	(keep separate)
+productivefarming	productivefarming-26.1.2-0.13.0.jar	arr	clean-room	diaithir-crops-and-trees
+productivemetalworks	productivemetalworks-26.1.2-1.17.1.jar	arr	clean-room	diaithir-metal-processing
+productivetrees	productivetrees-26.1.2-1.3.1.jar	arr	clean-room	diaithir-crops-and-trees
+puffish_skills	puffish_skills-0.19.2-26.1-neoforge.jar	arr	clean-room	diaithir-quests-skills
+pwic-v0.3td	PWIC-V0.3TD_21_fix.jar	arr	keep	(keep separate)
+pylons	pylons-26.1-6.0.1.jar	arr	clean-room	diaithir-arcane-relics
+recurrentcomplexvolts	RecurrentComplexVolts-26.1.2-0.7.3.0.jar	unknown	keep	(keep separate)
+reliquary	reliquary-26.1.2-2.0.92.1563.jar	arr	clean-room	diaithir-arcane-relics
+rogues-neoforge	rogues-neoforge-3.1.3.002+26.1.2.jar	arr	data	diaithir-combat-arms
+ruins-and-towers	ruins-and-towers-0.3.jar	arr	clean-room	diaithir-ruins-landmarks
+sgearmetalworks	sgearmetalworks-26.1.2-1.6.0.jar	arr	data	diaithir-tools-gadgets
+shogi-neoforge	shogi-neoforge-26.1.2-26.1.2.12.jar	unknown	keep	(keep separate)
+simplemagnets	simplemagnets-1.1.12-neoforge-mc26.1.jar	arr	clean-room	diaithir-accessories
+skill_tree-neoforge	skill_tree-neoforge-1.6.2+26.1.2.jar	arr	clean-room	diaithir-combat-progression
+skinlayers3d-neoforge	skinlayers3d-neoforge-1.11.4-mc26.1.2.jar	arr	clean-room	diaithir-entity-animation
+sophisticatedbackpacks	sophisticatedbackpacks-26.1.2-3.26.11.2198.jar	arr	clean-room	diaithir-sophisticated-portable
+sophisticatedcore	sophisticatedcore-26.1.2-1.5.12.2390.jar	arr	keep	(keep separate)
+sophisticatedstorage	sophisticatedstorage-26.1.2-1.5.120.2173.jar	arr	clean-room	diaithir-sophisticated-portable
+sophisticatedstorageinmotion	sophisticatedstorageinmotion-26.1.2-0.10.37.378.jar	arr	clean-room	diaithir-ground-water-transport
+structory	Structory_26.2_v1.3.7.jar	arr	clean-room	diaithir-adventure-structures
+structory_towers	Structory_Towers_26.2_v1.0.17.jar	arr	clean-room	diaithir-adventure-structures
+structural_beyond	structural_beyond-1.1.0-universal.jar	arr	clean-room	diaithir-adventure-structures
+supermartijn642configlib	supermartijn642configlib-1.1.8-neoforge-mc26.1.jar	arr	keep	(keep separate)
+supermartijn642corelib	supermartijn642corelib-1.1.25-neoforge-mc26.1.jar	arr	keep	(keep separate)
+t_and_t-fabric-neoforge	t_and_t-fabric-neoforge-1.13.11.jar	arr	clean-room	diaithir-villages-settlements
+trashslot-neoforge	trashslot-neoforge-26.1.2-26.1.2.4.jar	arr	clean-room	diaithir-inventory-ui
+undeadnights	UndeadNights-2.2.5-NeoForge-mc26.1.jar	arr	clean-room	diaithir-hostile-encounters
+underwater_village	underwater_village-1.0.0 Neoforge 26.1.2.jar	arr	clean-room	diaithir-ruins-landmarks
+utilitarian	utilitarian-26.1.2-0.22.0.jar	arr	clean-room	diaithir-world-interaction
+valhelsia_core-neoforge	valhelsia_core-neoforge-26.1.2-1.1.6.jar	arr	keep	(keep separate)
+waystones-neoforge	waystones-neoforge-26.1.2-26.1.2.16.jar	arr	keep	(keep separate)
+wizards-neoforge	wizards-neoforge-3.1.3.002+26.1.2.jar	arr	data	diaithir-arcane-classes
+yeetusexperimentus-neoforge	yeetusexperimentus-neoforge-99.0.0.jar	arr	clean-room	diaithir-attribute-fixes
+yggdrasil	Yggdrasil-7.0.0.jar	arr	clean-room	diaithir-adventure-structures

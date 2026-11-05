@@ -1,0 +1,15 @@
+stem	where_in_wave17_or_NOT_IN_PACK	licence	audit_route	audit_target_module
+biomesoplenty-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes
+diaithir-earlywindow-neoforge	FOLDED -> diaithir-earlywindow-neoforge-26.1.2-1.0	unknown	clean-room	diaithir-client
+echoes_of_the_end__structures neoforge fabric	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-end
+forbidden_arcanus	NAMESPACE PRESENT (folded/rewritten)	arr	clean-room	diaithir-arcane-relics
+ftb-chunks-neoforge	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	keep	(keep separate)
+ftb-ultimine-neoforge	NAMESPACE PRESENT (folded/rewritten)	arr	clean-room	diaithir-world-interaction
+incendium	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-nether
+natures_spirit-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes
+naturescompass	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes
+nether-descent-neoforge	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-nether
+netherex-neoforge	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-nether
+nullscape	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-end
+runes-neoforge	NAMESPACE PRESENT (folded/rewritten)	arr	data	diaithir-arcane-classes
+yungscavebiomes	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes

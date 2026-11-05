@@ -1,0 +1,463 @@
+stem	where_in_wave17_or_NOT_IN_PACK	licence	audit_route	audit_target_module
+ctov	NOT IN PACK			
+abusimbel	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+actuallyadditions	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-tech-automation
+adorabuild-structures	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+advancedae	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	open	port	diaithir-ae2-extensions
+ae2importexportcard	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	open	port	diaithir-ae2-extensions
+ae2wtlib	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-ae2-extensions
+aeinfinitybooster-neoforge	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	open	port	diaithir-ae2-extensions
+aerialhell	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	keep	(keep separate)
+aether_ii	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	unknown	keep	(keep separate)
+agritechevolved	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-kitchen-farmtech
+ai-improvements	NOT IN PACK	unknown	clean-room	diaithir-server-logic-tweaks
+alexscaves	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	keep	(keep separate)
+alternate_current-mc26.1	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-server-logic-tweaks
+ambientsounds_neoforge_v6.3.6_mc26.1.2	NOT IN PACK	open	merge	diaithir-audio
+ancient-jungle-ring	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+animal_feeding_trough	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-creature-utilities
+antique-atlas	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-map-utility
+apotheosis	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	unknown	keep	(keep separate)
+apothicattributes	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+apothicenchanting	FOLDED -> diaithir-ritual-enchant-neoforge-26.1.2-	open	port	diaithir-ritual-enchant
+apothicspawners	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-creature-utilities
+appleskin-neoforge-mc26.1	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+appliedflux	NOT IN PACK	open	merge	diaithir-power-storage
+appliedsticks	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	open	port	diaithir-ae2-extensions
+aquaculture	NOT IN PACK	arr	clean-room	diaithir-creature-utilities
+archers-neoforge	NOT IN PACK	arr	clean-room	diaithir-combat-arms
+architectury-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-multiloader-compat
+armor_model_api-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+armorstatues-v26.1.0-mc26.1.x-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	merge	diaithir-decor-furnishings
+artifacts-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+attributefix-neoforge-mc26.1.2	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-attribute-fixes
+auroral	NOT IN PACK	arr	clean-room	diaithir-arcane-relics
+aviator_dreams_reloaded-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	data	diaithir-aircraft
+aztec-ruins	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+badoptimizations	NOT IN PACK	open	port	diaithir-server-logic-tweaks
+balm-neoforge	NOT IN PACK	arr	keep	(keep separate)
+baubley-heart-canisters	NOT IN PACK	open	port	diaithir-accessories
+bblcore	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+bclib	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	unknown	keep	(keep separate)
+better-advanced-tooltips	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	port	diaithir-tooltips
+better-compatability-checker-neoforge	NOT IN PACK	arr	clean-room	diaithir-network-compat
+betteradvancements-neoforge	NOT IN PACK	arr	clean-room	diaithir-hud-overlays
+betterarcheology-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-dungeons-underground
+bettercaravans-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-hostile-encounters
+bettercombat-neoforge	NOT IN PACK	arr	clean-room	diaithir-combat-arms
+betterf3	NOT IN PACK	open	keep	(keep separate)
+betternether	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-nether
+bibliocraft	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	merge	diaithir-decor-furnishings
+big_lost_city	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+biomesoplenty-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes
+blooming-biosphere-v1.1.14	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-			
+buildinggadgets2	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-building-tools
+bundle-api-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+buriedwrecks-neoforge	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	port	diaithir-yungs-structures
+c2me-neoforge-mc26.1.2	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+call-your-horse-v2.1.3	NOT IN PACK			
+camol	NOT IN PACK	arr	clean-room	diaithir-decor-furnishings
+caravans-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	arr	merge	diaithir-hostile-encounters
+carryon-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-world-interaction
+castleshift	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	port	diaithir-villages-settlements
+cc-tweaked	NOT IN PACK	arr	keep	(keep separate)
+charginggadgets	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-power-storage
+chat_heads	NOT IN PACK	open	merge	diaithir-chat-client
+chisel	FOLDED -> diaithir-content-ext-suite-neoforge-26.1	open	keep	(keep separate)
+chronodawn	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+classicpipes-neoforge	NOT IN PACK	arr	clean-room	diaithir-pipes
+clientsort-neoforge	NOT IN PACK	open	merge	diaithir-inventory-ui
+cloth-config	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+clumps-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-server-logic-tweaks
+colossalchests	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-chests-drawers
+combat_roll-neoforge	NOT IN PACK	open	port	diaithir-combat-arms
+comforts-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+commoncapabilities	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+configured-neoforge	NOT IN PACK	open	keep	(keep separate)
+constructionsticks	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-building-tools
+controlling-neoforge	NOT IN PACK	open	port	diaithir-client-view-input
+cookingforblockheads-neoforge	NOT IN PACK	arr	clean-room	diaithir-kitchen-farmtech
+copperhopper-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	data	diaithir-logistics-utilities
+crafting_on_a_stick-neoforge	NOT IN PACK	unknown	clean-room	diaithir-tools-gadgets
+craftingtweaks-neoforge	NOT IN PACK	arr	clean-room	diaithir-world-interaction
+crashassistant-neoforge	NOT IN PACK	arr	clean-room	diaithir-crash-tools
+crashutilities	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	port	diaithir-crash-tools
+create-neoforge	FOLDED -> diaithir-power-suite-neoforge-26.1.2-1.0	open	keep	(keep separate)
+creativecore_neoforge_v2.14.16_mc26.1.2	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+cristellib-neoforge	NAMESPACE PRESENT (folded/rewritten)	arr	keep	(keep separate)
+critical_strike-neoforge	NOT IN PACK	open	port	diaithir-combat-progression
+croptopia-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-crops-and-trees
+crystalix	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	merge	diaithir-decor-furnishings
+ctm	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+cucumber	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+cupboard	NOT IN PACK	arr	keep	(keep separate)
+curios-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+cutthrough-v26.1.0-mc26.1.x-neoforge	NOT IN PACK	open	port	diaithir-attribute-fixes
+cwb	NOT IN PACK	open	port	diaithir-client-view-input
+cyclopscore	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+deeper_dark	NAMESPACE PRESENT (folded/rewritten)	open	keep	(keep separate)
+deepnull-reforged	NOT IN PACK	open	merge	diaithir-sophisticated-portable
+deimos	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+delfos	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+desert_tomb	NOT IN PACK	unknown	clean-room	diaithir-ruins-landmarks
+diaithir-activity-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-core-systems
+diaithir-bestiary-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	merge	diaithir-creatures
+diaithir-branding-neoforge	NOT IN PACK	open	merge	diaithir-client
+diaithir-brewing-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-kitchen-brewing
+diaithir-bridges-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-core-systems
+diaithir-chunkloaders-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-core-systems
+diaithir-climate-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-core-systems
+diaithir-compat-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-content-data
+diaithir-diagonal-blocks-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-			
+diaithir-earlywindow-neoforge	FOLDED -> diaithir-earlywindow-neoforge-26.1.2-1.0	unknown	clean-room	diaithir-client
+diaithir-elevators-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-content-data
+diaithir-footsteps-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-core-systems
+diaithir-forcefield-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-core-systems
+diaithir-forgeworks-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-core-systems
+diaithir-furnishings-signposts-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	merge	diaithir-decor-furnishings
+diaithir-nemesis-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-core-systems
+diaithir-perf-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-core-systems
+diaithir-potions-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-kitchen-brewing
+diaithir-sharedspace-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-core-systems
+diaithir-ships-neoforge	NOT IN PACK	open	keep	(keep separate)
+diaithir-storagenet-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-core-systems
+diaithir-structures-data-neoforge	NOT IN PACK			
+diaithir-tooltips-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-client
+diaithir-voice-interaction-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-core-systems
+diaithir-voice-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-core-systems
+diaithir-wiretech-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-core-systems
+diaithir-woodvariants-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-content-data
+dimdoors-neoforge	FOLDED -> diaithir-world-suite-neoforge-26.1.2-1.0	open	port	diaithir-dimensions-world
+dimstorage	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-linked-storage
+discoveria	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+distanthorizons	FOLDED -> DistantHorizons-3.3.3-26.1.2-fabric-neof	open	keep	(keep separate)
+domum_ornamentum	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	merge	diaithir-decor-furnishings
+drones-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-personal-mobility
+dungeoncrawl-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-dungeons-underground
+dungeons-and-taverns	NOT IN PACK	arr	clean-room	diaithir-dungeons-underground
+durabilitytooltip	NOT IN PACK	arr	clean-room	diaithir-tooltips
+dynamic-fps	NOT IN PACK	open	keep	(keep separate)
+easy-piglins-neoforge	NOT IN PACK	arr	clean-room	diaithir-villagers-npcs
+easy-villagers-neoforge	NOT IN PACK	arr	clean-room	diaithir-villagers-npcs
+easy_npc-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+easy_npc_config_ui-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+echochest-v26.1.0-mc26.1.x-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-chests-drawers
+echoes_of_the_end__structures neoforge fabric	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-end
+ecologics-neofab	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	keep	(keep separate)
+edivadlib	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+efficient_hashing-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-server-logic-tweaks
+effortlessbuilding-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-building-tools
+elevatorid-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-travel-structures
+emotecraft-for-mc26.1.2	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-entity-animation
+enchantmentdescriptions-neoforge-mc26.1.2	NOT IN PACK	open	port	diaithir-tooltips
+enderio	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+enderio_endergy	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	data	diaithir-power-storage
+endrem-neoforge	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	port	diaithir-end
+energizedpower	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+entangled	NOT IN PACK	arr	clean-room	diaithir-linked-storage
+entity_model_features	NOT IN PACK	open	merge	diaithir-entity-animation
+entity_texture_features	NOT IN PACK	open	merge	diaithir-entity-animation
+entityculling-neoforge	NOT IN PACK	arr	clean-room	diaithir-client-render-culling
+epherolib-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+epic-structures-villages	NOT IN PACK	arr	clean-room	diaithir-villages-settlements
+epitaphs	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-death-recovery
+eternalnether-v26.1.4-mc26.1.x-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-nether
+eternalstarlight	FOLDED -> diaithir-adventure-suite-neoforge-26.1.2	open	port	diaithir-dimensions-world
+evilcraft	FOLDED -> diaithir-ritual-enchant-neoforge-26.1.2-	open	port	diaithir-ritual-enchant
+exoconfig	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+explorations-neoforge	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+explorerscompass	NOT IN PACK	arr	clean-room	diaithir-structure-navigation
+explorify v1.6.5.mod	NOT IN PACK			
+extendedae	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	open	port	diaithir-ae2-extensions
+extendedcrafting	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-automation-crafting
+extremesoundmuffler	NOT IN PACK	open	merge	diaithir-audio
+factionapi	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+fallingleaves	NOT IN PACK	open	merge	diaithir-world-visuals
+farmersdelight	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-kitchen-brewing
+farmingforblockheads-neoforge	NOT IN PACK	arr	clean-room	diaithir-kitchen-farmtech
+fastfurnace	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-server-logic-tweaks
+fastsuite	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-server-logic-tweaks
+fastworkbench	NOT IN PACK	open	port	diaithir-server-logic-tweaks
+ferritecore	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+firstperson-neoforge	NOT IN PACK	arr	clean-room	diaithir-client-view-input
+flickerfix	NOT IN PACK	unknown	clean-room	diaithir-world-visuals
+fluxnetworks	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-routing-networks
+foodeffecttooltips	NOT IN PACK	open	port	diaithir-tooltips
+forbidden_arcanus	NAMESPACE PRESENT (folded/rewritten)	arr	clean-room	diaithir-arcane-relics
+forest_ruins	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+forgeconfigapiport-v26.1.5-mc26.1.x-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+fragmentum-neoforge	NOT IN PACK	unknown	keep	(keep separate)
+framedblocks	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+framework-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+ftb-chunks-neoforge	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	keep	(keep separate)
+ftb-essentials-neoforge	NOT IN PACK	arr	clean-room	diaithir-admin-core
+ftb-filter-system-neoforge	NOT IN PACK	arr	clean-room	diaithir-filter-system
+ftb-library-neoforge	NOT IN PACK	arr	keep	(keep separate)
+ftb-quests-neoforge	NOT IN PACK	arr	clean-room	diaithir-quests-skills
+ftb-ranks-neoforge	NOT IN PACK	arr	clean-room	diaithir-admin-core
+ftb-teams-neoforge	NOT IN PACK	arr	keep	(keep separate)
+ftb-ultimine-neoforge	NAMESPACE PRESENT (folded/rewritten)	arr	clean-room	diaithir-world-interaction
+ftb-xmod-compat-neoforge	NOT IN PACK	arr	keep	(keep separate)
+functionalstorage	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-chests-drawers
+fusion	FOLDED -> fusion-1.3.16-neoforge-mc26.1.pw.toml	arr	keep	(keep separate)
+gatewaystoeternity	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-hostile-encounters
+geckolib-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+geore	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	data	diaithir-resource-gathering
+getittogetherdrops-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-world-interaction
+giant_natural_additions	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+glitchcore-neoforge	NOT IN PACK	arr	keep	(keep separate)
+glodium	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+golemdungeons	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-hostile-encounters
+graveyard-neoforge	FOLDED -> diaithir-world-suite-neoforge-26.1.2-1.0	open	port	diaithir-dimensions-world
+grim-kingdoms-lost-structures-ruins	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+guardvillagers	NOT IN PACK	arr	clean-room	diaithir-villagers-npcs
+guideme	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+hangglider-v26.1.2-mc26.1.x+neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-personal-mobility
+homeostatic	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+homeostaticseasons	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-overworld-biomes
+hopobetterunderwaterruins-[26.1]	NOT IN PACK	unknown	clean-room	diaithir-yungs-structures
+hoppergadgetry-v26.1.1-mc26.1.x+neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	data	diaithir-logistics-utilities
+horseman-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-ground-water-transport
+horsepowered	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-automation-crafting
+hostileneuralnetworks	NOT IN PACK	open	keep	(keep separate)
+illager_arena	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+illagerinvasion-v26.1.0-mc26.1.x-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-hostile-encounters
+imblocker	NOT IN PACK	open	port	diaithir-client-view-input
+immediatelyfast-neoforge	NOT IN PACK	open	merge	diaithir-client-render-culling
+immersive_aircraft-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	merge	diaithir-aircraft
+immersive_machinery	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-miners
+immersive_melodies-neoforge	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	merge	diaithir-audio
+immersive_pillagers-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	merge	diaithir-hostile-encounters
+immersive_vehicles	NOT IN PACK	arr	clean-room	diaithir-vehicles
+incendium	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-nether
+ingeniumapi	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+integratedcrafting	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-integrated-addons
+integrateddynamics	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+integratedterminals	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-integrated-addons
+integratedtunnels	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-integrated-addons
+inventoryessentials-neoforge	NOT IN PACK	arr	clean-room	diaithir-inventory-ui
+inventoryprofilesnext-neoforge	NOT IN PACK	open	port	diaithir-inventory-tools
+invmove	NOT IN PACK	open	merge	diaithir-world-visuals
+ironfurnaces-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-kitchen-farmtech
+ironjetpacks	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-personal-mobility
+irons_lib	NOT IN PACK	arr	keep	(keep separate)
+itemcollectors	NOT IN PACK	arr	clean-room	diaithir-logistics-utilities
+jamlib-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+jaopca	NOT IN PACK	open	port	diaithir-metal-processing
+jdturrets-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-tools-gadgets
+jewelry-neoforge	NOT IN PACK	arr	clean-room	diaithir-accessories
+jousting	NOT IN PACK	arr	data	diaithir-combat-arms
+just-hammers-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	data	diaithir-world-interaction
+justdirethings	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-automation-crafting
+katters-structures	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+keybindbundles	NOT IN PACK	open	port	diaithir-world-interaction
+knot-neoforge-core	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-multiloader-compat
+kotlinforforge	FOLDED -> kotlinforforge-6.4.0-all.pw.toml	unknown	keep	(keep separate)
+ksyxis	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	merge	diaithir-worldgen-chunk-opts
+l2library	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+lambdynamiclights	NOT IN PACK	arr	clean-room	diaithir-world-visuals
+laserbridges	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-logistics-utilities
+laserio	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-routing-networks
+leavemybarsalone-v26.1.0-mc26.1.x-neoforge	NOT IN PACK	open	port	diaithir-hud-overlays
+lib	NAMESPACE PRESENT (folded/rewritten)	open	keep	(keep separate)
+libipn-neoforge	NOT IN PACK	open	keep	(keep separate)
+linkedchests-v26.1.1-mc26.1.x-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-linked-storage
+lithium-neoforge	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+lithostitched	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+logisticsnetworks	NOT IN PACK	arr	clean-room	diaithir-routing-networks
+longerchathistory-neoforge	NOT IN PACK	arr	clean-room	diaithir-chat-client
+lootr-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+luminax	FOLDED -> diaithir-world-visuals-neoforge-26.1.2-1	open	data	diaithir-world-visuals
+man_of_many_planes	NOT IN PACK	unknown	clean-room	diaithir-aircraft
+mantle	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+maxhealthfix-neoforge-mc26.1.2	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-attribute-fixes
+mca-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-villagers-npcs
+mcjtylib	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-mcjty-core
+mcw-bridges	NOT IN PACK	arr	clean-room	diaithir-macaw-blocks
+mcw-doors	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-macaw-blocks
+mcw-fences	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-macaw-blocks
+mcw-furniture	NOT IN PACK	arr	clean-room	diaithir-macaw-blocks
+mcw-lights	NOT IN PACK	arr	clean-room	diaithir-macaw-blocks
+mcw-paths	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-macaw-blocks
+mcw-roofs	NOT IN PACK	arr	clean-room	diaithir-macaw-blocks
+mcw-stairs	NOT IN PACK	arr	clean-room	diaithir-macaw-blocks
+mcw-trapdoors	NOT IN PACK	open	data	diaithir-macaw-blocks
+mcw-windows	NOT IN PACK	arr	clean-room	diaithir-macaw-blocks
+measurements-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-hud-overlays
+medieval_buildings-neoforge	NOT IN PACK	unknown	clean-room	diaithir-villages-settlements
+megacells	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-tech-automation
+mekanism	FOLDED -> diaithir-power-suite-neoforge-26.1.2-1.0	open	keep	(keep separate)
+mekanismadditions	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-mekanism-addons
+mekanismgenerators	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-mekanism-addons
+mekanismtools	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-mekanism-addons
+merequester-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-ae2-extensions
+millager-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-villagers-npcs
+minecart_trains_fork	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-ground-water-transport
+minevegas-casino-neoforge	NOT IN PACK	open	keep	(keep separate)
+mininggadgets	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-tools-gadgets
+moblassos-v26.1.1-mc26.1.x-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-creature-utilities
+modernfix-neoforge	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+modonomicon	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+modular-routers	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-routing-networks
+modulargolems	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+moogsstructurelib-neoforge	NOT IN PACK	open	keep	(keep separate)
+moredragoneggs	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-hostile-encounters
+morered	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+mousetweaks-neoforge-mc26.1	NOT IN PACK	open	port	diaithir-inventory-tools
+muchmoredungeons-neoforge	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	port	diaithir-worldgen-structures
+musketmod-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-content-data
+mutantmonsters-v26.1.3-mc26.1.x-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-hostile-encounters
+mycenae	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+mysticalagradditions	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-mystical-agriculture
+mysticalagriculture	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-mystical-agriculture
+mysticalautomation	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-automation-crafting
+mysticalcustomization	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-mystical-agriculture
+natures_spirit-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes
+naturescompass	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes
+nether-descent-neoforge	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-nether
+netherchested-v26.1.1-mc26.1.x-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-chests-drawers
+netherex-neoforge	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-nether
+netherportalfix-neoforge	NOT IN PACK	arr	clean-room	diaithir-attribute-fixes
+newgrange	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+nochatreports-neoforge	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	merge	diaithir-chat-client
+notenoughanimations-neoforge	NOT IN PACK	arr	clean-room	diaithir-entity-animation
+nullscape	FOLDED -> diaithir-rewrites-neoforge-26.1.2-1.0.0.	arr	clean-room	diaithir-end
+nutritionalbalance	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-food-diet
+occultism	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+ohthetreesyoullgrow-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+optigui-neoforge	FOLDED -> optigui-neoforge-26.1.2.pw.toml	open	port	diaithir-client-view-input
+oritech	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	unknown	keep	(keep separate)
+packetfixer-neoforge	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	port	diaithir-network-compat
+paladins-neoforge	NOT IN PACK	arr	data	diaithir-arcane-classes
+paradise_lost-neoforge	FOLDED -> diaithir-world-suite-neoforge-26.1.2-1.0	open	port	diaithir-dimensions-world
+patpat	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-world-interaction
+petra	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+pickupnotifier-v26.1.1-mc26.1.x-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-hud-overlays
+ping-wheel	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-hud-overlays
+pipe_connector-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-pipes
+pipez-neoforge	NOT IN PACK	arr	clean-room	diaithir-pipes
+placebo	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+playeranimationlibmerged	NOT IN PACK	open	keep	(keep separate)
+pneumaticcraft-repressurized	FOLDED -> diaithir-power-suite-neoforge-26.1.2-1.0	open	keep	(keep separate)
+pointblank-neoforge	NOT IN PACK	arr	keep	(keep separate)
+potentials-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+powah	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-power-storage
+pricklemc-neoforge-mc26.1.2	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+productivefarming	NOT IN PACK	arr	clean-room	diaithir-crops-and-trees
+productivemetalworks	NOT IN PACK	arr	clean-room	diaithir-metal-processing
+productivetrees	NOT IN PACK	arr	clean-room	diaithir-crops-and-trees
+puffish_skills	NOT IN PACK	arr	clean-room	diaithir-quests-skills
+puzzleslib-v26.1.16-mc26.1.x+neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+pwic-v0.3td	NOT IN PACK	arr	keep	(keep separate)
+pylons	NOT IN PACK	arr	clean-room	diaithir-arcane-relics
+quarry	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-miners
+railoptimization	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-server-logic-tweaks
+ranged_weapon_api-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+recurrentcomplexvolts	NOT IN PACK	unknown	keep	(keep separate)
+reeses-sodium-options-neoforge	NOT IN PACK	open	port	diaithir-client-view-input
+refurbished_furniture-neoforge	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+regions-unexplored	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	unknown	keep	(keep separate)
+relics_artifacts-neoforge	FOLDED -> diaithir-extras-suite-neoforge-26.1.2-1.	unknown	keep	(keep separate)
+reliquary	NOT IN PACK	arr	clean-room	diaithir-arcane-relics
+remorphed-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	merge	diaithir-creatures
+rftoolsbase	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-mcjty-core
+rftoolsbuilder	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-tech-automation
+rftoolspower	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-tech-automation
+ribbits-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-creatures
+rightclickharvest-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	port	diaithir-crops-and-trees
+rogues-neoforge	NOT IN PACK	arr	data	diaithir-combat-arms
+rootsclassic	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	port	diaithir-ritual-enchant
+routers	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-routing-networks
+ruins-and-towers	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+runes-neoforge	NAMESPACE PRESENT (folded/rewritten)	arr	data	diaithir-arcane-classes
+scalablelux-neoforge	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-worldgen-chunk-opts
+searchables-neoforge	NOT IN PACK	open	port	diaithir-inventory-tools
+servercore-neoforge	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+sgearmetalworks	NOT IN PACK	arr	data	diaithir-tools-gadgets
+shogi-neoforge	NOT IN PACK	unknown	keep	(keep separate)
+silent-gear	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+silent-lib	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+silentgems	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	port	diaithir-metal-processing
+simplemagnets	NOT IN PACK	arr	clean-room	diaithir-accessories
+simpleteleportersreforged	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	data	diaithir-travel-structures
+skill_tree-neoforge	NOT IN PACK	arr	clean-room	diaithir-combat-progression
+skinlayers3d-neoforge	NOT IN PACK	arr	clean-room	diaithir-entity-animation
+sky_aesthetics-neoforge	FOLDED -> diaithir-world-visuals-neoforge-26.1.2-1	open	merge	diaithir-world-visuals
+sodium-extra-neoforge	NOT IN PACK	open	keep	(keep separate)
+sodium-neoforge	FOLDED -> sodium-neoforge-0.9.2_mc26.1.2.pw.toml	arr	keep	(keep separate)
+sophisticatedbackpacks	NOT IN PACK	arr	clean-room	diaithir-sophisticated-portable
+sophisticatedcore	NOT IN PACK	arr	keep	(keep separate)
+sophisticatedstorage	NOT IN PACK	arr	clean-room	diaithir-sophisticated-portable
+sophisticatedstorageinmotion	NOT IN PACK	arr	clean-room	diaithir-ground-water-transport
+sound-physics-remastered-neoforge	NOT IN PACK	open	merge	diaithir-audio
+spark	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+spell_engine-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+spice of life onion_neoforge_v1.5.6_mc26.1.2	NOT IN PACK	open	port	diaithir-food-diet
+spoiled-neoforge	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-food-diet
+stellaris	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	unknown	keep	(keep separate)
+stoneworks-v26.1.0-mc26.1.x-neoforge	FOLDED -> diaithir-content-suite-neoforge-26.1.2-1	open	data	diaithir-macaw-blocks
+storagedrawers-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-chests-drawers
+strainers	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-resource-gathering
+structory	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+structory_towers	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+structural_beyond	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+structure_layout_optimizer	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-worldgen-chunk-opts
+structure_pool_api-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+structurememory	NOT IN PACK	open	port	diaithir-structure-navigation
+structurize	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-map-utility
+supermartijn642configlib	NOT IN PACK	arr	keep	(keep separate)
+supermartijn642corelib	NOT IN PACK	arr	keep	(keep separate)
+surveyor	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-map-utility
+t_and_t-fabric-neoforge	NOT IN PACK	arr	clean-room	diaithir-villages-settlements
+tectonic	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-overworld-biomes
+terrablender-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+terralith	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	data	diaithir-overworld-biomes
+the_backwoods	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	keep	(keep separate)
+the_undergarden	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	unknown	keep	(keep separate)
+theurgy	FOLDED -> diaithir-ritual-enchant-neoforge-26.1.2-	open	port	diaithir-ritual-enchant
+tinypipes	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	port	diaithir-pipes
+titanium	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	unknown	keep	(keep separate)
+toastcontrol	NOT IN PACK	open	port	diaithir-hud-overlays
+toms_storage	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	keep	(keep separate)
+toolbelt	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	port	diaithir-accessories
+tradingpost-v26.1.0-mc26.1.x-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-villager-trade
+trashslot-neoforge	NOT IN PACK	arr	clean-room	diaithir-inventory-ui
+travelerstitles	NOT IN PACK	open	merge	diaithir-world-visuals
+tropicraft	FOLDED -> diaithir-content-ext2-suite-neoforge-26.	open	keep	(keep separate)
+twilightforest	FOLDED -> diaithir-content-ext-suite-neoforge-26.1	open	keep	(keep separate)
+uilib-neoforge	NOT IN PACK	open	port	diaithir-multiloader-compat
+undeadnights	NOT IN PACK	arr	clean-room	diaithir-hostile-encounters
+undergroundvillages-neoforge	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	port	diaithir-villages-settlements
+underwater_village	NOT IN PACK	arr	clean-room	diaithir-ruins-landmarks
+unified-api	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+untamedwilds	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-creatures
+utilitarian	NOT IN PACK	arr	clean-room	diaithir-world-interaction
+valhelsia_core-neoforge	NOT IN PACK	arr	keep	(keep separate)
+villager-trading-plus	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-villager-trade
+villager-trading-plus-neoforge	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	merge	diaithir-villager-trade
+visuality	FOLDED -> visuality-3.0.0.pw.toml		clean-room	diaithir-utility-visuals
+walkers-neoforge	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-creatures
+waystones-neoforge	NOT IN PACK	arr	keep	(keep separate)
+witherskeletontweaks	NOT IN PACK	open	port	diaithir-hostile-encounters
+wits	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	port	diaithir-adventure-structures
+wizards-neoforge	NOT IN PACK	arr	data	diaithir-arcane-classes
+worldweaver	NOT IN PACK	open	keep	(keep separate)
+wunderlib	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+yamlconfig-neoforge	FOLDED -> diaithir-core-ext-suite-neoforge-26.1.2-	open	port	diaithir-multiloader-compat
+yeetusexperimentus-neoforge	NOT IN PACK	arr	clean-room	diaithir-attribute-fixes
+yggdrasil	NOT IN PACK	arr	clean-room	diaithir-adventure-structures
+yo_hooks	FOLDED -> diaithir-tech-ext-suite-neoforge-26.1.2-	open	merge	diaithir-personal-mobility
+yungsapi	FOLDED -> diaithir-platform-suite-neoforge-26.1.2-	open	keep	(keep separate)
+yungsbettercaves	FOLDED -> diaithir-worlds-ext-suite-neoforge-26.1.	open	keep	(keep separate)
+yungsbetterdeserttemples	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-yungs-structures
+yungsbetterdungeons	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-yungs-structures
+yungsbetterjungletemples	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	data	diaithir-yungs-structures
+yungsbettermineshafts	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-yungs-structures
+yungsbetternetherfortresses	FOLDED -> diaithir-realms-suite-neoforge-26.1.2-1.	open	port	diaithir-yungs-structures
+yungsbetteroceanmonuments	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-yungs-structures
+yungsbetterstrongholds	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-yungs-structures
+yungsbetterwitchhuts	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-yungs-structures
+yungscavebiomes	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	arr	clean-room	diaithir-overworld-biomes
+yungsextras	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-yungs-structures
+zfastnoise	FOLDED -> diaithir-worldgen-suite-neoforge-26.1.2-	open	port	diaithir-worldgen-chunk-opts
+zoomify	FOLDED -> zoomify-2.17.0_mc26.1.2-universal.pw.tom	open	port	diaithir-client-view-input
