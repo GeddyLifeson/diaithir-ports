@@ -1,8 +1,8 @@
 name = "FTB Library (NeoForge)"
-filename = "ftb-library-neoforge-26.1.2.9.jar"
+filename = "ftb-library-neoforge-26.1.2.12.jar"
 side = "both"
 
 [download]
-url = "https://edge.forgecdn.net/files/9008/066/ftb-library-neoforge-26.1.2.9.jar"
+url = "https://edge.forgecdn.net/files/9456/005/ftb-library-neoforge-26.1.2.12.jar"
 hash-format = "sha256"
-hash = "4b7108293d3a190b4a1e06055343143cfba740ca13b83794d9f8933c8de84851"
+hash = "0a2002c9bb138fc4a68b0acd77c2092f33ecdaff89edc8aa6ae4f36540e24320"

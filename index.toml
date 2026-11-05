@@ -68665,7 +68665,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-adventure-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "e008bb6cac6e6fc3bb251ff9d0e78f0e7a8ddb9018c2c4f2c0d367b36b989ec9"
+hash = "2480edd08a2cff5075260964cd4b511f3ea4566c65362bf7e871deccee5722cd"
 
 [[files]]
 file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.7.jar"
@@ -68687,19 +68687,19 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-content-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "a3027f921e0b7ebc727c5d108f98192a83b6a555c3d5806a1426e326fc48f76e"
+hash = "5692fb4368a565df0649fb7b3208c2e8297ecc6a1fc3ef54e75f1dbae8ca05fe"
 
 [[files]]
 file = "mods/diaithir-content-ext2-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "2720cf8216c37500fe0ed81d69257c063a998b7f3fed8f709ba22c523259d0ff"
+hash = "439e51f33398c0716741f30fbb1df070174f86819bc137dbcf44d6c1073453dc"
 
 [[files]]
 file = "mods/diaithir-content-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "66b06d534d5e4234d80b299837f360747ac2969d614e503f851681da5eb40942"
+hash = "93793db323b167b500b2be7706c8ea913256c8a0f10b31ee8923069eafb2e0b4"
 
 [[files]]
 file = "mods/diaithir-core-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "677640603d4e267bac4c34516f0967c112153d25b3a8d58b3148744de65e31bd"
+hash = "0f9e9e20f03c8b4525a2e3624cea7a123e54f0de57b74ba99c66c0c753d2fe1a"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
@@ -68712,7 +68712,7 @@ hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "ff08d80a6682d6a29c9c10b9204170083034569b3be750dbc3a4789a71f23516"
+hash = "c10188d29682c4b26223458828debf87c794482e3727d323e2ba5b70785b767f"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68721,23 +68721,23 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-platform-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "a053d6105618b58f4c28c29cb90815747df497ca80a16f77ceae86f356522e5b"
+hash = "9519a5e7d2d3ba27757e36cf610f02182307062983532022a5270c3631868e0b"
 
 [[files]]
 file = "mods/diaithir-power-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "ab391fb6f4332268fbb27ab334bb4a8ba49843faae9cd81987db61f64c6227f5"
+hash = "95cec9cb19b16e700fcde5a6861c06be3d8bc3fe6648532848ff5f629ce6c17c"
 
 [[files]]
 file = "mods/diaithir-realms-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "9b7d3b749fd48abd570844827e826c67f6196ae394c0e6740025892dd07cb6c7"
+hash = "8bb110c6c9e0e44f40455aa6f8c650294e14c6576ecfa9c5010f0b008790eaef"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "85af3e1f8e8f975113788b2c33a6be6e5e77065ef35bcb923c876e4130ca43fe"
+hash = "9c5e9aedd75f8a141d13007ae5df3756e52fe7a5837c445dcbabc7cab59d4a38"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
-hash = "123c12803fa3cce0201092cdcda81d73ef177cc5f2996c86948383fa5d5caa08"
+hash = "19befb231d02265ef97c5302552a28e194500ffcc46760ec01cb6ab6dc345d75"
 
 [[files]]
 file = "mods/diaithir-server-ext-suite-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68746,27 +68746,27 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-tech-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "3dcd126e1cca11550a6a64daf73b8de90b599fb2a58ab1512fde4d92d0ce455b"
+hash = "27010c209bae1b93bdc7b40b0e8f1fbd512074f925540b79c2a98e2927edbaaf"
 
 [[files]]
 file = "mods/diaithir-world-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "9c126cb0395ec34170e88fd5ea6b7d056eafc2aef5dcff1f792a01917ddf63d4"
+hash = "a245042e0e2a5b377210a3114c13853ccba7491b0b525dd8a438af5588e129a3"
 
 [[files]]
 file = "mods/diaithir-world-visuals-neoforge-26.1.2-1.0.0.jar"
-hash = "1c7f4101b4d290265c2671dca8bfb209da33db1ef089381fe425be0ef295740f"
+hash = "eb5a40564c12a73f16f3777c10a6d67aefa819ba19627e5b1da593aa81c78193"
 
 [[files]]
 file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.6.jar"
-hash = "df010dae61b362a2c4a68345c146582d1ceb0b04b0b5c9989be6b2618aa2e244"
+hash = "c986f72d2027d257b958ec3ecff985d5a0f88c7d57181d5f18fe3b85f5b03c7d"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "caf52081a669c1fcdd7fa2b79652b27d12f41af203d6223c48158c52fe38ea77"
+hash = "54798dc9b02361915718157ad82c154f0630673305717933a9ea0a362fd0081c"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "b1bd7d4da6b74e63ef13940e6dcb57b79f80e31081a6efef37ac68248d90dd20"
+hash = "7cb2149db5c7d9c210228c04922fac61df034a90e0332c5ea7b2e322088522e1"
 
 [[files]]
 file = "mods/discoveria.pw.toml"
@@ -68880,7 +68880,7 @@ metafile = true
 
 [[files]]
 file = "mods/ftb-library.pw.toml"
-hash = "15991f27b75ce3c83084a6f4700a7f8414d8e951a93e6b26a1aa68f4d8b8c27e"
+hash = "8d43632b7091e7e47c964dbcc4906597d141e389ae32d07d3f1d7e4d3b17142b"
 metafile = true
 
 [[files]]
