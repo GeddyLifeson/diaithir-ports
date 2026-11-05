@@ -66054,6 +66054,10 @@ file = "kubejs/data/jewelry/loot_table/blocks/gem_vein.json"
 hash = "ecf00ea3cf96431c8c949c3093537872f77357af031c964eae5171ed49107768"
 
 [[files]]
+file = "kubejs/data/kaisyn/worldgen/template_pool/village/common/decor/decor_grass_patches.json"
+hash = "7d88964efa15e45953e1b5a85c7ea02eb4bb2f18f34883a1d6ca95ffbc40d093"
+
+[[files]]
 file = "kubejs/data/kattersstructures/tags/worldgen/biome/has_structure/armory.json"
 hash = "0cff279fd1d5df86241b766e8f7048329c4dba999e8eb4d938229c14dc1b9319"
 
