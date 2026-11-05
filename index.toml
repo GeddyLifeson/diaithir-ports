@@ -69199,6 +69199,11 @@ hash = "a75e8e9351e28083c2f515b077fc273bd9f01dfc3369cc6f6993663ab9e377f3"
 metafile = true
 
 [[files]]
+file = "mods/silent-gear-metalworks.pw.toml"
+hash = "b8b04847d8cfc32dd5621f6f5491f9d310a2bdbd740c0b6a68e158e01491730e"
+metafile = true
+
+[[files]]
 file = "mods/simple-magnets.pw.toml"
 hash = "c547cdf74dd3a208b3210ee173301e7f39564d54ee3dfd4d37de51b7eb0d48c9"
 metafile = true
