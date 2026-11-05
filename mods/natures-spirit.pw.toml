@@ -1,0 +1,8 @@
+name = "Nature's Spirit"
+filename = "natures_spirit-neoforge-2.3.0+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WBvnqHfV/versions/fXzcxJN1/natures_spirit-neoforge-2.3.0%2B26.1.2.jar"
+hash-format = "sha512"
+hash = "82a336c7fe902a88f252689e75900a3c686adbf7e4bbb73d07906f335f1f75cc8ae55a772c5054465afc7d59f40f3bb534087a042f11b19538437b296cb05fdf"

@@ -1,0 +1,8 @@
+name = "FTB Ultimine (NeoForge)"
+filename = "ftb-ultimine-neoforge-26.1.2.7.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9455/053/ftb-ultimine-neoforge-26.1.2.7.jar"
+hash-format = "sha256"
+hash = "70bff4fe35bfb008605bd180fc7658068e62d25deaacee37b36f319840ec0943"

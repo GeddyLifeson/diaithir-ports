@@ -1,0 +1,8 @@
+name = "Echoes of The End ( Structures)"
+filename = "echoes_of_the_end__structures NeoForge Fabric 26.1.2 -12.00.13.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/eVpstLY3/versions/oN8AyCgf/echoes_of_the_end__structures%20NeoForge%20Fabric%2026.1.2%20-12.00.13.jar"
+hash-format = "sha512"
+hash = "eef529ac7fbcfcd54885e8ad7649b536eba01eba977832bdf570c9309736c022134a98a60e0e7ca11f7de175316789e21fce58ea5442eb23887f5a2fe11e88d0"

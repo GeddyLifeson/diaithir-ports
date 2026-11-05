@@ -1,0 +1,8 @@
+name = "Nether Descent"
+filename = "Nether-Descent-NeoForge-1.0.12-mc26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/OMC5QQv5/versions/sGrA91Dg/Nether-Descent-NeoForge-1.0.12-mc26.1.2.jar"
+hash-format = "sha512"
+hash = "344670c9686d634d74873dfb6624b51bb386fce11fd248608ffb854a2614b8fe8ccc964e3cd4ca1087a1599cd6e2a418b9257f406bb24403168f3848beff11c8"

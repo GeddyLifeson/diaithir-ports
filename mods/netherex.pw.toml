@@ -1,0 +1,8 @@
+name = "NetherEx"
+filename = "NetherEx-neoforge-26.1.2-1.2.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/2PIVd4Ik/versions/HSjMx64m/NetherEx-neoforge-26.1.2-1.2.4.jar"
+hash-format = "sha512"
+hash = "ff423d1980408c826970ffbed855251d3d6c20421a98555671bae3b1f885fb4747042cb57f4c6674b0fcb6ba65342b8379270908aa48e126fe384aa3ba37bd93"
