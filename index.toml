@@ -68430,6 +68430,10 @@ file = "mods/Equivox-26.1.2-1.3.0.jar"
 hash = "cdcff6d9132b6295aee3eec06fcdbc4e3719983f0b670bbea3d5d524ac17173c"
 
 [[files]]
+file = "mods/Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar"
+hash = "5a818ea93c9b7d044437340fd2eaf3fba40c463df34225b5ee80701409f19711"
+
+[[files]]
 file = "mods/Jade-mc26.1-NeoForge-26.1.12.pw.toml"
 hash = "8da7017f425f634b3c2619f100548c05afa705391df2459674702068a911d189"
 metafile = true
@@ -68719,7 +68723,7 @@ hash = "9b7d3b749fd48abd570844827e826c67f6196ae394c0e6740025892dd07cb6c7"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "e84ecb018a9a353dbd9eefed4530313dd95fad24bf8f67a9396819c504de58f3"
+hash = "85af3e1f8e8f975113788b2c33a6be6e5e77065ef35bcb923c876e4130ca43fe"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
@@ -68748,7 +68752,7 @@ hash = "df010dae61b362a2c4a68345c146582d1ceb0b04b0b5c9989be6b2618aa2e244"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "57a837402bd971e044e872c8730a8347edace3e743ef61d5dd0a08301b545f1d"
+hash = "caf52081a669c1fcdd7fa2b79652b27d12f41af203d6223c48158c52fe38ea77"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
