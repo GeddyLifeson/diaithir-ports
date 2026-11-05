@@ -68910,6 +68910,11 @@ hash = "86c7e1c2be29e4cca0e288a9acf253e220b5d9d3e735accbfa4d0267ff2843f8"
 metafile = true
 
 [[files]]
+file = "mods/hopo-better-underwater-ruins.pw.toml"
+hash = "b3594e43d7f84d16965d22c7dde228c81db22ada72336767226260a6c294517b"
+metafile = true
+
+[[files]]
 file = "mods/iceandfire-2.2-beta.4-diaithir.1.jar"
 hash = "0f94aa6f21c016e7b59dbc9679fd8b5a7bb9c762a2bbf65ee5785f9470482a61"
 
@@ -69301,6 +69306,11 @@ metafile = true
 [[files]]
 file = "mods/valhelsia-core.pw.toml"
 hash = "85b7cef60d4c5fe6aafdaa9ae4c724e826f17374b251743acc9cb3207bd6efd0"
+metafile = true
+
+[[files]]
+file = "mods/vics-point-blank.pw.toml"
+hash = "719bef074730cd1e210854c71a514862071a9eb9b8e546f041550cf08fb1230c"
 metafile = true
 
 [[files]]
