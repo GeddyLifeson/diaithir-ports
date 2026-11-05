@@ -66055,7 +66055,7 @@ hash = "ecf00ea3cf96431c8c949c3093537872f77357af031c964eae5171ed49107768"
 
 [[files]]
 file = "kubejs/data/kaisyn/worldgen/template_pool/village/common/decor/decor_grass_patches.json"
-hash = "7d88964efa15e45953e1b5a85c7ea02eb4bb2f18f34883a1d6ca95ffbc40d093"
+hash = "0701dbc7ddf231d780e740e43b6abcd97408ce2eeb47df760556791a09347f5d"
 
 [[files]]
 file = "kubejs/data/kattersstructures/tags/worldgen/biome/has_structure/armory.json"
