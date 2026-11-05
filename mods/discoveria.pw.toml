@@ -1,0 +1,8 @@
+name = "Discoveria - More Structures"
+filename = "discoveria-4.0.2d.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/x4MjQT3r/versions/ws6WGPiK/discoveria-4.0.2d.jar"
+hash-format = "sha512"
+hash = "90f5b1fe3eb3b7747adbc50896e2eeb60e62c2729946513409ccb1b6da7464f87f7b03e536ce2c1d1f26c41a6f4db449f79cd37c2dd451a102fd000af72e81c3"

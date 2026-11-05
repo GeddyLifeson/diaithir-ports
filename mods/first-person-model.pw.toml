@@ -1,0 +1,8 @@
+name = "First-person Model"
+filename = "firstperson-neoforge-2.7.3-mc26.1.2.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/H5XMjpHi/versions/rDeolEQr/firstperson-neoforge-2.7.3-mc26.1.2.jar"
+hash-format = "sha512"
+hash = "a75cfbc4253b49027c8cbb5fc49b1f83e926f6b901886eb232320bf047e60362af3389aaefabab447ead39db67d380503e99115fa80984201f8018bf818afa53"

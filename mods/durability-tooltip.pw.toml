@@ -1,0 +1,8 @@
+name = "Durability Tooltip"
+filename = "durabilitytooltip-1.2.0-neoforge-mc26.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/smUP7V3r/versions/y4hLyMf8/durabilitytooltip-1.2.0-neoforge-mc26.1.jar"
+hash-format = "sha512"
+hash = "cbad943a8dafad6d7607a4faf36807621e5480b624883c0b5d5915956b6154b7d6b52ec17c36868b7cc347b145780bb60a07be4e65fd8ff6b5da9d0c2f089699"

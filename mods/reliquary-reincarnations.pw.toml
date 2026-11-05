@@ -1,0 +1,8 @@
+name = "Reliquary Reincarnations"
+filename = "reliquary-26.1.2-2.0.92.1563.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fQO83PId/versions/oub7jUP0/reliquary-26.1.2-2.0.92.1563.jar"
+hash-format = "sha512"
+hash = "483e80a5979f25bd7d0df5f1587164b15d0f00aa0a84186bc2ac32bad57bc87dd23763360136333f9cd59e30d6471c227bf850e2aa2d4d143e2290d753d09ac7"

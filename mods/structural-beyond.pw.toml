@@ -1,0 +1,8 @@
+name = "Structural Beyond | SB"
+filename = "structural_beyond-1.1.0-universal.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/6Yica65F/versions/63fsXfaS/structural_beyond-1.1.0-universal.jar"
+hash-format = "sha512"
+hash = "b87de1ee1db2544b6ecffa3af25f6a2e9e68f01748683c22924521e0d8c58a8539b9a99880e3b42ac384358281121cc429d4d34ef5cf0ccbd632a30896688998"

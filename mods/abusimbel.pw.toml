@@ -1,0 +1,8 @@
+name = "Abu Simbel - Ruins Structure ✅"
+filename = "abusimbel-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/u3DVExeb/versions/uC8kehH7/abusimbel-1.0.0.jar"
+hash-format = "sha512"
+hash = "4e345481331617d35ae0bf97c946fc9c62f4b751e8717a940057ca2bd1f411a99ea1b705b372355fff999d8566bb3313ed1891cf2dba0be2962d1bae6bb9b386"

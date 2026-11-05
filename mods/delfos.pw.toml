@@ -1,0 +1,8 @@
+name = "Delfos - Ruins Structure ✅"
+filename = "delfos-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/6iYdpaVB/versions/eSL4dyyp/delfos-1.0.0.jar"
+hash-format = "sha512"
+hash = "05aaa7d48f24f07ffcde93d3507784b624cee799d893c42a288fc346c1ca73c7aab6fca958352d67700fb3acfb3725b5ecab82b7b2920bad1abae4fd73df4d16"

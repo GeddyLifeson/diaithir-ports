@@ -1,0 +1,8 @@
+name = "Entangled"
+filename = "entangled-1.3.21-neoforge-mc26.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/rylMOguI/versions/zRMdwmA4/entangled-1.3.21-neoforge-mc26.1.jar"
+hash-format = "sha512"
+hash = "d95012f1c7e5e8ae447bc10dba1742583a9cbac16b53619405285529f86503b32fa360e679801541e409283c49b6dc1b54f1ba2e07a9703e1d67bdd3a296d258"

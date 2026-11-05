@@ -1,0 +1,8 @@
+name = "GlitchCore"
+filename = "GlitchCore-neoforge-26.1.2-26.1.2.0.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/s3dmwKy5/versions/mYUbCfgT/GlitchCore-neoforge-26.1.2-26.1.2.0.2.jar"
+hash-format = "sha512"
+hash = "0fb4caffefabc4158d57f9d10f39e96062f96210a4ad994131a8013465fc2be3b9b5a5bc727a1197354357d726ee3e22d61da2c7500092b91de207f39581f383"

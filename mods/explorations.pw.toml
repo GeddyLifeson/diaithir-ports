@@ -1,0 +1,8 @@
+name = "Explorations"
+filename = "explorations-neoforge-26.1.2-1.6.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/pcGnjJ39/versions/Uwaqtba4/explorations-neoforge-26.1.2-1.6.5.jar"
+hash-format = "sha512"
+hash = "7fd62c384aa3f34bea4827067469deb612ecc7554db400044c0fbaed4dc2a1ba226863d71d646c47cc7af2ed228871a92c20799357850a011fc5efbabed986b3"

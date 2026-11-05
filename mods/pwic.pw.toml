@@ -1,0 +1,8 @@
+name = "[IV/MTS] P:WIC [Project: World in Conflict]"
+filename = "PWIC-V0.3TD_21_fix.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Dr4Ms3g7/versions/3xDKgtvk/PWIC-V0.3TD_21_fix.jar"
+hash-format = "sha512"
+hash = "f209e3e6438b9ddfd83acee16eaeeda5b44d73fb00468ad6e2b689f6dfc5dfa578caabbce1faeab496ffbc27355d27c730c27487051fef77c263cf893293d3d2"

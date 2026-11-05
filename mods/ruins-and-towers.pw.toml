@@ -1,0 +1,8 @@
+name = "Ruins and Towers"
+filename = "ruins-and-towers-0.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/lgHD5Cjz/versions/l9IjgeQo/ruins-and-towers-0.3.jar"
+hash-format = "sha512"
+hash = "a3fe3e90935e977703dfebda953a3929b10f2924f9be31a8ffb7e68a494dc29f422d05c5725d30828b28255b75927826e522530a4345d037be06bb26856a3137"

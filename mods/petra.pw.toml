@@ -1,0 +1,8 @@
+name = "Petra - Ruins Structure ✅"
+filename = "petra-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/8rE3l6uj/versions/QOPk1rwy/petra-1.0.0.jar"
+hash-format = "sha512"
+hash = "74b8e156866afdd032ac7a253e4035ee4223b91c48e06a303c8b8f1c5f931ace7d4e3dddf7db9ac3babae152e24474afb81d07cebd35f0f78fd511c88876e299"

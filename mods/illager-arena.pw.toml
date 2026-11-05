@@ -1,0 +1,8 @@
+name = "Illager Arena"
+filename = "illager_arena-1.0.0 Neoforge 26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/6Eq86tCy/versions/8BdfcEiB/illager_arena-1.0.0%20Neoforge%2026.1.2.jar"
+hash-format = "sha512"
+hash = "80d67a82f5e3db0f27733983628cbd633b84d848d354b34b4e7943e341f29b8fa67f861bf732d90736ab1bdb09d181a08d3c45eb26ae7840be40b73d45d0a096"

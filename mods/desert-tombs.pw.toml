@@ -1,0 +1,8 @@
+name = "Desert Tombs"
+filename = "desert_tomb-2.0.0-neoforge-26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/G2pviQU9/versions/ZS2NBgfx/desert_tomb-2.0.0-neoforge-26.1.2.jar"
+hash-format = "sha512"
+hash = "f024f2eec3a5f458dac80f17ca5f474f07c95a3a86c1bd1e258f059a18adb4d8b0a7e4f1c79a9f56c97406066d1bf1901411f12f8f9679384cd99d96243af02c"

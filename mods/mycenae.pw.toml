@@ -1,0 +1,8 @@
+name = "Mycenae - Ruins Structure ✅"
+filename = "mycenae-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/hiUW57Rd/versions/mBoL4txJ/mycenae-1.0.0.jar"
+hash-format = "sha512"
+hash = "157fe1eaff522edb437a79456c35ef0c9cef7c8c9ea5a249cf56cf35601086c44d65237b11cc3d62d662be61f5116b05656ec85dd8c168d16332af563b7d591d"

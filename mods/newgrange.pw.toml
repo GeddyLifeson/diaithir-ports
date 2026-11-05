@@ -1,0 +1,8 @@
+name = "Newgrange - Ruins Structure ✅"
+filename = "newgrange-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/JWOZZipx/versions/Bcbmqkgj/newgrange-1.0.0.jar"
+hash-format = "sha512"
+hash = "c2cdcf09aee17b1f1865f5b129f57d18414b6fb9f0a28f3d2cb4f22805a7f81906c95ef0d0fa239af899b3d4744240c8c0fb71218c7e7c3e8cd88ca0fca84cc0"

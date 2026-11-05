@@ -1,0 +1,8 @@
+name = "Recurrent Complex Volts"
+filename = "RecurrentComplexVolts-26.1.2-0.7.3.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/J8SYWt2i/versions/ClgmrKqD/RecurrentComplexVolts-26.1.2-0.7.3.0.jar"
+hash-format = "sha512"
+hash = "5944c6659e02eb9b52487ab9bdb418f00a12f8d02de1cbb7fdbf4e2490641327e0f4c3b2b39d7ee8b7e854fce3d748c55b987e7abc365d704b1a6c1b2ac9cef7"
