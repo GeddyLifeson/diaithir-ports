@@ -68998,6 +68998,11 @@ file = "mods/lightmanscurrency-26.1-1.0.0.1-diaithir.1.jar"
 hash = "f8563e15ca71bac0a8da54a8aef4944f30671d91faaf6b19023b724c9573d1db"
 
 [[files]]
+file = "mods/logistics-network.pw.toml"
+hash = "a55d2dedfbc9c47673b6ae71a28d50af0f4d9cf4c5a9d5a23e1e27867e05d989"
+metafile = true
+
+[[files]]
 file = "mods/longer-chat-history.pw.toml"
 hash = "54d36876a5854fc20f2eec7d4182cae02bdc6cbcd2bc8bca5cc60460f96b6aec"
 metafile = true

@@ -11,3 +11,4 @@ Stripping blind risks breaking diaithir_end/diaithir_nether and the biome glue, 
 
 ## 11-05 18:15Z
 87b25744 + 03a0e629 pushed (rebuilt suites, Immersive Vehicles local jar, index). sgearmetalworks 1.6.0 is third-party ARR (Silent Gear Metalworks, LobsterJonn): added as silent-gear-metalworks.pw.toml (CurseForge project 1199188, sha256). logisticsnetworks 1.12.0 (AlmanX21, ARR) NOT found by slug on Modrinth or cfwidget: needs its CF project id or URL; Prism jar filename logisticsnetworks-26.1.2-1.12.0.jar.
+logisticsnetworks 1.12.0 resolved: CurseForge project 1448257 (logistics-network), mods/logistics-network.pw.toml.
