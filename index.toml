@@ -68681,7 +68681,7 @@ hash = "a3027f921e0b7ebc727c5d108f98192a83b6a555c3d5806a1426e326fc48f76e"
 
 [[files]]
 file = "mods/diaithir-content-ext2-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "0b7ab2cd1cfa81a7c0c9b0fc83707e0083a9c2459080823b1e4a354dcfd2cccf"
+hash = "2720cf8216c37500fe0ed81d69257c063a998b7f3fed8f709ba22c523259d0ff"
 
 [[files]]
 file = "mods/diaithir-content-suite-neoforge-26.1.2-1.0.0.jar"
@@ -68689,7 +68689,7 @@ hash = "66b06d534d5e4234d80b299837f360747ac2969d614e503f851681da5eb40942"
 
 [[files]]
 file = "mods/diaithir-core-ext-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "de333f44dc11fd41290c6d8ef28132cc357e3bbd1365334655a5317b29f906e3"
+hash = "677640603d4e267bac4c34516f0967c112153d25b3a8d58b3148744de65e31bd"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
@@ -68702,7 +68702,7 @@ hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "24374797bebaf02863216f1581e56c5ccb1066d281f4f0f02d22c58d47bedc31"
+hash = "ff08d80a6682d6a29c9c10b9204170083034569b3be750dbc3a4789a71f23516"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
