@@ -68576,6 +68576,11 @@ file = "mods/blockui-1.0.0-diaithir.jar"
 hash = "603d4242c746c42cf9cbe64fae7c4045bb71f657eea1797af9e9d3ae227932eb"
 
 [[files]]
+file = "mods/camol.pw.toml"
+hash = "3d024e09c8f5f3502d36575a37e8ccaf97b0ebefdf372002415615e35e66ff1e"
+metafile = true
+
+[[files]]
 file = "mods/cargoboats-26.1.2-1.1.0.pw.toml"
 hash = "815a7baa5556b0e73978448c63749a4fea2189ad928f6158d4580896e062bb83"
 metafile = true
@@ -68627,6 +68632,11 @@ metafile = true
 [[files]]
 file = "mods/crawl-mc26.1.2-neoforge-0.15.0.pw.toml"
 hash = "ec4f3bc4460a25c0c3b03211540af23d0d11101ba1f338c0d8d6bf442d41b38e"
+metafile = true
+
+[[files]]
+file = "mods/cupboard.pw.toml"
+hash = "4ff62be7114d23c5594879c70aa69c82caab6ebd4ac6a3466a2ac41449651a36"
 metafile = true
 
 [[files]]
@@ -68827,6 +68837,41 @@ metafile = true
 [[files]]
 file = "mods/fragmentum.pw.toml"
 hash = "a1b864c07de0ad6a7e5f5eaf4c955f0f9108397336981fa5e969922bb3c0ea60"
+metafile = true
+
+[[files]]
+file = "mods/ftb-essentials.pw.toml"
+hash = "1419ca362d9c470424992b74c2a75718a5032ff41c6e5ec01afade2fca184d6d"
+metafile = true
+
+[[files]]
+file = "mods/ftb-filter-system.pw.toml"
+hash = "565be1604eca4ed536029fb750d3e197a5ca940c6720fe7c1d84a1884c5a6d95"
+metafile = true
+
+[[files]]
+file = "mods/ftb-library.pw.toml"
+hash = "15991f27b75ce3c83084a6f4700a7f8414d8e951a93e6b26a1aa68f4d8b8c27e"
+metafile = true
+
+[[files]]
+file = "mods/ftb-quests-forge.pw.toml"
+hash = "a5a663ab40d7dc7cece1d24583edc5c5525455e864302a5d71dfcf487fc1c0c3"
+metafile = true
+
+[[files]]
+file = "mods/ftb-ranks-forge.pw.toml"
+hash = "18f45d7cf4d836bbe4f54db79e7ad1f70e94a414aa211463754b95f62340ac76"
+metafile = true
+
+[[files]]
+file = "mods/ftb-teams-forge.pw.toml"
+hash = "1be9855e2689b3d8b4471aa9c749db8778d79c4531234ca157339948585f6a6a"
+metafile = true
+
+[[files]]
+file = "mods/ftb-xmod-compat.pw.toml"
+hash = "82bc6a5e5cf25582c61251529ca3444c11b873943045e96cce1705cb27ed3116"
 metafile = true
 
 [[files]]
@@ -69058,8 +69103,28 @@ hash = "14ac876a974e7c18b4e76655684a4d27f10e56126c67464945921301cad3ae98"
 metafile = true
 
 [[files]]
+file = "mods/productive-metalworks.pw.toml"
+hash = "d3910289946a6be5109c9968a15b5e2cea3fd086847f91a645a42a6ef8a14d7c"
+metafile = true
+
+[[files]]
 file = "mods/productivebees-26.1.2-15.3.0.pw.toml"
 hash = "78bd3bc324dea4feb17734415d76fff686fc3dec3dcebf88ae55af8089f09442"
+metafile = true
+
+[[files]]
+file = "mods/productivefarming.pw.toml"
+hash = "992b1d81f683a601d1677e617a8ebd033535b8545c2a8d53ec640c9014e577f7"
+metafile = true
+
+[[files]]
+file = "mods/productivetrees.pw.toml"
+hash = "0a9df9cacf6bc7590ad2ce91b552f7864d3008540ee636b434246be7293413c4"
+metafile = true
+
+[[files]]
+file = "mods/puffish-skills.pw.toml"
+hash = "5f93ca2739e1b6c18441a675d1edcbbd9ebec6f90f3ac1a7941cf8d86cf38f4c"
 metafile = true
 
 [[files]]
@@ -69145,6 +69210,26 @@ hash = "ed58a0d642a54a6f8c19b9a3c5222151963d5b800665e1c193c9ccf88c58a6f0"
 metafile = true
 
 [[files]]
+file = "mods/sophisticated-backpacks.pw.toml"
+hash = "9cbcd71bfe1da62e543750a218b9324e9aa0f0830559408da84068d3b898ffa6"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-core.pw.toml"
+hash = "e87abf4166341b1a37109b70a81c4654f7fefe31bbfd92079d4742f03d68158b"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-storage-in-motion.pw.toml"
+hash = "e344720a5394a5d364c33e4ec1e86e577afce7cb953767e4f03cd1501d4d01d3"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-storage.pw.toml"
+hash = "45e9f4502ecad501163ecf19c9b10e834a74c5c9a70ff2411decb87f551a291e"
+metafile = true
+
+[[files]]
 file = "mods/spell_power-neoforge-1.6.2_26.1.2.pw.toml"
 hash = "a895b8566eb57f85565ee4c247c8d60d970e8bb6b0118bbb75c0daf731f1df09"
 metafile = true
@@ -69207,6 +69292,11 @@ metafile = true
 [[files]]
 file = "mods/uranus-3.0-alpha.1-neoforge-26.1.2-diaithir.1.jar"
 hash = "6793e7cb78adfb98421b1b8b55bf382eb04d89c0320a031f45d00ccd5b45cadb"
+
+[[files]]
+file = "mods/utilitarian.pw.toml"
+hash = "a440074f15f100b757f1e7f0c739bbf85f791bb94c9da1b9f7e56c7fe4b4af0e"
+metafile = true
 
 [[files]]
 file = "mods/valhelsia-core.pw.toml"
