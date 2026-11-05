@@ -1,8 +1,8 @@
 name = "FTB Quests (NeoForge)"
-filename = "ftb-quests-neoforge-26.1.2.9.jar"
+filename = "ftb-quests-neoforge-26.1.2.10.jar"
 side = "both"
 
 [download]
-url = "https://edge.forgecdn.net/files/9088/796/ftb-quests-neoforge-26.1.2.9.jar"
+url = "https://edge.forgecdn.net/files/9456/215/ftb-quests-neoforge-26.1.2.10.jar"
 hash-format = "sha256"
-hash = "5cfb90c8dde51645142bcd4160687e87103f79c92ce14a06a0379691f6481a54"
+hash = "bc4901beef6d016e00beb9c1ca4915098866c8cab035901534c36439360d9da4"

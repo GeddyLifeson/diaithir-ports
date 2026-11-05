@@ -68885,7 +68885,7 @@ metafile = true
 
 [[files]]
 file = "mods/ftb-quests-forge.pw.toml"
-hash = "a5a663ab40d7dc7cece1d24583edc5c5525455e864302a5d71dfcf487fc1c0c3"
+hash = "62ccf190dc2c66f4c720add58938f6d82d62cc42059fa0b7d4182ffe55989d54"
 metafile = true
 
 [[files]]
@@ -68895,7 +68895,7 @@ metafile = true
 
 [[files]]
 file = "mods/ftb-teams-forge.pw.toml"
-hash = "1be9855e2689b3d8b4471aa9c749db8778d79c4531234ca157339948585f6a6a"
+hash = "a1aed7081e45d8848ddbf368abd3687f3642d5489d243d23332a36bfbd58a6f8"
 metafile = true
 
 [[files]]
@@ -68905,7 +68905,7 @@ metafile = true
 
 [[files]]
 file = "mods/ftb-xmod-compat.pw.toml"
-hash = "82bc6a5e5cf25582c61251529ca3444c11b873943045e96cce1705cb27ed3116"
+hash = "2c14de04ff69d3a92021dbd4b5a6d637bf52e6bfc545e4c66100490382a28ccf"
 metafile = true
 
 [[files]]
