@@ -68619,6 +68619,11 @@ hash = "6febeca95bb509df8b8980fd5981d41db34aeeb0d34e01d95142af8a44cb733b"
 metafile = true
 
 [[files]]
+file = "mods/combat-roll.pw.toml"
+hash = "8e84008def21e575da02413af3ec7982449b73332c9f9d08ecd56d56ff8ded11"
+metafile = true
+
+[[files]]
 file = "mods/cooking-for-blockheads.pw.toml"
 hash = "ba18c60b27708826f76e1457594e79f183a8aff95ecdadfdd24dd1c10c5d977a"
 metafile = true
@@ -68650,6 +68655,11 @@ metafile = true
 [[files]]
 file = "mods/cristel-lib.pw.toml"
 hash = "2b321e337b8ef726994759f3d3e3f83f3b695f1434b37221dc6e0890e970eecb"
+metafile = true
+
+[[files]]
+file = "mods/critical-strike.pw.toml"
+hash = "f2275aebcd43bd3b0c3807dc1a158527e8e04b386465227f57d0c642d85f6080"
 metafile = true
 
 [[files]]
@@ -68722,6 +68732,10 @@ hash = "c10188d29682c4b26223458828debf87c794482e3727d323e2ba5b70785b767f"
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
 hash = "0bead35eccbf68b519022b574d5f1299c57db922cabd091a36d4138a3c2a3476"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-open-folds-neoforge-26.1.2-1.0.0.jar"
+hash = "e0cfc751240ed7a69214e9b2f45ed02adb03659425f57a1885b97db30a26be25"
 
 [[files]]
 file = "mods/diaithir-platform-suite-neoforge-26.1.2-1.0.0.jar"
@@ -68983,6 +68997,11 @@ metafile = true
 [[files]]
 file = "mods/item-collectors.pw.toml"
 hash = "fc584b2c3ec6f4a8c1107a677299e3a8d78abdff01e7358398f0d297f98ae9a3"
+metafile = true
+
+[[files]]
+file = "mods/jaopca.pw.toml"
+hash = "04378497c3cce4553749573ca82fcc266d7d596a969d59808443171f67df7742"
 metafile = true
 
 [[files]]

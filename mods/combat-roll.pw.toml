@@ -1,0 +1,12 @@
+name = "Combat Roll"
+filename = "combat_roll-neoforge-3.0.1+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/wGKYL7st/versions/st64SArf/combat_roll-neoforge-3.0.1%2B26.1.2.jar"
+hash-format = "sha512"
+hash = "33321e4f2f06c75b927bb6d9e39d145bab64412b47c132dd10983714f1f4b3a1168e4cce7981f43b82866c5a01bc2c5273e3e18df7cce887b01e29955f571440"
+
+[update.modrinth]
+mod-id = "wGKYL7st"
+version = "st64SArf"

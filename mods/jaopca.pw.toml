@@ -1,0 +1,12 @@
+name = "JAOPCA"
+filename = "JAOPCA-26.1.2-6.0.2.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/P48mHi2j/versions/AaMsk07b/JAOPCA-26.1.2-6.0.2.2.jar"
+hash-format = "sha512"
+hash = "9cb0002b0e09548d830071ce8823fe892b0411ece293bfc887c697f978ebfa41b66d593b41fefa0463611199f4f68010293dd821d887296c6102cbe710f7fb4f"
+
+[update.modrinth]
+mod-id = "P48mHi2j"
+version = "AaMsk07b"
