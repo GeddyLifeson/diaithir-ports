@@ -19,6 +19,8 @@ public final class Species {
     /** Panscriptum Library creatures (data/diaithirfauna/library_mobs.tsv.gz); kept out of ALL, spawn tables and suggestions. Index = ALL.size() + position. */
     public static final List<Species> LIB = new ArrayList<>();
     private static final Map<String, Species> LIB_BY_ID = new HashMap<>();
+    /** Lowercased id to species: a registry name must be lowercase, so ids that went through one come back lowercased. */
+    private static final Map<String, Species> BY_LOWER = new HashMap<>();
     private static final Map<String, Species> BY_ID = new HashMap<>();
     private static final Map<String, List<Species>> BY_PLAN = new HashMap<>();
 
@@ -80,6 +82,7 @@ public final class Species {
                 Species s = new Species(c, base + LIB.size());
                 LIB.add(s);
                 LIB_BY_ID.put(s.id, s);
+                BY_LOWER.put(s.id.toLowerCase(java.util.Locale.ROOT), s);
             }
         } catch (Exception ex) {
             throw new IllegalStateException("library_mobs.tsv.gz", ex);
@@ -120,7 +123,11 @@ public final class Species {
 
     public static final List<String> ROCKS;
 
-    public static Species byId(String id) { Species s = BY_ID.get(id); return s != null ? s : LIB_BY_ID.get(id); }
+    public static Species byId(String id) {
+        Species s = BY_ID.get(id);
+        if (s == null) s = LIB_BY_ID.get(id);
+        return s != null ? s : BY_LOWER.get(id.toLowerCase(java.util.Locale.ROOT));
+    }
 
     public static List<Species> ofPlan(String plan) { return BY_PLAN.getOrDefault(plan, List.of()); }
 

@@ -53,7 +53,7 @@ public final class FaunaButchery {
         DataComponentType<Long> killed = (DataComponentType<Long>) BuiltInRegistries.DATA_COMPONENT_TYPE.getValue(Identifier.parse("diaithirbutchery:killed"));
         if (species == null || body == null || killed == null) return null;
         ItemStack st = new ItemStack(item);
-        st.set(species, "diaithirfauna:" + s.id);
+        st.set(species, "diaithirfauna:" + s.id.toLowerCase(java.util.Locale.ROOT));
         st.set(body, cls);
         st.set(killed, gameTime);
         st.set(DataComponents.ITEM_NAME, Component.translatable("item.diaithirbutchery.carcass_of", Component.translatable("species.diaithirfauna." + s.id)));
