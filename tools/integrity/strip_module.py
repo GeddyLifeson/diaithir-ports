@@ -1,6 +1,6 @@
 """Remove one folded mod from a suite jar so the mod can ship as its original linked jar.
 
-Usage: python3 -I tools/integrity/strip_module.py <suite.jar> <original.jar> <modId> <out.jar> [keep_ns ...]
+Usage: python3 -I tools/integrity/strip_module.py [--paths] <suite.jar> <original.jar> <modId> <out.jar> [keep_ns ...]
 
 Removes from the suite: every entry whose path exists byte-identical in the original; every
 entry under a namespace the original owns (assets/<ns>, data/<ns>, kubejs-free); the
@@ -13,8 +13,10 @@ import sys
 import zipfile
 from collections import Counter
 
-suite, orig, mod_id, out = sys.argv[1:5]
-keep_ns = set(sys.argv[5:])
+by_path = "--paths" in sys.argv
+args = [a for a in sys.argv[1:] if a != "--paths"]
+suite, orig, mod_id, out = args[:4]
+keep_ns = set(args[4:])
 SHARED = {"minecraft", "c", "neoforge", "forge", "fabric", "common"} | keep_ns
 
 zs, zo = zipfile.ZipFile(suite), zipfile.ZipFile(orig)
@@ -24,6 +26,7 @@ for n in o_crc:
     p = n.split("/")
     if len(p) > 2 and p[0] in ("assets", "data") and p[1] not in SHARED:
         owned.add(p[1])
+pkg_prefixes = {"/".join(n.split("/")[:3]) for n in o_crc if n.endswith(".class") and n.count("/") >= 3}
 mixin_cfgs = {n for n in o_crc if n.endswith(".mixins.json") and "/" not in n}
 o_licence_key = re.sub(r"[^a-z0-9]", "", mod_id.lower())
 
@@ -42,6 +45,11 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zw:
         p = n.split("/")
         if n in o_crc and o_crc[n] == i.CRC and n != "META-INF/MANIFEST.MF":
             removed["identical"] += 1
+            continue
+        if by_path and not n.startswith("META-INF/") and (
+            n in o_crc or (n.endswith(".class") and "/".join(p[:3]) in pkg_prefixes)
+        ):
+            removed["path-overlap"] += 1
             continue
         if len(p) > 2 and p[0] in ("assets", "data") and p[1] in owned:
             removed["owned-namespace"] += 1

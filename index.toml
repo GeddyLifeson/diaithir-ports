@@ -68513,6 +68513,11 @@ hash = "a5189d5d9ce35b57641882c593b361a316fddb6d13f9928243f676e97b1b1230"
 metafile = true
 
 [[files]]
+file = "mods/aether-ii.pw.toml"
+hash = "6d9b858d4e26c548a95a87ce117004fd44e97034202070a337ad80904a4b8bee"
+metafile = true
+
+[[files]]
 file = "mods/ai-improvements.pw.toml"
 hash = "931860c5dade7af9b3233dbe7add210d861e63f0aa0a387fa6a9a251a54cd009"
 metafile = true
@@ -68779,7 +68784,7 @@ hash = "772024c9883290c0ea0e6920959d456d7f49842f98cfa35352b8b5a5f08cca02"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "f42d87a78af26d175e4059179a84604e4ab4c80b5beed0c73150fac7f1f9765e"
+hash = "cd159b12b246ee46c587c5a8615f8b3635e024d5b3be49843807e73f4891cce7"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
@@ -69388,6 +69393,16 @@ metafile = true
 [[files]]
 file = "mods/the-backrooms-2.10.11.pw.toml"
 hash = "6d297e0de70153d51411f4308acf24a2be12f72f27ba05289121e745d8387675"
+metafile = true
+
+[[files]]
+file = "mods/the-backwoods.pw.toml"
+hash = "a875fe50eb528ecbb5912c366cfbb126b5cd01f2859983609223410d47210789"
+metafile = true
+
+[[files]]
+file = "mods/the-undergarden.pw.toml"
+hash = "9e2e570753054b0b49fed27453d53f332d490ca1d37419f9fbe51c9d9dd7ebe1"
 metafile = true
 
 [[files]]

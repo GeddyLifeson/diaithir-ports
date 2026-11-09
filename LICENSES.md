@@ -271,3 +271,8 @@ Resolved 11-09 (checklist B3): Immersive Vehicles, Oritech, Regions Unexplored, 
 | Balm | balm-neoforge-26.1.2-26.1.2.15.jar | All Rights Reserved |
 | Shogi | shogi-neoforge-26.1.2-26.1.2.12.jar | MIT |
 | Productive Trees | productivetrees-26.1.2-1.3.1.jar | All Rights Reserved |
+
+
+## Audit of the clean-room rewrites (11-09)
+
+The Aether II (custom licence), The Undergarden (All Rights Reserved) and The Backwoods (All Rights Reserved) rewrites were stripped from `diaithir-worldgen-suite` and now link their original Modrinth files (`aether-ii`, `the-undergarden`, `the-backwoods`). Easy NPC is not a duplicate: `easy_npc_bundle` (MIT) is a 25 KB meta mod that only requires `easy_npc` and `easy_npc_config_ui`, which the tech-ext suite supplies (both MIT). Kept folded after reading the licence: Aerial Hell and Stellaris (CC-BY-NC-SA-4.0, derivatives allowed, non-commercial and share-alike, same as Kaleidoscope Tavern), Titanium and BCLib and Better Caravans (MIT; BCLib assets partly CC BY-NC-SA). Single-file compat tags and config data under `cristellib`, `natures_spirit`, `forbidden_arcanus`, `ftbchunks` and `runes` are our own files, not the mods' content, so they stay; Cristel Lib (CC-BY-NC-ND) code is not in any hosted jar.
