@@ -3,6 +3,6 @@ filename = "dungeons-and-taverns-5.2.0.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/tpehi7ww/versions/nwBBc4Lf/dungeons-and-taverns-5.2.0.jar"
+url = "https://cdn.modrinth.com/data/tpehi7ww/versions/aNzOBwdJ/dungeons-and-taverns-5.2.0.jar"
 hash-format = "sha512"
-hash = "c89f3074ab12f2c4e91fa065936c54c3df9862ba75baa61c7732b1c052c7fb0260e474cd48f5003d2fcca0f887b0f3e0deac1568318db194a5819c6d0b6a00a8"
+hash = "bb4224e7be13f461da72129fdaf6186db6b0a01be4dc41386011d93703d3bc58cc1babf74eb2377a9f849317e08e9f2f5f2e194358b46c055120d0ea95ed9996"
