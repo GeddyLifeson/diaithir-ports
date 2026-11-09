@@ -64,7 +64,7 @@ public final class Station {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
-        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) { IgnitionKey.init(bus); VehicleHud.init(bus); }
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) { IgnitionKey.init(bus); FireKey.init(bus); VehicleHud.init(bus); }
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
@@ -103,6 +103,7 @@ public final class Station {
                     return 1;
                 })))
                 .then(Commands.literal("fire").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS)).executes(c -> fire(c.getSource(), 40)).then(Commands.argument("ticks", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 1200)).executes(c -> fire(c.getSource(), com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "ticks")))))
+                .then(Commands.literal("shoot").executes(c -> fire(c.getSource(), 4)))
                 .then(Commands.literal("status").executes(c -> {
                     String st = IvControl.status(c.getSource().getLevel(), c.getSource().getPosition(), 8.0);
                     c.getSource().sendSuccess(() -> Component.literal(st == null ? "No vehicle within 8 blocks" : "Vehicle: " + st), false);
