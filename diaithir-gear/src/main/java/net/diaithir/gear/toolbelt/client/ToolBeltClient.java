@@ -65,7 +65,7 @@ public class ToolBeltClient
         event.registerCategory(category);
 
         event.register(ToolBeltClient.OPEN_TOOL_MENU_KEYBIND =
-                new KeyMapping("key.toolbelt.open", GLFW.GLFW_KEY_R, category));
+                new KeyMapping("key.toolbelt.open", GLFW.GLFW_KEY_N, category));
 
         event.register(ToolBeltClient.CYCLE_TOOL_MENU_LEFT_KEYBIND =
                 new KeyMapping("key.toolbelt.cycle.left", InputConstants.UNKNOWN.getValue(), category));
@@ -74,7 +74,7 @@ public class ToolBeltClient
                 new KeyMapping("key.toolbelt.cycle.right", InputConstants.UNKNOWN.getValue(), category));
 
         event.register(ToolBeltClient.OPEN_BELT_SLOT_KEYBIND =
-                new KeyMapping("key.toolbelt.slot", GLFW.GLFW_KEY_V, category));
+                new KeyMapping("key.toolbelt.slot", GLFW.GLFW_KEY_Y, category));
     }
 
     public void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event)
