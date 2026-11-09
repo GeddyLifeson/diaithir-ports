@@ -1,30 +1,18 @@
 package net.diaithir.units.fuel.station;
 
-import com.mojang.blaze3d.platform.InputConstants;
-import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 
-/** Client keybind (default K) that runs /diaithirvehicle shoot: start or stop the engines of the vehicle you are in or beside. */
+/** While riding a vehicle, holding the jump key (Space) runs /diaithirvehicle shoot every few ticks: fires the vehicle's guns. No new keybind, so nothing to collide. */
 final class FireKey {
-    private static KeyMapping key;
-
     private FireKey() {}
 
-    static void init(IEventBus bus) {
-        bus.addListener(RegisterKeyMappingsEvent.class, e -> {
-            key = new KeyMapping("key." + Station.ID + ".fire", InputConstants.Type.KEYSYM, org.lwjgl.glfw.GLFW.GLFW_KEY_SPACE,
-                    KeyMapping.Category.register(Identifier.fromNamespaceAndPath(Station.ID, "main")));
-            e.register(key);
-        });
+    static void init(net.neoforged.bus.api.IEventBus bus) {
         NeoForge.EVENT_BUS.addListener(ClientTickEvent.Post.class, e -> {
             Minecraft mc = Minecraft.getInstance();
-            if (key == null || mc.player == null || mc.screen != null) return;
-            while (key.consumeClick()) mc.player.connection.sendCommand("diaithirvehicle shoot");
+            if (mc.player == null || mc.screen != null || !mc.player.isPassenger() || !mc.options.keyJump.isDown()) return;
+            if (mc.player.tickCount % 3 == 0) mc.player.connection.sendCommand("diaithirvehicle shoot");
         });
     }
 }
