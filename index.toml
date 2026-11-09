@@ -69474,3 +69474,8 @@ metafile = true
 file = "resourcepacks/diaithir-ui.pw.toml"
 hash = "a63498f17e6c12b295ee2b0f0ea9536f1f1a37b44af861a7b24fb38a8825f9bf"
 metafile = true
+
+[[files]]
+file = "options.txt"
+hash = "b31d9182e71cdffaa0eff42cf26cebd4deb334d80a99a905b2bccbd7a18c6a21"
+preserve = true
