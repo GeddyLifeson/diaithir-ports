@@ -20,12 +20,25 @@ import org.slf4j.LoggerFactory;
 public final class MegaSelfTest {
     private static final Logger LOG = LoggerFactory.getLogger("Megamachines");
     private int fails;
+    private ServerLevel pending;
 
     @SubscribeEvent
     public void started(ServerStartedEvent e) {
-        ServerLevel level = e.getServer().overworld();
+        pending = e.getServer().overworld();
+        pending.setChunkForced(0, 0, true);
+    }
+
+    /** Villagers only spawn once the forced chunk is entity-ticking, which takes a few ticks. */
+    @SubscribeEvent
+    public void tick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
+        if (pending == null || !pending.isPositionEntityTicking(new BlockPos(0, 200, 0))) return;
+        ServerLevel level = pending;
+        pending = null;
+        run(level);
+    }
+
+    private void run(ServerLevel level) {
         BlockPos pos = new BlockPos(0, 200, 0);
-        level.setChunkForced(0, 0, true);
         for (int x = -6; x <= 6; x++) for (int z = -6; z <= 6; z++) for (int y = 198; y <= 204; y++)
             level.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 2);
         level.setBlock(pos, MegaMod.CAB.get().defaultBlockState(), 2);
