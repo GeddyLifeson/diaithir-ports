@@ -20,12 +20,25 @@ import org.slf4j.LoggerFactory;
 public final class MegaSelfTest {
     private static final Logger LOG = LoggerFactory.getLogger("Megamachines");
     private int fails;
+    private ServerLevel pending;
 
     @SubscribeEvent
     public void started(ServerStartedEvent e) {
-        ServerLevel level = e.getServer().overworld();
+        pending = e.getServer().overworld();
+        pending.setChunkForced(0, 0, true);
+    }
+
+    /** Villagers only spawn once the forced chunk is entity-ticking, which takes a few ticks. */
+    @SubscribeEvent
+    public void tick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
+        if (pending == null || !pending.isPositionEntityTicking(new BlockPos(0, 200, 0))) return;
+        ServerLevel level = pending;
+        pending = null;
+        run(level);
+    }
+
+    private void run(ServerLevel level) {
         BlockPos pos = new BlockPos(0, 200, 0);
-        level.setChunkForced(0, 0, true);
         for (int x = -6; x <= 6; x++) for (int z = -6; z <= 6; z++) for (int y = 198; y <= 204; y++)
             level.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 2);
         level.setBlock(pos, MegaMod.CAB.get().defaultBlockState(), 2);
@@ -105,6 +118,7 @@ public final class MegaSelfTest {
         for (int t = 0; t < 5; t++) tickHead(level, head, be);
         check("cab with no crew: HALTED, nothing dug", be.status() == DigHeadBlockEntity.Status.HALTED && be.dugTotal() == 0);
 
+        for (var stray : level.getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, new net.minecraft.world.phys.AABB(head).inflate(8))) stray.discard();   // drops left by earlier blocks' checks
         var crew = EntityType.VILLAGER.spawn(level, cabPos.above(), EntitySpawnReason.COMMAND);
         for (int t = 0; t < 400; t++) tickHead(level, head, be);
         int inChest = count(level, chest, Items.COBBLESTONE);
