@@ -105,6 +105,7 @@ public final class MegaSelfTest {
         for (int t = 0; t < 5; t++) tickHead(level, head, be);
         check("cab with no crew: HALTED, nothing dug", be.status() == DigHeadBlockEntity.Status.HALTED && be.dugTotal() == 0);
 
+        for (var stray : level.getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, new net.minecraft.world.phys.AABB(head).inflate(8))) stray.discard();   // drops left by earlier blocks' checks
         var crew = EntityType.VILLAGER.spawn(level, cabPos.above(), EntitySpawnReason.COMMAND);
         for (int t = 0; t < 400; t++) tickHead(level, head, be);
         int inChest = count(level, chest, Items.COBBLESTONE);
