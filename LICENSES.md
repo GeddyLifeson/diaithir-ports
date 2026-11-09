@@ -261,7 +261,7 @@ Each downloads from the author's own Modrinth or CurseForge file through its `.p
 | yeetusexperimentus-neoforge | yeetusexperimentus-neoforge-99.0.0.jar | arr |
 | yggdrasil | Yggdrasil-7.0.0.jar | arr |
 
-Open issue (checklist B3/B6): `Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar` (All rights reserved, our modified build) is hosted in `mods/` and also folded into the extras suite; the suites also still hold Oritech, Regions Unexplored, Relics & Artifacts (All Rights Reserved) and the Apotheosis assets (All Rights Reserved). Under the licence rule these must go back to original linked jars; they stay until the fold-audit lane strips them.
+Resolved 11-09 (checklist B3): Immersive Vehicles, Oritech, Regions Unexplored, Relics & Artifacts and Apotheosis (All Rights Reserved, or ARR assets) were stripped out of the hosted jars and now download as their original files from Modrinth (`mods/immersive-vehicles.pw.toml`, `oritech.pw.toml`, `regions-unexplored.pw.toml`, `relics-artifacts.pw.toml`, `apotheosis.pw.toml`). Our modified Immersive Vehicles build (diaithir.2, two client classes changed) is no longer shipped. ScalableLux (LGPL-3.0-only) is split out of the worldgen suite and linked client-only (`scalablelux.pw.toml`).
 
 ## Test-pack additions (linked, never hosted)
 

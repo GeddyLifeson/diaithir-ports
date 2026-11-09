@@ -68446,10 +68446,6 @@ file = "mods/Equivox-26.1.2-1.3.0.jar"
 hash = "cdcff6d9132b6295aee3eec06fcdbc4e3719983f0b670bbea3d5d524ac17173c"
 
 [[files]]
-file = "mods/Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar"
-hash = "5a818ea93c9b7d044437340fd2eaf3fba40c463df34225b5ee80701409f19711"
-
-[[files]]
 file = "mods/Jade-mc26.1-NeoForge-26.1.12.pw.toml"
 hash = "8da7017f425f634b3c2619f100548c05afa705391df2459674702068a911d189"
 metafile = true
@@ -68524,6 +68520,11 @@ metafile = true
 [[files]]
 file = "mods/ancient-jungle-ring.pw.toml"
 hash = "d47442ee9edef5c04812960299aa833e6de7a41f91e31d9c4819cf42cedd86d4"
+metafile = true
+
+[[files]]
+file = "mods/apotheosis.pw.toml"
+hash = "fd2af52f7481488892daf54f5b6eb67dc29482cfbf7eefc431a33d9658b30039"
 metafile = true
 
 [[files]]
@@ -68728,7 +68729,7 @@ hash = "89e576713bda65abd6fe130196266d24c5a4a6c8419786e64e2680eb4319eec5"
 
 [[files]]
 file = "mods/diaithir-extras-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "c10188d29682c4b26223458828debf87c794482e3727d323e2ba5b70785b767f"
+hash = "96c8fcf6ab951ef22153f0b091618f6308cb84131348b5f1f3e7af7a0038b933"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
@@ -68737,7 +68738,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-platform-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "9519a5e7d2d3ba27757e36cf610f02182307062983532022a5270c3631868e0b"
+hash = "41e225fbb7d1211d2a556538d14015ed08ac13d99cfb82666acc4d08ba1a9144"
 
 [[files]]
 file = "mods/diaithir-power-suite-neoforge-26.1.2-1.0.0.jar"
@@ -68778,7 +68779,7 @@ hash = "772024c9883290c0ea0e6920959d456d7f49842f98cfa35352b8b5a5f08cca02"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "54798dc9b02361915718157ad82c154f0630673305717933a9ea0a362fd0081c"
+hash = "f42d87a78af26d175e4059179a84604e4ab4c80b5beed0c73150fac7f1f9765e"
 
 [[files]]
 file = "mods/diaithir-worlds-ext-suite-neoforge-26.1.2-1.0.0.jar"
@@ -68971,6 +68972,11 @@ hash = "0f94aa6f21c016e7b59dbc9679fd8b5a7bb9c762a2bbf65ee5785f9470482a61"
 [[files]]
 file = "mods/illager-arena.pw.toml"
 hash = "96bd652d9c6ff515b99e23388b39a09608a66da3f0eadb5eeefe34316ec7d99f"
+metafile = true
+
+[[files]]
+file = "mods/immersive-vehicles.pw.toml"
+hash = "f0d53118ef1f8d4582a79df6b8f24bfcc1452265a7331e91b7c68dfc083af5a7"
 metafile = true
 
 [[files]]
@@ -69178,6 +69184,11 @@ hash = "358818c73a2921538f2dfa8058d4a59439d30800edf3eae1bed6239b89416f1b"
 metafile = true
 
 [[files]]
+file = "mods/oritech.pw.toml"
+hash = "719b39f80e90b476157c5c292bab2865fb9a594229a48dfa1737fec4c70f8cc6"
+metafile = true
+
+[[files]]
 file = "mods/paladins-and-priests.pw.toml"
 hash = "265497d4976a1d4bfb5a53938d57afcab4a47033e581a86d98c5d36e5e894a8d"
 metafile = true
@@ -69238,6 +69249,16 @@ hash = "6946452209249e4be6308dca7295a6833671076680601f769e3174fa784a4bbd"
 metafile = true
 
 [[files]]
+file = "mods/regions-unexplored.pw.toml"
+hash = "e59f64b6ca2faec0fc0bac4e8e3da4d473ef06b724779409955fdb6bea1df4ad"
+metafile = true
+
+[[files]]
+file = "mods/relics-artifacts.pw.toml"
+hash = "22bd90e514410a891b990702d19de1c1e5f8652dba1ba17855ece5fb242ebc16"
+metafile = true
+
+[[files]]
 file = "mods/reliquary-reincarnations.pw.toml"
 hash = "598c17ec8bc962dfdeba327c91bc62cf171191bf8b0577c4f90dfd3eefc924e7"
 metafile = true
@@ -69264,6 +69285,11 @@ metafile = true
 [[files]]
 file = "mods/runes.pw.toml"
 hash = "5a692533b03d2d3fd364796ac8761022b134ea9e146245b35b0b7613f1c362ac"
+metafile = true
+
+[[files]]
+file = "mods/scalablelux.pw.toml"
+hash = "3b23ed5b7f0a4b4e396d6a30aab32fb00bbfab5d135754dbeb009ef1ffcf4cf8"
 metafile = true
 
 [[files]]
