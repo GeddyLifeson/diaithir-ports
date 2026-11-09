@@ -143,3 +143,136 @@ The 35 utility, UI and decoration mods added with the atlas and voice jars (Iris
 | diaithir-server-ext-suite-neoforge-26.1.2-1.0.0.jar | One multi-mod jar per module; each source keeps its licence (`LICENSE-FIELD.txt` and licence files inside the jar). Sources, unmodified classes and resources: Chunky-NeoForge-1.5.4.jar (licence in jar); SimpleBackups-26.1.6.jar (licence in jar); abridged-2.0.2-neoforge-26.1.jar (licence in jar); tlc-neoforge-26.1-2.1.1.jar (licence in jar) | built by DiaithirRPG `tools/distribution/fold_mods.py` from the original jars |
 | diaithir-core-ext-suite-neoforge-26.1.2-1.0.0.jar | One multi-mod jar per module; each source keeps its licence (`LICENSE-FIELD.txt` and licence files inside the jar). Sources, unmodified classes and resources: NoChatReports-NEOFORGE-26.1-v2.19.0.jar (licence in jar); appleskin-neoforge-mc26.1-3.0.9.jar (licence in jar); better-advanced-tooltips-2601.1.0-build.11.jar (licence in jar); c2me-neoforge-mc26.1.2-0.4.0-alpha.0.100.jar (licence in jar); commoncapabilities-26.1.2-neoforge-2.11.8-377.jar (licence in jar); crashutilities-10.0.1.jar (licence in jar); cyclopscore-26.1.2-neoforge-1.31.3.jar (licence in jar); ferritecore-9.0.0-neoforge.jar (licence in jar); lib-5555ff-v1.1.5.jar (licence in jar); lithium-neoforge-0.24.7+mc26.1.2.jar (licence in jar); modernfix-neoforge-5.27.24+mc26.1.2.jar (licence in jar); packetfixer-neoforge-3.3.4-26.1.jar (licence in jar); servercore-neoforge-1.5.19+26.1.2.jar (licence in jar); spark-1.10.187-neoforge.jar (licence in jar); wits-1.4.3+26.1-neoforge.jar (licence in jar); yamlconfig-neoforge-20.1.2.jar (licence in jar); | built by DiaithirRPG `tools/distribution/fold_mods.py` from the original jars |
 | diaithir-tech-ext-suite-neoforge-26.1.2-1.0.0.jar | One multi-mod jar per module; each source keeps its licence (`LICENSE-FIELD.txt` and licence files inside the jar). Sources, unmodified classes and resources: ConstructionSticks-26.1.2-3.2.1.jar (licence in jar); FactionApi-26.1.2-1.0.0-alpha.3.jar (licence in jar); GeOre-26.1.2-8.1.0.jar (licence in jar); HostileNeuralNetworks-26.1.2-7.0.0.jar (licence in jar); Measurements-neoforge-26.1-4.0.0.jar (licence in jar); SimpleTeleportersReforged-26.1.2-5.1.0.jar (licence in jar); Spoiled-neoforge-26.1.2-12.1.0.jar (licence in jar); ToolBelt-26.1.2-2.9.5.jar (licence in jar); ae2wtlib-26.1.2-beta.jar (licence in jar); artifacts-neoforge-15.1.3.jar (licence in jar); baubley-heart-canisters-26.1.2-1.7.3.jar (licence in jar); buildinggadgets2-1.4.6.jar (licence in jar); comforts-neoforge-15.0.0+26.1.2.jar (licence in jar); easy_npc-neoforge-26.1.2-7.16.0.jar (licence in jar); easy_npc_config_ui-neoforge-26.1.2-7.16.0.jar (licence in jar); effortlessbuilding-neoforge-26.1.2-4.3.jar (licence in jar); elevatorid-neoforge-26.1-1.16.2.jar (licence in jar); emotecraft-for-MC26.1.2-3.3.0-b.build.164.jar (licence in jar); epitaphs-2.4.0+26.1.2.jar (licence in jar); getittogetherdrops-neoforge-26.1.1-1.5.jar (licence in jar); homeostatic-26.1.2-neoforge-2.13.0.1.jar (licence in jar); homeostaticseasons-26.1.2-neoforge-1.2.0.3.jar (licence in jar); integrateddynamics-26.1.2-neoforge-1.36.1.jar (licence in jar); jdturrets-neoforge-26.1.2-1.0.2.jar (licence in jar); just-hammers-neoforge-26.1.2.1.jar (licence in jar); justdirethings-1.6.11.jar (licence in jar); lootr-neoforge-26.1.2-1.23.38.123.jar (licence in jar); merequester-neoforge-26.1.2-1.5.1.jar (licence in jar); mininggadgets-1.19.3.jar (licence in jar); modulargolems-26.1.2.3.jar (licence in jar); morered-26.1.2.3.jar (licence in jar); strainers-26.1.2-6.13.0.jar (licence in jar); toms_storage-26.1-2.10.3.jar (licence in jar); yo_hooks-5.2.0-neoforge_beta.jar (licence in jar) | built by DiaithirRPG `tools/distribution/fold_mods.py` from the original jars |
+## Restored original mods (linked, never hosted here)
+
+Each downloads from the author's own Modrinth or CurseForge file through its `.pw.toml` (sha in the file). Licence class is the fold audit's (`plans/WAVE17_RESTORE_ORIGINALS.tsv`); ARR and unknown mods are never modified or rehosted. The one exception is Immersive Vehicles, see the next paragraph.
+
+| Mod | File | Licence class |
+|---|---|---|
+| abusimbel | abusimbel-1.0.0.jar | arr |
+| adorabuild-structures | adorabuild-structures-2.11.0-neoforge-26.1.1.jar | arr |
+| ai-improvements | AI-Improvements-26.1.1-0.5.4.jar | unknown |
+| ancient-jungle-ring | ancient-jungle-ring-1.0.0.jar | arr |
+| aquaculture | Aquaculture-26.1.1-2.9.2.jar | arr |
+| archers-neoforge | archers-neoforge-3.1.3.002+26.1.2.jar | arr |
+| auroral | auroral-26.1.2-1.5.9.jar | arr |
+| aztec-ruins | aztec-ruins-1.0.0.jar | arr |
+| balm-neoforge | balm-neoforge-26.1.2-26.1.2.15.jar | arr |
+| better-compatability-checker-neoforge | better-compatability-checker-neoforge-26.1.2.1.jar | arr |
+| betteradvancements-neoforge | better-advanced-tooltips-2601.1.0-build.11.jar | arr |
+| bettercombat-neoforge | bettercombat-neoforge-3.2.2+26.1.2.jar | arr |
+| big_lost_city | big_lost_city-1.0.1 Neoforge 26.1.2.jar | arr |
+| camol | camol-26.1.2-0.4.1.jar | arr |
+| cc-tweaked | cc-tweaked-26.1.2-forge-1.120.0.jar | arr |
+| classicpipes-neoforge | classicpipes-neoforge-26.1.2-1.1.7.jar | arr |
+| cookingforblockheads-neoforge | cookingforblockheads-neoforge-26.1.2-26.1.2.6.jar | arr |
+| crafting_on_a_stick-neoforge | crafting_on_a_stick-neoforge-26.1-1.1.jar | unknown |
+| craftingtweaks-neoforge | craftingtweaks-neoforge-26.1.2-26.1.2.3.jar | arr |
+| crashassistant-neoforge | CrashAssistant-neoforge-26.1-1.11.11.jar | arr |
+| cupboard | cupboard-26.1-4.1.jar | arr |
+| delfos | delfos-1.0.0.jar | arr |
+| desert_tomb | desert_tomb-2.0.0-neoforge-26.1.2.jar | unknown |
+| discoveria | discoveria-4.0.2d.jar | arr |
+| dungeons-and-taverns | dungeons-and-taverns-5.2.0.jar | arr |
+| durabilitytooltip | durabilitytooltip-1.2.0-neoforge-mc26.1.jar | arr |
+| easy-piglins-neoforge | easy-piglins-neoforge-1.1.7+26.1.2.jar | arr |
+| easy-villagers-neoforge | easy-villagers-neoforge-1.1.47+26.1.2.jar | arr |
+| entangled | entangled-1.3.21-neoforge-mc26.1.jar | arr |
+| entityculling-neoforge | entityculling-neoforge-1.11.3-mc26.1.2.jar | arr |
+| epic-structures-villages | epic-structures-villages-2.0.0.jar | arr |
+| explorations-neoforge | explorations-neoforge-26.1.2-1.6.5.jar | arr |
+| explorerscompass | ExplorersCompass-26.1-3.3.0-neoforge.jar | arr |
+| farmingforblockheads-neoforge | farmingforblockheads-neoforge-26.1.2-26.1.2.5.jar | arr |
+| firstperson-neoforge | firstperson-neoforge-2.7.3-mc26.1.2.jar | arr |
+| flickerfix | flickerfix-26.1-7.0.0.jar | unknown |
+| forest_ruins | forest_ruins-1.0.0 Neoforge 26.1.2.jar | arr |
+| fragmentum-neoforge | fragmentum-neoforge-26.1-4.1.0.jar | unknown |
+| ftb-essentials-neoforge | ftb-essentials-neoforge-26.1.2.5.jar | arr |
+| ftb-filter-system-neoforge | ftb-filter-system-neoforge-26.1.2.2.jar | arr |
+| ftb-library-neoforge | ftb-library-neoforge-26.1.2.9.jar | arr |
+| ftb-quests-neoforge | ftb-quests-neoforge-26.1.2.9.jar | arr |
+| ftb-ranks-neoforge | ftb-ranks-neoforge-26.1.2.4.jar | arr |
+| ftb-teams-neoforge | ftb-teams-neoforge-26.1.2.4.jar | arr |
+| ftb-xmod-compat-neoforge | ftb-xmod-compat-neoforge-26.1.2.4.jar | arr |
+| giant_natural_additions | giant_natural_additions-1.0.0 neoforge 26.1.2.jar | arr |
+| glitchcore-neoforge | GlitchCore-neoforge-26.1.2-26.1.2.0.2.jar | arr |
+| grim-kingdoms-lost-structures-ruins | grim-kingdoms-lost-structures-ruins-2.0.3.jar | arr |
+| guardvillagers | guardvillagers-3.0.4-26.1.0.jar | arr |
+| hopobetterunderwaterruins-[26.1] | HopoBetterUnderwaterRuins-[26.1]-1.2.7.jar | unknown |
+| illager_arena | illager_arena-1.0.0 Neoforge 26.1.2.jar | arr |
+| immersive_vehicles | Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar | arr |
+| inventoryessentials-neoforge | inventoryessentials-neoforge-26.1.2-26.1.2.7.jar | arr |
+| irons_lib | irons_lib-26.1.2-2.2.0.jar | arr |
+| itemcollectors | itemcollectors-1.1.12a-neoforge-mc26.1.jar | arr |
+| jewelry-neoforge | jewelry-neoforge-2.5.1+26.1.2.jar | arr |
+| jousting | jousting-26.1.2-v1.0.12.jar | arr |
+| katters-structures | katters-structures-2.4.jar | arr |
+| lambdynamiclights | lambdynamiclights-4.11.2+26.1.2.jar | arr |
+| logisticsnetworks | logisticsnetworks-26.1.2-1.12.0.jar | arr |
+| longerchathistory-neoforge | LongerChatHistory-neoforge-1.8.jar | arr |
+| man_of_many_planes | man_of_many_planes-0.2.3+26.1.2-neoforge.jar | unknown |
+| mcw-bridges | mcw-bridges-3.1.2-mc26.1neoforge.jar | arr |
+| mcw-furniture | mcw-furniture-3.4.2-mc26.1neoforge.jar | arr |
+| mcw-lights | mcw-lights-1.1.5-mc26.1neoforge.jar | arr |
+| mcw-roofs | mcw-roofs-2.3.2-mc26.1neoforge.jar | arr |
+| mcw-stairs | mcw-stairs-1.0.2-mc26.1neoforge.jar | arr |
+| mcw-windows | mcw-windows-2.4.2-mc26.1neoforge.jar | arr |
+| medieval_buildings-neoforge | medieval_buildings-neoforge-26.1.2-1.2.0.jar | unknown |
+| mycenae | mycenae-1.0.0.jar | arr |
+| netherportalfix-neoforge | netherportalfix-neoforge-26.1-26.1.0.1.jar | arr |
+| newgrange | newgrange-1.0.0.jar | arr |
+| notenoughanimations-neoforge | notenoughanimations-neoforge-1.12.5-mc26.1.2.jar | arr |
+| paladins-neoforge | paladins-neoforge-3.1.3.002+26.1.2.jar | arr |
+| petra | petra-1.0.0.jar | arr |
+| pipez-neoforge | pipez-neoforge-1.2.31+26.1.2.jar | arr |
+| pointblank-neoforge | pointblank-neoforge-26.1.2-2.2.0.jar | arr |
+| productivefarming | productivefarming-26.1.2-0.13.0.jar | arr |
+| productivemetalworks | productivemetalworks-26.1.2-1.17.1.jar | arr |
+| productivetrees | productivetrees-26.1.2-1.3.1.jar | arr |
+| puffish_skills | puffish_skills-0.19.2-26.1-neoforge.jar | arr |
+| pwic-v0.3td | PWIC-V0.3TD_21_fix.jar | arr |
+| pylons | pylons-26.1-6.0.1.jar | arr |
+| recurrentcomplexvolts | RecurrentComplexVolts-26.1.2-0.7.3.0.jar | unknown |
+| reliquary | reliquary-26.1.2-2.0.92.1563.jar | arr |
+| rogues-neoforge | rogues-neoforge-3.1.3.002+26.1.2.jar | arr |
+| ruins-and-towers | ruins-and-towers-0.3.jar | arr |
+| sgearmetalworks | sgearmetalworks-26.1.2-1.6.0.jar | arr |
+| shogi-neoforge | shogi-neoforge-26.1.2-26.1.2.12.jar | unknown |
+| simplemagnets | simplemagnets-1.1.12-neoforge-mc26.1.jar | arr |
+| skill_tree-neoforge | skill_tree-neoforge-1.6.2+26.1.2.jar | arr |
+| skinlayers3d-neoforge | skinlayers3d-neoforge-1.11.4-mc26.1.2.jar | arr |
+| sophisticatedbackpacks | sophisticatedbackpacks-26.1.2-3.26.11.2198.jar | arr |
+| sophisticatedcore | sophisticatedcore-26.1.2-1.5.12.2390.jar | arr |
+| sophisticatedstorage | sophisticatedstorage-26.1.2-1.5.120.2173.jar | arr |
+| sophisticatedstorageinmotion | sophisticatedstorageinmotion-26.1.2-0.10.37.378.jar | arr |
+| structory | Structory_26.2_v1.3.7.jar | arr |
+| structory_towers | Structory_Towers_26.2_v1.0.17.jar | arr |
+| structural_beyond | structural_beyond-1.1.0-universal.jar | arr |
+| supermartijn642configlib | supermartijn642configlib-1.1.8-neoforge-mc26.1.jar | arr |
+| supermartijn642corelib | supermartijn642corelib-1.1.25-neoforge-mc26.1.jar | arr |
+| t_and_t-fabric-neoforge | t_and_t-fabric-neoforge-1.13.11.jar | arr |
+| trashslot-neoforge | trashslot-neoforge-26.1.2-26.1.2.4.jar | arr |
+| undeadnights | UndeadNights-2.2.5-NeoForge-mc26.1.jar | arr |
+| underwater_village | underwater_village-1.0.0 Neoforge 26.1.2.jar | arr |
+| utilitarian | utilitarian-26.1.2-0.22.0.jar | arr |
+| valhelsia_core-neoforge | valhelsia_core-neoforge-26.1.2-1.1.6.jar | arr |
+| waystones-neoforge | waystones-neoforge-26.1.2-26.1.2.16.jar | arr |
+| wizards-neoforge | wizards-neoforge-3.1.3.002+26.1.2.jar | arr |
+| yeetusexperimentus-neoforge | yeetusexperimentus-neoforge-99.0.0.jar | arr |
+| yggdrasil | Yggdrasil-7.0.0.jar | arr |
+
+Resolved 11-09 (checklist B3): Immersive Vehicles, Oritech, Regions Unexplored, Relics & Artifacts and Apotheosis (All Rights Reserved, or ARR assets) were stripped out of the hosted jars and now download as their original files from Modrinth (`mods/immersive-vehicles.pw.toml`, `oritech.pw.toml`, `regions-unexplored.pw.toml`, `relics-artifacts.pw.toml`, `apotheosis.pw.toml`). Our modified Immersive Vehicles build (diaithir.2, two client classes changed) is no longer shipped. ScalableLux (LGPL-3.0-only) is split out of the worldgen suite and linked client-only (`scalablelux.pw.toml`).
+
+## Test-pack additions (linked, never hosted)
+
+| Mod | File | Licence read from the jar on 2026-11-09 |
+|---|---|---|
+| Waystones | waystones-neoforge-26.1.2-26.1.2.16.jar | All Rights Reserved |
+| Balm | balm-neoforge-26.1.2-26.1.2.15.jar | All Rights Reserved |
+| Shogi | shogi-neoforge-26.1.2-26.1.2.12.jar | MIT |
+| Productive Trees | productivetrees-26.1.2-1.3.1.jar | All Rights Reserved |
+
+
+## Audit of the clean-room rewrites (11-09)
+
+The Aether II (custom licence), The Undergarden (All Rights Reserved) and The Backwoods (All Rights Reserved) rewrites were stripped from `diaithir-worldgen-suite` and now link their original Modrinth files (`aether-ii`, `the-undergarden`, `the-backwoods`). Easy NPC is not a duplicate: `easy_npc_bundle` (MIT) is a 25 KB meta mod that only requires `easy_npc` and `easy_npc_config_ui`, which the tech-ext suite supplies (both MIT). Kept folded after reading the licence: Aerial Hell and Stellaris (CC-BY-NC-SA-4.0, derivatives allowed, non-commercial and share-alike, same as Kaleidoscope Tavern), Titanium and BCLib and Better Caravans (MIT; BCLib assets partly CC BY-NC-SA). Single-file compat tags and config data under `cristellib`, `natures_spirit`, `forbidden_arcanus`, `ftbchunks` and `runes` are our own files, not the mods' content, so they stay; Cristel Lib (CC-BY-NC-ND) code is not in any hosted jar.

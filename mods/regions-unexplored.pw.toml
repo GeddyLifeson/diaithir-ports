@@ -1,0 +1,12 @@
+name = "regions-unexplored"
+filename = "regions-unexplored-0.7.0+beta2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Tkikq67H/versions/7l15n9Bm/regions-unexplored-0.7.0%2Bbeta2-neoforge.jar"
+hash-format = "sha256"
+hash = "9c605e66d20c3f07aa1b40a03e2d369d629be01921125d7e1589a1aaba5b0b23"
+
+[update.modrinth]
+mod-id = "Tkikq67H"
+version = "7l15n9Bm"

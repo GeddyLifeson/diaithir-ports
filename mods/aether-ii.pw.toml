@@ -1,0 +1,12 @@
+name = "aether-ii"
+filename = "aether_ii-26.1.2-alpha.4.2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/JD2NSu5O/versions/hVPk1MVE/aether_ii-26.1.2-alpha.4.2-neoforge.jar"
+hash-format = "sha256"
+hash = "f4156bd72b4c85235aa81c571a54646fab264a015b9a44116fe7ccb427b3a2e4"
+
+[update.modrinth]
+mod-id = "JD2NSu5O"
+version = "hVPk1MVE"
