@@ -1,6 +1,6 @@
 {
  "parent": "minecraft:block/cube_all",
  "textures": {
-  "all": "amendments:block/music_discs/the_bumblezone/music_disc_string_like_a_bee"
+  "all": "minecraft:block/hay_block_side"
  }
 }

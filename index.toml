@@ -187,7 +187,7 @@ hash = "d4a19dbb4d2d06eac2ef09e084cb42760893371d3b746c1249955b2c633ab35d"
 
 [[files]]
 file = "kubejs/assets/amendments/models/block/hanging_flower_pot_rope.json"
-hash = "5d3f5cfb06ae4c180c8e9dc32a3ab59af5ba259177b85d8439e0dd5360759a12"
+hash = "d062bfafa8f4651969f5edc702de92a80aeddd1957d12ccc55c2bc750e5249eb"
 
 [[files]]
 file = "kubejs/assets/apotheosis/textures/items/ender_lead.png"
@@ -52486,6 +52486,18 @@ file = "kubejs/assets/silentgear/textures/item/trident.png"
 hash = "d844c1aa7a211b30689db5f8df7b04e68e7766681577edbbfca15eb1bfcf42f2"
 
 [[files]]
+file = "kubejs/assets/stellaris/textures/block/lunar_forest/lunar_log.png"
+hash = "fbf773b7aba078b9535df12308f2bc8bfc0a95f67361888a7d9476f7fa08583c"
+
+[[files]]
+file = "kubejs/assets/stellaris/textures/block/lunar_forest/lunar_log_top.png"
+hash = "e16adaccfbcedc3c28c519972b45ca4e09cd3053ac2a79b9d6302b24ec1aa6f0"
+
+[[files]]
+file = "kubejs/assets/stellaris/textures/block/lunar_forest/lunar_planks.png"
+hash = "e17009b1b9a1fe08e203d7bb8e1a03b59be45e43e991f05ed7f5ad43bffa79bc"
+
+[[files]]
 file = "kubejs/assets/structurize/models/block/blocktimberframe.json"
 hash = "0032ca336a714c3ea3bb77bf4f8da14637bbb7dd7f48bd06e306171060f3884f"
 
@@ -68762,7 +68774,7 @@ hash = "eb5a40564c12a73f16f3777c10a6d67aefa819ba19627e5b1da593aa81c78193"
 
 [[files]]
 file = "mods/diaithir-worldgen-structures-neoforge-26.1.2-1.0.6.jar"
-hash = "c986f72d2027d257b958ec3ecff985d5a0f88c7d57181d5f18fe3b85f5b03c7d"
+hash = "772024c9883290c0ea0e6920959d456d7f49842f98cfa35352b8b5a5f08cca02"
 
 [[files]]
 file = "mods/diaithir-worldgen-suite-neoforge-26.1.2-1.0.0.jar"
