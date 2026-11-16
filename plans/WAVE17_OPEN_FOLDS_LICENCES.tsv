@@ -1,0 +1,39 @@
+# B4 licence pass (11-08, Modrinth API metadata, NOT yet read from each mod's own repo; slug matches are by search and unverified). Mismatches to check: clientsort (hit was clientsort-paper), mousetweaks, travelerstitles, enchantmentdescriptions (hit says ARR: must NOT fold).
+stem	route	target	modrinth_slug	spdx	source	26.1.2_neoforge
+ambientsounds_neoforge_v6.3.6_mc26.1.2	merge	diaithir-audio	ambientsounds	LGPL-3.0-only	https://github.com/CreativeMD/AmbientSounds	6.3.6
+appliedflux	merge	diaithir-power-storage	NOT FOUND			
+badoptimizations	port	diaithir-server-logic-tweaks	badoptimizations	MIT	https://github.com/imthosea/BadOptimizations/	2.4.1
+baubley-heart-canisters	port	diaithir-accessories	baubley-heart-canisters	MIT	https://github.com/Traverse-Joe/Baubley-Heart-Canisters	26.1.2-1.7.3
+chat_heads	merge	diaithir-chat-client	chat-heads	MPL-2.0	https://github.com/dzwdz/chat_heads	1.3.2
+clientsort-neoforge	merge	diaithir-inventory-ui	clientsort-paper	Apache-2.0	https://github.com/YONN2222/ClientSortPaper/	no 26.1.2 neoforge
+combat_roll-neoforge	port	diaithir-combat-arms	combat-roll	GPL-3.0-only	https://github.com/ZsoltMolnarrr/CombatRoll	3.0.1+26.1.2-neoforge
+controlling-neoforge	port	diaithir-client-view-input	controlling	MIT	https://github.com/jaredlll08/Controlling	26.1.2.7
+critical_strike-neoforge	port	diaithir-combat-progression	critical-strike	GPL-3.0-only	https://github.com/ZsoltMolnarrr/Critical-Strike	1.0.6+26.1.2-neoforge
+cutthrough-v26.1.0-mc26.1.x-neoforge	port	diaithir-attribute-fixes	NOT FOUND			
+cwb	port	diaithir-client-view-input	NOT FOUND			
+deepnull-reforged	merge	diaithir-sophisticated-portable	deepnull-reforged	MIT	https://github.com/DeepDaddyTTV/DeepNull-Reforged/	4.2.1-beta
+diaithir-branding-neoforge	merge	diaithir-client	NOT FOUND			
+enchantmentdescriptions-neoforge-mc26.1.2	port	diaithir-tooltips	lullaby6-enchantment-descriptions	LicenseRef-All-Rights-Reserved		no 26.1.2 neoforge
+entity_model_features	merge	diaithir-entity-animation	entity-model-features	LGPL-3.0-only	https://github.com/Traben-0/Entity_Model_Features	3.3.12-neoforge-26.1
+entity_texture_features	merge	diaithir-entity-animation	entitytexturefeatures	LGPL-3.0-only	https://github.com/Traben-0/Entity_Texture_Features	7.2.7-neoforge-26.1
+extremesoundmuffler	merge	diaithir-audio	NOT FOUND			
+fallingleaves	merge	diaithir-world-visuals	fallingleaves	MIT	https://github.com/Fourmisain/fallingleaves	no 26.1.2 neoforge
+fastworkbench	port	diaithir-server-logic-tweaks	fastworkbench	MIT	https://github.com/Shadows-of-Fire/FastWorkbench	26.1.2-10.0.0
+foodeffecttooltips	port	diaithir-tooltips	foodeffecttooltips	LGPL-3.0-only	https://github.com/DaFuqs/FoodEffectTooltips	2.1.2+26.1
+imblocker	port	diaithir-client-view-input	imblocker-original	GPL-3.0-only	https://github.com/reserveword/IMBlocker	7.3.2
+immediatelyfast-neoforge	merge	diaithir-client-render-culling	immediatelyfast	LGPL-3.0-or-later	https://github.com/RaphiMC/ImmediatelyFast	1.15.3+26.1-neoforge
+inventoryprofilesnext-neoforge	port	diaithir-inventory-tools	NOT FOUND			
+invmove	merge	diaithir-world-visuals	invmove	LGPL-3.0-only	https://github.com/PieKing1215/InvMove	0.9.6+26.1.2-neoforge
+jaopca	port	diaithir-metal-processing	jaopca	MIT	https://github.com/TheLMiffy1111/JAOPCA	26.1.2-6.0.2.2
+keybindbundles	port	diaithir-world-interaction	NOT FOUND			
+leavemybarsalone-v26.1.0-mc26.1.x-neoforge	port	diaithir-hud-overlays	NOT FOUND			
+mousetweaks-neoforge-mc26.1	port	diaithir-inventory-tools	mousetweaks-x-accessories-fix	MIT	https://github.com/Stalemated/mousetweaks-x-accessories-fix/	no 26.1.2 neoforge
+reeses-sodium-options-neoforge	port	diaithir-client-view-input	reeses-sodium-options	MIT	https://github.com/FlashyReese/reeses-sodium-options	mc26.1.2-2.2.4+neoforge
+searchables-neoforge	port	diaithir-inventory-tools	searchables	MIT	https://github.com/jaredlll08/searchables	1.0.2
+sound-physics-remastered-neoforge	merge	diaithir-audio	sound-physics-remastered	GPL-3.0-only	https://github.com/henkelmax/sound-physics-remastered	neoforge-1.5.2+26.1.2
+spice of life onion_neoforge_v1.5.6_mc26.1.2	port	diaithir-food-diet	spice-of-life-onion	LGPL-3.0-only	https://github.com/CreativeMD/Spice-of-Life-Onion	1.5.6
+structurememory	port	diaithir-structure-navigation	NOT FOUND			
+toastcontrol	port	diaithir-hud-overlays	NOT FOUND			
+travelerstitles	merge	diaithir-world-visuals	regional-titledhz_travelerstitles	MIT	https://github.com/YonZeE8021/dhz_travelerstitles-template-1.20.1	no 26.1.2 neoforge
+uilib-neoforge	port	diaithir-multiloader-compat	NOT FOUND			
+witherskeletontweaks	port	diaithir-hostile-encounters	NOT FOUND			
