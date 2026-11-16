@@ -75,6 +75,10 @@ public final class CartLogic {
     public static void tick(AbstractMinecart cart, ServerLevel level) {
         Coupling.pull(cart, level);
         MagicFuel.tick(cart);
+        if (Autonomy.crewRequired(cart) > 1 && !Coupling.hasLeader(cart) && !Autonomy.mayRun(cart)) {   // a multi-crew loco (steam: driver and fireman) stands until fully crewed
+            Vec3 v = cart.getDeltaMovement();
+            cart.setDeltaMovement(0, v.y, 0);
+        }
         BlockPos pos = cart.getCurrentBlockPosOrRailBelow();
         BlockState state = level.getBlockState(pos);
         Gauge own = GaugeData.of(cart);

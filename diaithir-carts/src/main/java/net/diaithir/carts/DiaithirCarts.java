@@ -121,6 +121,24 @@ public final class DiaithirCarts {
         });
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> { CartSelfTest.tick(e.getServer()); net.diaithir.yards.YardSelfTest.tick(e.getServer()); SignalTest.tick(e.getServer()); RoutingTest.tick(e.getServer()); ScheduleTest.tick(e.getServer()); });
         NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirCarts::interact);
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.level.BlockEvent.EntityPlaceEvent.class, DiaithirCarts::placeRail);
+    }
+
+    /** Gauges do not interconnect: a rail is refused beside a rail of the other gauge (dual-gauge and gauge-neutral rails join anything). */
+    private static void placeRail(net.neoforged.neoforge.event.level.BlockEvent.EntityPlaceEvent e) {
+        if (!(e.getPlacedBlock().getBlock() instanceof RailSpeed placed) || !(e.getLevel() instanceof net.minecraft.world.level.Level level) || level.isClientSide()) return;
+        Gauge g = placed.gauge();
+        if (g != Gauge.STANDARD && g != Gauge.NARROW) return;
+        for (net.minecraft.core.Direction d : net.minecraft.core.Direction.Plane.HORIZONTAL) {
+            for (int dy = -1; dy <= 1; dy++) {
+                var near = level.getBlockState(e.getPos().relative(d).above(dy));
+                if (near.getBlock() instanceof RailSpeed r && (r.gauge() == Gauge.STANDARD || r.gauge() == Gauge.NARROW) && r.gauge() != g) {
+                    e.setCanceled(true);
+                    if (e.getEntity() instanceof net.minecraft.server.level.ServerPlayer p) p.sendSystemMessage(Component.literal("Wrong gauge: " + g.id + " track cannot join " + r.gauge().id + " track. Use a dual-gauge rail."));
+                    return;
+                }
+            }
+        }
     }
 
     private static void interact(PlayerInteractEvent.EntityInteract e) {
