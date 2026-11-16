@@ -64,7 +64,7 @@ public final class Station {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
-        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) { IgnitionKey.init(bus); VehicleHud.init(bus); }
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) { IgnitionKey.init(bus); FireKey.init(bus); VehicleHud.init(bus); }
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
             if (e.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) ITEM_LIST.forEach(i -> e.accept(i.get()));
         });
@@ -80,6 +80,7 @@ public final class Station {
                 }
                 if (shotWatch > 0) shotWatch--;
             }
+            if (shootLeft > 0 && --shootLeft == 0) IvControl.trigger(shootSource.getLevel(), shootSource.getPosition(), 8.0, false, false);
             if (fireLeft > 0 && fireSource != null) {
                 var pos = fireSource.getEntity() != null ? fireSource.getEntity().position() : fireSource.getPosition();
                 IvControl.trigger(fireSource.getLevel(), pos, 8.0, fireLeft-- == fireTotal);
@@ -103,6 +104,7 @@ public final class Station {
                     return 1;
                 })))
                 .then(Commands.literal("fire").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS)).executes(c -> fire(c.getSource(), 40)).then(Commands.argument("ticks", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 1200)).executes(c -> fire(c.getSource(), com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(c, "ticks")))))
+                .then(Commands.literal("shoot").executes(c -> { IvControl.trigger(c.getSource().getLevel(), c.getSource().getPosition(), 8.0, shootLeft == 0); shootLeft = 4; shootSource = c.getSource(); return 1; }))
                 .then(Commands.literal("status").executes(c -> {
                     String st = IvControl.status(c.getSource().getLevel(), c.getSource().getPosition(), 8.0);
                     c.getSource().sendSuccess(() -> Component.literal(st == null ? "No vehicle within 8 blocks" : "Vehicle: " + st), false);
@@ -136,7 +138,8 @@ public final class Station {
     private static net.minecraft.commands.CommandSourceStack watchSource;
     private static int watchLeft;
     private static net.minecraft.commands.CommandSourceStack fireSource;
-    private static int fireLeft, fireTotal, shotWatch;
+    private static int fireLeft, fireTotal, shotWatch, shootLeft;
+    private static net.minecraft.commands.CommandSourceStack shootSource;
     private static final java.util.Map<Object, String> shots = new java.util.IdentityHashMap<>();
 
     /** Holds the trigger of the nearest vehicle's guns for the given ticks (same as holding IV's fire key from the controller seat). */
