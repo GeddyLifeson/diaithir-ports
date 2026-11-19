@@ -6,3 +6,7 @@ side = "both"
 url = "https://edge.forgecdn.net/files/9374/016/ftb-chunks-neoforge-26.1.2.10.jar"
 hash-format = "sha256"
 hash = "a8aa66c2e5d5505dd740449096be5baf3e7c293a3b870bd8d4c15bf7d87e05b8"
+
+[update.curseforge]
+file-id = 9374016
+project-id = 314906
