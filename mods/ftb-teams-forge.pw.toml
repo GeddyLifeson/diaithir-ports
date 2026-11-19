@@ -6,3 +6,7 @@ side = "both"
 url = "https://edge.forgecdn.net/files/9405/340/ftb-teams-neoforge-26.1.2.5.jar"
 hash-format = "sha256"
 hash = "7df9f8c3f38a7e307d8706514c1780bc7bee274097805c7e6de199d48db102eb"
+
+[update.curseforge]
+file-id = 9405340
+project-id = 404468

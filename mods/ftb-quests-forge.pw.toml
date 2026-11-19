@@ -6,3 +6,7 @@ side = "both"
 url = "https://edge.forgecdn.net/files/9456/215/ftb-quests-neoforge-26.1.2.10.jar"
 hash-format = "sha256"
 hash = "bc4901beef6d016e00beb9c1ca4915098866c8cab035901534c36439360d9da4"
+
+[update.curseforge]
+file-id = 9456215
+project-id = 289412

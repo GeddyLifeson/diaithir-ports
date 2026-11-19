@@ -6,3 +6,7 @@ side = "both"
 url = "https://edge.forgecdn.net/files/9455/053/ftb-ultimine-neoforge-26.1.2.7.jar"
 hash-format = "sha256"
 hash = "70bff4fe35bfb008605bd180fc7658068e62d25deaacee37b36f319840ec0943"
+
+[update.curseforge]
+file-id = 9455053
+project-id = 386134

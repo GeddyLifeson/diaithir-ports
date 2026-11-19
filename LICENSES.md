@@ -288,8 +288,13 @@ The Aether II (custom licence), The Undergarden (All Rights Reserved) and The Ba
 
 | Material | Original authors / source | Changes | Licence of our version |
 |---|---|---|---|
-| Aerial Hell (`aerialhell`) | Aerial Hell team, https://modrinth.com/mod/aerial-hell | Ported to NeoForge 26.1.2; some machines replaced by vanilla stand-ins | CC-BY-NC-SA-4.0 |
-| Stellaris (`stellaris`) | Stellaris authors, https://modrinth.com/mod/stellaris | Ported to NeoForge 26.1.2; some machines replaced by vanilla stand-ins | CC-BY-NC-SA-4.0 |
-| Blooming Biosphere alias | Blooming Biosphere authors, https://modrinth.com/mod/blooming-biosphere | Alias only | CC-BY-NC-SA-4.0 |
+| Aerial Hell (`aerialhell`) | nicochart (Modrinth owner), https://modrinth.com/mod/aerial-hell, source https://github.com/nicochart/AerialHell | Ported to NeoForge 26.1.2; some machines replaced by vanilla stand-ins | CC-BY-NC-SA-4.0 |
+| Stellaris (`stellaris`) | Stellaris team (st0x0ef; Modrinth members SanderA, TathanDev, Okamiz, Ilyuxadwa, Fej1Fun, SpaceStar), https://modrinth.com/mod/stellaris, source https://github.com/st0x0ef/stellaris-2.0 | Ported to NeoForge 26.1.2; some machines replaced by vanilla stand-ins | CC-BY-NC-SA-4.0 |
+| Blooming Biosphere alias | hhumanoid (Modrinth owner) and limesplatus (maintainer), https://modrinth.com/mod/blooming-biosphere | Alias only | CC-BY-NC-SA-4.0 |
 
-The pack must stay free and non-commercial. The `mods.toml` text calling these "clean-room replacement" is wrong for the namespaces above: they are adaptations of the upstream art and data, and this section governs. UNVERIFIED: exact upstream author names; fill from each project's Modrinth page before release. Marlon should confirm Blooming Biosphere is meant to stay folded (his decision named only Aerial Hell and Stellaris).
+The pack must stay free and non-commercial. The `mods.toml` text calling these "clean-room replacement" is wrong for the namespaces above: they are adaptations of the upstream art and data, and this section governs. Author names above are from each project's Modrinth team page and source link (checked 11-19). Marlon should confirm Blooming Biosphere is meant to stay folded (his decision named only Aerial Hell and Stellaris).
+
+## Batch 4 follow-up (11-19)
+
+- **bundle-api** (MIT) and **critical-strike** (GPL-3.0-only) are linked as original Modrinth jars (`mods/bundle-api.pw.toml`, `mods/critical-strike.pw.toml`), unmodified. They are the providers `runes`, `archers` and `skill-tree` require.
+- **Megamachines and ships** (`diaithir-ships`) are V1.1, not V1. See `plans/BATCH4_FOLLOWUP.md`.

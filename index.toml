@@ -68607,8 +68607,13 @@ file = "mods/blockui-1.0.0-diaithir.jar"
 hash = "603d4242c746c42cf9cbe64fae7c4045bb71f657eea1797af9e9d3ae227932eb"
 
 [[files]]
+file = "mods/bundle-api.pw.toml"
+hash = "2fd1820a9faec72ece5df6ec986750087c02a4da32fef9f3d2e40eb99eeede6e"
+metafile = true
+
+[[files]]
 file = "mods/camol.pw.toml"
-hash = "3d024e09c8f5f3502d36575a37e8ccaf97b0ebefdf372002415615e35e66ff1e"
+hash = "4dd2d9d824387429af9ee6580a36cb905d0c297a7b9d6c8624e7a85ad65d4377"
 metafile = true
 
 [[files]]
@@ -68671,8 +68676,13 @@ hash = "2b321e337b8ef726994759f3d3e3f83f3b695f1434b37221dc6e0890e970eecb"
 metafile = true
 
 [[files]]
+file = "mods/critical-strike.pw.toml"
+hash = "b9d4352616d6b91677f41c69fbd43a43ea5e12bf4c9287fb3bfdbcfce5ce8bcd"
+metafile = true
+
+[[files]]
 file = "mods/cupboard.pw.toml"
-hash = "4ff62be7114d23c5594879c70aa69c82caab6ebd4ac6a3466a2ac41449651a36"
+hash = "e43cc14e70680775a647628d3d118bd153ecf724c369fe85df5a8529b0640be3"
 metafile = true
 
 [[files]]
@@ -68887,17 +68897,17 @@ metafile = true
 
 [[files]]
 file = "mods/ftb-chunks.pw.toml"
-hash = "6a62d0543c2b8b6d99e6baade13e66409b58d7d41f97cef9f9753271b87943ea"
+hash = "e96c4836f74337894216eb7f5bbfac786abbfe498a7eb08fc4149ea063f04210"
 metafile = true
 
 [[files]]
 file = "mods/ftb-essentials.pw.toml"
-hash = "1419ca362d9c470424992b74c2a75718a5032ff41c6e5ec01afade2fca184d6d"
+hash = "bc5fc1dec866bad48009befb18a234656ff0756836711fd8c04162f712092638"
 metafile = true
 
 [[files]]
 file = "mods/ftb-filter-system.pw.toml"
-hash = "565be1604eca4ed536029fb750d3e197a5ca940c6720fe7c1d84a1884c5a6d95"
+hash = "46d9cc7557365af2c082949753701295f771df7bce831181d5ff0175cd2cece5"
 metafile = true
 
 [[files]]
@@ -68907,27 +68917,27 @@ metafile = true
 
 [[files]]
 file = "mods/ftb-quests-forge.pw.toml"
-hash = "62ccf190dc2c66f4c720add58938f6d82d62cc42059fa0b7d4182ffe55989d54"
+hash = "675c33754a9f6d6e1161e75acdf397f0128a2d52e05dc0af22e28ce81a2cb71a"
 metafile = true
 
 [[files]]
 file = "mods/ftb-ranks-forge.pw.toml"
-hash = "18f45d7cf4d836bbe4f54db79e7ad1f70e94a414aa211463754b95f62340ac76"
+hash = "999a6739ae7bc77b70615bc1b2ce4eeefab2bb435424a1129c6bae6d97e95cad"
 metafile = true
 
 [[files]]
 file = "mods/ftb-teams-forge.pw.toml"
-hash = "a1aed7081e45d8848ddbf368abd3687f3642d5489d243d23332a36bfbd58a6f8"
+hash = "a4f636653c04def7adad2925062ba1af4abf536abb2eccb8596151f5b174c36c"
 metafile = true
 
 [[files]]
 file = "mods/ftb-ultimine.pw.toml"
-hash = "728170acb79a30ccea700bf4e7931b29fdbc3a505a15c9768bac85b77940e7fd"
+hash = "0a49a7f99232e83fac36a43f7fb974606d009e0fab5f6da7af1522b86e090993"
 metafile = true
 
 [[files]]
 file = "mods/ftb-xmod-compat.pw.toml"
-hash = "2c14de04ff69d3a92021dbd4b5a6d637bf52e6bfc545e4c66100490382a28ccf"
+hash = "092c43d40206a6c9e258dc011ba21953a807e39b45a08756124245aa1bc28e19"
 metafile = true
 
 [[files]]
@@ -69061,7 +69071,7 @@ hash = "f8563e15ca71bac0a8da54a8aef4944f30671d91faaf6b19023b724c9573d1db"
 
 [[files]]
 file = "mods/logistics-network.pw.toml"
-hash = "a55d2dedfbc9c47673b6ae71a28d50af0f4d9cf4c5a9d5a23e1e27867e05d989"
+hash = "50c80d400657fbc4e10eac13739e3c1427b7f19a556e36d94864e0207a3bcfbf"
 metafile = true
 
 [[files]]
@@ -69210,7 +69220,7 @@ metafile = true
 
 [[files]]
 file = "mods/productive-metalworks.pw.toml"
-hash = "d3910289946a6be5109c9968a15b5e2cea3fd086847f91a645a42a6ef8a14d7c"
+hash = "be26a05dde33184c84917cc2787aa7afa094d95fdbb6622ec619a5d431f2b049"
 metafile = true
 
 [[files]]
@@ -69220,17 +69230,17 @@ metafile = true
 
 [[files]]
 file = "mods/productivefarming.pw.toml"
-hash = "992b1d81f683a601d1677e617a8ebd033535b8545c2a8d53ec640c9014e577f7"
+hash = "c08716f8e3ac62c1733e30cd1383e545fe473238c8ac934aff2439c1fda51666"
 metafile = true
 
 [[files]]
 file = "mods/productivetrees.pw.toml"
-hash = "0a9df9cacf6bc7590ad2ce91b552f7864d3008540ee636b434246be7293413c4"
+hash = "ae1c90348341532e5937257f699248f5c184f1ef569fcc482d0c935e9f9af9a4"
 metafile = true
 
 [[files]]
 file = "mods/puffish-skills.pw.toml"
-hash = "5f93ca2739e1b6c18441a675d1edcbbd9ebec6f90f3ac1a7941cf8d86cf38f4c"
+hash = "92c7cb94e1317af27470b1b362c6554d2b89ca3a1de1bd32ba906f96f5b118e1"
 metafile = true
 
 [[files]]
@@ -69317,7 +69327,7 @@ metafile = true
 
 [[files]]
 file = "mods/silent-gear-metalworks.pw.toml"
-hash = "b8b04847d8cfc32dd5621f6f5491f9d310a2bdbd740c0b6a68e158e01491730e"
+hash = "a97a6bc75b0efbfd66eb574e406b50130d1517e1d8dbf39cc3831571193d9339"
 metafile = true
 
 [[files]]
@@ -69342,7 +69352,7 @@ metafile = true
 
 [[files]]
 file = "mods/sophisticated-backpacks.pw.toml"
-hash = "9cbcd71bfe1da62e543750a218b9324e9aa0f0830559408da84068d3b898ffa6"
+hash = "7150bea3482050077f3b556ddca2157e78442e929b1c4dfac7df8239d0a59b1a"
 metafile = true
 
 [[files]]
@@ -69352,12 +69362,12 @@ metafile = true
 
 [[files]]
 file = "mods/sophisticated-storage-in-motion.pw.toml"
-hash = "e344720a5394a5d364c33e4ec1e86e577afce7cb953767e4f03cd1501d4d01d3"
+hash = "2eeb71df468a65a4a2e6ead839fda18c08e29230bf57988e3b5b58bb35450d56"
 metafile = true
 
 [[files]]
 file = "mods/sophisticated-storage.pw.toml"
-hash = "45e9f4502ecad501163ecf19c9b10e834a74c5c9a70ff2411decb87f551a291e"
+hash = "6bff9c28af96931f7ff2f2c3c4ca451f2bb4f9ff5df013abdc90aaef122414e5"
 metafile = true
 
 [[files]]
@@ -69441,7 +69451,7 @@ hash = "6793e7cb78adfb98421b1b8b55bf382eb04d89c0320a031f45d00ccd5b45cadb"
 
 [[files]]
 file = "mods/utilitarian.pw.toml"
-hash = "a440074f15f100b757f1e7f0c739bbf85f791bb94c9da1b9f7e56c7fe4b4af0e"
+hash = "7c8b87787ac3be5dcb49ffb055708b391036271540734248a30bdebb6668812d"
 metafile = true
 
 [[files]]
