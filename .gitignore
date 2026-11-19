@@ -4,3 +4,4 @@ run/
 **/build/
 **/.gradle/
 __pycache__/
+**/dist/
