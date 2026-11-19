@@ -3,6 +3,6 @@ filename = "rodos.zip"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3/client/diaithir/ui_ages/rodos.zip"
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-wave17/client/diaithir/ui_ages/rodos.zip"
 hash-format = "sha256"
 hash = "419a46cdb307201958b4b38666c7d421c624a0f2376bf01677d7ecb0591bafaf"

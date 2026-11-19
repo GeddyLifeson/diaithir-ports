@@ -1,0 +1,20 @@
+{
+  "_comment": "modId -> upstream licence (Modrinth) that forbids repacking inside our own jars. Any hosted jar that declares one of these fails check_licenses.py; ship the original as a .pw.toml link instead.",
+  "terralith": "Stardust Labs custom",
+  "structory": "Stardust Labs custom",
+  "structory_towers": "Stardust Labs custom",
+  "incendium": "Stardust Labs custom",
+  "nullscape": "Stardust Labs custom",
+  "apotheosis": "All Rights Reserved",
+  "oritech": "All Rights Reserved (jar), CC-BY-4.0 (Modrinth): unresolved",
+  "regions_unexplored": "All Rights Reserved",
+  "relics": "All Rights Reserved",
+  "undergarden": "All Rights Reserved",
+  "the_undergarden": "All Rights Reserved",
+  "backwoods": "All Rights Reserved",
+  "the_backwoods": "All Rights Reserved",
+  "aether_ii": "Custom",
+  "mts": "All Rights Reserved (Immersive Vehicles)",
+  "immersive_vehicles": "All Rights Reserved",
+  "scalablelux": "LGPL-2.1 original; ship as link"
+}

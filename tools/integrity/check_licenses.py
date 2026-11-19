@@ -13,7 +13,10 @@ from collections import defaultdict
 
 LIMIT = 95_000_000
 ARR = re.compile(r"all.?rights|proprietary|unknown", re.I)
+OWN_MIXED = ("diaithir_rpg_open",)  # our own jar: MIT code, assets ours; reviewed
 root = sys.argv[1]
+here = os.path.dirname(os.path.abspath(__file__))
+restricted = {k: v for k, v in json.load(open(os.path.join(here, "restricted_modids.json"))).items() if not k.startswith("_")}
 removals = sys.argv[2] if len(sys.argv) > 2 else None
 os.chdir(root)
 
@@ -51,9 +54,13 @@ for j in jars:
                             mod_ids[m.group(1)].add(os.path.basename(j))
             elif n.endswith("LICENSE-FIELD.txt"):
                 t = z.read(n).decode("utf8", "ignore").strip()[:200]
-                if ARR.search(t) or t.lower().startswith("see "):
+                if ARR.search(t) and not any(k in n for k in OWN_MIXED):
+                    errors.append(f"B15 ARR/unknown licence {t!r} inside {os.path.basename(j)}: {n}")
+                elif t.lower().startswith("see "):
                     warns.append(f"licence {t!r} inside {os.path.basename(j)}: {n}")
 for m, js in sorted(mod_ids.items()):
+    if m in restricted:
+        errors.append(f"B15 restricted modId {m} ({restricted[m]}) inside hosted jar: {sorted(js)}")
     if len(js) > 1:
         errors.append(f"B7 duplicate modId {m}: {sorted(js)}")
 

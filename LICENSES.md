@@ -8,16 +8,12 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.8.jar | LGPL-3.0-only | [source](source/Tellus-diaithir-src-0.8.3-diaithir.16-fantasy.8.zip) is the complete tree of this build (earth timeline, fantasy biomes, underground work, land use, tick fix, cave crust policy, catch-up helpers, wider fen rule, era rasters loaded outside the map lock; contains LICENSE and DIAITHIR_CHANGES.md); it is DiaithirRPG pull request 156 at commit 62aeb9bd44 |
 | TinkersConstruct-26.1.2-3.12.13-diaithir.1.jar | MIT (Tinkers' Construct by SlimeKnights; registry lookup fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/tconstruct), patch: [source/TinkersConstruct-3.12.13-diaithir.1](source/TinkersConstruct-3.12.13-diaithir.1) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |
-| diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.3.jar | Diaithir engine, ours; free to play with the pack (built from DiaithirRPG PR #182, branch claude/project-thread-golhx6, engine/) | not published |
-| thuns-structures-1.3.2.jar | MIT (Modrinth ZLL4Dkxb); download link | link to the Modrinth file |
 | resourcepacks/diaithir-ui.zip (item/dish textures + DISH_PHOTO_CREDITS.md) | 1,365 64 px dish icons made from Wikimedia Commons photo cutouts under CC BY 2.0/2.5/3.0/4.0, CC BY-SA 2.0-4.0, CC0 and public domain (no NC, no all-rights-reserved); per-image author and licence in DISH_PHOTO_CREDITS.md inside the zip; CC BY-SA cutouts stay share-alike | credits file shipped in the pack |
 | kaleidoscope-tavern-neoforge-26.1.2-1.1.2-diaithir.1.jar | BSD-3-Clause (code) + CC BY-NC-SA 4.0 (assets), as declared in the jar and LICENSE-CODE / LICENSE-ASSETS in the source; non-commercial, share-alike, attribution kept; modified build (26.1.2 port) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/diaithir-brewing/kaleidoscope-tavern) |
 | optigui-neoforge-26.1.2.jar | LGPL-3.0-or-later; our port for 26.1.2 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/optigui) |
-| villager-trading-plus-neoforge-26.1.2-1.3.0.jar | MIT (Villager Trading Plus, as declared in the jar; our port to NeoForge 26.1.2, client-only; renamed from villager-trading-plus-1.3.0+26.1.2-neoforge.jar) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-vtp/villager-trading-plus) |
 | iceandfire-2.2-beta.4-diaithir.1.jar | LGPL-3.0 (Wyrmlore, a build of Ice and Fire CE by IAFEnvoy, xiaowu, uoay and aelux, as declared in the jar; modified build) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/iceandfire/iceandfire) |
 | jupiter-2.4.3-26.1.2-universal-diaithir.1.jar | LGPL-3.0 (Jupiter by IAFEnvoy, as declared in the jar; modified build) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/iceandfire/jupiter) |
 | uranus-3.0-alpha.1-neoforge-26.1.2-diaithir.1.jar | LGPL-3.0 (Uranus by IAFEnvoy, as declared in the jar; modified build) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/iceandfire/uranus) |
-| client/diaithir-branding-neoforge-26.1.2-1.0.3.jar | MIT; its Pixelify Sans font is SIL OFL 1.1 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-branding) |
 | client/diaithir-earlywindow-neoforge-26.1.2-1.0.1.jar | LGPL-2.1-only (its error window is adapted from NeoForged FancyModLoader) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-earlywindow) |
 | config/fml/PixelifySans.ttf | SIL OFL 1.1 | [Pixelify Sans](https://github.com/eifetx/Pixelify-Sans) |
 | industrialforegoing-26.1.2-3.6.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/industrialforegoing) |
@@ -56,7 +52,7 @@ Downloads from the author's Modrinth CDN (sha256 in its `.pw.toml`). Licence rea
 
 The scaled carver `kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json` is our own data file that overrides the mod's default carver for Tellus' deep columns.
 
-Looked at and not added in update 2: LambDynamicLights 4.11.2 (Lambda License: binaries may be shared only with the original authors' written approval), Terralith (Stardust Labs licence; Tellus owns terrain), Server-Side Horror (MIT, but it burns builds, strikes players with lightning and fakes player joins), DarkFear and Ender Zoology (MIT/CC0, not needed), Power Armor (CC-BY-NC-ND), Gamingbarn's Guns and Zombies (CC-BY-NC-ND), Friends and Foes (CC-BY-NC-ND). Details in REPORT.md.
+Looked at and not added in update 2: LambDynamicLights 4.11.2 (Lambda License: binaries may be shared only with the original authors' written approval), Terralith (Stardust Labs licence; Tellus owns terrain; it was later found folded in the realms suite and is now stripped, see the Batch 4 section), Server-Side Horror (MIT, but it burns builds, strikes players with lightning and fakes player joins), DarkFear and Ender Zoology (MIT/CC0, not needed), Power Armor (CC-BY-NC-ND), Gamingbarn's Guns and Zombies (CC-BY-NC-ND), Friends and Foes (CC-BY-NC-ND). Details in REPORT.md.
 
 ## No longer distributed
 
@@ -276,3 +272,24 @@ Resolved 11-09 (checklist B3): Immersive Vehicles, Oritech, Regions Unexplored, 
 ## Audit of the clean-room rewrites (11-09)
 
 The Aether II (custom licence), The Undergarden (All Rights Reserved) and The Backwoods (All Rights Reserved) rewrites were stripped from `diaithir-worldgen-suite` and now link their original Modrinth files (`aether-ii`, `the-undergarden`, `the-backwoods`). Easy NPC is not a duplicate: `easy_npc_bundle` (MIT) is a 25 KB meta mod that only requires `easy_npc` and `easy_npc_config_ui`, which the tech-ext suite supplies (both MIT). Kept folded after reading the licence: Aerial Hell and Stellaris (CC-BY-NC-SA-4.0, derivatives allowed, non-commercial and share-alike, same as Kaleidoscope Tavern), Titanium and BCLib and Better Caravans (MIT; BCLib assets partly CC BY-NC-SA). Single-file compat tags and config data under `cristellib`, `natures_spirit`, `forbidden_arcanus`, `ftbchunks` and `runes` are our own files, not the mods' content, so they stay; Cristel Lib (CC-BY-NC-ND) code is not in any hosted jar.
+
+## Batch 4 licence fixes (11-19)
+
+- **Terralith (Stardust Labs licence)** was folded into `diaithir-realms-suite`. It is stripped (`tools/integrity/strip_module.py`) and ships as its original Modrinth jar, `mods/terralith.pw.toml` (2.6.2, sha256-checked). Tectonic stays folded.
+- **Id migration (`diaithirmigrate`) removed** from `diaithir-rewrites`; V1 is a fresh world.
+- **Rows for folded sources.** Rows whose jar name is not hosted (for example `ftb-*`, `xnet`, `storagedrawers`) record the licence of a mod folded into a suite jar or linked through a metafile; they are provenance, not hosted files. `check_licenses.py` only requires a row for hosted jars.
+- **Stale rows removed:** ages diaithir.3, thuns-structures, villager-trading-plus 1.3.0 and branding 1.0.3 (no longer hosted).
+- **Restricted-licence guard.** `tools/integrity/restricted_modids.json` lists modIds whose upstream licence forbids repacking; `check_licenses.py` fails if a hosted jar declares one, and fails on any All Rights Reserved or unknown `LICENSE-FIELD.txt` note.
+- **Immersive Vehicles** (All Rights Reserved, our modified build) is not in `mods/` on this branch; the link is `mods/immersive-vehicles.pw.toml` to the original. The file `Immersive_Vehicles-26.1-24.0.0-diaithir.2.jar` exists only in the shared project folder and must not be hosted or published.
+
+## CC-BY-NC-SA material in `diaithir-worldgen-suite` (B5)
+
+`diaithir-worldgen-suite` holds Aerial Hell and Stellaris ports, and a `blooming_biosphere` alias (Blooming Biosphere is also CC-BY-NC-SA-4.0 upstream). They are distributed under CC-BY-NC-SA-4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/): non-commercial use only, credit to the original authors, derivative changes marked, same licence for the derivative.
+
+| Material | Original authors / source | Changes | Licence of our version |
+|---|---|---|---|
+| Aerial Hell (`aerialhell`) | Aerial Hell team, https://modrinth.com/mod/aerial-hell | Ported to NeoForge 26.1.2; some machines replaced by vanilla stand-ins | CC-BY-NC-SA-4.0 |
+| Stellaris (`stellaris`) | Stellaris authors, https://modrinth.com/mod/stellaris | Ported to NeoForge 26.1.2; some machines replaced by vanilla stand-ins | CC-BY-NC-SA-4.0 |
+| Blooming Biosphere alias | Blooming Biosphere authors, https://modrinth.com/mod/blooming-biosphere | Alias only | CC-BY-NC-SA-4.0 |
+
+The pack must stay free and non-commercial. The `mods.toml` text calling these "clean-room replacement" is wrong for the namespaces above: they are adaptations of the upstream art and data, and this section governs. UNVERIFIED: exact upstream author names; fill from each project's Modrinth page before release. Marlon should confirm Blooming Biosphere is meant to stay folded (his decision named only Aerial Hell and Stellaris).

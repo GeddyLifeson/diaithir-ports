@@ -86,47 +86,47 @@ hash = "0aaa598b80b3d009e31c802466af7a607cb35667b9320489baf9b93f90ecde19"
 
 [[files]]
 file = "diaithir/ui_ages/i.pw.toml"
-hash = "2c7f2a4a58405729c906c587d2d717a2f37d37e5a2e7ae70077cfd9d670dca85"
+hash = "540fdcb62155162038cd469c20750b52eb67a8507f19fc91061c15b3c0efe95e"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/ii.pw.toml"
-hash = "ceda0c4e9967484b394d40107e7c34ae5f6e686a384c3fa998d2ed98edfe4b73"
+hash = "3ad4cde942291b3f888ef7bf332cc99fcc097bc97674185fb2eab3bb462df007"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/iii.pw.toml"
-hash = "feccbd4e0eaf0b13c6f89b1f764baed1b2f59f454195d888be565b7388f22ae1"
+hash = "e36ab4c5375f3ed2fa95b7d0d7936ddfcdb1bce081c1f860738f974518ca95b5"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/iv.pw.toml"
-hash = "d80b876d75e7ccfe7a0336c5ea600de7fccc0902beb2cc3653bc24924f9fa44e"
+hash = "8385f44bea61eee35924cb42221856d54de4d875b335d3b7d83fb7fdebb657dd"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/rodos.pw.toml"
-hash = "5df01256f63425a024b575b267bb0dc8acf8a1c377d63681abcdd3b5c2f8ae86"
+hash = "40f140000b0f6fc1bfa1ce4afaf7434a2f466653df48c105513e62804ae1f03e"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/v.pw.toml"
-hash = "f174990a4c8e9c4a84e6e33a7c3b9094534f824ab257e22eca9d54158d6254ea"
+hash = "d602d835ab3de8a76f0959307640f9a8c694bdebacff505560c61e104f113c3c"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/vi.pw.toml"
-hash = "8bac4cc13add7e7cc92a00a0c05f4cb27624e22eb9aa0e38898368351a582952"
+hash = "dd431b340f4f62ed24565e092a644e215594646fb06870b601b709e97ac929a2"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/vii.pw.toml"
-hash = "e73d71e5dc13278db42dcb52f4b2605bbdc80a3c272beefc4c861fb3b0090632"
+hash = "7388d4e3e3493b73b4cfead412274b5d213f79a47ce3c92e767edb0f30d57914"
 metafile = true
 
 [[files]]
 file = "diaithir/ui_ages/viii.pw.toml"
-hash = "7db0582b3a27ffcfb580e549ed10daf2f3e6b5f4706f5cd9c6d8e0edbcdf089b"
+hash = "33daea462069739937a679cb286328c981881af5602705365d1984e78450a97b"
 metafile = true
 
 [[files]]
@@ -68695,7 +68695,7 @@ hash = "5aa8e687833d25faa9adc5d0a9b748b0e9badc9061de1eb01c5e30c4efd67f0f"
 
 [[files]]
 file = "mods/diaithir-audio-client-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "bc0c0c6c5bde89dd5dddcdb304f9e6a8516f8caec9fb726fb7454a2038b4b483"
+hash = "93235b43c586f6121a79540c947ac765630b9efbade94127cbf591ed78c7cd6f"
 metafile = true
 
 [[files]]
@@ -68704,7 +68704,7 @@ hash = "3e4cad7bc964e3e03a71952f0819b2b7c28d7b51a1fada9b438b88f69cbbcb6b"
 
 [[files]]
 file = "mods/diaithir-client-suite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "009167a3f477632f7bd7d671da70137f09c6d3168f8f44d3c15b86483c1c66ed"
+hash = "2abb6e15e986a65c43a0ed5d0b521b2bd117d6bdee04821de9d64231a1704853"
 metafile = true
 
 [[files]]
@@ -68725,7 +68725,7 @@ hash = "0f9e9e20f03c8b4525a2e3624cea7a123e54f0de57b74ba99c66c0c753d2fe1a"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "2be6757f11fee031263f59db61f27ced0e6ea50345be43594af8f031aa9c2087"
+hash = "471f004b53454f6be1d76938b26511ca33604a0a98156c5414cf2a27dbaef0c5"
 metafile = true
 
 [[files]]
@@ -68738,7 +68738,7 @@ hash = "96c8fcf6ab951ef22153f0b091618f6308cb84131348b5f1f3e7af7a0038b933"
 
 [[files]]
 file = "mods/diaithir-libraries-client-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "0bead35eccbf68b519022b574d5f1299c57db922cabd091a36d4138a3c2a3476"
+hash = "493bcc37cffb0deb516ecb0a64cd0f53557d52e4c4d73ac301313477c6f26523"
 metafile = true
 
 [[files]]
@@ -68751,11 +68751,11 @@ hash = "95cec9cb19b16e700fcde5a6861c06be3d8bc3fe6648532848ff5f629ce6c17c"
 
 [[files]]
 file = "mods/diaithir-realms-suite-neoforge-26.1.2-1.0.0.jar"
-hash = "8bb110c6c9e0e44f40455aa6f8c650294e14c6576ecfa9c5010f0b008790eaef"
+hash = "a671e01d82d314648d461a35a660ccd2316f197e10a3aa6dc90557b53c14586f"
 
 [[files]]
 file = "mods/diaithir-rewrites-neoforge-26.1.2-1.0.0.jar"
-hash = "9c5e9aedd75f8a141d13007ae5df3756e52fe7a5837c445dcbabc7cab59d4a38"
+hash = "b851dda71b7411add7001d1a62dfe796440db6d374b4bbc2405eea6a7af4e0b0"
 
 [[files]]
 file = "mods/diaithir-ritual-enchant-neoforge-26.1.2-1.0.0.jar"
@@ -68763,7 +68763,7 @@ hash = "19befb231d02265ef97c5302552a28e194500ffcc46760ec01cb6ab6dc345d75"
 
 [[files]]
 file = "mods/diaithir-server-ext-suite-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "4c700c10aac32f978f5d12e60018d3c3d0ed07c29fcab9dd439f7a11cd56e610"
+hash = "e00ad86fec401cec27b58466061b31409166d0987e901f732cc4d866d9a493cd"
 metafile = true
 
 [[files]]
@@ -69185,7 +69185,7 @@ metafile = true
 
 [[files]]
 file = "mods/optigui-neoforge-26.1.2.pw.toml"
-hash = "358818c73a2921538f2dfa8058d4a59439d30800edf3eae1bed6239b89416f1b"
+hash = "515a47bf6071e42b1dcbb340f690ee2fa666d38e3ab951aad70aeedef0eb219d"
 metafile = true
 
 [[files]]
@@ -69391,6 +69391,11 @@ hash = "0ff719fcaf9ca2fe6d66ae0dbac168cafb639c2683c1e4ffa35e62797928833b"
 metafile = true
 
 [[files]]
+file = "mods/terralith.pw.toml"
+hash = "b8ce260378fb89f784502b047d4fabace632b2e532538dbe49cc50df9c8c39ee"
+metafile = true
+
+[[files]]
 file = "mods/the-backrooms-2.10.11.pw.toml"
 hash = "6d297e0de70153d51411f4308acf24a2be12f72f27ba05289121e745d8387675"
 metafile = true
@@ -69496,15 +69501,15 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ages-gui.pw.toml"
-hash = "d53b91a08c7cfeaf1c0432704ddf98411b757c9093bae9c40f2d7481e6c22ea4"
+hash = "7869f50d01f0564c3137e93006250223f7a162ca9bab4c62c554f565cb4c1159"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "b01eb4275b9871b986b7d1a2f72495d3abb8c968c94572514ed102f33c3ce1f4"
+hash = "d7709e38ae7998d5b10c3b431f60c316c5a49890abd828a4f47c756359df6579"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "a63498f17e6c12b295ee2b0f0ea9536f1f1a37b44af861a7b24fb38a8825f9bf"
+hash = "b4ea66c35a35a6129c65815f9ec350fb55020742c27eec814016f0a626a82247"
 metafile = true

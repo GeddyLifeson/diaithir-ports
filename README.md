@@ -7,14 +7,14 @@ Diaithir is a free Minecraft modpack for NeoForge 26.1.2. You need Minecraft Jav
 1. Install [Prism Launcher](https://prismlauncher.org/download/) and sign in with your Microsoft account.
 2. In Prism, click **Add Instance**, then **Import**.
 3. Paste this link and click **OK**:
-   `https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/project-thread-ysjkxr/Diaithir.zip`
+   `https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1-3-wave17/Diaithir.zip`
 4. Select the new **Diaithir** instance and click **Launch**.
 
-The first launch downloads about 800 MB of mods, so it takes a few minutes. A small window shows the progress. Every launch after that checks for updates and fetches only what changed.
+The first launch downloads about 1.3 GB of mods, so it takes a few minutes. A small window shows the progress. Every launch after that checks for updates and fetches only what changed.
 
 ## Play
 
-The server is already in your multiplayer list as **Diaithir**. If it is missing, add it with the address `ssh-elem.tun.ply.gg`.
+The server is already in your multiplayer list as **Diaithir**. If it is missing, ask Marlon for the address.
 
 ## If something goes wrong
 
